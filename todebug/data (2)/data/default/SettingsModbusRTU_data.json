@@ -1,0 +1,9 @@
+{
+    "cmbBaud": "115200",
+    "cmbDataBits": "8",
+    "cmbDev": "COM",
+    "cmbParity": "None",
+    "cmbRTS": "Disable",
+    "cmbStopBits": "1",
+    "qt_spinbox_lineedit": "500"
+}

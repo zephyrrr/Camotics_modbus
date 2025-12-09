@@ -1,0 +1,46 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>image/manual/duanmian.png</file>
+        <file>image/manual/fangdianweizhijueding.PNG</file>
+        <file>image/manual/jixianyidong.PNG</file>
+        <file>image/manual/kongzhongxin.PNG</file>
+        <file>image/manual/PositionSet.png</file>
+        <file>image/manual/shoudongyuanhu.png</file>
+        <file>image/manual/yidong.PNG</file>
+        <file>image/manual/zhuzhongxin.PNG</file>
+    </qresource>
+    <qresource prefix="/resources">
+        <file>image/info_connect.png</file>
+        <file>image/info_connect_disable.png</file>
+        <file>image/info_diandong.png</file>
+        <file>image/info_diandong_disable.png</file>
+        <file>image/info_fangdian.png</file>
+        <file>image/info_fangdian_disable.png</file>
+        <file>image/menu_main.png</file>
+        <file>image/menu_main_active.png</file>
+        <file>image/menu_separator.png</file>
+        <file>image/menu_sub.png</file>
+        <file>image/menu_sub_active.png</file>
+        <file>image/status_background.png</file>
+        <file>image/status_icon.png</file>
+        <file>image/topinfo_displayz.png</file>
+        <file>image/topinfo_displayz_name.png</file>
+        <file>image/topinfo_loran.png</file>
+        <file>image/topinfo_loran_name.png</file>
+        <file>image/topinfo_number_files.png</file>
+        <file>image/topinfo_number_number.png</file>
+        <file>image/topinfo_pos.png</file>
+        <file>image/topinfo_pos_uw.png</file>
+        <file>image/topinfo_shortcut_btn.png</file>
+        <file>myQss.qss</file>
+        <file>image/短路.png</file>
+        <file>image/油泵.png</file>
+        <file>image/油位.png</file>
+        <file>image/油温.png</file>
+        <file>image/照明.png</file>
+        <file>image/多个加工.png</file>
+        <file>image/三点定圆.png</file>
+        <file>image/柱中心.png</file>
+        <file>image/油泵_disable.png</file>
+    </qresource>
+</RCC>

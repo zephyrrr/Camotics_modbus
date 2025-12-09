@@ -1,0 +1,1704 @@
+﻿/*
+    @define active-color rgb(170, 85, 255);
+    @define tabbar-background-color rgb(39, 124, 242)
+    @define tabbar-background-color-active rgb(65, 145, 253);
+*/
+
+/*全局*/
+/*滚动条*/
+QScrollBar:vertical {
+    margin: 40px 0px 40px 0px;
+    background-color: #ffffff;
+    border: 0px;
+    width: 40px;
+}
+
+QScrollBar::handle:vertical
+{
+background-color:#5b5b5b;
+border-radius:1px;
+width:40px;
+}
+
+QScrollBar::sub-line:vertical
+{
+subcontrol-position:top;
+subcontrol-origin:margin;
+height:40px;
+}
+
+QScrollBar::add-line:vertical
+{
+subcontrol-position:bottom;
+subcontrol-origin:margin;
+height:40px;
+}
+
+QScrollBar::up-arrow:vertical
+{
+width:12px;
+height:6px;
+}
+
+QScrollBar::down-arrow:vertical
+{
+width:12px;
+height:6px;
+}
+
+QScrollBar::sub-page:vertical,QScrollBar::add-page:vertical
+{
+background-color:#ffffff;
+}
+
+
+EditableTextWidget QLabel {
+    font-family: "Microsoft YaHei UI";
+    font-size: 55px;
+}
+
+EditableTextWidget QLineEdit {
+    font-family: "Microsoft YaHei UI";
+    font-size: 55px;
+}
+
+ContainerChildWindow EditableTextWidget QLabel {
+    font-family: "Microsoft YaHei UI";
+    font-size: 55px;
+}
+ContainerChildWindow EditableTextWidget QLineEdit {
+    font-family: "Microsoft YaHei UI";
+    font-size: 55px;
+}
+
+QFormLayout {
+    margin: 2px;
+}
+
+/*主界面*/
+QWidget#mainWindow {
+    background-color: rgb(208, 204, 193);
+}
+
+QWidget#leftWidget {
+    background-color: rgb(220, 220, 220);
+    border-radius: 2px;
+}
+
+QWidget#stackedChildWidget {
+    border-radius: 2px;
+    background-color: rgb(22, 77, 160);
+    /*    background-color: #9bb9d5;*/
+}
+
+
+QGroupBox#groupBoxSettings,
+QGroupBox#groupBoxMenus {
+    border: 2px solid black;
+}
+
+/*QGroupBox#groupBoxSettings QToolButton {
+    background-color: rgb(255, 252, 216);
+    border: 1px solid black;
+    border-radius: 5px;
+}*/
+
+
+
+/*主菜单*/
+/*AdvancedToolBox#mainMenuWidget {
+    min-height: 800px;
+}
+AdvancedToolBox#mainMenuWidget ToolBoxTitle {
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(39, 124, 242);
+    font: bold 36px;
+}
+AdvancedToolBox#mainMenuWidget ToolBoxTitle[expanded="true"] {
+    background-color: rgb(170, 85, 255);
+    color: white;
+}*/
+
+/*background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #E1E1E1, stop: 0.4 #DDDDDD, stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);*/
+/*QToolBox#mainMenuWidget::tab {
+    border-radius: 5px;
+    color: black;
+    background-color: rgb(39, 124, 242);
+    font: bold 36px;
+}
+
+QToolBox#mainMenuWidget::tab:selected {
+    background-color: rgb(170, 85, 255);
+    color: white;
+}
+AdvancedToolBox#mainMenuWidget QToolButton,
+QToolBox#mainMenuWidget QToolButton {
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    font-family: "Microsoft YaHei UI";
+    font-size: 26px;
+}
+AdvancedToolBox#mainMenuWidget QToolButton:checked,
+QToolBox#mainMenuWidget QToolButton:checked {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 26px;
+}*/
+
+QGroupBox#groupBoxMenus {
+    border: 0px solid gray;
+    background-color: rgb(35, 25, 21);
+}
+QGroupBox#groupBoxMenus::title {
+    subcontrol-origin: top left;
+    subcontrol-position: top left;
+    padding: 0 3px 0 3px;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+}
+
+/*QGroupBox#groupBoxMenus QPushButton,*/
+QWidget#mainMenuWidget QPushButton {
+    border-image: url(:/resources/image/menu_main.png);
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 68px;
+/*    background-color: rgb(225, 225, 225);
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;*/
+    font-family: "Microsoft YaHei UI";
+    font-size: 32px;
+}
+
+QFrame#mainMenuWidget QPushButton:checked {
+    border-image: url(:/resources/image/menu_main_active.png) 0 0 0 0 stretch stretch;
+    color: white;
+}
+
+QFrame#subMenuWidget QToolButton {
+    border-image: url(:/resources/image/menu_sub.png) 0 0 0 0 stretch stretch;
+    color: rgb(200, 200, 200);
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    height: 66px;
+    /*    background-color: rgb(225, 225, 225);*/
+    /*    border-left: 2px solid white;
+    border-top: 2px solid white;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;*/
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+}
+QFrame#subMenuWidget QToolButton:checked {
+    border-image: url(:/resources/image/menu_sub_active.png) 0 0 0 0 stretch stretch;
+    color: white;
+}
+QLabel#labelMenuSepartor {
+    border-image: url(:/resources/image/menu_separator.png) 0 0 0 0 stretch stretch;
+}
+
+/*顶部信息栏*/
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton {
+    border-image: url(:/resources/image/topinfo_shortcut_btn.png) 0 0 0 0 stretch stretch;
+    /*    background-repeat: repeat;
+    background-position: center;*/
+    width: 120px;
+    height: 40px;
+    font-family: Microsoft YaHei UI;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    /*    border: 0px;*/
+    /*    border-style: outset;
+    border-width: 2px;
+    border-radius: 0px;
+    border-color: beige;*/
+    margin: 0px;
+    padding: 0px;
+}
+
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton:pressed {
+    color: black;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnT1:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnST:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnG24:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnYouWen:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnYouWei:checked,
+QWidget#topinfobar QWidget#topinfobar_shortcut QPushButton#btnHuoYan:checked {
+    color: black;
+    border-style: inset;
+}
+
+QMenu#btnCoorMenu {
+    background-color: rgb(100, 165, 255);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Microsoft YaHei UI;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: normal;
+    color: white;
+}
+
+QMenu#btnCoorMenu::item {
+    padding: 5px;
+}
+
+QMenu#btnCoorMenu::item:selected {
+    background-color: #333;
+    color: white;
+}
+
+QWidget#topinfobar QWidget#topinfobar_pos {
+    border-image: url(:/resources/image/topinfo_pos.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 250px;
+    /*    width: 412px;
+    height: 242px;*/
+}
+QWidget#topinfobar QWidget#topinfobar_pos_uw {
+    border-image: url(:/resources/image/topinfo_pos_uw.png);
+    background-repeat: repeat;
+    background-position: center;
+    min-height: 30px;
+}
+
+QWidget#topinfobar QLabel#xLabel {
+    margin-top: 8px;
+    margin-left: 40px;
+    color: white;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 55px;
+    vertical-align: bottom;
+    /*    border-right: 1px solid black;
+    border-top: 1px solid black;*/
+}
+
+QWidget#topinfobar QLabel#yLabel,
+QWidget#topinfobar QLabel#zLabel {
+    margin-top: 8px;
+    margin-left: 0px;
+    color: white;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 55px;
+    vertical-align: bottom;
+    /*    border: black;
+    border-right: 1px solid black;
+    padding-right: 1px;*/
+}
+
+QWidget#topinfobar QLabel#wLabel,
+QWidget#topinfobar QLabel#uLabel {
+    margin-top: -5px;
+    margin-left: 0px;
+    color: white;
+    font-family: Consolas;
+    font-weight: normal;
+    font-size: 22px;
+    vertical-align: bottom;
+    /*    border-top: 1px solid black;*/
+    padding-right: 5px;
+    /*    max-height: 30px;*/
+}
+
+QWidget#topinfobar QFrame#loran {
+    border-image: url(:/resources/image/topinfo_loran.png) 0 0 0 0 stretch stretch;
+    background-repeat: repeat;
+    background-position: center;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    max-width: 250px;
+}
+QWidget#topinfobar QFrame#loran QGraphicsView {
+    background: transparent;
+    border: none;
+}
+
+QWidget #topinfobar QLabel#label_loran {
+/*    background-image: url(:/resources/image/topinfo_loran_name.png);*/
+    border-image: url(:/resources/image/topinfo_loran_name.png) 0 0 0 0 stretch stretch;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 30px;
+    font-family: Microsoft YaHei UI;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    /*    color: transparent;*/
+}
+
+QWidget#topinfobar QFrame#displayz {
+    border-image: url(:/resources/image/topinfo_displayz.png) 0 0 0 0 stretch stretch;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 400px;
+    max-width: 400px;
+}
+
+QWidget#topinfobar QFrame#displayz QGraphicsView {
+    background: transparent;
+    border: none;
+}
+
+QWidget#topinfobar QLabel#label_displayz {
+    border-image: url(:/resources/image/topinfo_displayz_name.png) 0 0 0 0 stretch stretch;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 30px;
+    font-family: Microsoft YaHei UI;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+QWidget#topinfobar QFrame#frame_files {
+    border-image: url(:/resources/image/topinfo_number_files.png) 0 0 0 0 stretch stretch;
+    background-repeat: repeat;
+    min-height: 30px;
+    max-height: 30px;
+}
+
+QWidget#topinfobar QFrame#frame_numbers {
+    border-image: url(:/resources/image/topinfo_number_number.png) 0 0 0 0 stretch stretch;
+    background-repeat: repeat;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+QWidget#topinfobar QLabel#labelLength0,
+QWidget#topinfobar QLabel#labelRemnantLength0,
+QWidget#topinfobar QLabel#labelTotalTime0,
+QWidget#topinfobar QLabel#labelProcessTime0,
+QWidget#topinfobar QLabel#labelRemnantTime0 {
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    /*    border-left: 1px solid black;*/
+}
+
+
+
+QWidget#topinfobar QLabel#labelCNo0,
+QWidget#topinfobar QLabel#labelTNo0,
+QWidget#topinfobar QLabel#labelProcessSpeed0,
+QWidget#topinfobar QLabel#labelProcessSpeed20,
+QWidget#topinfobar QLabel#labelG04RemnantTime0 {
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    margin-left: 10px;
+}
+
+QWidget#topinfobar QLabel#labelLength,
+QWidget#topinfobar QLabel#labelRemnantLength,
+QWidget#topinfobar QLabel#labelTotalTime,
+QWidget#topinfobar QLabel#labelRemnantTime,
+QWidget#topinfobar QLabel#labelProcessTime {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 10px;
+    /*    border-top: 0px solid black;
+    border-right: 1px solid black;
+    padding-right: 1px;*/
+}
+
+QWidget#topinfobar QLabel#labelCNo,
+QWidget#topinfobar QLabel#labelTNo,
+QWidget#topinfobar QLabel#labelProcessSpeed,
+QWidget#topinfobar QLabel#labelProcessSpeed2,
+QWidget#topinfobar QLabel#labelG04RemnantTime {
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    /*    border-top: 0px solid black;
+    border-right: 1px solid black;
+    padding-right: 1px;*/
+}
+
+QWidget#topinfobar QLabel#labelFileName0 {
+    color: black;
+    font-size: 15px;
+    text-align: right;
+    qproperty-alignment: 'AlignRight|Qt::AlignTrailing|Qt::AlignVCenter';
+}
+
+QWidget#topinfobar QToolButton#btnFileName {
+    color: black;
+    font-size: 15px;
+    /*    border: 1px solid black;*/
+    margin-left: 10px;
+}
+
+QWidget#topinfobar QLabel#lblNowDate {
+    color: black;
+    border-right: 0px;
+    font-size: 15px;
+/*    text-align: right;*/
+    qproperty-alignment: 'AlignRight|Qt::AlignTrailing|Qt::AlignVCenter';
+}
+
+QWidget#topinfobar QLabel#lblNowTime {
+    color: black;
+    /*    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;*/
+    border-right: 0px;
+    font-size: 15px;
+    qproperty-alignment: 'AlignRight|Qt::AlignTrailing|Qt::AlignVCenter';
+    margin-right: 10px;
+}
+
+QWidget#topinfobar {
+    background-color: rgb(220, 220, 220);
+}
+
+/*QWidget#topinfobar QTableView#tableView {
+    color: black;
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+QWidget#topinfobar QLabel#label_1 {
+    color: black;
+    font: bold;
+    border-left: 2px solid black;
+    border-top: 1px solid black;
+}
+
+QWidget#topinfobar QLabel#label_2 {
+    color: black;
+    font: bold;
+    border-left: 2px solid black;
+    border-top: 0px solid black;
+    padding-left: 0px;
+}
+
+QWidget#topinfobar QLabel#label_3 {
+    color: black;
+    font: bold;
+    border-left: 2px solid black;
+    border-top: 0px solid black;
+    padding-left: 0px;
+}
+    QWidget#topinfobar QLabel#label_4 {
+    color: black;
+    font-size: 22px;
+    border-top: 1px solid black;
+}
+
+QWidget#topinfobar QLabel#lblCoor {
+    color: black;
+    border: 1px solid black;
+    border-left: 2px solid black;
+    font: bold;
+}
+
+QWidget#topinfobar QLabel#labelST,
+QWidget#topinfobar QLabel#labelT1,
+QWidget#topinfobar QSpacerItem#horizontalSpacer1 {
+    color: rgb(220, 220, 220);
+    border: 1px solid gray;
+    margin-right: 2px;
+    font-size: 12px;
+    min-width: 60px;
+    text-align: center;
+}
+
+QWidget#topinfobar QLabel#label_7 {
+    color: black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+QWidget#topinfobar QLabel#label_9,
+QWidget#topinfobar QLabel#label_11 {
+    color: black;
+}
+QWidget#topinfobar QLabel#label_18 {
+    color: black;
+}
+*/
+
+
+
+
+
+QWidget#leftWidget QLabel#lblResultMessage {
+    background-color: rgb(35,25,21);
+    border: 0px solid rgb(253, 253, 253);
+    border-right: 0px;
+    /*    border-image: url(:/resources/image/status_background.png) 0 0 0 0 stretch stretch;*/
+    color: rgb(255, 240, 0);
+    min-height: 25px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+QWidget#widgetInfoIcons2 QLabel#labelManufactoryIcon {
+    border-image: url(:/resources/image/status_icon.png);
+    max-width: 50px;
+    min-width: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+QWidget#widgetInfoIcons2 {
+    background-color: rgb(35,25,21);
+    border: 0px solid rgb(253, 253, 253);
+    border-right: 0px;
+    color: rgb(255, 240, 0);
+}
+
+QWidget#widgetInfoIcons {
+    background-color: rgb(35, 25, 21);
+    border: 0px solid rgb(253, 253, 253);
+    /*    border-image: url(:/resources/image/status_background.png) 0 0 0 0 stretch stretch;*/
+    color: rgb(255, 240, 0);
+}
+
+QWidget#widgetInfoIcons QLabel {
+    max-width: 25px;
+    min-width: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+QWidget#widgetInfoIcons QLabel#labelInfoFangdian {
+    border-image: url(:/resources/image/info_fangdian.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoFangdian:disabled {
+    border-image: url(:/resources/image/info_fangdian_disable.png);
+}
+
+QWidget#widgetInfoIcons QLabel#labelInfoDiandong {
+    border-image: url(:/resources/image/info_diandong.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoDiandong:disabled {
+    border-image: url(:/resources/image/info_diandong_disable.png);
+}
+
+QWidget#widgetInfoIcons QLabel#labelInfoJogSpeed {
+    max-width: 75px;
+    color: rgb(65, 171, 231);
+}
+
+QWidget#widgetInfoIcons QLabel#labelInfoLianjie {
+    border-image: url(:/resources/image/info_connect.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoLianjie:disabled {
+    border-image: url(:/resources/image/info_connect_disable.png);
+}
+
+QWidget#widgetInfoIcons QLabel#labelInfoYouWei {
+    border-image: url(:/resources/image/油位.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoYouWen {
+    border-image: url(:/resources/image/油温.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoYouBang {
+    border-image: url(:/resources/image/油泵.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoYouBang:disabled {
+    border-image: url(:/resources/image/油泵_disable.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoZhaoMing {
+    border-image: url(:/resources/image/照明.png);
+}
+QWidget#widgetInfoIcons QLabel#labelInfoDuanLu {
+    border-image: url(:/resources/image/短路.png);
+}
+
+/*QWidget#topinfobar QToolButton#btnErrorDetail {
+    color: black;
+    border: 1px solid black;
+}
+
+QWidget#topinfobar QToolButton#btnErrorDetail:checked {
+    color: black;
+    background-color: rgb(170, 85, 255);
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}*/
+
+
+/*QWidget#topinfobar QLabel#labelLogo {
+    border: 1px solid black;
+}*/
+
+
+/*坐标设置*/
+/*位置移动*/
+
+ZuoBiaoXiSheZiForm QTabBar,
+WeiZhiJiYiForm QTabBar,
+WeiZhiYiDongForm QTabBar {
+    font-size: 30px;
+}
+
+NcEditForm QTabBar {
+    font-size: 40px;
+}
+RunAutoForm QTabBar {
+    font-size: 40px;
+}
+/*ZuoBiaoXiSheZiForm QTabWidget::pane,
+WeiZhiYiDongForm QTabWidget::pane {*/ /* The tab widget frame */
+/*border-top: 2px solid #C2C7CB;
+}*/
+QTabWidget,
+QTabWidget::pane {
+    background-color: rgb(22, 77, 160);
+    border-top: 2px solid #C2C7CB;
+}
+/*WeiZhiYiDongForm QTabWidget,
+WeiZhiYiDongForm QTabWidget::tab,
+WeiZhiYiDongForm QTabWidget::pane {
+    background-color: rgb(255, 85, 0)
+}*/
+
+/*WeiZhiYiDongForm QTabWidget::pane {
+    background-color: rgb(22, 77, 160)
+}*/
+/*ZuoBiaoXiSheZiForm QTabWidget::tab-bar,
+WeiZhiYiDongForm QTabWidget::tab-bar,
+NcEditForm QTabWidget::tab-bar {
+    left: 5px;*/ /* move to the right by 5px */
+/*}*/
+
+ZuoBiaoXiSheZiForm QTabBar::tab,
+WeiZhiJiYiForm QTabBar::tab,
+WeiZhiYiDongForm QTabBar::tab,
+NcEditForm QTabBar::tab,
+RunAutoForm QTabBar::tab {
+    background-color: rgb(39, 124, 242);
+    color: rgb(208, 204, 193);
+    /*    border: 2px solid;*/
+    /*border-bottom-color: #C2C7CB;*/ /* same as the pane color */
+    /*border-top-left-radius: 2px;*/
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+ZuoBiaoXiSheZiForm QTabBar::tab,
+WeiZhiJiYiForm QTabBar::tab {
+    min-width: 10px;
+    padding: 5px;
+}
+
+WeiZhiYiDongForm QTabBar::tab {
+    min-width: 200px;
+    padding: 20px;
+}
+
+NcEditForm QTabBar::tab {
+    min-width: 200px;
+    padding: 0px;
+}
+RunAutoForm QTabBar::tab {
+    min-width: 400px;
+    padding: 20px;
+}
+
+ZuoBiaoXiSheZiForm QTabBar::tab:selected,
+WeiZhiJiYiForm QTabBar::tab:selected,
+WeiZhiYiDongForm QTabBar::tab:selected,
+NcEditForm QTabBar::tab:selected,
+RunAutoForm QTabBar::tab:selected {
+    background-color: rgb(65, 145, 253);
+    color: ghostwhite;
+}
+
+QMessageBox {
+    font-family: "Microsoft YaHei UI";
+    font-size: 40px;
+}
+QMessageBox QPushButton{
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+}
+QMessageBox QPushButton:focus {
+    font: bold 30px;
+    color: white;
+    background-color: rgb(170, 85, 255);
+}
+
+ZuoBiaoXiSheZiForm,
+WeiZhiJiYiForm,
+FangDianForm,
+SanDianDingWeiForm,
+KongZhongXingForm,
+JiaoDingWeiForm,
+DuanMianForm,
+ZhuZhongXingForm,
+WeiZhiYiDongForm,
+HuiLingForm,
+RunManual,
+RunAutoOne
+RunManualMulti,
+RunAutoMulti,
+RunAutoParamForm {
+    font-family: "Microsoft YaHei UI";
+    font-size: 40px;
+}
+
+WeiZhiJiYiForm QLabel#label_1,
+WeiZhiJiYiForm QLabel#label_2,
+WeiZhiJiYiForm QLabel#label_3,
+WeiZhiJiYiForm QLabel#label_4,
+FangDianForm QLabel#label_1,
+FangDianForm QLabel#label_4,
+SanDianDingWeiForm QLabel#label_1,
+SanDianDingWeiForm QLabel#label_2,
+SanDianDingWeiForm QLabel#label_3,
+SanDianDingWeiForm QLabel#label_4,
+SanDianDingWeiForm QLabel#label_6,
+SanDianDingWeiForm QLabel#label_7,
+SanDianDingWeiForm QLabel#label_8,
+KongZhongXingForm QLabel#label_1,
+KongZhongXingForm QLabel#label_2,
+KongZhongXingForm QLabel#label_3,
+KongZhongXingForm QLabel#label_4,
+KongZhongXingForm QLabel#label_5,
+JiaoDingWeiForm QLabel#label_1,
+JiaoDingWeiForm QLabel#label_2,
+JiaoDingWeiForm QLabel#label_3,
+JiaoDingWeiForm QLabel#label_4,
+JiaoDingWeiForm QLabel#label_5,
+JiaoDingWeiForm QLabel#label_7,
+ZhuZhongXingForm QLabel#label_1,
+ZhuZhongXingForm QLabel#label_2,
+ZhuZhongXingForm QLabel#label_3,
+ZhuZhongXingForm QLabel#label_4,
+ZhuZhongXingForm QLabel#label_6,
+DuanMianForm QLabel#label_1,
+DuanMianForm QLabel#label_3,
+DuanMianForm QLabel#label_4,
+WeiZhiYiDongForm QLabel#label_1,
+WeiZhiYiDongForm QLabel#label_2,
+WeiZhiYiDongForm QLabel#label_3,
+WeiZhiYiDongForm QLabel#label_4,
+WeiZhiYiDongForm QLabel#label_5,
+WeiZhiYiDongForm QLabel#label_8,
+WeiZhiYiDongForm QLabel#label_9,
+WeiZhiYiDongForm QLabel#label_11,
+HuiLingForm QLabel#label_1,
+RunManual QLabel#label_1,
+RunManual QLabel#label_2,
+RunManual QLabel#label_3,
+RunAutoOne QLabel#label_1,
+RunAutoOne QLabel#label_2,
+RunAutoOne QLabel#label_3,
+RunManualMulti QLabel#label_1,
+RunManualMulti QLabel#label_2,
+RunManualMulti QLabel#label_3,
+RunManualMulti QLabel#label_4,
+RunManualMulti QLabel#label_5,
+RunManualMulti QLabel#label_6,
+RunAutoMulti QLabel#label_1,
+RunAutoMulti QLabel#label_2,
+RunAutoMulti QLabel#label_3,
+RunAutoMulti QLabel#label_4,
+RunAutoMulti QLabel#label_5,
+RunAutoMulti QLabel#label_6,
+RunAutoParamForm QLabel#label_1,
+RunAutoParamForm QLabel#label_2,
+RunAutoParamForm QLabel#label_3,
+RunAutoParamForm QLabel#label_4,
+RunAutoParamForm QLabel#label_5,
+RunAutoParamForm QLabel#label_6,
+RunAutoParamForm QLabel#label_7,
+RunAutoParamForm QLabel#label_8,
+RunAutoParamForm QLabel#label_9,
+RunAutoParamForm QLabel#label_10,
+RunAutoParamForm QLabel#label_11 {
+    font-size: 40px;
+    background-color: transparent;
+    color: rgb(217, 217, 217);
+    border: 0px solid black;
+    min-width: 200px;
+}
+
+RunManualMulti QLabel#label_1,
+RunManualMulti QLabel#label_2,
+RunManualMulti QLabel#label_3,
+RunManualMulti QLabel#label_4,
+RunManualMulti QLabel#label_5,
+RunManualMulti QLabel#label_6 {
+    font-size: 35px;
+    background-color: transparent;
+    color: rgb(217, 217, 217);
+    border: 0px solid black;
+    min-width: 200px;
+}
+
+ZuoBiaoXiSheZiForm QLabel#lblMessage,
+WeiZhiJiYiForm QLabel#lblMessage,
+FangDianForm QLabel#lblMessage,
+SanDianDingWeiForm QLabel#lblMessage,
+KongZhongXingForm QLabel#lblMessage,
+JiaoDingWeiForm QLabel#lblMessage,
+ZhuZhongXingForm QLabel#lblMessage,
+DuanMianForm QLabel#lblMessage,
+WeiZhiYiDongForm QLabel#lblMessage,
+HuiLingForm QLabel#lblMessage,
+RunManual QLabel#lblMessage,
+RunAutoOne QLabel#lblMessage,
+RunManualMulti QLabel#lblMessage,
+RunAutoMulti QLabel#lblMessage,
+RunAutoParamForm QLabel#lblMessage {
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    max-height: 100px;
+}
+
+ZuoBiaoXiSheZiForm QLabel,
+WeiZhiJiYiForm QLabel,
+FangDianForm QLabel,
+SanDianDingWeiForm QLabel,
+KongZhongXingForm QLabel,
+JiaoDingWeiForm QLabel,
+ZhuZhongXingForm QLabel,
+DuanMianForm QLabel,
+WeiZhiYiDongForm QLabel,
+HuiLingForm QLabel,
+RunManual QLabel,
+RunAutoOne QLabel,
+RunManualMulti QLabel,
+RunAutoMulti QLabel,
+RunAutoParamForm QLabel {
+    font-size: 40px;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+ZuoBiaoXiSheZiForm QTableWidget QLabel,
+WeiZhiJiYiForm QTableWidget QLabel,
+FangDianForm QTableWidget QLabel,
+SanDianDingWeiForm QTableWidget QLabel,
+KongZhongXingForm QTableWidget QLabel,
+JiaoDingWeiForm QTableWidget QLabel,
+ZhuZhongXingForm QTableWidget QLabel,
+DuanMianForm QTableWidget QLabel,
+WeiZhiYiDongForm QTableWidget QLabel,
+RunManual QTableWidget QLabel,
+RunAutoOne QTableWidget QLabel,
+RunManualMulti QTableWidget QLabel,
+RunAutoMulti QTableWidget QLabel {
+    font-size: 25px;
+    color: black;
+    background-color: rgb(225, 225, 225);
+}
+
+ZuoBiaoXiSheZiForm QTableWidget QLabel,
+WeiZhiJiYiForm QTableWidget QLabel {
+    font-family: Microsoft YaHei UI;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+}
+
+ZuoBiaoXiSheZiForm QPushButton,
+WeiZhiJiYiForm QPushButton,
+FangDianForm QPushButton,
+SanDianDingWeiForm QPushButton,
+KongZhongXingForm QPushButton,
+JiaoDingWeiForm QPushButton,
+ZhuZhongXingForm QPushButton,
+DuanMianForm QPushButton,
+WeiZhiYiDongForm QPushButton,
+HuiLingForm QPushButton,
+RunManual QPushButton,
+RunAutoOne QPushButton,
+RunManualMulti QPushButton,
+RunAutoMulti QPushButton,
+RunAutoParamForm QPushButton {
+    font-family: Microsoft YaHei UI;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+    background-color: rgb(220, 220, 220);
+    height: 40px;
+}
+
+WeiZhiJiYiForm QPushButton {
+    font-size: 25px;
+}
+
+ZuoBiaoXiSheZiForm QPushButton:disabled,
+WeiZhiJiYiForm QPushButton:disabled,
+FangDianForm QPushButton:disabled,
+SanDianDingWeiForm QPushButton:disabled,
+KongZhongXingForm QPushButton:disabled,
+JiaoDingWeiForm QPushButton:disabled,
+ZhuZhongXingForm QPushButton:disabled,
+DuanMianForm QPushButton:disabled,
+WeiZhiYiDongForm QPushButton:disabled,
+HuiLingForm QPushButton:disabled,
+RunManual QPushButton:disabled,
+RunAutoOne QPushButton:disabled,
+RunManualMulti QPushButton:disabled,
+RunAutoMulti QPushButton:disabled {
+    font-weight: normal;
+}
+
+ZuoBiaoXiSheZiForm QPushButton:checked,
+WeiZhiJiYiForm QPushButton:checked,
+FangDianForm QPushButton:checked,
+SanDianDingWeiForm QPushButton:checked,
+KongZhongXingForm QPushButton:checked,
+JiaoDingWeiForm QPushButton:checked,
+ZhuZhongXingForm QPushButton:checked,
+DuanMianForm QPushButton:checked,
+WeiZhiYiDongForm QPushButton:checked,
+RunManual QPushButton:checked,
+RunAutoOne QPushButton:checked,
+RunManualMulti QPushButton:checked,
+RunAutoMulti QPushButton:checked {
+    color: white;
+    background-color: rgb(170, 85, 255);
+}
+
+ZuoBiaoXiSheZiForm QLineEdit,
+WeiZhiJiYiForm QLineEdit,
+FangDianForm QLineEdit,
+SanDianDingWeiForm QLineEdit,
+KongZhongXingForm QLineEdit,
+JiaoDingWeiForm QLineEdit,
+ZhuZhongXingForm QLineEdit,
+DuanMianForm QLineEdit,
+WeiZhiYiDongForm QLineEdit,
+RunManual QLineEdit,
+RunAutoOne QLineEdit,
+RunManualMulti QLineEdit,
+RunAutoMulti QLineEdit,
+RunAutoParamForm QLineEdit {
+    font-size: 30px;
+    background-color: rgb(195, 195, 195);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    selection-background-color: transparent;
+}
+RunAutoForm QComboBox {
+    font-size: 30px;
+    background-color: rgb(195, 195, 195);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    selection-background-color: transparent;
+}
+RunAutoForm QComboBox[enabled="true"] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+
+ZuoBiaoXiSheZiForm QLineEdit[readOnly="false"],
+WeiZhiJiYiForm QLineEdit[readOnly="false"],
+FangDianForm QLineEdit[readOnly="false"],
+SanDianDingWeiForm QLineEdit[readOnly="false"],
+KongZhongXingForm QLineEdit[readOnly="false"],
+JiaoDingWeiForm QLineEdit[readOnly="false"],
+ZhuZhongXingForm QLineEdit[readOnly="false"],
+DuanMianForm QLineEdit[readOnly="false"],
+WeiZhiYiDongForm QLineEdit[readOnly="false"],
+RunManual QLineEdit[readOnly="false"],
+RunAutoOne QLineEdit[readOnly="false"],
+RunManualMulti QLineEdit[readOnly="false"],
+RunAutoMulti QLineEdit[readOnly="false"],
+RunAutoParamForm QLineEdit[readOnly="false"] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+
+ZuoBiaoXiSheZiForm QLineEdit[readOnly="false"][isEditing="true"],
+WeiZhiJiYiForm QLineEdit[readOnly="false"][isEditing="true"],
+FangDianForm QLineEdit[readOnly="false"][isEditing="true"],
+SanDianDingWeiForm QLineEdit[readOnly="false"][isEditing="true"],
+KongZhongXingForm QLineEdit[readOnly="false"][isEditing="true"],
+JiaoDingWeiForm QLineEdit[readOnly="false"][isEditing="true"],
+ZhuZhongXingForm QLineEdit[readOnly="false"][isEditing="true"],
+DuanMianForm QLineEdit[readOnly="false"][isEditing="true"],
+WeiZhiYiDongForm QLineEdit[readOnly="false"][isEditing="true"],
+RunManual QLineEdit[readOnly="false"][isEditing="true"],
+RunAutoOne QLineEdit[readOnly="false"][isEditing="true"],
+RunManualMulti QLineEdit[readOnly="false"][isEditing="true"],
+RunAutoMulti QLineEdit[readOnly="false"][isEditing="true"],
+RunAutoParamForm QLineEdit[readOnly="false"][isEditing="true"] {
+    color: white;
+    background-color: rgb(170, 85, 255);
+}
+
+
+RunManual QTableWidget QLineEdit
+RunManualMulti QTableWidget QLineEdit {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+
+
+RunManual QTableWidget QLineEdit[readOnly="true"][isEditing="true"],
+RunManualMulti QTableWidget QLineEdit[readOnly="true"][isEditing="true"] {
+    color: white;
+    background-color: rgb(170, 85, 255);
+}
+
+RunManual QTableWidget QLineEdit[shouldRun="false"],
+RunManualMulti QTableWidget QLineEdit[shouldRun="false"] {
+    background-color: rgb(195, 195, 195);
+    color: white;
+}
+RunManual QTableWidget QLineEdit[shouldRun="true"],
+RunManualMulti QTableWidget QLineEdit[shouldRun="true"] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+
+/*RunManual QLineEditLikeButton {
+    background-color: red;
+    color: red;
+}*/
+
+
+
+RunManual QTableWidget#sdjg_table2,
+RunAutoOne QTableWidget#sdjg_table2 {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 1200px;
+}
+
+RunManualMulti QTableWidget,
+RunAutoMulti QTableWidget {
+    max-height: 250px;
+    min-height: 250px;
+}
+
+ZhuZhongXingForm QTableView,
+KongZhongXingForm QTableView,
+JiaoDingWeiForm QTableView,
+SanDianDingWeiForm QTableView {
+    font: bold 15px;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+}
+
+ZhuZhongXingForm QTableView QHeaderView::section:vertical,
+ZhuZhongXingForm QTableView QHeaderView::section:horizontal,
+KongZhongXingForm QTableView QHeaderView::section:vertical,
+KongZhongXingForm QTableView QHeaderView::section:horizontal,
+JiaoDingWeiForm QTableView QHeaderView::section:vertical,
+JiaoDingWeiForm QTableView QHeaderView::section:horizontal,
+SanDianDingWeiForm QTableView QHeaderView::section:vertical,
+SanDianDingWeiForm QTableView QHeaderView::section:horizontal,
+RunManual QTableWidget QHeaderView::section:vertical,
+RunManual QTableWidget QHeaderView::section:horizontal,
+RunAutoOne QTableWidget QHeaderView::section:vertical,
+RunAutoOne QTableWidget QHeaderView::section:horizontal,
+RunManualMulti QTableWidget QHeaderView::section:vertical,
+RunManualMulti QTableWidget QHeaderView::section:horizontal,
+RunAutoMulti QTableWidget QHeaderView::section:vertical,
+RunAutoMulti QTableWidget QHeaderView::section:horizontal {
+    font-size: 20px;
+    background-color: rgb(39, 124, 242);
+    color: rgb(208, 204, 193);
+    border: none;
+    selection-background-color: transparent;
+}
+
+ZhuZhongXingForm QTableView QHeaderView:horizontal,
+ZhuZhongXingForm QTableView QHeaderView:vertical,
+KongZhongXingForm QTableView QHeaderView:horizontal,
+KongZhongXingForm QTableView QHeaderView:vertical,
+JiaoDingWeiForm QTableView QHeaderView:horizontal,
+JiaoDingWeiForm QTableView QHeaderView:vertical,
+SanDianDingWeiForm QTableView QHeaderView:horizontal,
+SanDianDingWeiForm QTableView QHeaderView:vertical,
+RunManual QTableWidget QHeaderView:horizontal,
+RunManual QTableWidget QHeaderView:vertical,
+RunAutoOne QTableWidget QHeaderView:horizontal,
+RunAutoOne QTableWidget QHeaderView:vertical,
+RunManualMulti QTableWidget QHeaderView:horizontal,
+RunManualMulti QTableWidget QHeaderView:vertical,
+RunAutoMulti QTableWidget QHeaderView:horizontal,
+RunAutoMulti QTableWidget QHeaderView:vertical {
+    background-color: rgb(39, 124, 242);
+    color: rgb(208, 204, 193);
+    font: bold 20px;
+    gridline-color: white;
+}
+
+RunManual QTableWidget QHeaderView::vertical:selected,
+RunAutoOne QTableWidget QHeaderView::vertical:selected {
+    background-color: yellow;
+}
+
+RunManual QStackedWidget,
+RunAutoOne QStackedWidget {
+    background-color: rgb(39, 120, 190);
+}
+
+RunManual FangDianCanShuSingleForm,
+RunAutoOne FangDianCanShuSingleForm {
+    background-color: rgb(39, 120, 190);
+}
+
+RunManual QStackedWidget FangDianCanShuSingleForm QLabel,
+RunAutoOne QStackedWidget FangDianCanShuSingleForm QLabel {
+    font-size: 25px;
+    background-color: rgb(220,220,220);
+    color: rgb(14, 77, 208);
+    border: none;
+    selection-background-color: transparent;
+}
+
+RunManual QStackedWidget FangDianCanShuSingleForm QLineEdit,
+RunAutoOne QStackedWidget FangDianCanShuSingleForm QLineEdit {
+    font-size: 25px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+    max-width: 115px;
+}
+
+ZuoBiaoXiSheZiForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+WeiZhiJiYiForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+FangDianForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+SanDianDingWeiForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+KongZhongXingForm QLabel#labelPix {
+    border-image: url(:/resources/image/柱中心.png);
+    background-color: rgb(199, 230, 203);
+}
+
+JiaoDingWeiForm QLabel#labelPix {
+    border-image: url(:/resources/image/柱中心.png);
+    background-color: rgb(199, 230, 203);
+}
+
+ZhuZhongXingForm QLabel#labelPix {
+    border-image: url(:/resources/image/柱中心.png);
+    background-color: rgb(199, 230, 203);
+}
+
+DuanMianForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+HuiLingForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+WeiZhiYiDongForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+RunManual QLabel#labelPix {
+    border-image: url(:/resources/image/多个加工.png);
+    background-color: rgb(199, 230, 203);
+}
+RunManualMulti QLabel#labelPix {
+    border-image: url(:/resources/image/多个加工.png);
+    background-color: rgb(199, 230, 203);
+}
+
+RunAutoForm QLabel#labelPix {
+    border-image: url(:/resources/image/三点定圆.png);
+    background-color: rgb(199, 230, 203);
+}
+
+ZuoBiaoXiSheZiForm QTextBrowser#textBrowser,
+WeiZhiJiYiForm QTextBrowser#textBrowser,
+FangDianForm QTextBrowser#textBrowser,
+SanDianDingWeiForm QTextBrowser#textBrowser,
+KongZhongXingForm QTextBrowser#textBrowser,
+JiaoDingWeiForm QTextBrowser#textBrowser,
+ZhuZhongXingForm QTextBrowser#textBrowser,
+DuanMianForm QTextBrowser#textBrowser,
+WeiZhiYiDongForm QTextBrowser#textBrowser,
+HuiLingForm QTextBrowser#textBrowser,
+RunManual QTextBrowser#textBrowser,
+RunManualMulti QTextBrowser#textBrowser,
+RunAutoForm QTextBrowser#textBrowser {
+    background-color: rgb(199, 230, 203);
+    border: 0px;
+}
+
+
+/*其他*/
+FangDianCheShiForm QLabel, 
+FangDianCanShuForm QLabel, 
+LuoJuBuChangForm QLabel, 
+LuoJuBuChangForm QLabel, 
+XiTongSheZhiForm QLabel, 
+SettingsModbusRTU QLabel, 
+AboutForm QLabel{
+    font-size: 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    selection-background-color: transparent;
+}
+
+FangDianCheShiForm QLineEdit,
+FangDianCanShuForm QLineEdit,
+LuoJuBuChangForm QLineEdit,
+LuoJuBuChangForm QLineEdit,
+XiTongSheZhiForm QLineEdit,
+SettingsModbusRTU QLineEdit{
+    font-size: 30px;
+    background-color: rgb(195, 195, 195);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    selection-background-color: transparent;
+}
+XiTongSheZhiForm QLineEdit {
+    max-width: 200px;
+}
+XiTongSheZhiForm BoolLineEdit {
+    max-width: 200px;
+}
+
+XiTongSheZhiForm QTabBar {
+    font-size: 30px;
+}
+XiTongSheZhiForm QTabBar::tab {
+    background-color: rgb(39, 124, 242);
+    color: rgb(208, 204, 193);
+    /*    border: 2px solid;*/
+    /*border-bottom-color: #C2C7CB;*/ /* same as the pane color */
+    /*border-top-left-radius: 2px;*/
+    border-radius: 5px;
+    font-weight: bold;
+}
+XiTongSheZhiForm QTabBar::tab {
+    min-width: 200px;
+    padding: 20px;
+}
+XiTongSheZhiForm QTabBar::tab:selected {
+    background-color: rgb(65, 145, 253);
+    color: ghostwhite;
+}
+
+ZuoBiaoXiSheZiForm QLineEdit[readOnly="false"],
+FangDianCheShiForm QLineEdit[readOnly="false"],
+FangDianCanShuForm QLineEdit[readOnly="false"],
+LuoJuBuChangForm QLineEdit[readOnly="false"],
+LuoJuBuChangForm QLineEdit[readOnly="false"],
+XiTongSheZhiForm QLineEdit[readOnly="false"],
+SettingsModbusRTU QLineEdit[readOnly="false"] {
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+
+ZuoBiaoXiSheZiForm QLineEdit[readOnly="false"][isEditing="true"],
+FangDianCheShiForm QLineEdit[readOnly="false"][isEditing="true"],
+FangDianCanShuForm QLineEdit[readOnly="false"][isEditing="true"],
+LuoJuBuChangForm QLineEdit[readOnly="false"][isEditing="true"],
+LuoJuBuChangForm QLineEdit[readOnly="false"][isEditing="true"],
+XiTongSheZhiForm QLineEdit[readOnly="false"][isEditing="true"],
+SettingsModbusRTU QLineEdit[readOnly="false"][isEditing="true"] {
+    color: white;
+    background-color: rgb(170, 85, 255);
+}
+
+
+LuoJuBuChangForm QTableWidget,
+FangDianCanShuForm QTableWidget {
+    font: bold 15px;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    vertical-align: middle;
+    border: 0px;
+}
+LuoJuBuChangForm QTableWidget QHeaderView::section:vertical,
+LuoJuBuChangForm QTableWidget QHeaderView::section:horizontal,
+FangDianCanShuForm QTableWidget QHeaderView::section:vertical,
+FangDianCanShuForm QTableWidget QHeaderView::section:horizontal {
+    font-size: 20px;
+    background-color: rgb(128, 128, 128);
+    color: white;
+    border: none;
+    selection-background-color: transparent;
+}
+LuoJuBuChangForm QTableWidget QHeaderView:horizontal,
+LuoJuBuChangForm QTableWidget QHeaderView:vertical,
+FangDianCanShuForm QTableWidget QHeaderView:horizontal,
+FangDianCanShuForm QTableWidget QHeaderView:vertical {
+    background-color: rgb(220, 220, 220);
+    color: white;
+    font: bold 20px;
+    gridline-color: white;
+}
+
+
+SettingsModbusRTU QPushButton {
+    font: bold 30px;
+    color: black;
+    background-color: rgb(225, 225, 225);
+}
+
+FangDianCanShuForm QPushButton#btnExport,
+FangDianCanShuForm QPushButton#btnImport,
+LuoJuBuChangForm QPushButton#btnExport,
+LuoJuBuChangForm QPushButton#btnImport
+{
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    min-width: 150px;
+}
+
+/*编辑*/
+MdiForm QToolButton#btnKeyboard,
+NcEditForm QToolButton#btnNew,
+NcEditForm QToolButton#btnOpen,
+NcEditForm QToolButton#btnSave,
+NcEditForm QToolButton#btnSaveTo,
+NcEditForm QToolButton#btnImport,
+NcEditForm QToolButton#btnExport,
+NcEditForm QToolButton#btnClose,
+NcEditForm QToolButton#btnUndo,
+NcEditForm QToolButton#btnRedo,
+NcEditForm QToolButton#btnCut,
+NcEditForm QToolButton#btnCopy,
+NcEditForm QToolButton#btnPaste,
+NcEditForm QToolButton#btnDelete,
+NcEditForm QToolButton#btnSelectAll,
+NcEditForm QToolButton#btnFind,
+NcEditForm QToolButton#btnFindNext,
+NcEditForm QToolButton#btnKeyboard {
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    min-width: 150px;
+}
+MdiForm QToolButton#btnKeyboard:pressed,
+NcEditForm QToolButton#btnNew:pressed,
+NcEditForm QToolButton#btnOpen:pressed,
+NcEditForm QToolButton#btnSave:pressed,
+NcEditForm QToolButton#btnClose:pressed,
+NcEditForm QToolButton#btnUndo:pressed,
+NcEditForm QToolButton#btnRedo:pressed,
+NcEditForm QToolButton#btnCut:pressed,
+NcEditForm QToolButton#btnCopy:pressed,
+NcEditForm QToolButton#btnPaste:pressed,
+NcEditForm QToolButton#btnDelete:pressed,
+NcEditForm QToolButton#btnSelectAll:pressed,
+NcEditForm QToolButton#btnFind:pressed,
+NcEditForm QToolButton#btnFindNext:pressed,
+NcEditForm QToolButton#btnKeyboard:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+/*MdiForm QPushButton,
+NcEditForm QPushButton {
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    min-width: 150px;
+}
+
+MdiForm QPushButton:pressed,
+NcEditForm QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}*/
+
+QFileDialog {
+    font-size: 90px;
+}
+NFileDialog {
+    font-size: 90px;
+    height: 500px;
+    width: 300px;
+}
+
+ZuoBiaoXiSheZiForm QLabel#lblSetAxisZero,
+ZuoBiaoXiSheZiForm QLabel#lblSetAxisHalf,
+DuanMianForm QLabel#lblSetAxisZero,
+DuanMianForm QLabel#lblSetAxisHalf,
+FangDianForm QLabel#lblSetAxisZero,
+FangDianForm QLabel#lblSetAxisHalf,
+ZhuZhongXingForm QLabel#lblSetAxisZero,
+ZhuZhongXingForm QLabel#lblSwitchCoor,
+KongZhongXingForm QLabel#lblSetAxisZero,
+KongZhongXingForm QLabel#lblSwitchCoor {
+    background-color: rgb(22, 77, 160);
+    color: white;
+}
+
+FangDianForm FangDianCanShuSingleForm QLabel {
+    font: bold 35px;
+    background-color: rgb(220,220,220);
+    color: rgb(14, 77, 208);
+    border: none;
+    selection-background-color: transparent;
+}
+
+FangDianForm FangDianCanShuSingleForm QLineEdit {
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    max-width: 100px;
+}
+
+
+QWidget#dialogFangDianCheShiRealtime QDialogButtonBox QPushButton,
+QWidget#dialogGaotiao4Jiagong QDialogButtonBox QPushButton {
+    font: bold 40px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+QWidget#dialogFangDianCheShiRealtime QDialogButtonBox QPushButton:pressed,
+QWidget#dialogGaotiao4Jiagong QDialogButtonBox QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(51, 33, 117, 255), stop:1 rgba(4, 129, 129, 255));*/
+QWidget#dialogFangDianCheShiRealtime,
+QWidget#dialogGaotiao4Jiagong {
+    background-color: rgb(39, 120, 190);
+}
+
+QWidget#dialogFangDianCheShiRealtime FangDianCanShuSingleForm QLabel {
+    font-size: 15px;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+QWidget#dialogGaotiao4Jiagong QLabel {
+    color: white;
+    font-size: 40px;
+}
+
+QWidget#dialogFangDianCheShiRealtime FangDianCanShuSingleForm QLineEdit {
+    font-size: 35px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+    max-width: 135px;
+}
+
+QWidget#dialogGaotiao4Jiagong QLineEdit {
+    font-size: 35px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+}
+QWidget#dialogGaotiao4Jiagong QWidget#Gaotiao4JiagongClass BoolLineEdit QPushButton {
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid white;
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    min-width: 110px;
+}
+QWidget#dialogGaotiao4Jiagong QWidget#Gaotiao4JiagongClass BoolLineEdit QPushButton:checked {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+QWidget#dialogFangDianCheShiRealtime FangDianCanShuSingleForm QDialogButtonBox,
+QWidget#dialogGaotiao4Jiagong QWidget#Gaotiao4JiagongClass QDialogButtonBox {
+    font: bold 30px;
+    color: green;
+}
+
+MultiButtonsWidget QPushButton {
+    color: black;
+    background-color: rgb(220, 220, 220);
+    border: 2px solid;
+    width: 75px;
+    font-size: 25px;
+}
+
+MultiButtonsWidget QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+/*QMenu#btnCoorMenu {
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+    padding: 2px;
+}*/
+QMenu#btnCoorMenu::item {
+    padding: 2px 10px;
+    color: black;
+}
+QMenu#btnCoorMenu::item:pressed,
+QMenu#btnCoorMenu::item:selected {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+/*QMenu::item:disabled {
+    color: gray;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: #CCCCCC;
+}*/
+
+
+Tool4ZeroAndHalfAxis QFrame#frame {
+    border: 0px solid white;
+    background-color: rgb(240, 240, 240);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/*Tool4ZeroAxis QLabel,
+Tool4HalfAxis QLabel,
+Tool4SwitchCoor QLabel,
+Tool4LoadSave QLabel {
+    background-color: rgb(22, 77, 160);
+    color: white;
+}*/
+
+Tool4ZeroAxis QPushButton,
+Tool4HalfAxis QPushButton,
+Tool4SwitchCoor QPushButton,
+Tool4IterCoor QPushButton,
+Tool4LoadSave QPushButton,
+Tool4PosSet QPushButton,
+Tool4CoorSet QPushButton,
+Tool4GCode QPushButton,
+Tool4Buttons QPushButton {
+    font-family: Microsoft YaHei UI;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(128, 128, 128);
+    min-height: 45px;
+    height: 45px;
+}
+
+Tool4ZeroAxis QPushButton:pressed,
+Tool4HalfAxis QPushButton:pressed,
+Tool4SwitchCoor QPushButton:pressed,
+Tool4IterCoor QPushButton:pressed,
+Tool4LoadSave QPushButton:pressed,
+Tool4PosSet QPushButton:pressed,
+Tool4CoorSet QPushButton:pressed,
+Tool4GCode QPushButton:pressed,
+Tool4Buttons QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+/* 键盘*/
+QDialog#QNumericPadClass {
+    background-color: rgb(240, 240, 240);
+}
+
+QDialog#QNumericPadClass QPushButton {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(128, 128, 128);
+}
+
+
+QDialog#QNumericPadClass QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+QDialog#WidgetKeyboard QToolButton {
+    font-family: Consolas;
+    font-size: 25px;
+    font-weight: normal;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(128, 128, 128);
+}
+
+
+QDialog#WidgetKeyboard QToolButton:pressed {
+    font-family: Consolas;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}

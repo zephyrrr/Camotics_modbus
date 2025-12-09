@@ -1,0 +1,16 @@
+{
+    "SPEED_CMV_T": "200",
+    "SPEED_CMV_TOZIG_T": "200",
+    "SPEED_CMV_TOZIG_V": "36",
+    "SPEED_CMV_V": "36",
+    "SPEED_JOG_T_U": "100",
+    "SPEED_JOG_T_X": "100",
+    "SPEED_JOG_T_Y": "100",
+    "SPEED_JOG_T_Z": "100",
+    "SPEED_JOG_V_U": "2400",
+    "SPEED_JOG_V_X": "2400",
+    "SPEED_JOG_V_Y": "2400",
+    "SPEED_JOG_V_Z": "2400",
+    "SPEED_LOC_T": "200",
+    "SPEED_LOC_V": "1800"
+}

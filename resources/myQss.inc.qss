@@ -1,0 +1,6 @@
+﻿QWidget#topinfobar QLabel#labelFileName0 {
+    color: black;
+    font-size: 15px;
+    text-align: right;
+    qproperty-alignment: AlignRight;
+}

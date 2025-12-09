@@ -1,0 +1,3459 @@
+﻿/*
+主界面
+控制按键
+键盘
+主菜单
+二级菜单
+功能按键
+顶部信息栏
+
+坐标设置
+移动
+端面
+柱中心
+孔中心
+放电位置决定
+任意三点自动
+坐标记忆
+
+编辑
+加工
+手动直线
+多数任意
+手动圆弧
+手动螺纹
+
+设定-密码
+设定-标志-标志
+设定-标志-主机
+设定-标志-NC
+设定-标志-放电
+设定-标志-电机
+设定-标志-各轴
+设定-标志-ATC
+设定-标志-Jog（JogPW写一起）
+设定-标志-螺距补偿
+设定-数据
+设定-时间
+设定-颜色
+设定-H表
+
+管理-密码
+管理-IO管理
+管理-LOCK
+
+显示
+
+网络
+
+加工计划
+加工位置
+条件详细
+
+
+
+
+*/
+
+/*全局*/
+/*滚动条*/
+QScrollBar:vertical
+{
+	margin:40px 0px 40px 0px;
+	background-color:#ffffff;
+	border:0px;
+	width:40px;
+}
+
+QScrollBar::handle:vertical
+{
+	background-color:#5b5b5b;
+	border-radius:20px;
+	width:40px;
+}
+
+QScrollBar::sub-line:vertical
+{
+	subcontrol-position:top;
+	subcontrol-origin:margin;
+	height:40px;
+}
+
+QScrollBar::add-line:vertical
+{
+	subcontrol-position:bottom;
+	subcontrol-origin:margin;
+	height:40px;
+}
+
+QScrollBar::up-arrow:vertical
+{
+	width:12px;
+	height:6px;
+}
+
+QScrollBar::down-arrow:vertical
+{
+	width:12px;
+	height:6px;
+}
+
+QScrollBar::sub-page:vertical,QScrollBar::add-page:vertical
+{
+	background-color:#ffffff;
+}
+
+
+
+
+/*水平滚动条*/
+QScrollBar:horizontal
+{
+        margin:40px 0px 40px 0px;
+        background-color:#ffffff;
+        border:0px;
+        width:40px;
+}
+QWidget#title_top
+{
+    background-color: rgb(40, 40, 40);
+    color: rgb(192, 192, 192);
+    border:2px groove gray;
+}
+QLabel#titlepage
+{
+    color: rgb(192, 192, 192);
+    font: 20pt "SimSun-ExtB";
+}
+QScrollBar::handle:horizontal
+{
+        background-color:#5b5b5b;
+        border-radius:20px;
+        width:40px;
+}
+
+QScrollBar::sub-line:horizontal
+{
+        subcontrol-position:top;
+        subcontrol-origin:margin;
+        height:40px;
+}
+
+QScrollBar::add-line:horizontal
+{
+        subcontrol-position:bottom;
+        subcontrol-origin:margin;
+        height:40px;
+}
+
+QScrollBar::up-arrow:horizontal
+{
+        width:12px;
+        height:6px;
+}
+
+QScrollBar::down-arrow:horizontal
+{
+        width:12px;
+        height:6px;
+}
+
+QScrollBar::sub-page:horizontal,QScrollBar::add-page:horizontal
+{
+        background-color:#ffffff;
+}
+
+
+
+
+
+
+
+
+/*主界面*/
+QWidget#mainWidget
+{
+    background-color:#9ab8d4;
+    border:2px solid black;
+    border-radius:8px;
+}
+
+/*主界面的时间-深度图*/
+depthTimeMap#depthMap .QWidget
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(188, 28, 65, 255), stop:1 rgba(0, 43, 143, 255));
+}
+
+depthTimeMap#depthMap QLabel
+{
+	color:black;
+        background-color: #9bb9d5;
+	border:0px solid black;
+}
+
+depthTimeMap#depthMap QToolButton#amplifyBtn
+{
+	border-image: url(:/icon/res/icon/enlarge.png);
+}
+depthTimeMap#depthMap QToolButton#reduceBtn
+{
+	border-image: url(:/icon/res/icon/narrow.png);
+}
+depthTimeMap#depthMap QToolButton#fullDisplay
+{
+	border-image: url(:/icon/res/icon/restore.png);
+}
+
+QWidget#mainWidget QToolButton#rightBtn,
+QWidget#mainWidget QToolButton#leftBtn
+{
+	color:black;
+        background-color: #9bb9d5;
+	border:1px solid black;
+}
+
+QWidget#mainWidget QToolButton#rightBtn:pressed,
+QWidget#mainWidget QToolButton#leftBtn:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border:1px solid black;
+}
+
+
+
+/*主界面的加工条件*/
+mainProCondition#mainprocesscondition QPushButton
+{
+	color:black;
+	background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+mainProCondition#mainprocesscondition QPushButton:disabled
+{
+	color:black;
+        background-color: #9bb9d5;
+	border:0px solid black;
+}
+mainProCondition#mainprocesscondition QLabel
+{
+	color:black;
+        background-color: #9bb9d5;
+	border:0px solid black;
+}
+
+
+/*主界面的QTableView*/
+QWidget#mainWindow QTableView#tableView
+{
+    background-color:#9bb9d5;
+    color : black;
+    border:none;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+
+QWidget#mainWindow QLabel#labelCurCoor,
+QWidget#mainWindow QLabel#label_4
+{
+    background-color:#9bb9d5;
+    color : black;
+}
+
+QWidget#mainWindow QFrame#coorFrame3,
+QWidget#mainWindow QFrame#coorFrame4
+{
+        background-color:#9bb9d5;
+    color : black;
+	border:1px solid black;
+}
+
+
+QWidget#mainWindow QTableView#tableView1
+{
+    background-color:#9bb9d5;
+    color : black;
+    border:0px solid black;
+    padding-right:0px;
+}
+QWidget#mainWindow QTableView#tableView2
+{
+    background-color:#9bb9d5;
+    color : black;
+    border:0px solid black;
+    padding-right:0px;
+}
+QWidget#mainWindow QTableView#tableView3
+{
+    background-color:#9bb9d5;
+    color : black;
+    border:0px solid black;
+    padding-right:0px;
+}
+QWidget#mainWindow QTableView#machTableView
+{
+    background-color:#9bb9d5;
+    color : black;
+    border:0px solid black;
+        padding-left:0px;
+    padding-right:0px;
+}
+
+
+
+
+/*控制按键*/
+QWidget#widgetIOcontrol QToolButton#toolButtonStart,
+QWidget#widgetIOcontrol QToolButton#toolButtonStop,
+QWidget#widgetIOcontrol QToolButton#toolButtonEStop,
+QWidget#widgetIOcontrol QToolButton#toolButtonReset,
+QWidget#widgetIOcontrol QToolButton#pushButton_dmp,
+QWidget#widgetIOcontrol QToolButton#toolButtonExit
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+    border-left:2px solid white;
+    border-top:2px solid white;
+    border-right:2px solid black;
+    border-bottom:2px solid black;
+}
+
+QWidget#widgetIOcontrol QToolButton#toolButtonStart:pressed,
+QWidget#widgetIOcontrol QToolButton#toolButtonStop:pressed,
+QWidget#widgetIOcontrol QToolButton#toolButtonEStop:pressed,
+QWidget#widgetIOcontrol QToolButton#toolButtonReset:pressed,
+QWidget#widgetIOcontrol QToolButton#pushButton_dmp:pressed,
+QWidget#widgetIOcontrol QToolButton#toolButtonExit:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+/*键盘*/
+QWidget#keyBoardWidget
+{
+        /*background-color: rgb(128, 128, 128);*/
+}
+
+
+QWidget#keyWidget QToolButton
+{
+    color:rgb(255, 255, 255);
+    background-color:rgb(40, 40, 40);
+    border:1px solid rgb(0, 0, 0);
+    border-radius:5px;
+}
+
+
+QWidget#keyWidget QToolButton:pressed
+{
+    color:white;
+    background-color: rgb(68, 128, 42);
+    border:1px solid rgb(128, 128, 128);
+    border-radius:5px;
+}
+
+QWidget#keypad2 QToolButton
+{
+    background-color:rgb(255, 255, 255);
+    color:rgb(40, 40, 40);
+    border:1px solid rgb(0, 0, 0);
+    border-radius:5px;
+}
+
+
+QWidget#keypad2 QToolButton:pressed
+{
+    color:white;
+    background-color: rgb(68, 128, 42);
+    border:1px solid rgb(128, 128, 128);
+    border-radius:5px;
+}
+/*
+QWidget keyPad QToolButton#ButtonCAPS
+{
+    color:black;
+    background-color: rgb(255, 255, 255);
+    border:1px solid black;
+}
+
+//ButtonCAPS设置checkable后，一直锁定在true无法翻转为false
+QWidget keyPad QToolButton#ButtonCAPS:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border:1px solid black;
+}
+
+*/
+
+
+
+QWidget keyPad QWidget#widget_14
+{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(188, 28, 65, 255), stop:1 rgba(0, 43, 143, 255));
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+}
+
+
+
+QWidget keyPad QLabel#label_4
+{
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:0px;
+    background:transparent;
+    font: 75 12pt "Arial";
+}
+
+QWidget keyPad QLabel#label_5
+{
+    background:transparent;
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:15px;
+}
+
+
+
+
+/*主菜单*/
+QWidget#rightWidget
+{
+background:#9db6d4;
+
+}
+QWidget#mainMenuWidget QToolButton#mainBtn,
+QWidget#mainMenuWidget QToolButton#manualBtn,
+QWidget#mainMenuWidget QToolButton#editBtn,
+QWidget#mainMenuWidget QToolButton#processBtn,
+QWidget#mainMenuWidget QToolButton#optionBtn,
+QWidget#mainMenuWidget QToolButton#displayBtn,
+QWidget#mainMenuWidget QToolButton#display3DBtn,
+QWidget#mainMenuWidget QToolButton#autoBtn,
+QWidget#mainMenuWidget QToolButton#handBoxBtn,
+QWidget#mainMenuWidget QToolButton#voltageWaveformBtn,
+QWidget#mainMenuWidget QToolButton#processConditionBtn,
+QWidget#mainMenuWidget QToolButton#handBoxBtn,
+QWidget#mainMenuWidget QPushButton#pushButton_10,
+QWidget#mainMenuWidget QPushButton#pushButton_3,
+QWidget#mainMenuWidget QPushButton#pushButton_4,
+QWidget#mainMenuWidget QPushButton#pushButton_5,
+QWidget#mainMenuWidget QPushButton#pushButton_6,
+QWidget#mainMenuWidget QPushButton#pushButton_7,
+QWidget#mainMenuWidget QPushButton#pushButton_8,
+QWidget#mainMenuWidget QPushButton#pushButton_9
+{
+    color:white;
+    background-color: #22578b;
+    border-left:2px outset  white;
+    border-top:2px outset  white;
+    border-right:2px outset black;
+    border-bottom:2px outset black;
+
+}
+QWidget#mainMenuWidget QToolButton#mainBtn:checked,
+QWidget#mainMenuWidget QToolButton#manualBtn:checked,
+QWidget#mainMenuWidget QToolButton#editBtn:checked,
+QWidget#mainMenuWidget QToolButton#processBtn:checked,
+QWidget#mainMenuWidget QToolButton#optionBtn:checked,
+QWidget#mainMenuWidget QToolButton#displayBtn:checked,
+QWidget#mainMenuWidget QToolButton#display3DBtn:checked,
+QWidget#mainMenuWidget QToolButton#autoBtn:checked,
+QWidget#mainMenuWidget QToolButton#handBoxBtn:checked,
+QWidget#mainMenuWidget QToolButton#voltageWaveformBtn:checked,
+QWidget#mainMenuWidget QToolButton#processConditionBtn:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_10:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_3:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_4:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_5:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_6:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_7:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_8:checked,
+QWidget#mainMenuWidget QPushButton#pushButton_9:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px inset black;
+    border-top:2px inset black;
+    border-right:2px inset white;
+    border-bottom:2px inset white;
+}
+
+
+
+
+
+/*二级菜单*/
+QWidget secondMenu QToolButton
+{
+    color:white;
+    background-color: #3b6b9c;
+    border: 2px solid white;
+    border:2px solid black;
+
+}
+
+QWidget secondMenu QToolButton:disabled
+{
+    color:white;
+    background-color: grey;
+    border-left:2px solid white black;
+    border-top:2px solid white black;
+    border-right:2px solid black;
+    border-bottom:2px solid black;
+}
+
+QWidget secondMenu QToolButton:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*功能按键*/
+QWidget functionKey#featureOptions1 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions1.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions2 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions2.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions3 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions3.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions4 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions4.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions5 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions5.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions6 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions6.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions7 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions7.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions8 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions8.png");
+    background:transparent;
+}
+QWidget functionKey#featureOptions9 QLabel#label
+{
+    border-image: url(":/res/static/featureOptions9.png");
+    background:transparent;
+}
+
+
+
+
+
+/*
+QWidget functionKey
+{
+    background-color: rgb(218, 214, 212);
+}
+
+
+QWidget functionKey#featureOptions1 QToolButton#toolButton,
+QWidget functionKey#featureOptions2 QToolButton#toolButton,
+QWidget functionKey#featureOptions3 QToolButton#toolButton,
+QWidget functionKey#featureOptions4 QToolButton#toolButton,
+QWidget functionKey#featureOptions5 QToolButton#toolButton,
+QWidget functionKey#featureOptions6 QToolButton#toolButton,
+QWidget functionKey#featureOptions7 QToolButton#toolButton,
+QWidget functionKey#featureOptions8 QToolButton#toolButton,
+QWidget functionKey#featureOptions9 QToolButton#toolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid black;
+}
+
+
+
+QWidget functionKey#featureOptions1 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions2 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions3 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions4 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions5 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions6 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions7 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions8 QToolButton#toolButton:checked,
+QWidget functionKey#featureOptions9 QToolButton#toolButton:checked
+{
+    color:red;
+    background-color: #8fb1cd;
+    border: 1px solid black;
+}
+
+
+*/
+
+
+
+
+
+/*顶部信息栏*/
+/*color : white;*/
+topInfoBar#topinfobar
+{
+    background-color:#9bb9d5;
+}
+topInfoBar#topinfobar QLabel#label_3
+{
+    background-color:#bf0103;
+    color : white;
+}
+topInfoBar#topinfobar QTableView#tableView
+{
+    background-color:#23588c;
+    color : #15d91b;
+    border:1px solid black;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+
+topInfoBar#topinfobar QLabel#label,
+topInfoBar#topinfobar QLabel#labelFileName,
+topInfoBar#topinfobar QLabel#CNCstate,
+topInfoBar#topinfobar QLabel#label_3
+{
+    background-color:#f0f0f0;
+    color : black;
+    border:1px solid black;
+}
+
+topInfoBar#topinfobar QLabel#currentCoor
+{
+    background-color:#0f325c;
+    color : #20eb3b;
+    border:1px solid black;
+}
+
+
+topInfoBar#topinfobar QLabel#label_3,
+topInfoBar#topinfobar QLabel#label_5
+{
+    color : black;
+    border:1px solid black;
+}
+
+
+
+topInfoBar#topinfobar QLabel#labelDateTime,
+topInfoBar#topinfobar QLabel#labelTips
+{
+    background-color:#0c3159;
+    color : white;
+    border:0px solid black;
+}
+
+topInfoBar#topinfobar QLabel#labelST,
+topInfoBar#topinfobar QLabel#pump,
+topInfoBar#topinfobar QLabel#G24warn,
+topInfoBar#topinfobar QLabel#tlabel_1,
+topInfoBar#topinfobar QLabel#tlabel_2,
+topInfoBar#topinfobar QLabel#tlabel_3,
+topInfoBar#topinfobar QLabel#tlabel_4,
+topInfoBar#topinfobar QLabel#tlabel_5,
+topInfoBar#topinfobar QLabel#tlabel_6,
+topInfoBar#topinfobar QLabel#tlabel_7,
+topInfoBar#topinfobar QLabel#tlabel_8,
+topInfoBar#topinfobar QLabel#tlabel_9,
+topInfoBar#topinfobar QLabel#labelFloat
+{
+    background-color:#0c3159;
+    color : #ffffff;
+    border:1px solid white;
+}
+
+
+topInfoBar#topinfobar QLabel#label_8,
+topInfoBar#topinfobar QLabel#label_10,
+topInfoBar#topinfobar QLabel#label_13,
+topInfoBar#topinfobar QLabel#label_15,
+topInfoBar#topinfobar QLabel#label_17,
+topInfoBar#topinfobar QLabel#label_18
+{
+    background-color:#0c335c;
+    color : #fefc03;
+    border-left:0px solid black;
+    border-bottom:0px solid black;
+    border-top:0px solid black;
+}
+
+topInfoBar#topinfobar QLabel#label_4,
+topInfoBar#topinfobar QLabel#label_6
+{
+    background-color:#0c335c;
+    color : white;
+    border-bottom:0px solid black;
+    border-top:0px solid black;
+}
+
+topInfoBar#topinfobar QLabel#labelLength,
+topInfoBar#topinfobar QLabel#labelRemnantLength,
+topInfoBar#topinfobar QLabel#labelG04RemnantTime,
+topInfoBar#topinfobar QLabel#labelRemnantTime,
+topInfoBar#topinfobar QLabel#labelProcessTime,
+topInfoBar#topinfobar QLabel#labelSegmentProcessTime,
+topInfoBar#topinfobar QLabel#labelProcessSpeed
+{
+    background-color:#0c335c;
+    color : white;
+    border-right:0px solid black;
+    border-bottom:0px solid black;
+    border-top:0px solid black;
+}
+
+topInfoBar#topinfobar QLabel#label_2,
+topInfoBar#topinfobar QLabel#label_19,
+topInfoBar#topinfobar QLabel#label_9,
+topInfoBar#topinfobar QLabel#label_11,
+topInfoBar#topinfobar QLabel#label_14,
+topInfoBar#topinfobar QLabel#label_12,
+topInfoBar#topinfobar QLabel#label_5,
+topInfoBar#topinfobar QLabel#nlabel_1,
+topInfoBar#topinfobar QLabel#nlabel_2,
+topInfoBar#topinfobar QLabel#labelProcessSpeed,
+topInfoBar#topinfobar QLabel#nlabel_4,
+topInfoBar#topinfobar QLabel#labelT1
+{
+    background-color:#0c335c;
+    color : #89d4d9;
+    border-right:0px solid black;
+    border-bottom:0px solid black;
+    border-top:0px solid black;
+}
+
+
+topInfoBar#topinfobar QWidget#widget_39
+{
+    background-color:#0c335c;
+    border:0px solid black;
+}
+
+
+topInfoBar#topinfobar QToolButton#errorDetail
+{
+    color:#fefc03;
+    background-color: #23588c;
+    border:0px solid black;
+}
+topInfoBar#topinfobar QToolButton#errorDetail:checked
+{
+    color:white;
+    background-color: #9bb9d5;
+    border-top:1px solid black;
+    border-left:1px solid black;
+    border-bottom:1px solid black;
+    border-right:1px solid black;
+}
+
+
+
+topInfoBar#topinfobar QLabel#labelLogo
+{
+    border:1px solid black;
+}
+
+
+
+
+
+/*坐标设置*/
+
+positionSet#positionset
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+positionSet#positionset QTableView#tableView
+{
+    selection-background-color:rgb(7,203,7);
+    background-color:black;
+}
+
+positionSet#positionset QToolButton#halfXbtn,
+positionSet#positionset QToolButton#halfYbtn,
+positionSet#positionset QToolButton#halfZbtn,
+positionSet#positionset QToolButton#previousPageBtn,
+positionSet#positionset QToolButton#nextPageBtn
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+    border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+positionSet#positionset QToolButton#halfXbtn:checked,
+positionSet#positionset QToolButton#halfYbtn:checked,
+positionSet#positionset QToolButton#halfZbtn:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+positionSet#positionset QToolButton#previousPageBtn:pressed,
+positionSet#positionset QToolButton#nextPageBtn:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+positionSet#positionset QLabel#labelPix
+{
+    border-image: url(:/res/manual/PositionSet.png);
+}
+
+positionSet#positionset QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+
+
+
+/*移动*/
+manualMove#move
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+manualMove#move QLabel#labelPix
+{
+    border-image: url(:/res/manual/yidong.PNG);
+}
+
+manualMove#move QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+
+manualMove#move QLabel#label,
+manualMove#move QLabel#label_2,
+manualMove#move QLabel#label_3,
+manualMove#move QLabel#label_4,
+manualMove#move QLabel#label_5,
+manualMove#move QLabel#label_6,
+manualMove#move QLabel#label_7,
+manualMove#move QLabel#label_8,
+manualMove#move QLabel#label_9,
+manualMove#move QLabel#label_10,
+manualMove#move QLabel#label_11,
+manualMove#move QLabel#label_12,
+manualMove#move QLabel#label_13,
+manualMove#move QLabel#label_14,
+manualMove#move QLabel#label_15,
+manualMove#move QLabel#label_16,
+manualMove#move QLabel#label_17
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+
+manualMove#move QToolButton#btnMoveXorder:disabled,
+manualMove#move QToolButton#btnMoveYorder:disabled,
+manualMove#move QToolButton#btnMoveZorder:disabled,
+manualMove#move QToolButton#btnMoveUorder:disabled
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+manualMove#move QToolButton#btnMove,
+manualMove#move QToolButton#btnLimit,
+manualMove#move QToolButton#btnHalf,
+manualMove#move QToolButton#btnCoor1,
+manualMove#move QToolButton#btnCoor2,
+manualMove#move QToolButton#btnCoor3,
+manualMove#move QToolButton#btnCoor4,
+manualMove#move QToolButton#btnCoor5,
+manualMove#move QToolButton#btnCoor6,
+manualMove#move QToolButton#btnAbsolute,
+manualMove#move QToolButton#btnRelative,
+manualMove#move QToolButton#btnON,
+manualMove#move QToolButton#btnOFF,
+manualMove#move QToolButton#btnX1,
+manualMove#move QToolButton#btnX2,
+manualMove#move QToolButton#btnX3,
+manualMove#move QToolButton#btnY1,
+manualMove#move QToolButton#btnY2,
+manualMove#move QToolButton#btnY3,
+manualMove#move QToolButton#btnZ1,
+manualMove#move QToolButton#btnZ2,
+manualMove#move QToolButton#btnZ3,
+manualMove#move QToolButton#btnIncrease1,
+manualMove#move QToolButton#btnIncrease2,
+manualMove#move QToolButton#btnIncrease3,
+manualMove#move QToolButton#btnDecrease1,
+manualMove#move QToolButton#btnDecrease2,
+manualMove#move QToolButton#btnDecrease3,
+manualMove#move QToolButton#btnMoveX,
+manualMove#move QToolButton#btnMoveY,
+manualMove#move QToolButton#btnMoveZ,
+manualMove#move QToolButton#btnMoveU,
+manualMove#move QToolButton#btnMoveXorder,
+manualMove#move QToolButton#btnMoveYorder,
+manualMove#move QToolButton#btnMoveZorder,
+manualMove#move QToolButton#btnMoveUorder
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+manualMove#move QToolButton#btnMove:checked,
+manualMove#move QToolButton#btnLimit:checked,
+manualMove#move QToolButton#btnHalf:checked,
+manualMove#move QToolButton#btnCoor1:checked,
+manualMove#move QToolButton#btnCoor2:checked,
+manualMove#move QToolButton#btnCoor3:checked,
+manualMove#move QToolButton#btnCoor4:checked,
+manualMove#move QToolButton#btnCoor5:checked,
+manualMove#move QToolButton#btnCoor6:checked,
+manualMove#move QToolButton#btnAbsolute:checked,
+manualMove#move QToolButton#btnRelative:checked,
+manualMove#move QToolButton#btnON:checked,
+manualMove#move QToolButton#btnOFF:checked,
+manualMove#move QToolButton#btnX1:checked,
+manualMove#move QToolButton#btnX2:checked,
+manualMove#move QToolButton#btnX3:checked,
+manualMove#move QToolButton#btnY1:checked,
+manualMove#move QToolButton#btnY2:checked,
+manualMove#move QToolButton#btnY3:checked,
+manualMove#move QToolButton#btnZ1:checked,
+manualMove#move QToolButton#btnZ2:checked,
+manualMove#move QToolButton#btnZ3:checked,
+manualMove#move QToolButton#btnIncrease1:checked,
+manualMove#move QToolButton#btnIncrease2:checked,
+manualMove#move QToolButton#btnIncrease3:checked,
+manualMove#move QToolButton#btnDecrease1:checked,
+manualMove#move QToolButton#btnDecrease2:checked,
+manualMove#move QToolButton#btnDecrease3:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+manualMove#move QToolButton#btnLeft,
+manualMove#move QToolButton#btnRight
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+manualMove#move QToolButton#btnLeft:pressed,
+manualMove#move QToolButton#btnRight:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*端面*/
+headFace#headface{
+    background-color: #9bb9d5;/*背景*/
+}
+headFace#headface QLabel#labelPix
+{
+    border-image: url(:/res/manual/duanmian.png);
+}
+
+headFace#headface QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+headFace#headface QToolButton#btnDetail,
+headFace#headface QToolButton#btnSimpleX,
+headFace#headface QToolButton#btnSimpleY,
+headFace#headface QToolButton#btnSimpleZ,
+headFace#headface QToolButton#btnSimpleIncrease,
+headFace#headface QToolButton#btnSimpleDecrease,
+headFace#headface QToolButton#btnSimpleIncrease_2,
+headFace#headface QToolButton#btnSimpleDecrease_2,
+headFace#headface QToolButton#btnDetailX1,
+headFace#headface QToolButton#btnDetailY1,
+headFace#headface QToolButton#btnDetailZ1,
+headFace#headface QToolButton#btnDetailX2,
+headFace#headface QToolButton#btnDetailY2,
+headFace#headface QToolButton#btnDetailZ2,
+headFace#headface QToolButton#btnON,
+headFace#headface QToolButton#btnOFF,
+headFace#headface QToolButton#btnAbsolute,
+headFace#headface QToolButton#btnRelative,
+headFace#headface QToolButton#btnDetailDis1,
+headFace#headface QToolButton#btnDetailDis2,
+headFace#headface QToolButton#btnContactReturn,
+headFace#headface QToolButton#btnTestMoveX,
+headFace#headface QToolButton#btnTestMoveY,
+headFace#headface QToolButton#btnTestMoveZ,
+headFace#headface QToolButton#btnAxisX_0,
+headFace#headface QToolButton#btnAxisY_0,
+headFace#headface QToolButton#btnAxisZ_0,
+headFace#headface QToolButton#btnAxisX_2,
+headFace#headface QToolButton#btnAxisY_2,
+headFace#headface QToolButton#btnAxisZ_2,
+headFace#headface QToolButton#btnX0,
+headFace#headface QToolButton#btnY0,
+headFace#headface QToolButton#btnZ0,
+headFace#headface QToolButton#btnXhalf,
+headFace#headface QToolButton#btnYhalf,
+headFace#headface QToolButton#btnZhalf
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+headFace#headface QToolButton#btnDetail:checked,
+headFace#headface QToolButton#btnSimpleX:checked,
+headFace#headface QToolButton#btnSimpleY:checked,
+headFace#headface QToolButton#btnSimpleZ:checked,
+headFace#headface QToolButton#btnSimpleIncrease:checked,
+headFace#headface QToolButton#btnSimpleDecrease:checked,
+headFace#headface QToolButton#btnSimpleIncrease_2:checked,
+headFace#headface QToolButton#btnSimpleDecrease_2:checked,
+headFace#headface QToolButton#btnDetailX1:checked,
+headFace#headface QToolButton#btnDetailY1:checked,
+headFace#headface QToolButton#btnDetailZ1:checked,
+headFace#headface QToolButton#btnDetailX2:checked,
+headFace#headface QToolButton#btnDetailY2:checked,
+headFace#headface QToolButton#btnDetailZ2:checked,
+headFace#headface QToolButton#btnON:checked,
+headFace#headface QToolButton#btnOFF:checked,
+headFace#headface QToolButton#btnAbsolute:checked,
+headFace#headface QToolButton#btnRelative:checked,
+headFace#headface QToolButton#btnAxisX_0:checked,
+headFace#headface QToolButton#btnAxisY_0:checked,
+headFace#headface QToolButton#btnAxisZ_0:checked,
+headFace#headface QToolButton#btnAxisX_2:checked,
+headFace#headface QToolButton#btnAxisY_2:checked,
+headFace#headface QToolButton#btnAxisZ_2:checked,
+headFace#headface QToolButton#btnX0:pressed,
+headFace#headface QToolButton#btnY0:pressed,
+headFace#headface QToolButton#btnZ0:pressed,
+headFace#headface QToolButton#btnXhalf:pressed,
+headFace#headface QToolButton#btnYhalf:pressed,
+headFace#headface QToolButton#btnZhalf:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+headFace#headface QLabel#label,
+headFace#headface QLabel#label_1,
+headFace#headface QLabel#label_2,
+headFace#headface QLabel#label_3,
+headFace#headface QLabel#label_4,
+headFace#headface QLabel#label_5,
+headFace#headface QLabel#label_6,
+headFace#headface QLabel#label_7,
+headFace#headface QLabel#label_8,
+headFace#headface QLabel#label_9,
+headFace#headface QLabel#label_10,
+headFace#headface QLabel#label_11,
+headFace#headface QLabel#label_12,
+headFace#headface QLabel#label_23,
+headFace#headface QLabel#label_24,
+headFace#headface QLabel#label_13,
+headFace#headface QLabel#label_14
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+
+
+/*柱中心*/
+columnCenter#columncenter
+{
+    background-color: #9bb9d5;/*背景*/
+}
+columnCenter#columncenter QLabel#labelPix
+{
+    border-image: url(:/res/manual/duanmian.png);
+}
+
+columnCenter#columncenter QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+columnCenter#columncenter QLabel#label,
+columnCenter#columncenter QLabel#label_2,
+columnCenter#columncenter QLabel#label_3,
+columnCenter#columncenter QLabel#label_4,
+columnCenter#columncenter QLabel#label_5,
+columnCenter#columncenter QLabel#label_6,
+columnCenter#columncenter QLabel#label_7,
+columnCenter#columncenter QLabel#label_8,
+columnCenter#columncenter QLabel#label_9,
+columnCenter#columncenter QLabel#label_10,
+columnCenter#columncenter QLabel#label_11,
+columnCenter#columncenter QLabel#label_12,
+columnCenter#columncenter QLabel#label_13,
+columnCenter#columncenter QLabel#label_14,
+columnCenter#columncenter QLabel#label_15,
+columnCenter#columncenter QLabel#label_36,
+columnCenter#columncenter QLabel#label_41,
+columnCenter#columncenter QLabel#label_42,
+columnCenter#columncenter QLabel#label_43,
+columnCenter#columncenter QLabel#label_44,
+columnCenter#columncenter QLabel#label_45,
+columnCenter#columncenter QLabel#label_46,
+columnCenter#columncenter QLabel#label_47,
+columnCenter#columncenter QLabel#label_48
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+
+columnCenter#columncenter QLabel#label_16,
+columnCenter#columncenter QLabel#label_17,
+columnCenter#columncenter QLabel#label_18,
+columnCenter#columncenter QLabel#label_19,
+columnCenter#columncenter QLabel#label_20,
+columnCenter#columncenter QLabel#label_25,
+columnCenter#columncenter QLabel#label_26,
+columnCenter#columncenter QLabel#label_31,
+columnCenter#columncenter QLabel#label_35,
+columnCenter#columncenter QLabel#labelX1,
+columnCenter#columncenter QLabel#labelX2,
+columnCenter#columncenter QLabel#labelX3,
+columnCenter#columncenter QLabel#labelY1,
+columnCenter#columncenter QLabel#labelY2,
+columnCenter#columncenter QLabel#labelY3,
+columnCenter#columncenter QLabel#labelZ1,
+columnCenter#columncenter QLabel#labelZ2,
+columnCenter#columncenter QLabel#labelZ3,
+columnCenter#columncenter QLabel#testXresult,
+columnCenter#columncenter QLabel#testYresult
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+columnCenter#columncenter QLabel#label_37,
+columnCenter#columncenter QLabel#label_38,
+columnCenter#columncenter QLabel#label_39,
+columnCenter#columncenter QLabel#label_40
+{
+    background-color : transparent;
+    color : rgb(255,255,255);
+    border: 0px;
+}
+
+
+columnCenter#columncenter QToolButton#btnSingle,
+columnCenter#columncenter QToolButton#btnMultiple,
+columnCenter#columncenter QToolButton#btnSwitch,
+columnCenter#columncenter QToolButton#btnPosSet0On,
+columnCenter#columncenter QToolButton#btnPosSet0Off,
+columnCenter#columncenter QToolButton#ZAxisContactOn,
+columnCenter#columncenter QToolButton#ZAxisContactOff,
+columnCenter#columncenter QToolButton#btnPosSetZeroMode,
+columnCenter#columncenter QToolButton#btnZmove,
+columnCenter#columncenter QToolButton#rowColumnMode,
+columnCenter#columncenter QToolButton#multipleTestResult,
+columnCenter#columncenter QToolButton#btnFastValueX,
+columnCenter#columncenter QToolButton#btnFastValueY,
+columnCenter#columncenter QToolButton#btnFastValueZ,
+columnCenter#columncenter QToolButton#ZAxisContactRet,
+columnCenter#columncenter QToolButton#determinatorDiameter,
+columnCenter#columncenter QToolButton#deterTime,
+columnCenter#columncenter QToolButton#deterAllowError,
+columnCenter#columncenter QToolButton#specifyAngle,
+columnCenter#columncenter QToolButton#btnEndCoorSys,
+columnCenter#columncenter QToolButton#ZSafeHeight,
+columnCenter#columncenter QToolButton#rowNum,
+columnCenter#columncenter QToolButton#colNum,
+columnCenter#columncenter QToolButton#rowDistance,
+columnCenter#columncenter QToolButton#colDistance,
+columnCenter#columncenter QToolButton#afterTestMoveX,
+columnCenter#columncenter QToolButton#afterTestMoveY,
+columnCenter#columncenter QToolButton#afterTestMoveZ
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+columnCenter#columncenter QToolButton#btnSingle:checked,
+columnCenter#columncenter QToolButton#btnMultiple:checked,
+columnCenter#columncenter QToolButton#btnSwitch:checked,
+columnCenter#columncenter QToolButton#btnPosSet0On:checked,
+columnCenter#columncenter QToolButton#btnPosSet0Off:checked,
+columnCenter#columncenter QToolButton#ZAxisContactOn:checked,
+columnCenter#columncenter QToolButton#ZAxisContactOff:checked,
+columnCenter#columncenter QToolButton#btnPosSetZeroMode:checked,
+columnCenter#columncenter QToolButton#btnZmove:checked,
+columnCenter#columncenter QToolButton#rowColumnMode:checked,
+columnCenter#columncenter QToolButton#multipleTestResult:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*孔中心*/
+holeCenter#holecenter
+{
+    background-color: #9bb9d5;/*背景*/
+}
+holeCenter#holecenter QLabel#labelPix
+{
+    border-image: url(:/res/manual/duanmian.png);
+}
+
+holeCenter#holecenter QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+holeCenter#holecenter QLabel#label,
+holeCenter#holecenter QLabel#label_2,
+holeCenter#holecenter QLabel#label_4,
+holeCenter#holecenter QLabel#label_5,
+holeCenter#holecenter QLabel#label_7,
+holeCenter#holecenter QLabel#label_8,
+holeCenter#holecenter QLabel#label_9,
+holeCenter#holecenter QLabel#label_10,
+holeCenter#holecenter QLabel#label_11,
+holeCenter#holecenter QLabel#label_12,
+holeCenter#holecenter QLabel#label_13,
+holeCenter#holecenter QLabel#label_14,
+holeCenter#holecenter QLabel#label_15,
+holeCenter#holecenter QLabel#label_36,
+holeCenter#holecenter QLabel#label_41,
+holeCenter#holecenter QLabel#label_42,
+holeCenter#holecenter QLabel#label_43,
+holeCenter#holecenter QLabel#label_44,
+holeCenter#holecenter QLabel#label_45,
+holeCenter#holecenter QLabel#label_46,
+holeCenter#holecenter QLabel#label_47,
+holeCenter#holecenter QLabel#label_48
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+
+holeCenter#holecenter QLabel#label_16,
+holeCenter#holecenter QLabel#label_17,
+holeCenter#holecenter QLabel#label_18,
+holeCenter#holecenter QLabel#label_19,
+holeCenter#holecenter QLabel#label_20,
+holeCenter#holecenter QLabel#label_25,
+holeCenter#holecenter QLabel#label_26,
+holeCenter#holecenter QLabel#label_31,
+holeCenter#holecenter QLabel#label_35,
+holeCenter#holecenter QLabel#labelX1,
+holeCenter#holecenter QLabel#labelX2,
+holeCenter#holecenter QLabel#labelX3,
+holeCenter#holecenter QLabel#labelY1,
+holeCenter#holecenter QLabel#labelY2,
+holeCenter#holecenter QLabel#labelY3,
+holeCenter#holecenter QLabel#labelZ1,
+holeCenter#holecenter QLabel#labelZ2,
+holeCenter#holecenter QLabel#labelZ3,
+holeCenter#holecenter QLabel#testXresult,
+holeCenter#holecenter QLabel#testYresult
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+holeCenter#holecenter QLabel#label_37,
+holeCenter#holecenter QLabel#label_38,
+holeCenter#holecenter QLabel#label_39,
+holeCenter#holecenter QLabel#label_40
+{
+    background-color : transparent;
+    color : rgb(255,255,255);
+    border: 0px;
+}
+
+
+holeCenter#holecenter QToolButton#btnSingle,
+holeCenter#holecenter QToolButton#btnMultiple,
+holeCenter#holecenter QToolButton#btnSwitch,
+holeCenter#holecenter QToolButton#btnPosSet0On,
+holeCenter#holecenter QToolButton#btnPosSet0Off,
+holeCenter#holecenter QToolButton#btnPosSetZeroMode,
+holeCenter#holecenter QToolButton#btnZmove,
+holeCenter#holecenter QToolButton#rowColumnMode,
+holeCenter#holecenter QToolButton#multipleTestResult,
+holeCenter#holecenter QToolButton#btnFastValueX,
+holeCenter#holecenter QToolButton#btnFastValueY,
+holeCenter#holecenter QToolButton#ZAxisContactRet,
+holeCenter#holecenter QToolButton#determinatorDiameter,
+holeCenter#holecenter QToolButton#deterTime,
+holeCenter#holecenter QToolButton#deterAllowError,
+holeCenter#holecenter QToolButton#specifyAngle,
+holeCenter#holecenter QToolButton#btnEndCoorSys,
+holeCenter#holecenter QToolButton#ZSafeHeight,
+holeCenter#holecenter QToolButton#rowNum,
+holeCenter#holecenter QToolButton#colNum,
+holeCenter#holecenter QToolButton#rowDistance,
+holeCenter#holecenter QToolButton#colDistance,
+holeCenter#holecenter QToolButton#afterTestMoveX,
+holeCenter#holecenter QToolButton#afterTestMoveY,
+holeCenter#holecenter QToolButton#afterTestMoveZ
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+holeCenter#holecenter QToolButton#btnSingle:checked,
+holeCenter#holecenter QToolButton#btnMultiple:checked,
+holeCenter#holecenter QToolButton#btnSwitch:checked,
+holeCenter#holecenter QToolButton#btnPosSet0On:checked,
+holeCenter#holecenter QToolButton#btnPosSet0Off:checked,
+holeCenter#holecenter QToolButton#btnPosSetZeroMode:checked,
+holeCenter#holecenter QToolButton#btnZmove:checked,
+holeCenter#holecenter QToolButton#rowColumnMode:checked,
+holeCenter#holecenter QToolButton#multipleTestResult:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*放电位置决定*/
+dischargeDecide#discharge
+{
+    background-color: #9bb9d5;/*背景*/
+}
+dischargeDecide#discharge QLabel#labelPix
+{
+    border-image: url(:/res/manual/fangdianweizhijueding.PNG);
+}
+
+dischargeDecide#discharge QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+
+dischargeDecide#discharge QLabel#label,
+dischargeDecide#discharge QLabel#label_2,
+dischargeDecide#discharge QLabel#label_3,
+dischargeDecide#discharge QLabel#label_4,
+dischargeDecide#discharge QLabel#label_5,
+dischargeDecide#discharge QLabel#label_6,
+dischargeDecide#discharge QLabel#label_7,
+dischargeDecide#discharge QLabel#label_8,
+dischargeDecide#discharge QLabel#label_9,
+dischargeDecide#discharge QLabel#label_10,
+dischargeDecide#discharge QLabel#label_11,
+dischargeDecide#discharge QLabel#label_12,
+dischargeDecide#discharge QLabel#label_13,
+dischargeDecide#discharge QLabel#label_14,
+dischargeDecide#discharge QLabel#label_15,
+dischargeDecide#discharge QLabel#label_16,
+dischargeDecide#discharge QLabel#label_17,
+dischargeDecide#discharge QLabel#label_18,
+dischargeDecide#discharge QLabel#label_19,
+dischargeDecide#discharge QLabel#label_20,
+dischargeDecide#discharge QLabel#label_21,
+dischargeDecide#discharge QLabel#label_22,
+dischargeDecide#discharge QLabel#label_23,
+dischargeDecide#discharge QLabel#label_24,
+dischargeDecide#discharge QLabel#label_25
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+dischargeDecide#discharge QToolButton#btnAxisX,
+dischargeDecide#discharge QToolButton#btnAxisY,
+dischargeDecide#discharge QToolButton#btnAxisZ,
+dischargeDecide#discharge QToolButton#btnIncrease,
+dischargeDecide#discharge QToolButton#btnDecrease,
+dischargeDecide#discharge QToolButton#btnCNO,
+dischargeDecide#discharge QToolButton#btnON,
+dischargeDecide#discharge QToolButton#btnOFF,
+dischargeDecide#discharge QToolButton#btnMA,
+dischargeDecide#discharge QToolButton#btnIP,
+dischargeDecide#discharge QToolButton#btnSV,
+dischargeDecide#discharge QToolButton#btnUP,
+dischargeDecide#discharge QToolButton#btnDN,
+dischargeDecide#discharge QToolButton#btnJS,
+dischargeDecide#discharge QToolButton#btnJM,
+dischargeDecide#discharge QToolButton#btnPL,
+dischargeDecide#discharge QToolButton#btnV,
+dischargeDecide#discharge QToolButton#btnHP,
+dischargeDecide#discharge QToolButton#btnPP,
+dischargeDecide#discharge QToolButton#btnC,
+dischargeDecide#discharge QToolButton#btnS,
+dischargeDecide#discharge QToolButton#btnL,
+dischargeDecide#discharge QToolButton#btnLN,
+dischargeDecide#discharge QToolButton#btnSTEP,
+dischargeDecide#discharge QToolButton#btnLP,
+dischargeDecide#discharge QToolButton#btnX0,
+dischargeDecide#discharge QToolButton#btnY0,
+dischargeDecide#discharge QToolButton#btnZ0,
+dischargeDecide#discharge QToolButton#btnXhalf,
+dischargeDecide#discharge QToolButton#btnYhalf,
+dischargeDecide#discharge QToolButton#btnZhalf
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+dischargeDecide#discharge QToolButton#btnAxisX:checked,
+dischargeDecide#discharge QToolButton#btnAxisY:checked,
+dischargeDecide#discharge QToolButton#btnAxisZ:checked,
+dischargeDecide#discharge QToolButton#btnIncrease:checked,
+dischargeDecide#discharge QToolButton#btnDecrease:checked,
+dischargeDecide#discharge QToolButton#btnX0:pressed,
+dischargeDecide#discharge QToolButton#btnY0:pressed,
+dischargeDecide#discharge QToolButton#btnZ0:pressed,
+dischargeDecide#discharge QToolButton#btnXhalf:pressed,
+dischargeDecide#discharge QToolButton#btnYhalf:pressed,
+dischargeDecide#discharge QToolButton#btnZhalf:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+/*任意三点自动*/
+any3PointAuto#any3pointauto
+{
+    background-color: #9bb9d5;/*背景*/
+}
+any3PointAuto#any3pointauto QLabel#labelPix
+{
+    border-image: url(:/res/manual/zhuzhongxin.PNG);
+}
+
+any3PointAuto#any3pointauto QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+any3PointAuto#any3pointauto QLabel#label,
+any3PointAuto#any3pointauto QLabel#label_2,
+any3PointAuto#any3pointauto QLabel#label_3,
+any3PointAuto#any3pointauto QLabel#label_4,
+any3PointAuto#any3pointauto QLabel#label_5,
+any3PointAuto#any3pointauto QLabel#label_6,
+any3PointAuto#any3pointauto QLabel#label_7,
+any3PointAuto#any3pointauto QLabel#label_8,
+any3PointAuto#any3pointauto QLabel#label_9,
+any3PointAuto#any3pointauto QLabel#label_10,
+any3PointAuto#any3pointauto QLabel#label_11,
+any3PointAuto#any3pointauto QLabel#label_12
+{
+    background-color : #fffac4;
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+any3PointAuto#any3pointauto QLabel#label_13,
+any3PointAuto#any3pointauto QLabel#label_16,
+any3PointAuto#any3pointauto QLabel#label_17,
+any3PointAuto#any3pointauto QLabel#label_18,
+any3PointAuto#any3pointauto QLabel#label_19,
+any3PointAuto#any3pointauto QLabel#label_20,
+any3PointAuto#any3pointauto QLabel#label_25,
+any3PointAuto#any3pointauto QLabel#label_26,
+any3PointAuto#any3pointauto QLabel#label_27,
+any3PointAuto#any3pointauto QLabel#label_28,
+any3PointAuto#any3pointauto QLabel#label_29,
+any3PointAuto#any3pointauto QLabel#labelX1,
+any3PointAuto#any3pointauto QLabel#labelX2,
+any3PointAuto#any3pointauto QLabel#labelX3,
+any3PointAuto#any3pointauto QLabel#labelY1,
+any3PointAuto#any3pointauto QLabel#labelY2,
+any3PointAuto#any3pointauto QLabel#labelY3,
+any3PointAuto#any3pointauto QLabel#labelZ1,
+any3PointAuto#any3pointauto QLabel#labelZ2,
+any3PointAuto#any3pointauto QLabel#labelZ3,
+any3PointAuto#any3pointauto QLabel#testXresult,
+any3PointAuto#any3pointauto QLabel#testYresult
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+any3PointAuto#any3pointauto QToolButton#btnColumnDiameter,
+any3PointAuto#any3pointauto QToolButton#btnHoleDiameter,
+any3PointAuto#any3pointauto QToolButton#btnCoorSetON,
+any3PointAuto#any3pointauto QToolButton#btnCoorSetOFF,
+any3PointAuto#any3pointauto QToolButton#btnZAxisContactON,
+any3PointAuto#any3pointauto QToolButton#btnZAxisContactOFF,
+any3PointAuto#any3pointauto QToolButton#btnFastForward,
+any3PointAuto#any3pointauto QToolButton#btnZAxisDescent,
+any3PointAuto#any3pointauto QToolButton#btnTestAngle1,
+any3PointAuto#any3pointauto QToolButton#btnTestAngle2,
+any3PointAuto#any3pointauto QToolButton#btnTestAngle3,
+any3PointAuto#any3pointauto QToolButton#btnDeterTime,
+any3PointAuto#any3pointauto QToolButton#btnDeterAllowError,
+any3PointAuto#any3pointauto QToolButton#btnContactReturn,
+any3PointAuto#any3pointauto QToolButton#btnDeterminatorDiameter
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+any3PointAuto#any3pointauto QToolButton#btnColumnDiameter:checked,
+any3PointAuto#any3pointauto QToolButton#btnHoleDiameter:checked,
+any3PointAuto#any3pointauto QToolButton#btnCoorSetON:checked,
+any3PointAuto#any3pointauto QToolButton#btnCoorSetOFF:checked,
+any3PointAuto#any3pointauto QToolButton#btnZAxisContactON:checked,
+any3PointAuto#any3pointauto QToolButton#btnZAxisContactOFF:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+any3PointAuto#any3pointauto QToolButton#btnZAxisDescent:disabled
+{
+    color:black;
+    background-color: grey;
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+
+
+
+/*坐标记忆*/
+positionMemory#positionmemory{
+    background-color: #9bb9d5;/*背景*/
+}
+
+positionMemory#positionmemory QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+positionMemory#positionmemory QToolButton#memoryButton,
+positionMemory#positionmemory QToolButton#setButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+positionMemory#positionmemory QToolButton#memoryButton:checked ,
+positionMemory#positionmemory QToolButton#setButton:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+positionMemory#positionmemory QComboBox#selectComboBox
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid black;
+}
+
+positionMemory#positionmemory QTableWidget#tableWidget
+{
+    background-color:rgb(1,1,128);
+    color:rgb(255,255,255);
+    border : 0px;
+}
+positionMemory#positionmemory QTableWidget#tableWidget QHeaderView::section:horizontal
+{
+    background:rgb(1,1,128);
+    color:white;
+    font:bold 20px \"微软雅黑\" ;
+    color:white;gridline-color: white;
+}
+
+positionMemory#positionmemory QTableWidget#tableWidget QHeaderView:vertical
+{
+    background:rgb(1,1,128);
+    color:white;
+    font:bold 20px \"微软雅黑\" ;
+    color:white;
+    gridline-color: white;
+}
+positionMemory#positionmemory QTableWidget#tableWidget QHeaderView::section:vertical
+{
+    background:rgb(1,1,128);
+    color:white;
+    font:bold 20px \"微软雅黑\" ;
+    color:white;
+    gridline-color: white;
+}
+
+positionMemory#positionmemory QScrollBar:vertical
+{
+	margin:40px 0px 40px 0px;
+	background-color:transparent;
+	border:0px;
+	width:40px;
+}
+
+positionMemory#positionmemory QScrollBar::handle:vertical
+{
+	background-color: #ffffff;
+	border-radius:20px;
+	width:40px;
+}
+
+positionMemory#positionmemory QScrollBar::sub-line:vertical
+{
+	subcontrol-position:top;
+	subcontrol-origin:margin;
+	height:40px;
+}
+
+positionMemory#positionmemory QScrollBar::add-line:vertical
+{
+	subcontrol-position:bottom;
+	subcontrol-origin:margin;
+	height:40px;
+}
+
+positionMemory#positionmemory QScrollBar::up-arrow:vertical
+{
+	width:12px;
+	height:6px;
+}
+
+positionMemory#positionmemory QScrollBar::down-arrow:vertical
+{
+	width:12px;
+	height:6px;
+}
+
+positionMemory#positionmemory QScrollBar::sub-page:vertical,QScrollBar::add-page:vertical
+{
+	background-color:transparent;
+}
+
+
+/*编辑*/
+
+
+
+
+
+
+
+
+/*NC加工*/
+
+
+
+
+
+
+
+
+/*手动直线*/
+noCode1Beeline#beeline
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+noCode1Beeline#beeline QLabel#labelPix
+{
+    border-image: url(:/res/manual/fangdianweizhijueding.PNG);
+}
+
+noCode1Beeline#beeline QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+noCode1Beeline#beeline QLabel#label,
+noCode1Beeline#beeline QLabel#label_2
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+noCode1Beeline#beeline QToolButton#toolButton_6:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_18:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_19:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_20:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_21:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_22:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_23:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_24:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_25:disabled,
+noCode1Beeline#beeline QToolButton#toolButton_26:disabled,
+noCode1Beeline#beeline QToolButton#btnDetail:disabled
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+noCode1Beeline#beeline QToolButton#absoluteButton,
+noCode1Beeline#beeline QToolButton#raletiveButton,
+noCode1Beeline#beeline QToolButton#processX,
+noCode1Beeline#beeline QToolButton#processY,
+noCode1Beeline#beeline QToolButton#processZ,
+noCode1Beeline#beeline QToolButton#manageButton,
+noCode1Beeline#beeline QToolButton#detailButton,
+noCode1Beeline#beeline QToolButton#selectButton_1,
+noCode1Beeline#beeline QToolButton#selectButton_2,
+noCode1Beeline#beeline QToolButton#selectButton_3,
+noCode1Beeline#beeline QToolButton#selectButton_4,
+noCode1Beeline#beeline QToolButton#selectButton_5,
+noCode1Beeline#beeline QToolButton#selectButton_6,
+noCode1Beeline#beeline QToolButton#selectButton_7,
+noCode1Beeline#beeline QToolButton#selectButton_8,
+noCode1Beeline#beeline QToolButton#pushButton_1,
+noCode1Beeline#beeline QToolButton#pushButton_2,
+noCode1Beeline#beeline QToolButton#pushButton_3,
+noCode1Beeline#beeline QToolButton#pushButton_4,
+noCode1Beeline#beeline QToolButton#pushButton_5,
+noCode1Beeline#beeline QToolButton#pushButton_6,
+noCode1Beeline#beeline QToolButton#pushButton_7,
+noCode1Beeline#beeline QToolButton#pushButton_8,
+noCode1Beeline#beeline QToolButton#buttonAJC_1,
+noCode1Beeline#beeline QToolButton#buttonAJC_2,
+noCode1Beeline#beeline QToolButton#buttonAJC_3,
+noCode1Beeline#beeline QToolButton#buttonAJC_4,
+noCode1Beeline#beeline QToolButton#buttonAJC_5,
+noCode1Beeline#beeline QToolButton#buttonAJC_6,
+noCode1Beeline#beeline QToolButton#buttonAJC_7,
+noCode1Beeline#beeline QToolButton#buttonAJC_8,
+noCode1Beeline#beeline QToolButton#buttonDetail_1,
+noCode1Beeline#beeline QToolButton#buttonDetail_2,
+noCode1Beeline#beeline QToolButton#buttonDetail_3,
+noCode1Beeline#beeline QToolButton#buttonDetail_4,
+noCode1Beeline#beeline QToolButton#buttonDetail_5,
+noCode1Beeline#beeline QToolButton#buttonDetail_6,
+noCode1Beeline#beeline QToolButton#buttonDetail_7,
+noCode1Beeline#beeline QToolButton#buttonDetail_8,
+noCode1Beeline#beeline QToolButton#processXheight,
+noCode1Beeline#beeline QToolButton#processYheight,
+noCode1Beeline#beeline QToolButton#processZheight,
+noCode1Beeline#beeline QToolButton#insertButton,
+noCode1Beeline#beeline QToolButton#copyButton,
+noCode1Beeline#beeline QToolButton#pasteButton,
+noCode1Beeline#beeline QToolButton#deleteButton,
+noCode1Beeline#beeline QToolButton#lastButton,
+noCode1Beeline#beeline QToolButton#nextPage,
+noCode1Beeline#beeline QToolButton#buttonCondition_1,
+noCode1Beeline#beeline QToolButton#buttonCondition_2,
+noCode1Beeline#beeline QToolButton#buttonCondition_3,
+noCode1Beeline#beeline QToolButton#buttonCondition_4,
+noCode1Beeline#beeline QToolButton#buttonCondition_5,
+noCode1Beeline#beeline QToolButton#buttonCondition_6,
+noCode1Beeline#beeline QToolButton#buttonCondition_7,
+noCode1Beeline#beeline QToolButton#buttonCondition_8,
+noCode1Beeline#beeline QToolButton#buttonLN_1,
+noCode1Beeline#beeline QToolButton#buttonLN_2,
+noCode1Beeline#beeline QToolButton#buttonLN_3,
+noCode1Beeline#beeline QToolButton#buttonLN_4,
+noCode1Beeline#beeline QToolButton#buttonLN_5,
+noCode1Beeline#beeline QToolButton#buttonLN_6,
+noCode1Beeline#beeline QToolButton#buttonLN_7,
+noCode1Beeline#beeline QToolButton#buttonLN_8,
+noCode1Beeline#beeline QToolButton#buttonLP_1,
+noCode1Beeline#beeline QToolButton#buttonLP_2,
+noCode1Beeline#beeline QToolButton#buttonLP_3,
+noCode1Beeline#beeline QToolButton#buttonLP_4,
+noCode1Beeline#beeline QToolButton#buttonLP_5,
+noCode1Beeline#beeline QToolButton#buttonLP_6,
+noCode1Beeline#beeline QToolButton#buttonLP_7,
+noCode1Beeline#beeline QToolButton#buttonLP_8,
+noCode1Beeline#beeline QToolButton#buttonSTEP_1,
+noCode1Beeline#beeline QToolButton#buttonSTEP_2,
+noCode1Beeline#beeline QToolButton#buttonSTEP_3,
+noCode1Beeline#beeline QToolButton#buttonSTEP_4,
+noCode1Beeline#beeline QToolButton#buttonSTEP_5,
+noCode1Beeline#beeline QToolButton#buttonSTEP_6,
+noCode1Beeline#beeline QToolButton#buttonSTEP_7,
+noCode1Beeline#beeline QToolButton#buttonSTEP_8,
+noCode1Beeline#beeline QToolButton#buttonAllowance_1,
+noCode1Beeline#beeline QToolButton#buttonAllowance_2,
+noCode1Beeline#beeline QToolButton#buttonAllowance_3,
+noCode1Beeline#beeline QToolButton#buttonAllowance_4,
+noCode1Beeline#beeline QToolButton#buttonAllowance_5,
+noCode1Beeline#beeline QToolButton#buttonAllowance_6,
+noCode1Beeline#beeline QToolButton#buttonAllowance_7,
+noCode1Beeline#beeline QToolButton#buttonAllowance_8,
+noCode1Beeline#beeline QToolButton#buttonTiming_1,
+noCode1Beeline#beeline QToolButton#buttonTiming_2,
+noCode1Beeline#beeline QToolButton#buttonTiming_3,
+noCode1Beeline#beeline QToolButton#buttonTiming_4,
+noCode1Beeline#beeline QToolButton#buttonTiming_5,
+noCode1Beeline#beeline QToolButton#buttonTiming_6,
+noCode1Beeline#beeline QToolButton#buttonTiming_7,
+noCode1Beeline#beeline QToolButton#buttonTiming_8,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_1,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_2,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_3,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_4,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_5,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_6,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_7,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_8
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+noCode1Beeline#beeline QToolButton#absoluteButton:checked,
+noCode1Beeline#beeline QToolButton#raletiveButton:checked,
+noCode1Beeline#beeline QToolButton#processX:checked,
+noCode1Beeline#beeline QToolButton#processY:checked,
+noCode1Beeline#beeline QToolButton#processZ:checked,
+noCode1Beeline#beeline QToolButton#manageButton:checked,
+noCode1Beeline#beeline QToolButton#detailButton:checked,
+noCode1Beeline#beeline QToolButton#selectButton_1:checked,
+noCode1Beeline#beeline QToolButton#selectButton_2:checked,
+noCode1Beeline#beeline QToolButton#selectButton_3:checked,
+noCode1Beeline#beeline QToolButton#selectButton_4:checked,
+noCode1Beeline#beeline QToolButton#selectButton_5:checked,
+noCode1Beeline#beeline QToolButton#selectButton_6:checked,
+noCode1Beeline#beeline QToolButton#selectButton_7:checked,
+noCode1Beeline#beeline QToolButton#selectButton_8:checked,
+noCode1Beeline#beeline QToolButton#pushButton_1:checked,
+noCode1Beeline#beeline QToolButton#pushButton_2:checked,
+noCode1Beeline#beeline QToolButton#pushButton_3:checked,
+noCode1Beeline#beeline QToolButton#pushButton_4:checked,
+noCode1Beeline#beeline QToolButton#pushButton_5:checked,
+noCode1Beeline#beeline QToolButton#pushButton_6:checked,
+noCode1Beeline#beeline QToolButton#pushButton_7:checked,
+noCode1Beeline#beeline QToolButton#pushButton_8:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_1:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_2:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_3:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_4:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_5:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_6:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_7:checked,
+noCode1Beeline#beeline QToolButton#buttonAJC_8:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_1:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_2:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_3:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_4:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_5:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_6:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_7:checked,
+noCode1Beeline#beeline QToolButton#buttonDetail_8:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+noCode1Beeline#beeline QToolButton#processXheight:pressed,
+noCode1Beeline#beeline QToolButton#processYheight:pressed,
+noCode1Beeline#beeline QToolButton#processZheight:pressed,
+noCode1Beeline#beeline QToolButton#insertButton:pressed,
+noCode1Beeline#beeline QToolButton#copyButton:pressed,
+noCode1Beeline#beeline QToolButton#pasteButton:pressed,pre
+noCode1Beeline#beeline QToolButton#deleteButton:pressed,
+noCode1Beeline#beeline QToolButton#lastButton:pressed,
+noCode1Beeline#beeline QToolButton#nextPage:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonCondition_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonLN_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonLP_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonSTEP_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonAllowance_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonTiming_8:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_1:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_2:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_3:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_4:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_5:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_6:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_7:pressed,
+noCode1Beeline#beeline QToolButton#buttonTimingTime_8:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+/*多数任意*/
+noCode2Arbitrariness#arbitrariness{
+    background-color: #9bb9d5;/*背景*/
+}
+noCode2Arbitrariness#arbitrariness QLabel#labelPix
+{
+    border-image: url(:/res/manual/duoshuge.png);
+}
+
+noCode2Arbitrariness#arbitrariness QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+
+
+noCode2Arbitrariness#arbitrariness QLabel#label,
+noCode2Arbitrariness#arbitrariness QLabel#label_2,
+noCode2Arbitrariness#arbitrariness QLabel#label_3,
+noCode2Arbitrariness#arbitrariness QLabel#label_4,
+noCode2Arbitrariness#arbitrariness QLabel#label_5,
+noCode2Arbitrariness#arbitrariness QLabel#label_6,
+noCode2Arbitrariness#arbitrariness QLabel#label_7,
+noCode2Arbitrariness#arbitrariness QLabel#label_8,
+noCode2Arbitrariness#arbitrariness QLabel#label_9,
+noCode2Arbitrariness#arbitrariness QLabel#label_10,
+noCode2Arbitrariness#arbitrariness QLabel#label_11,
+noCode2Arbitrariness#arbitrariness QLabel#label_12,
+noCode2Arbitrariness#arbitrariness QLabel#label_13,
+noCode2Arbitrariness#arbitrariness QLabel#label_14,
+noCode2Arbitrariness#arbitrariness QLabel#label_15,
+noCode2Arbitrariness#arbitrariness QLabel#label_16,
+noCode2Arbitrariness#arbitrariness QLabel#label_17,
+noCode2Arbitrariness#arbitrariness QLabel#label_18,
+noCode2Arbitrariness#arbitrariness QLabel#label_19,
+noCode2Arbitrariness#arbitrariness QLabel#label_20,
+noCode2Arbitrariness#arbitrariness QLabel#label_21
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+noCode2Arbitrariness#arbitrariness QToolButton#proKindButton,
+noCode2Arbitrariness#arbitrariness QToolButton#singalButton,
+noCode2Arbitrariness#arbitrariness QToolButton#continueButton,
+noCode2Arbitrariness#arbitrariness QToolButton#processButton,
+noCode2Arbitrariness#arbitrariness QToolButton#imitateButton,
+noCode2Arbitrariness#arbitrariness QToolButton#moveZButton,
+noCode2Arbitrariness#arbitrariness QToolButton#startZButton,
+noCode2Arbitrariness#arbitrariness QToolButton#wantOnlyButton,
+noCode2Arbitrariness#arbitrariness QToolButton#grid1Button,
+noCode2Arbitrariness#arbitrariness QToolButton#grid2Button,
+noCode2Arbitrariness#arbitrariness QToolButton#posButton,
+noCode2Arbitrariness#arbitrariness QToolButton#intervalXbtn,
+noCode2Arbitrariness#arbitrariness QToolButton#intervalYbtn,
+noCode2Arbitrariness#arbitrariness QToolButton#XcountBtn,
+noCode2Arbitrariness#arbitrariness QToolButton#YcountBtn,
+noCode2Arbitrariness#arbitrariness QToolButton#startXbtn,
+noCode2Arbitrariness#arbitrariness QToolButton#startYbtn,
+noCode2Arbitrariness#arbitrariness QToolButton#grid1DButton,
+noCode2Arbitrariness#arbitrariness QToolButton#createButton,
+noCode2Arbitrariness#arbitrariness QToolButton#testTypeButton,
+noCode2Arbitrariness#arbitrariness QToolButton#fastButton,
+noCode2Arbitrariness#arbitrariness QToolButton#firstTestAngleButton,
+noCode2Arbitrariness#arbitrariness QToolButton#lastButton,
+noCode2Arbitrariness#arbitrariness QToolButton#nextButton,
+noCode2Arbitrariness#arbitrariness QToolButton#btnLP,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo1,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo2,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo3,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo4,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo5,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo6,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo7,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo8,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX1,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX2,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX3,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX4,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX5,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX6,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX7,
+noCode2Arbitrariness#arbitrariness QToolButton#btnX8,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY1,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY2,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY3,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY4,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY5,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY6,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY7,
+noCode2Arbitrariness#arbitrariness QToolButton#btnY8,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU1,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU2,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU3,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU4,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU5,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU6,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU7,
+noCode2Arbitrariness#arbitrariness QToolButton#btnU8,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord1,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord2,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord3,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord4,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord5,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord6,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord7,
+noCode2Arbitrariness#arbitrariness QToolButton#btnCoord8,
+noCode2Arbitrariness#arbitrariness QToolButton#singleButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+noCode2Arbitrariness#arbitrariness QToolButton#singalButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#continueButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#processButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnIncrease:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#imitateButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#wantOnlyButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#grid1Button:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#grid2Button:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#posButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#grid1DButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#testTypeButton:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo1:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo2:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo3:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo4:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo5:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo6:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo7:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#btnNo8:checked,
+noCode2Arbitrariness#arbitrariness QToolButton#singleButton:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+noCode2Arbitrariness#arbitrariness QToolButton#lastButton:pressed,
+noCode2Arbitrariness#arbitrariness QToolButton#nextButton:pressed,
+noCode2Arbitrariness#arbitrariness QToolButton#createButton:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*手动圆弧*/
+noCode3ARC#arc
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+noCode3ARC#arc QLabel#labelPix
+{
+    border-image: url(:/res/manual/shoudongyuanhu.png);
+}
+
+noCode3ARC#arc QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+noCode3ARC#arc QLabel#label,
+noCode3ARC#arc QLabel#label_2,
+noCode3ARC#arc QLabel#label_3,
+noCode3ARC#arc QLabel#label_4,
+noCode3ARC#arc QLabel#label_5,
+noCode3ARC#arc QLabel#label_6,
+noCode3ARC#arc QLabel#label_7,
+noCode3ARC#arc QLabel#label_8,
+noCode3ARC#arc QLabel#label_9,
+noCode3ARC#arc QLabel#label_10,
+noCode3ARC#arc QLabel#label_11,
+noCode3ARC#arc QLabel#label_12,
+noCode3ARC#arc QLabel#label_13,
+noCode3ARC#arc QLabel#label_14
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+noCode3ARC#arc QToolButton#timeButton_1,
+noCode3ARC#arc QToolButton#timeButton_2,
+noCode3ARC#arc QToolButton#timeButton_3,
+noCode3ARC#arc QToolButton#timeButton_4,
+noCode3ARC#arc QToolButton#timeButton_5,
+noCode3ARC#arc QToolButton#timeButton_6,
+noCode3ARC#arc QToolButton#timeButton_7,
+noCode3ARC#arc QToolButton#timeButton_8,
+noCode3ARC#arc QToolButton#conditionButton_1,
+noCode3ARC#arc QToolButton#conditionButton_2,
+noCode3ARC#arc QToolButton#conditionButton_3,
+noCode3ARC#arc QToolButton#conditionButton_4,
+noCode3ARC#arc QToolButton#conditionButton_5,
+noCode3ARC#arc QToolButton#conditionButton_6,
+noCode3ARC#arc QToolButton#conditionButton_7,
+noCode3ARC#arc QToolButton#conditionButton_8,
+noCode3ARC#arc QToolButton#allowenceButton_1,
+noCode3ARC#arc QToolButton#allowenceButton_2,
+noCode3ARC#arc QToolButton#allowenceButton_3,
+noCode3ARC#arc QToolButton#allowenceButton_4,
+noCode3ARC#arc QToolButton#allowenceButton_5,
+noCode3ARC#arc QToolButton#allowenceButton_6,
+noCode3ARC#arc QToolButton#allowenceButton_7,
+noCode3ARC#arc QToolButton#allowenceButton_8,
+noCode3ARC#arc QToolButton#center1Button,
+noCode3ARC#arc QToolButton#center2Button,
+noCode3ARC#arc QToolButton#start1Button,
+noCode3ARC#arc QToolButton#start2Button,
+noCode3ARC#arc QToolButton#procRangleAngleButton,
+noCode3ARC#arc QToolButton#procRadiusButton,
+noCode3ARC#arc QToolButton#startDepthButton,
+noCode3ARC#arc QToolButton#prcoPlane1Button,
+noCode3ARC#arc QToolButton#prcoPlane2Button,
+noCode3ARC#arc QToolButton#prcoPlane3Button,
+noCode3ARC#arc QToolButton#AJCButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+noCode3ARC#arc QToolButton#timeButton_1:checked,
+noCode3ARC#arc QToolButton#timeButton_2:checked,
+noCode3ARC#arc QToolButton#timeButton_3:checked,
+noCode3ARC#arc QToolButton#timeButton_4:checked,
+noCode3ARC#arc QToolButton#timeButton_5:checked,
+noCode3ARC#arc QToolButton#timeButton_6:checked,
+noCode3ARC#arc QToolButton#timeButton_7:checked,
+noCode3ARC#arc QToolButton#timeButton_8:checked,
+noCode3ARC#arc QToolButton#prcoPlane1Button:checked,
+noCode3ARC#arc QToolButton#prcoPlane2Button:checked,
+noCode3ARC#arc QToolButton#prcoPlane3Button:checked,
+noCode3ARC#arc QToolButton#AJCButton:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+/*手动螺纹*/
+noCode4WHORL#whorl
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+noCode4WHORL#whorl QLabel#labelPix
+{
+    border-image: url(:/res/manual/fangdianweizhijueding.PNG);
+}
+
+noCode4WHORL#whorl QTextBrowser#textBrowser
+{
+    background-color: rgb(199, 230, 203);
+    border:0px;
+}
+
+noCode4WHORL#whorl QLabel#label,
+noCode4WHORL#whorl QLabel#label_2,
+noCode4WHORL#whorl QLabel#label_3,
+noCode4WHORL#whorl QLabel#label_4,
+noCode4WHORL#whorl QLabel#label_5,
+noCode4WHORL#whorl QLabel#label_6,
+noCode4WHORL#whorl QLabel#label_7,
+noCode4WHORL#whorl QLabel#label_8
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+noCode4WHORL#whorl QToolButton#toolButton_1,
+noCode4WHORL#whorl QToolButton#toolButton_2,
+noCode4WHORL#whorl QToolButton#toolButton_3,
+noCode4WHORL#whorl QToolButton#toolButton_4,
+noCode4WHORL#whorl QToolButton#toolButton_5,
+noCode4WHORL#whorl QToolButton#toolButton_6,
+noCode4WHORL#whorl QToolButton#toolButton_7,
+noCode4WHORL#whorl QToolButton#toolButton_8,
+noCode4WHORL#whorl QToolButton#buttonCD_1,
+noCode4WHORL#whorl QToolButton#buttonCD_2,
+noCode4WHORL#whorl QToolButton#buttonCD_3,
+noCode4WHORL#whorl QToolButton#buttonCD_4,
+noCode4WHORL#whorl QToolButton#buttonCD_5,
+noCode4WHORL#whorl QToolButton#buttonCD_6,
+noCode4WHORL#whorl QToolButton#buttonCD_7,
+noCode4WHORL#whorl QToolButton#buttonCD_8,
+noCode4WHORL#whorl QToolButton#buttonLN_1,
+noCode4WHORL#whorl QToolButton#buttonLN_2,
+noCode4WHORL#whorl QToolButton#buttonLN_3,
+noCode4WHORL#whorl QToolButton#buttonLN_4,
+noCode4WHORL#whorl QToolButton#buttonLN_5,
+noCode4WHORL#whorl QToolButton#buttonLN_6,
+noCode4WHORL#whorl QToolButton#buttonLN_7,
+noCode4WHORL#whorl QToolButton#buttonLN_8,
+noCode4WHORL#whorl QToolButton#buttonSTEP_1,
+noCode4WHORL#whorl QToolButton#buttonSTEP_2,
+noCode4WHORL#whorl QToolButton#buttonSTEP_3,
+noCode4WHORL#whorl QToolButton#buttonSTEP_4,
+noCode4WHORL#whorl QToolButton#buttonSTEP_5,
+noCode4WHORL#whorl QToolButton#buttonSTEP_6,
+noCode4WHORL#whorl QToolButton#buttonSTEP_7,
+noCode4WHORL#whorl QToolButton#buttonSTEP_8,
+noCode4WHORL#whorl QToolButton#buttonSTART_1,
+noCode4WHORL#whorl QToolButton#buttonSTART_2,
+noCode4WHORL#whorl QToolButton#buttonSTART_3,
+noCode4WHORL#whorl QToolButton#buttonSTART_4,
+noCode4WHORL#whorl QToolButton#buttonSTART_5,
+noCode4WHORL#whorl QToolButton#buttonSTART_6,
+noCode4WHORL#whorl QToolButton#buttonSTART_7,
+noCode4WHORL#whorl QToolButton#buttonSTART_8,
+noCode4WHORL#whorl QToolButton#buttonSTOP_1,
+noCode4WHORL#whorl QToolButton#buttonSTOP_2,
+noCode4WHORL#whorl QToolButton#buttonSTOP_3,
+noCode4WHORL#whorl QToolButton#buttonSTOP_4,
+noCode4WHORL#whorl QToolButton#buttonSTOP_5,
+noCode4WHORL#whorl QToolButton#buttonSTOP_6,
+noCode4WHORL#whorl QToolButton#buttonSTOP_7,
+noCode4WHORL#whorl QToolButton#buttonSTOP_8,
+noCode4WHORL#whorl QToolButton#toolButtonLeft,
+noCode4WHORL#whorl QToolButton#toolButtonRight,
+noCode4WHORL#whorl QToolButton#toolButtonLength
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+noCode4WHORL#whorl QToolButton#toolButtonLeft:checked,
+noCode4WHORL#whorl QToolButton#toolButtonRight:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*设定-密码*/
+optionSignIn#optionPW
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+optionSignIn#optionPW QLabel
+{
+    background-color : transparent;
+    color : white;
+    border: 0px solid black;
+}
+
+
+
+
+
+
+/*设定-标志-标志*/
+option1sign#sign
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option1sign#sign QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+
+option1sign#sign QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+option1sign#sign QToolButton#toolButton_1:checked,
+option1sign#sign QToolButton#toolButton_3:checked,
+option1sign#sign QToolButton#toolButton_4:checked,
+option1sign#sign QToolButton#toolButton_5:checked,
+option1sign#sign QToolButton#toolButton_8:checked,
+option1sign#sign QToolButton#toolButton_9:checked,
+option1sign#sign QToolButton#toolButton_11:checked,
+option1sign#sign QToolButton#toolButton_12:checked,
+option1sign#sign QToolButton#toolButton_14:checked,
+option1sign#sign QToolButton#toolButton_15:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*设定-标志-主机*/
+option2mainengien#mainengien
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option2mainengien#mainengien QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option2mainengien#mainengien QLabel#labelTips
+{
+    background-color: #9bb9d5;/*背景*/
+    color : rgb(0,0,0);
+}
+
+option2mainengien#mainengien QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+option2mainengien#mainengien QToolButton#importAutoBtn:pressed,
+option2mainengien#mainengien QToolButton#determineBtn:pressed,
+option2mainengien#mainengien QToolButton#importAutoEXBtn:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+option2mainengien#mainengien QToolButton#switchBtn:checked,
+option2mainengien#mainengien QToolButton#resetBtn:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+/*设定-标志-NC*/
+option3nc#nc
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option3nc#nc QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option3nc#nc QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+option3nc#nc QToolButton#allBlockM04Btn:checked,
+option3nc#nc QToolButton#ncAutoGenerateM02Btn:checked,
+option3nc#nc QToolButton#autoGenerateSlash:checked,
+option3nc#nc QToolButton#tricolorLightBtn:checked,
+option3nc#nc QToolButton#oilTankAxisBtn:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+/*设定-标志-放电*/
+option4discharge#discharge2
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+
+option4discharge#discharge2 QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option4discharge#discharge2 QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+option4discharge#discharge2 QToolButton#dischargeDetectionBtn:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+/*设定-标志-电机*/
+option5motion#motion
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option5motion#motion QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option5motion#motion QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+
+
+/*设定-标志-各轴*/
+option6axes#axes
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option6axes#axes QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option6axes#axes QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+option6axes#axes QToolButton#xAxis:checked,
+option6axes#axes QToolButton#yAxis:checked,
+option6axes#axes QToolButton#zAxis:checked,
+option6axes#axes QToolButton#uAxis:checked,
+option6axes#axes QToolButton#toolButton_7:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+/*设定-标志-ATC*/
+option7atc#atc
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+
+option7atc#atc QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option7atc#atc QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+option7atc#atc QToolButton#left1Button:checked,
+option7atc#atc QToolButton#left2Button:checked,
+option7atc#atc QToolButton#left3Button:checked,
+option7atc#atc QToolButton#left4Button:checked,
+option7atc#atc QToolButton#right1Button:checked,
+option7atc#atc QToolButton#right2Button:checked,
+option7atc#atc QToolButton#right3Button:checked,
+option7atc#atc QToolButton#right4Button:checked,
+option7atc#atc QToolButton#toolButton_32:checked,
+option7atc#atc QToolButton#toolButton_36:checked,
+option7atc#atc QToolButton#oppositeButton:checked,
+option7atc#atc QToolButton#absoluetButton:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*设定-标志-Jog（JogPW写一起）*/
+option8jog#jog
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+option8jog#jog QLabel#label
+{
+    background-color : transparent;
+    color : rgb(255,255,255);
+    border: 0px solid black;
+}
+
+option8jog#jog QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+option8jog#jog QToolButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+/*设定-标志-螺距补偿*/
+
+/*设定-颜色*/
+option9ColorSwitch#colorsw
+{
+    background-color: #9bb9d5;/*背景*/
+}
+option9ColorSwitch#colorsw QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+option9ColorSwitch#colorsw QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+        border-left:2px solid white;
+        border-top:2px solid white;
+        border-right:2px solid black;
+        border-bottom:2px solid black;
+}
+
+
+option9ColorSwitch#colorsw QToolButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+/*设定-H表*/
+hTableSet#hTable
+{
+    background-color: #9bb9d5;/*背景*/
+}
+
+hTableSet#hTable QTableView#tableView
+{
+    selection-background-color:rgb(7,203,7);
+    background-color:#9bb9d5;
+}
+
+
+
+
+
+
+/*设定-数据*/
+optionData#optiondata
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+
+optionData#optiondata QLabel
+{
+    background-color : rgb(255, 255, 255);
+    color : rgb(0,0,0);
+    border: 1px solid black;
+}
+
+optionData#optiondata QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+optionData#optiondata QToolButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+/*optionData#optiondata QTableWidget#tableWidget{}*/
+
+
+
+
+
+
+/*设定-时间*/
+optionTime#optiontime
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+
+optionTime#optiontime QToolButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+optionTime#optiontime QToolButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+/*	效果不对
+optionTime#optiontime QTableWidget QHeaderView:horizontal::section
+{
+	border-top:0px solid #D8D8D8;
+	border-left:0px solid #D8D8D8;
+	border-right:0.5px solid #D8D8D8;
+	border-bottom: 0.5px solid #D8D8D8;
+	background-color:white;
+}
+
+optionTime#optiontime QTableWidget QHeaderView:vertical::section
+{
+	border-top:0px solid #D8D8D8;
+	border-left:0px solid #D8D8D8;
+	border-right:0.5px solid #D8D8D8;
+	border-bottom: 0.5px solid #D8D8D8;
+	background-color:white;
+}
+
+optionTime#optiontime QTableWidget::item:selected
+{
+	background-color:rgb(255,165,0);
+}
+
+optionTime#optiontime QTableWidget::item
+{
+	background-color:rgb(255,255,255);
+}
+
+*/
+optionTime#optiontime QTableWidget
+{
+	selection-background-color:rgb(255,165,0);
+	background-color:rgb(255,255,255);
+}
+
+optionTime#optiontime QTableWidget QTableCornerButton::section
+{
+	border-top:0px solid #D8D8D8;
+	border-left:0px solid #D8D8D8;
+	border-right:0.5px solid #D8D8D8;
+	border-bottom: 0.5px solid #D8D8D8;
+	background-color:white;
+}
+
+
+
+
+
+
+
+/*管理-密码*/
+manageSignIn#managePW
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+manageSignIn#managePW QLabel
+{
+    background-color : transparent;
+    color : white;
+    border: 0px solid black;
+}
+
+
+
+/*管理-IO管理*/
+iomanage#manageIO
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+iomanage#manageIO QPushButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+iomanage#manageIO QPushButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+iomanage#manageIO QPushButton:checked
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*管理-LOCK*/
+manageLock#managelock
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+manageLock#managelock QLabel#label,
+manageLock#managelock QLabel#label_2,
+manageLock#managelock QLabel#label_3id,
+manageLock#managelock QLabel#label_3DeadTime
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+manageLock#managelock QPushButton
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+manageLock#managelock QPushButton:pressed
+{
+    background-color : #8fb1cd;
+    color:white;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+manageLock#managelock QPushButton#pushButton,
+manageLock#managelock QPushButton#pushButton_2,
+manageLock#managelock QPushButton#pushButton_3,
+manageLock#managelock QPushButton#pushButton_4,
+manageLock#managelock QPushButton#pushButton_5,
+manageLock#managelock QPushButton#pushButton_6
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+manageLock#managelock QPushButton#pushButton_5:pressed,
+manageLock#managelock QPushButton#pushButton_6:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*显示*/
+display#Display
+{
+        background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(155, 185, 213, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
+display#Display QTableView#tableView
+{
+    background-color:transparent;
+    color : black;
+    border:none;
+	padding-left:50px;
+    padding-right:100px;
+}
+
+display#Display QLabel
+{
+    background-color : transparent;
+    color : black;
+    border: 1px solid black;
+}
+
+display#Display QToolButton#displayExitButton
+{
+    color:black;
+    background-color: transparent;
+	border:1px solid black;
+}
+
+display#Display QToolButton#displayExitButton:pressed
+{
+    color:black;
+    background-color: #8fb1cd;
+    border:1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*网络*/
+networkManage#network
+{
+        background-color: #9bb9d5;/*背景*/
+}
+
+networkManage#network QLabel#label,
+networkManage#network QLabel#label_2,
+networkManage#network QLabel#label_3,
+networkManage#network QLabel#label_4,
+networkManage#network QLabel#label_5,
+networkManage#network QLabel#label_15,
+networkManage#network QLabel#label_20,
+networkManage#network QLabel#label_21,
+networkManage#network QLabel#label_34
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 0px solid black;
+}
+
+networkManage#network QLabel#label_6,
+networkManage#network QLabel#label_7,
+networkManage#network QLabel#label_8,
+networkManage#network QLabel#label_9,
+networkManage#network QLabel#label_10,
+networkManage#network QLabel#label_11,
+networkManage#network QLabel#label_12,
+networkManage#network QLabel#label_13,
+networkManage#network QLabel#label_14,
+networkManage#network QLabel#label_24,
+networkManage#network QLabel#label_26,
+networkManage#network QLabel#label_33
+{
+    background-color : white;
+    color : black;
+    border: 0px solid black;
+}
+
+networkManage#network QLabel#pushButtonMAC
+{
+    background-color : white;
+    color : black;
+    border: 0px solid black;
+}
+
+networkManage#network QPushButton#pushButtonIP1,
+networkManage#network QPushButton#pushButtonIP2,
+networkManage#network QPushButton#pushButtonIP3,
+networkManage#network QPushButton#pushButtonIP4,
+networkManage#network QPushButton#pushButtonIP2_1,
+networkManage#network QPushButton#pushButtonIP2_2,
+networkManage#network QPushButton#pushButtonIP2_3,
+networkManage#network QPushButton#pushButtonIP2_4,
+networkManage#network QPushButton#pushButtonGateway1,
+networkManage#network QPushButton#pushButtonGateway2,
+networkManage#network QPushButton#pushButtonGateway3,
+networkManage#network QPushButton#pushButtonGateway4,
+networkManage#network QPushButton#pushButtonMASK1,
+networkManage#network QPushButton#pushButtonMASK2,
+networkManage#network QPushButton#pushButtonMASK3,
+networkManage#network QPushButton#pushButtonMASK4,
+networkManage#network QPushButton#pushButtonPort,
+
+networkManage#network QPushButton#localPort
+{
+    color:black;
+    background-color: white;
+	border: 0px solid black;
+}
+
+networkManage#network QPushButton#pushButtonRefrush,
+networkManage#network QPushButton#remoteAssistance,
+networkManage#network QPushButton#pushButtonApply,
+networkManage#network QPushButton#pushButtonSet,
+networkManage#network QPushButton#pushButtonSetDHCP,
+networkManage#network QPushButton#pushButtonConnect
+{
+    color:black;
+    background-color: rgb(225, 225, 225);
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+
+networkManage#network QPushButton#pushButtonApply:checked,
+networkManage#network QPushButton#pushButtonConnect:checked
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+networkManage#network QPushButton#remoteAssistance:pressed,
+networkManage#network QPushButton#pushButtonSet:pressed,
+networkManage#network QPushButton#pushButtonSetDHCP:pressed,
+networkManage#network QPushButton#pushButtonRefrush:pressed
+{
+    color:white;
+    background-color: #8fb1cd;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-right:2px solid white;
+    border-bottom:2px solid white;
+}
+
+
+
+/*加工计划*/
+auto1ProcessPlan#processplan
+{
+        background-color: #9bb9d5;/*背景*/
+}
+auto1ProcessPlan#processplan QLabel
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+
+
+auto1ProcessPlan#processplan QWidget#auto1ProcessPlan QLabel#label_9
+{
+    background-color : red;
+    color : yellow;
+    border: 0px solid black;
+}
+
+
+auto1ProcessPlan#processplan QPushButton
+{
+    background-color:rgb(225, 225, 225);
+	color: black;
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+auto1ProcessPlan#processplan QPushButton:checked
+{
+        background-color: #8fb1cd;
+	color: white;
+	border-left:2px solid black;
+	border-top:2px solid black;
+	border-right:2px solid white;
+	border-bottom:2px solid white;
+}
+
+auto1ProcessPlan#processplan QPushButton:disabled
+{
+    color:black;
+    background-color: grey;
+    border-left:2px solid white;
+    border-top:2px solid white;
+    border-right:2px solid black;
+    border-bottom:2px solid black;
+}
+
+
+
+/*加工位置*/
+auto2ProcessPosition#processposition
+{
+        background-color: #9bb9d5;/*背景*/
+}
+auto2ProcessPosition#processposition QLabel
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+auto2ProcessPosition#processposition QPushButton
+{
+    background-color:rgb(225, 225, 225);
+	color: black;
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+auto2ProcessPosition#processposition QPushButton#insertButton:pressed,
+auto2ProcessPosition#processposition QPushButton#pasteButton:pressed,
+auto2ProcessPosition#processposition QPushButton#deleteButton:pressed,
+auto2ProcessPosition#processposition QPushButton#copyButton:pressed,
+auto2ProcessPosition#processposition QPushButton#lastPageButton:pressed,
+auto2ProcessPosition#processposition QPushButton#nextPageButton:pressed
+{
+        background-color: #8fb1cd;
+	color: white;
+	border-left:2px solid black;
+	border-top:2px solid black;
+	border-right:2px solid white;
+	border-bottom:2px solid white;
+}
+
+auto2ProcessPosition#processposition QTableWidget
+{
+	background-color:transparent;
+	border:0px solid white;
+	color:black;
+}
+auto2ProcessPosition#processposition QTableWidget::item
+{
+	border: 1px solid white;
+	background-color:black;
+	color:white;
+}
+auto2ProcessPosition#processposition QTableWidget::item:selected
+{
+	border: 1px solid white;
+	background-color:rgb(7, 203, 7);
+	color:white;
+}
+
+
+
+
+
+
+
+/*条件详细*/
+auto3ConditionDetail#conditiondetail
+{
+        background-color: #9bb9d5;/*背景*/
+}
+auto3ConditionDetail#conditiondetail QLabel
+{
+    background-color : rgb(204, 204, 204);
+    color : rgb(46, 48, 146);
+    border: 1px solid black;
+}
+auto3ConditionDetail#conditiondetail QPushButton
+{
+    background-color:rgb(225, 225, 225);
+	color: black;
+	border-left:2px solid white;
+	border-top:2px solid white;
+	border-right:2px solid black;
+	border-bottom:2px solid black;
+}
+
+auto3ConditionDetail#conditiondetail QPushButton#insertButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#pasteButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#copyButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#deleteButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#lastButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#nextButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#leftButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#rightButton:pressed,
+auto3ConditionDetail#conditiondetail QPushButton#outputManualCode:checked,
+auto3ConditionDetail#conditiondetail QPushButton#outputNcFile:checked
+{
+        background-color: #8fb1cd;
+	color: white;
+	border-left:2px solid black;
+	border-top:2px solid black;
+	border-right:2px solid white;
+	border-bottom:2px solid white;
+}
+
+
+auto3ConditionDetail#conditiondetail QTableWidget
+{
+	background-color:transparent;
+	border:0px solid white;
+	color:black;
+}
+auto3ConditionDetail#conditiondetail QTableWidget::item
+{
+	border: 1px solid white;
+	background-color:black;
+	color:white;
+}
+auto3ConditionDetail#conditiondetail QTableWidget::item:selected
+{
+	border: 1px solid white;
+	background-color:rgb(7, 203, 7);
+	color:white;
+}
+
+
+

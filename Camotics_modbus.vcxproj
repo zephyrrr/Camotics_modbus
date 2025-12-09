@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{57C690B8-9891-3C5F-B607-B0D78C05E293}</ProjectGuid>
+    <RootNamespace>Camotics_modbus</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.20348.0</WindowsTargetPlatformMinVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <ProjectName>CAMotics_modbus</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>Camotics_modbus</PrimaryOutput>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>Camotics_modbus</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>Camotics_modbus</PrimaryOutput>
+    <EnableASAN>false</EnableASAN>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolset>v143</PlatformToolset>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>Camotics_modbus</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IncludePath>.;..\CAMotics_gcode_lib;..\..\CAMotics\cbang\src;..\..\CAMotics\cbang\src\boost;..\..\CAMotics\cbang\include;$(IncludePath);$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files %28x86%29\Python38-32\include</IncludePath>
+    <LibraryPath>..\..\cnc\exe\x86-debug;..\..\CAMotics\cbang\lib\x86\debug;$(LibraryPath);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\Program Files %28x86%29\Python38-32\libs</LibraryPath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <EnableClangTidyCodeAnalysis>false</EnableClangTidyCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IncludePath>.;..\CAMotics_gcode_lib;..\..\CAMotics\cbang\src;..\..\CAMotics\cbang\src\boost;..\..\CAMotics\cbang\include;c:\OneDrive\Script\Python36\include;$(IncludePath);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>..\..\cnc\exe\x64-debug;..\..\CAMotics\cbang\lib\x64\debug;c:\OneDrive\Script\Python36\libs;$(LibraryPath);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>.;..\CAMotics_gcode_lib;..\..\CAMotics\cbang\src;..\..\CAMotics\cbang\src\boost;..\..\CAMotics\cbang\include;$(IncludePath);$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files %28x86%29\Python38-32\include</IncludePath>
+    <LibraryPath>..\..\cnc\exe\x86-release;..\..\CAMotics\cbang\lib\x86;$(LibraryPath);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);C:\Program Files %28x86%29\Python38-32\libs</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>.;..\CAMotics_gcode_lib;..\..\CAMotics\cbang\src;..\..\CAMotics\cbang\src\boost;..\..\CAMotics\cbang\include;D:\OneDrive\Script\Python36\include;$(IncludePath);$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>..\..\cnc\exe\x64-release;..\..\CAMotics\cbang\lib\x64;c:\OneDrive\Script\Python36\libs;$(LibraryPath);$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019</QtInstall>
+    <QtModules>core;sql;network;gui;widgets;qml;serialport;quickwidgets;quick;concurrent;charts;virtualkeyboard</QtModules>
+    <QtPlugin>true</QtPlugin>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;network;gui;widgets;qml;quickwidgets;quick;concurrent;charts;virtualkeyboard</QtModules>
+    <QtPlugin>true</QtPlugin>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019</QtInstall>
+    <QtModules>core;sql;network;gui;widgets;qml;serialport;quickwidgets;quick;concurrent;charts;virtualkeyboard</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="QtSettings">
+    <QtInstall>5.15.2_msvc2019_64</QtInstall>
+    <QtModules>core;sql;network;gui;widgets;qml;quickwidgets;quick;concurrent;charts;virtualkeyboard</QtModules>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>DLLBUILD;USING_CBANG;NOMINMAX;_WINDOWS;UNICODE;_UNICODE;QT_COMPILING_QSTRING_COMPAT_CPP;_ENABLE_EXTENDED_ALIGNED_STORAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Dbghelp.lib;CAMotics_gcode_lib.lib;bz2.lib;cbang.lib;cbang-boost.lib;event.lib;expat.lib;lz4.lib;z.lib;%(AdditionalDependencies);setupapi.lib;wsock32.lib;ws2_32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <Version>
+      </Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_TTY_WIN_;WINVER=0x0501;QS_LOG_LINE_NUMBERS;DLLBUILD;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>%(RelativeDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) ..\..\cnc\exe\x86-release</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>DLLBUILD;USING_CBANG;NOMINMAX;_WINDOWS;UNICODE;_UNICODE;QT_COMPILING_QSTRING_COMPAT_CPP;_ENABLE_EXTENDED_ALIGNED_STORAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CAMotics_gcode_lib.lib;bz2.lib;cbang.lib;cbang-boost.lib;event.lib;expat.lib;lz4.lib;z.lib;%(AdditionalDependencies);setupapi.lib;wsock32.lib;ws2_32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_TTY_WIN_;WINVER=0x0501;QS_LOG_LINE_NUMBERS;DLLBUILD;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>$(RelativeDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) ..\..\cnc\exe\x64-release</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;DLLBUILD;USING_CBANG;NOMINMAX;_WINDOWS;UNICODE;_UNICODE;QT_COMPILING_QSTRING_COMPAT_CPP;_ENABLE_EXTENDED_ALIGNED_STORAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Dbghelp.lib;CAMotics_gcode_lib.lib;bz2.lib;cbang.lib;cbang-boost.lib;event.lib;expat.lib;lz4.lib;z.lib;%(AdditionalDependencies);setupapi.lib;wsock32.lib;ws2_32.lib;shell32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_TTY_WIN_;WINVER=0x0501;QS_LOG_LINE_NUMBERS;DLLBUILD;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>%(RelativeDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) ..\..\cnc\exe\x86-debug</Command>
+    </PostBuildEvent>
+    <QtTranslation>
+      <BuildAction>lupdate</BuildAction>
+    </QtTranslation>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4100;4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;DLLBUILD;USING_CBANG;NOMINMAX;_WINDOWS;UNICODE;_UNICODE;QT_COMPILING_QSTRING_COMPAT_CPP;_ENABLE_EXTENDED_ALIGNED_STORAGE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>CAMotics_gcode_lib.lib;bz2.lib;cbang.lib;cbang-boost.lib;event.lib;expat.lib;lz4.lib;z.lib;%(AdditionalDependencies);setupapi.lib;wsock32.lib;ws2_32.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_TTY_WIN_;WINVER=0x0501;QS_LOG_LINE_NUMBERS;DLLBUILD;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <QtUic>
+      <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
+      <QtUicDir>%(RelativeDir)</QtUicDir>
+      <QtUicFileName>ui_%(Filename).h</QtUicFileName>
+    </QtUic>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>./$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) ..\..\cnc\exe\x64-debug</Command>
+    </PostBuildEvent>
+    <QtTranslation>
+      <BuildAction>lupdate</BuildAction>
+    </QtTranslation>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseChildWindow.cpp" />
+    <ClCompile Include="BaseMainWindow.cpp" />
+    <ClCompile Include="camotics\project\File.cpp" />
+    <ClCompile Include="camotics\project\Files.cpp" />
+    <ClCompile Include="camotics\project\Project.cpp" />
+    <ClCompile Include="camotics\project\XMLHandler.cpp" />
+    <ClCompile Include="camotics\qt\AutoCompleteTextEdit.cpp" />
+    <ClCompile Include="camotics\qt\ConsoleWriter.cpp" />
+    <ClCompile Include="camotics\qt\Dialog.cpp" />
+    <ClCompile Include="camotics\qt\FileTabManager.cpp" />
+    <ClCompile Include="camotics\qt\FindDialog.cpp" />
+    <ClCompile Include="camotics\qt\GCodeHighlighter.cpp" />
+    <ClCompile Include="camotics\qt\Highlighter.cpp" />
+    <ClCompile Include="camotics\qt\NCEdit.cpp" />
+    <ClCompile Include="camotics\qt\SidebarWidget.cpp" />
+    <ClCompile Include="camotics\qt\TPLHighlighter.cpp" />
+    <ClCompile Include="forms\auto\runautoone.cpp" />
+    <ClCompile Include="utils\simplecrypt.cpp" />
+    <ClCompile Include="utils\QSqliteListModel.cpp" />
+    <ClCompile Include="utils\QTextFileModel.cpp" />
+    <ClCompile Include="utils\EventLogger.cpp" />
+    <ClCompile Include="forms\auto\runautoform.cpp" />
+    <ClCompile Include="forms\auto\runautomulti.cpp" />
+    <ClCompile Include="forms\auto\runautoparamform.cpp" />
+    <ClCompile Include="forms\component\containerchildwindow.cpp" />
+    <ClCompile Include="forms\component\displayloran.cpp" />
+    <ClCompile Include="forms\component\displayz.cpp" />
+    <ClCompile Include="forms\component\tool4base.cpp" />
+    <ClCompile Include="forms\component\tool4buttons.cpp" />
+    <ClCompile Include="forms\component\tool4coorset.cpp" />
+    <ClCompile Include="forms\component\tool4gcode.cpp" />
+    <ClCompile Include="forms\component\tool4halfaxis.cpp" />
+    <ClCompile Include="forms\component\tool4itercoor.cpp" />
+    <ClCompile Include="forms\component\tool4loadsave.cpp" />
+    <ClCompile Include="forms\component\tool4posset.cpp" />
+    <ClCompile Include="forms\component\tool4switchcoor.cpp" />
+    <ClCompile Include="forms\component\tool4zeroaxis.cpp" />
+    <ClCompile Include="forms\other\about.cpp" />
+    <ClCompile Include="forms\other\jiagongjiluform.cpp" />
+    <ClCompile Include="forms\run\ncrun.cpp" />
+    <ClCompile Include="utils\DatabaseManager.cpp" />
+    <ClCompile Include="utils\nfile.cpp" />
+    <ClCompile Include="widgets\boollineedit.cpp" />
+    <ClCompile Include="forms\component\gaotiao4jiagong.cpp" />
+    <ClCompile Include="forms\component\tool4zeroandhalfaxis.cpp" />
+    <ClCompile Include="forms\other\huilingform.cpp" />
+    <ClCompile Include="StackWalker\StackWalker.cpp" />
+    <ClCompile Include="utils\dataform.cpp" />
+    <ClCompile Include="utils\formutils.cpp" />
+    <ClCompile Include="utils\gcodeutils.cpp" />
+    <ClCompile Include="utils\PythonQtRuntime.cpp" />
+    <ClCompile Include="utils\pluginutils.cpp" />
+    <ClCompile Include="utils\DataTable.cpp" />
+    <ClCompile Include="forms\edit\cp\widget_cp_ln.cpp" />
+    <ClCompile Include="forms\manual\fangdianform.cpp" />
+    <ClCompile Include="forms\other\fangdiancanshuform.cpp" />
+    <ClCompile Include="forms\other\fangdiancheshiform.cpp" />
+    <ClCompile Include="forms\other\xitongshezhiform.cpp" />
+    <ClCompile Include="forms\qtquickwindow.cpp" />
+    <ClCompile Include="forms\run\runmanual.cpp" />
+    <ClCompile Include="forms\run\runmanualmulti.cpp" />
+    <ClCompile Include="modbus\NCMachineParametersC.cpp" />
+    <QtMoc Include="widgets\advancedtoolbox.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </QtMoc>
+    <ClCompile Include="widgets\buttonedittablewidget.cpp" />
+    <ClCompile Include="widgets\editabletextwidget.cpp" />
+    <ClCompile Include="widgets\filedialog.cpp" />
+    <ClCompile Include="widgets\menuwith2frames.cpp" />
+    <ClCompile Include="widgets\multibuttonswidget.cpp" />
+    <ClCompile Include="widgets\qlineedit4optionwidget.cpp" />
+    <ClCompile Include="widgets\dynamicform.cpp" />
+    <ClCompile Include="editor\CAMotics_gcode_editor.cpp" />
+    <ClCompile Include="forms\edit\nceditform.cpp" />
+    <ClCompile Include="forms\mainwindow2.cpp" />
+    <ClCompile Include="forms\manual\duanmianform.cpp" />
+    <ClCompile Include="forms\manual\jiaodingweiform.cpp" />
+    <ClCompile Include="forms\manual\kongzhongxingform.cpp" />
+    <ClCompile Include="forms\manual\mdiform.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
+    <ClCompile Include="forms\manual\sandiandingwei.cpp" />
+    <ClCompile Include="forms\manual\weizhiyidongform.cpp" />
+    <ClCompile Include="forms\manual\weizhijiyi.cpp" />
+    <ClCompile Include="forms\manual\zhuzhongxingform.cpp" />
+    <ClCompile Include="forms\manual\zuobiaoxishezi.cpp" />
+    <ClCompile Include="forms\other\luojubuchangform.cpp" />
+    <ClCompile Include="gcode\RealtimeJsonMachine.cpp" />
+    <ClCompile Include="utils\LineLogger.cpp" />
+    <ClCompile Include="utils\MathTool.cpp" />
+    <ClCompile Include="utils\GCodeTool.cpp" />
+    <ClCompile Include="forms_v1\mainwindow.cpp" />
+    <ClCompile Include="modbus\eutils.cpp" />
+    <ClCompile Include="modbus\libmodbus\modbus-data.c" />
+    <ClCompile Include="modbus\libmodbus\modbus-rtu.c" />
+    <ClCompile Include="modbus\libmodbus\modbus-tcp.c" />
+    <ClCompile Include="modbus\libmodbus\modbus.c" />
+    <ClCompile Include="main.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
+    <ClCompile Include="modbus\modbusadapter.cpp" />
+    <ClCompile Include="modbus\modbuscommsettings.cpp" />
+    <ClCompile Include="forms_v1\ModbusFile.cpp" />
+    <ClCompile Include="modbus\NCCommand.cpp" />
+    <ClCompile Include="modbus\NCMachine.cpp" />
+    <ClCompile Include="forms_v1\NCMachinePanel.cpp" />
+    <ClCompile Include="modbus\NCMachineProperties.cpp" />
+    <ClCompile Include="modbus\QtPropertyEditor.cpp" />
+    <ClCompile Include="modbus\rawdatadelegate.cpp" />
+    <ClCompile Include="modbus\rawdatamodel.cpp" />
+    <ClCompile Include="modbus\registersdatadelegate.cpp" />
+    <ClCompile Include="modbus\registersmodel.cpp" />
+    <ClCompile Include="forms_v1\regwindow.cpp" />
+    <ClCompile Include="forms_v1\settingsmodbusrtu.cpp" />
+    <ClCompile Include="utils\TaskThread.cpp" />
+    <ClCompile Include="utils\MultiThreadQueue.cpp" />
+    <ClCompile Include="widgets\keyemitter.cpp" />
+    <ClCompile Include="widgets\qlineedit4axisvalue.cpp" />
+    <ClCompile Include="widgets\qnumericpad.cpp" />
+    <ClCompile Include="widgets\spreadsheet.cpp" />
+    <ClCompile Include="widgets\spreadsheetdelegate.cpp" />
+    <ClCompile Include="widgets\spreadsheetitem.cpp" />
+    <ClCompile Include="widgets\WidgetKeyboard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="forms\other\luojubuchangform.h" />
+    <ClInclude Include="camotics\project\Project.h" />
+    <ClInclude Include="camotics\project\XMLHandler.h" />
+    <QtMoc Include="forms\other\fangdiancheshiform.h" />
+    <QtMoc Include="forms\other\xitongshezhiform.h" />
+    <QtMoc Include="forms\manual\fangdianform.h" />
+    <QtMoc Include="forms\other\fangdiancanshuform.h" />
+    <QtMoc Include="forms\qtquickwindow.h" />
+    <QtMoc Include="forms\edit\cp\widget_cp_ln.h" />
+    <ClInclude Include="camotics\qt\Dialog.h" />
+    <QtMoc Include="camotics\qt\FindDialog.h" />
+    <QtMoc Include="forms\run\runmanual.h" />
+    <QtMoc Include="forms\run\runmanualmulti.h" />
+    <QtMoc Include="utils\gcodeutils.h" />
+    <QtMoc Include="forms\other\huilingform.h" />
+    <QtMoc Include="forms\component\tool4zeroandhalfaxis.h" />
+    <QtMoc Include="forms\component\gaotiao4jiagong.h" />
+    <QtMoc Include="widgets\boollineedit.h" />
+    <QtMoc Include="forms\component\displayloran.h" />
+    <QtMoc Include="forms\component\displayz.h" />
+    <QtMoc Include="forms\component\containerchildwindow.h" />
+    <QtMoc Include="forms\component\tool4zeroaxis.h" />
+    <QtMoc Include="forms\component\tool4halfaxis.h" />
+    <QtMoc Include="forms\component\tool4switchcoor.h" />
+    <QtMoc Include="forms\component\tool4loadsave.h" />
+    <QtMoc Include="forms\run\ncrun.h" />
+    <QtMoc Include="forms\component\tool4posset.h" />
+    <QtMoc Include="forms\other\about.h" />
+    <QtMoc Include="forms\auto\runautoform.h" />
+    <QtMoc Include="forms\component\tool4gcode.h" />
+    <QtMoc Include="forms\auto\runautomulti.h" />
+    <QtMoc Include="forms\auto\runautoparamform.h" />
+    <QtMoc Include="forms\component\tool4buttons.h" />
+    <QtMoc Include="forms\other\jiagongjiluform.h" />
+    <QtMoc Include="forms\component\tool4coorset.h" />
+    <QtMoc Include="forms\component\tool4itercoor.h" />
+    <QtMoc Include="utils\EventLogger.h" />
+    <ClInclude Include="camotics\qt\TPLHighlighter.h" />
+    <QtMoc Include="forms\auto\runautoone.h" />
+    <ClInclude Include="forms\component\tool4base.h" />
+    <QtMoc Include="utils\QTextFileModel.h" />
+    <QtMoc Include="utils\QSqliteListModel.h" />
+    <ClInclude Include="plugins\iplugin.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="utils\simplecrypt.h" />
+    <ClInclude Include="utils\DatabaseManager.h" />
+    <ClInclude Include="StackWalker\StackWalker.h" />
+    <ClInclude Include="utils\dataform.h" />
+    <ClInclude Include="utils\formutils.h" />
+    <QtMoc Include="utils\nfile.h" />
+    <ClInclude Include="utils\PythonQtRuntime.h" />
+    <ClInclude Include="utils\pluginutils.h" />
+    <ClInclude Include="utils\DataTable.h" />
+    <ClInclude Include="modbus\NCMachineParametersC.h" />
+    <QtMoc Include="widgets\qlineedit4optionwidget.h" />
+    <QtMoc Include="widgets\buttonedittablewidget.h" />
+    <QtMoc Include="widgets\advancedtoolbox.h" />
+    <ClInclude Include="version.h" />
+    <ClInclude Include="widgets\dynamicform.h" />
+    <QtMoc Include="widgets\editabletextwidget.h" />
+    <QtMoc Include="widgets\multibuttonswidget.h" />
+    <QtMoc Include="widgets\filedialog.h" />
+    <QtMoc Include="widgets\menuwith2frames.h" />
+    <ClInclude Include="widgets\spreadsheetitem.h" />
+    <QtMoc Include="widgets\spreadsheetdelegate.h" />
+    <QtMoc Include="widgets\spreadsheet.h" />
+    <QtMoc Include="widgets\WidgetKeyboard.h" />
+    <QtMoc Include="widgets\keyemitter.h" />
+    <QtMoc Include="widgets\qnumericpad.h" />
+    <QtMoc Include="widgets\qlineedit4axisvalue.h" />
+    <QtMoc Include="forms\manual\weizhiyidongform.h" />
+    <QtMoc Include="BaseChildWindow.h" />
+    <QtMoc Include="BaseMainWindow.h" />
+    <QtMoc Include="forms\mainwindow2.h" />
+    <QtMoc Include="forms\manual\zuobiaoxishezi.h" />
+    <QtMoc Include="forms\manual\weizhijiyi.h" />
+    <QtMoc Include="forms\manual\duanmianform.h" />
+    <QtMoc Include="forms\manual\mdiform.h" />
+    <QtMoc Include="forms\manual\zhuzhongxingform.h" />
+    <QtMoc Include="forms\manual\jiaodingweiform.h" />
+    <QtMoc Include="forms\manual\kongzhongxingform.h" />
+    <QtMoc Include="forms\manual\sandiandingwei.h" />
+    <QtMoc Include="forms\edit\nceditform.h" />
+    <QtMoc Include="camotics\qt\FileTabManager.h" />
+    <ClInclude Include="camotics\project\File.h" />
+    <ClInclude Include="camotics\project\Files.h" />
+    <ClInclude Include="gcode\RealtimeJsonMachine.h" />
+    <ClInclude Include="utils\LineLogger.h" />
+    <ClInclude Include="utils\MathTool.h" />
+    <ClInclude Include="utils\GCodeTool.h" />
+    <ClInclude Include="utils\TaskThread.h" />
+    <ClInclude Include="utils\MultiThreadQueue.h" />
+    <QtMoc Include="camotics\qt\AutoCompleteTextEdit.h" />
+    <ClInclude Include="camotics\qt\ColorComponent.h" />
+    <ClInclude Include="camotics\qt\GCodeHighlighter.h" />
+    <ClInclude Include="camotics\qt\Highlighter.h" />
+    <QtMoc Include="camotics\qt\NCEdit.h" />
+    <ClInclude Include="camotics\qt\SidebarWidget.h" />
+    <QtMoc Include="editor\CAMotics_gcode_editor.h" />
+    <ClInclude Include="gcode\parse\Token.h" />
+    <ClInclude Include="gcode\parse\Tokenizer.h" />
+    <ClInclude Include="gcode\parse\TokenType.h" />
+    <ClInclude Include="modbus\eutils.h" />
+    <ClInclude Include="modbus\libmodbus\config.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-private.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-rtu-private.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-rtu.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-tcp-private.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-tcp.h" />
+    <ClInclude Include="modbus\libmodbus\modbus-version.h" />
+    <ClInclude Include="modbus\libmodbus\modbus.h" />
+    <QtMoc Include="forms_v1\NCMachinePanel.h" />
+    <QtMoc Include="modbus\NCMachine.h" />
+    <QtMoc Include="forms_v1\ModbusFile.h" />
+    <ClInclude Include="modbus\NCCommand.h" />
+    <ClInclude Include="modbus\NCMachineDefines.h" />
+    <QtMoc Include="forms_v1\settingsmodbusrtu.h" />
+    <QtMoc Include="forms_v1\regwindow.h" />
+    <QtMoc Include="modbus\registersmodel.h" />
+    <QtMoc Include="modbus\registersdatadelegate.h" />
+    <QtMoc Include="modbus\rawdatamodel.h" />
+    <QtMoc Include="modbus\rawdatadelegate.h" />
+    <QtMoc Include="modbus\QtPropertyEditor.h" />
+    <QtMoc Include="modbus\NCMachineProperties.h" />
+    <QtMoc Include="modbus\modbuscommsettings.h" />
+    <QtMoc Include="modbus\modbusadapter.h" />
+    <QtMoc Include="forms_v1\mainwindow.h">
+    </QtMoc>
+    <QtMoc Include="camotics\qt\ConsoleWriter.h" />
+    <ClInclude Include="libmodbus\modbus.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="camotics\qt\find_dialog.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="editor\CAMotics_gcode_editor.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\auto\runautoform.ui" />
+    <QtUic Include="forms\auto\runautoparamform.ui" />
+    <QtUic Include="forms\component\displayloran.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\tool4buttons.ui" />
+    <QtUic Include="forms\component\tool4coorset.ui" />
+    <QtUic Include="forms\component\tool4gcode.ui" />
+    <QtUic Include="forms\component\tool4halfaxis.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\tool4itercoor.ui" />
+    <QtUic Include="forms\component\tool4loadsave.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\tool4posset.ui" />
+    <QtUic Include="forms\component\tool4switchcoor.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\tool4zeroaxis.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\other\about.ui" />
+    <QtUic Include="forms\other\jiagongjiluform.ui" />
+    <QtUic Include="forms\run\ncrun.ui" />
+    <QtUic Include="widgets\boollineedit.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\gaotiao4jiagong.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\component\tool4zeroandhalfaxis.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\edit\cp\widget_cp_ln.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\edit\cp\widget_cp_lp.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\edit\nceditform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\mainwindow2.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <None Include="forms\mainwindow2.ui.old">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </None>
+    <QtUic Include="forms\manual\duanmianform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\fangdianform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\jiaodingweiform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\kongzhongxingform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\mdiform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\sandiandingwei.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\weizhiyidongform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\weizhijiyi.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\zhuzhongxingform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\manual\zuobiaoxishezi.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\other\fangdiancanshuform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\other\fangdiancheshiform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\other\huilingform.ui" />
+    <QtUic Include="forms\other\luojubuchangform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\other\xitongshezhiform.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms\run\runmanual.ui" />
+    <QtUic Include="forms\run\runmanualmulti.ui" />
+    <QtUic Include="forms_v1\mainwindow.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\ModbusFile.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachinePanel.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachinePosition.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachineState.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\regwindow.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="forms_v1\settingsmodbusrtu.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="widgets\multibuttonswidget.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="widgets\qnumericpad.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+    <QtUic Include="widgets\WidgetKeyboard.ui">
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
+      <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resources\resources.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plugins\main\test_plugin.test.py" />
+    <None Include="plugins\WeiZhiYiDongForm\init.py.test" />
+    <None Include="resources\myQss.qss" />
+    <None Include="resources\stylesheet.qss" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="Translation_zh_CN.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

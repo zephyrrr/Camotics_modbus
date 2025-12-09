@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="forms_v1\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\ConsoleWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\libmodbus\modbus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\libmodbus\modbus-data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\libmodbus\modbus-rtu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\libmodbus\modbus-tcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\eutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\modbusadapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\modbuscommsettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\NCMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\NCMachineProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\QtPropertyEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\rawdatadelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\rawdatamodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\registersdatadelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\registersmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms_v1\regwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms_v1\settingsmodbusrtu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\NCCommand.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms_v1\ModbusFile.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms_v1\NCMachinePanel.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\AutoCompleteTextEdit.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\GCodeHighlighter.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\Highlighter.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\NCEdit.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\SidebarWidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="editor\CAMotics_gcode_editor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\MultiThreadQueue.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\TaskThread.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\GCodeTool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\weizhiyidongform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseMainWindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\mainwindow2.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseChildWindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\zuobiaoxishezi.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\duanmianform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\weizhijiyi.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\qlineedit4axisvalue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\jiaodingweiform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\kongzhongxingform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\sandiandingwei.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\zhuzhongxingform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gcode\RealtimeJsonMachine.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\MathTool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\keyemitter.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\qnumericpad.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\LineLogger.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\edit\nceditform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\FileTabManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\project\File.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\project\Files.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\WidgetKeyboard.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\spreadsheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\spreadsheetdelegate.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\spreadsheetitem.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\luojubuchangform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\project\Project.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\project\XMLHandler.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\dynamicform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\fangdiancheshiform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\xitongshezhiform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\NCMachineParametersC.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\fangdianform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\fangdiancanshuform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\qtquickwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\qlineedit4optionwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\edit\cp\widget_cp_ln.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\FindDialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\Dialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\run\runmanual.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\buttonedittablewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\run\runmanualmulti.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\DataTable.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\pluginutils.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\PythonQtRuntime.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\gcodeutils.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\editabletextwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StackWalker\StackWalker.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\huilingform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\formutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\dataform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4zeroandhalfaxis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\gaotiao4jiagong.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\boollineedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\displayloran.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\displayz.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\multibuttonswidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\containerchildwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4zeroaxis.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4halfaxis.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4switchcoor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4loadsave.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\filedialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgets\menuwith2frames.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\run\ncrun.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\nfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4posset.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\about.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\auto\runautoform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4gcode.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\auto\runautomulti.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\auto\runautoparamform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4buttons.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\DatabaseManager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\other\jiagongjiluform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4coorset.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4itercoor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\component\tool4base.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\EventLogger.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="camotics\qt\TPLHighlighter.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\manual\mdiform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms\auto\runautoone.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\QTextFileModel.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\QSqliteListModel.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\simplecrypt.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="forms_v1\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="libmodbus\modbus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="camotics\qt\ConsoleWriter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\modbusadapter.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\modbuscommsettings.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\NCMachineProperties.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\QtPropertyEditor.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\rawdatadelegate.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\rawdatamodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\registersdatadelegate.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\registersmodel.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms_v1\regwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms_v1\settingsmodbusrtu.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="modbus\NCMachine.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms_v1\ModbusFile.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms_v1\NCMachinePanel.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="camotics\qt\AutoCompleteTextEdit.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="camotics\qt\NCEdit.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="editor\CAMotics_gcode_editor.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\weizhiyidongform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\mainwindow2.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\zuobiaoxishezi.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\weizhijiyi.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\duanmianform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\qlineedit4axisvalue.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\keyemitter.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\qnumericpad.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\mdiform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\zhuzhongxingform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\jiaodingweiform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\kongzhongxingform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\sandiandingwei.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\edit\nceditform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="camotics\qt\FileTabManager.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\WidgetKeyboard.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\spreadsheet.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\spreadsheetdelegate.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\luojubuchangform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\fangdiancheshiform.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\xitongshezhiform.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\manual\fangdianform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\fangdiancanshuform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\qtquickwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\qlineedit4optionwidget.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\edit\cp\widget_cp_ln.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="camotics\qt\FindDialog.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\run\runmanual.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\buttonedittablewidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\run\runmanualmulti.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\gcodeutils.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\editabletextwidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BaseChildWindow.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="BaseMainWindow.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\huilingform.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4zeroandhalfaxis.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\advancedtoolbox.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\advancedtoolbox.cpp">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\gaotiao4jiagong.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\boollineedit.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\displayloran.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\displayz.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\multibuttonswidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\containerchildwindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4zeroaxis.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4halfaxis.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4switchcoor.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4loadsave.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\filedialog.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="widgets\menuwith2frames.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\run\ncrun.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\nfile.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4posset.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\about.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\auto\runautoform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4gcode.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\auto\runautomulti.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\auto\runautoparamform.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4buttons.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\other\jiagongjiluform.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4coorset.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\tool4itercoor.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\EventLogger.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\auto\runautoone.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\QTextFileModel.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="utils\QSqliteListModel.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms_v1\mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachinePosition.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachineState.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\regwindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\settingsmodbusrtu.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\ModbusFile.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms_v1\NCMachinePanel.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="editor\CAMotics_gcode_editor.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\weizhiyidongform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\zuobiaoxishezi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\duanmianform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\weizhijiyi.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\jiaodingweiform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\kongzhongxingform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\mdiform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\sandiandingwei.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\zhuzhongxingform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="widgets\qnumericpad.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\edit\nceditform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="widgets\WidgetKeyboard.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\luojubuchangform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\fangdiancheshiform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\xitongshezhiform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\manual\fangdianform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\fangdiancanshuform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\edit\cp\widget_cp_ln.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\edit\cp\widget_cp_lp.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\mainwindow2.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="camotics\qt\find_dialog.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\run\runmanual.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\run\runmanualmulti.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\huilingform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4zeroandhalfaxis.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\gaotiao4jiagong.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="widgets\boollineedit.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\displayloran.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="widgets\multibuttonswidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4zeroaxis.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4halfaxis.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4switchcoor.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4loadsave.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\run\ncrun.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4posset.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\about.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\auto\runautoform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4gcode.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\auto\runautoparamform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4buttons.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\other\jiagongjiluform.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4coorset.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="forms\component\tool4itercoor.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="modbus\libmodbus\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-rtu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-rtu-private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-tcp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-tcp-private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\libmodbus\modbus-version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\eutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\NCMachineDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcode\parse\Token.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcode\parse\Tokenizer.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcode\parse\TokenType.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\NCCommand.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\ColorComponent.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\GCodeHighlighter.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\Highlighter.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\SidebarWidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\MultiThreadQueue.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\TaskThread.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\GCodeTool.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcode\RealtimeJsonMachine.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\MathTool.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\LineLogger.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\project\File.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\project\Files.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\spreadsheetitem.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\project\Project.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\project\XMLHandler.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\NCMachineParametersC.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\Dialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\DataTable.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\pluginutils.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\PythonQtRuntime.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StackWalker\StackWalker.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\formutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\dataform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="widgets\dynamicform.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\DatabaseManager.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="forms\component\tool4base.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="camotics\qt\TPLHighlighter.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\simplecrypt.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugins\iplugin.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resources\resources.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\stylesheet.qss" />
+    <None Include="resources\myQss.qss" />
+    <None Include="forms\mainwindow2.ui.old">
+      <Filter>Form Files</Filter>
+    </None>
+    <None Include="plugins\main\test_plugin.test.py" />
+    <None Include="plugins\WeiZhiYiDongForm\init.py.test" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtTranslation Include="Translation_zh_CN.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+</Project>

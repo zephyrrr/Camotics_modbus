@@ -1,0 +1,94 @@
+﻿QLabel {
+    font-size: 20pt;
+}
+
+
+
+QTableView {
+    font-size: 20pt;
+}
+
+QHeaderView {
+  font-size: 20pt;
+}
+
+QTableView::row {
+  font-size: 20pt; 
+}
+
+QTableView::item:first 
+{
+    border-top: 1px solid black;
+}
+
+SpreadSheet {
+    font-size: 12pt;
+}
+
+QHeaderView#header-small {
+    font-size: 12pt;
+}
+QHeaderView::section {
+    background: white;
+    border-bottom: 1px black;
+    color: black;
+}
+QTableView QTableCornerButton::section {
+    background: white;
+    border: 1px outset black;
+    color: black;
+}
+
+QTabBar {
+    font-size: 20pt;
+    color: rgb(255, 0, 0);
+}
+QTabBar::tab 
+{ 
+    color: rgb(255, 0, 0); 
+    /*height:150px;
+    width: 50px; */
+}
+QTabBar::tab:selected { 
+  background: rgb(0, 245, 245);
+  /*margin-bottom: -1px; */
+}
+
+QPushButton {
+    font-size: 20pt;
+}
+
+QLineEdit {
+    font-size: 20pt;
+}
+
+QLineEdit[readOnly="false"] {
+    background-color: #CCE4F7; 
+}
+
+QLineEdit[readOnly="true"] {
+    background-color: #FDFDFD;
+}
+
+QLineEdit[isEditing="true"] {
+  background-color: yellow; 
+}
+QLineEdit[isEditing="false"][readOnly="false"] {
+  background-color: #CCE4F7; 
+}
+QLineEdit[isEditing="false"][readOnly="true"] {
+  background-color: #FDFDFD; 
+}
+/*QLineEdit:focus:read-only {
+  background-color: #FDFDFD; 
+}*/
+
+QFormLayout {
+  qproperty-horizontal-spacing: 20px;
+  qproperty-vertical-spacing: 20px;
+}
+
+QGridLayout {
+  qproperty-horizontal-spacing: 20px;
+  qproperty-vertical-spacing: 20px;
+}

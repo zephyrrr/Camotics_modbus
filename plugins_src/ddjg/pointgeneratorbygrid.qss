@@ -1,0 +1,40 @@
+QDialog {
+	border-radius: 2px;
+	background-color: rgb(22, 77, 160);
+}
+
+QLabel {
+	font-size: 40px;
+	background-color: transparent;
+	color: rgb(217, 217, 217);
+	border: 0px solid black;
+	min-width: 200px;
+}
+QLineEdit {
+	font-size: 30px;
+	background-color: rgb(195, 195, 195);
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+	selection-background-color: transparent;
+}
+QLineEdit[readOnly="false"] {
+	background-color: rgb(255, 255, 255);
+	color: rgb(51, 94, 2);
+}
+QLineEdit[readOnly="false"][isEditing="true"] {
+	color: white;
+	background-color: rgb(170, 85, 255);
+}
+QLineEdit[readOnly="true"][isEditing="true"] {
+	color: white;
+	background-color: rgb(170, 85, 255);
+}
+
+QPushButton {
+	font-family: "Microsoft YaHei UI";
+	font-size: 30px;
+	color: black;
+	background-color: rgb(225, 225, 225);
+}
