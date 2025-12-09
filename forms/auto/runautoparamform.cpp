@@ -1,4 +1,4 @@
-#include "runautoparamform.h"
+ï»¿#include "runautoparamform.h"
 #include "ui_runautoparamform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -25,326 +25,18 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 	ui->inDjxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inDjxz)));
 	ui->inJgz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgz)));
 	ui->inJgmj->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgmj)));
-	//ui->inJgmj->setModel(new QSqliteModel(this, "./data/cp.db", QStringLiteral("SELECT ¼Ó¹¤Ãæ»ý FROM ¼Ó¹¤Ãæ»ý")));
+	//ui->inJgmj->setModel(new QSqliteModel(this, "./data/cp.db", tr("SJGMJ JGMJ")));
 	ui->inCcd->setModel(new QTextFileModel(this, GetDataFilePath(ui->inCcd)));
 	ui->inYdxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdxz)));
 	ui->inYdms->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdms)));
 	ui->inJgcz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgcz)));
 
-	/*ui->inClzh->setModel(new QStringListModel(QStringLiteral("Í­-¸Ö,Ê¯Ä«-¸Ö,Í­-ÎÙ¸Ö,Í­-Í­,Í­-ÂÁ,Ê¯Ä«-ÂÁ,¸Ö-îëÍ­,Ê¯Ä«-îëÍ­").split(',', Qt::SkipEmptyParts)));
-	ui->inDjxz->setModel(new QStringListModel(QStringLiteral("Í¨ÓÃ,ÉîÇ»,´óÃæ»ý,¹ÇÎ»,²å¼þ,¶à½Å,ÂÝÑÀ,ÎÏ¸Ë,Çå½Ç,½ø½º¿Ú").split(',', Qt::SkipEmptyParts)));
-	ui->inJgz->setModel(new QStringListModel(QStringLiteral("Z,X,Y").split(',', Qt::SkipEmptyParts)));
-	ui->inJgmj->setModel(new QStringListModel(QStringLiteral(R"(¡õ1¡ð1
-¡õ2¡ð2
-¡õ3¡ð3
-¡õ4¡ð4
-¡õ4¡ð5
-¡õ5¡ð6
-¡õ6¡ð7
-¡õ7¡ð8
-¡õ8¡ð9
-¡õ9¡ð10
-¡õ10¡ð11
-¡õ11¡ð12
-¡õ12¡ð13
-¡õ12¡ð14
-¡õ13¡ð15
-¡õ14¡ð16
-¡õ15¡ð17
-¡õ16¡ð18
-¡õ17¡ð19
-¡õ18¡ð20
-¡õ19¡ð21
-¡õ19¡ð22
-¡õ20¡ð23
-¡õ21¡ð24
-¡õ22¡ð25
-¡õ23¡ð26
-¡õ24¡ð27
-¡õ25¡ð28
-¡õ26¡ð29
-¡õ27¡ð30
-¡õ27¡ð31
-¡õ28¡ð32
-¡õ29¡ð33
-¡õ30¡ð34
-¡õ31¡ð35
-¡õ32¡ð36
-¡õ33¡ð37
-¡õ34¡ð38
-¡õ35¡ð39
-¡õ35¡ð40
-¡õ36¡ð41
-¡õ37¡ð42
-¡õ38¡ð43
-¡õ39¡ð44
-¡õ40¡ð45
-¡õ41¡ð46
-¡õ42¡ð47
-¡õ43¡ð48
-¡õ43¡ð49
-¡õ44¡ð50
-¡õ45¡ð51
-¡õ46¡ð52
-¡õ47¡ð53
-¡õ48¡ð54
-¡õ49¡ð55
-¡õ50¡ð56
-¡õ51¡ð57
-¡õ51¡ð58
-¡õ52¡ð59
-¡õ53¡ð60
-¡õ54¡ð61
-¡õ55¡ð62
-¡õ56¡ð63
-¡õ57¡ð64
-¡õ58¡ð65
-¡õ58¡ð66
-¡õ59¡ð67
-¡õ60¡ð68
-¡õ61¡ð69
-¡õ62¡ð70
-¡õ63¡ð71
-¡õ64¡ð72
-¡õ65¡ð73
-¡õ66¡ð74
-¡õ66¡ð75
-¡õ67¡ð76
-¡õ68¡ð77
-¡õ69¡ð78
-¡õ70¡ð79
-¡õ71¡ð80
-¡õ72¡ð81
-¡õ73¡ð82
-¡õ74¡ð83
-¡õ74¡ð84
-¡õ75¡ð85
-¡õ76¡ð86
-¡õ77¡ð87
-¡õ78¡ð88
-¡õ79¡ð89
-¡õ80¡ð90
-¡õ81¡ð91
-¡õ82¡ð92
-¡õ82¡ð93
-¡õ83¡ð94
-¡õ84¡ð95
-¡õ85¡ð96
-¡õ86¡ð97
-¡õ87¡ð98
-¡õ88¡ð99
-¡õ89¡ð100
-¡õ89¡ð101
-¡õ90¡ð102
-¡õ91¡ð103
-¡õ92¡ð104
-¡õ93¡ð105
-¡õ94¡ð106
-¡õ95¡ð107
-¡õ96¡ð108
-¡õ97¡ð109
-¡õ97¡ð110
-¡õ98¡ð111
-¡õ99¡ð112
-¡õ100¡ð113
-¡õ101¡ð114
-¡õ102¡ð115
-¡õ103¡ð116
-¡õ104¡ð117
-¡õ105¡ð118
-¡õ105¡ð119
-¡õ106¡ð120
-¡õ107¡ð121
-¡õ108¡ð122
-¡õ109¡ð123
-¡õ110¡ð124
-¡õ111¡ð125
-¡õ112¡ð126
-¡õ113¡ð127
-¡õ113¡ð128
-¡õ114¡ð129
-¡õ115¡ð130
-¡õ116¡ð131
-¡õ117¡ð132
-¡õ118¡ð133
-¡õ119¡ð134
-¡õ120¡ð135
-¡õ120¡ð136
-¡õ121¡ð137
-¡õ122¡ð138
-¡õ123¡ð139
-¡õ124¡ð140
-¡õ125¡ð141
-¡õ126¡ð142
-¡õ127¡ð143
-¡õ128¡ð144
-¡õ128¡ð145
-¡õ129¡ð146
-¡õ130¡ð147
-¡õ131¡ð148
-¡õ132¡ð149
-¡õ133¡ð150
-¡õ134¡ð151
-¡õ135¡ð152
-¡õ136¡ð153
-¡õ136¡ð154
-¡õ137¡ð155
-¡õ138¡ð156
-¡õ139¡ð157
-¡õ140¡ð158
-¡õ141¡ð159
-¡õ142¡ð160
-¡õ143¡ð161
-¡õ144¡ð162
-¡õ144¡ð163
-¡õ145¡ð164
-¡õ146¡ð165
-¡õ147¡ð166
-¡õ148¡ð167
-¡õ149¡ð168
-¡õ150¡ð169
-¡õ151¡ð170
-¡õ152¡ð171
-¡õ152¡ð172
-¡õ153¡ð173
-¡õ154¡ð174
-¡õ155¡ð175
-¡õ156¡ð176
-¡õ157¡ð177
-¡õ158¡ð178
-¡õ159¡ð179
-¡õ159¡ð180
-¡õ160¡ð181
-¡õ161¡ð182
-¡õ162¡ð183
-¡õ163¡ð184
-¡õ164¡ð185
-¡õ165¡ð186
-¡õ166¡ð187
-¡õ167¡ð188
-¡õ167¡ð189
-¡õ168¡ð190
-¡õ169¡ð191
-¡õ170¡ð192
-¡õ171¡ð193
-¡õ172¡ð194
-¡õ173¡ð195
-¡õ174¡ð196
-¡õ175¡ð197
-¡õ175¡ð198
-¡õ176¡ð199
-¡õ177¡ð200
-¡õ178¡ð201
-¡õ179¡ð202
-¡õ180¡ð203
-¡õ181¡ð204
-¡õ182¡ð205
-¡õ183¡ð206
-¡õ183¡ð207
-¡õ184¡ð208
-¡õ185¡ð209
-¡õ186¡ð210
-¡õ187¡ð211
-¡õ188¡ð212
-¡õ189¡ð213
-¡õ190¡ð214
-¡õ190¡ð215
-¡õ191¡ð216
-¡õ192¡ð217
-¡õ193¡ð218
-¡õ194¡ð219
-¡õ195¡ð220
-¡õ196¡ð221
-¡õ197¡ð222
-¡õ198¡ð223
-¡õ198¡ð224
-¡õ199¡ð225
-¡õ200¡ð226
-¡õ201¡ð227
-¡õ202¡ð228
-¡õ203¡ð229
-¡õ204¡ð230
-¡õ205¡ð231
-¡õ206¡ð232
-¡õ206¡ð233
-¡õ207¡ð234
-¡õ208¡ð235
-¡õ209¡ð236
-¡õ210¡ð237
-¡õ211¡ð238
-¡õ212¡ð239
-¡õ213¡ð240
-¡õ214¡ð241
-¡õ214¡ð242
-¡õ215¡ð243
-¡õ216¡ð244
-¡õ217¡ð245
-¡õ218¡ð246
-¡õ219¡ð247
-¡õ220¡ð248
-¡õ221¡ð249
-¡õ222¡ð250
-¡õ222¡ð251
-¡õ223¡ð252
-¡õ224¡ð253
-¡õ225¡ð254
-¡õ226¡ð255
-¡õ227¡ð256
-¡õ228¡ð257
-¡õ229¡ð258
-¡õ229¡ð259
-¡õ230¡ð260
-¡õ231¡ð261
-¡õ232¡ð262
-¡õ233¡ð263
-¡õ234¡ð264
-¡õ235¡ð265
-¡õ236¡ð266
-¡õ237¡ð267
-¡õ237¡ð268
-¡õ238¡ð269
-¡õ239¡ð270
-¡õ240¡ð271
-¡õ241¡ð272
-¡õ242¡ð273
-¡õ243¡ð274
-¡õ244¡ð275
-¡õ245¡ð276
-¡õ245¡ð277
-¡õ246¡ð278
-¡õ247¡ð279
-¡õ248¡ð280
-¡õ249¡ð281
-¡õ250¡ð282
-¡õ251¡ð283
-¡õ252¡ð284
-¡õ253¡ð285
-¡õ253¡ð286
-¡õ254¡ð287
-¡õ255¡ð288
-¡õ256¡ð289
-¡õ257¡ð290
-¡õ258¡ð291
-¡õ259¡ð292
-¡õ260¡ð293
-¡õ260¡ð294
-¡õ261¡ð295
-¡õ262¡ð296
-¡õ263¡ð297
-¡õ264¡ð298
-¡õ265¡ð299
-¡õ266¡ð300)").split('\n', QString::SkipEmptyParts)));
-	ui->inCcd->setModel(new QStringListModel(QStringLiteral("VDI0-Ra0.1,VDI3-Ra0.14,VDI10-Ra0.32,VDI14-Ra0.5,VDI16-Ra0.63,VDI17-Ra0.7,VDI18-Ra0.8,VDI20-Ra1,VDI22-Ra1.26,VDI24-Ra1.6,VDI26-Ra2,VDI28-Ra2.5,VDI30-Ra3.2,VDI32-Ra4,VDI34-Ra5,VDI36-Ra6.3,VDI40-Ra10").split(',', Qt::SkipEmptyParts)));
-	ui->inYdxz->setModel(new QStringListModel(QStringLiteral("ÎÞ,Ô²,·½,ÁâÐÎ,½»²æ,Ê®×Ö,ÏóÏÞ").split(',', Qt::SkipEmptyParts)));
-	ui->inYdms->setModel(new QStringListModel(QStringLiteral("ÎÞ,×ÔÓÉ,Ëø¶¨,±ê×¼").split(',', Qt::SkipEmptyParts)));
-	ui->inJgcz->setModel(new QStringListModel(QStringLiteral("±ê×¼,µÍËðºÄ,ËÙ¶È¿ì").split(',', Qt::SkipEmptyParts)));*/
-
-	ui->inJgmj->setText("¡õ18¡ð20");
+	ui->inJgmj->setText("â–¡18â—‹20");
 
 	ui->inYdxzSpecial->setValidator(new QRegExpValidator(QRegExp("^[1-5]{4}$"), ui->inYdxzSpecial));
 	ui->inYdxzSpecial->setVisible(false);
 	connect(ui->inYdxz, &QComboBox::currentTextChanged, this, [this](const QString& text) {
-		if (text == QStringLiteral("ÏóÏÞ")) {
+		if (text == ui->inYdxz->itemText(ui->inYdxz->count() - 1)) {
 			ui->inYdxzSpecial->setVisible(true);
 		}
 		else {
@@ -508,7 +200,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		table1.serialize(filePath1);
 
 		//BaseMainWindow* mainWindow = GetMainWindow();
-		//mainWindow->showChildWindow(QStringLiteral("ÊÖ¶¯µ¥¸ö"));
+		//mainWindow->showChildWindow(tr("SDDG"));
 
 		return cCode;
 	}
@@ -522,7 +214,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		QFile::remove(filePath2);
 
 		return QString();
-		FormUtils::MessageBoxInfo(QStringLiteral("Ã»ÓÐÏàÓ¦Êý¾Ý£¡"));
+		FormUtils::MessageBoxInfo(tr("MYXYSJï¼"));
 	}
 }
 
@@ -636,7 +328,7 @@ QString RunAutoParamForm::GenerateManualData_V1(QString parentName)
 		table1.serialize(filePath1);
 
 		//BaseMainWindow* mainWindow = GetMainWindow();
-		//mainWindow->showChildWindow(QStringLiteral("ÊÖ¶¯µ¥¸ö"));
+		//mainWindow->showChildWindow(tr("SDDG"));
 	}
 	else {
 		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());

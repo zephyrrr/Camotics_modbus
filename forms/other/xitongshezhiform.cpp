@@ -1,4 +1,4 @@
-#include "xitongshezhiform.h"
+ï»¿#include "xitongshezhiform.h"
 #include <QGroupBox>
 #include "boollineedit.h"
 #include "../modbus/NCMachine.h"
@@ -66,32 +66,32 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("HLFX_X", "+");
 		dynamicForm->setRegexValidation("HLFX_X", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_X", QStringLiteral("XÖá»ØÁã·½Ïò"));
+		dynamicForm->setLabelCaption("HLFX_X", tr("XZHLFX"));
 		dynamicForm->setValue("HLFX_Y", "+");
 		dynamicForm->setRegexValidation("HLFX_Y", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_Y", QStringLiteral("YÖá»ØÁã·½Ïò"));
+		dynamicForm->setLabelCaption("HLFX_Y", tr("YZHLFX"));
 		dynamicForm->setValue("HLFX_Z", "+");
 		dynamicForm->setRegexValidation("HLFX_Z", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_Z", QStringLiteral("ZÖá»ØÁã·½Ïò"));
+		dynamicForm->setLabelCaption("HLFX_Z", tr("ZZHLFX"));
 
 		dynamicForm->setValue("JXYD_X+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_X+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X+", QStringLiteral("X+¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_X+", tr("XJXWZ"));
 		dynamicForm->setValue("JXYD_X-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_X-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X-", QStringLiteral("X-¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_X-", tr("XJXWZ"));
 		dynamicForm->setValue("JXYD_Y+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Y+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y+", QStringLiteral("Y+¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_Y+", tr("YJXWZ"));
 		dynamicForm->setValue("JXYD_Y-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Y-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y-", QStringLiteral("Y-¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_Y-", tr("YJXWZ"));
 		dynamicForm->setValue("JXYD_Z+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Z+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z+", QStringLiteral("Z+¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_Z+", tr("ZJXWZ"));
 		dynamicForm->setValue("JXYD_Z-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Z-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z-", QStringLiteral("Z-¼«ÏÞÎ»ÖÃ"));
+		dynamicForm->setLabelCaption("JXYD_Z-", tr("ZJXWZ"));
 
 		dynamicForm->setValue("AdGain", "1.0");
 		dynamicForm->setValue("AdCount0V", "2023");
@@ -121,49 +121,49 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("SPEED_JOG_V_X", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_X", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_X", QStringLiteral("XÖá×î´óJOGËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_X", tr("XZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_X", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_X", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_X", QStringLiteral("XÖáJOG¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_X", tr("XZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_Y", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_Y", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_Y", QStringLiteral("YÖá×î´óJOGËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_Y", tr("YZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_Y", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_Y", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_Y", QStringLiteral("YÖáJOG¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_Y", tr("YZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_Z", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_Z", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_Z", QStringLiteral("ZÖá×î´óJOGËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_Z", tr("ZZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_Z", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_Z", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_Z", QStringLiteral("ZÖáJOG¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_Z", tr("ZZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_U", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_U", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_U", QStringLiteral("UÖá×î´óJOGËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_U", tr("UZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_U", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_U", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_U", QStringLiteral("UÖáJOG¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_U", tr("UZJJSSJ"));
 
 		dynamicForm->setValue("SPEED_LOC_V", "1800");
 		dynamicForm->setRegexValidation("SPEED_LOC_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_LOC_V", QStringLiteral("LOCËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_LOC_V", tr("LSD"));
 		dynamicForm->setValue("SPEED_LOC_T", "200");
 		dynamicForm->setRegexValidation("SPEED_LOC_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_LOC_T", QStringLiteral("LOC¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_LOC_T", tr("LJSSJ"));
 
 		dynamicForm->setValue("SPEED_CMV_V", "12");
 		dynamicForm->setRegexValidation("SPEED_CMV_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_V", QStringLiteral("¶Ôµ¶ÒÆ¶¯ËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_CMV_V", tr("DDYDSD"));
 		dynamicForm->setValue("SPEED_CMV_T", "200");
 		dynamicForm->setRegexValidation("SPEED_CMV_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_T", QStringLiteral("¶Ôµ¶¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_CMV_T", tr("DDJSSJ"));
 
 		dynamicForm->setValue("SPEED_CMV_TOZIG_V", "12");
 		dynamicForm->setRegexValidation("SPEED_CMV_TOZIG_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_V", QStringLiteral("»Ø²Î¿¼µãÒÆ¶¯ËÙ¶È"));
+		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_V", tr("HCKDYDSD"));
 		dynamicForm->setValue("SPEED_CMV_TOZIG_T", "200");
 		dynamicForm->setRegexValidation("SPEED_CMV_TOZIG_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_T", QStringLiteral("»Ø²Î¿¼µã¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_T", tr("HCKDJSSJ"));
 	}
 
 	{
@@ -179,66 +179,66 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("DDCS", "4");
 		dynamicForm->setRegexValidation("DDCS", "^\\d+$");
-		dynamicForm->setLabelCaption("DDCS", QStringLiteral("¶Ôµ¶´ÎÊý"));
+		dynamicForm->setLabelCaption("DDCS", tr("DDCS"));
 
 		dynamicForm->setValue("DDGCZDHTJL", "300");
 		dynamicForm->setRegexValidation("DDGCZDHTJL", "^\\d+$");
-		dynamicForm->setLabelCaption("DDGCZDHTJL", QStringLiteral("¶Ôµ¶¹ý³ÌÖÐ»ØÍË¾àÀë"));
+		dynamicForm->setLabelCaption("DDGCZDHTJL", tr("DDGCZHTJL"));
 
 		dynamicForm->setValue("TDGDJS", "500");
 		dynamicForm->setRegexValidation("TDGDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("TDGDJS", QStringLiteral("Ì§µ¶¸ß¶È»ùÊý"));
+		dynamicForm->setLabelCaption("TDGDJS", tr("TDGDJS"));
 
 		dynamicForm->setValue("TDSDJS", "40");
 		dynamicForm->setRegexValidation("TDSDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("TDSDJS", QStringLiteral("Ì§µ¶ËÙ¶È»ùÊý"));
+		dynamicForm->setLabelCaption("TDSDJS", tr("TDSDJS"));
 
 		dynamicForm->setValue("FDSJJS", "40");
 		dynamicForm->setRegexValidation("FDSJJS", "^\\d+$");
-		dynamicForm->setLabelCaption("FDSJJS", QStringLiteral("·ÅµçÊ±¼ä»ùÊý"));
+		dynamicForm->setLabelCaption("FDSJJS", tr("FDSJJS"));
 
 		dynamicForm->setValue("YDSDJS", "5");
 		dynamicForm->setRegexValidation("YDSDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("YDSDJS", QStringLiteral("Ò¡¶¯ËÙ¶È»ùÊý"));
+		dynamicForm->setLabelCaption("YDSDJS", tr("YDSDJS"));
 
 		dynamicForm->setValue("HZXTDGD", "0");
 		dynamicForm->setRegexValidation("HZXTDGD", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDGD", QStringLiteral("»ØÖÐÐÄÌ§µ¶¸ß¶È"));
+		dynamicForm->setLabelCaption("HZXTDGD", tr("HZXTDGD"));
 
 		dynamicForm->setValue("HZXTDSD", "60");
 		dynamicForm->setRegexValidation("HZXTDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDSD", QStringLiteral("»ØÖÐÐÄÌ§µ¶ËÙ¶È"));
+		dynamicForm->setLabelCaption("HZXTDSD", tr("HZXTDSD"));
 
 		dynamicForm->setValue("HZXTDJSSJ", "5");
 		dynamicForm->setRegexValidation("HZXTDJSSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDJSSJ", QStringLiteral("»ØÖÐÐÄÌ§µ¶¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("HZXTDJSSJ", tr("HZXTDJSSJ"));
 
 		dynamicForm->setValue("JGJSPDFGS", "8");
 		dynamicForm->setRegexValidation("JGJSPDFGS", "^\\d+$");
-		dynamicForm->setLabelCaption("JGJSPDFGS", QStringLiteral("¼Ó¹¤½áÊøÅÐ¶Ï·Ö¸îÊý"));
+		dynamicForm->setLabelCaption("JGJSPDFGS", tr("JGJSPDFGS"));
 
 		dynamicForm->setValue("MTDGD", "50");
 		dynamicForm->setRegexValidation("MTDGD", "^\\d+$");
-		dynamicForm->setLabelCaption("MTDGD", QStringLiteral("ÂýÌ§µ¶¸ß¶È(um)"));
+		dynamicForm->setLabelCaption("MTDGD", tr("MTDGD("));
 
 		dynamicForm->setValue("MTDSD", "10");
 		dynamicForm->setRegexValidation("MTDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("MTDSD", QStringLiteral("ÂýÌ§µ¶ËÙ¶È"));
+		dynamicForm->setLabelCaption("MTDSD", tr("MTDSD"));
 
 		dynamicForm->setValue("TCQHTJL", "1000");
 		dynamicForm->setRegexValidation("TCQHTJL", "^\\d+$");
-		dynamicForm->setLabelCaption("TCQHTJL", QStringLiteral("ÍË³öÇ°»ØÍË¾àÀë"));
+		dynamicForm->setLabelCaption("TCQHTJL", tr("TCQHTJL"));
 		
 		//dynamicForm->setValue("FDDWHTJL", "0");
 		//dynamicForm->setRegexValidation("FDDWHTJL", "^\\d+$");
-		//dynamicForm->setLabelCaption("FDDWHTJL", QStringLiteral("·Åµç¶¨Î»»ØÍË¾àÀë")); 
+		//dynamicForm->setLabelCaption("FDDWHTJL", tr("FDDWHTJL")); 
 		  
 		dynamicForm->setValue("SDM04SX", "True");
-		dynamicForm->setLabelCaption("SDM04SX", QStringLiteral("ÊÖ¶¯M04ÉúÐ§"));
+		dynamicForm->setLabelCaption("SDM04SX", tr("SDMSX"));
 
 		dynamicForm->setValue("ZTDJSSJ", "50");
 		dynamicForm->setRegexValidation("ZTDJSSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("ZTDJSSJ", QStringLiteral("Ö÷Ì§µ¶¼ÓËÙÊ±¼ä"));
+		dynamicForm->setLabelCaption("ZTDJSSJ", tr("ZTDJSSJ"));
 	}
 
 	{
@@ -251,23 +251,23 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("FJDL1", "32");
 		dynamicForm->setRegexValidation("FJDL1", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL1", QStringLiteral("¸½¼ÓµçÁ÷1"));
+		dynamicForm->setLabelCaption("FJDL1", tr("FJDL1"));
 
 		dynamicForm->setValue("FJDL2", "32");
 		dynamicForm->setRegexValidation("FJDL2", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL2", QStringLiteral("¸½¼ÓµçÁ÷2"));
+		dynamicForm->setLabelCaption("FJDL2", tr("FJDL2"));
 
 		dynamicForm->setValue("FJDL3", "64");
 		dynamicForm->setRegexValidation("FJDL3", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL3", QStringLiteral("¸½¼ÓµçÁ÷3"));
+		dynamicForm->setLabelCaption("FJDL3", tr("FJDL3"));
 
 		dynamicForm->setValue("FSYCGBSJ", "50");
 		dynamicForm->setRegexValidation("FSYCGBSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("FSYCGBSJ", QStringLiteral("·çÉÈÑÓ³Ù¹Ø±ÕÊ±¼ä"));
+		dynamicForm->setLabelCaption("FSYCGBSJ", tr("FSYCGBSJ"));
 
 		dynamicForm->setValue("ZTHQSDSD", "500");
 		dynamicForm->setRegexValidation("ZTHQSDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("ZTHQSDSD", QStringLiteral("ÔÝÍ£»ØÆðÊ¼µãËÙ¶È"));
+		dynamicForm->setLabelCaption("ZTHQSDSD", tr("ZTHQSDSD"));
 	}
 
 	{
@@ -294,29 +294,29 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 			QString s = QString("KZSDBS%1").arg(i + 1);
 			dynamicForm->setValue(s, QString::number(v1[i]));
 			dynamicForm->setRegexValidation(s, "^\\d+$");
-			dynamicForm->setLabelCaption(s, QStringLiteral("¿ÕÔØËÙ¶È±¶Êý%1").arg(i + 1));
+			dynamicForm->setLabelCaption(s, tr("KZSDBS") + QString("%1").arg(i + 1));
 		}
 		for (int i = 0; i < n; i++) {
 			QString s = QString("SFSDBS%1").arg(i + 1);
 			dynamicForm->setValue(s, QString::number(v2[i]));
 			dynamicForm->setRegexValidation(s, "^\\d+(\\.\\d+)$");
-			dynamicForm->setLabelCaption(s, QStringLiteral("ËÅ·þËÙ¶È±¶Êý%1").arg(i + 1));
+			dynamicForm->setLabelCaption(s, tr("CFSDBS") + QString("%1").arg(i + 1));
 		}
 
 		dynamicForm->setValue("FMQKG", "True");
-		dynamicForm->setLabelCaption("FMQKG", QStringLiteral("·äÃùÆ÷¿ª¹Ø"));
+		dynamicForm->setLabelCaption("FMQKG", tr("FMQKG"));
 
 		dynamicForm->setValue("ZDKQYB2", "True");
-		dynamicForm->setLabelCaption("ZDKQYB2", QStringLiteral("¼Ó¹¤Ê±×Ô¶¯¿ªÆôÓÍ±Ã2"));
+		dynamicForm->setLabelCaption("ZDKQYB2", tr("JGSZDKQYB2"));
 
 		dynamicForm->setValue("FDWCHMJSJ", "2");
-		dynamicForm->setLabelCaption("FDWCHMJSJ", QStringLiteral("·ÅµçÍê³ÉºóÃù½ÐÊ±¼ä"));
+		dynamicForm->setLabelCaption("FDWCHMJSJ", tr("FDWCHMJSJ"));
 
 		dynamicForm->setValue("SFHFJL", "20");
-		dynamicForm->setLabelCaption("SFHFJL", QStringLiteral("ËÅ·þ»Ö¸´¾àÀë"));
+		dynamicForm->setLabelCaption("SFHFJL", tr("CFHFJL"));
 
 		dynamicForm->setValue("AJCFHJL", "20");
-		dynamicForm->setLabelCaption("AJCFHJL", QStringLiteral("AJC·µ»Ø¾àÀë"));
+		dynamicForm->setLabelCaption("AJCFHJL", tr("AFHJL"));
 	}
 
 	LoadData();

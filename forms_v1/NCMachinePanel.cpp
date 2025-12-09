@@ -1,10 +1,11 @@
-#include "NCMachinePanel.h"
+Ôªø#include "NCMachinePanel.h"
 #include "ui_NCMachinePanel.h"
 #include "regwindow.h"
 
-NCMachinePanel::NCMachinePanel(QWidget *parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings)
-	: BaseChildWindow(parent), m_ncMachine(machine), m_modbus(adapter), m_modbusCommSettings(settings), ui(new Ui::NCMachinePanel)
+NCMachinePanel::NCMachinePanel(QWidget *parent, NCMachine* ncMachine, ModbusAdapter* adapter, ModbusCommSettings* settings)
+	: BaseChildWindow(parent), m_modbus(adapter), m_modbusCommSettings(settings), ui(new Ui::NCMachinePanel)
 {
+    m_ncMachine = ncMachine;
 	ui->setupUi(this);
 }
 
@@ -25,17 +26,17 @@ void NCMachinePanel::on_btnSendGuanji_clicked()
 
 void NCMachinePanel::on_btnSendBackToZero1_clicked()
 {
-    RegWindow::MessageBoxYesNo(QStringLiteral("«Î π”√ …Ë÷√-πÈ¡„"));
+    RegWindow::MessageBoxYesNo(tr("QSY SZ-GL"));
 }
 
 void NCMachinePanel::on_btnSendBackToZero3_clicked()
 {
-    RegWindow::MessageBoxYesNo(QStringLiteral("«Î π”√ …Ë÷√-πÈ¡„"));
+    RegWindow::MessageBoxYesNo(tr("QSY SZ-GL"));
 }
 
 void NCMachinePanel::on_btnSendBackToZero5_clicked()
 {
-    RegWindow::MessageBoxYesNo(QStringLiteral("«Î π”√ …Ë÷√-πÈ¡„"));
+    RegWindow::MessageBoxYesNo(tr("QSY SZ-GL"));
 }
 
 void NCMachinePanel::on_btnDebug1_clicked()

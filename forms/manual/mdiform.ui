@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MdiForm</class>
  <widget class="QWidget" name="MdiForm">
@@ -36,7 +35,7 @@
         <item>
           <widget class="QPushButton" name="btnKeyboard">
             <property name="text">
-              <string>键盘</string>
+              <string>JP</string>
             </property>
             <property name="checkable">
               <bool>true</bool>
@@ -49,5 +48,5 @@
  </widget>
  <resources>
  </resources>
- <connections/>
+ <connections />
 </ui>

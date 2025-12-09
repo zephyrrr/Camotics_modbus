@@ -68,9 +68,9 @@ public:
     void retranslateUi(QWidget *Tool4PosSetClass)
     {
         Tool4PosSetClass->setWindowTitle(QCoreApplication::translate("Tool4PosSetClass", "Tool4PosSet", nullptr));
-        btnRecord->setText(QCoreApplication::translate("Tool4PosSetClass", "\350\256\260\345\277\206", nullptr));
+        btnRecord->setText(QCoreApplication::translate("Tool4PosSetClass", "JY", nullptr));
         btnCurrentPosIdx->setText(QCoreApplication::translate("Tool4PosSetClass", "1", nullptr));
-        btnBatchSet->setText(QCoreApplication::translate("Tool4PosSetClass", "\350\256\276\347\275\256", nullptr));
+        btnBatchSet->setText(QCoreApplication::translate("Tool4PosSetClass", "SZ", nullptr));
     } // retranslateUi
 
 };

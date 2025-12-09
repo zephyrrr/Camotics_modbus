@@ -104,7 +104,7 @@ bool NCMachine::ConvertModbusData4Key(ModbusTask* task, uint16_t* readData)
 	if (task->numOfRegs >= TMBS_MAP0_ID_KEY_LEN)
 	{
 		m_key = static_cast<long long>(readData[0]) + static_cast<long long>(readData[1] << 16) + (static_cast<long long>(readData[2]) << 32) + (static_cast<long long>(readData[3]) << 48);
-		//LOG_INFO(0, EUtils::QString2StdString(QStringLiteral("Key：%1").arg(m_key)));
+		//LOG_INFO(0, EUtils::QString2StdString(QString("Key：%1").arg(m_key)));
 
 		// key down
 		if (m_key != KNLK_NONE && m_key != KNLK_INVALID) {
@@ -351,33 +351,47 @@ QString NCMachine::GetStateDesc(uint16_t state)
 	switch (state)
 	{
 	case NCT_STATE_API_RUN:
-		return QStringLiteral("无移动状态（API）");
+// [AUTO-TRANSLATION-COMMENT] 无移动状态（API）
+		return tr("WYDZT");
 	case NCT_STATE_JOG_RUN:
-		return QStringLiteral("JOG运行");
+// [AUTO-TRANSLATION-COMMENT] JOG运行
+		return tr("JYX");
 	case NCT_STATE_JOG_EXIT:
-		return QStringLiteral("JOG退出");
+// [AUTO-TRANSLATION-COMMENT] JOG退出
+		return tr("JTC");
 	case NCT_STATE_LOC_RUN:
-		return QStringLiteral("LOC运行");
+// [AUTO-TRANSLATION-COMMENT] LOC运行
+		return tr("LYX");
 	case NCT_STATE_CMV_RUN:
-		return QStringLiteral("CMV运行");
+// [AUTO-TRANSLATION-COMMENT] CMV运行
+		return tr("CYX");
 	case NCT_STATE_CMV_EXIT:
-		return QStringLiteral("CMV退出");
+// [AUTO-TRANSLATION-COMMENT] CMV退出
+		return tr("CTC");
 	case NCT_STATE_CMV_FINISHED:
-		return QStringLiteral("CMV完成");
+// [AUTO-TRANSLATION-COMMENT] CMV完成
+		return tr("CWC");
 	case NCT_STATE_SPK_RUN:
-		return QStringLiteral("SPK运行");
+// [AUTO-TRANSLATION-COMMENT] SPK运行
+		return tr("SYX");
 	case NCT_STATE_SPK_EXTOC:
-		return QStringLiteral("SPK退出前回中心");
+// [AUTO-TRANSLATION-COMMENT] SPK退出前回中心
+		return tr("STCQHZX");
 	case NCT_STATE_SPK_EXBAK:
-		return QStringLiteral("SPK退出前回退（先回中心再回退）");
+// [AUTO-TRANSLATION-COMMENT] SPK退出前回退（先回中心再回退）
+		return tr("STCQHT（XHZXZHT）");
 	case NCT_STATE_SPK_PMBAK:
-		return QStringLiteral("SPK抬刀前回退");
+// [AUTO-TRANSLATION-COMMENT] SPK抬刀前回退
+		return tr("STDQHT");
 	case NCT_STATE_SPK_PMOV:
-		return QStringLiteral("SPK抬刀");
+// [AUTO-TRANSLATION-COMMENT] SPK抬刀
+		return tr("STD");
 	case NCT_STATE_SPK_TOSPK:
-		return QStringLiteral("SPK抬刀结束去加工");
+// [AUTO-TRANSLATION-COMMENT] SPK抬刀结束去加工
+		return tr("STDJSQJG");
 	}
-	return QStringLiteral("未定义状态：%1").arg(state);
+// [AUTO-TRANSLATION-COMMENT] 未定义状态：%1
+	return tr("WDYZT: ").arg(state);
 }
 
 QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
@@ -386,121 +400,151 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 	{
 	case 0:
 		return "";
-		//return QStringLiteral("0,%1").arg(para);
+		//return QString("0,%1").arg(para);
 		break;
 	case 2 + 256:
 		//if (para == (1 << 15))
-			return QStringLiteral("JOG手动退出");
+// [AUTO-TRANSLATION-COMMENT] JOG手动退出
+			return tr("JSDTC");
 		break;
 	case 1 + 512:
 		//if (para == 0)
-			return QStringLiteral("LOC正常完成退出");
+// [AUTO-TRANSLATION-COMMENT] LOC正常完成退出
+			return tr("LZCWCTC");
 		break;
 	case 2 + 512:
 		//if (para == (1 << 15))
-			return QStringLiteral("LOC手动退出");
+// [AUTO-TRANSLATION-COMMENT] LOC手动退出
+			return tr("LSDTC");
 		break;
 	case 3 + 512:
 		//if (para == 0xFFFF)
-			return QStringLiteral("LOC驱动器报警退出：%1").arg(para);
+// [AUTO-TRANSLATION-COMMENT] LOC驱动器报警退出：%1
+			return tr("LQDQBJTC：").arg(para);
 		break;
 	case 4 + 512:
-		return QStringLiteral("LOC触发限位退出：%1").arg(para);
+// [AUTO-TRANSLATION-COMMENT] LOC触发限位退出：%1
+		return tr("LCFXWTC：").arg(para);
 		break;
 	case 5 + 512:
 		//if (para == 0)
-			return QStringLiteral("LOC短路退出");
+// [AUTO-TRANSLATION-COMMENT] LOC短路退出
+			return tr("LDLTC");
 		break;
 	case 61 + 512:
 		//if (para == 0)
-			return QStringLiteral("LOC参数非法");
+// [AUTO-TRANSLATION-COMMENT] LOC参数非法
+			return tr("LCSFF");
 		break;
 	case 62 + 512:
 		//if (para == 0)
-			return QStringLiteral("LOC校验错误");
+// [AUTO-TRANSLATION-COMMENT] LOC校验错误
+			return tr("LJYCW");
 		break;
 	case 63 + 512:
 		//if (para == 0)
-			return QStringLiteral("LOC无效功能");
+// [AUTO-TRANSLATION-COMMENT] LOC无效功能
+			return tr("LWXGN");
 		break;
 	case 1 + 768:
 		//if (para == 0)
-			return QStringLiteral("CMV正常完成退出");
+// [AUTO-TRANSLATION-COMMENT] CMV正常完成退出
+			return tr("CZCWCTC");
 		break;
 	case 2 + 768:
 		//if (para == (1 << 15))
-			return QStringLiteral("CMV手动退出");
+// [AUTO-TRANSLATION-COMMENT] CMV手动退出
+			return tr("CSDTC");
 		break;
 	case 3 + 768:
 		//if (para == (0xFFFF))
-			return QStringLiteral("CMV驱动器报警退出：%1").arg(para);
+// [AUTO-TRANSLATION-COMMENT] CMV驱动器报警退出：%1
+			return tr("CQDQBJTC：").arg(para);
 		break;
 	case 4 + 768:
-		return QStringLiteral("CMV触发限位退出：%1").arg(para);
+// [AUTO-TRANSLATION-COMMENT] CMV触发限位退出：%1
+		return tr("CCFXWTC：").arg(para);
 		break;
 	case 5 + 768:
 		//if (para == 0)
-			return QStringLiteral("CMV短路退出");
+// [AUTO-TRANSLATION-COMMENT] CMV短路退出
+			return tr("CDLTC");
 		break;
 	case 53 + 768:
 		//if (para == 0)
-			return QStringLiteral("CMV轴编码错误");
+// [AUTO-TRANSLATION-COMMENT] CMV轴编码错误
+			return tr("CZBMCW");
 		break;
 	case 54 + 768:
 		//if (para == 0)
-			return QStringLiteral("CMV操作码错误");
+// [AUTO-TRANSLATION-COMMENT] CMV操作码错误
+			return tr("CCZMCW");
 		break;
 	case 51 + 768:
 		//if (para == 0)
-			return QStringLiteral("CMV无效功能");
+// [AUTO-TRANSLATION-COMMENT] CMV无效功能
+			return tr("CWXGN");
 		break;
 	case 1 + 1024:
 		//if (para == 0)
-			return QStringLiteral("SPK正常完成退出");
+// [AUTO-TRANSLATION-COMMENT] SPK正常完成退出
+			return tr("SZCWCTC");
 		break;
 	case 2 + 1024:
 		//if (para == (1 << 15))
-			return QStringLiteral("SPK手动退出");
+// [AUTO-TRANSLATION-COMMENT] SPK手动退出
+			return tr("SSDTC");
 		break;
 	case 3 + 1024:
 		//if (para == 0xFFFF)
-			return QStringLiteral("SPK驱动器报警退出");
+// [AUTO-TRANSLATION-COMMENT] SPK驱动器报警退出
+			return tr("SQDQBJTC");
 		break;
 	case 4 + 1024:
-		return QStringLiteral("SPK触发限位退出");
+// [AUTO-TRANSLATION-COMMENT] SPK触发限位退出
+		return tr("SCFXWTC");
 		break;
 	case 5 + 1024:
 		//if (para == 0)
-			return QStringLiteral("SPK短路退出");
+// [AUTO-TRANSLATION-COMMENT] SPK短路退出
+			return tr("SDLTC");
 		break;
 	case 6 + 1024:
 	{
 		QString s;
 		if (para & 0x1)
-			s += QStringLiteral("油温");
+// [AUTO-TRANSLATION-COMMENT] 油位
+			s += tr("YW");
 		if (para & 0x2)
-			s += QStringLiteral("油位");
+// [AUTO-TRANSLATION-COMMENT] 油位
+			s += tr("YW");
 		if (para & 0x4)
-			s += QStringLiteral("火焰");
-		return QStringLiteral("SPK%1报警退出").arg(s);
+// [AUTO-TRANSLATION-COMMENT] 火焰
+			s += tr("HY");
+// [AUTO-TRANSLATION-COMMENT] SPK%1报警退出
+		return tr("SBJTC").arg(s);
 	}
 		break;
 	case 53 + 1024:
 		//if (para == 0)
-			return QStringLiteral("SPK轴编码错误");
+// [AUTO-TRANSLATION-COMMENT] SPK轴编码错误
+			return tr("SZBMCW");
 		break;
 	case 54 + 1024:
 		//if (para == 0)
-			return QStringLiteral("SPK操作码错误");
+// [AUTO-TRANSLATION-COMMENT] SPK操作码错误
+			return tr("SCZMCW");
 		break;
 	case 55 + 1024:
 		if (para == 0)
-			return QStringLiteral("SPK无效功能");
+// [AUTO-TRANSLATION-COMMENT] SPK无效功能
+			return tr("SWXGN");
 		break;
 	default:
 		break;
 	}
-	return QStringLiteral("未定义：%1,%2").arg(rslt).arg(para);
+// [AUTO-TRANSLATION-COMMENT] 未定义：%1,%2
+	return tr("WDY：").arg(rslt).arg(para);
 }
 
 
@@ -820,7 +864,7 @@ std::function<int()> NCMachine::waitUntilNctState(uint16_t state)
 					//if (doAfterFail != NULL) {
 					//	doAfterFail();
 					//}
-					QString error = QStringLiteral("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
+					QString error = QString("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
 					LineLogger::instance().append(error);
 
 					enterSetPriority(0);
@@ -1006,7 +1050,7 @@ std::function<int()> NCMachine::waitUntilRLST(uint16_t rslt, uint16_t para)
 				//}
 
 				LOG_WARNING("NCMachine: Function waitUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_state[0] << ", " << m_state[1]);
-				QString error = QStringLiteral("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
+				QString error = QString("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
 				LineLogger::instance().append(error);
 
 				enterSetPriority(0);
@@ -1209,7 +1253,7 @@ void NCMachine::Spk(int* axis, int* value, int size, int zgj)
 	}
 
 	//if (size >= 2) {
-	//	THROW(EUtils::QString2StdString(QStringLiteral("目前不支持多于1个坐标轴加工")));
+	//	THROW(EUtils::QString2StdString(tr("MQBZCDY1GZBZJG")));
 	//}
 
 	SPKPropertyObject* spkP = PropertyObjects::getInstance()->propertyObjectSPK;
@@ -2250,7 +2294,8 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 						m_g01Data.to_z = p.z();
 					}
 					else {
-						THROW(EUtils::QString2StdString(QStringLiteral("目前不支持多于4个坐标轴加工")));
+// [AUTO-TRANSLATION-COMMENT] 目前不支持多于4个坐标轴加工
+						THROW(EUtils::QString2StdString(tr("MQBZCDY4GZBZJG")));
 					}
 
 					m_g01Data.now_z = m_g01Data.start_z;
@@ -2613,7 +2658,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 				// done: catch exception and return -9 in doTask
 				if (std::stoi(NCMachineParametersC::GetCurrentByName("SV")) > 180)
 				{
-					THROW(EUtils::QString2StdString(QStringLiteral("SV 必须小于 180！")));
+					THROW(EUtils::QString2StdString("it should be SV <= 180"));
 				}
 				// G01时候设置
 				//NCMachineParametersC::ExecuteCmds(this);
@@ -2641,7 +2686,8 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 
 					setOk = NCMachineParametersC::SetCurrentByName(s, oss.str());
 					if (!setOk) {
-						THROW(EUtils::QString2StdString(QStringLiteral("C命令参数%1=%2不满足要求！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
+// [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
+						THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
 					}
 				}
 				else {
@@ -2649,7 +2695,8 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 					//setOk = NCMachineParametersC::SetCurrentByName(s, std::to_string(eValue));
 					setOk = NCMachineParametersC::SetCurrentByName(QString::fromStdString(s), sValue);
 					if (!setOk) {
-						THROW(EUtils::QString2StdString(QStringLiteral("C命令参数%1=%2不满足要求！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
+// [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
+						THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
 					}
 				}
 				controller->clear(pName);
@@ -2702,6 +2749,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 			}
 		}
 		else if (action2 == "message_yn") {
+// [AUTO-TRANSLATION-COMMENT] 是否清零机械坐标？
 			tr("to_clear_machine_axis");
 			GetController()->clear("message_ret");
 			std::string n = parameters.getAsString("n");
@@ -3057,7 +3105,7 @@ int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 				{
 					LOG_WARNING("NCMachine: GCodeTask wait function return -9: " << itFuncDesc << ". Now state is " << m_state[0] << ", " << m_state[1]);
 					//// 执行错误：
-					//QString error = QStringLiteral("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
+					//QString error = QString("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
 					//LineLogger::instance().append(error);
 
 					if (task->postDoFunction) {
@@ -3185,7 +3233,8 @@ QString NCMachine::RunCCode(QString gcode)
 			QStringList parts = ccommand.split(' ', Qt::SkipEmptyParts);
 			if (m_paramCsNames.count() != parts.count()) {
 				LOG_WARNING("EDM: Invalid C Command: " << EUtils::QString2StdString(ccommand));
-				THROW(EUtils::QString2StdString(QStringLiteral("C命令参数数量和要求的不一致！")));
+// [AUTO-TRANSLATION-COMMENT] C命令参数数量和要求的不一致！
+				THROW(EUtils::QString2StdString(tr("CMLCSSLHYQDBYZ！")));
 				linesNew.append("; Error: " + line);
 				continue;
 			}
@@ -3198,7 +3247,8 @@ QString NCMachine::RunCCode(QString gcode)
 
 				if (rx.indexIn(s) == -1) {
 					LOG_WARNING("EDM: Invalid C Command: " << EUtils::QString2StdString(ccommand));
-					THROW(EUtils::QString2StdString(QStringLiteral("C命令参数%1=%2不满足要求！").arg(m_paramCsNames[i]).arg(s)));
+// [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
+					THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(m_paramCsNames[i]).arg(s)));
 					linesNew.append("; Error: " + line);
 					continue;
 				}
@@ -3383,7 +3433,8 @@ bool NCMachine::RunGCodeAsync(QString gcode, std::function<void()> functionDoFin
 		m_realtimeJsonMachineThreadDone = false;
 	}
 	else {
-		LineLogger::instance().append(QStringLiteral("ERROR:上一个程序还在运行"));
+// [AUTO-TRANSLATION-COMMENT] ERROR:上一个程序还在运行
+		LineLogger::instance().append(tr("ESYGCXHZYX"));
 		if (functionDoFinished) {
 			functionDoFinished();
 		}

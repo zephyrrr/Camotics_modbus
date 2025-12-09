@@ -1,4 +1,4 @@
-#include "nceditform.h"
+Ôªø#include "nceditform.h"
 #include "ui_nceditform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -121,7 +121,7 @@ void NcEditForm::RunGCode()
 	}
 	catch (const std::exception& e) {
 		LOG_ERROR("EDM: " << e.what());
-		LineLogger::instance().append(QStringLiteral("ERROR:¥˙¬Î÷–”–¥ÌŒÛ£¨«Îœ»∏ƒ’˝"));
+		LineLogger::instance().append(tr("EDMZYCWÔºåQXGZ"));
 		return;
 	}
 
@@ -153,7 +153,7 @@ void NcEditForm::RunGCode()
 	//QFile::copy(srcFilePath, destFilePath);
 
 	BaseMainWindow* mainWindow = GetMainWindow();
-	mainWindow->showChildWindow(QStringLiteral("NCº”π§"));
+	mainWindow->showChildWindow(tr("NJG"));
 	return;
 
 	/*
@@ -350,7 +350,7 @@ void NcEditForm::on_btnImport_clicked()
 	{
 		QString path = NFileDialog::findFirstRemovableDisk(); // "data"
 		if (path.isEmpty()) {
-			FormUtils::MessageBoxInfo(QStringLiteral("’“≤ªµΩU≈Ã"));
+			FormUtils::MessageBoxInfo(tr("ZBDUP"));
 			return;
 		}
 
@@ -365,7 +365,7 @@ void NcEditForm::on_btnImport_clicked()
 			QString newFileName = fileInfo.fileName();
 			QDir newDir(m_defaultDirName);
 			QString newFilepath = newDir.filePath(newFileName);
-			// ÷±Ω”∏≤∏«£¨≤ªÃ· æ¡À
+			// Áõ¥Êé•Ë¶ÜÁõñÔºå‰∏çÊèêÁ§∫‰∫Ü
 			bool b = FormUtils::CopyFileWithOverwrite(oldFilePath, newFilepath, true);
 
 			auto currentIndex = ui->fileTabManager->currentIndex();
@@ -397,7 +397,7 @@ void NcEditForm::on_btnExport_clicked()
 	{
 		QString path = NFileDialog::findFirstRemovableDisk(); // "data"
 		if (path.isEmpty()) {
-			FormUtils::MessageBoxInfo(QStringLiteral("’“≤ªµΩU≈Ã"));
+			FormUtils::MessageBoxInfo(tr("ZBDUP"));
 			return;
 		}
 

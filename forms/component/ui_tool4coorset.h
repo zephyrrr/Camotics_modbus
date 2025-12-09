@@ -61,8 +61,8 @@ public:
     void retranslateUi(QWidget *Tool4CoorSetClass)
     {
         Tool4CoorSetClass->setWindowTitle(QCoreApplication::translate("Tool4CoorSetClass", "Tool4CoorSet", nullptr));
-        btnRecord->setText(QCoreApplication::translate("Tool4CoorSetClass", "\350\256\260\345\275\225", nullptr));
-        btnBatchSet->setText(QCoreApplication::translate("Tool4CoorSetClass", "\350\256\276\347\275\256", nullptr));
+        btnRecord->setText(QCoreApplication::translate("Tool4CoorSetClass", "JL", nullptr));
+        btnBatchSet->setText(QCoreApplication::translate("Tool4CoorSetClass", "SZ", nullptr));
     } // retranslateUi
 
 };

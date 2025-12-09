@@ -61,8 +61,8 @@ public:
     void retranslateUi(QWidget *Tool4LoadSaveClass)
     {
         Tool4LoadSaveClass->setWindowTitle(QCoreApplication::translate("Tool4LoadSaveClass", "Tool4LoadSave", nullptr));
-        btnLoad->setText(QCoreApplication::translate("Tool4LoadSaveClass", "\350\257\273\345\217\226", nullptr));
-        btnSave->setText(QCoreApplication::translate("Tool4LoadSaveClass", "\344\277\235\345\255\230", nullptr));
+        btnLoad->setText(QCoreApplication::translate("Tool4LoadSaveClass", "DQ", nullptr));
+        btnSave->setText(QCoreApplication::translate("Tool4LoadSaveClass", "BC", nullptr));
     } // retranslateUi
 
 };

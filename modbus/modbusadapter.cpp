@@ -633,7 +633,8 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 
 			if (ret == -1) {
 				LOG_WARNING("Modbus: " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << ", " << task->writeData.c_str() << ", " << EUtils::QString2StdString(EUtils::libmodbus_strerror(errno)));
-				//THROW(EUtils::QString2StdString(QStringLiteral("Modbus写错误")));
+// [AUTO-TRANSLATION-COMMENT] Modbus: 写错误
+				//THROW(EUtils::QString2StdString(tr("MXCW")));
 				
 				
 #ifdef _DEBUG
@@ -644,7 +645,8 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 					ret = 1;
 				}
 				else {
-					LOG_ERROR(EUtils::QString2StdString(QStringLiteral("Modbus: 写错误")));
+// [AUTO-TRANSLATION-COMMENT] Modbus: 写错误
+					LOG_ERROR(EUtils::QString2StdString(tr("MXCW")));
 					ret = -9;
 				}
 #endif 
@@ -662,7 +664,7 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 			ret = modbusAdapter->modbusReadDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, NULL);
 			if (ret == -1) {
 				LOG_WARNING("Modbus: " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << ", " << EUtils::QString2StdString(EUtils::libmodbus_strerror(errno)));
-				//LOG_ERROR(EUtils::QString2StdString(QStringLiteral("Modbus: 读错误")));
+				//LOG_ERROR(EUtils::QString2StdString(tr("MDCW")));
 			}
 			else {
 				LOG_INFO(9, "Modbus: " << EUtils::ModbusDataTypeName(task->functionCode) << ", " << task->startAddr << ", " << task->numOfRegs);

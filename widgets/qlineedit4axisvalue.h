@@ -1,4 +1,4 @@
-#ifndef QLINEEDIT4AXISVALUE_H
+Ôªø#ifndef QLINEEDIT4AXISVALUE_H
 #define QLINEEDIT4AXISVALUE_H
 
 #include <QLineEdit>
@@ -89,7 +89,7 @@ Q_SIGNALS:
 	void focusChanged(bool hasFocus);
 
 protected:
-	bool m_allowNull = true;	//  «∑Ò‘ –ÌŒ™ø’
+	bool m_allowNull = true;	// ÊòØÂê¶ÂÖÅËÆ∏‰∏∫Á©∫
 };
 
 class QLineEdit4Int : public QLineEdit4Keyboard
@@ -183,7 +183,6 @@ public:
 class QLineEditLikeButton : public NLineEdit
 {
 public:
-	static const QStringList Values;
 	static bool IsYes(QString s) { return Values.indexOf(s) == 0; }
 
 	QLineEditLikeButton(QWidget* parent = nullptr);
@@ -194,6 +193,9 @@ public:
 protected:
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseDoubleClickEvent(QMouseEvent*) override;
+
+public:
+	static QStringList Values;
 };
 
 class NPushButton4Edit : public QPushButton, public ILineEdit

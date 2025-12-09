@@ -183,9 +183,9 @@ public:
     void retranslateUi(QWidget *WeiZhiJiYiForm)
     {
         WeiZhiJiYiForm->setWindowTitle(QCoreApplication::translate("WeiZhiJiYiForm", "Form", nullptr));
-        label_3->setText(QCoreApplication::translate("WeiZhiJiYiForm", "U\350\275\264\347\247\273\345\212\250", nullptr));
-        label_1->setText(QCoreApplication::translate("WeiZhiJiYiForm", "\345\235\220\346\240\207\347\263\273\345\210\207\346\215\242", nullptr));
-        label_2->setText(QCoreApplication::translate("WeiZhiJiYiForm", "Z\350\275\264\347\247\273\345\212\250", nullptr));
+        label_3->setText(QCoreApplication::translate("WeiZhiJiYiForm", "UZYD", nullptr));
+        label_1->setText(QCoreApplication::translate("WeiZhiJiYiForm", "ZBXQH", nullptr));
+        label_2->setText(QCoreApplication::translate("WeiZhiJiYiForm", "ZZYD", nullptr));
         btnChangeCs->setText(QCoreApplication::translate("WeiZhiJiYiForm", "ON", nullptr));
         pushButton->setText(QCoreApplication::translate("WeiZhiJiYiForm", "OFF", nullptr));
         btnChangeZ->setText(QCoreApplication::translate("WeiZhiJiYiForm", "ON", nullptr));

@@ -47,7 +47,7 @@ void MdiForm::handleEnterKeyPress() {
 	}
 	catch (const std::exception& e) {
 		LOG_WARNING("EDM: exception: " << e.what());
-		LineLogger::instance().append(QStringLiteral("ERROR:代码中有错误，请先改正"));
+		LineLogger::instance().append(tr("EDMZYCW锛孮XGZ"));
 		return;
 	}
 
@@ -73,7 +73,7 @@ CAMotics::NCEdit* MdiForm::createNCEdit(QLayout* layout)
 
 	return editor;
 	//{
-	//    QDockWidget* dockWidget = new QDockWidget(QStringLiteral("编辑器"), this);
+	//    QDockWidget* dockWidget = new QDockWidget(tr("BJQ"), this);
 	//    dockWidget->setObjectName("GCode Editor");
 	//    dockWidget->setWidget(editor);
 	//    dockWidget->widget()->setMinimumSize(QSize(100, 100));
@@ -100,7 +100,7 @@ void MdiForm::RunGCode()
 	}
 	catch (const std::exception& e) {
 		LOG_WARNING("EDM: exception: " << e.what());
-		LineLogger::instance().append(QStringLiteral("ERROR:代码中有错误，请先改正"));
+		LineLogger::instance().append(tr("EDMZYCW锛孮XGZ"));
 		return;
 	}
 	m_ncMachine->GetRealtimeJsonMachine()->setFunctionDoPerLineBefore([this](cb::JSON::ValuePtr sink, int line) {

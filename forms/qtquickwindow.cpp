@@ -1,4 +1,4 @@
-#include "qtquickwindow.h"
+﻿#include "qtquickwindow.h"
 #include <QVBoxLayout>
 #include <QQuickItem>
 #include <QQmlError>
@@ -43,7 +43,7 @@ void QtQuickWindow::quickWidgetStatusChanged(QQuickWidget::Status status)
 		const auto widgetErrors = m_quickWidget->errors();
 		for (const QQmlError& error : widgetErrors)
 			errors.append(error.toString());
-		//statusBar()->showMessage(errors.join(QStringLiteral(", ")));
+		//statusBar()->showMessage(errors.join(QString(", ")));
 	}
 }
 

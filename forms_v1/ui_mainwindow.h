@@ -97,7 +97,7 @@ public:
         actionOptions->setText(QCoreApplication::translate("QtWin", "Options", nullptr));
         actionRegWindow->setText(QCoreApplication::translate("QtWin", "RegWindow", nullptr));
         menuView->setTitle(QCoreApplication::translate("QtWin", "View", nullptr));
-        dockWidgetLog->setWindowTitle(QCoreApplication::translate("QtWin", "\346\227\245\345\277\227", nullptr));
+        dockWidgetLog->setWindowTitle(QCoreApplication::translate("QtWin", "RZ", nullptr));
     } // retranslateUi
 
 };

@@ -1,4 +1,4 @@
-#include "runmanualmulti.h"
+ï»¿#include "runmanualmulti.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -29,7 +29,7 @@ RunManualMulti::RunManualMulti(QWidget *parent, QString objectName)
 	
 	ui.setupUi(this);
 
-	QString headers[] = { "No.", QStringLiteral("¼Ó¹¤"), "X", "Y", "U", QStringLiteral("×ø±êÏµ"), QStringLiteral("ÆðÊ¼"), QStringLiteral("½áÊø")};
+	QString headers[] = { "No.", tr("JG"), "X", "Y", "U", tr("ZBX"), tr("QS"), tr("JS")};
 	int columnWidth[] = { 50, 75, 150, 150, 150, 100, 50, 50 };
 	QString defaultRowValues[] = { "", "Y", "0.000", "0.000", "0.000", "054", "", ""};
 	
@@ -100,24 +100,24 @@ RunManualMulti::RunManualMulti(QWidget *parent, QString objectName)
 
 	mbw = new MultiButtonsWidget(this);
 	mbw->addDefaultButtons(table3);
-	mbw->addButton(QStringLiteral("µ¼Èë"), [this](bool) {
+	mbw->addButton(tr("DR"), [this](bool) {
 		if (table3->isReadOnly())
 			return;
 		QString path = this->GetProjectDir() + QDir::separator() + QString("WeiZhiJiYiForm");
 
-		QString fileName = NFileDialog::getOpenFileName(this, QStringLiteral("´ò¿ªÎÄ¼þ"), path, QStringLiteral("(*.json.pos);;"));
+		QString fileName = NFileDialog::getOpenFileName(this, tr("DKWJ"), path, QString("(*.json.pos);;"));
 
 		if (fileName.isEmpty())
 			return;
 
 		table3->deserialize(fileName);
 		});
-	mbw->addButton(QStringLiteral("È«Ñ¡"), [this](bool) {
+	mbw->addButton(tr("SelectAll"), [this](bool) {
 		for (int i = 0; i < table3->getDataCount(); ++i) {
 			table3->setValue(i, -1, "True");
 		}
 		});
-	mbw->addButton(QStringLiteral("¸´Î»"), [this](bool) {
+	mbw->addButton(tr("Reset"), [this](bool) {
 		if (table3->isReadOnly())
 			return;
 		this->table3->setRowSelection(-1, false);
@@ -344,14 +344,14 @@ QString RunManualMulti::GetGCodeV2()
 			//mapLine2Row[nowLines - 3] = i + 1;	// G00 %1%2 %3%4
 			todoRows.append(i + 1);
 
-			// Èç¹ûÊÇµ¥¶À¼Ó¹¤Ä£Ê½£¬Ã¿¸öµã¼Ó¹¤Íêºó£¬ÖØÖÃtable2µÄÐÐ
+			// å¦‚æžœæ˜¯å•ç‹¬åŠ å·¥æ¨¡å¼ï¼Œæ¯ä¸ªç‚¹åŠ å·¥å®ŒåŽï¼Œé‡ç½®table2çš„è¡Œ
 			if (ui.btnJgff->isChecked()) {
 				gcode += "(debug, do_call_ui reset_runmanual_table2_current_row)\n";
 			}
 		}
 		gcode += "(debug, do_call_ui reset_runmanualmulti_table3_current_row)\n";
 
-		// Èç¹ûÊÇÁ¬Ðø¼Ó¹¤Ä£Ê½£¬ÖØÖÃtable3µÄÖµ
+		// å¦‚æžœæ˜¯è¿žç»­åŠ å·¥æ¨¡å¼ï¼Œé‡ç½®table3çš„å€¼
 		if (!ui.btnJgff->isChecked() && indexJgff != todoJgff.count() - 1) {
 			gcode += "(debug, do_call_ui reset_runmanualmulti_table3_values)\n";
 		}
@@ -553,14 +553,14 @@ G00 %1%2;
 
 void RunManualMulti::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = QStringLiteral("ÊÖ¶¯¶à¸ö");
+	SystemSettings::instance().LastRunNCFileName = tr("SDDG");
 
 	QString gcode = GetGCode();
 
 	this->table3->setRowSelection(-1, false);
 	//this->setEnabled(false);
 	
-	RunManual* runManualForm = qobject_cast<RunManual *>(BaseChildWindow::GetMainWindow()->getChildWindow(QStringLiteral("ÊÖ¶¯µ¥¸ö")));
+	RunManual* runManualForm = qobject_cast<RunManual *>(BaseChildWindow::GetMainWindow()->getChildWindow(tr("SDDG")));
 	runManualForm->SetCurrentRunLine(true);
 
 	//bool unsetPreviousLine = !ui.btnJgff->isChecked();
@@ -640,7 +640,7 @@ void RunManualMulti::RunGCode()
 	//				return;
 	//			}
 	//			if (!QLineEditLikeButton::IsYes(table3->getValue(row - 1, 0))) {
-	//				// ¸´Î» £¨¼Ó¹¤·½Ê½ÊÇÁ¬ÐøµÄÊ±ºò£©
+	//				// å¤ä½ ï¼ˆåŠ å·¥æ–¹å¼æ˜¯è¿žç»­çš„æ—¶å€™ï¼‰
 	//				if (unsetPreviousLine) {
 	//					this->table3->setRowSelection(-1, false);
 	//				}
@@ -692,7 +692,7 @@ void RunManualMulti::RunGCode()
 	//	if (sink->has("modubs_ret") && sink->getS32("modubs_ret") == 1) {
 	//		if (lastLine4DoneOne != -1) {// && sink->getString("type") == "move" && !sink->exists("rapid")) {
 	//			int row = lastLine4DoneOne;
-	//			// set last row to "·ñ"
+	//			// set last row to "å¦"
 	//			if (row - 1 >= 0) {
 	//				QMetaObject::invokeMethod(this, [this, unsetPreviousLine, row, runManualForm]() {
 	//					//if (unsetPreviousLine) {
@@ -705,7 +705,7 @@ void RunManualMulti::RunGCode()
 	//		}
 	//		//if (lastLine4DoneMulti != -1) {// && sink->getString("type") == "move" && !sink->exists("rapid")) {
 	//		//	int row = lastLine4DoneMulti;
-	//		//	// set last row to "·ñ"
+	//		//	// set last row to "å¦"
 	//		//	if (row - 1 >= 0) {
 	//		//		QMetaObject::invokeMethod(this, [this, unsetPreviousLine, row]() {
 	//		//			if (unsetPreviousLine) {
@@ -801,5 +801,5 @@ void RunManualMulti::UpdateState()
 void RunManualMulti::on_btnJghs_clicked()
 {
 	BaseMainWindow* mainWindow = GetMainWindow();
-	mainWindow->showChildWindow(QStringLiteral("ÊÖ¶¯µ¥¸ö"));
+	mainWindow->showChildWindow(tr("SDDG"));
 }

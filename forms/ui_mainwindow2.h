@@ -656,11 +656,11 @@ public:
     void retranslateUi(QMainWindow *QtWin2)
     {
         QtWin2->setWindowTitle(QCoreApplication::translate("QtWin2", "EDM", nullptr));
-        actionRun->setText(QCoreApplication::translate("QtWin2", "\350\277\220\350\241\214", nullptr));
-        actionCancel->setText(QCoreApplication::translate("QtWin2", "\345\217\226\346\266\210", nullptr));
-        actionDebug->setText(QCoreApplication::translate("QtWin2", "\350\260\203\350\257\225", nullptr));
-        actionTouchSense->setText(QCoreApplication::translate("QtWin2", "\347\237\255\350\267\2571", nullptr));
-        actionTouchSense2->setText(QCoreApplication::translate("QtWin2", "\347\237\255\350\267\2572", nullptr));
+        actionRun->setText(QCoreApplication::translate("QtWin2", "Run", nullptr));
+        actionCancel->setText(QCoreApplication::translate("QtWin2", "Cancel", nullptr));
+        actionDebug->setText(QCoreApplication::translate("QtWin2", "TS", nullptr));
+        actionTouchSense->setText(QCoreApplication::translate("QtWin2", "DL1", nullptr));
+        actionTouchSense2->setText(QCoreApplication::translate("QtWin2", "DL2", nullptr));
         actionLoadStylesheet->setText(QCoreApplication::translate("QtWin2", "SS", nullptr));
         actionPythonScript->setText(QCoreApplication::translate("QtWin2", "Script", nullptr));
         actionPowerOn->setText(QCoreApplication::translate("QtWin2", "PowerOn", nullptr));
@@ -671,12 +671,12 @@ public:
         btnT0->setText(QCoreApplication::translate("QtWin2", "T0", nullptr));
         btnT1->setText(QCoreApplication::translate("QtWin2", "T1", nullptr));
         btnST->setText(QCoreApplication::translate("QtWin2", "ST", nullptr));
-        btnYouWei->setText(QCoreApplication::translate("QtWin2", "\346\262\271\344\275\215", nullptr));
-        btnYouWen->setText(QCoreApplication::translate("QtWin2", "\346\262\271\346\270\251", nullptr));
-        btnHuoYan->setText(QCoreApplication::translate("QtWin2", "\347\201\253\347\204\260", nullptr));
+        btnYouWei->setText(QCoreApplication::translate("QtWin2", "YW", nullptr));
+        btnYouWen->setText(QCoreApplication::translate("QtWin2", "YW", nullptr));
+        btnHuoYan->setText(QCoreApplication::translate("QtWin2", "HY", nullptr));
         btnFloat->setText(QCoreApplication::translate("QtWin2", "FLOAT", nullptr));
-        btnJgtj->setText(QCoreApplication::translate("QtWin2", "\345\212\240\345\267\245\346\235\241\344\273\266", nullptr));
-        btnJgtjGt->setText(QCoreApplication::translate("QtWin2", "\351\253\230\350\267\263", nullptr));
+        btnJgtj->setText(QCoreApplication::translate("QtWin2", "JGTJ", nullptr));
+        btnJgtjGt->setText(QCoreApplication::translate("QtWin2", "GT", nullptr));
 #if QT_CONFIG(tooltip)
         xLabel->setToolTip(QCoreApplication::translate("QtWin2", "X", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -691,29 +691,29 @@ public:
         zLabel->setText(QCoreApplication::translate("QtWin2", "-00000.000", nullptr));
         uLabel->setText(QCoreApplication::translate("QtWin2", "+00000.000", nullptr));
         wLabel->setText(QCoreApplication::translate("QtWin2", "+00000.000", nullptr));
-        label_loran->setText(QCoreApplication::translate("QtWin2", "\345\271\263\345\212\250\350\275\250\350\277\271", nullptr));
-        label_displayz->setText(QCoreApplication::translate("QtWin2", "\347\224\265\345\216\213\346\225\210\347\216\207\345\233\276", nullptr));
-        labelLength0->setText(QCoreApplication::translate("QtWin2", "\345\205\250\351\225\277(mm)", nullptr));
+        label_loran->setText(QCoreApplication::translate("QtWin2", "PDGJ", nullptr));
+        label_displayz->setText(QCoreApplication::translate("QtWin2", "DYXLT", nullptr));
+        labelLength0->setText(QCoreApplication::translate("QtWin2", "QZ(", nullptr));
         labelLength->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
-        labelCNo0->setText(QCoreApplication::translate("QtWin2", "\346\235\241\344\273\266\345\217\267", nullptr));
+        labelCNo0->setText(QCoreApplication::translate("QtWin2", "TJH", nullptr));
         labelCNo->setText(QCoreApplication::translate("QtWin2", "C000", nullptr));
-        labelRemnantLength0->setText(QCoreApplication::translate("QtWin2", "\346\256\213\344\275\231\351\207\217(mm)", nullptr));
+        labelRemnantLength0->setText(QCoreApplication::translate("QtWin2", "CYL(", nullptr));
         labelRemnantLength->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
-        labelTNo0->setText(QCoreApplication::translate("QtWin2", "\345\267\245\345\205\267\345\217\267", nullptr));
+        labelTNo0->setText(QCoreApplication::translate("QtWin2", "GJH", nullptr));
         labelTNo->setText(QCoreApplication::translate("QtWin2", "T000", nullptr));
-        labelTotalTime0->setText(QCoreApplication::translate("QtWin2", "\346\200\273\347\232\204\345\212\240\345\267\245\346\227\266\351\227\264", nullptr));
+        labelTotalTime0->setText(QCoreApplication::translate("QtWin2", "ZDJGSJ", nullptr));
         labelTotalTime->setText(QCoreApplication::translate("QtWin2", "00:00:00", nullptr));
-        labelProcessSpeed0->setText(QCoreApplication::translate("QtWin2", "\345\212\240\345\267\245\351\200\237\345\272\246", nullptr));
+        labelProcessSpeed0->setText(QCoreApplication::translate("QtWin2", "JGSD", nullptr));
         labelProcessSpeed->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
-        labelProcessTime0->setText(QCoreApplication::translate("QtWin2", "\346\255\244\346\256\265\345\212\240\345\267\245\346\227\266\351\227\264", nullptr));
+        labelProcessTime0->setText(QCoreApplication::translate("QtWin2", "CDJGSJ", nullptr));
         labelProcessTime->setText(QCoreApplication::translate("QtWin2", "00:00:00", nullptr));
-        labelProcessSpeed20->setText(QCoreApplication::translate("QtWin2", "\346\227\213\350\275\254\350\275\264\351\200\237\345\272\246", nullptr));
+        labelProcessSpeed20->setText(QCoreApplication::translate("QtWin2", "XZZSD", nullptr));
         labelProcessSpeed2->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
-        labelRemnantTime0->setText(QCoreApplication::translate("QtWin2", "\346\255\244\346\256\265\346\256\213\344\275\231\346\227\266\351\227\264", nullptr));
+        labelRemnantTime0->setText(QCoreApplication::translate("QtWin2", "CDCYSJ", nullptr));
         labelRemnantTime->setText(QCoreApplication::translate("QtWin2", "00:00:00", nullptr));
-        labelG04RemnantTime0->setText(QCoreApplication::translate("QtWin2", "G04\346\256\213\344\275\231\346\227\266\351\227\264", nullptr));
+        labelG04RemnantTime0->setText(QCoreApplication::translate("QtWin2", "GCYSJ", nullptr));
         labelG04RemnantTime->setText(QCoreApplication::translate("QtWin2", "00:00:00", nullptr));
-        labelFileName0->setText(QCoreApplication::translate("QtWin2", "\346\226\207\344\273\266\345\220\215\357\274\232", nullptr));
+        labelFileName0->setText(QCoreApplication::translate("QtWin2", "WJM\357\274\232", nullptr));
         btnFileName->setText(QCoreApplication::translate("QtWin2", "Default", nullptr));
         lblNowDate->setText(QCoreApplication::translate("QtWin2", "2024-02-20", nullptr));
         lblNowTime->setText(QCoreApplication::translate("QtWin2", "09:03:29", nullptr));
@@ -728,7 +728,7 @@ public:
         labelInfoYouWen->setText(QString());
         labelInfoYouWei->setText(QString());
         labelInfoZhaoMing->setText(QString());
-        groupBoxMenus->setTitle(QCoreApplication::translate("QtWin2", "\350\217\234\345\215\225", nullptr));
+        groupBoxMenus->setTitle(QCoreApplication::translate("QtWin2", "CD", nullptr));
         toolBar->setWindowTitle(QCoreApplication::translate("QtWin2", "toolBar", nullptr));
     } // retranslateUi
 

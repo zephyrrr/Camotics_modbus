@@ -35,7 +35,7 @@ public:
 
     void retranslateUi(QWidget *Gaotiao4JiagongClass)
     {
-        Gaotiao4JiagongClass->setWindowTitle(QCoreApplication::translate("Gaotiao4JiagongClass", "\351\253\230\350\267\263", nullptr));
+        Gaotiao4JiagongClass->setWindowTitle(QCoreApplication::translate("Gaotiao4JiagongClass", "GT", nullptr));
     } // retranslateUi
 
 };

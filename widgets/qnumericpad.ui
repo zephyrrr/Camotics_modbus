@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>QNumericPadClass</class>
  <widget class="QDialog" name="QNumericPadClass">
@@ -11,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>键盘</string>
+   <string>JP</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1">
@@ -343,7 +342,7 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
-      <string>回退</string>
+      <string>HT</string>
      </property>
     </widget>
    </item>
@@ -365,7 +364,7 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
-      <string>清空</string>
+      <string>QK</string>
      </property>
     </widget>
    </item>
@@ -387,7 +386,7 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
-      <string>确认</string>
+      <string>QR</string>
      </property>
     </widget>
    </item>
@@ -409,13 +408,13 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="text">
-      <string>取消</string>
+      <string>QX</string>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="6" margin="11" />
+ <resources />
+ <connections />
 </ui>

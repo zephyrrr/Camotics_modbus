@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>WidgetKeyboard</class>
  <widget class="QDialog" name="WidgetKeyboard">
@@ -18,7 +17,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>虚拟键盘</string>
+   <string>XNJP</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
    <property name="spacing">
@@ -873,7 +872,7 @@
             <string>0x20</string>
            </property>
            <property name="text">
-            <string/>
+            <string />
            </property>
            <property name="autoRepeat">
             <bool>true</bool>
@@ -1209,6 +1208,6 @@
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

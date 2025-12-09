@@ -220,9 +220,9 @@ QStandardItemModel* ZhuZhongXingForm::SetupTable4Result(QTableView* tableView, Q
         model->setHeaderData(i, Qt::Horizontal, headerNames[i]);
     }
     for (int i = 0; i < rowCount; ++i) {
-        model->setHeaderData(i, Qt::Vertical, QStringLiteral("第%1次").arg(i+1));
+        model->setHeaderData(i, Qt::Vertical, tr("D%C").arg(i+1));
     }
-    model->setHeaderData(rowCount, Qt::Vertical, QStringLiteral("结果"));
+    model->setHeaderData(rowCount, Qt::Vertical, tr("JG"));
 
     tableView->setModel(model);
     tableView->setColumnHidden(0, true);

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>WeiZhiJiYiForm</class>
  <widget class="QWidget" name="WeiZhiJiYiForm">
@@ -34,14 +33,14 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>U轴移动</string>
+          <string>UZYD</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_1">
          <property name="text">
-          <string>坐标系切换</string>
+          <string>ZBXQH</string>
          </property>
         </widget>
        </item>
@@ -64,7 +63,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Z轴移动</string>
+          <string>ZZYD</string>
          </property>
         </widget>
        </item>
@@ -162,7 +161,7 @@
         </widget>
        </item>
        <item row="3" column="0" colspan="3">
-        <layout class="QVBoxLayout" name="mainTableLayout"/>
+        <layout class="QVBoxLayout" name="mainTableLayout" />
        </item>
       </layout>
      </item>
@@ -186,22 +185,22 @@
      <item>
       <widget class="QLabel" name="labelPix">
        <property name="text">
-        <string/>
+        <string />
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="textBrowser"/>
+      <widget class="QTextBrowser" name="textBrowser" />
      </item>
     </layout>
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
  <buttongroups>
-  <buttongroup name="buttonGroup_3"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3" />
+  <buttongroup name="buttonGroup" />
+  <buttongroup name="buttonGroup_2" />
  </buttongroups>
 </ui>

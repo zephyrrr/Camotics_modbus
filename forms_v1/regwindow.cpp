@@ -123,7 +123,7 @@ void RegWindow::init()
 		// 机械坐标设定
 		{
 			QVBoxLayout* vertialLayout2 = new QVBoxLayout();
-			QGroupBox* groupBox2 = new QGroupBox(QStringLiteral("机械坐标设定"));
+			QGroupBox* groupBox2 = new QGroupBox(tr("JXZBSD"));
 			for (int i = 0; i < POS_AXIS_LEN; ++i)
 			{
 				QLineEdit* lineEdit = new QLineEdit();
@@ -132,7 +132,7 @@ void RegWindow::init()
 				vertialLayout2->addWidget(lineEdit);
 				m_tab2LineEdits[i] = lineEdit;
 			}
-			QPushButton* btnSendCurrentPos = new QPushButton(QStringLiteral("发送"));
+			QPushButton* btnSendCurrentPos = new QPushButton(tr("FS"));
 			connect(btnSendCurrentPos, &QPushButton::clicked, [=]() {
 				std::vector<uint16_t> v;
 				try {
@@ -232,7 +232,7 @@ void RegWindow::init()
 		// 手控盒操作数据
 		{
 			QVBoxLayout* vertialLayout = new QVBoxLayout();
-			QGroupBox* groupBox = new QGroupBox(QStringLiteral("手控盒操作数据"));
+			QGroupBox* groupBox = new QGroupBox(tr("SKHCZSJ"));
 			groupBox->setLayout(vertialLayout);
 			for (int i = 0; i < 2; ++i)
 			{
@@ -250,7 +250,7 @@ void RegWindow::init()
 		// 当前在用坐标系值
 		{
 			QVBoxLayout* vertialLayout2 = new QVBoxLayout();
-			QGroupBox* groupBox2 = new QGroupBox(QStringLiteral("当前在用坐标系值"));
+			QGroupBox* groupBox2 = new QGroupBox(tr("DQZYZBXZ"));
 			for (int i = 0; i < POS_AXIS_LEN; ++i)
 			{
 				QLineEdit* lineEdit = new QLineEdit();
@@ -259,7 +259,7 @@ void RegWindow::init()
 				vertialLayout2->addWidget(lineEdit);
 				m_tab10LineEdits[i + 2] = lineEdit;
 			}
-			QPushButton* btnSendCurrentPos = new QPushButton(QStringLiteral("发送"));
+			QPushButton* btnSendCurrentPos = new QPushButton(tr("FS"));
 			connect(btnSendCurrentPos, &QPushButton::clicked, [=]() {
 				std::vector<uint16_t> v;
 				try {
@@ -304,12 +304,12 @@ void RegWindow::init()
 
 	// Tab14
 	{
-		QString asixNames[4] = { QStringLiteral("X轴"), QStringLiteral("Y轴"),QStringLiteral("Z轴"),QStringLiteral("U轴") };
+		QString asixNames[4] = { tr("XZ"), tr("YZ"),tr("ZZ"),tr("UZ") };
 
 		for (int i = 0; i < LJBC_AXIS_LEN; ++i)
 		{
 			QVBoxLayout* vertialLayout = new QVBoxLayout();
-			QGroupBox* groupBox = new QGroupBox(asixNames[i] + QStringLiteral("轴螺距补偿"));
+			QGroupBox* groupBox = new QGroupBox(asixNames[i] + tr("ZLJBC"));
 			groupBox->setLayout(vertialLayout);
 
 			propertyObjectZLJBC[i] = propertyObjects->propertyObjectZLJBC[i];
@@ -352,49 +352,49 @@ void RegWindow::init()
 
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
-		ui->tabWidget->addTab(newWidget, QStringLiteral("ADC"));
+		ui->tabWidget->addTab(newWidget, tr("ADC"));
 	}
 	{
 		QHBoxLayout* horizontalLayout = new QHBoxLayout();
 		addProperyEditor(horizontalLayout, propertyObjects->propertyObjectFdhl);
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
-		ui->tabWidget->addTab(newWidget, QStringLiteral("放电回路"));
+		ui->tabWidget->addTab(newWidget, tr("FDHL"));
 	}
 	{
 		QHBoxLayout* horizontalLayout = new QHBoxLayout();
 		addProperyEditor(horizontalLayout, propertyObjects->propertyObjectFdjg);
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
-		ui->tabWidget->addTab(newWidget, QStringLiteral("放电加工"));
+		ui->tabWidget->addTab(newWidget, tr("FDJG"));
 	}
 	{
 		QHBoxLayout* horizontalLayout = new QHBoxLayout();
 		addProperyEditor(horizontalLayout, propertyObjects->propertyObjectFdwc);
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
-		ui->tabWidget->addTab(newWidget, QStringLiteral("放电完成"));
+		ui->tabWidget->addTab(newWidget, tr("FDWC"));
 	}
 	{
 		QHBoxLayout* horizontalLayout = new QHBoxLayout();
 		addProperyEditor(horizontalLayout, propertyObjects->propertyObjectYd);
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
-		ui->tabWidget->addTab(newWidget, QStringLiteral("摇动"));
+		ui->tabWidget->addTab(newWidget, tr("YD"));
 	}
 }
 
 void RegWindow::addProperyEditor(QHBoxLayout* horizontalLayout, BasePropertyObject* propertyObject)
 {
 	QVBoxLayout* vertialLayout2 = new QVBoxLayout();
-	//QGroupBox* groupBox2 = new QGroupBox(QStringLiteral(""));
+	//QGroupBox* groupBox2 = new QGroupBox(QString(""));
 
 	QtPropertyEditor::QtPropertyTreeEditor* propertyEditorTab = new QtPropertyEditor::QtPropertyTreeEditor();
 	addProperyEditor(*propertyEditorTab, propertyObject);
 	vertialLayout2->insertWidget(0, propertyEditorTab);
 	m_propertyEditors.push_back(propertyEditorTab);
 
-	QPushButton* btnSendCurrentPos = new QPushButton(QStringLiteral("发送"));
+	QPushButton* btnSendCurrentPos = new QPushButton(tr("FS"));
 	connect(btnSendCurrentPos, &QPushButton::clicked, [=]() {
 		m_ncMachine->enterSetPriority(0);
 		propertyObject->ExecuteCmds(m_ncMachine);
@@ -526,26 +526,26 @@ void RegWindow::UpdateState2(unsigned long long key)
 	switch (targetType & 0x000F)
 	{
 	case 0:
-		s1 = QStringLiteral("X轴");
+		s1 = tr("XZ");
 		break;
 	case 1:
-		s1 = QStringLiteral("Y轴");
+		s1 = tr("YZ");
 		break;
 	case 2:
-		s1 = QStringLiteral("Z轴");
+		s1 = tr("ZZ");
 		break;
 	}
 	switch (targetType & 0x00F0)
 	{
 	case 0x00:
-		s2 = QStringLiteral("无操作");
+		s2 = tr("WCZ");
 		break;
 	case 0x10:
-		s2 = QStringLiteral("设定当前");
+		s2 = tr("SDDQ");
 		m_tab10LineEdits[1]->setText(s1 + s2);
 		break;
 	case 0x20:
-		s2 = QStringLiteral("定位移动");
+		s2 = tr("DWYD");
 		m_tab10LineEdits[1]->setText(s1 + s2);
 		break;
 	}

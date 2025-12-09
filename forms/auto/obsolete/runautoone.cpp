@@ -31,7 +31,7 @@ RunAutoOne::RunAutoOne(QWidget* parent)
 
 	
 	QString rowHeaders[] = { "X", "Y", "Z" };
-	QString headers[] = { QStringLiteral("坐标轴"), QStringLiteral("深度") };
+	QString headers[] = { tr("ZBZ"), tr("SD") };
 	table1 = new ButtonEditTableWidget(this);
 	table1->createForm(3, 1, [](int col, QWidget* parent) {
 		QLineEdit4AxisValue* p = new QLineEdit4AxisValue(parent);
@@ -66,8 +66,8 @@ RunAutoOne::RunAutoOne(QWidget* parent)
 	//	//	edit->setText("00000.000");
 	//	//}
 	//});
-	QString headers2[] = { QStringLiteral("回数"), QStringLiteral("加工"), "C.No", "LN", "LP", "STEP", QStringLiteral("加工余量"), QStringLiteral("定时"), QStringLiteral("时间"), QStringLiteral("详细") };
-	QString defaultRowValues[] = { "", QStringLiteral("是"), "001", "000", "0000", "0.000", "0.000", "0", "0000", "..." };
+	QString headers2[] = { tr("HS"), tr("JG"), "C.No", "LN", "LP", "STEP", tr("JGYL"), tr("DS"), tr("SJ"), tr("XX") };
+	QString defaultRowValues[] = { "", tr("S"), "001", "000", "0000", "0.000", "0.000", "0", "0000", "..." };
 	int visibleColumnCount = 9;
 	int hiddenColumnCount = 1;
 
@@ -83,7 +83,7 @@ RunAutoOne::RunAutoOne(QWidget* parent)
 			connect(btn, &QLineEdit::textChanged, [btn, parent](const QString& s) {
 				ButtonEditTableWidget* table = qobject_cast<ButtonEditTableWidget*>(parent);
 				int rowHere = table->indexAt(btn->pos()).row();
-				bool isOk = s == QStringLiteral("是");
+				bool isOk = s == tr("S");
 				table->setReadOnlyOnRow(rowHere, !isOk);
 				});
 			ret = btn;
@@ -384,7 +384,7 @@ H111 = SQRT[H121*H121+H122*H122+H123*H123];
 
 	QHash<int, int> cNos;
 	for (int i = 0; i < table2->getDataRowCount(); ++i) {
-		if (table2->getValue(i, 0) != QStringLiteral("是")) {
+		if (table2->getValue(i, 0) != tr("S")) {
 			continue;
 		}
 		if (table2->getValue(i, 1).isEmpty()) {
@@ -523,7 +523,7 @@ N0000;
 
 	QHash<int, int> cNos;
 	for (int i = 0; i < table2->getDataRowCount(); ++i) {
-		if (table2->getValue(i, 0) != QStringLiteral("是")) {
+		if (table2->getValue(i, 0) != tr("S")) {
 			continue;
 		}
 		if (table2->getValue(i, 1).isEmpty()) {
@@ -732,12 +732,12 @@ void RunAutoOne::showEvent(QShowEvent* event)
 
 	if (m_tool4ZeroAndHalfAxis == NULL) {
 		m_tool4ZeroAndHalfAxis = new Tool4ZeroAndHalfAxis(m_ncMachine, this, 0);
-		//QPushButton* btn1 = new QPushButton(QStringLiteral("手动代码输出"), this);
+		//QPushButton* btn1 = new QPushButton(tr("SDDMSC"), this);
 		//m_tool4ZeroAndHalfAxis->AddItem(btn1);
-		//QPushButton* btn2 = new QPushButton(QStringLiteral("NC文件输出"), this);
-		Tool4Buttons* tools1 = new Tool4Buttons(QStringList() << QStringLiteral("手动代码输出"), m_tool4ZeroAndHalfAxis);
+		//QPushButton* btn2 = new QPushButton(tr("NWJSC"), this);
+		Tool4Buttons* tools1 = new Tool4Buttons(QStringList() << tr("SDDMSC"), m_tool4ZeroAndHalfAxis);
 		m_tool4ZeroAndHalfAxis->AddItem(tools1);
-		Tool4Buttons* tools2 = new Tool4Buttons(QStringList() << QStringLiteral("NC文件输出"), m_tool4ZeroAndHalfAxis);
+		Tool4Buttons* tools2 = new Tool4Buttons(QStringList() << tr("NWJSC"), m_tool4ZeroAndHalfAxis);
 		m_tool4ZeroAndHalfAxis->AddItem(tools2);
 
 		QPushButton* btn = tools1->getButton(0);
@@ -781,7 +781,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			dataFormDest->serialize(filePath4Dest);
 
 			BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-			mainWindow->showChildWindow(QStringLiteral("手动单个"));
+			mainWindow->showChildWindow(tr("SDDG"));
 			});
 
 		QPushButton* btn2 = tools2->getButton(0);
@@ -795,7 +795,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			QString s = w->windowB->GetGCode();
 			QString m_path = "data/nc";
 			if (!s.isEmpty()) {
-				QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("保存文件"), m_path, QStringLiteral("(*.nc)"));
+				QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QStringLiteral("(*.nc)"));
 				if (!filePath.isEmpty()) {
 
 					NFile file(filePath);

@@ -1,4 +1,4 @@
-#include "tool4coorset.h"
+ï»¿#include "tool4coorset.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "widgets\filedialog.h"
@@ -23,7 +23,7 @@ void Tool4CoorSet::on_btnRecord_clicked()
 	auto controller = this->ncMachine->GetController();
 	//int cs0 = 0;
 	int csNow = controller->get(CURRENT_COORD_SYSTEM) - 1;
-    if (!FormUtils::MessageBoxYesNo(QStringLiteral("¼ÇÂ¼×ø±êÏµÊý¾Ý£¨G054 - %1£©£¬ÊÇ·ñÔËÐÐ£¿").arg(Tool4SwitchCoor::GetCoorName(csNow)))) {
+    if (!FormUtils::MessageBoxYesNo(tr("JLZBXSJï¼ˆSFYXï¼Ÿ").arg(Tool4SwitchCoor::GetCoorName(csNow)))) {
         return;
     }
 
@@ -63,7 +63,7 @@ void Tool4CoorSet::on_btnRecord_clicked()
 
 void Tool4CoorSet::on_btnBatchSet_clicked()
 {
-    if (!FormUtils::MessageBoxYesNo(QStringLiteral("»Ö¸´Êý¾Ýµ½×ø±êÏµ£¬ÊÇ·ñÔËÐÐ£¿"))) {
+    if (!FormUtils::MessageBoxYesNo(tr("HFSJDZBXï¼ŒSFYXï¼Ÿ"))) {
         return;
     }
 

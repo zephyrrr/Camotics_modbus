@@ -1,4 +1,4 @@
-#include "runautoform.h"
+ï»¿#include "runautoform.h"
 #include "ui_runautoform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -29,15 +29,15 @@ RunAutoForm::RunAutoForm(QWidget *parent) :
 
     // Add the windows to the tab widget
     ui->tabWidget->addTab(windowA, tr("JGJH"));
-    ui->tabWidget->addTab(windowB, QStringLiteral("¼Ó¹¤Î»ÖÃ"));
-    ui->tabWidget->addTab(windowC, QStringLiteral("Ìõ¼þÏêÏ¸"));
+    ui->tabWidget->addTab(windowB, tr("JGWZ"));
+    ui->tabWidget->addTab(windowC, tr("TJXX"));
 
     tabChangedConnection = connect(ui->tabWidget, &QTabWidget::currentChanged, [this](int index) {
         if (index == 2) {
             QString s = windowA->GetGCode();
             if (s.isEmpty()) {
                 ui->tabWidget->setCurrentIndex(0);
-                FormUtils::MessageBoxInfo(QStringLiteral("Ã»ÓÐÏàÓ¦Êý¾Ý£¡"));
+                FormUtils::MessageBoxInfo(tr("MYXYSJï¼"));
             }
             else {
                 windowB->LoadData();

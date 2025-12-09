@@ -1,4 +1,4 @@
-#include "QTextFileModel.h"
+﻿#include "QTextFileModel.h"
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>

@@ -70,8 +70,8 @@ public:
     void retranslateUi(QWidget *FangDianCanShuForm)
     {
         FangDianCanShuForm->setWindowTitle(QCoreApplication::translate("FangDianCanShuForm", "Form", nullptr));
-        btnExport->setText(QCoreApplication::translate("FangDianCanShuForm", "\345\257\274\345\207\272", nullptr));
-        btnImport->setText(QCoreApplication::translate("FangDianCanShuForm", "\345\257\274\345\205\245", nullptr));
+        btnExport->setText(QCoreApplication::translate("FangDianCanShuForm", "DC", nullptr));
+        btnImport->setText(QCoreApplication::translate("FangDianCanShuForm", "DR", nullptr));
     } // retranslateUi
 
 };

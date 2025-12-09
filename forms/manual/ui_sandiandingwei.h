@@ -405,45 +405,31 @@ public:
     void retranslateUi(QWidget *SanDianDingWeiForm)
     {
         SanDianDingWeiForm->setWindowTitle(QCoreApplication::translate("SanDianDingWeiForm", "Form", nullptr));
-        inPositionOuter->setText(QCoreApplication::translate("SanDianDingWeiForm", "\345\244\226\345\276\204", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("SanDianDingWeiForm", "\345\206\205\345\276\204", nullptr));
+        inPositionOuter->setText(QCoreApplication::translate("SanDianDingWeiForm", "WJ", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("SanDianDingWeiForm", "NJ", nullptr));
         inSetToZTouch->setText(QCoreApplication::translate("SanDianDingWeiForm", "ON", nullptr));
         pushButton->setText(QCoreApplication::translate("SanDianDingWeiForm", "OFF", nullptr));
-        label_7->setText(QCoreApplication::translate("SanDianDingWeiForm", "\350\247\222\345\272\246", nullptr));
+        label_7->setText(QCoreApplication::translate("SanDianDingWeiForm", "JD", nullptr));
         inCnt->setText(QCoreApplication::translate("SanDianDingWeiForm", "1", nullptr));
         btnX->setText(QCoreApplication::translate("SanDianDingWeiForm", "R", nullptr));
         inX->setText(QString());
         inBack->setText(QCoreApplication::translate("SanDianDingWeiForm", "0.5", nullptr));
-        label_3->setText(QCoreApplication::translate("SanDianDingWeiForm", "\345\235\220\346\240\2070\350\256\276\345\256\232", nullptr));
-        label_2->setText(QCoreApplication::translate("SanDianDingWeiForm", "\347\273\223\346\236\234", nullptr));
-        label_6->setText(QCoreApplication::translate("SanDianDingWeiForm", "Z\350\275\264\346\216\245\350\247\246\346\204\237\347\237\245\345\212\250\344\275\234", nullptr));
+        label_3->setText(QCoreApplication::translate("SanDianDingWeiForm", "ZB0SD", nullptr));
+        label_2->setText(QCoreApplication::translate("SanDianDingWeiForm", "JG", nullptr));
+        label_6->setText(QCoreApplication::translate("SanDianDingWeiForm", "ZZJCGZDZ", nullptr));
         inSetToZero->setText(QCoreApplication::translate("SanDianDingWeiForm", "ON", nullptr));
         pushButton_6->setText(QCoreApplication::translate("SanDianDingWeiForm", "OFF", nullptr));
         btnA1->setText(QCoreApplication::translate("SanDianDingWeiForm", "1", nullptr));
         btnA2->setText(QCoreApplication::translate("SanDianDingWeiForm", "2", nullptr));
         btnA3->setText(QCoreApplication::translate("SanDianDingWeiForm", "3", nullptr));
-        label_1->setText(QCoreApplication::translate("SanDianDingWeiForm", "\345\277\253\350\277\233\351\207\217", nullptr));
-        label_4->setText(QCoreApplication::translate("SanDianDingWeiForm", "\346\216\245\350\247\246\346\204\237\347\237\245\345\233\236\351\200\200\345\200\274", nullptr));
-        label_9->setText(QCoreApplication::translate("SanDianDingWeiForm", "\346\254\241\346\225\260", nullptr));
-        label_8->setText(QCoreApplication::translate("SanDianDingWeiForm", "\346\265\213\345\256\232\344\275\215\347\275\256", nullptr));
+        label_1->setText(QCoreApplication::translate("SanDianDingWeiForm", "KJL", nullptr));
+        label_4->setText(QCoreApplication::translate("SanDianDingWeiForm", "JCGZHTZ", nullptr));
+        label_9->setText(QCoreApplication::translate("SanDianDingWeiForm", "CS", nullptr));
+        label_8->setText(QCoreApplication::translate("SanDianDingWeiForm", "CDWZ", nullptr));
         btnZ->setText(QCoreApplication::translate("SanDianDingWeiForm", "Z", nullptr));
         inZ->setText(QString());
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("SanDianDingWeiForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\350\275\264\345\217\267]</"
-                        "span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\345\257\271\345\272\224\350\275\264\345\217\267\343\200\202</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\346\226\271\345\220\221]</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\346\226\271\345\220\221\357\274\214\342\200\234+\342\200\235\344\270\272\345\257\271\345\272\224\350\275\264\346\255\243\346\226\271\345\220\221\357\274\214\342\200\234-\342\200\235\344\270\272"
-                        "\345\257\271\345\272\224\350\275\264\347\232\204\350\264\237\346\226\271\345\220\221\343\200\202</span>               </p></body></html>", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };

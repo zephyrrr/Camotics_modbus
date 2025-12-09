@@ -100,27 +100,45 @@ JogPropertyObject::JogPropertyObject(QObject* parent, const QString& name) :
 	//    new JogPropertyObject("child", this, false);
 
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "JOGENABLE", QStringLiteral("JOG使能") },
-			{ "tddzsnw", QStringLiteral("抬刀动作失能位") },
-			{ "fdzlw", QStringLiteral("放电暂停位") },
-			{ "ms", QStringLiteral("模式") },
-			{ "jcdl", QStringLiteral("监测短路") },
-			{ "isgz", QStringLiteral("公制") },
-			{ "xV", QStringLiteral("X轴速度mm/min") },
-			{ "xaccl", QStringLiteral("加速时间ms") },
-			{ "yV", QStringLiteral("Y轴速度mm/min") },
-			{ "yaccl", QStringLiteral("Y轴加速时间ms") },
-			{ "zV", QStringLiteral("Z轴速度mm/min") },
-			{ "zaccl", QStringLiteral("Z轴加速时间ms") },
-			{ "uV", QStringLiteral("U轴速度mm/min") },
-			{ "uaccl", QStringLiteral("U轴加速时间ms") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] JOG使能
+			{ "JOGENABLE", tr("JSN") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀动作失能位
+			{ "tddzsnw", tr("TDDZSNW") },
+// [AUTO-TRANSLATION-COMMENT] 放电暂停位
+			{ "fdzlw", tr("FDZTW") },
+// [AUTO-TRANSLATION-COMMENT] 模式
+			{ "ms", tr("MS") },
+// [AUTO-TRANSLATION-COMMENT] 监测短路
+			{ "jcdl", tr("JCDL") },
+// [AUTO-TRANSLATION-COMMENT] 公制
+			{ "isgz", tr("GZ") },
+// [AUTO-TRANSLATION-COMMENT] X轴速度mm/min
+			{ "xV", tr("XZSDM") },
+// [AUTO-TRANSLATION-COMMENT] 加速时间ms
+			{ "xaccl", tr("JSSJM") },
+// [AUTO-TRANSLATION-COMMENT] Y轴速度mm/min
+			{ "yV", tr("YZSDM") },
+// [AUTO-TRANSLATION-COMMENT] Y轴加速时间ms
+			{ "yaccl", tr("YZJSSJM") },
+// [AUTO-TRANSLATION-COMMENT] Z轴速度mm/min
+			{ "zV", tr("ZZSDM") },
+// [AUTO-TRANSLATION-COMMENT] Z轴加速时间ms
+			{ "zaccl", tr("ZZJSSJM") },
+// [AUTO-TRANSLATION-COMMENT] U轴速度mm/min
+			{ "uV", tr("UZSDM") },
+// [AUTO-TRANSLATION-COMMENT] U轴加速时间ms
+			{ "uaccl", tr("UZJSSJM") },
 	};
 
 	enumHeaders = {
-		{ "SDMS", QStringLiteral("手动模式")},
-		{ "DDMS", QStringLiteral("点动模式")},
-		{ "SLMS", QStringLiteral("手轮模式")},
+// [AUTO-TRANSLATION-COMMENT] 手动模式
+		{ "SDMS", tr("SDMS")},
+// [AUTO-TRANSLATION-COMMENT] 点动模式
+		{ "DDMS", tr("DDMS")},
+// [AUTO-TRANSLATION-COMMENT] 手轮模式
+		{ "SLMS", tr("SLMS")},
 	};
 }
 
@@ -262,14 +280,22 @@ LocPropertyObject::LocPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name), m_x(0), m_y(0), m_z(0), m_u(0)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "x", QStringLiteral("X轴目标坐标") },
-			{ "y", QStringLiteral("Y轴目标坐标") },
-			{ "z", QStringLiteral("Z轴目标坐标") },
-			{ "u", QStringLiteral("U轴目标坐标") },
-			{ "jcdl", QStringLiteral("监测短路") },
-			{ "V", QStringLiteral("轴速度mm/min") },
-			{ "accl", QStringLiteral("加速时间ms") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] X轴目标坐标
+			{ "x", tr("XZMBZB") },
+// [AUTO-TRANSLATION-COMMENT] Y轴目标坐标
+			{ "y", tr("YZMBZB") },
+// [AUTO-TRANSLATION-COMMENT] Z轴目标坐标
+			{ "z", tr("ZZMBZB") },
+// [AUTO-TRANSLATION-COMMENT] U轴目标坐标
+			{ "u", tr("UZMBZB") },
+// [AUTO-TRANSLATION-COMMENT] 监测短路
+			{ "jcdl", tr("JCDL") },
+// [AUTO-TRANSLATION-COMMENT] 轴速度mm/min
+			{ "V", tr("ZSDM") },
+// [AUTO-TRANSLATION-COMMENT] 加速时间ms
+			{ "accl", tr("JSSJM") },
 	};
 }
 
@@ -311,12 +337,18 @@ CmvTouchPropertyObject::CmvTouchPropertyObject(QObject* parent, const QString& n
 	BasePropertyObject(parent, name), m_ddfx(DdfxEnum::X_PLUS)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "xV", QStringLiteral("X轴速度mm/min") },
-			{ "xaccl", QStringLiteral("X轴加速时间ms") },
-			{ "yV", QStringLiteral("Y轴速度mm/min") },
-			{ "yaccl", QStringLiteral("Y轴加速时间ms") },
-			{ "ddfx", QStringLiteral("对刀方向") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] X轴速度mm/min
+			{ "xV", tr("XZSDM") },
+// [AUTO-TRANSLATION-COMMENT] X轴加速时间ms
+			{ "xaccl", tr("XZJSSJM") },
+// [AUTO-TRANSLATION-COMMENT] Y轴速度mm/min
+			{ "yV", tr("YZSDM") },
+// [AUTO-TRANSLATION-COMMENT] Y轴加速时间ms
+			{ "yaccl", tr("YZJSSJM") },
+// [AUTO-TRANSLATION-COMMENT] 对刀方向
+			{ "ddfx", tr("DDFX") },
 	};
 }
 
@@ -348,11 +380,16 @@ CmvTolmtPropertyObject::CmvTolmtPropertyObject(QObject* parent, const QString& n
 	BasePropertyObject(parent, name), m_ddfx(DdfxEnum::X_PLUS)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "xV", QStringLiteral("轴速度mm/min") },
-			{ "xaccl", QStringLiteral("加速时间ms") },
-			{ "ddfx", QStringLiteral("对刀方向") },
-			{ "jcdl", QStringLiteral("监测短路") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 轴速度mm/min
+			{ "xV", tr("ZSDM") },
+// [AUTO-TRANSLATION-COMMENT] 加速时间ms
+			{ "xaccl", tr("JSSJM") },
+// [AUTO-TRANSLATION-COMMENT] 对刀方向
+			{ "ddfx", tr("DDFX") },
+// [AUTO-TRANSLATION-COMMENT] 监测短路
+			{ "jcdl", tr("JCDL") },
 	};
 }
 
@@ -383,11 +420,16 @@ CmvFrmlmtPropertyObject::CmvFrmlmtPropertyObject(QObject* parent, const QString&
 	BasePropertyObject(parent, name), m_ddfx(DdfxEnum::X_PLUS)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "xV", QStringLiteral("轴速度mm/min") },
-			{ "xaccl", QStringLiteral("加速时间ms") },
-			{ "ddfx", QStringLiteral("对刀方向") },
-			{ "jcdl", QStringLiteral("监测短路") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 轴速度mm/min
+			{ "xV", tr("ZSDM") },
+// [AUTO-TRANSLATION-COMMENT] 加速时间ms
+			{ "xaccl", tr("JSSJM") },
+// [AUTO-TRANSLATION-COMMENT] 对刀方向
+			{ "ddfx", tr("DDFX") },
+// [AUTO-TRANSLATION-COMMENT] 监测短路
+			{ "jcdl", tr("JCDL") },
 	};
 }
 
@@ -418,11 +460,16 @@ CmvTozsigPropertyObject::CmvTozsigPropertyObject(QObject* parent, const QString&
 	BasePropertyObject(parent, name), m_ddfx(DdfxEnum::X_PLUS)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "xV", QStringLiteral("轴速度mm/min") },
-			{ "xaccl", QStringLiteral("加速时间ms") },
-			{ "ddfx", QStringLiteral("对刀方向") },
-			{ "jcdl", QStringLiteral("监测短路") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 轴速度mm/min
+			{ "xV", tr("ZSDM") },
+// [AUTO-TRANSLATION-COMMENT] 加速时间ms
+			{ "xaccl", tr("JSSJM") },
+// [AUTO-TRANSLATION-COMMENT] 对刀方向
+			{ "ddfx", tr("DDFX") },
+// [AUTO-TRANSLATION-COMMENT] 监测短路
+			{ "jcdl", tr("JCDL") },
 	};
 }
 
@@ -453,10 +500,11 @@ SPKPropertyObject::SPKPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{"x", QStringLiteral("X") },
-			{"y", QStringLiteral("Y") },
-			{"z", QStringLiteral("Z") },
-			{"zgj", QStringLiteral("子轨迹") },
+			{"x", QString("X") },
+			{"y", QString("Y") },
+			{"z", QString("Z") },
+// [AUTO-TRANSLATION-COMMENT] 子轨迹
+			{"zgj", tr("ZGJ") },
 	};
 }
 std::vector<uint16_t> SPKPropertyObject::GetValues() const
@@ -495,40 +543,71 @@ FDQDPropertyObject::FDQDPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name), m_kgygzs(Enum1::Enum1NONE), m_fddrxz(Enum2::Enum2NONE), m_dgsnw(Enum3::DLDG), m_dzsnw(Enum4::DLDZ), m_fjxjgw(Enum5::DJWZJ), m_fzdyxz(Enum6::BWQGB)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "a1", QStringLiteral("开电流数（0.3A）") },
-			{ "a2", QStringLiteral("开电流数（0.5A）") },
-			{ "a3", QStringLiteral("开电流数（1A）") },
-			{ "a4", QStringLiteral("开电流数（2A）") },
-			{ "a5", QStringLiteral("开电流数（4A）") },
-			{ "a6", QStringLiteral("开电流数（8A）") },
-			{ "a7", QStringLiteral("开电流数（16A）") },
-			{ "Slv1", QStringLiteral("辅助电流1（32A）") },
-			{ "Slv2", QStringLiteral("辅助电流2（32A）") },
-			{ "LLV", QStringLiteral("低压电源1档（LLV）") },
-			{ "HLV", QStringLiteral("低压电源2档（HLV）") },
-			{ "Slv3", QStringLiteral("辅助电流3（32A）") },
-			{ "kgygzs", QStringLiteral("开高压管子数") },
-			{ "fddrxz", QStringLiteral("放电电容选择") },
-			{ "dgsnw", QStringLiteral("电感失能位") },
-			{ "dzsnw", QStringLiteral("电阻失能位") },
-			{ "fjxjgw", QStringLiteral("反极性加工位") },
-			{ "fzdyxz", QStringLiteral("辅助电压选择") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a1", tr("KDLS") + "0.3A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a2", tr("KDLS") + "0.5A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a3", tr("KDLS") + "1A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a4", tr("KDLS") + "2A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a5", tr("KDLS") + "4A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a6", tr("KDLS") + "8A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a7", tr("KDLS") + "16A"},
+// [AUTO-TRANSLATION-COMMENT] 辅助电流1（32A）
+			{ "Slv1", tr("FZDL1") },
+// [AUTO-TRANSLATION-COMMENT] 辅助电流2（32A）
+			{ "Slv2", tr("FZDL2") },
+// [AUTO-TRANSLATION-COMMENT] 低压电源1档（LLV）
+			{ "LLV", tr("DYDY1D") + "LLV"},
+// [AUTO-TRANSLATION-COMMENT] 低压电源2档（HLV）
+			{ "HLV", tr("DYDY2D") + "HLV"},
+// [AUTO-TRANSLATION-COMMENT] 辅助电流3（32A）
+			{ "Slv3", tr("FZDL3") },
+// [AUTO-TRANSLATION-COMMENT] 开高压管子数
+			{ "kgygzs", tr("KGYGZS") },
+// [AUTO-TRANSLATION-COMMENT] 放电电容选择
+			{ "fddrxz", tr("FDDRXZ") },
+// [AUTO-TRANSLATION-COMMENT] 电感失能位
+			{ "dgsnw", tr("DGSNW") },
+// [AUTO-TRANSLATION-COMMENT] 电阻失能位
+			{ "dzsnw", tr("DZSNW") },
+// [AUTO-TRANSLATION-COMMENT] 反极性加工位
+			{ "fjxjgw", tr("FJXJGW") },
+// [AUTO-TRANSLATION-COMMENT] 辅助电压选择
+			{ "fzdyxz", tr("FZDYXZ") },
 	};
 
 	enumHeaders = {
-		{ "Enum1NONE", QStringLiteral("不开高压")},
-		{ "Enum2NONE", QStringLiteral("无电容")},
-		{ "DGJRHL", QStringLiteral("电感接入回路")},
-		{ "DLDG", QStringLiteral("短路电感")},
-		{ "DZJRHL", QStringLiteral("电阻接入回路")},
-		{ "DLDZ", QStringLiteral("短路电阻")},
-		{ "DJWZJ", QStringLiteral("电极为正极")},
-		{ "DJWFJ", QStringLiteral("电极为负极")},
-		{ "BWQGB", QStringLiteral("不完全关闭")},
-		{ "ZYFZ", QStringLiteral("中压辅助")},
-		{ "GZFZ", QStringLiteral("高压辅助")},
-		{ "WQGB", QStringLiteral("完全关闭")},
+// [AUTO-TRANSLATION-COMMENT] 不开高压
+		{ "Enum1NONE", tr("BKGY")},
+// [AUTO-TRANSLATION-COMMENT] 无电容
+		{ "Enum2NONE", tr("WDR")},
+// [AUTO-TRANSLATION-COMMENT] 电感接入回路
+		{ "DGJRHL", tr("DGJRHL")},
+// [AUTO-TRANSLATION-COMMENT] 短路电感
+		{ "DLDG", tr("DLDG")},
+// [AUTO-TRANSLATION-COMMENT] 电阻接入回路
+		{ "DZJRHL", tr("DZJRHL")},
+// [AUTO-TRANSLATION-COMMENT] 短路电阻
+		{ "DLDZ", tr("DLDZ")},
+// [AUTO-TRANSLATION-COMMENT] 电极为正极
+		{ "DJWZJ", tr("DJWZJ")},
+// [AUTO-TRANSLATION-COMMENT] 电极为负极
+		{ "DJWFJ", tr("DJWFJ")},
+// [AUTO-TRANSLATION-COMMENT] 不完全关闭
+		{ "BWQGB", tr("BWQGB")},
+// [AUTO-TRANSLATION-COMMENT] 中压辅助
+		{ "ZYFZ", tr("ZYFZ")},
+// [AUTO-TRANSLATION-COMMENT] 高压辅助
+		{ "GZFZ", tr("GYFZ")},
+// [AUTO-TRANSLATION-COMMENT] 完全关闭
+		{ "WQGB", tr("WQGB")},
 	};
 }
 
@@ -579,14 +658,19 @@ FZQDPropertyObject::FZQDPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "yb1", QStringLiteral("油泵1") },
-			{ "yb2", QStringLiteral("油泵2") },
-			{ "out1", QStringLiteral("红色报警灯") },
-			{ "out2", QStringLiteral("绿色报警灯") },
-			{ "out3", QStringLiteral("OUT3") },
-			{ "out4", QStringLiteral("OUT4") },
-			//{ "bjd", QStringLiteral("报警灯") }
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 油泵1
+			{ "yb1", tr("YB1") },
+// [AUTO-TRANSLATION-COMMENT] 油泵2
+			{ "yb2", tr("YB2") },
+// [AUTO-TRANSLATION-COMMENT] 红色报警灯
+			{ "out1", tr("HSBJD") },
+// [AUTO-TRANSLATION-COMMENT] 绿色报警灯
+			{ "out2", tr("LSBJD") },
+			{ "out3", tr("OUT3") },
+			{ "out4", tr("OUT4") },
+			//{ "bjd", tr("BJD") }
 	};
 }
 
@@ -616,23 +700,38 @@ SKHKZPropertyObject::SKHKZPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "ztkz", QStringLiteral("状态控制") },
-			{ "xs", QStringLiteral("显示使能") },
-			{ "jpsd", QStringLiteral("键盘锁定") },
-			{ "sczsn", QStringLiteral("轴操作使能") },
-			{ "sc32wjm", QStringLiteral("上传32位键码") },
-			{ "isgz", QStringLiteral("公制（mm）") },
-			{ "zgs", QStringLiteral("显示/操作轴个数") },
-			{ "sdxskz", QStringLiteral("速度显示控制") },
-			{ "ddsdkz", QStringLiteral("点动/手动显示控制") }
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 状态控制
+			{ "ztkz", tr("ZTKZ") },
+// [AUTO-TRANSLATION-COMMENT] 显示使能
+			{ "xs", tr("XSSN") },
+// [AUTO-TRANSLATION-COMMENT] 键盘锁定
+			{ "jpsd", tr("JPSD") },
+// [AUTO-TRANSLATION-COMMENT] 轴操作使能
+			{ "sczsn", tr("ZCZSN") },
+// [AUTO-TRANSLATION-COMMENT] 上传32位键码
+			{ "sc32wjm", tr("SC3WJM") },
+// [AUTO-TRANSLATION-COMMENT] 公制（mm）
+			{ "isgz", tr("GZ（") },
+// [AUTO-TRANSLATION-COMMENT] 显示/操作轴个数
+			{ "zgs", tr("XS/CZZGS") },
+// [AUTO-TRANSLATION-COMMENT] 速度显示控制
+			{ "sdxskz", tr("SDXSKZ") },
+// [AUTO-TRANSLATION-COMMENT] 点动/手动显示控制
+			{ "ddsdkz", tr("DD/SDXSKZ") }
 	};
 	enumHeaders = {
-		{ "Enum1NONE", QStringLiteral("无状态")},
-		{ "ZTJGZT", QStringLiteral("暂停加工状态")},
-		{ "JGZT", QStringLiteral("加工状态")},
-		{ "SD", QStringLiteral("手动（连续移动）")},
-		{ "DD", QStringLiteral("点动移动")},
+// [AUTO-TRANSLATION-COMMENT] 无状态
+		{ "Enum1NONE", tr("WZT")},
+// [AUTO-TRANSLATION-COMMENT] 暂停加工状态
+		{ "ZTJGZT", tr("ZTJGZT")},
+// [AUTO-TRANSLATION-COMMENT] 加工状态
+		{ "JGZT", tr("JGZT")},
+// [AUTO-TRANSLATION-COMMENT] 手动（连续移动）
+		{ "SD", tr("SD（LXYD）")},
+// [AUTO-TRANSLATION-COMMENT] 点动移动
+		{ "DD", tr("DDYD")},
 	};
 }
 
@@ -667,14 +766,22 @@ ZLJBCPropertyObject::ZLJBCPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "bcjg", QStringLiteral("补偿间隔") },
-			{ "bcckd", QStringLiteral("补偿参考点") },
-			{ "zfxbczdjl", QStringLiteral("正方向补偿使用的最大记录") },
-			{ "ffxbczdjl", QStringLiteral("负方向补偿使用的最小记录") },
-			{ "fxjxbc", QStringLiteral("反向间隙补偿数据") },
-			{ "dwsjzdbc", QStringLiteral("单位时间最大补偿数据") },
-			{ "bcsx", QStringLiteral("补偿生效") }
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 补偿间隔
+			{ "bcjg", tr("BCJG") },
+// [AUTO-TRANSLATION-COMMENT] 补偿参考点
+			{ "bcckd", tr("BCCKD") },
+// [AUTO-TRANSLATION-COMMENT] 正方向补偿使用的最大记录
+			{ "zfxbczdjl", tr("ZFXBCSYDZDJL") },
+// [AUTO-TRANSLATION-COMMENT] 负方向补偿使用的最小记录
+			{ "ffxbczdjl", tr("FFXBCSYDZXJL") },
+// [AUTO-TRANSLATION-COMMENT] 反向间隙补偿数据
+			{ "fxjxbc", tr("FXJXBCSJ") },
+// [AUTO-TRANSLATION-COMMENT] 单位时间最大补偿数据
+			{ "dwsjzdbc", tr("DWSJZDBCSJ") },
+// [AUTO-TRANSLATION-COMMENT] 补偿生效
+			{ "bcsx", tr("BCSX") }
 	};
 }
 
@@ -789,14 +896,17 @@ DDYDPropertyObject::DDYDPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{"bjjgz", QStringLiteral("进给轴")},
-			{ "bjmcs", QStringLiteral("步进进给脉冲数") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 进给轴
+			{ "bjjgz", tr("JJZ")},
+// [AUTO-TRANSLATION-COMMENT] 步进进给脉冲数
+			{ "bjmcs", tr("BJJJMCS") },
 	};
 	enumHeaders = {
-		{ "X", QStringLiteral("X")},
-		{ "Y", QStringLiteral("Y")},
-		{ "Z", QStringLiteral("Z")},
+		{ "X", QString("X")},
+		{ "Y", QString("Y")},
+		{ "Z", QString("Z")},
 	};
 }
 
@@ -822,8 +932,10 @@ DJSNPropertyObject::DJSNPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "djsn", QStringLiteral("电机使能") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 电机使能
+			{ "djsn", tr("DJSN") },
 	};
 }
 
@@ -846,18 +958,25 @@ FmqPropertyObject::FmqPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{"mjfs", QStringLiteral("鸣叫方式")},
-			{ "data2", QStringLiteral("Data2") },
-			{ "data3", QStringLiteral("Data3") },
-			{ "data4", QStringLiteral("Data4") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 鸣叫方式
+			{"mjfs", tr("MJFS")},
+			{ "data2", QString("Data2") },
+			{ "data3", QString("Data3") },
+			{ "data4", QString("Data4") },
 	};
 	enumHeaders = {
-		{ "TYPE_OFF", QStringLiteral("关闭")},
-		{ "TYPE1", QStringLiteral("鸣叫一声")},
-		{ "TYPE2", QStringLiteral("等待按键按下过程中一直鸣叫")},
-		{ "TYPE3", QStringLiteral("等待按键按下过程中间歇鸣叫")},
-		{ "TYPE_ON", QStringLiteral("开启")},
+// [AUTO-TRANSLATION-COMMENT] 关闭
+		{ "TYPE_OFF", tr("GB")},
+// [AUTO-TRANSLATION-COMMENT] 鸣叫一声
+		{ "TYPE1", tr("MJYS")},
+// [AUTO-TRANSLATION-COMMENT] 等待按键按下过程中一直鸣叫
+		{ "TYPE2", tr("DDAJAXGCZYZMJ")},
+// [AUTO-TRANSLATION-COMMENT] 等待按键按下过程中间歇鸣叫
+		{ "TYPE3", tr("DDAJAXGCZJXMJ")},
+// [AUTO-TRANSLATION-COMMENT] 开启
+		{ "TYPE_ON", tr("KQ")},
 	};
 }
 
@@ -884,8 +1003,10 @@ DebugPropertyObject::DebugPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("调试用途")},
-			{"dl", QStringLiteral("短路")},
+// [AUTO-TRANSLATION-COMMENT] 调试用途
+			{ "objectName", tr("TSYT")},
+// [AUTO-TRANSLATION-COMMENT] 短路
+			{"dl", tr("DL")},
 	};
 }
 
@@ -909,11 +1030,16 @@ ADCPropertyObject::ADCPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{"adczyxs", QStringLiteral("Adc增益系数")},
-			{"adcjzsj", QStringLiteral("Adc校正数据")},
-			{"sfdysc", QStringLiteral("伺服电压输出比例系数")},
-			{"gobl", QStringLiteral("光耦比例系数")},
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] Adc增益系数
+			{"adczyxs", tr("AZYXS")},
+// [AUTO-TRANSLATION-COMMENT] Adc校正数据
+			{"adcjzsj", tr("AJZSJ")},
+// [AUTO-TRANSLATION-COMMENT] 伺服电压输出比例系数
+			{"sfdysc", tr("CFDYSCBLXS")},
+// [AUTO-TRANSLATION-COMMENT] 光耦比例系数
+			{"gobl", tr("GOBLXS")},
 	};
 }
 
@@ -948,39 +1074,69 @@ FDHLPropertyObject::FDHLPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "objectName", QStringLiteral("名称")},
-			{ "a1", QStringLiteral("开电流数（0.3A）") },
-			{ "a2", QStringLiteral("开电流数（0.5A）") },
-			{ "a3", QStringLiteral("开电流数（1A）") },
-			{ "a4", QStringLiteral("开电流数（2A）") },
-			{ "a5", QStringLiteral("开电流数（4A）") },
-			{ "a6", QStringLiteral("开电流数（8A）") },
-			{ "a7", QStringLiteral("开电流数（16A）") },
-			{ "Slv1", QStringLiteral("辅助电流1（32A）") },
-			{ "Slv2", QStringLiteral("辅助电流2（32A）") },
-			{ "LV", QStringLiteral("低压电源档（LV）") },
-			{ "Slv3", QStringLiteral("辅助电流3（32A）") },
-			{ "kgygzs", QStringLiteral("开高压管子数") },
-			{ "fddrxz", QStringLiteral("放电电容选择") },
-			{ "dgsnw", QStringLiteral("电感失能位") },
-			{ "dzsnw", QStringLiteral("电阻失能位") },
-			{ "fjxjgw", QStringLiteral("正负极性控制位") },
-			{ "fzdyxz", QStringLiteral("辅助电压选择") },
+// [AUTO-TRANSLATION-COMMENT] 名称
+			{ "objectName", tr("MC")},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a1", tr("KDLS") + "0.3A"},
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a2", tr("KDLS") + "0.5A" },
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a3", tr("KDLS") + "1A" },
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a4", tr("KDLS") + "2A" },
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a5", tr("KDLS") + "4A" },
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a6", tr("KDLS") + "8A" },
+// [AUTO-TRANSLATION-COMMENT] 开电流数
+			{ "a7", tr("KDLS") + "16A" },
+// [AUTO-TRANSLATION-COMMENT] 辅助电流1（32A）
+			{ "Slv1", tr("FZDL1") },
+// [AUTO-TRANSLATION-COMMENT] 辅助电流2（32A）
+			{ "Slv2", tr("FZDL2") },
+// [AUTO-TRANSLATION-COMMENT] 低压电源1档
+			{ "LV", tr("DYDYD") },
+// [AUTO-TRANSLATION-COMMENT] 辅助电流3（32A）
+			{ "Slv3", tr("FZDL3") },
+// [AUTO-TRANSLATION-COMMENT] 开高压管子数
+			{ "kgygzs", tr("KGYGZS") },
+// [AUTO-TRANSLATION-COMMENT] 放电电容选择
+			{ "fddrxz", tr("FDDRXZ") },
+// [AUTO-TRANSLATION-COMMENT] 电感失能位
+			{ "dgsnw", tr("DGSNW") },
+// [AUTO-TRANSLATION-COMMENT] 电阻失能位
+			{ "dzsnw", tr("DZSNW") },
+// [AUTO-TRANSLATION-COMMENT] 正负极性控制位
+			{ "fjxjgw", tr("ZFJXKZW") },
+// [AUTO-TRANSLATION-COMMENT] 辅助电压选择
+			{ "fzdyxz", tr("FZDYXZ") },
 	};
 
 	//enumHeaders = {
-	//	{ "Enum1NONE", QStringLiteral("不开高压")},
-	//	{ "Enum2NONE", QStringLiteral("无电容")},
-	//	{ "DGJRHL", QStringLiteral("电感接入回路")},
-	//	{ "DLDG", QStringLiteral("短路电感")},
-	//	{ "DZJRHL", QStringLiteral("电阻接入回路")},
-	//	{ "DLDZ", QStringLiteral("短路电阻")},
-	//	{ "DJWZJ", QStringLiteral("电极为正极")},
-	//	{ "DJWFJ", QStringLiteral("电极为负极")},
-	//	{ "BWQGB", QStringLiteral("不完全关闭")},
-	//	{ "ZYFZ", QStringLiteral("中压辅助")},
-	//	{ "GZFZ", QStringLiteral("高压辅助")},
-	//	{ "WQGB", QStringLiteral("完全关闭")},
+// [AUTO-TRANSLATION-COMMENT] 不开高压
+	//	{ "Enum1NONE", tr("BKGY")},
+// [AUTO-TRANSLATION-COMMENT] 无电容
+	//	{ "Enum2NONE", tr("WDR")},
+// [AUTO-TRANSLATION-COMMENT] 电感接入回路
+	//	{ "DGJRHL", tr("DGJRHL")},
+// [AUTO-TRANSLATION-COMMENT] 短路电感
+	//	{ "DLDG", tr("DLDG")},
+// [AUTO-TRANSLATION-COMMENT] 电阻接入回路
+	//	{ "DZJRHL", tr("DZJRHL")},
+// [AUTO-TRANSLATION-COMMENT] 短路电阻
+	//	{ "DLDZ", tr("DLDZ")},
+// [AUTO-TRANSLATION-COMMENT] 电极为正极
+	//	{ "DJWZJ", tr("DJWZJ")},
+// [AUTO-TRANSLATION-COMMENT] 电极为负极
+	//	{ "DJWFJ", tr("DJWFJ")},
+// [AUTO-TRANSLATION-COMMENT] 不完全关闭
+	//	{ "BWQGB", tr("BWQGB")},
+// [AUTO-TRANSLATION-COMMENT] 中压辅助
+	//	{ "ZYFZ", tr("ZYFZ")},
+// [AUTO-TRANSLATION-COMMENT] 高压辅助
+	//	{ "GZFZ", tr("GYFZ")},
+// [AUTO-TRANSLATION-COMMENT] 完全关闭
+	//	{ "WQGB", tr("WQGB")},
 	//};
 }
 
@@ -1032,16 +1188,26 @@ FDJGPropertyObject::FDJGPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{"fdjgcfdy", QStringLiteral("放电加工伺服电压") },
-			{"jgmcmk", QStringLiteral("加工脉冲脉宽") },
-			{"jgmcmj", QStringLiteral("加工脉冲脉间") },
-			{"jgmcdnlsn", QStringLiteral("--加工脉冲等能量使能") },
-			{"jgmcdyycjcsn", QStringLiteral("--加工脉冲电压异常检测使能") },
-			{"jgmcfzmcxz", QStringLiteral("加工脉冲辅助脉冲选择") },
-			{"jcycjcms", QStringLiteral("击穿异常检测模式")},
-			{"jcycsjyz", QStringLiteral("击穿异常时间阈值") },
-			{"fdcfsd", QStringLiteral("放电伺服速度") },
-			{"fdcftzsd", QStringLiteral("放电伺服调整速度") },
+// [AUTO-TRANSLATION-COMMENT] 放电加工伺服电压
+			{"fdjgcfdy", tr("FDJGCFDY") },
+// [AUTO-TRANSLATION-COMMENT] 加工脉冲脉宽
+			{"jgmcmk", tr("JGMCMK") },
+// [AUTO-TRANSLATION-COMMENT] 加工脉冲脉间
+			{"jgmcmj", tr("JGMCMJ") },
+// [AUTO-TRANSLATION-COMMENT] --加工脉冲等能量使能
+			{"jgmcdnlsn", tr("-JGMCDNLSN") },
+// [AUTO-TRANSLATION-COMMENT] --加工脉冲电压异常检测使能
+			{"jgmcdyycjcsn", tr("-JGMCDYYCJCSN") },
+// [AUTO-TRANSLATION-COMMENT] 加工脉冲辅助脉冲选择
+			{"jgmcfzmcxz", tr("JGMCFZMCXZ") },
+// [AUTO-TRANSLATION-COMMENT] 击穿异常检测模式
+			{"jcycjcms", tr("JCYCJCMS")},
+// [AUTO-TRANSLATION-COMMENT] 击穿异常时间阈值
+			{"jcycsjyz", tr("JCYCSJYZ") },
+// [AUTO-TRANSLATION-COMMENT] 放电伺服速度
+			{"fdcfsd", tr("FDCFSD") },
+// [AUTO-TRANSLATION-COMMENT] 放电伺服调整速度
+			{"fdcftzsd", tr("FDCFTZSD") },
 	};
 }
 
@@ -1090,14 +1256,22 @@ FDWCPropertyObject::FDWCPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{"fdwcms", QStringLiteral("放电完成模式") },
-			{"fddssj", QStringLiteral("放电定时时间") },
-			{"tdfx", QStringLiteral("抬刀方向") },
-			{"tdgd", QStringLiteral("抬刀高度") },
-			{"tdsd", QStringLiteral("抬刀速度") },
-			{"fdsj", QStringLiteral("放电时间") },
-			{"ectdxydtdcs", QStringLiteral("二次抬刀需要的抬刀次数") },
-			{"ectdgdbs", QStringLiteral("二次抬刀高度倍数") },
+// [AUTO-TRANSLATION-COMMENT] 放电完成模式
+			{"fdwcms", tr("FDWCMS") },
+// [AUTO-TRANSLATION-COMMENT] 放电定时时间
+			{"fddssj", tr("FDDSSJ") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀方向
+			{"tdfx", tr("TDFX") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀高度
+			{"tdgd", tr("TDGD") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀速度
+			{"tdsd", tr("TDSD") },
+// [AUTO-TRANSLATION-COMMENT] 放电时间
+			{"fdsj", tr("FDSJ") },
+// [AUTO-TRANSLATION-COMMENT] 二次抬刀需要的抬刀次数
+			{"ectdxydtdcs", tr("ECTDXYDTDCS") },
+// [AUTO-TRANSLATION-COMMENT] 二次抬刀高度倍数
+			{"ectdgdbs", tr("ECTDGDBS") },
 	};
 }
 std::vector<uint16_t> FDWCPropertyObject::GetValues() const
@@ -1133,24 +1307,42 @@ YDPropertyObject::YDPropertyObject(QObject* parent, const QString& name) :
 	BasePropertyObject(parent, name)
 {
 	headers = {
-			{"ydfx", QStringLiteral("摇动方向") },
-			{"zdydsd", QStringLiteral("最大摇动速度") },
-			{"sdjcxfs", QStringLiteral("深度检测细分数") },
-			{"ydfwcfms", QStringLiteral("摇动复位伺服模式") },
-			{"ydfwdzms", QStringLiteral("摇动复位动作模式") },
-			{"ydpm", QStringLiteral("摇动平面") },
-			{"d1xxydm", QStringLiteral("第1象限摇动码") },
-			{"d2xxydm", QStringLiteral("第2象限摇动码") },
-			{"d3xxydm", QStringLiteral("第3象限摇动码") },
-			{"d4xxydm", QStringLiteral("第4象限摇动码") },
-			{"ydbj", QStringLiteral("摇动半径") },
-			{"hzxtdgd", QStringLiteral("回中心抬刀高度") },
-			{"hzxtdsd", QStringLiteral("回中心抬刀速度") },
-			{"hzxtdjssj", QStringLiteral("回中心抬刀加速时间") },
-			{"ztdjssj", QStringLiteral("主抬刀加速时间") },
-			{"tcqhtjl", QStringLiteral("退出前回退距离") },
-			{"tdqmshtjl", QStringLiteral("抬刀前慢速回退距离") },
-			{"tdqmshtsd", QStringLiteral("抬刀前慢速回退速度") },
+// [AUTO-TRANSLATION-COMMENT] 摇动方向
+			{"ydfx", tr("YDFX") },
+// [AUTO-TRANSLATION-COMMENT] 最大摇动速度
+			{"zdydsd", tr("ZDYDSD") },
+// [AUTO-TRANSLATION-COMMENT] 深度检测细分数
+			{"sdjcxfs", tr("SDJCXFS") },
+// [AUTO-TRANSLATION-COMMENT] 摇动复位伺服模式
+			{"ydfwcfms", tr("YDFWCFMS") },
+// [AUTO-TRANSLATION-COMMENT] 摇动复位动作模式
+			{"ydfwdzms", tr("YDFWDZMS") },
+// [AUTO-TRANSLATION-COMMENT] 摇动平面
+			{"ydpm", tr("YDPM") },
+// [AUTO-TRANSLATION-COMMENT] 第1象限摇动码
+			{"d1xxydm", tr("D1XXYDM") },
+// [AUTO-TRANSLATION-COMMENT] 第2象限摇动码
+			{"d2xxydm", tr("D2XXYDM") },
+// [AUTO-TRANSLATION-COMMENT] 第3象限摇动码
+			{"d3xxydm", tr("D3XXYDM") },
+// [AUTO-TRANSLATION-COMMENT] 第4象限摇动码
+			{"d4xxydm", tr("D4XXYDM") },
+// [AUTO-TRANSLATION-COMMENT] 摇动半径
+			{"ydbj", tr("YDBJ") },
+// [AUTO-TRANSLATION-COMMENT] 回中心抬刀高度
+			{"hzxtdgd", tr("HZXTDGD") },
+// [AUTO-TRANSLATION-COMMENT] 回中心抬刀速度
+			{"hzxtdsd", tr("HZXTDSD") },
+// [AUTO-TRANSLATION-COMMENT] 回中心抬刀加速时间
+			{"hzxtdjssj", tr("HZXTDJSSJ") },
+// [AUTO-TRANSLATION-COMMENT] 主抬刀加速时间
+			{"ztdjssj", tr("ZTDJSSJ") },
+// [AUTO-TRANSLATION-COMMENT] 退出前回退距离
+			{"tcqhtjl", tr("TCQHTJL") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀前慢速回退距离
+			{"tdqmshtjl", tr("TDQMSHTJL") },
+// [AUTO-TRANSLATION-COMMENT] 抬刀前慢速回退速度
+			{"tdqmshtsd", tr("TDQMSHTSD") },
 	};
 }
 std::vector<uint16_t> YDPropertyObject::GetValues() const
@@ -1207,10 +1399,14 @@ VersionPropertyObject::VersionPropertyObject(QObject* parent, const QString& nam
 	: BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "versionSkh", QStringLiteral("手控盒版本") },
-			{ "versionXskz", QStringLiteral("显示控制版本") },
-			{ "versionXwj", QStringLiteral("下位机版本") },
-			{ "versionXwjnh", QStringLiteral("下位机内核版本") },
+// [AUTO-TRANSLATION-COMMENT] 手控盒版本
+			{ "versionSkh", tr("SKHBB") },
+// [AUTO-TRANSLATION-COMMENT] 显示控制版本
+			{ "versionXskz", tr("XSKZBB") },
+// [AUTO-TRANSLATION-COMMENT] 下位机版本
+			{ "versionXwj", tr("XWJBB") },
+// [AUTO-TRANSLATION-COMMENT] 下位机内核版本
+			{ "versionXwjnh", tr("XWJNHBB") },
 	};
 }
 
@@ -1233,9 +1429,12 @@ YouwenJianchePropertyObject::YouwenJianchePropertyObject(QObject* parent, const 
 	: BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "youWen", QStringLiteral("油温检测") },
-			{ "youWei", QStringLiteral("油位检测") },
-			{ "huoYan", QStringLiteral("火焰检测") },
+// [AUTO-TRANSLATION-COMMENT] 油温检测
+			{ "youWen", tr("YWJC") },
+// [AUTO-TRANSLATION-COMMENT] 油温检测
+			{ "youWei", tr("YWJC") },
+// [AUTO-TRANSLATION-COMMENT] 火焰检测
+			{ "huoYan", tr("HYJC") },
 	};
 }
 
@@ -1257,7 +1456,7 @@ int YouwenJianchePropertyObject::GetCmdAddress() const
 AJCPropertyObject::AJCPropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "Ajc", QStringLiteral("Ajc") },
+			{ "Ajc", QString("Ajc") },
 			
 	};
 }
@@ -1279,7 +1478,8 @@ int AJCPropertyObject::GetCmdAddress() const
 Reg78PropertyObject::Reg78PropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "fsycgbsj", QStringLiteral("风扇延迟关闭时间") },
+// [AUTO-TRANSLATION-COMMENT] 风扇延迟关闭时间
+			{ "fsycgbsj", tr("FSYCGBSJ") },
 
 	};
 }
@@ -1360,38 +1560,6 @@ PropertyObjects* PropertyObjects::getInstance() {
 
 PropertyObjects::PropertyObjects()
 {
-	propertyObjectJog = new JogPropertyObject(nullptr, QStringLiteral("JOG配置"));
-	propertyObjectLoc = new LocPropertyObject(nullptr, QStringLiteral("LOC配置"));
-	propertyObjectCmvTouch = new CmvTouchPropertyObject(nullptr, QStringLiteral("对刀"));
-	propertyObjectCmvToLMT = new CmvTolmtPropertyObject(nullptr, QStringLiteral("去极限"));
-	propertyObjectCmvFRMLMT = new CmvFrmlmtPropertyObject(nullptr, QStringLiteral("退出极限"));
-	propertyObjectCmvToZSig = new CmvTozsigPropertyObject(nullptr, QStringLiteral("找零位"));
-	propertyObjectSPK = new SPKPropertyObject(nullptr, QStringLiteral("SPK"));
-	propertyObjectFanddianIO = new FDQDPropertyObject(nullptr, QStringLiteral("放电IO"));
-	propertyObjectFuzhuIO = new FZQDPropertyObject(nullptr, QStringLiteral("辅助IO"));
-	propertyObjectShouKongHe = new SKHKZPropertyObject(nullptr, QStringLiteral("手控盒控制"));
-	for(int i=0; i< LJBC_AXIS_LEN; ++i)
-		propertyObjectZLJBC[i] = new ZLJBCPropertyObject(nullptr, QStringLiteral("轴螺距补偿"));
-	propertyObjectDianDong = new DDYDPropertyObject(nullptr, QStringLiteral("点动移动"));
-	propertyObjectDianJiShiNeng = new DJSNPropertyObject(nullptr, QStringLiteral("电机使能"));
-	propertyObjectFengMingQi = new FmqPropertyObject(nullptr, QStringLiteral("蜂鸣器"));
-	propertyObjectDebug = new DebugPropertyObject(nullptr, QStringLiteral("调试用途"));
-	propertyObjectADC = new ADCPropertyObject(nullptr, QStringLiteral("ADC"));
-	propertyObjectFdhl = new FDHLPropertyObject(nullptr, QStringLiteral("放电回路"));
-	propertyObjectFdjg = new FDJGPropertyObject(nullptr, QStringLiteral("放电加工"));
-	propertyObjectFdwc = new FDWCPropertyObject(nullptr, QStringLiteral("放电完成"));
-	propertyObjectYd = new YDPropertyObject(nullptr, QStringLiteral("摇动"));
-
-	propertyObjectVersion = new VersionPropertyObject(nullptr, QStringLiteral("版本号"));
-	propertyObjectYouwenJianche = new YouwenJianchePropertyObject(nullptr, QStringLiteral("油温检测"));
-	propertyObjectAJC = new AJCPropertyObject(nullptr, QStringLiteral("AJC"));
-
-	propertyObjectReg78 = new Reg78PropertyObject(nullptr, QStringLiteral("Reg78"));
-	propertyObjectReg81 = new Reg81PropertyObject(nullptr, QStringLiteral("Reg81"));
-	propertyObjectReg83 = new Reg83PropertyObject(nullptr, QStringLiteral("Reg83"));
-	propertyObjectReg84 = new Reg84PropertyObject(nullptr, QStringLiteral("Reg84"));
-	propertyObjectReg85 = new Reg85PropertyObject(nullptr, QStringLiteral("Reg85"));
-	propertyObjectReg86 = new Reg86PropertyObject(nullptr, QStringLiteral("Reg86"));
 }
 PropertyObjects::~PropertyObjects() {
 	if (propertyObjectJog)
@@ -1463,6 +1631,62 @@ PropertyObjects::~PropertyObjects() {
 	//if (instance != nullptr) {
 	//	delete instance;
 	//}
+}
+
+void PropertyObjects::CreateData()
+{
+// [AUTO-TRANSLATION-COMMENT] JOG配置
+	propertyObjectJog = new JogPropertyObject(nullptr, QObject::tr("JPZ"));
+// [AUTO-TRANSLATION-COMMENT] LOC配置
+	propertyObjectLoc = new LocPropertyObject(nullptr, QObject::tr("LPZ"));
+// [AUTO-TRANSLATION-COMMENT] 对刀
+	propertyObjectCmvTouch = new CmvTouchPropertyObject(nullptr, QObject::tr("DD"));
+// [AUTO-TRANSLATION-COMMENT] 去极限
+	propertyObjectCmvToLMT = new CmvTolmtPropertyObject(nullptr, QObject::tr("QJX"));
+// [AUTO-TRANSLATION-COMMENT] 退出极限
+	propertyObjectCmvFRMLMT = new CmvFrmlmtPropertyObject(nullptr, QObject::tr("TCJX"));
+// [AUTO-TRANSLATION-COMMENT] 找零位
+	propertyObjectCmvToZSig = new CmvTozsigPropertyObject(nullptr, QObject::tr("ZLW"));
+	propertyObjectSPK = new SPKPropertyObject(nullptr, QObject::tr("SPK"));
+// [AUTO-TRANSLATION-COMMENT] 放电IO
+	propertyObjectFanddianIO = new FDQDPropertyObject(nullptr, QObject::tr("FDI"));
+// [AUTO-TRANSLATION-COMMENT] 辅助IO
+	propertyObjectFuzhuIO = new FZQDPropertyObject(nullptr, QObject::tr("FZI"));
+// [AUTO-TRANSLATION-COMMENT] 手控盒控制
+	propertyObjectShouKongHe = new SKHKZPropertyObject(nullptr, QObject::tr("SKHKZ"));
+	for (int i = 0; i < LJBC_AXIS_LEN; ++i)
+// [AUTO-TRANSLATION-COMMENT] 轴螺距补偿
+		propertyObjectZLJBC[i] = new ZLJBCPropertyObject(nullptr, QObject::tr("ZLJBC"));
+// [AUTO-TRANSLATION-COMMENT] 点动移动
+	propertyObjectDianDong = new DDYDPropertyObject(nullptr, QObject::tr("DDYD"));
+// [AUTO-TRANSLATION-COMMENT] 电机使能
+	propertyObjectDianJiShiNeng = new DJSNPropertyObject(nullptr, QObject::tr("DJSN"));
+// [AUTO-TRANSLATION-COMMENT] 蜂鸣器
+	propertyObjectFengMingQi = new FmqPropertyObject(nullptr, QObject::tr("FMQ"));
+// [AUTO-TRANSLATION-COMMENT] 调试用途
+	propertyObjectDebug = new DebugPropertyObject(nullptr, QObject::tr("TSYT"));
+	propertyObjectADC = new ADCPropertyObject(nullptr, QObject::tr("ADC"));
+// [AUTO-TRANSLATION-COMMENT] 放电回路
+	propertyObjectFdhl = new FDHLPropertyObject(nullptr, QObject::tr("FDHL"));
+// [AUTO-TRANSLATION-COMMENT] 放电加工
+	propertyObjectFdjg = new FDJGPropertyObject(nullptr, QObject::tr("FDJG"));
+// [AUTO-TRANSLATION-COMMENT] 放电完成
+	propertyObjectFdwc = new FDWCPropertyObject(nullptr, QObject::tr("FDWC"));
+// [AUTO-TRANSLATION-COMMENT] 摇动
+	propertyObjectYd = new YDPropertyObject(nullptr, QObject::tr("YD"));
+
+// [AUTO-TRANSLATION-COMMENT] 版本号
+	propertyObjectVersion = new VersionPropertyObject(nullptr, QObject::tr("BBH"));
+// [AUTO-TRANSLATION-COMMENT] 油温检测
+	propertyObjectYouwenJianche = new YouwenJianchePropertyObject(nullptr, QObject::tr("YWJC"));
+	propertyObjectAJC = new AJCPropertyObject(nullptr, QObject::tr("AJC"));
+
+	propertyObjectReg78 = new Reg78PropertyObject(nullptr, QObject::tr("Reg78"));
+	propertyObjectReg81 = new Reg81PropertyObject(nullptr, QObject::tr("Reg81"));
+	propertyObjectReg83 = new Reg83PropertyObject(nullptr, QObject::tr("Reg83"));
+	propertyObjectReg84 = new Reg84PropertyObject(nullptr, QObject::tr("Reg84"));
+	propertyObjectReg85 = new Reg85PropertyObject(nullptr, QObject::tr("Reg85"));
+	propertyObjectReg86 = new Reg86PropertyObject(nullptr, QObject::tr("Reg86"));
 }
 
 void PropertyObjects::LoadData()

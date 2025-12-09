@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
+﻿<ui version="4.0">
  <class>QtWin2</class>
  <widget class="QMainWindow" name="QtWin2">
   <property name="geometry">
@@ -122,21 +121,21 @@
              <item>
               <widget class="QPushButton" name="btnYouWei">
                <property name="text">
-                <string>油位</string>
+                <string>YW</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btnYouWen">
                <property name="text">
-                <string>油温</string>
+                <string>YW</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btnHuoYan">
                <property name="text">
-                <string>火焰</string>
+                <string>HY</string>
                </property>
               </widget>
              </item>
@@ -150,14 +149,14 @@
              <item>
               <widget class="QPushButton" name="btnJgtj">
                <property name="text">
-                <string>加工条件</string>
+                <string>JGTJ</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btnJgtjGt">
                <property name="text">
-                <string>高跳</string>
+                <string>GT</string>
                </property>
               </widget>
              </item>
@@ -330,7 +329,7 @@
               <item>
                <widget class="QLabel" name="label_loran">
                 <property name="text">
-                 <string>平动轨迹</string>
+                 <string>PDGJ</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -354,7 +353,7 @@
               <item>
                <widget class="QLabel" name="label_displayz">
                 <property name="text">
-                 <string>电压效率图</string>
+                 <string>DYXLT</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -392,7 +391,7 @@
                  <item row="1" column="0">
                   <widget class="QLabel" name="labelLength0">
                    <property name="text">
-                    <string>全长(mm)</string>
+                    <string>QZ(</string>
                    </property>
                   </widget>
                  </item>
@@ -409,7 +408,7 @@
                  <item row="1" column="2">
                   <widget class="QLabel" name="labelCNo0">
                    <property name="text">
-                    <string>条件号</string>
+                    <string>TJH</string>
                    </property>
                   </widget>
                  </item>
@@ -426,7 +425,7 @@
                  <item row="2" column="0">
                   <widget class="QLabel" name="labelRemnantLength0">
                    <property name="text">
-                    <string>残余量(mm)</string>
+                    <string>CYL(</string>
                    </property>
                   </widget>
                  </item>
@@ -443,7 +442,7 @@
                  <item row="2" column="2">
                   <widget class="QLabel" name="labelTNo0">
                    <property name="text">
-                    <string>工具号</string>
+                    <string>GJH</string>
                    </property>
                   </widget>
                  </item>
@@ -460,7 +459,7 @@
                  <item row="3" column="0">
                   <widget class="QLabel" name="labelTotalTime0">
                    <property name="text">
-                    <string>总的加工时间</string>
+                    <string>ZDJGSJ</string>
                    </property>
                   </widget>
                  </item>
@@ -477,7 +476,7 @@
                  <item row="3" column="2">
                   <widget class="QLabel" name="labelProcessSpeed0">
                    <property name="text">
-                    <string>加工速度</string>
+                    <string>JGSD</string>
                    </property>
                   </widget>
                  </item>
@@ -494,7 +493,7 @@
                  <item row="4" column="0">
                   <widget class="QLabel" name="labelProcessTime0">
                    <property name="text">
-                    <string>此段加工时间</string>
+                    <string>CDJGSJ</string>
                    </property>
                   </widget>
                  </item>
@@ -511,7 +510,7 @@
                  <item row="4" column="2">
                   <widget class="QLabel" name="labelProcessSpeed20">
                    <property name="text">
-                    <string>旋转轴速度</string>
+                    <string>XZZSD</string>
                    </property>
                   </widget>
                  </item>
@@ -528,7 +527,7 @@
                  <item row="5" column="0">
                   <widget class="QLabel" name="labelRemnantTime0">
                    <property name="text">
-                    <string>此段残余时间</string>
+                    <string>CDCYSJ</string>
                    </property>
                   </widget>
                  </item>
@@ -545,7 +544,7 @@
                  <item row="5" column="2">
                   <widget class="QLabel" name="labelG04RemnantTime0">
                    <property name="text">
-                    <string>G04残余时间</string>
+                    <string>GCYSJ</string>
                    </property>
                   </widget>
                  </item>
@@ -583,7 +582,7 @@
                  <item>
                   <widget class="QLabel" name="labelFileName0">
                    <property name="text">
-                    <string>文件名：</string>
+                    <string>WJM：</string>
                    </property>
                   </widget>
                  </item>
@@ -676,7 +675,7 @@
             <item>
              <widget class="QLabel" name="labelManufactoryIcon">
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
@@ -707,7 +706,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
@@ -717,7 +716,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
@@ -727,7 +726,7 @@
                    <bool>false</bool>
                  </property>
                  <property name="text">
-                   <string/>
+                   <string />
                  </property>
                </widget>
              </item>
@@ -737,7 +736,7 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
@@ -748,35 +747,35 @@
                <bool>false</bool>
               </property>
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelInfoDuanLu">
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelInfoYouWen">
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelInfoYouWei">
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelInfoZhaoMing">
               <property name="text">
-               <string/>
+               <string />
               </property>
              </widget>
             </item>
@@ -810,7 +809,7 @@
        </sizepolicy>
       </property>
       <property name="title">
-       <string>菜单</string>
+       <string>CD</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_groupBoxMenus">
        <property name="spacing">
@@ -848,37 +847,37 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionRun"/>
-   <addaction name="actionCancel"/>
-   <addaction name="separator"/>
-   <addaction name="actionDebug"/>
-   <addaction name="actionTouchSense"/>
-   <addaction name="actionTouchSense2"/>
-   <addaction name="actionLoadStylesheet"/>
-   <addaction name="actionPythonScript"/>
-   <addaction name="actionPowerOn"/>
-   <addaction name="actionPowerOff"/>
-   <addaction name="actionSaveScreen"/>
-   <addaction name="actionSaveGCode"/>
+   <addaction name="actionRun" />
+   <addaction name="actionCancel" />
+   <addaction name="separator" />
+   <addaction name="actionDebug" />
+   <addaction name="actionTouchSense" />
+   <addaction name="actionTouchSense2" />
+   <addaction name="actionLoadStylesheet" />
+   <addaction name="actionPythonScript" />
+   <addaction name="actionPowerOn" />
+   <addaction name="actionPowerOff" />
+   <addaction name="actionSaveScreen" />
+   <addaction name="actionSaveGCode" />
   </widget>
   <action name="actionRun">
    <property name="text">
-    <string>运行</string>
+    <string>Run</string>
    </property>
   </action>
   <action name="actionCancel">
    <property name="text">
-    <string>取消</string>
+    <string>Cancel</string>
    </property>
   </action>
   <action name="actionDebug">
    <property name="text">
-    <string>调试</string>
+    <string>TS</string>
    </property>
   </action>
   <action name="actionTouchSense">
    <property name="text">
-    <string>短路1</string>
+    <string>DL1</string>
    </property>
   </action>
   <action name="actionTouchSense2">
@@ -886,7 +885,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>短路2</string>
+    <string>DL2</string>
    </property>
   </action>
   <action name="actionLoadStylesheet">
@@ -920,6 +919,6 @@
      </property>
    </action>
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

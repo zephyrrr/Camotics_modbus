@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>JiaGongJiLuFormClass</class>
  <widget class="QWidget" name="JiaGongJiLuFormClass">
@@ -40,14 +39,14 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>上一页</string>
+             <string>SYY</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLabel" name="pageLabel">
             <property name="text">
-             <string>加工记录</string>
+             <string>JGJL</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -60,7 +59,7 @@
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>下一页</string>
+             <string>XYY</string>
             </property>
            </widget>
           </item>
@@ -90,7 +89,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="6" margin="11" />
+ <resources />
+ <connections />
 </ui>

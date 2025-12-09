@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4CoorSetClass</class>
  <widget class="QWidget" name="Tool4CoorSetClass">
@@ -14,7 +13,7 @@
    <string>Tool4CoorSet</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true" />
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,14 +21,14 @@
      <item>
       <widget class="QPushButton" name="btnRecord">
        <property name="text">
-        <string>记录</string>
+        <string>JL</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnBatchSet">
        <property name="text">
-        <string>设置</string>
+        <string>SZ</string>
        </property>
       </widget>
      </item>
@@ -37,7 +36,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="5" margin="5" />
+ <resources />
+ <connections />
 </ui>

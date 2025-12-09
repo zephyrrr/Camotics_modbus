@@ -19,18 +19,18 @@ FormUtils::~FormUtils()
 bool FormUtils::MessageBoxYesNo(QString title)
 {
     QMessageBox msgBox;
-    msgBox.setWindowTitle(QStringLiteral("请确认"));
+    msgBox.setWindowTitle(QObject::tr("Confirm"));
     //msgBox.setWindowFlags(Qt::FramelessWindowHint);
     msgBox.setText(title);
-    //QPushButton* yesButton = msgBox.addButton(QStringLiteral("是"), QMessageBox::YesRole);
-    //QPushButton* noButton = msgBox.addButton(QStringLiteral("否"), QMessageBox::NoRole);
+    //QPushButton* yesButton = msgBox.addButton(tr("S"), QMessageBox::YesRole);
+    //QPushButton* noButton = msgBox.addButton(tr("F"), QMessageBox::NoRole);
     //msgBox.setDefaultButton(yesButton);
 
     msgBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
     msgBox.setDefaultButton(QMessageBox::Yes);
 
-    msgBox.button(QMessageBox::Yes)->setText(QStringLiteral("是"));
-    msgBox.button(QMessageBox::No)->setText(QStringLiteral("否"));
+    msgBox.button(QMessageBox::Yes)->setText(QObject::tr("Yes"));
+    msgBox.button(QMessageBox::No)->setText(QObject::tr("No"));
     int ret = msgBox.exec();
 
     return ret == QMessageBox::Yes;
@@ -38,7 +38,7 @@ bool FormUtils::MessageBoxYesNo(QString title)
 
 void FormUtils::MessageBoxInfo(QString title)
 {
-    QMessageBox::information(nullptr, QStringLiteral("消息"), title);
+    QMessageBox::information(nullptr, QObject::tr("Message"), title);
 }
 
 QString FormUtils::ShowTextboxForm(QString title)
@@ -53,8 +53,8 @@ QString FormUtils::ShowTextboxForm(QString title)
     QDialogButtonBox buttonBox = QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, &dialog);
     QPushButton* okButton = buttonBox.button(QDialogButtonBox::StandardButton::Ok);
     QPushButton* cancelButton = buttonBox.button(QDialogButtonBox::StandardButton::Cancel);
-    okButton->setText(QStringLiteral("确定"));
-    cancelButton->setText(QStringLiteral("取消"));
+    okButton->setText(QObject::tr("OK"));
+    cancelButton->setText(QObject::tr("Cancel"));
 
     //SoftKeyboardWidget widget(&dialog);
     QVBoxLayout layout(&dialog);
@@ -94,7 +94,7 @@ QString FormUtils::ShowPasswordInput()
 {
     QNumericPad numericPad;
     numericPad.setWindowFlag(Qt::WindowContextHelpButtonHint, false);
-    numericPad.setWindowTitle(QStringLiteral("请输入密码"));
+    numericPad.setWindowTitle(QObject::tr("Please enter password"));
     numericPad.exec();
     return numericPad.getText();
 }

@@ -28,9 +28,9 @@ RunAutoMulti::RunAutoMulti(QWidget* parent)
 
 	ui.setupUi(this);
 
-	QString headers[] = { "No.", QStringLiteral("加工"), "X", "Y", QStringLiteral("坐标系") };
+	QString headers[] = { "No.", tr("JG"), "X", "Y", tr("ZBX") };
 	int columnWidth[] = { 50, 75, 150, 150, 100 };
-	QString defaultRowValues[] = { "", QStringLiteral("是"), "0.000", "0.000", "054" };
+	QString defaultRowValues[] = { "", tr("S"), "0.000", "0.000", "054" };
 
 	table3 = new ButtonEditTableWidget(this);
 
@@ -41,7 +41,7 @@ RunAutoMulti::RunAutoMulti(QWidget* parent)
 			connect(btn, &QLineEdit::textChanged, [btn, parent](const QString& s) {
 				ButtonEditTableWidget* table = qobject_cast<ButtonEditTableWidget*>(parent);
 				int rowHere = table->indexAt(btn->pos()).row();
-				bool isOk = s == QStringLiteral("是");
+				bool isOk = s == tr("S");
 				table->setReadOnlyOnRow(rowHere, !isOk);
 				});
 			edit = btn;
@@ -85,9 +85,9 @@ RunAutoMulti::RunAutoMulti(QWidget* parent)
 	mbw->addDefaultButtons(table3);
 	mbw->removeButton(5);
 	mbw->removeButton(4);
-	//mbw->addButton(QStringLiteral("导入"), [this](bool) {
+	//mbw->addButton(tr("DR"), [this](bool) {
 	//	QString path = this->GetProjectDir() + QDir::separator() + QString("WeiZhiJiYiForm");
-	//	QString fileName = NFileDialog::getOpenFileName(this, QStringLiteral("打开文件"), path, QStringLiteral("(*.json.pos);;"));
+	//	QString fileName = NFileDialog::getOpenFileName(this, tr("DKWJ"), path, QStringLiteral("(*.json.pos);;"));
 	//	if (fileName.isEmpty())
 	//		return;
 	//	table3->deserialize(fileName);
@@ -152,7 +152,7 @@ QString RunAutoMulti::GetGCode()
 
 	mapLine2Row.clear();
 	for (int i = 0; i < table3->getDataRowCount(); ++i) {
-		if (table3->getValue(i, 0) != QStringLiteral("是")) {
+		if (table3->getValue(i, 0) != tr("S")) {
 			continue;
 		}
 		if (table3->getValue(i, 1).isEmpty() || table3->getValue(i, 2).isEmpty())
@@ -181,7 +181,7 @@ G00 %1%2;
 
 	QHash<int, int> cNos;
 	for (int i = 0; i < table2->getDataRowCount(); ++i) {
-		if (table2->getValue(i, 0) != QStringLiteral("是")) {
+		if (table2->getValue(i, 0) != tr("S")) {
 			continue;
 		}
 		if (table2->getValue(i, 1).isEmpty()) {
@@ -305,7 +305,7 @@ void RunAutoMulti::LoadData(QString filePath)
 	table2->deserialize(filePath2);
 	int n = 0;
 	for (int i = 0; i < table2->getDataRowCount(); ++i) {
-		if (table2->getValue(i, 0) != QStringLiteral("是")) {
+		if (table2->getValue(i, 0) != tr("S")) {
 			continue;
 		}
 		if (table2->getValue(i, 1).isEmpty()) {
@@ -353,7 +353,7 @@ void RunAutoMulti::SaveData(QString filePath)
 void RunAutoMulti::on_btnJghs_clicked()
 {
 	//BaseMainWindow* mainWindow = GetMainWindow();
-	//mainWindow->showChildWindow(QStringLiteral("手动单个"));
+	//mainWindow->showChildWindow(tr("SDDG"));
 }
 
 void RunAutoMulti::showEvent(QShowEvent* event)

@@ -32,7 +32,7 @@ public:
 
     void retranslateUi(QWidget *fangdiancheshiformClass)
     {
-        fangdiancheshiformClass->setWindowTitle(QCoreApplication::translate("fangdiancheshiformClass", "\346\224\276\347\224\265\345\217\202\346\225\260", nullptr));
+        fangdiancheshiformClass->setWindowTitle(QCoreApplication::translate("fangdiancheshiformClass", "FDCS", nullptr));
     } // retranslateUi
 
 };

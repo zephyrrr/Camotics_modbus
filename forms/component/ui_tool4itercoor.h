@@ -71,7 +71,7 @@ public:
         Tool4IterCoorClass->setWindowTitle(QCoreApplication::translate("Tool4IterCoorClass", "Tool4IterCoor", nullptr));
         btnStartCoor->setText(QCoreApplication::translate("Tool4IterCoorClass", "G054", nullptr));
         btnCurrentCoor->setText(QCoreApplication::translate("Tool4IterCoorClass", "G54", nullptr));
-        btnRunIterCoor->setText(QCoreApplication::translate("Tool4IterCoorClass", "\346\211\271\351\207\217\350\277\220\350\241\214", nullptr));
+        btnRunIterCoor->setText(QCoreApplication::translate("Tool4IterCoorClass", "PLYX", nullptr));
     } // retranslateUi
 
 };

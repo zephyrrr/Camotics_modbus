@@ -55,7 +55,7 @@ public:
     void retranslateUi(QWidget *Tool4GCodeClass)
     {
         Tool4GCodeClass->setWindowTitle(QCoreApplication::translate("Tool4GCodeClass", "Tool4GCode", nullptr));
-        btnExport->setText(QCoreApplication::translate("Tool4GCodeClass", "G\344\273\243\347\240\201\344\277\235\345\255\230", nullptr));
+        btnExport->setText(QCoreApplication::translate("Tool4GCodeClass", "GDMBC", nullptr));
     } // retranslateUi
 
 };

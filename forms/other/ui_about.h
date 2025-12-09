@@ -119,15 +119,15 @@ public:
     void retranslateUi(QWidget *aboutClass)
     {
         aboutClass->setWindowTitle(QCoreApplication::translate("aboutClass", "about", nullptr));
-        label->setText(QCoreApplication::translate("aboutClass", "\344\270\212\344\275\215\346\234\272\347\211\210\346\234\254\357\274\232", nullptr));
+        label->setText(QCoreApplication::translate("aboutClass", "SWJBB\357\274\232", nullptr));
         lblSoftVersion->setText(QString());
-        label_1->setText(QCoreApplication::translate("aboutClass", "\344\270\213\344\275\215\346\234\272\347\211\210\346\234\254\357\274\232", nullptr));
+        label_1->setText(QCoreApplication::translate("aboutClass", "XWJBB\357\274\232", nullptr));
         lblHardwareVersion3->setText(QString());
-        label_2->setText(QCoreApplication::translate("aboutClass", "\344\270\213\344\275\215\346\234\272\345\206\205\346\240\270\347\211\210\346\234\254\357\274\232", nullptr));
+        label_2->setText(QCoreApplication::translate("aboutClass", "XWJNHBB\357\274\232", nullptr));
         lblHardwareVersion4->setText(QString());
-        label_3->setText(QCoreApplication::translate("aboutClass", "\346\230\276\347\244\272\346\216\247\345\210\266\347\211\210\346\234\254\357\274\232", nullptr));
+        label_3->setText(QCoreApplication::translate("aboutClass", "XSKZBB\357\274\232", nullptr));
         lblHardwareVersion2->setText(QString());
-        label_4->setText(QCoreApplication::translate("aboutClass", "\346\211\213\346\216\247\347\233\222\347\211\210\346\234\254\357\274\232", nullptr));
+        label_4->setText(QCoreApplication::translate("aboutClass", "SKHBB\357\274\232", nullptr));
         lblHardwareVersion1->setText(QString());
     } // retranslateUi
 

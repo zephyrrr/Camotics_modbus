@@ -64,7 +64,7 @@ public:
     void retranslateUi(QWidget *MdiForm)
     {
         MdiForm->setWindowTitle(QCoreApplication::translate("MdiForm", "Form", nullptr));
-        btnKeyboard->setText(QCoreApplication::translate("MdiForm", "\351\224\256\347\233\230", nullptr));
+        btnKeyboard->setText(QCoreApplication::translate("MdiForm", "JP", nullptr));
     } // retranslateUi
 
 };

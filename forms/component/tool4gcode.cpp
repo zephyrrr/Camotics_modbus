@@ -1,4 +1,4 @@
-#include "tool4gcode.h"
+ï»¿#include "tool4gcode.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "widgets/filedialog.h"
@@ -28,7 +28,7 @@ void Tool4GCode::on_btnExport_clicked()
 {
 	QString s = m_childWindow->GetGCode();
 	if (!s.isEmpty()) {
-		QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("±£´æÎÄ¼þ"), m_path, QStringLiteral("(*.nc)"));
+		QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 		if (!filePath.isEmpty()) {
 
 			NFile file(filePath);
@@ -37,9 +37,9 @@ void Tool4GCode::on_btnExport_clicked()
 				file.close();
 
 				BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-				mainWindow->showChildWindow(QStringLiteral("NC"));
+				mainWindow->showChildWindow(QString("NC"));
 
-				NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QStringLiteral("NC")));
+				NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QString("NC")));
 				form->OpenFile(filePath.toUtf8().data());
 			}
 		}

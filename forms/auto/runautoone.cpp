@@ -1,4 +1,4 @@
-#include "runautoone.h"
+ï»¿#include "runautoone.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -54,12 +54,12 @@ void RunAutoOne::showEvent(QShowEvent* event)
 	
 	if (m_tool4ZeroAndHalfAxis == NULL) {
 		m_tool4ZeroAndHalfAxis = new Tool4All(m_ncMachine, this, 0);
-		//QPushButton* btn1 = new QPushButton(QStringLiteral("ÊÖ¶¯´úÂëÊä³ö"), this);
+		//QPushButton* btn1 = new QPushButton(tr("SDDMSC"), this);
 		//m_tool4ZeroAndHalfAxis->AddItem(btn1);
-		//QPushButton* btn2 = new QPushButton(QStringLiteral("NCÎÄ¼þÊä³ö"), this);
-		Tool4Buttons* tools1 = new Tool4Buttons(m_tool4ZeroAndHalfAxis, QStringList() << QStringLiteral("ÊÖ¶¯´úÂëÊä³ö"));
+		//QPushButton* btn2 = new QPushButton(tr("NWJSC"), this);
+		Tool4Buttons* tools1 = new Tool4Buttons(m_tool4ZeroAndHalfAxis, QStringList() << tr("SDDMSC"));
 		m_tool4ZeroAndHalfAxis->AddItem(tools1);
-		Tool4Buttons* tools2 = new Tool4Buttons(m_tool4ZeroAndHalfAxis, QStringList() << QStringLiteral("NCÎÄ¼þÊä³ö"));
+		Tool4Buttons* tools2 = new Tool4Buttons(m_tool4ZeroAndHalfAxis, QStringList() << tr("NWJSC"));
 		m_tool4ZeroAndHalfAxis->AddItem(tools2);
 
 		QPushButton* btn = tools1->getButton(0);
@@ -105,7 +105,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			dataFormDest->serialize(filePath4Dest);
 
 			BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-			mainWindow->showChildWindow(QStringLiteral("ÊÖ¶¯µ¥¸ö"));
+			mainWindow->showChildWindow(tr("SDDG"));
 			});
 
 		QPushButton* btn2 = tools2->getButton(0);
@@ -119,7 +119,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			QString s = w->windowB->GetGCode();
 			QString m_path = "data/nc";
 			if (!s.isEmpty()) {
-				QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("±£´æÎÄ¼þ"), m_path, QStringLiteral("(*.nc)"));
+				QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 				if (!filePath.isEmpty()) {
 
 					NFile file(filePath);
@@ -128,9 +128,9 @@ void RunAutoOne::showEvent(QShowEvent* event)
 						file.close();
 
 						BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-						mainWindow->showChildWindow(QStringLiteral("NC"));
+						mainWindow->showChildWindow(QString("NC"));
 
-						NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QStringLiteral("NC")));
+						NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QString("NC")));
 						form->OpenFile(filePath.toUtf8().data());
 					}
 				}

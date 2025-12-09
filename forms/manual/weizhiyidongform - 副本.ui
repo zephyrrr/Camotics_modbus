@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>WeiZhiYiDongForm</class>
  <widget class="QWidget" name="WeiZhiYiDongForm">
@@ -39,7 +38,7 @@
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>移动</string>
+         <string>YD</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
@@ -115,7 +114,7 @@
            <item row="5" column="0">
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>坐标系</string>
+              <string>ZBX</string>
              </property>
             </widget>
            </item>
@@ -137,7 +136,7 @@
            <item row="6" column="0">
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>移动方式</string>
+              <string>YDFS</string>
              </property>
             </widget>
            </item>
@@ -152,7 +151,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>绝对</string>
+                <string>JD</string>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -174,7 +173,7 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>相对</string>
+                <string>XD</string>
                </property>
                <property name="checkable">
                 <bool>true</bool>
@@ -192,7 +191,7 @@
            <item row="7" column="0">
             <widget class="QLabel" name="label_2">
              <property name="text">
-              <string>接触感知</string>
+              <string>JCGZ</string>
              </property>
             </widget>
            </item>
@@ -376,7 +375,7 @@
            <item row="1" column="0">
             <widget class="QLabel" name="label_1">
              <property name="text">
-              <string>数据输入</string>
+              <string>SJSR</string>
              </property>
             </widget>
            </item>
@@ -386,7 +385,7 @@
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>半程移动</string>
+         <string>BCYD</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_14">
          <item>
@@ -462,7 +461,7 @@
            <item row="5" column="0">
             <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>坐标系</string>
+              <string>ZBX</string>
              </property>
             </widget>
            </item>
@@ -482,12 +481,12 @@
             </widget>
            </item>
            <item row="6" column="1">
-            <layout class="QHBoxLayout" name="horizontalLayout_6"/>
+            <layout class="QHBoxLayout" name="horizontalLayout_6" />
            </item>
            <item row="7" column="0">
             <widget class="QLabel" name="label_8">
              <property name="text">
-              <string>接触感知</string>
+              <string>JCGZ</string>
              </property>
             </widget>
            </item>
@@ -671,7 +670,7 @@
            <item row="1" column="0">
             <widget class="QLabel" name="label_9">
              <property name="text">
-              <string>数据输入</string>
+              <string>SJSR</string>
              </property>
             </widget>
            </item>
@@ -681,7 +680,7 @@
        </widget>
        <widget class="QWidget" name="tab_3">
         <attribute name="title">
-         <string>限位移动</string>
+         <string>XWYD</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_21">
          <item>
@@ -714,7 +713,7 @@
            <item row="1" column="0">
             <widget class="QLabel" name="label_11">
              <property name="text">
-              <string>数据输入</string>
+              <string>SJSR</string>
              </property>
             </widget>
            </item>
@@ -1112,12 +1111,12 @@
      <item>
       <widget class="QLabel" name="labelPix">
        <property name="text">
-        <string/>
+        <string />
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QTextBrowser" name="textBrowser"/>
+      <widget class="QTextBrowser" name="textBrowser" />
      </item>
     </layout>
    </item>
@@ -1131,16 +1130,16 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="resources.qrc" />
  </resources>
- <connections/>
+ <connections />
  <buttongroups>
-  <buttongroup name="buttonGroup_5"/>
-  <buttongroup name="buttonGroup_7"/>
-  <buttongroup name="buttonGroup_4"/>
-  <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup_6"/>
-  <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
+  <buttongroup name="buttonGroup_5" />
+  <buttongroup name="buttonGroup_7" />
+  <buttongroup name="buttonGroup_4" />
+  <buttongroup name="buttonGroup_2" />
+  <buttongroup name="buttonGroup_6" />
+  <buttongroup name="buttonGroup" />
+  <buttongroup name="buttonGroup_3" />
  </buttongroups>
 </ui>

@@ -1,4 +1,4 @@
-#include "jiagongjiluform.h"
+ï»¿#include "jiagongjiluform.h"
 #include <QTableView>
 #include <QSqlDatabase>
 #include <QSqlTableModel>
@@ -98,8 +98,8 @@ void JiaGongJiLuForm::loadTableData()
     QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
 
     int offset = (currentPage - 1) * rowsPerPage;
-    // strftime('%H:%M:%S', datetime((julianday(end_date) - julianday(start_date)) * 86400, 'unixepoch')) AS ×ÜÊ±¼ä
-    QString query = QStringLiteral("SELECT name AS Ãû³Æ, strftime('%Y-%m-%d %H:%M:%S', start_date) AS ¿ªÊ¼Ê±¼ä, strftime('%Y-%m-%d %H:%M:%S', end_date) AS ½áÊøÊ±¼ä, strftime('%H:%M:%S', datetime(time, 'unixepoch')) AS ×ÜÊ±¼ä, id FROM %1 ORDER BY ID DESC LIMIT %2 OFFSET %3")
+    // strftime('%H:%M:%S', datetime((julianday(end_date) - julianday(start_date)) * 86400, 'unixepoch')) AS æ€»æ—¶é—´
+    QString query = QStringLiteral("SELECT name AS åç§°, strftime('%Y-%m-%d %H:%M:%S', start_date) AS å¼€å§‹æ—¶é—´, strftime('%Y-%m-%d %H:%M:%S', end_date) AS ç»“æŸæ—¶é—´, strftime('%H:%M:%S', datetime(time, 'unixepoch')) AS æ€»æ—¶é—´, id FROM %1 ORDER BY ID DESC LIMIT %2 OFFSET %3")
         .arg(currentTable)
         .arg(rowsPerPage)
         .arg(offset); 
@@ -119,7 +119,7 @@ void JiaGongJiLuForm::loadTableDataDetail(int parentId)
     DatabaseManager& dbManager = DatabaseManager::instance();
     QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
 
-    QString query = QStringLiteral("SELECT cNo AS cNo, strftime('%H:%M:%S', datetime(time, 'unixepoch')) AS Ê±¼ä FROM %1 WHERE parent = %2 ORDER BY ID ASC")
+    QString query = QStringLiteral("SELECT cNo AS cNo, strftime('%H:%M:%S', datetime(time, 'unixepoch')) AS æ—¶é—´ FROM %1 WHERE parent = %2 ORDER BY ID ASC")
         .arg("WORK_DETAIL").arg(parentId);
 
     modelDetail->setQuery(query, db);
@@ -299,7 +299,7 @@ void JiaGongJiLuForm::updatePaginationControls()
     ui.prevPageButton->setEnabled(currentPage > 1);
     ui.nextPageButton->setEnabled(currentPage < maxPages);
 
-    ui.pageLabel->setText(QStringLiteral("µÚ%1/%2Ò³ (×Ü¹²¼ÇÂ¼Êý: %3)")
+    ui.pageLabel->setText(tr("D%Y ZGJLS:")
         .arg(currentPage)
         .arg(maxPages)
         .arg(totalRows));

@@ -740,28 +740,28 @@ public:
     {
         WeiZhiYiDongForm->setWindowTitle(QCoreApplication::translate("WeiZhiYiDongForm", "Form", nullptr));
         btnZ->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Z", nullptr));
-        label_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\346\216\245\350\247\246\346\204\237\347\237\245", nullptr));
-        label_3->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\347\247\273\345\212\250\346\226\271\345\274\217", nullptr));
+        label_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "JCGZ", nullptr));
+        label_3->setText(QCoreApplication::translate("WeiZhiYiDongForm", "YDFS", nullptr));
         inTouchSense->setText(QCoreApplication::translate("WeiZhiYiDongForm", "ON", nullptr));
         pushButton_8->setText(QCoreApplication::translate("WeiZhiYiDongForm", "OFF", nullptr));
         btnU->setText(QCoreApplication::translate("WeiZhiYiDongForm", "U", nullptr));
-        label_4->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\345\235\220\346\240\207\347\263\273", nullptr));
-        inAbsolute->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\347\273\235\345\257\271", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\347\233\270\345\257\271", nullptr));
-        label_1->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\346\225\260\346\215\256\350\276\223\345\205\245", nullptr));
+        label_4->setText(QCoreApplication::translate("WeiZhiYiDongForm", "ZBX", nullptr));
+        inAbsolute->setText(QCoreApplication::translate("WeiZhiYiDongForm", "JD", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("WeiZhiYiDongForm", "XD", nullptr));
+        label_1->setText(QCoreApplication::translate("WeiZhiYiDongForm", "SJSR", nullptr));
         btnY->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Y", nullptr));
         btnX->setText(QCoreApplication::translate("WeiZhiYiDongForm", "X", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("WeiZhiYiDongForm", "\347\247\273\345\212\250", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("WeiZhiYiDongForm", "YD", nullptr));
         btnZ_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Z", nullptr));
         inTouchSense_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "ON", nullptr));
         pushButton_9->setText(QCoreApplication::translate("WeiZhiYiDongForm", "OFF", nullptr));
         btnX_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "X", nullptr));
         btnU_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "U", nullptr));
-        label_8->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\346\216\245\350\247\246\346\204\237\347\237\245", nullptr));
-        label_9->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\346\225\260\346\215\256\350\276\223\345\205\245", nullptr));
-        label_5->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\345\235\220\346\240\207\347\263\273", nullptr));
+        label_8->setText(QCoreApplication::translate("WeiZhiYiDongForm", "JCGZ", nullptr));
+        label_9->setText(QCoreApplication::translate("WeiZhiYiDongForm", "SJSR", nullptr));
+        label_5->setText(QCoreApplication::translate("WeiZhiYiDongForm", "ZBX", nullptr));
         btnY_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Y", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("WeiZhiYiDongForm", "\345\215\212\347\250\213\347\247\273\345\212\250", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("WeiZhiYiDongForm", "BCYD", nullptr));
         btnX_3->setText(QCoreApplication::translate("WeiZhiYiDongForm", "X", nullptr));
         btnX_3_P->setText(QCoreApplication::translate("WeiZhiYiDongForm", "+", nullptr));
         btnX_3_N->setText(QCoreApplication::translate("WeiZhiYiDongForm", "-", nullptr));
@@ -771,11 +771,11 @@ public:
         btnZ_3->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Z", nullptr));
         btnZ_3_P->setText(QCoreApplication::translate("WeiZhiYiDongForm", "+", nullptr));
         btnZ_3_N->setText(QCoreApplication::translate("WeiZhiYiDongForm", "-", nullptr));
-        label_11->setText(QCoreApplication::translate("WeiZhiYiDongForm", "\346\225\260\346\215\256\350\276\223\345\205\245", nullptr));
+        label_11->setText(QCoreApplication::translate("WeiZhiYiDongForm", "SJSR", nullptr));
         btnU_3->setText(QCoreApplication::translate("WeiZhiYiDongForm", "U", nullptr));
         btnU_3_P->setText(QCoreApplication::translate("WeiZhiYiDongForm", "+", nullptr));
         btnU_3_N->setText(QCoreApplication::translate("WeiZhiYiDongForm", "-", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("WeiZhiYiDongForm", "\351\231\220\344\275\215\347\247\273\345\212\250", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("WeiZhiYiDongForm", "XWYD", nullptr));
         labelPix->setText(QString());
     } // retranslateUi
 

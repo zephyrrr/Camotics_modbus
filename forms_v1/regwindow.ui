@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RegWindow</class>
  <widget class="QDialog" name="RegWindow">
@@ -24,17 +23,17 @@
        <bool>true</bool>
       </property>
       <attribute name="title">
-       <string>面板</string>
+       <string>MB</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab17">
        <item>
-        <widget class="QWidget" name="widget17" native="true"/>
+        <widget class="QWidget" name="widget17" native="true" />
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>寄存器</string>
+       <string>JCQ</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -100,7 +99,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QTableView" name="tblRegisters"/>
+        <widget class="QTableView" name="tblRegisters" />
        </item>
       </layout>
      </widget>
@@ -123,7 +122,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>启动JOG</string>
+               <string>QDJ</string>
               </property>
               <property name="flat">
                <bool>false</bool>
@@ -139,7 +138,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>退出JOG</string>
+               <string>TCJ</string>
               </property>
              </widget>
             </item>
@@ -149,13 +148,13 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayoutTab2_2"/>
+        <layout class="QVBoxLayout" name="verticalLayoutTab2_2" />
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_16">
       <attribute name="title">
-       <string>点动移动</string>
+       <string>DDYD</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tab_3">
@@ -175,7 +174,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动定位</string>
+             <string>QDDW</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -191,7 +190,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>退出定位</string>
+             <string>TCDW</string>
             </property>
            </widget>
           </item>
@@ -217,7 +216,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动对刀</string>
+             <string>QDDD</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -233,7 +232,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>结束对刀</string>
+             <string>JSDD</string>
             </property>
            </widget>
           </item>
@@ -259,7 +258,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动</string>
+             <string>QD</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -275,7 +274,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>结束</string>
+             <string>JS</string>
             </property>
            </widget>
           </item>
@@ -301,7 +300,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动</string>
+             <string>QD</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -317,7 +316,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>结束</string>
+             <string>JS</string>
             </property>
            </widget>
           </item>
@@ -343,7 +342,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动</string>
+             <string>QD</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -359,7 +358,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>结束</string>
+             <string>JS</string>
             </property>
            </widget>
           </item>
@@ -385,7 +384,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>启动</string>
+             <string>QD</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -401,7 +400,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>结束</string>
+             <string>JS</string>
             </property>
            </widget>
           </item>
@@ -412,7 +411,7 @@
      </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
-       <string>监测</string>
+       <string>JC</string>
       </attribute>
       <widget class="QWidget" name="gridLayoutWidget">
        <property name="geometry">
@@ -423,17 +422,17 @@
          <height>171</height>
         </rect>
        </property>
-       <layout class="QGridLayout" name="gridLayoutTab9"/>
+       <layout class="QGridLayout" name="gridLayoutTab9" />
       </widget>
      </widget>
      <widget class="QWidget" name="tab_10">
       <attribute name="title">
-       <string>手控盒</string>
+       <string>SKH</string>
       </attribute>
      </widget>
      <widget class="QWidget" name="tab_11">
       <attribute name="title">
-       <string>放电IO</string>
+       <string>FDI</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab11">
        <item>
@@ -448,7 +447,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>发送</string>
+             <string>FS</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -462,7 +461,7 @@
      </widget>
      <widget class="QWidget" name="tab_12">
       <attribute name="title">
-       <string>辅助IO</string>
+       <string>FZI</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab12">
        <item>
@@ -477,7 +476,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>发送</string>
+             <string>FS</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -491,7 +490,7 @@
      </widget>
      <widget class="QWidget" name="tab_13">
       <attribute name="title">
-       <string>手控盒控制数据</string>
+       <string>SKHKZSJ</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab13">
        <item>
@@ -506,7 +505,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>发送</string>
+             <string>FS</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -522,7 +521,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>读取</string>
+             <string>DQ</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -536,12 +535,12 @@
      </widget>
      <widget class="QWidget" name="tab_14">
       <attribute name="title">
-       <string>补偿</string>
+       <string>BC</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab14">
        <item>
         <widget class="QWidget" name="widget14" native="true">
-         <layout class="QHBoxLayout" name="horizontalLayout14"/>
+         <layout class="QHBoxLayout" name="horizontalLayout14" />
         </widget>
        </item>
        <item>
@@ -556,7 +555,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>发送</string>
+             <string>FS</string>
             </property>
             <property name="flat">
              <bool>false</bool>
@@ -574,7 +573,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab15">
        <item>
-        <widget class="QWidget" name="widget15" native="true"/>
+        <widget class="QWidget" name="widget15" native="true" />
        </item>
       </layout>
      </widget>
@@ -582,6 +581,6 @@
    </item>
   </layout>
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

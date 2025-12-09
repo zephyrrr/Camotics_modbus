@@ -1,10 +1,10 @@
-<UI version="4.0" >
+<UI version="4.0">
  <class>fangdiancheshiformClass</class>
- <widget class="QWidget" name="fangdiancheshiformClass" >
-  <property name="objectName" >
+ <widget class="QWidget" name="fangdiancheshiformClass">
+  <property name="objectName">
    <string notr="true">fangdiancheshiformClass</string>
   </property>
-  <property name="geometry" >
+  <property name="geometry">
    <rect>
 	<x>0</x>
 	<y>0</y>
@@ -12,11 +12,11 @@
 	<height>400</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>放电参数</string>
+  <property name="windowTitle">
+   <string>FDCS</string>
   </property>   
  </widget>
  <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
- <connections/>
+ <pixmapfunction />
+ <connections />
 </UI>

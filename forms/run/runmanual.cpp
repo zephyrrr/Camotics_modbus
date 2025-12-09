@@ -1,4 +1,4 @@
-#include "runmanual.h"
+Ôªø#include "runmanual.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -45,7 +45,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	
 
 	QString rowHeaders[] = { "X", "Y", "Z" };
-	QString headers[] = { QStringLiteral("◊¯±Í÷·"), QStringLiteral("…Ó∂»") };
+	QString headers[] = { tr("ZBZ"), tr("SD") };
 	table1 = new ButtonEditTableWidget(this);
 	table1->createForm(3, 1, [this](int col, QWidget* parent) {
 		QLineEdit4AxisValue* p = new QLineEdit4AxisValue(parent);
@@ -86,7 +86,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	//	//	edit->setText("00000.000");
 	//	//}
 	//});
-	QString headers2[] = { QStringLiteral("ªÿ ˝"), QStringLiteral("º”π§"), "C.No", "LN", "LP", "STEP", QStringLiteral("º”π§”‡¡ø"), QStringLiteral("∂® ±"), QStringLiteral(" ±º‰"), QStringLiteral("œÍœ∏") };
+	QString headers2[] = { tr("HS"), tr("JG"), "C.No", "LN", "LP", "STEP", tr("JGYL"), tr("DS"), tr("SJ"), tr("Detail") };
 	QString defaultRowValues[] = { "", "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "..." };
 	int visibleColumnCount = 9;
 	int hiddenColumnCount = 1;
@@ -103,7 +103,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 			connect(btn, &QLineEdit::textChanged, [btn, parent](const QString& s) {
 				ButtonEditTableWidget* table = qobject_cast<ButtonEditTableWidget*>(parent);
 				int rowHere = table->getRowOfEdit(1, btn);
-				/*if (s == QStringLiteral("∑Ò")) {
+				/*if (s == tr("F")) {
 					btn->setStyleSheet("background-color: lightgray;");
 				}
 				
@@ -198,7 +198,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 		else if (col == 6) {
 			QLineEdit4AxisValue* btn = new QLineEdit4AxisValue(parent);
 			ret = btn;
-			regStr = "^(0|[1-9]\\d*)?(\\.\\d+)?$";	 // "º”π§”‡¡ø"
+			regStr = "^(0|[1-9]\\d*)?(\\.\\d+)?$";	 // "Âä†Â∑•‰ΩôÈáè"
 			connect(btn, &QLineEdit4Keyboard::focusChanged, [this, btn](bool b) {
 				int row = table2->indexAt(btn->pos()).row() - 1;
 				if (b) {
@@ -309,7 +309,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 
 	mbw = new MultiButtonsWidget(this);
 	mbw->addDefaultButtons(table2);
-	mbw->addButton(QStringLiteral("∏¥Œª"), [this](bool) {
+	mbw->addButton(tr("Reset"), [this](bool) {
 		if (table2->isReadOnly())
 			return;
 		this->table2->setRowSelection(-1, false);
@@ -372,7 +372,7 @@ void RunManual::ShowDetailForm(int row)
 
 		QList<QLineEdit*> lineEdits = m_fangDianCanShuForm->findChildren<QLineEdit*>();
 		for (QLineEdit* lineEdit : lineEdits) {
-			// ≤ª±£¥Ê
+			// ‰∏ç‰øùÂ≠ò
 			lineEdit->setObjectName("");
 		}
 	}
@@ -886,7 +886,7 @@ N0000;
 
 void RunManual::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = QStringLiteral(" ÷∂Øµ•∏ˆ");
+	SystemSettings::instance().LastRunNCFileName = tr("SDDG");
 
 	QString gcode = GetGCode();
 
@@ -932,7 +932,7 @@ void RunManual::RunGCode()
 	//	if (sink->has("modubs_ret") && sink->getS32("modubs_ret") == 1) {
 	//		if (lastLine4DoneOne != -1) {// && sink->getString("type") == "move" && !sink->exists("rapid")) {
 	//			int row = lastLine4DoneOne;
-	//			// set last row to "∑Ò"
+	//			// set last row to "Âê¶"
 	//			if (row - 1 >= 0) {
 	//				QMetaObject::invokeMethod(this, [this, unsetPreviousLine, row]() {
 	//					if (unsetPreviousLine) {
