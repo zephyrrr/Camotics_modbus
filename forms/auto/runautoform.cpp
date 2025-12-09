@@ -28,7 +28,7 @@ RunAutoForm::RunAutoForm(QWidget *parent) :
     windowC = new RunAutoOne(this);
 
     // Add the windows to the tab widget
-    ui->tabWidget->addTab(windowA, QStringLiteral("加工计划"));
+    ui->tabWidget->addTab(windowA, tr("JGJH"));
     ui->tabWidget->addTab(windowB, QStringLiteral("加工位置"));
     ui->tabWidget->addTab(windowC, QStringLiteral("条件详细"));
 

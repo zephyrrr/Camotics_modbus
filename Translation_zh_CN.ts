@@ -1704,6 +1704,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="forms/auto/runautoform.cpp" line="31"/>
+        <source>JGJH</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RunAutoParamForm</name>
