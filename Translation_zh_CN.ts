@@ -4,7 +4,7 @@
 <context>
     <name></name>
     <message>
-        <source>D%Y ZGJLS:</source>
+        <source>DY ZGJLS:</source>
         <translation type="vanished">第%1/%2页 (总共记录数: %3)</translation>
     </message>
 </context>
@@ -1107,7 +1107,7 @@
     <name>JiaGongJiLuForm</name>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="302"/>
-        <source>D%Y ZGJLS:</source>
+        <source>DY ZGJLS:</source>
         <translation type="unfinished">第%1/%2页 (总共记录数: %3)</translation>
     </message>
 </context>
@@ -1554,27 +1554,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="649"/>
+        <location filename="modbus/modbusadapter.cpp" line="647"/>
         <source>MXCW</source>
         <translation>Modbus: 写错误</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="733"/>
+        <location filename="modbus/modbusadapter.cpp" line="731"/>
         <source>Write data failed. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="739"/>
+        <location filename="modbus/modbusadapter.cpp" line="737"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="793"/>
+        <location filename="modbus/modbusadapter.cpp" line="791"/>
         <source>Read data failed. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="799"/>
+        <location filename="modbus/modbusadapter.cpp" line="797"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1912,7 +1912,7 @@
         <location filename="modbus/NCMachine.cpp" line="2690"/>
         <location filename="modbus/NCMachine.cpp" line="2699"/>
         <location filename="modbus/NCMachine.cpp" line="3251"/>
-        <source>CMLCS%BMZYQ！</source>
+        <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
@@ -2142,6 +2142,19 @@
         <location filename="forms/run/ncrun.ui" line="20"/>
         <source>NcRun</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QLineEditLikeButton</name>
+    <message>
+        <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
+        <source>Y</source>
+        <translation type="unfinished">是</translation>
+    </message>
+    <message>
+        <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
+        <source>N</source>
+        <translation type="unfinished">否</translation>
     </message>
 </context>
 <context>
@@ -2433,14 +2446,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>Y</source>
-        <translation>是</translation>
+        <translation type="vanished">是</translation>
     </message>
     <message>
-        <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>N</source>
-        <translation>否</translation>
+        <translation type="vanished">否</translation>
     </message>
 </context>
 <context>
@@ -3557,7 +3568,12 @@
         <translation type="vanished">消息</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoparamform.cpp" line="217"/>
+        <location filename="forms/auto/runautoparamform.cpp" line="47"/>
+        <source>铜-钢</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.cpp" line="227"/>
         <source>MYXYSJ！</source>
         <translation>没有相应数据！</translation>
     </message>
@@ -4018,7 +4034,7 @@
     <name>Tool4CoorSet</name>
     <message>
         <location filename="forms/component/tool4coorset.cpp" line="26"/>
-        <source>JLZBXSJ（SFYX？</source>
+        <source>JLZBXSJ</source>
         <translation>记录坐标系数据（G054 - %1），是否运行？</translation>
     </message>
     <message>
@@ -4392,7 +4408,7 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="702"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="854"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation type="unfinished">Y</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="384"/>
@@ -4598,7 +4614,7 @@
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="367"/>
         <source>S</source>
-        <translation>是</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="383"/>
@@ -4618,7 +4634,7 @@
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="405"/>
         <source>F</source>
-        <translation>否</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="421"/>
@@ -4943,7 +4959,7 @@
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1063"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1079"/>
@@ -5429,7 +5445,7 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="122"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="168"/>
@@ -5486,7 +5502,7 @@
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.cpp" line="223"/>
-        <source>D%C</source>
+        <source>DJC</source>
         <translation>第%1次</translation>
     </message>
 </context>

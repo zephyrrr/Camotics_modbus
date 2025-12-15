@@ -404,6 +404,7 @@
     <ClCompile Include="camotics\qt\SidebarWidget.cpp" />
     <ClCompile Include="camotics\qt\TPLHighlighter.cpp" />
     <ClCompile Include="forms\auto\runautoone.cpp" />
+    <ClCompile Include="utils\LocaleUtils.cpp" />
     <ClCompile Include="utils\simplecrypt.cpp" />
     <ClCompile Include="utils\QSqliteListModel.cpp" />
     <ClCompile Include="utils\QTextFileModel.cpp" />
@@ -575,6 +576,7 @@
     <ClInclude Include="forms\component\tool4base.h" />
     <QtMoc Include="utils\QTextFileModel.h" />
     <QtMoc Include="utils\QSqliteListModel.h" />
+    <ClInclude Include="utils\LocaleUtils.h" />
     <ClInclude Include="plugins\iplugin.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="utils\simplecrypt.h" />

@@ -432,7 +432,7 @@ QLineEditLikeButton::QLineEditLikeButton(QWidget* parent)
 	: NLineEdit(parent)
 {
 	if (Values.isEmpty()) {
-		Values = QStringList() << QObject::tr("Y") << QObject::tr("N");
+		Values = QStringList() << tr("Y") << tr("N");
 	}
 
 	this->setMaxLength(1);

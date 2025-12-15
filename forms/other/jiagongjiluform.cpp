@@ -299,7 +299,7 @@ void JiaGongJiLuForm::updatePaginationControls()
     ui.prevPageButton->setEnabled(currentPage > 1);
     ui.nextPageButton->setEnabled(currentPage < maxPages);
 
-    ui.pageLabel->setText(tr("D%Y ZGJLS:")
+    ui.pageLabel->setText(tr("DY ZGJLS:")
         .arg(currentPage)
         .arg(maxPages)
         .arg(totalRows));

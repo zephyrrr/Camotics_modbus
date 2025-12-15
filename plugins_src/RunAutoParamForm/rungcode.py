@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 import os
 from datetime import datetime
 import sys
@@ -6,7 +6,7 @@ import sqlite3
 #import pandas as pd  # Optional, but often useful for data manipulation
 #from collections import OrderedDict
 
-DEBUG_MODE = False
+DEBUG_MODE = True
 
 #SQLITE_DB_PATH = 'plugins/RunAutoForm/'
 SQLITE_DB_PATH = 'data/'
@@ -230,9 +230,9 @@ def read_all_from_file(file_path):
 
 
 if __name__ == "__main__":
-    allClzh = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inClzh_data.json')).split('\n')
-    allDjxz = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inDjxz_data.json')).split('\n')
-    allJgcz = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inJgcz_data.json')).split('\n')
+    #allClzh = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inClzh_data.json')).split('\n')
+    #allDjxz = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inDjxz_data.json')).split('\n')
+    #allJgcz = read_all_from_file(os.path.join(SQLITE_DB_PATH, 'inJgcz_data.json')).split('\n')
 
 
     if 'window' in locals() and window:
@@ -243,25 +243,29 @@ if __name__ == "__main__":
         inJgmj = window.getData("inJgmj")  # 加工面积
         inCcd = window.getData("inCcd")  # 粗糙度
         inYdxz = window.getData("inYdxz")  # 摇动形状
-        inYdxzSpecial = window.getData("inYdxzSpecial")  # 摇动形状(分象限)
+        #inYdxzSpecial = window.getData("inYdxzSpecial")  # 摇动形状(分象限)
         inYdms = window.getData("inYdms")  # 摇动模式
         inJgcz = window.getData("inJgcz")  # 加工侧重
         inDbhhw = float(window.getData("inDbhhw"))  # 单边火花位
-        DEBUG_MODE = window.getData("DEBUG_MODE") == 'True'
+        #DEBUG_MODE = window.getData("DEBUG_MODE") == 'True'
+
+        if DEBUG_MODE:
+            print(inClzh, inDjxz, inJgz, inJgsd, inJgmj)
+            print(inCcd, inYdxz, inYdms, inJgcz, inDbhhw)
     else:
         window = None
     
-        inClzh = '铜-钢'
-        #inClzh = '石墨-钢'
-        inDjxz = '通用'
+        inClzh = 1  #'铜-钢'
+        inDjxz = 1  #'通用'
         inJgz = 'Z' # todo
         inJgsd = -0.100
         inJgmj = '□80○90'  #'□18○20' 
         inCcd = 'VDI16-Ra0.63'
-        inYdxz = '圆'
-        inYdms = '思考'
-        inJgcz = '标准'
+        inYdxz = '1111'  #'圆'
+        inYdms = 3  #'思考'
+        inJgcz = 1  #'标准'
         inDbhhw = 0.100  # 0.20
+        DEBUG_MODE = True
 
         # 材料，，      形状，侧重，1（切入），单边
         # 材料、面积、形状、侧重、Ra（粗糙度）、切入=0
@@ -273,17 +277,18 @@ if __name__ == "__main__":
 
     try:
         other_cs = {}
-        other_cs['LP'] = get_data("摇动形状.csv", f"摇动形状='{inYdxz}'")[0]['AB']
-        if str(other_cs['LP']) == '6666':
-            other_cs['LP'] = inYdxzSpecial
+        other_cs['LP'] = inYdxz
+        #other_cs['LP'] = get_data("摇动形状.csv", f"摇动形状='{inYdxz}'")[0]['AB']
+        #if str(other_cs['LP']) == '6666':
+        #    other_cs['LP'] = inYdxzSpecial
         other_cs['LN'] = '000'
         other_cs['STEP'] = '0.000'
 
-        inClzhNo = allClzh.index(inClzh) + 1
-        inDjxzNo = allDjxz.index(inDjxz) + 1
-        inJgczNo = allJgcz.index(inJgcz) + 1
-        r1 = get_data("库.csv", f"材料='{inClzhNo}' AND 形状='{inDjxzNo}' AND 重视='{inJgczNo}' AND 切入=1 AND 侧面余量='{inDbhhw}'", f"")
-        if len(r1) > 1:
+        #inClzhNo = allClzh.index(inClzh) + 1
+        #inDjxzNo = allDjxz.index(inDjxz) + 1
+        #inJgczNo = allJgcz.index(inJgcz) + 1
+        r1 = get_data("库.csv", f"材料='{inClzh}' AND 形状='{inDjxz}' AND 重视='{inJgcz}' AND 切入=1 AND 侧面余量='{inDbhhw}'", f"")
+        if type(r1) is list and len(r1) > 1:
             print('!!!duplicate result: ', r1)
         ret_lines.append(get_ccode(r1[0], other_cs))
         to_cs.append(int(r1[0]['C NO.']))
@@ -293,7 +298,7 @@ if __name__ == "__main__":
 
         inJgmjNo = get_data("加工面积.csv", f"加工面积='{inJgmj}'")[0]['Y']
         inCcdNo = get_data("粗糙度.csv", f"粗糙度='{inCcd}'")[0]['V']
-        r2 = get_data("库.csv", f"材料='{inClzhNo}' AND 面积='{inJgmjNo}' AND 形状='{inDjxzNo}' AND 重视='{inJgczNo}' AND 切入=0 AND Ra='{inCcdNo}'", f"行 ASC", 100)
+        r2 = get_data("库.csv", f"材料='{inClzh}' AND 面积='{inJgmjNo}' AND 形状='{inDjxz}' AND 重视='{inJgcz}' AND 切入=0 AND Ra='{inCcdNo}'", f"行 ASC", 100)
         #print(f'r2 len={len(r2)}')
 
         for i in range(len(r2)):
@@ -323,7 +328,8 @@ if __name__ == "__main__":
         B12 = inDbhhw
         ret_lines.append(f'H101 =   {B12}')
         B10 = inYdms
-        ret_lines.append('H102 =   {0}'.format('000' if B10 == '无' else ('010' if B10 == '自由' else ('020' if B10 == '锁定' else '300'))))
+        #ret_lines.append('H102 =   {0}'.format('000' if B10 == '无' else ('010' if B10 == '自由' else ('020' if B10 == '锁定' else '300'))))
+        ret_lines.append('H102 =   {0}'.format('000' if B10 == 0 else ('010' if B10 == 1 else ('020' if B10 == 2 else '300'))))
 
         for i in range(len(to_cs)):
             if to_rows[i] and to_rows[i]['定时'] and to_rows[i]['定时时间']:

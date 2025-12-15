@@ -635,8 +635,6 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 				LOG_WARNING("Modbus: " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << ", " << task->writeData.c_str() << ", " << EUtils::QString2StdString(EUtils::libmodbus_strerror(errno)));
 // [AUTO-TRANSLATION-COMMENT] Modbus: 写错误
 				//THROW(EUtils::QString2StdString(tr("MXCW")));
-				
-				
 #ifdef _DEBUG
 				// 只是显示，不停止运行
 				ret = 1;

@@ -2,11 +2,14 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <QApplication>
+#include "utils/LocaleUtils.h"
 
 QTextFileModel::QTextFileModel(QObject* parent, const QString& filePath)
     : QStringListModel(parent)
 {
-	loadFromFile(filePath);
+	QString newFilePath = LocaleUtils::FindFileByLocale(filePath);  
+	loadFromFile(newFilePath);
 }
 
 // ----------------------------------------
@@ -30,11 +33,14 @@ bool QTextFileModel::loadFromFile(const QString& filePath)
 
     // Read the file line by line
     while (!in.atEnd()) {
-        QString s = tr(in.readLine().toUtf8().constData());
+        QString s1 = in.readLine();
+        //const char* s = s1.toUtf8().constData();
+        //auto context = parent()->metaObject()->className();
+        //QString s2 = QApplication::translate(context, s);
         //QT_TR_NOOP("Network Error");
-
-        if (!s.isEmpty()) {
-            list << s;
+		//QString s2 = QString(s1);
+        if (!s1.isEmpty()) {
+            list << s1;
         }
     }
 

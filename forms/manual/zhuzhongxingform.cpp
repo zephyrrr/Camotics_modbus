@@ -1,4 +1,4 @@
-#include "zhuzhongxingform.h"
+﻿#include "zhuzhongxingform.h"
 #include "ui_zhuzhongxingform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -220,7 +220,7 @@ QStandardItemModel* ZhuZhongXingForm::SetupTable4Result(QTableView* tableView, Q
         model->setHeaderData(i, Qt::Horizontal, headerNames[i]);
     }
     for (int i = 0; i < rowCount; ++i) {
-        model->setHeaderData(i, Qt::Vertical, tr("D%C").arg(i+1));
+        model->setHeaderData(i, Qt::Vertical, tr("DJC").arg(i+1));
     }
     model->setHeaderData(rowCount, Qt::Vertical, tr("JG"));
 

@@ -463,7 +463,6 @@ int mainQt(int argc, char* argv[])
     //char* szTemp = (char*)1;
     //strcpy_s(szTemp, 1000, "A");
 
-
     if (argc == 3) {
         if (std::string(argv[1]) == "--parse") {
             // 检查--parse后面是否有参数
@@ -540,27 +539,30 @@ int mainQt(int argc, char* argv[])
     QApplication::setApplicationName(PRODUCT_NAME);
 	QApplication::setApplicationVersion(PRODUCT_VERSION);
 
-    QLocale curLocale(QLocale(QLocale::Language::Chinese, QLocale::Country::China));
-    QLocale::setDefault(curLocale);
+    QLocale curLocale(QLocale::Language::Chinese, QLocale::Country::China);
+    curLocale = QLocale(QLocale::English);
 
-    //qtTran.load(QLocale::system(), QString("qtbase_"));
-    //qtApp.installTranslator(&qtTran);
+    //QLocale systemLocale = QLocale::system();
+    //qDebug() << "System Language:" << systemLocale.language();
+    //qDebug() << "System Country:" << systemLocale.country();
+    //qDebug() << "Full Name (e.g., en_US):" << systemLocale.name();
+    QLocale::setDefault(curLocale);
+    //QLocale curLocale;
 
     auto translationsPath = "./translations"; // QLibraryInfo::location(QLibraryInfo::TranslationsPath);
 
-
     QTranslator qtTran;
-    if (qtTran.load(QLocale(), "qt", "_", translationsPath))
+    if (qtTran.load(curLocale, "qt", "_", translationsPath))
     {
         qtApp.installTranslator(&qtTran);
     }
     QTranslator qtTran2;
-    if (qtTran2.load(QLocale(), "qtbase", "_", translationsPath))
+    if (qtTran2.load(curLocale, "qtbase", "_", translationsPath))
     {
         qtApp.installTranslator(&qtTran2);
     }
     QTranslator qtTran3;
-    if (qtTran3.load(QLocale(), "Translation", "_", translationsPath))
+    if (qtTran3.load(curLocale, "Translation", "_", translationsPath))
     {
         qtApp.installTranslator(&qtTran3);
     }

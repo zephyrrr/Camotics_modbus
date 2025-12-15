@@ -23,7 +23,7 @@ void Tool4CoorSet::on_btnRecord_clicked()
 	auto controller = this->ncMachine->GetController();
 	//int cs0 = 0;
 	int csNow = controller->get(CURRENT_COORD_SYSTEM) - 1;
-    if (!FormUtils::MessageBoxYesNo(tr("JLZBXSJ（SFYX？").arg(Tool4SwitchCoor::GetCoorName(csNow)))) {
+    if (!FormUtils::MessageBoxYesNo(tr("JLZBXSJ").arg(Tool4SwitchCoor::GetCoorName(csNow)))) {
         return;
     }
 

@@ -43,6 +43,8 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 			ui->inYdxzSpecial->setVisible(false);
 		}
 		});
+
+	QT_TR_NOOP_UTF8("铜-钢");
 }
 
 RunAutoParamForm::~RunAutoParamForm()
@@ -80,17 +82,25 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		if (pyFileName == "rungcode") {
 			this->SetData("result", NULL);
 
-			this->SetData("inClzh", ui->inClzh->text());
-			this->SetData("inDjxz", ui->inDjxz->text());
+			//this->SetData("inClzh", ui->inClzh->text());
+			this->SetData("inClzh", ui->inClzh->currentIndex() + 1);
+			this->SetData("inDjxz", ui->inDjxz->currentIndex() + 1);
 			this->SetData("inJgz", ui->inJgz->text());
 			this->SetData("inJgsd", ui->inJgsd->text());
 			this->SetData("inJgmj", ui->inJgmj->text());
 			this->SetData("inCcd", ui->inCcd->text());
-			this->SetData("inYdxz", ui->inYdxz->text());
-			this->SetData("inYdms", ui->inYdms->text());
-			this->SetData("inJgcz", ui->inJgcz->text());
+			QString inYdxz;
+			if (ui->inYdxz->currentIndex() == 6) {
+				inYdxz = ui->inYdxzSpecial->text();
+			}
+			else {
+				inYdxz = QString::number(ui->inYdxz->currentIndex()).repeated(4);
+			}
+			this->SetData("inYdxz", inYdxz);
+			this->SetData("inYdms", ui->inYdms->currentIndex());
+			this->SetData("inJgcz", ui->inJgcz->currentIndex() + 1);
 			this->SetData("inDbhhw", ui->inDbhhw->text());
-			this->SetData("inYdxzSpecial", ui->inYdxzSpecial->text());
+			//this->SetData("inYdxzSpecial", ui->inYdxzSpecial->text());
 
 			QString value = pyFiles.value(pyFileName);
 			PluginUtils::RunFile(value, this);

@@ -2687,7 +2687,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 					setOk = NCMachineParametersC::SetCurrentByName(s, oss.str());
 					if (!setOk) {
 // [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
-						THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
+						THROW(EUtils::QString2StdString(tr("CMLCSBMZYQ").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
 					}
 				}
 				else {
@@ -2696,7 +2696,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 					setOk = NCMachineParametersC::SetCurrentByName(QString::fromStdString(s), sValue);
 					if (!setOk) {
 // [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
-						THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
+						THROW(EUtils::QString2StdString(tr("CMLCSBMZYQ").arg(QString::fromStdString(s)).arg(QString::number(eValue))));
 					}
 				}
 				controller->clear(pName);
@@ -3248,7 +3248,7 @@ QString NCMachine::RunCCode(QString gcode)
 				if (rx.indexIn(s) == -1) {
 					LOG_WARNING("EDM: Invalid C Command: " << EUtils::QString2StdString(ccommand));
 // [AUTO-TRANSLATION-COMMENT] C命令参数%1=%2不满足要求！
-					THROW(EUtils::QString2StdString(tr("CMLCS%BMZYQ！").arg(m_paramCsNames[i]).arg(s)));
+					THROW(EUtils::QString2StdString(tr("CMLCSBMZYQ").arg(m_paramCsNames[i]).arg(s)));
 					linesNew.append("; Error: " + line);
 					continue;
 				}
