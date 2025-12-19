@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW2_H
+﻿#ifndef MAINWINDOW2_H
 #define MAINWINDOW2_H
 
 #include <QMainWindow>
@@ -38,6 +38,7 @@ public:
 
     BaseChildWindow* getChildWindow(QString windowTitle) override;
     void addNormalTasks() override;
+    void showChildWindow(QString windowTitle) override;
 protected:
     void showEvent(QShowEvent* event) override;
 

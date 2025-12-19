@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <QStackedWidget>
@@ -17,6 +17,7 @@ public:
 	RunAutoOne(QWidget* parent = nullptr);
 	~RunAutoOne();
 
+	void ExportData();
 protected:
 	void showEvent(QShowEvent* event) override;
 };

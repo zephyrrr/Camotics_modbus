@@ -15,6 +15,7 @@ public:
 
 	void addItem(QString menuText);
 	QBoxLayout* getSubMenuLayout(int idx);
+	void openItem(int idx);
 private:
 	QFrame* m_frame4SubMenu;
 

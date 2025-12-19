@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <QString>
 #include <QObject>
 
@@ -8,6 +8,7 @@ private:
 	GCodeUtils() {}
 
 public:
+	static QString CleanGCode(QString gcode);
 	static QString Duidao(QString axisName, double axisValue, int doCnt = 0, double ddgchtz = 0, double inJieChuHouFanZhuang = 0);
 	static QString Duanmian(double inX, double inY, double inZ, double inU, double inJieChuHouFanZhuang, bool inSetToZero, int doCnt = 0, double ddgchtz = 0);
 	static QString Zhuzhongxing(double inKuaiJingX, double inKuaiJingY, double inKuaiJingZ, double inJieChuHouFanZhuang, bool inSetToZero, bool inTouchSenseZ, int doCnt = 0, double ddgchtz = 0);

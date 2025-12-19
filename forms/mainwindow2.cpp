@@ -713,6 +713,31 @@ void QtWin2::addNormalTasks()
 	BaseMainWindow::addNormalTasks();
 }
 
+void QtWin2::showChildWindow(QString windowTitle)
+{
+	MenuWith2Frames* mainMenuWidget = dynamic_cast<MenuWith2Frames*>(mainMenu);
+	if (mainMenuWidget != NULL) {
+		bool hasOpened = false;
+		for (int i = 0; i < 5; ++i) {
+			if (hasOpened)
+				break;
+			QBoxLayout* layout1 = mainMenuWidget->getSubMenuLayout(i);
+			if (layout1 == NULL)
+				break;
+			auto buttons = layout1->parentWidget()->findChildren<QToolButton*>();
+			for (QToolButton* button : buttons) {
+				if (button->text() == windowTitle) {
+					mainMenuWidget->openItem(i);
+					hasOpened = true;
+					break;
+				}
+			}
+		}
+	}
+
+	BaseMainWindow::showChildWindow(windowTitle);
+}
+
 void QtWin2::showEvent(QShowEvent* event)
 {
 	if (m_showFullScreen && ui->statusbar->isVisible())

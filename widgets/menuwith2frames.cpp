@@ -1,4 +1,4 @@
-#include "menuwith2frames.h"
+﻿#include "menuwith2frames.h"
 #include "qnumericpad.h"
 
 MenuWith2Frames::MenuWith2Frames(QFrame* frame4SubMenu, QWidget*parent)
@@ -50,6 +50,16 @@ void MenuWith2Frames::addItem(QString menuText)
 
 QBoxLayout* MenuWith2Frames::getSubMenuLayout(int idx)
 {
+	if (idx < 0 || idx >= m_subMenuLayouts.count()) {
+		return nullptr;
+	}
 	return m_subMenuLayouts[idx];
 	//return static_cast<QBoxLayout*>(stackedLayout4SubMenu->itemAt(idx)->layout());
+}
+
+void MenuWith2Frames::openItem(int idx)
+{
+	if (idx >= 0 && idx < m_buttonGroup4Menu->buttons().count()) {
+		m_buttonGroup4Menu->buttons().at(idx)->click();
+	}
 }

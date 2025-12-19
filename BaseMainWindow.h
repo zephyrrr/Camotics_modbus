@@ -1,4 +1,4 @@
-#ifndef BASEMAINWINDOW_H
+﻿#ifndef BASEMAINWINDOW_H
 #define BASEMAINWINDOW_H
 
 #include <QMainWindow>
@@ -22,7 +22,7 @@ public:
     static void modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine);
 
     virtual BaseChildWindow* getChildWindow(QString windowTitle) { return NULL; }
-    void showChildWindow(QString windowTitle);
+    virtual void showChildWindow(QString windowTitle);
 protected:
     ModbusCommSettings* m_modbusCommSettings;
     ModbusAdapter* m_modbus;
