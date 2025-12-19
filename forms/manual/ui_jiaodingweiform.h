@@ -391,7 +391,7 @@ public:
         label_6->setText(QCoreApplication::translate("JiaoDingWeiForm", "CS", nullptr));
         inCnt->setText(QCoreApplication::translate("JiaoDingWeiForm", "1", nullptr));
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("JiaoDingWeiForm", "<ZH]DZDDYZH\343\200\202FX]DZDFX\357\274\214WDYZZFX\357\274\214WDYZDFFX\343\200\202", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };

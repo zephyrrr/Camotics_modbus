@@ -1,4 +1,4 @@
-#include "BaseMainWindow.h"
+﻿#include "BaseMainWindow.h"
 #include <QDir>
 #include <QToolButton>
 #include "../modbus/NCMachine.h"
@@ -20,7 +20,7 @@ BaseMainWindow::BaseMainWindow(QWidget* parent)
 	m_ncMachine = new NCMachine(this, m_modbus);
 
 	SystemSettings::instance().SetProjectDir(QDir::currentPath() + "/data/default");
-	SystemSettings::instance().LoadFromFile(QDir::currentPath() + "/data/qGlobal.ini");
+	
 
 	modbusConnect(true);
 

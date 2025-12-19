@@ -1106,8 +1106,34 @@
 <context>
     <name>JiaGongJiLuForm</name>
     <message>
-        <location filename="forms/other/jiagongjiluform.cpp" line="302"/>
-        <source>DY ZGJLS:</source>
+        <location filename="forms/other/jiagongjiluform.cpp" line="106"/>
+        <location filename="forms/other/jiagongjiluform.cpp" line="130"/>
+        <source>name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <location filename="forms/other/jiagongjiluform.cpp" line="107"/>
+        <source>start_date</source>
+        <translation>开始时间</translation>
+    </message>
+    <message>
+        <location filename="forms/other/jiagongjiluform.cpp" line="108"/>
+        <source>end_date</source>
+        <translation>结束时间</translation>
+    </message>
+    <message>
+        <location filename="forms/other/jiagongjiluform.cpp" line="109"/>
+        <source>total_time</source>
+        <translation>总时间</translation>
+    </message>
+    <message>
+        <location filename="forms/other/jiagongjiluform.cpp" line="131"/>
+        <source>time</source>
+        <translation>时间</translation>
+    </message>
+    <message>
+        <location filename="forms/other/jiagongjiluform.cpp" line="309"/>
+        <source>DY ZGJLS</source>
         <translation type="unfinished">第%1/%2页 (总共记录数: %3)</translation>
     </message>
 </context>
@@ -1231,11 +1257,6 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="444"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="492"/>
-        <source>&lt;ZH]DZDDYZH。FX]DZDFX，WDYZZFX，WDYZDFFX。</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1922,7 +1943,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachine.cpp" line="3237"/>
-        <source>CMLCSSLHYQDBYZ！</source>
+        <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
@@ -2921,7 +2942,7 @@
     <message>
         <location filename="forms/mainwindow2.cpp" line="344"/>
         <location filename="forms/mainwindow2.cpp" line="1273"/>
-        <source>CKWLJ！</source>
+        <source>CKWLJ</source>
         <translation>串口未连接！</translation>
     </message>
     <message>
@@ -3453,7 +3474,7 @@
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="40"/>
-        <source>MYXYSJ！</source>
+        <source>MYXYSJ</source>
         <translation>没有相应数据！</translation>
     </message>
 </context>
@@ -3574,7 +3595,7 @@
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.cpp" line="227"/>
-        <source>MYXYSJ！</source>
+        <source>MYXYSJ</source>
         <translation>没有相应数据！</translation>
     </message>
 </context>

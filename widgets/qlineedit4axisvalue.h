@@ -182,6 +182,8 @@ public:
 
 class QLineEditLikeButton : public NLineEdit
 {
+	Q_OBJECT
+
 public:
 	static bool IsYes(QString s) { return Values.indexOf(s) == 0; }
 

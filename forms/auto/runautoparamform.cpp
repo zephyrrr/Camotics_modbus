@@ -224,7 +224,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		QFile::remove(filePath2);
 
 		return QString();
-		FormUtils::MessageBoxInfo(tr("MYXYSJ！"));
+		FormUtils::MessageBoxInfo(tr("MYXYSJ"));
 	}
 }
 

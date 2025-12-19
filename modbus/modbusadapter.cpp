@@ -639,7 +639,7 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 				// 只是显示，不停止运行
 				ret = 1;
 #else
-				if (!SystemSettings::instance().GetValue("Modbus/WriteErrorAsWarning").isEmpty()) {
+				if (SystemSettings::instance().GetValue("Modbus/WriteErrorAsWarning") == "True") {
 					ret = 1;
 				}
 				else {

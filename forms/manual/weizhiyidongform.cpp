@@ -1,4 +1,4 @@
-#include "weizhiyidongform.h"
+﻿#include "weizhiyidongform.h"
 #include "ui_weizhiyidongform.h"
 #include "zhuzhongxingform.h"
 #include "../../modbus/NCMachine.h"

@@ -37,7 +37,7 @@ RunAutoForm::RunAutoForm(QWidget *parent) :
             QString s = windowA->GetGCode();
             if (s.isEmpty()) {
                 ui->tabWidget->setCurrentIndex(0);
-                FormUtils::MessageBoxInfo(tr("MYXYSJ！"));
+                FormUtils::MessageBoxInfo(tr("MYXYSJ"));
             }
             else {
                 windowB->LoadData();

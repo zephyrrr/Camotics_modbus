@@ -528,6 +528,8 @@ int mainQt(int argc, char* argv[])
     /*auto s = QStyleFactory::keys();
     QApplication::setStyle(QStyleFactory::create("windows"));*/
 
+    SystemSettings::instance().LoadFromFile(QDir::currentPath() + "/data/qGlobal.ini");
+
     QApplication qtApp(argc, argv);
 
     EventLogger* logger = new EventLogger(&qtApp);
@@ -539,14 +541,17 @@ int mainQt(int argc, char* argv[])
     QApplication::setApplicationName(PRODUCT_NAME);
 	QApplication::setApplicationVersion(PRODUCT_VERSION);
 
-    QLocale curLocale(QLocale::Language::Chinese, QLocale::Country::China);
-    curLocale = QLocale(QLocale::English);
-
+    QLocale curLocale;
+    QString setLocale = SystemSettings::instance().GetValue("System/Lang");
+    if (!setLocale.isEmpty())
+    {
+        curLocale = QLocale(setLocale);
+        QLocale::setDefault(curLocale);
+    }
     //QLocale systemLocale = QLocale::system();
     //qDebug() << "System Language:" << systemLocale.language();
     //qDebug() << "System Country:" << systemLocale.country();
     //qDebug() << "Full Name (e.g., en_US):" << systemLocale.name();
-    QLocale::setDefault(curLocale);
     //QLocale curLocale;
 
     auto translationsPath = "./translations"; // QLibraryInfo::location(QLibraryInfo::TranslationsPath);

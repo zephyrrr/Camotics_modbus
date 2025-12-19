@@ -3234,7 +3234,7 @@ QString NCMachine::RunCCode(QString gcode)
 			if (m_paramCsNames.count() != parts.count()) {
 				LOG_WARNING("EDM: Invalid C Command: " << EUtils::QString2StdString(ccommand));
 // [AUTO-TRANSLATION-COMMENT] C命令参数数量和要求的不一致！
-				THROW(EUtils::QString2StdString(tr("CMLCSSLHYQDBYZ！")));
+				THROW(EUtils::QString2StdString(tr("CMLCSSLHYQDBYZ")));
 				linesNew.append("; Error: " + line);
 				continue;
 			}

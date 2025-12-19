@@ -341,7 +341,7 @@ QtWin2::QtWin2(QWidget* parent)
 	if (!m_modbus->isConnected()) {
 		m_serialPortNeedReconnect = true;
 		//ui->CNCstate->setText(tr("BJ"));
-		ui->lblResultMessage->setText(tr("CKWLJ！"));
+		ui->lblResultMessage->setText(tr("CKWLJ"));
 		ui->actionRun->setEnabled(false);
 		ui->actionCancel->setEnabled(false);
 	}
@@ -1270,7 +1270,7 @@ void QtWin2::UpdateStateByTimer()
 			modbusConnect(false);
 			modbusConnect(true);
 			if (!m_modbus->isConnected()) {
-				ui->lblResultMessage->setText(tr("CKWLJ！"));
+				ui->lblResultMessage->setText(tr("CKWLJ"));
 				ui->actionRun->setEnabled(false);
 				ui->actionCancel->setEnabled(false);
 			}

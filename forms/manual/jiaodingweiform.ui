@@ -1,4 +1,4 @@
-<ui version="4.0">
+﻿<ui version="4.0">
  <class>JiaoDingWeiForm</class>
  <widget class="QWidget" name="JiaoDingWeiForm">
   <property name="geometry">
@@ -489,7 +489,7 @@
      <item>
       <widget class="QTextBrowser" name="textBrowser">
        <property name="html">
-        <string>&lt;ZH]DZDDYZH。FX]DZDFX，WDYZZFX，WDYZDFFX。</string>
+        <string></string>
        </property>
       </widget>
      </item>
