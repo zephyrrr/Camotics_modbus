@@ -1,4 +1,4 @@
-#include "dataform.h"
+﻿#include "dataform.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFile>
@@ -101,6 +101,14 @@ DataForms::DataForms()
 }
 DataForms::~DataForms() {
     UnloadData();
+}
+
+void DataForms::removeDataForm(QString objectName)
+{
+    if (m_dataForms.contains(objectName)) {
+        delete m_dataForms[objectName];
+        m_dataForms.remove(objectName);
+    }
 }
 
 DataForm* DataForms::getDataForm(QString objectName, QString projectDir)

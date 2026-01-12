@@ -1,4 +1,4 @@
-#ifndef DATAFORM_H
+﻿#ifndef DATAFORM_H
 #define DATAFORM_H
 
 #include <QString>
@@ -48,6 +48,7 @@ public:
 	static DataForms* getInstance();
 	~DataForms();
 
+	void removeDataForm(QString objectName);
 	DataForm* getDataForm(QString objectName, QString projectDir=NULL);
 	QString getValue(const QString& caption) const;
 

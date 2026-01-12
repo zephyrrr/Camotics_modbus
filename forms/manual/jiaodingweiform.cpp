@@ -1,4 +1,4 @@
-#include "jiaodingweiform.h"
+﻿#include "jiaodingweiform.h"
 #include "ui_jiaodingweiform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -91,7 +91,7 @@ void JiaoDingWeiForm::RunGCode()
         });
 }
 
-QString JiaoDingWeiForm::GetGCode()
+QString JiaoDingWeiForm::GetGCode(bool forRun)
 {
     //int inPosType = ui->buttonGroupJiaoWeiZhi->checkedId();
 

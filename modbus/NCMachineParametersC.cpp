@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <iomanip>
 #include <string>
 #include "NCMachineParametersC.h"
@@ -51,7 +51,7 @@ bool NCMachineParametersC::SetByCIndex(int cIndex)
 		hasValue = true;
 		NCMachineParametersC::SetCurrentByName(names[i], v);
 	}
-	// ¼Ó¹¤Ìõ¼şÎªC9**Ê±£¬µç×è¿ªÂ·£¬µç¸Ğ¶ÌÂ·£¬Bit24=0£¬Bit25=0£»
+	// åŠ å·¥æ¡ä»¶ä¸ºC9**æ—¶ï¼Œç”µé˜»å¼€è·¯ï¼Œç”µæ„ŸçŸ­è·¯ï¼ŒBit24=0ï¼ŒBit25=0ï¼›
 	if (cIndex >= 900) {
 		PropertyObjects::getInstance()->propertyObjectFdhl->setdgsnw(0);
 		PropertyObjects::getInstance()->propertyObjectFdhl->setdzsnw(0);
@@ -80,7 +80,7 @@ std::string NCMachineParametersC::GetNamesAsString()
 	for (int i = 0; i < PARAMETERC_COLUMN_COUNT; i++) {
 		int width = namesLen[i];
 		if (width < 0) {
-			// Èç¹û¿í¶ÈÎª¸ºÊı£¬±íÊ¾²»ÏŞÖÆ¿í¶È
+			// å¦‚æœå®½åº¦ä¸ºè´Ÿæ•°ï¼Œè¡¨ç¤ºä¸é™åˆ¶å®½åº¦
 			oss << std::setw(5) << std::setfill(' ') << std::left << names[i] << " ";
 		}
 		else {
@@ -119,12 +119,12 @@ std::string NCMachineParametersC::FormatCCode(std::string cCode)
 	std::vector<std::string> values;
 	std::string value;
 
-	// ½«ÊäÈë×Ö·û´®°´¿Õ¸ñ·Ö¸î³Éµ¥¶ÀµÄÖµ
+	// å°†è¾“å…¥å­—ç¬¦ä¸²æŒ‰ç©ºæ ¼åˆ†å‰²æˆå•ç‹¬çš„å€¼
 	while (iss >> value) {
 		values.push_back(value);
 	}
 
-	// È·±£ÖµµÄÊıÁ¿Óë namesLen µÄ³¤¶ÈÆ¥Åä
+	// ç¡®ä¿å€¼çš„æ•°é‡ä¸ namesLen çš„é•¿åº¦åŒ¹é…
 	if (values.size() != PARAMETERC_COLUMN_COUNT + 2) {
 		//throw std::runtime_error("Input values count does not match namesLen length");
 		return "";
@@ -142,7 +142,7 @@ std::string NCMachineParametersC::FormatCCode(std::string cCode)
 			int width = namesLen[i - 2];
 			
 			if (width < 0) {
-				// Èç¹û¿í¶ÈÎª¸ºÊı£¬±íÊ¾²»ÏŞÖÆ¿í¶È
+				// å¦‚æœå®½åº¦ä¸ºè´Ÿæ•°ï¼Œè¡¨ç¤ºä¸é™åˆ¶å®½åº¦
 				oss << std::setw(5) << std::setfill(' ') << std::right << values[i] << " ";
 			}
 			else {
@@ -150,7 +150,7 @@ std::string NCMachineParametersC::FormatCCode(std::string cCode)
 					width = names[i - 2].length();
 				}
 
-				// ¸ù¾İ¿í¶ÈÌî³ä»ò½Ø¶ÏÖµ
+				// æ ¹æ®å®½åº¦å¡«å……æˆ–æˆªæ–­å€¼
 				if (values[i].length() > static_cast<size_t>(width)) {
 					oss << values[i].substr(0, width) << " ";
 				}
@@ -233,7 +233,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 			auto ma = std::stoi(sma);
 			if (ma < 1000) {
 				int oc0 = oc % 100;
-				if (oc0 == 0) // OCµÄºóÁ½Î» = 0
+				if (oc0 == 0) // OCçš„åä¸¤ä½ = 0
 				{
 					PropertyObjects::getInstance()->propertyObjectFdjg->setjcycjcms(0);
 				}
@@ -260,9 +260,57 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 			}
 		}
 	}
-	else if (name == "IP") {
-		auto ip = value.toInt();
+	else if (name == "IP" || name == "V") {
+		auto ip = std::stoi(GetCurrentByName("IP"));
+		QString v = QString::fromStdString(GetCurrentByName("V"));
+		//auto ip = value.toInt();
 		
+		//QString v = value;
+		int len = v.length();
+		{
+			int x = len > 0 ? v[len - 1].digitValue() : 0;
+			//PropertyObjects::getInstance()->propertyObjectFdhl->setLLV(x == 1);
+			//PropertyObjects::getInstance()->propertyObjectFdhl->setHLV(x == 2);
+			x = x >= 1 && x <= 4 ? x : 1;
+
+			int x2 = v[0].digitValue();
+			PropertyObjects::getInstance()->propertyObjectFdhl->setLV(x > x2 ? x : x2);
+		}
+
+		if (v == "01" || v == "02" || v == "03" || v == "04") {
+			// remain same
+		}
+		else if (v == "11") {
+			ip += 1;
+		}
+		else if (v == "21" || v == "32") {
+			int b = ip % 10;
+			int a = ip - b;
+			ip = a * 2 / 3 + b + 2;
+		}
+		else if (v == "31") {
+			int b = ip % 10;
+			int a = ip - b;
+			ip = a * 1 / 2 + b + 1;
+		}
+		else if (v == "41") {
+			int b = ip % 10;
+			int a = ip - b;
+			ip = a * 1 / 3 + b + 4;
+		}
+		else if (v == "12" || v == "22") {
+			ip += 2;
+		}
+		else if (v == "42") {
+			int b = ip % 10;
+			int a = ip - b;
+			ip = a * 1 / 2 + b + 2;
+		}
+		else {
+			// invalid. process in outer 
+			return false;
+		}
+
 		DataForm* dataForm4 = DataForms::getInstance()->getDataForm("xitongshezhi4");
 		double slv3 = dataForm4->getValue("FJDL3").toDouble() * 10;
 		double slv2 = dataForm4->getValue("FJDL2").toDouble() * 10;
@@ -318,6 +366,8 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		if (ip >= 3) {
 			ip = ip - 3;
 		}
+
+		
 	}
 	else if (name == "SV") {
 		auto sv = value.toInt();
@@ -329,13 +379,13 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		PropertyObjects::getInstance()->propertyObjectFdjg->setfdjgcfdy(sv);
 	}
 	else if (name == "UP") {
-		// Ì§µ¶¸ß¶È»ùÊı
+		// æŠ¬åˆ€é«˜åº¦åŸºæ•°
 		int x = DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("TDGDJS").toInt();
 		int up = value.toInt();
 		PropertyObjects::getInstance()->propertyObjectFdwc->settdgd(up * x);
 	}
 	else if (name == "DN") {
-		// ·ÅµçÊ±¼ä»ùÊı
+		// æ”¾ç”µæ—¶é—´åŸºæ•°
 		int x = DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("FDSJJS").toInt();
 		int dw = value.toInt();
 		PropertyObjects::getInstance()->propertyObjectFdwc->setfdsj(dw * x);
@@ -344,7 +394,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		QString ln = value;
 		int len = ln.length();
 
-		// ²»ÒªÅĞ¶Ïif (len > 0)£¬ÒòÎªLNµÄÖµ¿ÉÄÜÊÇ10¶ø²»ÊÇ010
+		// ä¸è¦åˆ¤æ–­if (len > 0)ï¼Œå› ä¸ºLNçš„å€¼å¯èƒ½æ˜¯10è€Œä¸æ˜¯010
 		PropertyObjects::getInstance()->propertyObjectYd->setydpm(len > 0 ? ln[len - 1].digitValue() : 0);
 		PropertyObjects::getInstance()->propertyObjectYd->setydfwcfms(len > 1 ? ln[len - 2].digitValue() : 0);
 		PropertyObjects::getInstance()->propertyObjectYd->setydfwdzms(len > 2 ? ln[len - 3].digitValue() : 0);
@@ -378,17 +428,6 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		int len = pl.length();
 		PropertyObjects::getInstance()->propertyObjectFdhl->setfjxjgw(len > 0 ? (pl[len - 1] == '+' ? 0 : 1) : 0);
 	}
-	else if (name == "V") {
-		QString v = value;
-		int len = v.length();
-		{
-			int x = len > 0 ? v[len - 1].digitValue() : 0;
-			//PropertyObjects::getInstance()->propertyObjectFdhl->setLLV(x == 1);
-			//PropertyObjects::getInstance()->propertyObjectFdhl->setHLV(x == 2);
-			x = x >= 1 && x <= 4 ? x : 1;
-			PropertyObjects::getInstance()->propertyObjectFdhl->setLV(x);
-		}
-	}
 	else if (name == "HP") {
 
 		QString hp = value;
@@ -415,10 +454,10 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 	else if (name == "PP") {
 		QString pp = value;
 		int len = pp.length();
-		// PPµÄ¸öÎ»Êı£¬¼Ä´æÆ÷±àºÅ83
+		// PPçš„ä¸ªä½æ•°ï¼Œå¯„å­˜å™¨ç¼–å·83
 		PropertyObjects::getInstance()->propertyObjectReg83->setppgw(len > 0 ? pp[len - 1].digitValue() : 0);
 		//PropertyObjects::getInstance()->propertyObjectFdjg->setjgmcfzmcxz(len > 0 ? pp[len - 1].digitValue() : 1);
-		// PPµÄÊ®Î»¶ÔÓ¦Bit28~30
+		// PPçš„åä½å¯¹åº”Bit28~30
 		PropertyObjects::getInstance()->propertyObjectFdhl->setfzdyxz(len > 1 ? pp[len - 2].digitValue() : 0);
 
 		/*if (pp.length() > 1) {
@@ -452,7 +491,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		PropertyObjects::getInstance()->propertyObjectFdjg->setfdcftzsd(len > 1 ? s[len - 2].digitValue() : 0);
 	}
 	else if (name == "LS" || name == "L") {
-		// Ò¡¶¯ËÙ¶È»ùÊı
+		// æ‘‡åŠ¨é€Ÿåº¦åŸºæ•°
 		int x = DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("YDSDJS").toInt();
 		QString ls = value;
 		int len = ls.length();
@@ -493,7 +532,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 
 				s = SystemSettings::instance().GetValue("LEJS");
 				if (!s.isEmpty()) {
-					v = (int)(s.toDouble() * 1000);
+					v = (int)(s.toDouble() * 1);
 				}
 				else {
 					v = dataForm3->getValue("MTDSD").toInt();
@@ -502,7 +541,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 			}
 		}
 
-		// Ì§µ¶ËÙ¶È»ùÊı
+		// æŠ¬åˆ€é€Ÿåº¦åŸºæ•°
 		QString jm = QString::fromStdString(GetCurrentByName("JM"));
 		{
 			int len = jm.length();
@@ -529,7 +568,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		//PropertyObjects::getInstance()->propertyObjectFdwc->setectdxydtdcs(len > 1 ? jm[len - 2].digitValue() : 0);
 		PropertyObjects::getInstance()->propertyObjectFdwc->settdfx(len > 0 ? jm[len - 1].digitValue() : 9);
 
-		// Ì§µ¶ËÙ¶È»ùÊı
+		// æŠ¬åˆ€é€Ÿåº¦åŸºæ•°
 		{
 			int jm2 = len > 1 ? jm[len - 2].digitValue() : 0;
 			if (jm2 == 0) {
@@ -547,9 +586,9 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 		}
 	}
 	else if (name == "SJ") {
-		//// »ØÖĞĞÄÌ§µ¶¸ß¶È»ùÊı
+		//// å›ä¸­å¿ƒæŠ¬åˆ€é«˜åº¦åŸºæ•°
 		//int x = DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("HZXTDGDJS").toInt();
-		//// »ØÖĞĞÄÌ§µ¶ËÙ¶È»ùÊı
+		//// å›ä¸­å¿ƒæŠ¬åˆ€é€Ÿåº¦åŸºæ•°
 		//int x2 = DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("HZXTDSDJS").toInt();
 		//QString sj = value;
 		//int len = sj.length();

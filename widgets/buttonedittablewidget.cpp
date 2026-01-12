@@ -1,10 +1,11 @@
-#include "buttonedittablewidget.h"
+ï»¿#include "buttonedittablewidget.h"
 #include <QApplication>
 #include <QTimer>
 #include <QHeaderView>
 #include <QButtonGroup>
 #include <Qdir>
 #include <QMenu>
+#include <QJsonObject>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QFocusEvent>
@@ -81,7 +82,7 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
 //                button->setContextMenuPolicy(Qt::CustomContextMenu);
 //                connect(button, &QPushButton::customContextMenuRequested, [this, button](const QPoint& pos) {
 //                    QMenu menu(this);
-//                    QAction* deleteRowAction = new QAction(QStringLiteral("É¾³ýÐÐ"), this);
+//                    QAction* deleteRowAction = new QAction(QStringLiteral("åˆ é™¤è¡Œ"), this);
 //                    connect(deleteRowAction, &QAction::triggered, [this, button]() {
 //                        int row = this->indexAt(button->pos()).row();
 //                        if (row != -1) {
@@ -103,25 +104,26 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
 //        }
 //    }
 //}
-
-bool ButtonEditTableWidget::serialize(QString filePathName)
+QJsonArray ButtonEditTableWidget::GetData(ButtonEditTableWidget* parent, bool asMap)
 {
-    try {
-        QJsonArray data;
-        for (int row = 0; row < this->rowCount(); ++row) {
+    QJsonArray data;
+    for (int row = 0; row < parent->rowCount(); ++row) {
+        bool hasData = false;
+
+        if (!asMap) {
             QJsonArray rowData;
-            bool hasData = false;
+            
             if (row == 0) {
-                for (int col = 0; col < this->columnCount(); ++col) {
-                    rowData.append(inLabels[col]->text());
+                for (int col = 0; col < parent->columnCount(); ++col) {
+                    rowData.append(parent->inLabels[col]->text());
                 }
                 hasData = true;
             }
             else {
-                for (int col = 0; col < this->columnCount(); ++col) {
+                for (int col = 0; col < parent->columnCount(); ++col) {
                     if (col == 0) {
                         //QPushButton* btn = qobject_cast<QPushButton*>(this->cellWidget(row, col));
-						QPushButton* btn = inButtons[row - 1];
+                        QPushButton* btn = parent->inButtons[row - 1];
                         rowData.append(btn->isChecked() ? "True" : "False");
                         if (btn->isChecked()) {
                             hasData = true;
@@ -129,11 +131,11 @@ bool ButtonEditTableWidget::serialize(QString filePathName)
                     }
                     else {
                         //ILineEdit* edit = qobject_cast<ILineEdit*>(this->cellWidget(row, col));
-						ILineEdit* edit = inEdits[row - 1][col - 1];
+                        ILineEdit* edit = parent->inEdits[row - 1][col - 1];
                         rowData.append(edit->text());
                         if (!edit->text().isEmpty()) {
-							hasData = true;
-						}
+                            hasData = true;
+                        }
                     }
                 }
             }
@@ -141,6 +143,42 @@ bool ButtonEditTableWidget::serialize(QString filePathName)
                 data.append(rowData);
             }
         }
+        else {
+            if (row == 0) {
+                continue;
+            }
+            QJsonObject rowData;
+            for (int col = 0; col < parent->columnCount(); ++col) {
+                if (col == 0) {
+                    //QPushButton* btn = qobject_cast<QPushButton*>(this->cellWidget(row, col));
+                    QPushButton* btn = parent->inButtons[row - 1];
+                    rowData.insert(parent->inLabels[col]->text(), (btn->isChecked() ? "True" : "False"));
+                    if (btn->isChecked()) {
+                        hasData = true;
+                    }
+                }
+                else {
+                    //ILineEdit* edit = qobject_cast<ILineEdit*>(this->cellWidget(row, col));
+                    ILineEdit* edit = parent->inEdits[row - 1][col - 1];
+                    rowData.insert(parent->inLabels[col]->text(), edit->text());
+                    if (!edit->text().isEmpty()) {
+                        hasData = true;
+                    }
+                }
+            }
+            if (true || hasData) {
+                data.append(rowData);
+            }
+        }
+    }
+
+    return data;
+}
+
+bool ButtonEditTableWidget::serialize(QString filePathName)
+{
+    try {
+        QJsonArray data = GetData(this);
 
         QJsonDocument doc(data);
         QString json = doc.toJson();
@@ -353,7 +391,7 @@ void ButtonEditTableWidget::setRowSelection(int row, bool selected)
         return;
     }
 
-	if (row < 0 || row > this->rowCount() - 1) {
+	if (row - 1 < 0 || row - 1 >= inEdits.count()) {
 		return;
 	}
     // isChecked() is auto set by ui
@@ -406,7 +444,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //    button->setContextMenuPolicy(Qt::CustomContextMenu);
     //    connect(button, &QPushButton::customContextMenuRequested, [this, button](const QPoint& pos) {
     //        QMenu menu(this);
-    //        QAction* deleteRowAction = new QAction(QStringLiteral("É¾³ý"), this);
+    //        QAction* deleteRowAction = new QAction(QStringLiteral("åˆ é™¤"), this);
     //        connect(deleteRowAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -417,7 +455,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(deleteRowAction);
 
-    //        QAction* copyAction = new QAction(QStringLiteral("¸´ÖÆ"), this);
+    //        QAction* copyAction = new QAction(QStringLiteral("å¤åˆ¶"), this);
     //        connect(copyAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -429,7 +467,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(copyAction);
 
-    //        QAction* pasteAction = new QAction(QStringLiteral("Õ³Ìù"), this);
+    //        QAction* pasteAction = new QAction(QStringLiteral("ç²˜è´´"), this);
     //        connect(pasteAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -442,7 +480,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(pasteAction);
 
-    //        QAction* insertAction = new QAction(QStringLiteral("²åÈë"), this);
+    //        QAction* insertAction = new QAction(QStringLiteral("æ’å…¥"), this);
     //        connect(insertAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -456,7 +494,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //}
 
     connect(button, &QPushButton::clicked, [this, button](bool checked) {
-        // ²»ÔÚÑ¡ÖÐÕû¸öÐÐ£¬Ö»ÊÇÒÔbutton×´Ì¬À´¿ØÖÆ²Ù×÷
+        // ä¸åœ¨é€‰ä¸­æ•´ä¸ªè¡Œï¼Œåªæ˜¯ä»¥buttonçŠ¶æ€æ¥æŽ§åˆ¶æ“ä½œ
         int rowHere = this->indexAt(button->pos()).row();
 		//this->setRowSelection(rowHere, checked);
 

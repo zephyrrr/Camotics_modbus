@@ -1,4 +1,4 @@
-#include "zuobiaoxishezi.h"
+Ôªø#include "zuobiaoxishezi.h"
 #include "ui_zuobiaoxishezi.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -47,7 +47,7 @@ ZuoBiaoXiSheZiForm::ZuoBiaoXiSheZiForm(QWidget *parent) :
     layout->addWidget(table);
 
     // Add header labels 
-    QString headers[] = { QStringLiteral("◊¯±Íœµ"), "X", "Y", "Z", "U"};
+    QString headers[] = { QStringLiteral("ÂùêÊ†áÁ≥ª"), "X", "Y", "Z", "U"};
     for (int i = 0; i < POS_AXIS_LEN + 1; ++i) {
         //layout->addWidget(new QLabel(headers[i]), 0, i);
         QLabel* label = new QLabel(headers[i], table);
@@ -57,7 +57,7 @@ ZuoBiaoXiSheZiForm::ZuoBiaoXiSheZiForm(QWidget *parent) :
     }
 
     buttonGroup = new QButtonGroup(this);
-    QString coorNames[] = { "054", "055", "056", "057", "058", "059", QStringLiteral("ª˙–µ")};
+    QString coorNames[] = { "054", "055", "056", "057", "058", "059", QStringLiteral("Êú∫Ê¢∞")};
     // Add buttons and line edits
     for (int row = 1; row < 8; ++row) {
         QPushButton* button = new QPushButton(coorNames[row-1], table);
@@ -105,7 +105,7 @@ ZuoBiaoXiSheZiForm::ZuoBiaoXiSheZiForm(QWidget *parent) :
             inEdit->setAlignment(Qt::AlignCenter);
             inEdit->setStyle(inEdit->style());
             inEdit->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-            // U÷·
+            // UËΩ¥
             if (col > POS_AXIS_LEN) {
                 inEdit->setReadOnly(true);
             }
@@ -275,12 +275,12 @@ void ZuoBiaoXiSheZiForm::SaveData(QString filePath)
 
 void ZuoBiaoXiSheZiForm::UpdateState()
 {
-    // »Áπ˚“ª÷±Update£¨ª·≤ªƒ‹±‡º≠
+    // Â¶ÇÊûú‰∏ÄÁõ¥UpdateÔºå‰ºö‰∏çËÉΩÁºñËæë
     //ReloadData();
 }
 
 
-QString ZuoBiaoXiSheZiForm::GetGCode()
+QString ZuoBiaoXiSheZiForm::GetGCode(bool forRun)
 {
     auto controller = m_ncMachine->GetController();
     //auto pos = controller->getAbsolutePosition();

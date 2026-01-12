@@ -17,6 +17,7 @@
 
 #include "../modbus/NCCommand.h"
 #include "BaseMainWindow.h"
+#include "forms/mainwindow2.h"
 
 RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings)
 	: QDialog{ parent }, m_ncMachine(machine), m_modbus(adapter), m_modbusCommSettings(settings), ui(new Ui::RegWindow)
@@ -554,7 +555,7 @@ void RegWindow::UpdateState2(unsigned long long key)
 
 void RegWindow::on_btnStart_clicked()
 {
-	BaseMainWindow::modbusConnect(true, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMainWindow::modbusConnect(true, m_modbus, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbus->isConnected());
 	ui->btnStop->setEnabled(m_modbus->isConnected());
@@ -564,7 +565,7 @@ void RegWindow::on_btnStart_clicked()
 
 void RegWindow::on_btnStop_clicked()
 {
-	BaseMainWindow::modbusConnect(false, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMainWindow::modbusConnect(false, m_modbus, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbus->isConnected());
 	ui->btnStop->setEnabled(m_modbus->isConnected());

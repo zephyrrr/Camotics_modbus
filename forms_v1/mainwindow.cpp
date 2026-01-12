@@ -12,7 +12,7 @@
 #include "forms/manual/weizhiyidongform.h"
 
 QtWin::QtWin(QWidget *parent)
-    : BaseMainWindow(parent)
+    : ModbusMainWindow(parent)
     , ui(new Ui::QtWin)
 {
     ui->setupUi(this);

@@ -1,4 +1,4 @@
-#ifndef ZUOBIAOXISHEZIFORM_H
+﻿#ifndef ZUOBIAOXISHEZIFORM_H
 #define ZUOBIAOXISHEZIFORM_H
 
 #include <QWidget>
@@ -43,7 +43,7 @@ public:
     void SaveData(QString filePath = NULL) override;
     void UpdateState() override;
 
-    QString GetGCode() override;
+    QString GetGCode(bool forRun = true) override;
     void RunGCode() override;
     void ClearInputWidgets(QWidget* parent) override;
 

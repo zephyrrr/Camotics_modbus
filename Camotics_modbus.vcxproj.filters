@@ -942,6 +942,9 @@
     </None>
     <None Include="plugins\main\test_plugin.test.py" />
     <None Include="plugins\WeiZhiYiDongForm\init.py.test" />
+    <None Include="plugins_src\python\template\dgjg1_template.gcode" />
+    <None Include="plugins_src\python\gcode_generator.py" />
+    <None Include="plugins_src\sdjg\getgcode1.py" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="Translation_zh_CN.ts" />

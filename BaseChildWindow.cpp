@@ -1,4 +1,4 @@
-#include "BaseChildWindow.h"
+ï»¿#include "BaseChildWindow.h"
 #include <QDesktopWidget>
 #include <QKeyEvent>
 #include <QApplication>
@@ -14,6 +14,8 @@
 #include "modbus/NCMachine.h"
 
 #include "utils/pluginutils.h"
+#include "utils/dataform.h"
+#include "widgets/buttonedittablewidget.h"
 
 #define BOOST_ALL_NO_LIB
 #include <cbang/boost/StartInclude.h>
@@ -60,7 +62,7 @@ void BaseChildWindow::showEvent(QShowEvent* event)
 	}
 
 
-	// ÓĞÊ±ºòÊı¾İÒªË¢ĞÂ£¬ËùÒÔÃ¿´ÎÏÔÊ¾´°¿ÚÊ±¶¼ÖØĞÂ¼ÓÔØÊı¾İ
+	// æœ‰æ—¶å€™æ•°æ®è¦åˆ·æ–°ï¼Œæ‰€ä»¥æ¯æ¬¡æ˜¾ç¤ºçª—å£æ—¶éƒ½é‡æ–°åŠ è½½æ•°æ®
 	//if (!m_dataLoaded) {
 		//m_dataLoaded = true;
 		LoadData();
@@ -112,7 +114,7 @@ void BaseChildWindow::SaveData(QString filePath)
 
 void BaseChildWindow::LoadData(QWidget* parent, QString filePath, QHash<QString, QString>* alreadyFileContent)
 {
-	// ´ÓÎÄ¼şÖĞ¶ÁÈ¡×Ö·û´®
+	// ä»æ–‡ä»¶ä¸­è¯»å–å­—ç¬¦ä¸²
 	if (filePath == NULL) {
 		filePath = GetDataFilePath(parent, SystemSettings::instance().GetProjectDir());
 	}
@@ -128,11 +130,11 @@ void BaseChildWindow::LoadData(QWidget* parent, QString filePath, QHash<QString,
 	}
 	file.close();
 
-	// ½«×Ö·û´®×ª»»ÎªJSON¶ÔÏó
+	// å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºJSONå¯¹è±¡
 	QJsonDocument doc = QJsonDocument::fromJson(jsonString.toUtf8());
 	QJsonObject json = doc.object();
 
-	// ²éÕÒËùÓĞµÄQLineEdit²¿¼ş
+	// æŸ¥æ‰¾æ‰€æœ‰çš„QLineEditéƒ¨ä»¶
 	QList<QLineEdit*> lineEdits = parent->findChildren<QLineEdit*>();
 	for (QLineEdit* lineEdit : lineEdits) {
 		if (json.contains(lineEdit->objectName())) {
@@ -145,7 +147,7 @@ void BaseChildWindow::LoadData(QWidget* parent, QString filePath, QHash<QString,
 		}
 	}
 
-	// ²éÕÒËùÓĞµÄQPushButton²¿¼ş
+	// æŸ¥æ‰¾æ‰€æœ‰çš„QPushButtonéƒ¨ä»¶
 	QList<QPushButton*> buttons = parent->findChildren<QPushButton*>();
 	for (QPushButton* button : buttons) {
 		if (!button->isEnabled())
@@ -177,12 +179,37 @@ void BaseChildWindow::LoadData(QWidget* parent, QString filePath, QHash<QString,
 
 void BaseChildWindow::SaveData(QWidget* parent, QString filePath, QHash<QString, QString>* alreadyFileContent)
 {
+	DataForms::getInstance()->removeDataForm(parent->objectName());
+
 	if (filePath == NULL) {
 		filePath = GetDataFilePath(parent, SystemSettings::instance().GetProjectDir());
 	}
 
+	QJsonObject json = GetData(parent);
+
+	// å°†JSONå¯¹è±¡è½¬æ¢ä¸ºå­—ç¬¦ä¸²
+	QJsonDocument doc(json);
+	QString jsonString = doc.toJson(QJsonDocument::Indented);
+
+	// å°†å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
+	if (alreadyFileContent != NULL) {
+		if (alreadyFileContent->contains(filePath) && jsonString == (*alreadyFileContent)[filePath])
+			return;
+		(*alreadyFileContent)[filePath] = jsonString;
+	}
+
+	NFile file(filePath);
+	if (file.open(QIODevice::WriteOnly)) {
+		file.write(jsonString.toUtf8());
+		file.close();
+	}
+
+}
+
+QJsonObject BaseChildWindow::GetData(QWidget* parent, bool includeTable)
+{
 	QJsonObject json;
-	// ²éÕÒËùÓĞµÄQLineEdit²¿¼ş
+	// æŸ¥æ‰¾æ‰€æœ‰çš„QLineEditéƒ¨ä»¶
 	QList<QLineEdit*> lineEdits = parent->findChildren<QLineEdit*>();
 	for (QLineEdit* lineEdit : lineEdits) {
 		QString key = lineEdit->objectName();
@@ -190,7 +217,7 @@ void BaseChildWindow::SaveData(QWidget* parent, QString filePath, QHash<QString,
 			json.insert(key, QJsonValue(lineEdit->text()));
 		}
 	}
-	// ²éÕÒËùÓĞµÄQPushButton²¿¼ş
+	// æŸ¥æ‰¾æ‰€æœ‰çš„QPushButtonéƒ¨ä»¶
 	QList<QPushButton*> buttons = parent->findChildren<QPushButton*>();
 	for (QPushButton* button : buttons) {
 		if (button->isEnabled() && button->isCheckable()) {
@@ -209,23 +236,16 @@ void BaseChildWindow::SaveData(QWidget* parent, QString filePath, QHash<QString,
 		}
 	}
 
-	// ½«JSON¶ÔÏó×ª»»Îª×Ö·û´®
-	QJsonDocument doc(json);
-	QString jsonString = doc.toJson(QJsonDocument::Indented);
-
-	// ½«×Ö·û´®Ğ´ÈëÎÄ¼ş
-	if (alreadyFileContent != NULL) {
-		if (alreadyFileContent->contains(filePath) && jsonString == (*alreadyFileContent)[filePath])
-			return;
-		(*alreadyFileContent)[filePath] = jsonString;
+	if (includeTable) {
+		QList<ButtonEditTableWidget*> tables = parent->findChildren<ButtonEditTableWidget*>();
+		for (ButtonEditTableWidget* lineEdit : tables) {
+			QString key = lineEdit->objectName();
+			if (!key.isEmpty()) {
+				json.insert(key, lineEdit->GetData(lineEdit, true));
+			}
+		}
 	}
-
-	NFile file(filePath);
-	if (file.open(QIODevice::WriteOnly)) {
-		file.write(jsonString.toUtf8());
-		file.close();
-	}
-
+	return json;
 }
 
 void BaseChildWindow::ClearInputWidgets(QWidget* parent)
@@ -384,14 +404,14 @@ void SoftKeyboardWidget::ShowKeyboard(QWidget* receiver, bool autoHide, int keyb
 			}
 		}
 
-		// ÆÁÄ»ÓÒÏÂ½Ç
+		// å±å¹•å³ä¸‹è§’
 		//auto screenGeometry = QApplication::desktop()->availableGeometry();
 		//auto screenGeo = screenGeometry.bottomRight();
 		//auto msgGeo = m_keyboardNumeric->frameGeometry();
 		//msgGeo.moveBottomRight(screenGeo);
 		//m_keyboardNumeric->move(msgGeo.topLeft());
 
-		// ÆÁÄ»ÓÒÉÏ½Ç
+		// å±å¹•å³ä¸Šè§’
 		//QPoint mainWindowPos = this->pos();
 		//QSize mainWindowSize = this->size();
 		//int x = mainWindowPos.x() + mainWindowSize.width() - m_keyboardNumeric->width();
@@ -413,7 +433,7 @@ void SoftKeyboardWidget::ShowKeyboard(QWidget* receiver, bool autoHide, int keyb
 			// in some window like fangdianform, there is child window which host softkeyboard
 
 			QSize mainWindowSize = this->window()->size();
-			// some window, like ·Åµç²ÎÊı¡¢¸ßÌô in top menu, window position is not like childwindow, so set it absolutely
+			// some window, like æ”¾ç”µå‚æ•°ã€é«˜æŒ‘ in top menu, window position is not like childwindow, so set it absolutely
 			QPoint newPos = QPoint(mainWindowSize.width() * 875 / 1920, 600);
 			if (pos.y() > 550 && (pos.x() > 850 && pos.x() < 1260))
 				newPos = QPoint(400, 600);
@@ -436,11 +456,11 @@ void SoftKeyboardWidget::ShowKeyboard(QWidget* receiver, bool autoHide, int keyb
 			}
 		}
 		if (receiver) {
-			// »ñÈ¡Ö÷´°¿ÚµÄÎ»ÖÃºÍ´óĞ¡
+			// è·å–ä¸»çª—å£çš„ä½ç½®å’Œå¤§å°
 			QPoint mainWindowPos = this->pos();
 			QSize mainWindowSize = this->size();
 
-			// ¼ÆËã virtualKeyBoard µÄĞÂÎ»ÖÃ
+			// è®¡ç®— virtualKeyBoard çš„æ–°ä½ç½®
 			int x = mainWindowPos.x() + mainWindowSize.width() - m_keyboardFull->width();
 			int y = mainWindowPos.y();
 			QPoint pos = this->mapToGlobal(QPoint(mainWindowPos.x() + mainWindowSize.width(), 0));
@@ -451,7 +471,7 @@ void SoftKeyboardWidget::ShowKeyboard(QWidget* receiver, bool autoHide, int keyb
 			if (y < 0)
 				y = 0;
 
-			// ÒÆ¶¯ virtualKeyBoard µ½ĞÂÎ»ÖÃ
+			// ç§»åŠ¨ virtualKeyBoard åˆ°æ–°ä½ç½®
 			m_keyboardFull->move(x, y);
 			m_keyboardFull->show();
 		}

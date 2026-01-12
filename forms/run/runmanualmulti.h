@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <QMessageBox>
@@ -20,7 +20,7 @@ public:
 	~RunManualMulti();
 	void DoSomething() { QMessageBox::information(this, "title", "text"); };
 
-	QString GetGCode() override;
+	QString GetGCode(bool forRun = true) override;
 	QString GetGCodeV1();
 	QString GetGCodeV2();
 	void RunGCode() override;

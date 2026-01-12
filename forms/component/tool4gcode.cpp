@@ -1,4 +1,4 @@
-#include "tool4gcode.h"
+ï»¿#include "tool4gcode.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "widgets/filedialog.h"
@@ -6,6 +6,7 @@
 #include "utils/nfile.h"
 #include "BaseMainWindow.h"
 #include "forms/edit/nceditform.h"
+#include "utils/gcodeutils.h"
 
 Tool4GCode::Tool4GCode(BaseChildWindow* childWindow, QWidget *parent)
 	: QToolWidget(parent), m_childWindow(childWindow)
@@ -26,9 +27,11 @@ Tool4GCode::~Tool4GCode()
 
 void Tool4GCode::on_btnExport_clicked()
 {
-	QString s = m_childWindow->GetGCode();
+	QString s = m_childWindow->GetGCode(false);
+	s = GCodeUtils::CleanGCode(s);
+
 	if (!s.isEmpty()) {
-		QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("±£´æÎÄ¼ş"), m_path, QStringLiteral("(*.nc)"));
+		QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("ä¿å­˜æ–‡ä»¶"), m_path, QStringLiteral("(*.nc)"));
 		if (!filePath.isEmpty()) {
 
 			NFile file(filePath);

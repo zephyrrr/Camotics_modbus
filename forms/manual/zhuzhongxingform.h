@@ -1,4 +1,4 @@
-#ifndef ZHUZHONGXINGFORM_H
+﻿#ifndef ZHUZHONGXINGFORM_H
 #define ZHUZHONGXINGFORM_H
 
 #include <QWidget>
@@ -26,7 +26,7 @@ private:
 
 public:
     void RunGCode() override;
-	QString GetGCode() override;
+	QString GetGCode(bool forRun = true) override;
 
     static void toggleLineEdit(bool readonly, QLineEdit* inEdit);
     static void toggleButtonEdit(bool checkable, QPushButton* btnP, QPushButton* btnN);

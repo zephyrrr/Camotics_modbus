@@ -1,4 +1,4 @@
-#ifndef BASECHILDWINDOW_H
+﻿#ifndef BASECHILDWINDOW_H
 #define BASECHILDWINDOW_H
 
 #include <QWidget>
@@ -92,9 +92,11 @@ public:
     static void LoadData(QWidget* parent, QString filePath = NULL, QHash<QString, QString> *alreadyFileContent = NULL);
     static void SaveData(QWidget* parent, QString filePath = NULL, QHash<QString, QString> *alreadyFileContent = NULL);
 
+    static QJsonObject GetData(QWidget* parent, bool includeTable = false);
+
     virtual void ClearInputWidgets(QWidget* parent = NULL);
 
-    virtual QString GetGCode() { return NULL; }
+    virtual QString GetGCode(bool forRun = true) { return NULL; }
     virtual void RunGCode() {};
 
     static BaseChildWindow* GetChildWindow(QWidget* widget);

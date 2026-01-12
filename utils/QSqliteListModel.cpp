@@ -1,4 +1,4 @@
-#include "QSQLiteListModel.h"
+﻿#include "QSQLiteListModel.h"
 #include <QDebug>
 
 QSqliteListModel::QSqliteListModel(QObject* parent)
@@ -6,7 +6,7 @@ QSqliteListModel::QSqliteListModel(QObject* parent)
 {
 }
 
-bool QSqliteListModel::loadFromDatabase(const QString& dbPath, const QString& tableName, const QString& columnName)
+bool QSqliteListModel::loadFromDatabase(const QString& dbPath, const QString& tableName, const QStringList& columnName)
 {
     // Clean up previous data
     beginResetModel();
@@ -23,8 +23,10 @@ bool QSqliteListModel::loadFromDatabase(const QString& dbPath, const QString& ta
     }
 
     // 2. Prepare and execute the query
-    QString queryStr = QString("SELECT %1 FROM %2").arg(columnName).arg(tableName);
+    QString queryStr = QString("SELECT ? FROM ?");
     QSqlQuery query(queryStr, m_db);
+    query.addBindValue(columnName.join(','));
+    query.addBindValue(tableName);
 
     if (!query.exec()) {
         qCritical() << "Error executing query:" << query.lastError().text();
@@ -36,7 +38,7 @@ bool QSqliteListModel::loadFromDatabase(const QString& dbPath, const QString& ta
     beginInsertRows(QModelIndex(), 0, 0); // Prepare the model for changes
     while (query.next()) {
         // The first column (index 0) of the result set is our target column
-        m_data.append(query.value(0));
+        m_data.append({ query.value(0).toString(), query.value(1)});
     }
     endInsertRows();
 
@@ -57,8 +59,11 @@ QVariant QSqliteListModel::data(const QModelIndex& index, int role) const
         return QVariant();
 
     if (role == Qt::DisplayRole) {
-        return m_data.at(index.row());
+        return m_data.at(index.row()).text;
     }
+    else if (role == Qt::UserRole) {
+        return m_data.at(index.row()).value;
+	}
     // Handle other roles (like EditRole, DecorationRole) here if needed
 
     return QVariant();

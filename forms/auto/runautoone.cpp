@@ -84,8 +84,8 @@ void RunAutoOne::ExportData()
 	QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(parentName, SystemSettings::instance().GetProjectDir());
 	DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
-	dataFormDest->setValue("lineEditZ1", dataForm->getValue("lineEditZ1"));
-	dataFormDest->setValue("lineEditZ2", dataForm->getValue("lineEditZ2"));
+	dataFormDest->setValue("lineEditZAnQuan", dataForm->getValue("lineEditZAnQuan"));
+	dataFormDest->setValue("lineEditZKaisi", dataForm->getValue("lineEditZKaisi"));
 	dataFormDest->serialize(filePath4Dest);
 }
 
@@ -124,7 +124,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 
 			RunAutoForm* w = this->GetParentOfThis<RunAutoForm>(this);
 			w->windowB->LoadData();
-			QString s = w->windowB->GetGCode();
+			QString s = w->windowB->GetGCode(false);
 			s = GCodeUtils::CleanGCode(s);
 
 			QString m_path = "data/nc";

@@ -21,7 +21,30 @@ QT_END_NAMESPACE
 class Gaotiao4Jiagong;
 class FangDianCanShuSingleForm;
 
-class QtWin2 : public BaseMainWindow
+class ModbusMainWindow : public BaseMainWindow
+{
+    Q_OBJECT
+
+public:
+    ModbusMainWindow(QWidget* parent);
+    ~ModbusMainWindow();
+
+public:
+    void modbusConnect(bool connect);
+    virtual void addNormalTasks();
+    static void modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine);
+
+protected:
+    ModbusCommSettings* m_modbusCommSettings;
+    ModbusAdapter* m_modbus;
+    NCMachine* m_ncMachine;
+
+    RawDataModel* m_rawModel = NULL;
+    RegistersModel* m_regModel = NULL;
+};
+
+
+class QtWin2 : public ModbusMainWindow
 {
     Q_OBJECT
 
@@ -116,7 +139,7 @@ private:
     bool m_serialPortNeedReconnect = false;
 };
 
-class QtWin3 : public BaseMainWindow
+class QtWin3 : public ModbusMainWindow
 {
 	Q_OBJECT
 

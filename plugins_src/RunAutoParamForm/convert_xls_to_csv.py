@@ -2,9 +2,10 @@ import openpyxl
 import os
 import csv
 
-def convert():
-    root_path = 'C:\\OneDrive\\doing\\cnc\\Camotics_modbus\\plugins\\RunAutoParamForm'
-    file_path = os.path.join(root_path, '自动参数模型.xlsx')
+def convert(file_path):
+    root_path = os.path.dirname(file_path)
+    #root_path = 'C:\\OneDrive\\doing\\cnc\\Camotics_modbus\\plugins\\RunAutoParamForm'
+    #file_path = os.path.join(root_path, '自动参数模型7.xlsx')
     #os.chdir(root_path)
 
     if not os.path.exists(file_path):
@@ -105,3 +106,6 @@ def has_duplicate_rows(file_path = '库.csv'):
     except Exception as e:
         print(f"An error occurred: {e}")
         return False
+		
+if __name__ == "__main__":
+	convert('./自动参数模型7.xlsx')

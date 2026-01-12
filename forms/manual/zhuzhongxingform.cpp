@@ -1,4 +1,4 @@
-#include "zhuzhongxingform.h"
+ï»¿#include "zhuzhongxingform.h"
 #include "ui_zhuzhongxingform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -159,7 +159,7 @@ void ZhuZhongXingForm::RunGCode()
     });
 }
 
-QString ZhuZhongXingForm::GetGCode()
+QString ZhuZhongXingForm::GetGCode(bool forRun)
 {
     double inKuaiJingX = ui->inX->text().toDouble();
     double inKuaiJingY = ui->inY->text().toDouble();
@@ -220,9 +220,9 @@ QStandardItemModel* ZhuZhongXingForm::SetupTable4Result(QTableView* tableView, Q
         model->setHeaderData(i, Qt::Horizontal, headerNames[i]);
     }
     for (int i = 0; i < rowCount; ++i) {
-        model->setHeaderData(i, Qt::Vertical, QStringLiteral("µÚ%1´Î").arg(i+1));
+        model->setHeaderData(i, Qt::Vertical, QStringLiteral("ç¬¬%1æ¬¡").arg(i+1));
     }
-    model->setHeaderData(rowCount, Qt::Vertical, QStringLiteral("½á¹û"));
+    model->setHeaderData(rowCount, Qt::Vertical, QStringLiteral("ç»“æžœ"));
 
     tableView->setModel(model);
     tableView->setColumnHidden(0, true);

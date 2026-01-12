@@ -1,4 +1,4 @@
-#ifndef KONGZHONGXINGFORM_H
+﻿#ifndef KONGZHONGXINGFORM_H
 #define KONGZHONGXINGFORM_H
 
 #include <QWidget>
@@ -25,7 +25,7 @@ private:
 
 public:
     void RunGCode() override;
-    QString GetGCode() override;
+    QString GetGCode(bool forRun = true) override;
 
 private slots:
     void on_btnX_clicked();

@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
@@ -13,12 +13,13 @@
 
 #include "camotics/qt/ConsoleWriter.h"
 #include "BaseMainWindow.h"
+#include "forms/mainwindow2.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class QtWin; }
 QT_END_NAMESPACE
 
-class QtWin : public BaseMainWindow
+class QtWin : public ModbusMainWindow
 {
     Q_OBJECT;
 

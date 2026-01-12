@@ -1,14 +1,16 @@
-#include "runmanual.h"
+Ôªø#include "runmanual.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
 #include <QButtonGroup>
+#include <QJsonObject>
 #include "widgets/qlineedit4axisvalue.h"
 #include "modbus/NCMachineParametersC.h"
 #include "../manual/zhuzhongxingform.h"
 #include "widgets/multibuttonswidget.h"
 #include "modbus/NCMachine.h"
-#include "../../utils/gcodeutils.h"
+#include "utils/gcodeutils.h"
+#include "utils/pluginutils.h"
 
 class QCompleterWithoutInput : public QCompleter
 {
@@ -45,7 +47,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	
 
 	QString rowHeaders[] = { "X", "Y", "Z" };
-	QString headers[] = { QStringLiteral("◊¯±Í÷·"), QStringLiteral("…Ó∂»") };
+	QString headers[] = { QStringLiteral("ÂùêÊ†áËΩ¥"), QStringLiteral("Ê∑±Â∫¶") };
 	table1 = new ButtonEditTableWidget(this);
 	table1->createForm(3, 1, [this](int col, QWidget* parent) {
 		QLineEdit4AxisValue* p = new QLineEdit4AxisValue(parent);
@@ -86,8 +88,8 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	//	//	edit->setText("00000.000");
 	//	//}
 	//});
-	QString headers2[] = { QStringLiteral("ªÿ ˝"), QStringLiteral("º”π§"), "C.No", "LN", "LP", "STEP", QStringLiteral("º”π§”‡¡ø"), QStringLiteral("∂® ±"), QStringLiteral(" ±º‰"), QStringLiteral("œÍœ∏") };
-	QString defaultRowValues[] = { "", "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "..." };
+	QString headers2[] = { QStringLiteral("ÂõûÊï∞"), QStringLiteral("Âä†Â∑•"), "C.No", "LN", "LP", "STEP", QStringLiteral("Âä†Â∑•‰ΩôÈáè"), QStringLiteral("ÂÆöÊó∂"), QStringLiteral("Êó∂Èó¥"), QStringLiteral("ËØ¶ÁªÜ") };
+	QString defaultRowValues[] = { "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "...", "" };
 	int visibleColumnCount = 9;
 	int hiddenColumnCount = 1;
 
@@ -103,7 +105,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 			connect(btn, &QLineEdit::textChanged, [btn, parent](const QString& s) {
 				ButtonEditTableWidget* table = qobject_cast<ButtonEditTableWidget*>(parent);
 				int rowHere = table->getRowOfEdit(1, btn);
-				/*if (s == QStringLiteral("∑Ò")) {
+				/*if (s == QStringLiteral("Âê¶")) {
 					btn->setStyleSheet("background-color: lightgray;");
 				}
 				
@@ -198,7 +200,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 		else if (col == 6) {
 			QLineEdit4AxisValue* btn = new QLineEdit4AxisValue(parent);
 			ret = btn;
-			regStr = "^(0|[1-9]\\d*)?(\\.\\d+)?$";	 // "º”π§”‡¡ø"
+			regStr = "^(0|[1-9]\\d*)?(\\.\\d+)?$";	 // "Âä†Â∑•‰ΩôÈáè"
 			connect(btn, &QLineEdit4Keyboard::focusChanged, [this, btn](bool b) {
 				int row = table2->indexAt(btn->pos()).row() - 1;
 				if (b) {
@@ -280,7 +282,10 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	for (int i = 0; i < 1 + visibleColumnCount; ++i)
 	{
 		qobject_cast<QLabel*>(table2->cellWidget(0, i))->setText(headers2[i]);
-		table2->setColumnWidth(i, std::max(50, defaultRowValues[i].toUtf8().size() * 20));
+		if (i >= 1)
+			table2->setColumnWidth(i, std::max(50, defaultRowValues[i-1].toUtf8().size() * 20));
+		else
+			table2->setColumnWidth(i, 1 * 50);
 	}
 	connect(table2, &ButtonEditTableWidget::rowInserted, [this, defaultRowValues](int rowIndex) {
 		for(int i=0; i<table2->getDataYCount(); ++i) {
@@ -309,7 +314,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 
 	mbw = new MultiButtonsWidget(this);
 	mbw->addDefaultButtons(table2);
-	mbw->addButton(QStringLiteral("∏¥Œª"), [this](bool) {
+	mbw->addButton(QStringLiteral("Â§ç‰Ωç"), [this](bool) {
 		if (table2->isReadOnly())
 			return;
 		this->table2->setRowSelection(-1, false);
@@ -372,7 +377,7 @@ void RunManual::ShowDetailForm(int row)
 
 		QList<QLineEdit*> lineEdits = m_fangDianCanShuForm->findChildren<QLineEdit*>();
 		for (QLineEdit* lineEdit : lineEdits) {
-			// ≤ª±£¥Ê
+			// ‰∏ç‰øùÂ≠ò
 			lineEdit->setObjectName("");
 		}
 	}
@@ -516,9 +521,30 @@ H111 = SQRT[H121*H121+H122*H122+H123*H123]
 
 	gcode += QString(R"(
 o801 sub
+o810 if [H111 GT 0]
 H666 = H771 + [H661 - H771] * H222 / H111
 H777 = H772 + [H662 - H772] * H222 / H111
 H888 = H773 + [H663 - H773] * H222 / H111
+o810 else
+o811 if [H881 GT 0]
+H666 = H771 + H222
+o811 else
+H666 = H771
+o811 endif
+
+o811 if [H882 GT 0]
+H777 = H772 + H222
+o811 else
+H777 = H772
+o811 endif
+
+o811 if [H883 GT 0]
+H888 = H773 + H222
+o811 else
+H888 = H773
+o811 endif 
+
+o810 endif
 STEPH000 LNH001 LPH002 G01 XH666 YH777 ZH888 %01
 o801 endsub
 )").arg(doM04);
@@ -689,6 +715,7 @@ QString RunManual::GetGCodeV2()
 		double d = axisPositions[i];
 		gcode += QString("H%1   = %2\n").arg(661 + i).arg(d, 0, 'f', 3);
 		gcode += QString("H%1   = %2\n").arg(771 + i).arg(toAxisLength[i] == INFINITE ? d : toAxisLength[i], 0, 'f', 3);
+		gcode += QString("H%1   = %2\n").arg(881 + i).arg(toAxisLength[i] == INFINITE ? 0 : 1);
 	}
 	gcode += QString("o800 call [0]");
 
@@ -702,16 +729,16 @@ do_light 2
 M02
 )").arg(beepTime);
 
-	QList<int> todoRows;
-	for (int i = 0; i < table2->getDataCount(); ++i) {
-		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
-			continue;
-		}
-		if (table2->getValue(i, 1).isEmpty()) {
-			continue;
-		}
-		todoRows.append(i + 1);
-	}
+	//QList<int> todoRows;
+	//for (int i = 0; i < table2->getDataCount(); ++i) {
+	//	if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
+	//		continue;
+	//	}
+	//	if (table2->getValue(i, 1).isEmpty()) {
+	//		continue;
+	//	}
+	//	todoRows.append(i + 1);
+	//}
 	//QStringList lines = gcode.split('\n'); // Splits by newline character
 	//int lineNumber = 0;
 	//int findedRow = 0;
@@ -726,7 +753,7 @@ M02
 	return gcode;
 }
 
-QString RunManual::GetGCodeV1()
+QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2)
 {
 	QStringList toAxis, toAxisLength;
 	for (int i = 0; i < 3; ++i) {
@@ -750,30 +777,39 @@ QString RunManual::GetGCodeV1()
 		gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[i]);
 	}
 
-	gcode += QString("G11\n");
+	gcode += "\n\n";
+	gcode += "G11 G24 T84\n";
 
-	if (ui.inAbsolute->isChecked())
+	//if (ui.inAbsolute->isChecked())
+	//	gcode += "G90\n";
+	//else
+	//	gcode += "G91\n";
+	
+	if (dataForm->getValue("inAbsolute") == "true")
 		gcode += "G90\n";
 	else
 		gcode += "G91\n";
 
-	gcode += QString(R"(M98P0000;
-;
-)");
-	gcode += QString(R"(T85;
-do_beep 100
-M02;
-;
-N0000;
-)");
-	
-	gcode += "T84;\n";
+	gcode += ";MDIV16 AOD0.0300 LEJL0.150 LEJS2000.0\n";
 
-	mapLine2Row.clear();
+	gcode += QString(R"(M98P0000
+
+)");
+	int beepTime = DataForms::getInstance()->getDataForm("xitongshezhi5")->getValue("FDWCHMJSJ").toInt() * 1000;
+	gcode += QString(R"(
+T85
+do_beep %1
+do_light 2
+(debug, do_call_ui reset_runmanual_table2_current_row)
+M02
+)").arg(beepTime);
+
 	QString cCode;
 	cCode += QString::fromStdString(NCMachineParametersC::GetNamesAsString());
 
+	gcode += "N0000\n";
 	QHash<int, int> cNos;
+	int cOperationCount = 1;
 	for (int i = 0; i < table2->getDataCount(); ++i) {
 		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
 			continue;
@@ -782,111 +818,68 @@ N0000;
 			continue;
 		}
 
+		QString s;
 		if (table2->getValue(i, 6) == "T") {
-			gcode += QString("G85T%1;\n").arg(table2->getValue(i, 7));
+			s += QString("G85T%1\n").arg(table2->getValue(i, 7));
 		}
 		else if (table2->getValue(i, 6) == "Z") {
-			gcode += QString("G85Z%1;\n").arg(table2->getValue(i, 7));
+			s += QString("G85Z%1\n").arg(table2->getValue(i, 7));
 		}
-		QString s;
-		if (table2->getDataYCount() >= 10) {
-			int row = i;
-			int nowcNo = table2->getValue(row, 1).toInt();
-			QString c = table2->getValue(i, 9);
-			if (c.isEmpty()) {
-				FangDianCanShuSingleForm form(stackedChildWidget);
-				
-				form.LoadFromParametersC(nowcNo);
-				form.GetDynamicForm(0)->setValue("C.No", table2->getValue(row, 1));
-				form.GetDynamicForm(1)->setValue("LN", table2->getValue(row, 2));
-				form.GetDynamicForm(1)->setValue("LP", table2->getValue(row, 3));
-				form.GetDynamicForm(1)->setValue("STEP", table2->getValue(row, 4));
-				c = form.GetValuesAsCCode();
+		int row = i;
+		int nowcNo = table2->getValue(row, 1).toInt();
+		QString c = table2->getValue(i, 9);
 
-				table2->setValue(i, 9, c);
-			}
-			else
-			{
-				if (!c.endsWith("\n")) {
-					c += "\n";
-				}
-			}
-			if (cNos.contains(nowcNo)) {
-				int nextcNo = cNos[nowcNo] + 10;
-				while (true) {
-					if (!cNos.contains(nextcNo)) {
-						cNos[nextcNo] = 1;
-						c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
-						nowcNo = nextcNo;
-						break;
-					}
-					else {
-						nextcNo += 10;
-					}
-				}
-			}
-			else {
-				cNos[nowcNo] = 1;
-			}
+		if (c.isEmpty()) {
+			return "";
+		}
+
+		if (cNos.contains(nowcNo)) {
+		}
+		else {
+			cNos[nowcNo] = 1;
+
 			c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
 			cCode += c;
 
-			QString gcode3;
-			for (int j = 0; j < toAxis.size(); ++j) {
-				gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
-			}
-
-			s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
-				.arg(QString::number(nowcNo).rightJustified(3, '0'))
-				.arg(table2->getValue(i, 2))
-				.arg(table2->getValue(i, 3))
-				.arg(table2->getValue(i, 4))
-				.arg(gcode3);
 		}
-		else {
-			QString gcode3;
-			for (int j = 0; j < toAxis.size(); ++j) {
-				gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
-			}
 
-			s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
-				.arg(QString::number(table2->getValue(i, 1).toInt()).rightJustified(3, '0'))
-				.arg(table2->getValue(i, 2))
-				.arg(table2->getValue(i, 3))
-				.arg(table2->getValue(i, 4))
-				.arg(gcode3);
+
+		s += QString("(debug, do_call_ui set_runmanual_table2_current_row_%1)").arg(i + 1) + "\n";
+
+		QString gcode3;
+		for (int j = 0; j < toAxis.size(); ++j) {
+			gcode3 += QString("%1H%2+%3").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
 		}
+		QString doM04 = "";
+		DataForm* dataForm = DataForms::getInstance()->getDataForm("xitongshezhi3");
+		if (dataForm->getValue("SDM04SX") == "1") {
+			doM04 = "M04";
+		}
+		s += QString("C%1 STEP%4 LN%2 LP%3 G01 %5 %06\n")
+			.arg(QString::number(nowcNo).rightJustified(3, '0'))
+			.arg(table2->getValue(i, 2))
+			.arg(table2->getValue(i, 3))
+			.arg(table2->getValue(i, 4))
+			.arg(gcode3)
+			.arg(doM04);
+
+		cOperationCount++;
+		s += QString("(debug, do_call_ui unset_runmanual_table2_current_row_%1)").arg(i + 1) + "\n";
+
 		gcode += s;
-		//gcode += QString(QString("do_message_yn _%1\n").arg(i));
-
-		int nowLines = gcode.split("\n").size();
-		// last line
-		mapLine2Row[nowLines - 1] = i + 1;
 	}
-	//gcode += QString("G00 %1+0.000;\n").arg(toAxis);
-	gcode += QString("M99; \n");
+	gcode += QString("M99\n");
 
 	if (!cCode.isEmpty()) {
 		gcode = cCode + "\n" + gcode;
-		QHash<int, int> mapLine2Row2;
-		int cCodeLines = cCode.split("\n").size();
-		for (int key : mapLine2Row.keys()) {
-			mapLine2Row2[key + cCodeLines] = mapLine2Row[key];
-		}
-
-		mapLine2Row = mapLine2Row2;
-		// mapLine2Row2 is local variable ???. it's ok to use "="
-		//for (auto it = mapLine2Row2.constBegin(); it != mapLine2Row2.constEnd(); ++it) {
-		//	mapLine2Row.insert(it.key(), it.value());
-		//}
 	}
-	
+
 	return gcode;
 }
 
 void RunManual::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = QStringLiteral(" ÷∂Øµ•∏ˆ");
+	SystemSettings::instance().LastRunNCFileName = QStringLiteral("ÊâãÂä®Âçï‰∏™");
 
 	QString gcode = GetGCode();
 
@@ -932,7 +925,7 @@ void RunManual::RunGCode()
 	//	if (sink->has("modubs_ret") && sink->getS32("modubs_ret") == 1) {
 	//		if (lastLine4DoneOne != -1) {// && sink->getString("type") == "move" && !sink->exists("rapid")) {
 	//			int row = lastLine4DoneOne;
-	//			// set last row to "∑Ò"
+	//			// set last row to "Âê¶"
 	//			if (row - 1 >= 0) {
 	//				QMetaObject::invokeMethod(this, [this, unsetPreviousLine, row]() {
 	//					if (unsetPreviousLine) {
@@ -949,19 +942,56 @@ void RunManual::RunGCode()
 	m_ncMachine->RunGCode(gcode, [this]() {
 		SaveData();
 
-		//QMetaObject::invokeMethod(this, [this]() {
-		//	//for (int i = 0; i < table2->getDataCount(); ++i) {
-		//	//	table2->setRowSelection(i + 1, false);
-		//	//}
-		//	SetCurrentRunLine(true);
-		//}, Qt::QueuedConnection);
+		QMetaObject::invokeMethod(this, [this]() {
+			this->table2->setRowSelection(-1, false);
+		}, Qt::QueuedConnection);
 	});
 }
 
-QString RunManual::GetGCode()
+QString RunManual::GetGCode(bool forRun)
 {
 	SaveFanDianCanShuForm();
 	SaveData();
+
+	if (!forRun) {
+		QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts(this->objectName());
+		for (const auto& pyFileName : pyFiles.keys()) {
+			if (pyFileName == "getgcode") {
+				this->SetData("result", NULL);
+				this->SetData("ui_data", BaseChildWindow::GetData(this, true).toVariantMap());
+
+				QString value = pyFiles.value(pyFileName);
+				PluginUtils::RunFile(value, this);
+				 
+				QVariant result = this->GetData("result");
+				if (result != NULL && result.isValid()) {
+					QString gcode = this->GetData("result").value<QString>();
+					return gcode;
+				}
+			}
+		}
+	}
+
+	// ÂØºÂá∫G‰ª£Á†ÅÔºå‰∏îÂçïËΩ¥Âä†Â∑•Êó∂ÂÄô
+	if (!forRun) {
+		QStringList toAxis;
+		for (int i = 0; i < 3; ++i) {
+			if (table1->getValue(i, -1) != "True") {
+				continue;
+			}
+
+			QString s = table1->getValue(i, 0);
+			if (!s.isEmpty()) {
+				toAxis.append(QString("XYZ").at(i));
+				break;
+			}
+		}
+		if (toAxis.length() == 1) {
+			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName(), SystemSettings::instance().GetProjectDir());
+
+			return GetGCodeV1(dataForm, table1, table2);
+		}
+	}
 
 	return GetGCodeV2();
 }

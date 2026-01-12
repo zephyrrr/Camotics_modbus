@@ -1,4 +1,4 @@
-#include "kongzhongxingform.h"
+﻿#include "kongzhongxingform.h"
 #include "ui_kongzhongxingform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -94,7 +94,7 @@ void KongZhongXingForm::RunGCode()
         });
 }
 
-QString KongZhongXingForm::GetGCode()
+QString KongZhongXingForm::GetGCode(bool forRun)
 {
     double inKuaiJingX = ui->inX->text().toDouble();
     double inKuaiJingY = ui->inY->text().toDouble();

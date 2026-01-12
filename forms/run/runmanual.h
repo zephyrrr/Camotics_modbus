@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <QStackedWidget>
@@ -20,7 +20,7 @@ public:
 	~RunManual();
 
 	void RunGCode() override;
-	QString GetGCode() override;
+	QString GetGCode(bool forRun = true) override;
 	void LoadData(QString filePath = NULL) override;
 	void SaveData(QString filePath = NULL) override;
 	void UpdateState() override;
@@ -29,7 +29,7 @@ public:
 	//void LoadDataFromCCode(QString cCode);
 	static QString GetGCodeOSub803(IDataTable* table2);
 	//static QString GetGCodeOne(bool isAbsolutePosition, double toAxisLength[], double startAxisPositions[]);
-
+	static QString GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2);
 	ButtonEditTableWidget* table1;
 	ButtonEditTableWidget* table2;
 
@@ -50,7 +50,7 @@ private:
 private:
 	void ShowDetailForm(int row);
 	QString GetGCodeV2();
-	QString GetGCodeV1();
+	
 	void SaveFanDianCanShuForm(bool invisible = true);
 	bool m_bToolsInitialized = false;
 

@@ -1,4 +1,4 @@
-#ifndef RUNAUTOPARAMFORM_H
+﻿#ifndef RUNAUTOPARAMFORM_H
 #define RUNAUTOPARAMFORM_H
 
 #include <QWidget>
@@ -24,12 +24,18 @@ private:
     Ui::RunAutoParamForm*ui;
     Tool4All* m_tool4ZeroAndHalfAxis = NULL;
 
+    void CreateDb();
+
+private slots:
+    void ReloadData4Jgmj();
+    void ReloadData4Ccd();
+
 protected:
     void showEvent(QShowEvent* event) override;
 
 public:
     void RunGCode() override { GetGCode(); }
-    QString GetGCode() override;
+    QString GetGCode(bool forRun = true) override;
     QString GenerateManualData(QString parentName);
     QString GenerateManualData_V1(QString parentName);
 };
