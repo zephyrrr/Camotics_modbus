@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /data
 /Translation_zh_CN.ts
+/python/edm/Lib/site-packages
