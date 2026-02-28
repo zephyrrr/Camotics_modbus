@@ -1,4 +1,4 @@
-#include "gaotiao4jiagong.h"
+ï»¿#include "gaotiao4jiagong.h"
 #include "boollineedit.h"
 #include "qlineedit4axisvalue.h"
 #include "../modbus/NCMachineProperties.h"
@@ -28,9 +28,9 @@ Gaotiao4Jiagong::Gaotiao4Jiagong(NCMachine* ncMachine, QWidget* parent)
 		return ret;
 		};
 	m_dynamicForm->createForm(QStringList() << "Open" << "Interval" << "Height", funcToCreateEditor);
-	m_dynamicForm->setLabelCaption("Open", QStringLiteral("Éè¶¨"));	
-	m_dynamicForm->setLabelCaption("Interval", QStringLiteral("ÖÜÆÚ"));
-	m_dynamicForm->setLabelCaption("Height", QStringLiteral("¸ß¶È"));
+	m_dynamicForm->setLabelCaption("Open", tr("SheDing"));	
+	m_dynamicForm->setLabelCaption("Interval", tr("ZQ"));
+	m_dynamicForm->setLabelCaption("Height", tr("GD"));
 
 	this->setLayout(m_dynamicForm);
 	//this->ui.btnOk->hide();

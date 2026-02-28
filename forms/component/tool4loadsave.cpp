@@ -1,4 +1,4 @@
-#include "tool4loadsave.h"
+ï»¿#include "tool4loadsave.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "widgets\filedialog.h"
@@ -23,7 +23,7 @@ Tool4LoadSave::~Tool4LoadSave()
 
 void Tool4LoadSave::on_btnLoad_clicked()
 {
-	QString fileName = NFileDialog::getOpenFileName(this, QStringLiteral("´ò¿ªÎÄ¼þ"), m_path, QStringLiteral("(*.json)"));
+	QString fileName = NFileDialog::getOpenFileName(this, tr("DKWJ"), m_path, QString("(*.json)"));
 	if (!fileName.isEmpty()) {
 		m_childWindow->LoadData(fileName);
 	}
@@ -31,7 +31,7 @@ void Tool4LoadSave::on_btnLoad_clicked()
 
 void Tool4LoadSave::on_btnSave_clicked()
 {
-	QString fileName = NFileDialog::getSaveFileName(this, QStringLiteral("±£´æÎÄ¼þ"), m_path, QStringLiteral("(*.json)"));
+	QString fileName = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.json)"));
 	if (!fileName.isEmpty()) {
 		m_childWindow->SaveData(fileName);
 	}

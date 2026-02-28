@@ -1,4 +1,4 @@
-#include "filedialog.h"
+ï»¿#include "filedialog.h"
 #include <QBoxLayout>
 #include <QFileSystemModel>
 #include <QSortFilterProxyModel>
@@ -128,7 +128,7 @@ NFileDialog::NFileDialog(QWidget *parent, const QString& caption, const QString&
     connect(buttonBox->button(QDialogButtonBox::Cancel), &QPushButton::clicked, this, &QDialog::reject);
 
     if (canInputNewName) {
-        QPushButton* deleteButton = buttonBox->addButton(QStringLiteral("É¾³ý"), QDialogButtonBox::ApplyRole);
+        QPushButton* deleteButton = buttonBox->addButton(tr("SC"), QDialogButtonBox::ApplyRole);
         connect(deleteButton, &QPushButton::clicked, [this] {
    //         auto s = this->findFirstRemovableDisk();
 			//bool r = this->ejectUsbDrive(s[0].toLatin1());
@@ -257,11 +257,11 @@ QString NFileDialog::findFirstRemovableDisk()
     QList<QStorageInfo> storageList = QStorageInfo::mountedVolumes();
     foreach(const QStorageInfo & storage, storageList) {
         if (storage.isValid() && storage.isReady() && isRemovable(storage)) {
-            //qDebug() << "µÚÒ»¸ö¿ÉÒÆ¶¯´ÅÅÌÃû³Æ£º" << storage.name();
-            //qDebug() << "µÚÒ»¸ö¿ÉÒÆ¶¯´ÅÅÌÂ·¾¶£º" << storage.rootPath();
-            //qDebug() << "µÚÒ»¸ö¿ÉÒÆ¶¯´ÅÅÌ×ÜÈÝÁ¿£º" << storage.bytesTotal() / 1024 / 1024 << "MB";
-            //qDebug() << "µÚÒ»¸ö¿ÉÒÆ¶¯´ÅÅÌ¿ÉÓÃÈÝÁ¿£º" << storage.bytesAvailable() / 1024 / 1024 << "MB";
-            return storage.rootPath(); // ÕÒµ½µÚÒ»¸ö¿ÉÒÆ¶¯´ÅÅÌºó·µ»Ø
+            //qDebug() << "ç¬¬ä¸€ä¸ªå¯ç§»åŠ¨ç£ç›˜åç§°ï¼š" << storage.name();
+            //qDebug() << "ç¬¬ä¸€ä¸ªå¯ç§»åŠ¨ç£ç›˜è·¯å¾„ï¼š" << storage.rootPath();
+            //qDebug() << "ç¬¬ä¸€ä¸ªå¯ç§»åŠ¨ç£ç›˜æ€»å®¹é‡ï¼š" << storage.bytesTotal() / 1024 / 1024 << "MB";
+            //qDebug() << "ç¬¬ä¸€ä¸ªå¯ç§»åŠ¨ç£ç›˜å¯ç”¨å®¹é‡ï¼š" << storage.bytesAvailable() / 1024 / 1024 << "MB";
+            return storage.rootPath(); // æ‰¾åˆ°ç¬¬ä¸€ä¸ªå¯ç§»åŠ¨ç£ç›˜åŽè¿”å›ž
         }
     }
     foreach(const QStorageInfo& storage, storageList) {

@@ -31,7 +31,7 @@ void Tool4GCode::on_btnExport_clicked()
 	s = GCodeUtils::CleanGCode(s);
 
 	if (!s.isEmpty()) {
-		QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("保存文件"), m_path, QStringLiteral("(*.nc)"));
+		QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 		if (!filePath.isEmpty()) {
 
 			NFile file(filePath);
@@ -40,9 +40,9 @@ void Tool4GCode::on_btnExport_clicked()
 				file.close();
 
 				BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-				mainWindow->showChildWindow(QStringLiteral("NC"));
+				mainWindow->showChildWindow(QString("NC"));
 
-				NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QStringLiteral("NC")));
+				NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QString("NC")));
 				form->OpenFile(filePath.toUtf8().data());
 			}
 		}

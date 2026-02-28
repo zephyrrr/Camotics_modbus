@@ -210,23 +210,23 @@ public:
     void retranslateUi(QWidget *NcEditForm)
     {
         NcEditForm->setWindowTitle(QCoreApplication::translate("NcEditForm", "NCEdit", nullptr));
-        btnNew->setText(QCoreApplication::translate("NcEditForm", "\346\226\260\345\273\272", nullptr));
-        btnOpen->setText(QCoreApplication::translate("NcEditForm", "\346\211\223\345\274\200", nullptr));
-        btnSave->setText(QCoreApplication::translate("NcEditForm", "\344\277\235\345\255\230", nullptr));
-        btnSaveTo->setText(QCoreApplication::translate("NcEditForm", "\345\217\246\345\255\230", nullptr));
-        btnImport->setText(QCoreApplication::translate("NcEditForm", "\345\257\274\345\205\245", nullptr));
-        btnExport->setText(QCoreApplication::translate("NcEditForm", "\345\257\274\345\207\272", nullptr));
-        btnClose->setText(QCoreApplication::translate("NcEditForm", "\345\205\263\351\227\255", nullptr));
-        btnUndo->setText(QCoreApplication::translate("NcEditForm", "\346\222\244\351\224\200", nullptr));
-        btnRedo->setText(QCoreApplication::translate("NcEditForm", "\351\207\215\345\201\232", nullptr));
-        btnCut->setText(QCoreApplication::translate("NcEditForm", "\345\211\252\345\210\207", nullptr));
-        btnCopy->setText(QCoreApplication::translate("NcEditForm", "\345\244\215\345\210\266", nullptr));
-        btnPaste->setText(QCoreApplication::translate("NcEditForm", "\347\262\230\350\264\264", nullptr));
-        btnDelete->setText(QCoreApplication::translate("NcEditForm", "\345\210\240\351\231\244", nullptr));
-        btnSelectAll->setText(QCoreApplication::translate("NcEditForm", "\345\205\250\351\200\211", nullptr));
-        btnFind->setText(QCoreApplication::translate("NcEditForm", "\346\237\245\346\211\276/\346\233\277\346\215\242", nullptr));
-        btnFindNext->setText(QCoreApplication::translate("NcEditForm", "\346\237\245\346\211\276\344\270\213\344\270\200\344\270\252", nullptr));
-        btnKeyboard->setText(QCoreApplication::translate("NcEditForm", "\351\224\256\347\233\230", nullptr));
+        btnNew->setText(QCoreApplication::translate("NcEditForm", "XJ", nullptr));
+        btnOpen->setText(QCoreApplication::translate("NcEditForm", "DK", nullptr));
+        btnSave->setText(QCoreApplication::translate("NcEditForm", "BC", nullptr));
+        btnSaveTo->setText(QCoreApplication::translate("NcEditForm", "LC", nullptr));
+        btnImport->setText(QCoreApplication::translate("NcEditForm", "DR", nullptr));
+        btnExport->setText(QCoreApplication::translate("NcEditForm", "DC", nullptr));
+        btnClose->setText(QCoreApplication::translate("NcEditForm", "GB", nullptr));
+        btnUndo->setText(QCoreApplication::translate("NcEditForm", "Undo", nullptr));
+        btnRedo->setText(QCoreApplication::translate("NcEditForm", "Redo", nullptr));
+        btnCut->setText(QCoreApplication::translate("NcEditForm", "Cut", nullptr));
+        btnCopy->setText(QCoreApplication::translate("NcEditForm", "Copy", nullptr));
+        btnPaste->setText(QCoreApplication::translate("NcEditForm", "Paste", nullptr));
+        btnDelete->setText(QCoreApplication::translate("NcEditForm", "Delete", nullptr));
+        btnSelectAll->setText(QCoreApplication::translate("NcEditForm", "SelectAll", nullptr));
+        btnFind->setText(QCoreApplication::translate("NcEditForm", "Find", nullptr));
+        btnFindNext->setText(QCoreApplication::translate("NcEditForm", "FindNext", nullptr));
+        btnKeyboard->setText(QCoreApplication::translate("NcEditForm", "Keyboard", nullptr));
     } // retranslateUi
 
 };

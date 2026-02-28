@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4IterCoorClass</class>
  <widget class="QWidget" name="Tool4IterCoorClass">
@@ -14,7 +13,7 @@
    <string>Tool4IterCoor</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true" />
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -42,7 +41,7 @@
      <item>
       <widget class="QPushButton" name="btnRunIterCoor">
        <property name="text">
-        <string>批量运行</string>
+        <string>PLYX</string>
        </property>
       </widget>
      </item>
@@ -50,7 +49,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="5" margin="5" />
+ <resources />
+ <connections />
 </ui>

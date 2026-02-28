@@ -174,26 +174,12 @@ public:
     void retranslateUi(QWidget *RunManualClass)
     {
         RunManualClass->setWindowTitle(QCoreApplication::translate("RunManualClass", "RunManual", nullptr));
-        label_3->setText(QCoreApplication::translate("RunManualClass", "\345\235\220\346\240\207", nullptr));
-        inAbsolute->setText(QCoreApplication::translate("RunManualClass", "\347\273\235\345\257\271", nullptr));
-        inAbsolute2->setText(QCoreApplication::translate("RunManualClass", "\347\233\270\345\257\271", nullptr));
-        label_1->setText(QCoreApplication::translate("RunManualClass", "\345\212\240\345\267\245\346\267\261\345\272\246", nullptr));
+        label_3->setText(QCoreApplication::translate("RunManualClass", "ZB", nullptr));
+        inAbsolute->setText(QCoreApplication::translate("RunManualClass", "JD", nullptr));
+        inAbsolute2->setText(QCoreApplication::translate("RunManualClass", "XD", nullptr));
+        label_1->setText(QCoreApplication::translate("RunManualClass", "JGSD", nullptr));
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("RunManualClass", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\350\275\264\345\217\267]</"
-                        "span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\345\257\271\345\272\224\350\275\264\345\217\267\343\200\202</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\346\226\271\345\220\221]</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\346\226\271\345\220\221\357\274\214\342\200\234+\342\200\235\344\270\272\345\257\271\345\272\224\350\275\264\346\255\243\346\226\271\345\220\221\357\274\214\342\200\234-\342\200\235\344\270\272"
-                        "\345\257\271\345\272\224\350\275\264\347\232\204\350\264\237\346\226\271\345\220\221\343\200\202</span>               </p></body></html>", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };

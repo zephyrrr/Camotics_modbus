@@ -74,11 +74,11 @@ public:
     void retranslateUi(QDialog *Dialog)
     {
         Dialog->setWindowTitle(QCoreApplication::translate("CPLNWidget", "Form", nullptr));
-        label->setText(QCoreApplication::translate("CPLNWidget", "\346\221\207\345\212\250\344\274\272\346\234\215\346\250\241\345\274\217", nullptr));
-        radioButton->setText(QCoreApplication::translate("CPLNWidget", "\350\277\233\347\273\231\345\222\214\345\233\236\351\200\200,\344\274\272\346\234\215\350\275\264\345\222\214\346\221\207\345\212\250\350\275\264\350\201\224\345\212\250\344\274\272\346\234\215", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("CPLNWidget", "\345\233\236\351\200\200\346\227\266,\344\274\272\346\234\215\350\275\264\346\255\243\345\270\270\351\200\237\345\272\246\343\200\201\346\221\207\345\212\250\345\201\234\345\234\250\345\216\237\345\234\260\344\270\215\345\212\250\357\274\233\350\277\233\347\273\231\346\227\266\350\201\224\345\212\250", nullptr));
-        radioButton_3->setText(QCoreApplication::translate("CPLNWidget", "\344\270\200\346\227\246\346\243\200\346\265\213\345\210\260\345\233\236\351\200\200,\346\221\207\345\212\250\345\220\257\345\212\250\345\233\236\344\270\255\345\277\203", nullptr));
-        btnOk->setText(QCoreApplication::translate("CPLNWidget", "\347\241\256\345\256\232", nullptr));
+        label->setText(QCoreApplication::translate("CPLNWidget", "YDCFMS", nullptr));
+        radioButton->setText(QCoreApplication::translate("CPLNWidget", "JJHHT,CFZHYDZLDCF", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("CPLNWidget", "HTS,CFZZCSD\343\200\201YDTZYDBD\357\274\233JJSLD", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("CPLNWidget", "YDJCDHT,YDQDHZX", nullptr));
+        btnOk->setText(QCoreApplication::translate("CPLNWidget", "QD", nullptr));
     } // retranslateUi
 
 };

@@ -1,4 +1,4 @@
-#ifndef __NCMACHINEDPARAMETERSC_H
+﻿#ifndef __NCMACHINEDPARAMETERSC_H
 #define __NCMACHINEDPARAMETERSC_H
 
 #include "string"

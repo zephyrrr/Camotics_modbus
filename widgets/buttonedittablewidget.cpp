@@ -40,7 +40,7 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
     this->setColumnCount(columns + 1);
     // Add header labels 
     for (int col = 0; col <= columns; ++col) {
-        QLabel* label = new QLabel(QStringLiteral("%1").arg(col), this);
+        QLabel* label = new QLabel(QString("%1").arg(col), this);
         label->setAlignment(Qt::AlignCenter);
         this->setCellWidget(0, col, label);
 		inLabels.append(label);
@@ -49,7 +49,7 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
     m_function4CreateEdit = function4CreateLineEdit;
     for (int row = 1; row <= m_initialRowCount; ++row) {
         insertNewRow();
-        //inButtons[row - 1]->setText(QStringLiteral("%1").arg(row));
+        //inButtons[row - 1]->setText(QString("%1").arg(row));
     }
 }
 
@@ -60,7 +60,7 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
 //        if (b) {
 //            this->addNewRow();
 //            //int row = this->rowCount() - 1;
-//            //inButtons[row - 1]->setText(QStringLiteral("%1").arg(row));
+//            //inButtons[row - 1]->setText(QString("%1").arg(row));
 //        }
 //        else {
 //            int row = this->rowCount() - 1;
@@ -82,7 +82,7 @@ void ButtonEditTableWidget::createForm(int rows, int columns, std::function<ILin
 //                button->setContextMenuPolicy(Qt::CustomContextMenu);
 //                connect(button, &QPushButton::customContextMenuRequested, [this, button](const QPoint& pos) {
 //                    QMenu menu(this);
-//                    QAction* deleteRowAction = new QAction(QStringLiteral("删除行"), this);
+//                    QAction* deleteRowAction = new QAction(tr("SCX"), this);
 //                    connect(deleteRowAction, &QAction::triggered, [this, button]() {
 //                        int row = this->indexAt(button->pos()).row();
 //                        if (row != -1) {
@@ -266,7 +266,7 @@ bool ButtonEditTableWidget::deserialize(QString filePathName)
 						ILineEdit* edit = NULL;
                         if (row - 1 >= inEdits.count()) {
                             insertNewRow();
-                            //inButtons[row]->setText(QStringLiteral("%1").arg(row));
+                            //inButtons[row]->setText(QString("%1").arg(row));
                             //edit = qobject_cast<ILineEdit*>(this->cellWidget(row, col));
                         }
                         if (newCol - 1 >= 0 && newCol - 1 < inEdits[row - 1].count()) {
@@ -430,7 +430,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     if (row > 0) {
         lastRowIndex = inButtons[row - 1]->text().toInt();
     }
-    QPushButton* button = new QPushButton(QStringLiteral("%1").arg(lastRowIndex + 1), this);
+    QPushButton* button = new QPushButton(QString("%1").arg(lastRowIndex + 1), this);
     inButtons.insert(row, button);
     //button->setEnabled(false);
     button->setCheckable(true);
@@ -443,7 +443,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //    button->setContextMenuPolicy(Qt::CustomContextMenu);
     //    connect(button, &QPushButton::customContextMenuRequested, [this, button](const QPoint& pos) {
     //        QMenu menu(this);
-    //        QAction* deleteRowAction = new QAction(QStringLiteral("删除"), this);
+    //        QAction* deleteRowAction = new QAction(tr("SC"), this);
     //        connect(deleteRowAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -454,7 +454,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(deleteRowAction);
 
-    //        QAction* copyAction = new QAction(QStringLiteral("复制"), this);
+    //        QAction* copyAction = new QAction(tr("FZ"), this);
     //        connect(copyAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -466,7 +466,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(copyAction);
 
-    //        QAction* pasteAction = new QAction(QStringLiteral("粘贴"), this);
+    //        QAction* pasteAction = new QAction(tr("ZT"), this);
     //        connect(pasteAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -479,7 +479,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     //            });
     //        menu.addAction(pasteAction);
 
-    //        QAction* insertAction = new QAction(QStringLiteral("插入"), this);
+    //        QAction* insertAction = new QAction(tr("CR"), this);
     //        connect(insertAction, &QAction::triggered, [this, button]() {
     //            int row = this->indexAt(button->pos()).row();
     //            if (row != -1) {
@@ -540,7 +540,7 @@ void ButtonEditTableWidget::insertNewRow(int row) {
     }
 
     for (int i = row; i < inButtons.count(); ++i) {
-        inButtons[i]->setText(QStringLiteral("%1").arg(i + 1));
+        inButtons[i]->setText(QString("%1").arg(i + 1));
     }
 	//m_currentRow = row + 1;
     emit rowInserted(row);
@@ -573,7 +573,7 @@ void ButtonEditTableWidget::deleteRow(int row)
     }
 
     for(int i=0; i<inButtons.count(); ++i) {
-		inButtons[i]->setText(QStringLiteral("%1").arg(i + 1));
+		inButtons[i]->setText(QString("%1").arg(i + 1));
 	}
 }
 

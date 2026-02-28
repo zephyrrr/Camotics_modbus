@@ -125,7 +125,7 @@ void FangDianCanShuForm::on_btnExport_clicked()
 {
     QString path = NFileDialog::findFirstRemovableDisk(); // "data"
     if (path.isEmpty()) {
-        FormUtils::MessageBoxInfo(QStringLiteral("找不到U盘"));
+        FormUtils::MessageBoxInfo(tr("ZBDUP"));
         return;
     }
     QString fileName = NFileDialog::getSaveFileName
@@ -183,7 +183,7 @@ void FangDianCanShuForm::on_btnImport_clicked()
 {
     QString path = NFileDialog::findFirstRemovableDisk(); // "data"
     if (path.isEmpty()) {
-        FormUtils::MessageBoxInfo(QStringLiteral("找不到U盘"));
+        FormUtils::MessageBoxInfo(tr("ZBDUP"));
         return;
     }
     QString fileName = NFileDialog::getOpenFileName

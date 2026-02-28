@@ -1,4 +1,4 @@
-#include "multibuttonswidget.h"
+ï»¿#include "multibuttonswidget.h"
 #include <QHBoxLayout>
 #include "buttonedittablewidget.h"
 #include "qnumericpad.h"
@@ -24,29 +24,29 @@ void MultiButtonsWidget::addButton(QString caption, std::function<void(bool)> bt
 
 void MultiButtonsWidget::addDefaultButtons(ButtonEditTableWidget* table)
 {
-	this->addButton(QStringLiteral("²åÈë"), [table](bool) {
+	this->addButton(tr("CR"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		table->copyRow(table->currentRow());
 		table->insertNewRow(table->currentRow());
 		table->pasteRow();
 		});
-	this->addButton(QStringLiteral("É¾³ý"), [table](bool) {
+	this->addButton(tr("SC"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		table->deleteRow();
 		});
-	this->addButton(QStringLiteral("¸´ÖÆ"), [table](bool) {
+	this->addButton(tr("FZ"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		table->copyRow();
 		});
-	this->addButton(QStringLiteral("Õ³Ìù"), [table](bool) {
+	this->addButton(tr("ZT"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		table->pasteRow();
 		});
-	this->addButton(QStringLiteral("¶ÁÈ¡"), [table](bool) {
+	this->addButton(tr("DQ"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		BaseChildWindow* childWindow = BaseChildWindow::GetChildWindow(table);
@@ -55,11 +55,11 @@ void MultiButtonsWidget::addDefaultButtons(ButtonEditTableWidget* table)
 		if (!directory.exists()) {
 			directory.mkpath(path);
 		}
-		QString fileName = NFileDialog::getOpenFileName(table, QStringLiteral("´ò¿ªÎÄ¼þ"), path, QStringLiteral("(*.table.json)"));
+		QString fileName = NFileDialog::getOpenFileName(table, tr("DKWJ"), path, QString("(*.table.json)"));
 		if (!fileName.isEmpty())
 			table->deserialize(fileName);
 		});
-	this->addButton(QStringLiteral("±£´æ"), [table](bool) {
+	this->addButton(tr("BC"), [table](bool) {
 		if (table->isReadOnly())
 			return;
 		BaseChildWindow* childWindow = BaseChildWindow::GetChildWindow(table);
@@ -68,7 +68,7 @@ void MultiButtonsWidget::addDefaultButtons(ButtonEditTableWidget* table)
 		if (!directory.exists()) {
 			directory.mkpath(path);
 		}
-		QString fileName = NFileDialog::getSaveFileName(table, QStringLiteral("±£´æÎÄ¼þ"), path, QStringLiteral("(*.table.json)"));
+		QString fileName = NFileDialog::getSaveFileName(table, tr("BCWJ"), path, QString("(*.table.json)"));
 		if (!fileName.isEmpty())
 			table->serialize(fileName);
 		});

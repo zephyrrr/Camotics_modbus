@@ -1,4 +1,4 @@
-#include "modbuscommsettings.h"
+﻿#include "modbuscommsettings.h"
 //#include "QsLog/QsLog.h"
 
 ModbusCommSettings::ModbusCommSettings(const QString &fileName, Format format , QObject *parent)
@@ -58,7 +58,7 @@ QString  ModbusCommSettings::serialPortName()
         serialPortName = "COM" + m_serialPort;
 #else
     serialPortName = m_serialDev;
-    serialPortName += QStringLiteral("%1").arg(m_serialPort.toInt() - 1);
+    serialPortName += QString("%1").arg(m_serialPort.toInt() - 1);
 #endif
     return serialPortName;
 }

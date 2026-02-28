@@ -1,4 +1,4 @@
-#include "qlineedit4axisvalue.h"
+ï»¿#include "qlineedit4axisvalue.h"
 #include <QDoubleValidator>
 #include <QFocusEvent>
 #include <QTimer>
@@ -426,11 +426,15 @@ QLineEditWithButton::~QLineEditWithButton()
 {
 }
 
-const QStringList QLineEditLikeButton::Values = { QStringLiteral("ÊÇ"), QStringLiteral("·ñ") };
+QStringList QLineEditLikeButton::Values = { };
 
 QLineEditLikeButton::QLineEditLikeButton(QWidget* parent)
 	: NLineEdit(parent)
 {
+	if (Values.isEmpty()) {
+		Values = QStringList() << tr("Y") << tr("N");
+	}
+
 	this->setMaxLength(1);
 	QRegExp rx(QString("^[%01%02]$").arg(Values[0]).arg(Values[1]));
 	QRegExpValidator* validator = new QRegExpValidator(rx, this);
@@ -443,10 +447,10 @@ QLineEditLikeButton::QLineEditLikeButton(QWidget* parent)
 	//setStyleSheet("border: 2px solid rgb(220, 220, 220);");
 
 	//connect(this, &QLineEdit::mousePressEvent, [this](const QMouseEvent* e) {
-	//	if (this->text() == QStringLiteral("ÊÇ"))
-	//		this->setText(QStringLiteral("·ñ"));
+	//	if (this->text() == tr("S"))
+	//		this->setText(tr("F"));
 	//	else
-	//		this->setText(QStringLiteral("ÊÇ"));
+	//		this->setText(tr("S"));
 	//	});
 	//setReadOnly(true);
 	setAlignment(Qt::AlignCenter);

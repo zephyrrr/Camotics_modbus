@@ -105,11 +105,11 @@ public:
 
     void retranslateUi(QWidget *FormNCMachineState)
     {
-        label_10->setText(QCoreApplication::translate("FormNCMachineState", "\350\277\220\350\241\214\347\212\266\346\200\201", nullptr));
-        xLabel->setText(QCoreApplication::translate("FormNCMachineState", "\346\255\243\345\270\270", nullptr));
-        label_11->setText(QCoreApplication::translate("FormNCMachineState", "\346\211\247\350\241\214\347\273\223\346\236\234", nullptr));
-        yLabel->setText(QCoreApplication::translate("FormNCMachineState", "\346\255\243\345\270\270", nullptr));
-        msgLabel->setText(QCoreApplication::translate("FormNCMachineState", "\346\255\243\345\270\270", nullptr));
+        label_10->setText(QCoreApplication::translate("FormNCMachineState", "YXZT", nullptr));
+        xLabel->setText(QCoreApplication::translate("FormNCMachineState", "ZC", nullptr));
+        label_11->setText(QCoreApplication::translate("FormNCMachineState", "ZXJG", nullptr));
+        yLabel->setText(QCoreApplication::translate("FormNCMachineState", "ZC", nullptr));
+        msgLabel->setText(QCoreApplication::translate("FormNCMachineState", "ZC", nullptr));
         (void)FormNCMachineState;
     } // retranslateUi
 

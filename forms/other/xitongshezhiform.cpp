@@ -66,32 +66,32 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("HLFX_X", "+");
 		dynamicForm->setRegexValidation("HLFX_X", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_X", QStringLiteral("X轴回零方向"));
+		dynamicForm->setLabelCaption("HLFX_X", tr("XZHLFX"));
 		dynamicForm->setValue("HLFX_Y", "+");
 		dynamicForm->setRegexValidation("HLFX_Y", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_Y", QStringLiteral("Y轴回零方向"));
+		dynamicForm->setLabelCaption("HLFX_Y", tr("YZHLFX"));
 		dynamicForm->setValue("HLFX_Z", "+");
 		dynamicForm->setRegexValidation("HLFX_Z", "^[\\+|\\-]$");
-		dynamicForm->setLabelCaption("HLFX_Z", QStringLiteral("Z轴回零方向"));
+		dynamicForm->setLabelCaption("HLFX_Z", tr("ZZHLFX"));
 
 		dynamicForm->setValue("JXYD_X+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_X+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X+", QStringLiteral("X+极限位置"));
+		dynamicForm->setLabelCaption("JXYD_X+", tr("XJXWZ"));
 		dynamicForm->setValue("JXYD_X-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_X-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X-", QStringLiteral("X-极限位置"));
+		dynamicForm->setLabelCaption("JXYD_X-", tr("XJXWZ"));
 		dynamicForm->setValue("JXYD_Y+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Y+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y+", QStringLiteral("Y+极限位置"));
+		dynamicForm->setLabelCaption("JXYD_Y+", tr("YJXWZ"));
 		dynamicForm->setValue("JXYD_Y-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Y-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y-", QStringLiteral("Y-极限位置"));
+		dynamicForm->setLabelCaption("JXYD_Y-", tr("YJXWZ"));
 		dynamicForm->setValue("JXYD_Z+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Z+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z+", QStringLiteral("Z+极限位置"));
+		dynamicForm->setLabelCaption("JXYD_Z+", tr("ZJXWZ"));
 		dynamicForm->setValue("JXYD_Z-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Z-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z-", QStringLiteral("Z-极限位置"));
+		dynamicForm->setLabelCaption("JXYD_Z-", tr("ZJXWZ"));
 
 		dynamicForm->setValue("AdGain", "1.0");
 		dynamicForm->setValue("AdCount0V", "2023");
@@ -121,49 +121,49 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("SPEED_JOG_V_X", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_X", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_X", QStringLiteral("X轴最大JOG速度"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_X", tr("XZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_X", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_X", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_X", QStringLiteral("X轴JOG加速时间"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_X", tr("XZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_Y", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_Y", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_Y", QStringLiteral("Y轴最大JOG速度"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_Y", tr("YZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_Y", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_Y", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_Y", QStringLiteral("Y轴JOG加速时间"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_Y", tr("YZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_Z", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_Z", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_Z", QStringLiteral("Z轴最大JOG速度"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_Z", tr("ZZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_Z", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_Z", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_Z", QStringLiteral("Z轴JOG加速时间"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_Z", tr("ZZJJSSJ"));
 		dynamicForm->setValue("SPEED_JOG_V_U", "2400");
 		dynamicForm->setRegexValidation("SPEED_JOG_V_U", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_V_U", QStringLiteral("U轴最大JOG速度"));
+		dynamicForm->setLabelCaption("SPEED_JOG_V_U", tr("UZZDJSD"));
 		dynamicForm->setValue("SPEED_JOG_T_U", "100");
 		dynamicForm->setRegexValidation("SPEED_JOG_T_U", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_JOG_T_U", QStringLiteral("U轴JOG加速时间"));
+		dynamicForm->setLabelCaption("SPEED_JOG_T_U", tr("UZJJSSJ"));
 
 		dynamicForm->setValue("SPEED_LOC_V", "1800");
 		dynamicForm->setRegexValidation("SPEED_LOC_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_LOC_V", QStringLiteral("LOC速度"));
+		dynamicForm->setLabelCaption("SPEED_LOC_V", tr("LSD"));
 		dynamicForm->setValue("SPEED_LOC_T", "200");
 		dynamicForm->setRegexValidation("SPEED_LOC_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_LOC_T", QStringLiteral("LOC加速时间"));
+		dynamicForm->setLabelCaption("SPEED_LOC_T", tr("LJSSJ"));
 
 		dynamicForm->setValue("SPEED_CMV_V", "12");
 		dynamicForm->setRegexValidation("SPEED_CMV_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_V", QStringLiteral("对刀移动速度"));
+		dynamicForm->setLabelCaption("SPEED_CMV_V", tr("DDYDSD"));
 		dynamicForm->setValue("SPEED_CMV_T", "200");
 		dynamicForm->setRegexValidation("SPEED_CMV_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_T", QStringLiteral("对刀加速时间"));
+		dynamicForm->setLabelCaption("SPEED_CMV_T", tr("DDJSSJ"));
 
 		dynamicForm->setValue("SPEED_CMV_TOZIG_V", "12");
 		dynamicForm->setRegexValidation("SPEED_CMV_TOZIG_V", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_V", QStringLiteral("回参考点移动速度"));
+		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_V", tr("HCKDYDSD"));
 		dynamicForm->setValue("SPEED_CMV_TOZIG_T", "200");
 		dynamicForm->setRegexValidation("SPEED_CMV_TOZIG_T", "^\\d+$");
-		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_T", QStringLiteral("回参考点加速时间"));
+		dynamicForm->setLabelCaption("SPEED_CMV_TOZIG_T", tr("HCKDJSSJ"));
 	}
 
 	{
@@ -179,66 +179,66 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("DDCS", "4");
 		dynamicForm->setRegexValidation("DDCS", "^\\d+$");
-		dynamicForm->setLabelCaption("DDCS", QStringLiteral("对刀次数"));
+		dynamicForm->setLabelCaption("DDCS", tr("DDCS"));
 
 		dynamicForm->setValue("DDGCZDHTJL", "300");
 		dynamicForm->setRegexValidation("DDGCZDHTJL", "^\\d+$");
-		dynamicForm->setLabelCaption("DDGCZDHTJL", QStringLiteral("对刀过程中回退距离"));
+		dynamicForm->setLabelCaption("DDGCZDHTJL", tr("DDGCZHTJL"));
 
 		dynamicForm->setValue("TDGDJS", "500");
 		dynamicForm->setRegexValidation("TDGDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("TDGDJS", QStringLiteral("抬刀高度基数"));
+		dynamicForm->setLabelCaption("TDGDJS", tr("TDGDJS"));
 
 		dynamicForm->setValue("TDSDJS", "40");
 		dynamicForm->setRegexValidation("TDSDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("TDSDJS", QStringLiteral("抬刀速度基数"));
+		dynamicForm->setLabelCaption("TDSDJS", tr("TDSDJS"));
 
 		dynamicForm->setValue("FDSJJS", "40");
 		dynamicForm->setRegexValidation("FDSJJS", "^\\d+$");
-		dynamicForm->setLabelCaption("FDSJJS", QStringLiteral("放电时间基数"));
+		dynamicForm->setLabelCaption("FDSJJS", tr("FDSJJS"));
 
 		dynamicForm->setValue("YDSDJS", "5");
 		dynamicForm->setRegexValidation("YDSDJS", "^\\d+$");
-		dynamicForm->setLabelCaption("YDSDJS", QStringLiteral("摇动速度基数"));
+		dynamicForm->setLabelCaption("YDSDJS", tr("YDSDJS"));
 
 		dynamicForm->setValue("HZXTDGD", "0");
 		dynamicForm->setRegexValidation("HZXTDGD", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDGD", QStringLiteral("回中心抬刀高度"));
+		dynamicForm->setLabelCaption("HZXTDGD", tr("HZXTDGD"));
 
 		dynamicForm->setValue("HZXTDSD", "60");
 		dynamicForm->setRegexValidation("HZXTDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDSD", QStringLiteral("回中心抬刀速度"));
+		dynamicForm->setLabelCaption("HZXTDSD", tr("HZXTDSD"));
 
 		dynamicForm->setValue("HZXTDJSSJ", "5");
 		dynamicForm->setRegexValidation("HZXTDJSSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("HZXTDJSSJ", QStringLiteral("回中心抬刀加速时间"));
+		dynamicForm->setLabelCaption("HZXTDJSSJ", tr("HZXTDJSSJ"));
 
 		dynamicForm->setValue("JGJSPDFGS", "8");
 		dynamicForm->setRegexValidation("JGJSPDFGS", "^\\d+$");
-		dynamicForm->setLabelCaption("JGJSPDFGS", QStringLiteral("加工结束判断分割数"));
+		dynamicForm->setLabelCaption("JGJSPDFGS", tr("JGJSPDFGS"));
 
 		dynamicForm->setValue("MTDGD", "50");
 		dynamicForm->setRegexValidation("MTDGD", "^\\d+$");
-		dynamicForm->setLabelCaption("MTDGD", QStringLiteral("慢抬刀高度(um)"));
+		dynamicForm->setLabelCaption("MTDGD", tr("MTDGD("));
 
 		dynamicForm->setValue("MTDSD", "10");
 		dynamicForm->setRegexValidation("MTDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("MTDSD", QStringLiteral("慢抬刀速度"));
+		dynamicForm->setLabelCaption("MTDSD", tr("MTDSD"));
 
 		dynamicForm->setValue("TCQHTJL", "1000");
 		dynamicForm->setRegexValidation("TCQHTJL", "^\\d+$");
-		dynamicForm->setLabelCaption("TCQHTJL", QStringLiteral("退出前回退距离"));
+		dynamicForm->setLabelCaption("TCQHTJL", tr("TCQHTJL"));
 		
 		//dynamicForm->setValue("FDDWHTJL", "0");
 		//dynamicForm->setRegexValidation("FDDWHTJL", "^\\d+$");
-		//dynamicForm->setLabelCaption("FDDWHTJL", QStringLiteral("放电定位回退距离")); 
+		//dynamicForm->setLabelCaption("FDDWHTJL", tr("FDDWHTJL")); 
 		  
 		dynamicForm->setValue("SDM04SX", "True");
-		dynamicForm->setLabelCaption("SDM04SX", QStringLiteral("手动M04生效"));
+		dynamicForm->setLabelCaption("SDM04SX", tr("SDMSX"));
 
 		dynamicForm->setValue("ZTDJSSJ", "50");
 		dynamicForm->setRegexValidation("ZTDJSSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("ZTDJSSJ", QStringLiteral("主抬刀加速时间"));
+		dynamicForm->setLabelCaption("ZTDJSSJ", tr("ZTDJSSJ"));
 	}
 
 	{
@@ -251,23 +251,23 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("FJDL1", "32");
 		dynamicForm->setRegexValidation("FJDL1", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL1", QStringLiteral("附加电流1"));
+		dynamicForm->setLabelCaption("FJDL1", tr("FJDL1"));
 
 		dynamicForm->setValue("FJDL2", "32");
 		dynamicForm->setRegexValidation("FJDL2", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL2", QStringLiteral("附加电流2"));
+		dynamicForm->setLabelCaption("FJDL2", tr("FJDL2"));
 
 		dynamicForm->setValue("FJDL3", "64");
 		dynamicForm->setRegexValidation("FJDL3", "^\\d+$");
-		dynamicForm->setLabelCaption("FJDL3", QStringLiteral("附加电流3"));
+		dynamicForm->setLabelCaption("FJDL3", tr("FJDL3"));
 
 		dynamicForm->setValue("FSYCGBSJ", "50");
 		dynamicForm->setRegexValidation("FSYCGBSJ", "^\\d+$");
-		dynamicForm->setLabelCaption("FSYCGBSJ", QStringLiteral("风扇延迟关闭时间"));
+		dynamicForm->setLabelCaption("FSYCGBSJ", tr("FSYCGBSJ"));
 
 		dynamicForm->setValue("ZTHQSDSD", "500");
 		dynamicForm->setRegexValidation("ZTHQSDSD", "^\\d+$");
-		dynamicForm->setLabelCaption("ZTHQSDSD", QStringLiteral("暂停回起始点速度"));
+		dynamicForm->setLabelCaption("ZTHQSDSD", tr("ZTHQSDSD"));
 	}
 
 	{
@@ -294,31 +294,31 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 			QString s = QString("KZSDBS%1").arg(i + 1);
 			dynamicForm->setValue(s, QString::number(v1[i]));
 			dynamicForm->setRegexValidation(s, "^\\d+$");
-			dynamicForm->setLabelCaption(s, QStringLiteral("空载速度倍数%1").arg(i + 1));
+			dynamicForm->setLabelCaption(s, tr("KZSDBS") + QString("%1").arg(i + 1));
 		}
 		for (int i = 0; i < n; i++) {
 			QString s = QString("SFSDBS%1").arg(i + 1);
 			dynamicForm->setValue(s, QString::number(v2[i]));
 			dynamicForm->setRegexValidation(s, "^\\d+(\\.\\d+)$");
-			dynamicForm->setLabelCaption(s, QStringLiteral("伺服速度倍数%1").arg(i + 1));
+			dynamicForm->setLabelCaption(s, tr("CFSDBS") + QString("%1").arg(i + 1));
 		}
 
 		dynamicForm->setValue("FMQKG", "True");
-		dynamicForm->setLabelCaption("FMQKG", QStringLiteral("蜂鸣器开关"));
+		dynamicForm->setLabelCaption("FMQKG", tr("FMQKG"));
 		dynamicForm->setValue("GDMMWZJFH", "False");
 		dynamicForm->setLabelCaption("GDMMWZJFH", QStringLiteral("G代码末尾加分号"));
 		
 		dynamicForm->setValue("ZDKQYB2", "True");
-		dynamicForm->setLabelCaption("ZDKQYB2", QStringLiteral("加工时自动开启油泵2"));
+		dynamicForm->setLabelCaption("ZDKQYB2", tr("JGSZDKQYB2"));
 
 		dynamicForm->setValue("FDWCHMJSJ", "2");
-		dynamicForm->setLabelCaption("FDWCHMJSJ", QStringLiteral("放电完成后鸣叫时间"));
+		dynamicForm->setLabelCaption("FDWCHMJSJ", tr("FDWCHMJSJ"));
 
 		dynamicForm->setValue("SFHFJL", "20");
-		dynamicForm->setLabelCaption("SFHFJL", QStringLiteral("伺服恢复距离"));
+		dynamicForm->setLabelCaption("SFHFJL", tr("CFHFJL"));
 
 		dynamicForm->setValue("AJCFHJL", "20");
-		dynamicForm->setLabelCaption("AJCFHJL", QStringLiteral("AJC返回距离"));
+		dynamicForm->setLabelCaption("AJCFHJL", tr("AFHJL"));
 	}
 
 	LoadData();

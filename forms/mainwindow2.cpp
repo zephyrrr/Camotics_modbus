@@ -217,6 +217,7 @@ QtWin2::QtWin2(QWidget* parent)
 	//cb::Logger::instance().setScreenStream(NULL);
 	cb::Logger::instance().startLogFile(LOGGER_FILE_NAME);
 
+	PropertyObjects::getInstance()->CreateData();
 	PropertyObjects::getInstance()->LoadData();
 
 	ui->setupUi(this);
@@ -269,7 +270,7 @@ QtWin2::QtWin2(QWidget* parent)
 		//dialog->showNormal();
 		return;
 
-		QString chosenDir = NFileDialog::getExistingDirectory(this, QStringLiteral("项目目录"),
+		QString chosenDir = NFileDialog::getExistingDirectory(this, tr("XMML"),
 		"data",
 		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks ); // | QFileDialog::DontUseNativeDialog
 		chosenDir = QDir::cleanPath(chosenDir);
@@ -298,11 +299,11 @@ QtWin2::QtWin2(QWidget* parent)
 		ui->verticalLayout_groupBoxMenus->addWidget(subMenuWidget);
 		ui->verticalLayout_groupBoxMenus->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding));
 
-		mainMenuWidget->addItem(QStringLiteral("手动"));
-		mainMenuWidget->addItem(QStringLiteral("EDM自动"));
-		mainMenuWidget->addItem(QStringLiteral("编辑"));
-		mainMenuWidget->addItem(QStringLiteral("加工"));
-		mainMenuWidget->addItem(QStringLiteral("设定"));
+		mainMenuWidget->addItem(tr("SD"));
+		mainMenuWidget->addItem(tr("EZD"));
+		mainMenuWidget->addItem(tr("BianJi"));
+		mainMenuWidget->addItem(tr("JG"));
+		mainMenuWidget->addItem(tr("SheDing"));
 
 		mainMenu = mainMenuWidget;
 	}
@@ -317,17 +318,17 @@ QtWin2::QtWin2(QWidget* parent)
 		ui->verticalLayout_groupBoxMenus->addWidget(mainMenuWidget);
 
 		mainMenuWidget->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-		//mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("常用"));
-		mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("手动"));
-		mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("自动"));
-		mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("编辑"));
-		mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("运行"));
-		mainMenuWidget->addItem(new QWidget(mainMenuWidget), QStringLiteral("其他"));
+		//mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("CY"));
+		mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("SD"));
+		mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("ZD"));
+		mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("BianJi"));
+		mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("YX"));
+		mainMenuWidget->addItem(new QWidget(mainMenuWidget), tr("QT"));
 
 		mainMenu = mainMenuWidget;
 	}
 
-	//for (const QString& var : { QStringLiteral("常用"), QStringLiteral("手动"), QStringLiteral("编辑") ,QStringLiteral("运行") ,QStringLiteral("其他") })
+	//for (const QString& var : { tr("CY"), tr("SD"), tr("BJ") ,tr("YX") ,tr("QT") })
 	for(int pageIdx=0; pageIdx < 5; ++pageIdx)
 	{
 		QBoxLayout* layout1 = NULL;
@@ -346,84 +347,87 @@ QtWin2::QtWin2(QWidget* parent)
 			}
 		}
 		if (pageIdx == 0) {
-			AddChildWindow(QStringLiteral(QT_TR_NOOP_UTF8("坐标设置")), layout1, [this]() {
+			//AddChildWindow(QStringLiteral(QT_TR_NOOP_UTF8("坐标设置")), layout1, [this]() {
+			//	return new ZuoBiaoXiSheZiForm(this->ui->stackedChildWidget);
+			//	});
+			AddChildWindow(tr("ZBSZ"), layout1, [this]() {
 				return new ZuoBiaoXiSheZiForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("定位移动"), layout1, [this]() {
+			AddChildWindow(tr("DWYD"), layout1, [this]() {
 				return new WeiZhiYiDongForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("位置记忆"), layout1, [this]() {
+			AddChildWindow(tr("WZJY"), layout1, [this]() {
 				return new WeiZhiJiYiForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("端面定位"), layout1, [this]() {
+			AddChildWindow(tr("DMDW"), layout1, [this]() {
 				return new DuanMianForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("柱中心"), layout1, [this]() {
+			AddChildWindow(tr("ZZX"), layout1, [this]() {
 				return new ZhuZhongXingForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("角中心"), layout1, [this]() {
+			AddChildWindow(tr("JZX"), layout1, [this]() {
 				return new JiaoDingWeiForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("孔中心"), layout1, [this]() {
+			AddChildWindow(tr("KZX"), layout1, [this]() {
 				return new KongZhongXingForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("三点定圆"), layout1, [this]() {
+			AddChildWindow(tr("SDDY"), layout1, [this]() {
 				return new SanDianDingWeiForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("放电定位"), layout1, [this]() {
+			AddChildWindow(tr("FDDW"), layout1, [this]() {
 				return new FangDianForm(this->ui->stackedChildWidget);
 				});
-			//AddChildWindow(QStringLiteral("MDI"), layout1, [this]() {
+			//AddChildWindow(QString("MDI"), layout1, [this]() {
 			//	return new MdiForm(this);
 			//	});
 		} 
 		else if (pageIdx == 1) {
-			AddChildWindow(QStringLiteral("自动参数"), layout1, [this]() {
+			AddChildWindow(tr("ZDCS"), layout1, [this]() {
 				return new RunAutoForm(this->ui->stackedChildWidget);
 				});
 		}
 		else if (pageIdx == 2) {
-			//AddChildWindow(QStringLiteral("NC"), layout1, [this]() {
+			//AddChildWindow(QString("NC"), layout1, [this]() {
 			//	return new NcEditForm(this->ui->stackedChildWidget);
 			//	});
-			AddChildWindow(QStringLiteral("NC"), layout1, ncEditForm);
+			AddChildWindow(QString("NC"), layout1, ncEditForm);
 		}
 		else if (pageIdx == 3) {
-			AddChildWindow(QStringLiteral("手动单个"), layout1, [this]() {
+			AddChildWindow(tr("SDDG"), layout1, [this]() {
 				return new RunManual(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("手动多个"), layout1, [this]() {
+			AddChildWindow(tr("SDDG"), layout1, [this]() {
 				return new RunManualMulti(this->ui->stackedChildWidget);
 				});
-			//AddChildWindow(QStringLiteral("圆形多个"), layout1, [this]() {
+			//AddChildWindow(tr("YXDG"), layout1, [this]() {
 			//	return new RunManual(this);
 			//	});
-			//AddChildWindow(QStringLiteral("螺纹加工"), layout1, [this]() {
+			//AddChildWindow(tr("LWJG"), layout1, [this]() {
 			//	return new RunManual(this);
 			//	});
-			AddChildWindow(QStringLiteral("NC加工"), layout1, [this]() {
+			AddChildWindow(tr("NJG"), layout1, [this]() {
 				return new NcRunForm(this->ui->stackedChildWidget);
 				});
 		}
 		else if (pageIdx == 4) {
-			AddChildWindow(QStringLiteral("加工记录"), layout1, [this]() {
+			AddChildWindow(tr("JGJL"), layout1, [this]() {
 				return new JiaGongJiLuForm(this->ui->stackedChildWidget);
 				});
 
-			AddChildWindow(QStringLiteral("系统设置"), layout1, xtszForm);
-			AddChildWindow(QStringLiteral("放电参数"), layout1, [this]() {
+			AddChildWindow(tr("XTSZ"), layout1, xtszForm);
+			AddChildWindow(tr("FDCS"), layout1, [this]() {
 				return new FangDianCanShuForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(QStringLiteral("放电测试"), layout1, fdcsForm);
-			AddChildWindow(QStringLiteral("螺距补偿"), layout1, ljbcForm);
-			//AddChildWindow(QStringLiteral("回零"), layout1, [this]() {
+			AddChildWindow(tr("FDCS"), layout1, fdcsForm);
+			AddChildWindow(tr("LJBC"), layout1, ljbcForm);
+			//AddChildWindow(tr("HL"), layout1, [this]() {
 			//	//return new NCMachinePanel(this, m_ncMachine, m_modbus, m_modbusCommSettings);
 			//	return new HuiLingForm(this);
 			//	});
-			AddChildWindow(QStringLiteral("串口设置"), layout1, [this]() {
+			AddChildWindow(tr("CKSZ"), layout1, [this]() {
 				return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusCommSettings);
 				});
-			AddChildWindow(QStringLiteral("关于"), layout1, [this]() {
+			AddChildWindow(tr("GY"), layout1, [this]() {
 				return new AboutForm(this->ui->stackedChildWidget);
 				});
 
@@ -466,13 +470,13 @@ QtWin2::QtWin2(QWidget* parent)
 
 	if (!m_modbus->isConnected()) {
 		m_serialPortNeedReconnect = true;
-		//ui->CNCstate->setText(QStringLiteral("报警"));
-		ui->lblResultMessage->setText(QStringLiteral("串口未连接！"));
+		//ui->CNCstate->setText(tr("BJ"));
+		ui->lblResultMessage->setText(tr("CKWLJ"));
 		ui->actionRun->setEnabled(false);
 		ui->actionCancel->setEnabled(false);
 	}
 	else {
-		ui->lblResultMessage->setText(QStringLiteral("等待运行"));
+		ui->lblResultMessage->setText(tr("DDYX"));
 
 		addNormalTasks();
 
@@ -646,7 +650,7 @@ QtWin2::QtWin2(QWidget* parent)
 	}
 
 	//m_topinfobarButtons[0]->setCheckable(false);
-	m_topinfobarButtons[0]->setText(QStringLiteral("模拟加工"));
+	m_topinfobarButtons[0]->setText(tr("MNJG"));
 	connect(m_topinfobarButtons[0], &QPushButton::clicked, [this]() {
 		//if (ui->actionRun->isEnabled()) {
 			G01Data& g01Data = m_ncMachine->GetG01Data();
@@ -654,7 +658,7 @@ QtWin2::QtWin2(QWidget* parent)
 			//ui->actionRun->trigger();
 		//}
 		});
-	m_topinfobarButtons[1]->setText(QStringLiteral("加工后关机"));
+	m_topinfobarButtons[1]->setText(tr("JGHGJ"));
 	connect(m_topinfobarButtons[1], &QPushButton::clicked, [this]() {
 			G01Data& g01Data = m_ncMachine->GetG01Data();
 			g01Data.powerOffAfterDone = !g01Data.powerOffAfterDone;
@@ -897,7 +901,7 @@ void QtWin2::on_actionRun_triggered()
 		//	})->start();
 
 		ui->actionRun->setEnabled(false);
-		ui->lblResultMessage->setText(QStringLiteral("运行中"));
+		ui->lblResultMessage->setText(tr("YXZ"));
 	}
 	catch (const std::exception& e) {
 		ui->lblResultMessage->setText(e.what());
@@ -982,7 +986,7 @@ void QtWin2::on_actionPowerOn_triggered()
 		// PowerOn
 		m_ncMachine->PowerOn();
 
-		bool b = FormUtils::MessageBoxYesNo(QStringLiteral("是否进行自动回零？"));
+		bool b = FormUtils::MessageBoxYesNo(tr("SFJXZDHL"));
 		
 		if (b) {
 			// 回零
@@ -1021,7 +1025,7 @@ o101 endif)");
 			//// 统一清零机械坐标
 			//std::function<void()> doFuncZeroAxis2 = [this]() {
 			//	QMetaObject::invokeMethod(this, [this]() {
-			//		bool b = FormUtils::MessageBoxYesNo(QStringLiteral("是否清零机械坐标？"));
+			//		bool b = FormUtils::MessageBoxYesNo(tr("SFQLJXZB？"));
 			//		if (b) {
 			//			m_ncMachine->enterSetPriority(1);
 			//			m_ncMachine->GoApi();
@@ -1096,7 +1100,7 @@ void QtWin2::on_actionSaveGCode_triggered()
 		QString s = currentChild->GetGCode();
 		if (!s.isEmpty()) {
 			QString m_path = "data/nc";
-			QString filePath = NFileDialog::getSaveFileName(this, QStringLiteral("保存文件"), m_path, QStringLiteral("(*.nc)"));
+			QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 			if (!filePath.isEmpty()) {
 
 				NFile file(filePath);
@@ -1105,9 +1109,9 @@ void QtWin2::on_actionSaveGCode_triggered()
 					file.close();
 
 					BaseMainWindow* mainWindow = BaseChildWindow::GetMainWindow();
-					mainWindow->showChildWindow(QStringLiteral("NC"));
+					mainWindow->showChildWindow(QString("NC"));
 
-					NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QStringLiteral("NC")));
+					NcEditForm* form = dynamic_cast<NcEditForm*>(mainWindow->getChildWindow(QString("NC")));
 					form->OpenFile(filePath.toUtf8().data());
 				}
 			}
@@ -1136,7 +1140,7 @@ void QtWin2::on_actionSaveGCode_triggered()
 //		//}
 //	}
 //#else
-//	//ui->lblResultMessage->setToolTip(QStringLiteral("请联系管理员查看日志文件！\n请联系管理员查看日志文件！\n"));
+//	//ui->lblResultMessage->setToolTip(tr("QLXGLYCKRZWJ！QLXGLYCKRZWJ！"));
 //	QHelpEvent* event = new QHelpEvent(QEvent::ToolTip,
 //		ui->lblResultMessage->pos(),
 //		ui->lblResultMessage->mapToGlobal(QPoint(0, 0)));
@@ -1250,7 +1254,7 @@ void QtWin2::on_btnJgtj_clicked()
 		m_formFangDianCheShi->setObjectName("fangDianCheShiRealtime");
 		//m_formFangDianCheShi->setStyleSheet("background-color: red;");
 
-		m_dialog4FangDianCheShi->setWindowTitle(QStringLiteral("放电参数"));
+		m_dialog4FangDianCheShi->setWindowTitle(tr("FDCS"));
 		//m_dialog4FangDianCheShi->setWindowFlags(m_dialog4FangDianCheShi->windowFlags() & ~Qt::WindowContextHelpButtonHint);  // 禁用 "?" 按钮
 		m_dialog4FangDianCheShi->setWindowFlags((Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint | Qt::CustomizeWindowHint) & ~Qt::WindowContextHelpButtonHint);
 
@@ -1262,8 +1266,8 @@ void QtWin2::on_btnJgtj_clicked()
 		//cancelButton->setFixedSize(100, 50);
 		//okButton->setFocusPolicy(Qt::FocusPolicy::NoFocus);
 		//cancelButton->setFocusPolicy(Qt::FocusPolicy::NoFocus);
-		okButton->setText(QStringLiteral("发送"));
-		cancelButton->setText(QStringLiteral("关闭"));
+		okButton->setText(tr("FS"));
+		cancelButton->setText(tr("GB"));
 
 		//layout->addWidget(buttonBox);
 		m_formFangDianCheShi->GetLayout(0)->addWidget(buttonBox);
@@ -1322,7 +1326,7 @@ void QtWin2::on_btnJgtjGt_clicked()
 
 		m_formGaotiao4Jiagong = new Gaotiao4Jiagong(m_ncMachine, m_dialog4Gaotiao);
 
-		m_dialog4Gaotiao->setWindowTitle(QStringLiteral("高跳"));
+		m_dialog4Gaotiao->setWindowTitle(tr("GT"));
 		//m_dialog4Gaotiao->setWindowFlags(m_dialog4Gaotiao->windowFlags() & ~Qt::WindowContextHelpButtonHint);  // 禁用 "?" 按钮
 		m_dialog4Gaotiao->setWindowFlags((Qt::Dialog | Qt::FramelessWindowHint | Qt::WindowTitleHint | Qt::CustomizeWindowHint) & ~Qt::WindowContextHelpButtonHint);
 
@@ -1331,8 +1335,8 @@ void QtWin2::on_btnJgtjGt_clicked()
 		QPushButton* cancelButton = buttonBox->button(QDialogButtonBox::StandardButton::Cancel);
 		//okButton->setFixedSize(100, 50);
 		//cancelButton->setFixedSize(100, 50);
-		okButton->setText(QStringLiteral("发送"));
-		cancelButton->setText(QStringLiteral("关闭"));
+		okButton->setText(tr("FS"));
+		cancelButton->setText(tr("GB"));
 
 		auto layout = new QVBoxLayout(m_dialog4Gaotiao);
 		layout->addWidget(buttonBox);
@@ -1421,7 +1425,7 @@ void QtWin2::UpdateStateByTimer()
 			modbusConnect(false);
 			modbusConnect(true);
 			if (!m_modbus->isConnected()) {
-				ui->lblResultMessage->setText(QStringLiteral("串口未连接！"));
+				ui->lblResultMessage->setText(tr("CKWLJ"));
 				ui->actionRun->setEnabled(false);
 				ui->actionCancel->setEnabled(false);
 			}
@@ -1532,7 +1536,7 @@ void QtWin2::UpdateState()
 
 				QString s = NCMachine::GetRLSTDesc(state[0], state[1]);
 				if (s.isEmpty()) {
-					ui->lblResultMessage->setText(QStringLiteral("等待运行"));
+					ui->lblResultMessage->setText(tr("DDYX"));
 				}
 				else {
 					//ui->lblResultMessage->setText(s);
@@ -1547,26 +1551,26 @@ void QtWin2::UpdateState()
 					setNewLights = true;
 				}
 				if (m_ncMachine->GetNowOperating() == 1) {
-					ui->lblResultMessage->setText(QStringLiteral("对刀中"));
+					ui->lblResultMessage->setText(tr("DDZ"));
 				}
 				else if (m_ncMachine->GetNowOperating() == 2) {
-					ui->lblResultMessage->setText(QStringLiteral("回零中"));
+					ui->lblResultMessage->setText(tr("HLZ"));
 				}
 				else {
 					if (g01Data.isRunning) {
 						if (!g01Data.isPausing) {
-							ui->lblResultMessage->setText(QStringLiteral("放电中"));
+							ui->lblResultMessage->setText(tr("FDZ"));
 						}
 						else {
-							ui->lblResultMessage->setText(QStringLiteral("放电暂停"));
+							ui->lblResultMessage->setText(tr("FDZT"));
 						}
 					}
 					else {
 						if (m_ncMachine->isTaskThreadPausing()) {
-							ui->lblResultMessage->setText(QStringLiteral("暂停中"));
+							ui->lblResultMessage->setText(tr("ZTZ"));
 						}
 						else {
-							ui->lblResultMessage->setText(QStringLiteral("运行中"));
+							ui->lblResultMessage->setText(tr("YXZ"));
 						}
 					}
 				}
@@ -1580,7 +1584,7 @@ void QtWin2::UpdateState()
 		}
 
 		if (m_ncMachine->GetIsJogDuanlu()) {
-			errorMsgs.append(QStringLiteral("短路报警"));
+			errorMsgs.append(tr("DLBJ"));
 			ui->labelInfoDuanLu->show();
 		}
 		else {
@@ -1620,13 +1624,13 @@ void QtWin2::UpdateState()
 
 		bool inputFlagError = false;
 		if (m_ncMachine->GetInputFlag(16 + 7)) {
-			errorMsgs.append(QStringLiteral("伺服电机报警"));
+			errorMsgs.append(tr("CFDJBJ"));
 			inputFlagError = true;
 		}
 
 
 		if (m_ncMachine->GetInputFlag(8)) {
-			//errorMsgs.append(QStringLiteral("油温报警"));
+			//errorMsgs.append(tr("YWBJ"));
 			//inputFlagError = true;
 			//ui->labelInfoYouWen->show();
 		}
@@ -1636,10 +1640,10 @@ void QtWin2::UpdateState()
 
 		if (m_ncMachine->GetInputFlag(9)) {
 			if (g01Data.isRunning) {
-				errorMsgs.append(QStringLiteral("等待液位中"));
+				errorMsgs.append(tr("DDYWZ"));
 			}
 			else {
-				//errorMsgs.append(QStringLiteral("油位报警"));
+				//errorMsgs.append(tr("YWBJ"));
 			}
 			//inputFlagError = true;
 			//ui->labelInfoYouWei->show();
@@ -1649,7 +1653,7 @@ void QtWin2::UpdateState()
 		}
 
 		if (m_ncMachine->GetInputFlag(10)) {
-			//errorMsgs.append(QStringLiteral("火焰报警"));
+			//errorMsgs.append(tr("HYBJ"));
 			//inputFlagError = true;
 		}
 		else {
@@ -1657,27 +1661,27 @@ void QtWin2::UpdateState()
 
 
 		if (m_ncMachine->GetInputFlag(0)) {
-			errorMsgs.append(QStringLiteral("X+限位"));
+			errorMsgs.append(tr("XXW"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(1)) {
-			errorMsgs.append(QStringLiteral("X-限位"));
+			errorMsgs.append(tr("XXW"));
 			inputFlagError = true;
 		}
 		if (m_ncMachine->GetInputFlag(2)) {
-			errorMsgs.append(QStringLiteral("Y+限位"));
+			errorMsgs.append(tr("YXW"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(3)) {
-			errorMsgs.append(QStringLiteral("Y-限位"));
+			errorMsgs.append(tr("YXW"));
 			inputFlagError = true;
 		}
 		if (m_ncMachine->GetInputFlag(4)) {
-			errorMsgs.append(QStringLiteral("Z+限位"));
+			errorMsgs.append(tr("ZXW"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(5)) {
-			errorMsgs.append(QStringLiteral("Z-限位"));
+			errorMsgs.append(tr("ZXW"));
 			inputFlagError = true;
 		}
 
@@ -1703,13 +1707,13 @@ void QtWin2::UpdateState()
 				ui->lblResultMessage->setToolTip(LineLogger::instance().getErrors(5));
 			}
 
-			if (errorMsg.contains(QStringLiteral("油位"))) {
+			if (errorMsg.contains(tr("YW"))) {
 				ui->labelInfoYouWei->show();
 			}
-			if (errorMsg.contains(QStringLiteral("油温"))) {
+			if (errorMsg.contains(tr("YW"))) {
 				ui->labelInfoYouWen->show();
 			}
-			//if (errorMsg.contains(QStringLiteral("火焰"))) {
+			//if (errorMsg.contains(tr("HY"))) {
 			//	ui->labelInfoYouWen->show();
 			//}
 		}

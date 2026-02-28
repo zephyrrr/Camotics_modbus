@@ -71,7 +71,7 @@ void QtWin4Editor::createNCEdit(QVBoxLayout* layout)
 
 
 	//{
-	//    QDockWidget* dockWidget = new QDockWidget(QStringLiteral("±à¼­Æ÷"), this);
+	//    QDockWidget* dockWidget = new QDockWidget(tr("BJQ"), this);
 	//    dockWidget->setObjectName("GCode Editor");
 	//    dockWidget->setWidget(editor);
 	//    dockWidget->widget()->setMinimumSize(QSize(100, 100));

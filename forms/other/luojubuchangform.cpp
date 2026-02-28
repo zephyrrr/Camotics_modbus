@@ -20,8 +20,8 @@ LuoJuBuChangForm::LuoJuBuChangForm(QWidget *parent) :
 
     table1 = new SpreadSheet(6, 6, new QIntValidator(-32768, 32767), this);
     ui->verticalLayoutTable->addWidget(table1, 1);
-    table1->setVerticalHeaderLabels(QStringList() << QStringLiteral("参考点补偿号") << QStringLiteral("负方向补偿号") << QStringLiteral("正方向补偿号") << QStringLiteral("补偿点间隔") << QStringLiteral("间隙补偿") << QStringLiteral("间隙补偿速度"));
-    table1->setHorizontalHeaderLabels(QStringList() << QStringLiteral("X") << QStringLiteral("Y") << QStringLiteral("Z") << QStringLiteral("U") << QStringLiteral("B") << "");
+    table1->setVerticalHeaderLabels(QStringList() << tr("CKDBCH") << tr("FFXBCH") << tr("ZFXBCH") << tr("BCDJG") << tr("JXBC") << tr("JXBCSD"));
+    table1->setHorizontalHeaderLabels(QStringList() << QString("X") << QString("Y") << QString("Z") << QString("U") << QString("B") << "");
     table1->horizontalHeader()->setObjectName("header-small");
     table1->verticalHeader()->setObjectName("header-small");
     table1->setObjectName("luojubuchang1");
@@ -46,13 +46,13 @@ LuoJuBuChangForm::LuoJuBuChangForm(QWidget *parent) :
         this, &LuoJuBuChangForm::showContextMenu);
 
     menu4Table2 = new QMenu(this);
-    QAction* action1 = menu4Table2->addAction(QStringLiteral("清空当前行"));
+    QAction* action1 = menu4Table2->addAction(tr("QKDQX"));
     connect(action1, &QAction::triggered, this, &LuoJuBuChangForm::onActionClearRowTriggered);
 
-    QAction* action2 = menu4Table2->addAction(QStringLiteral("清空全部"));
+    QAction* action2 = menu4Table2->addAction(tr("QKQB"));
     connect(action2, &QAction::triggered, this, &LuoJuBuChangForm::onActionClearAllTriggered);
 
-    QAction* action3 = menu4Table2->addAction(QStringLiteral("读取"));
+    QAction* action3 = menu4Table2->addAction(tr("DQ"));
     connect(action3, &QAction::triggered, this, &LuoJuBuChangForm::onActionReadTriggered);
 }
 void LuoJuBuChangForm::onActionClearRowTriggered() {
@@ -215,7 +215,7 @@ void LuoJuBuChangForm::RunGCode()
 
         //int ret = modbus_write_file_record(ncMachine->getModbus()->GetRawInterface(), addr, sub_addr + i * nb, 1, src);
         //if (ret < 0) {
-        //    QMessageBox::critical(this, QStringLiteral("错误"), QStringLiteral("发送错误:") + EUtils::libmodbus_strerror(errno));
+        //    QMessageBox::critical(this, tr("CW"), tr("FSCW:") + EUtils::libmodbus_strerror(errno));
         //    break;
         //}
     }
@@ -229,7 +229,7 @@ void LuoJuBuChangForm::on_btnExport_clicked()
 {
     QString path = NFileDialog::findFirstRemovableDisk(); // "data"
     if (path.isEmpty()) {
-        FormUtils::MessageBoxInfo(QStringLiteral("找不到U盘"));
+        FormUtils::MessageBoxInfo(tr("ZBDUP"));
         return;
     }
     QString fileName = NFileDialog::getSaveFileName
@@ -254,7 +254,7 @@ void LuoJuBuChangForm::on_btnImport_clicked()
 {
     QString path = NFileDialog::findFirstRemovableDisk(); // "data"
     if (path.isEmpty()) {
-        FormUtils::MessageBoxInfo(QStringLiteral("找不到U盘"));
+        FormUtils::MessageBoxInfo(tr("ZBDUP"));
         return;
     }
     QString fileName = NFileDialog::getOpenFileName

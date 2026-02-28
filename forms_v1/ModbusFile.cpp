@@ -55,7 +55,7 @@ void ModbusFile::on_btnWrite_clicked()
 	if (4 * nb != hexString.length())
 	{
 		QMessageBox msgBox;
-		msgBox.setText(QStringLiteral("数据个数不符"));
+		msgBox.setText(tr("SJGSBF"));
 		msgBox.setWindowTitle("Error");
 		msgBox.setIcon(QMessageBox::Information);
 		msgBox.setStandardButtons(QMessageBox::Ok);

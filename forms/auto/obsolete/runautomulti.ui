@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RunAutoMulti</class>
  <widget class="QWidget" name="RunAutoMulti">
@@ -54,19 +53,19 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_1">
            <property name="text">
-            <string>加工方法</string>
+            <string>JGFF</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Z轴开始值</string>
+            <string>ZZKSZ</string>
            </property>
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QLineEdit4AxisValue" name="lineEditZ2"/>
+          <widget class="QLineEdit4AxisValue" name="lineEditZ2" />
          </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="btnJghs">
@@ -78,26 +77,26 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>加工回数</string>
+            <string>JGHS</string>
            </property>
           </widget>
          </item>
          <item row="4" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>加工位置</string>
+            <string>JGWZ</string>
            </property>
           </widget>
          </item>
          <item row="4" column="1">
-          <layout class="QVBoxLayout" name="verticalLayout_table1"/>
+          <layout class="QVBoxLayout" name="verticalLayout_table1" />
          </item>
          <item row="1" column="1">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QPushButton" name="pushButton_2">
              <property name="text">
-              <string>单独</string>
+              <string>DD</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -113,7 +112,7 @@
            <item>
             <widget class="QPushButton" name="pushButton">
              <property name="text">
-              <string>连续</string>
+              <string>LX</string>
              </property>
              <property name="checkable">
               <bool>true</bool>
@@ -128,14 +127,14 @@
          <item row="3" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>移动时Z轴值</string>
+            <string>YDSZZZ</string>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
           <layout class="QVBoxLayout" name="verticalLayout_table2">
            <item>
-            <widget class="QLineEdit4AxisValue" name="lineEditZ1"/>
+            <widget class="QLineEdit4AxisValue" name="lineEditZ1" />
            </item>
           </layout>
          </item>
@@ -179,14 +178,14 @@
      <item>
       <widget class="QLabel" name="labelPix">
        <property name="text">
-        <string/>
+        <string />
        </property>
       </widget>
      </item>
      <item>
       <widget class="QTextBrowser" name="textBrowser">
        <property name="html">
-        <string></string>
+        <string />
        </property>
       </widget>
      </item>
@@ -194,7 +193,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
+ <layoutdefault spacing="6" margin="11" />
  <customwidgets>
   <customwidget>
    <class>QLineEdit4AxisValue</class>
@@ -202,9 +201,9 @@
    <header>widgets/qlineedit4axisvalue.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
  <buttongroups>
-  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup" />
  </buttongroups>
 </ui>

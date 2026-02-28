@@ -36,7 +36,7 @@ QtWin::QtWin(QWidget *parent)
 
     LOG_INFO(1, "Log Test");
     //*cb::Logger::instance().createStream("domain", 1, std::string(), 0, 0) << "Sdf";
-    //auto line = QStringLiteral("日志测试");
+    //auto line = tr("RZCS");
     //std::string utf8_str(line.toUtf8().constData());
     //LOG_INFO(1, utf8_str);
     //m_console->writeToConsole();
@@ -62,7 +62,7 @@ QtWin::QtWin(QWidget *parent)
 
     // reg window
     {
-        auto dockWidget = addWidgetAsDock(QStringLiteral("寄存器"), "Reg Window", m_dlgRegWindow, Qt::TopDockWidgetArea);
+        auto dockWidget = addWidgetAsDock(tr("JCQ"), "Reg Window", m_dlgRegWindow, Qt::TopDockWidgetArea);
         dockWidget->widget()->setMinimumSize(QSize(300, 200));
 
     
@@ -70,12 +70,12 @@ QtWin::QtWin(QWidget *parent)
         this->addToolBar(mainWindow2->findChild<QToolBar*>("mainToolBar"));
         QWidget* centralWidget = mainWindow2->centralWidget();
 
-        auto dockWidget2 = addWidgetAsDock(QStringLiteral("代码"), "GCode Window", centralWidget, Qt::TopDockWidgetArea);
+        auto dockWidget2 = addWidgetAsDock(tr("DM"), "GCode Window", centralWidget, Qt::TopDockWidgetArea);
 
         tabifyDockWidget(dockWidget, dockWidget2);
 
         //WeiZhiYiDongForm* form1 = new WeiZhiYiDongForm(this);
-        //auto dockWidget3 = addWidgetAsDock(QStringLiteral("测试"), "Test Window", form1, Qt::TopDockWidgetArea);
+        //auto dockWidget3 = addWidgetAsDock(tr("CS"), "Test Window", form1, Qt::TopDockWidgetArea);
         //tabifyDockWidget(dockWidget, dockWidget3);
     }
     {
@@ -93,7 +93,7 @@ QtWin::QtWin(QWidget *parent)
         QWidget* parentWidget = new QWidget();
         parentWidget->setLayout(layout);
 
-        auto dockWidget = addWidgetAsDock(QStringLiteral("运行状态"), "NCMachinePosition", parentWidget, Qt::TopDockWidgetArea);
+        auto dockWidget = addWidgetAsDock(tr("YXZT"), "NCMachinePosition", parentWidget, Qt::TopDockWidgetArea);
 
         //QSize size = dockWidget->sizeHint();
         //dockWidget->setFixedHeight(size.height());
@@ -230,7 +230,7 @@ void QtWin::logModbusMsg(QString line)
 //void QtWin::logWithLevel(int level, QString line)
 //{
 //    if (level > 1) {
-//        line = QStringLiteral("【警告】") + line;
+//        line = tr("【JG】") + line;
 //    }
 //    ui->txtLog->appendPlainText(line);
 //    //ui->txtLog->appendPlainText(RegWindow::parseMsg(line));

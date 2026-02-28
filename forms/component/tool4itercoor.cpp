@@ -1,4 +1,4 @@
-#include "tool4itercoor.h"
+Ôªø#include "tool4itercoor.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "../utils/formutils.h"
@@ -35,7 +35,7 @@ void Tool4IterCoor::UpdateState()
 
 void Tool4IterCoor::on_btnRunIterCoor_clicked()
 {
-	if (!FormUtils::MessageBoxYesNo(QStringLiteral(" «∑Ò‘À––£ø"))) {
+	if (!FormUtils::MessageBoxYesNo(tr("SFYXÔºü"))) {
 		return;
 	}
 	//

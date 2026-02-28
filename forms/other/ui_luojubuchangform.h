@@ -70,8 +70,8 @@ public:
     void retranslateUi(QWidget *LuoJuBuChangForm)
     {
         LuoJuBuChangForm->setWindowTitle(QCoreApplication::translate("LuoJuBuChangForm", "Form", nullptr));
-        btnExport->setText(QCoreApplication::translate("LuoJuBuChangForm", "\345\257\274\345\207\272", nullptr));
-        btnImport->setText(QCoreApplication::translate("LuoJuBuChangForm", "\345\257\274\345\205\245", nullptr));
+        btnExport->setText(QCoreApplication::translate("LuoJuBuChangForm", "DC", nullptr));
+        btnImport->setText(QCoreApplication::translate("LuoJuBuChangForm", "DR", nullptr));
     } // retranslateUi
 
 };

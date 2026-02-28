@@ -335,11 +335,11 @@ public:
         btnX->setText(QCoreApplication::translate("DuanMianForm", "X", nullptr));
         btnX_P->setText(QCoreApplication::translate("DuanMianForm", "+", nullptr));
         btnX_N->setText(QCoreApplication::translate("DuanMianForm", "-", nullptr));
-        label_3->setText(QCoreApplication::translate("DuanMianForm", "\345\235\220\346\240\2070\350\256\276\345\256\232", nullptr));
+        label_3->setText(QCoreApplication::translate("DuanMianForm", "ZB0SD", nullptr));
         btnZ->setText(QCoreApplication::translate("DuanMianForm", "Z", nullptr));
         btnZ_P->setText(QCoreApplication::translate("DuanMianForm", "+", nullptr));
         btnZ_N->setText(QCoreApplication::translate("DuanMianForm", "-", nullptr));
-        label_1->setText(QCoreApplication::translate("DuanMianForm", "\346\225\260\346\215\256\350\276\223\345\205\245", nullptr));
+        label_1->setText(QCoreApplication::translate("DuanMianForm", "SJSR", nullptr));
         inSetToZero->setText(QCoreApplication::translate("DuanMianForm", "ON", nullptr));
         pushButton_6->setText(QCoreApplication::translate("DuanMianForm", "OFF", nullptr));
         btnY->setText(QCoreApplication::translate("DuanMianForm", "Y", nullptr));
@@ -348,21 +348,10 @@ public:
         btnU->setText(QCoreApplication::translate("DuanMianForm", "U", nullptr));
         btnU_P->setText(QCoreApplication::translate("DuanMianForm", "+", nullptr));
         btnU_N->setText(QCoreApplication::translate("DuanMianForm", "-", nullptr));
-        label_4->setText(QCoreApplication::translate("DuanMianForm", "\346\216\245\350\247\246\346\204\237\347\237\245\345\233\236\351\200\200\345\200\274", nullptr));
+        label_4->setText(QCoreApplication::translate("DuanMianForm", "JCGZHTZ", nullptr));
         inBack->setText(QCoreApplication::translate("DuanMianForm", "0.5", nullptr));
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("DuanMianForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\350\275\264\345\217\267]</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\345\257\271\345\272\224\350\275\264\345\217\267\343"
-                        "\200\202</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\346\226\271\345\220\221]</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\346\226\271\345\220\221\357\274\214\342\200\234+\342\200\235\344\270\272\345\257\271\345\272\224\350\275\264\346\255\243\346\226\271\345\220\221\357\274\214\342\200\234-\342\200\235\344\270\272\345\257\271\345\272\224\350\275\264\347\232\204\350\264\237\346\226\271\345\220\221\343\200\202</span></p></body></html>", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };

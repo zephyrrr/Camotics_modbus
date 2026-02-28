@@ -36,6 +36,11 @@
 其他：
 pyinstaller -F ..\..\..\Camotics_modbus2\plugins_src\RunAutoParamForm\tool\convert_xls_to_csv.py
 
+其他：
+C:\Qt\5.15.2\msvc2019\bin\lrelease.exe e:\cnc\cnc\Camotics_modbus2\Translation_en.ts
+C:\Qt\5.15.2\msvc2019\bin\lrelease.exe e:\cnc\cnc\Camotics_modbus2\Translation_zh_CN.ts
+[轴号] 动作的对应轴号。
+[方向] 动作的方向，“+”为对应轴正方向，“-”为对应轴的负方向。
 
 1.2.7
 1. 手动单个加工界面，正在加工行，颜色改变
@@ -101,12 +106,14 @@ pyinstaller -F ..\..\..\Camotics_modbus2\plugins_src\RunAutoParamForm\tool\conve
 python:
 python -m venv .venv
 
-
+# how to encrypt using pyarmor
 cd e:\cnc\cnc\python\edm\Scripts
 activate.bat
 python activate_this.py
 #pyarmor.exe gen e:\cnc\cnc\Camotics_modbus\plugins\ddjg\tools_格子1.py
 python pyarmor_tool.py
+#copy dist file to dest
+
 
 import runpy
 variables = {    'window': window }

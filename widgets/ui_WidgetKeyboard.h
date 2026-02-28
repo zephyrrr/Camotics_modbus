@@ -643,7 +643,7 @@ public:
 
     void retranslateUi(QDialog *WidgetKeyboard)
     {
-        WidgetKeyboard->setWindowTitle(QCoreApplication::translate("WidgetKeyboard", "\350\231\232\346\213\237\351\224\256\347\233\230", nullptr));
+        WidgetKeyboard->setWindowTitle(QCoreApplication::translate("WidgetKeyboard", "XNJP", nullptr));
 #if QT_CONFIG(accessibility)
         btnTilt->setAccessibleName(QCoreApplication::translate("WidgetKeyboard", "0x60", nullptr));
 #endif // QT_CONFIG(accessibility)

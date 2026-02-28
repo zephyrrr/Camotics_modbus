@@ -381,6 +381,9 @@
     <ClCompile Include="utils\simplecrypt.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="utils\LocaleUtils.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="forms_v1\mainwindow.h">
@@ -928,6 +931,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="plugins\iplugin.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\LocaleUtils.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

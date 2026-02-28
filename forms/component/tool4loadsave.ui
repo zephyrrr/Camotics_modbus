@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4LoadSaveClass</class>
  <widget class="QWidget" name="Tool4LoadSaveClass">
@@ -14,7 +13,7 @@
    <string>Tool4LoadSave</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true" />
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,14 +21,14 @@
      <item>
       <widget class="QPushButton" name="btnLoad">
        <property name="text">
-        <string>读取</string>
+        <string>DQ</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="btnSave">
        <property name="text">
-        <string>保存</string>
+        <string>BC</string>
        </property>
       </widget>
      </item>
@@ -37,7 +36,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="5" margin="5" />
+ <resources />
+ <connections />
 </ui>

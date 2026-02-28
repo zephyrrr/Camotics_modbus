@@ -15,7 +15,7 @@ QMap<QString, QString> PluginUtils::loadPythonScripts(const QString& pluginPath)
         return QMap<QString, QString>();
     }
 
-    //PluginUtils::decryptFile(QStringLiteral("z:\\tools_Иёзг2.pyc.en"));
+    //PluginUtils::decryptFile(tr("ZGZ2"));
 
     QMap<QString, QString> ret;
 

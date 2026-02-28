@@ -223,7 +223,7 @@ public:
 
     void retranslateUi(QDialog *QNumericPadClass)
     {
-        QNumericPadClass->setWindowTitle(QCoreApplication::translate("QNumericPadClass", "\351\224\256\347\233\230", nullptr));
+        QNumericPadClass->setWindowTitle(QCoreApplication::translate("QNumericPadClass", "JP", nullptr));
         pushButtonKey8->setText(QCoreApplication::translate("QNumericPadClass", "8", nullptr));
         pushButtonKeySub->setText(QCoreApplication::translate("QNumericPadClass", "-", nullptr));
         pushButtonKeyDot->setText(QCoreApplication::translate("QNumericPadClass", ".", nullptr));
@@ -238,10 +238,10 @@ public:
         pushButtonKey5->setText(QCoreApplication::translate("QNumericPadClass", "5", nullptr));
         pushButtonKey0->setText(QCoreApplication::translate("QNumericPadClass", "0", nullptr));
         pushButtonKey9->setText(QCoreApplication::translate("QNumericPadClass", "9", nullptr));
-        pushButtonKeyBack->setText(QCoreApplication::translate("QNumericPadClass", "\345\233\236\351\200\200", nullptr));
-        pushButtonKeyDel->setText(QCoreApplication::translate("QNumericPadClass", "\346\270\205\347\251\272", nullptr));
-        pushButtonKeyEnter->setText(QCoreApplication::translate("QNumericPadClass", "\347\241\256\350\256\244", nullptr));
-        pushButtonKeyCancel->setText(QCoreApplication::translate("QNumericPadClass", "\345\217\226\346\266\210", nullptr));
+        pushButtonKeyBack->setText(QCoreApplication::translate("QNumericPadClass", "HT", nullptr));
+        pushButtonKeyDel->setText(QCoreApplication::translate("QNumericPadClass", "QK", nullptr));
+        pushButtonKeyEnter->setText(QCoreApplication::translate("QNumericPadClass", "QR", nullptr));
+        pushButtonKeyCancel->setText(QCoreApplication::translate("QNumericPadClass", "QX", nullptr));
     } // retranslateUi
 
 };

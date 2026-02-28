@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>NCMachinePanel</class>
  <widget class="QWidget" name="NCMachinePanel">
@@ -29,35 +28,35 @@
     <item row="0" column="0">
      <widget class="QPushButton" name="btnSendKaiji">
       <property name="text">
-       <string>开机</string>
+       <string>KJ</string>
       </property>
      </widget>
     </item>
     <item row="0" column="1">
      <widget class="QPushButton" name="btnSendGuanji">
       <property name="text">
-       <string>关机</string>
+       <string>GJ</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
      <widget class="QPushButton" name="btnSendBackToZero1">
       <property name="text">
-       <string>回零X</string>
+       <string>HLX</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
      <widget class="QPushButton" name="btnSendBackToZero3">
       <property name="text">
-       <string>回零Y</string>
+       <string>HLY</string>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
      <widget class="QPushButton" name="btnSendBackToZero5">
       <property name="text">
-       <string>回零Z</string>
+       <string>HLZ</string>
       </property>
      </widget>
     </item>
@@ -120,6 +119,6 @@
    </layout>
   </widget>
  </widget>
- <resources/>
- <connections/>
+ <resources />
+ <connections />
 </ui>

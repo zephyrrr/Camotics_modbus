@@ -1,4 +1,4 @@
-#include "weizhiyidongform.h"
+ï»¿#include "weizhiyidongform.h"
 #include "ui_weizhiyidongform.h"
 #include "zhuzhongxingform.h"
 #include "../../modbus/NCMachine.h"
@@ -188,7 +188,7 @@ o101 endif)").arg(GCodeTool::axisInt[selectedAxisI]);
 		//ncMachine->GoApi();
 		//std::function<void()> doFuncZeroAxis2 = [this, selectedAxisI]() {
 		//	QMetaObject::invokeMethod(this, [this, selectedAxisI]() {
-		//		bool b = FormUtils::MessageBoxYesNo(QStringLiteral("ÊÇ·ñÇåÁã»úÐµ×ø±ê£¿"));
+		//		bool b = FormUtils::MessageBoxYesNo(tr("SFQLJXZBï¼Ÿ"));
 		//		if (b) {
 		//			ncMachine->enterSetPriority(1);
 		//			ncMachine->GoApi();

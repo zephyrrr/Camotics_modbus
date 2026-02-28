@@ -1,4 +1,4 @@
-#include "huilingform.h"
+ï»¿#include "huilingform.h"
 #include "zhuzhongxingform.h"
 #include "utils/formutils.h"
 #include "modbus/NCMachine.h"
@@ -64,7 +64,7 @@ void HuiLingForm::RunGCode()
     m_ncMachine->GoApi();
 	std::function<void()> doFuncZeroAxis2 = [this, selectedAxisI]() {
 		QMetaObject::invokeMethod(this, [this, selectedAxisI]() {
-			bool b = FormUtils::MessageBoxYesNo(QStringLiteral("ÊÇ·ñÇåÁã»úÐµ×ø±ê£¿"));
+			bool b = FormUtils::MessageBoxYesNo(tr("SFQLJXZBï¼Ÿ"));
 			if (b) {
 				m_ncMachine->enterSetPriority(1);
 				m_ncMachine->GoApi();

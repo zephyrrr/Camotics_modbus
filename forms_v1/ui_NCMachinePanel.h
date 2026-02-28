@@ -120,11 +120,11 @@ public:
     void retranslateUi(QWidget *NCMachinePanel)
     {
         NCMachinePanel->setWindowTitle(QCoreApplication::translate("NCMachinePanel", "Form", nullptr));
-        btnSendKaiji->setText(QCoreApplication::translate("NCMachinePanel", "\345\274\200\346\234\272", nullptr));
-        btnSendGuanji->setText(QCoreApplication::translate("NCMachinePanel", "\345\205\263\346\234\272", nullptr));
-        btnSendBackToZero1->setText(QCoreApplication::translate("NCMachinePanel", "\345\233\236\351\233\266X", nullptr));
-        btnSendBackToZero3->setText(QCoreApplication::translate("NCMachinePanel", "\345\233\236\351\233\266Y", nullptr));
-        btnSendBackToZero5->setText(QCoreApplication::translate("NCMachinePanel", "\345\233\236\351\233\266Z", nullptr));
+        btnSendKaiji->setText(QCoreApplication::translate("NCMachinePanel", "KJ", nullptr));
+        btnSendGuanji->setText(QCoreApplication::translate("NCMachinePanel", "GJ", nullptr));
+        btnSendBackToZero1->setText(QCoreApplication::translate("NCMachinePanel", "HLX", nullptr));
+        btnSendBackToZero3->setText(QCoreApplication::translate("NCMachinePanel", "HLY", nullptr));
+        btnSendBackToZero5->setText(QCoreApplication::translate("NCMachinePanel", "HLZ", nullptr));
         lineEditState1->setText(QCoreApplication::translate("NCMachinePanel", "0", nullptr));
         lineEditState2->setText(QCoreApplication::translate("NCMachinePanel", "0", nullptr));
         lineEditState3->setText(QCoreApplication::translate("NCMachinePanel", "0", nullptr));

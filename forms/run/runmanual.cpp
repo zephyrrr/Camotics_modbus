@@ -48,7 +48,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	
 
 	QString rowHeaders[] = { "X", "Y", "Z" };
-	QString headers[] = { QStringLiteral("坐标轴"), QStringLiteral("深度") };
+	QString headers[] = { tr("ZBZ"), tr("SD") };
 	table1 = new ButtonEditTableWidget(this);
 	table1->createForm(3, 1, [this](int col, QWidget* parent) {
 		QLineEdit4AxisValue* p = new QLineEdit4AxisValue(parent);
@@ -89,8 +89,8 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	//	//	edit->setText("00000.000");
 	//	//}
 	//});
-	QString headers2[] = { QStringLiteral("回数"), QStringLiteral("加工"), "C.No", "LN", "LP", "STEP", QStringLiteral("加工余量"), QStringLiteral("定时"), QStringLiteral("时间"), QStringLiteral("详细") };
-	QString defaultRowValues[] = { "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "...", "" };
+	QString headers2[] = { tr("HS"), tr("JG"), "C.No", "LN", "LP", "STEP", tr("JGYL"), tr("DS"), tr("SJ"), tr("Detail") };
+	QString defaultRowValues[] = { "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "..." };
 	int visibleColumnCount = 9;
 	int hiddenColumnCount = 1;
 
@@ -106,7 +106,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 			connect(btn, &QLineEdit::textChanged, [btn, parent](const QString& s) {
 				ButtonEditTableWidget* table = qobject_cast<ButtonEditTableWidget*>(parent);
 				int rowHere = table->getRowOfEdit(1, btn);
-				/*if (s == QStringLiteral("否")) {
+				/*if (s == tr("F")) {
 					btn->setStyleSheet("background-color: lightgray;");
 				}
 				
@@ -315,7 +315,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 
 	mbw = new MultiButtonsWidget(this);
 	mbw->addDefaultButtons(table2);
-	mbw->addButton(QStringLiteral("复位"), [this](bool) {
+	mbw->addButton(tr("Reset"), [this](bool) {
 		if (table2->isReadOnly())
 			return;
 		this->table2->setRowSelection(-1, false);
@@ -973,7 +973,7 @@ M02
 
 void RunManual::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = QStringLiteral("手动单个");
+	SystemSettings::instance().LastRunNCFileName = tr("SDDG");
 
 	QString gcode = GetGCode();
 

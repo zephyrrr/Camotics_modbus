@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QObject>
 #include <QDialog>
@@ -16,7 +16,7 @@ class NCMachinePanel : public BaseChildWindow
 	Q_OBJECT
 
 public:
-	NCMachinePanel(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings);
+	NCMachinePanel(QWidget* parent, NCMachine* ncMachine, ModbusAdapter* adapter, ModbusCommSettings* settings);
 	~NCMachinePanel();
 
 	void RunGCode() override {}
@@ -25,7 +25,6 @@ private:
 
 	ModbusCommSettings* m_modbusCommSettings;
 	ModbusAdapter* m_modbus;
-	NCMachine* m_ncMachine;
 
 private slots:
 	void on_btnSendKaiji_clicked();

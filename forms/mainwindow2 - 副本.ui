@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
   <class>QtWin2</class>
   <widget class="QMainWindow" name="mainWindow">
@@ -190,7 +189,7 @@
                                   </font>
                                 </property>
                                 <property name="text">
-                                  <string>文件名：</string>
+                                  <string>WJM：</string>
                                 </property>
                               </widget>
                             </item>
@@ -224,7 +223,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>日期</string>
+                                      <string>RQ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -250,7 +249,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>时间</string>
+                                      <string>SJ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -290,13 +289,13 @@
                             </property>
                             <property name="palette">
                               <palette>
-                                <active/>
-                                <inactive/>
-                                <disabled/>
+                                <active />
+                                <inactive />
+                                <disabled />
                               </palette>
                             </property>
                             <property name="font">
-                              <font/>
+                              <font />
                             </property>
                             <property name="mouseTracking">
                               <bool>false</bool>
@@ -345,7 +344,7 @@
                                 <number>0</number>
                               </property>
                               <item>
-                                <widget class="QWidget" name="Display2D" native="true"/>
+                                <widget class="QWidget" name="Display2D" native="true" />
                               </item>
                             </layout>
                           </widget>
@@ -381,7 +380,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>全长</string>
+                                      <string>QZ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -436,7 +435,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>残余量</string>
+                                      <string>CYL</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -491,7 +490,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>加工时间</string>
+                                      <string>JGSJ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -533,7 +532,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>残余时间</string>
+                                      <string>CYSJ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -575,7 +574,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>G04残余时间</string>
+                                      <string>GCYSJ</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -617,7 +616,7 @@
                                       </font>
                                     </property>
                                     <property name="text">
-                                      <string>加工速度</string>
+                                      <string>JGSD</string>
                                     </property>
                                   </widget>
                                 </item>
@@ -698,7 +697,7 @@
                               <bool>false</bool>
                             </property>
                             <property name="text">
-                              <string>报警详情</string>
+                              <string>BJXQ</string>
                             </property>
                             <property name="iconSize">
                               <size>
@@ -707,7 +706,7 @@
                               </size>
                             </property>
                             <property name="shortcut">
-                              <string/>
+                              <string />
                             </property>
                             <property name="checkable">
                               <bool>true</bool>
@@ -768,7 +767,7 @@
                               <bool>false</bool>
                             </property>
                             <property name="text">
-                              <string/>
+                              <string />
                             </property>
                           </widget>
                         </item>
@@ -781,7 +780,7 @@
                               </font>
                             </property>
                             <property name="text">
-                              <string>正常</string>
+                              <string>ZC</string>
                             </property>
                           </widget>
                         </item>
@@ -844,7 +843,7 @@
                 </widget>
               </item>
               <item>
-                <widget class="QStackedWidget" name="stackedChildWidget"/>
+                <widget class="QStackedWidget" name="stackedChildWidget" />
               </item>
             </layout>
           </widget>
@@ -870,7 +869,7 @@
             <item>
               <widget class="QGroupBox" name="groupBoxMenus">
                 <property name="title">
-                  <string>菜单</string>
+                  <string>CD</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_4_2">
                   <property name="spacing">
@@ -912,27 +911,27 @@
                       </property>
                       <widget class="QWidget" name="page_1">
                         <attribute name="label">
-                          <string>常用</string>
+                          <string>CY</string>
                         </attribute>
                       </widget>
                       <widget class="QWidget" name="page_2">
                         <attribute name="label">
-                          <string>手动</string>
+                          <string>SD</string>
                         </attribute>
                       </widget>
                       <widget class="QWidget" name="page_3">
                         <attribute name="label">
-                          <string>编辑</string>
+                          <string>BJ</string>
                         </attribute>
                       </widget>
                       <widget class="QWidget" name="page_4">
                         <attribute name="label">
-                          <string>运行</string>
+                          <string>YX</string>
                         </attribute>
                       </widget>
                       <widget class="QWidget" name="page_5">
                         <attribute name="label">
-                          <string>其他</string>
+                          <string>QT</string>
                         </attribute>
                       </widget>
                     </widget>
@@ -943,7 +942,7 @@
             <item>
               <widget class="QGroupBox" name="groupBoxSettings">
                 <property name="title">
-                  <string>设置</string>
+                  <string>SZ</string>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_4">
                   <property name="spacing">
@@ -975,7 +974,7 @@
                         </font>
                       </property>
                       <property name="text">
-                        <string>加工条件</string>
+                        <string>JGTJ</string>
                       </property>
                     </widget>
                   </item>
@@ -1002,35 +1001,35 @@
       <attribute name="toolBarBreak">
         <bool>false</bool>
       </attribute>
-      <addaction name="actionRun"/>
-      <addaction name="actionCancel"/>
-      <addaction name="separator"/>
-      <addaction name="actionDebug"/>
-      <addaction name="actionTouchSense"/>
+      <addaction name="actionRun" />
+      <addaction name="actionCancel" />
+      <addaction name="separator" />
+      <addaction name="actionDebug" />
+      <addaction name="actionTouchSense" />
     </widget>
     <action name="actionRun">
       <property name="text">
-        <string>运行</string>
+        <string>YX</string>
       </property>
     </action>
     <action name="actionCancel">
       <property name="text">
-        <string>取消</string>
+        <string>QX</string>
       </property>
     </action>
     <action name="actionDebug">
       <property name="text">
-        <string>调试</string>
+        <string>TS</string>
       </property>
     </action>
     <action name="actionTouchSense">
       <property name="text">
-        <string>短路</string>
+        <string>DL</string>
       </property>
     </action>
   </widget>
-  <resources/>
-  <connections/>
+  <resources />
+  <connections />
   <buttongroups>
     <buttongroup name="buttonGroup">
       <property name="objectName">

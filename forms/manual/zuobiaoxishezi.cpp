@@ -47,7 +47,7 @@ ZuoBiaoXiSheZiForm::ZuoBiaoXiSheZiForm(QWidget *parent) :
     layout->addWidget(table);
 
     // Add header labels 
-    QString headers[] = { QStringLiteral("坐标系"), "X", "Y", "Z", "U"};
+    QString headers[] = { tr("ZBX"), "X", "Y", "Z", "U"};
     for (int i = 0; i < POS_AXIS_LEN + 1; ++i) {
         //layout->addWidget(new QLabel(headers[i]), 0, i);
         QLabel* label = new QLabel(headers[i], table);
@@ -57,7 +57,7 @@ ZuoBiaoXiSheZiForm::ZuoBiaoXiSheZiForm(QWidget *parent) :
     }
 
     buttonGroup = new QButtonGroup(this);
-    QString coorNames[] = { "054", "055", "056", "057", "058", "059", QStringLiteral("机械")};
+    QString coorNames[] = { "054", "055", "056", "057", "058", "059", tr("JX")};
     // Add buttons and line edits
     for (int row = 1; row < 8; ++row) {
         QPushButton* button = new QPushButton(coorNames[row-1], table);

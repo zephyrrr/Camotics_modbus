@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4GCodeClass</class>
  <widget class="QWidget" name="Tool4GCodeClass">
@@ -14,7 +13,7 @@
    <string>Tool4GCode</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true" />
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,7 +21,7 @@
      <item>
       <widget class="QPushButton" name="btnExport">
        <property name="text">
-        <string>G代码保存</string>
+        <string>GDMBC</string>
        </property>
       </widget>
      </item>
@@ -30,7 +29,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="5" margin="5" />
+ <resources />
+ <connections />
 </ui>

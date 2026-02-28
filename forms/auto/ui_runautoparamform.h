@@ -1,4 +1,4 @@
-/********************************************************************************
+﻿/********************************************************************************
 ** Form generated from reading UI file 'runautoparamform.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.2
@@ -285,35 +285,26 @@ public:
     void retranslateUi(QWidget *RunAutoParamForm)
     {
         RunAutoParamForm->setWindowTitle(QCoreApplication::translate("RunAutoParamForm", "Form", nullptr));
-        label_15->setText(QCoreApplication::translate("RunAutoParamForm", "\347\262\227\347\263\231\345\272\246", nullptr));
+        label_15->setText(QCoreApplication::translate("RunAutoParamForm", "CCD", nullptr));
         inDbhhw->setText(QCoreApplication::translate("RunAutoParamForm", "0.350", nullptr));
-        inDjxz->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "\351\200\232\347\224\250", nullptr));
+        inDjxz->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "TY", nullptr));
 
-        label_19->setText(QCoreApplication::translate("RunAutoParamForm", "\345\215\225\350\276\271\347\201\253\350\212\261\344\275\215", nullptr));
-        label_13->setText(QCoreApplication::translate("RunAutoParamForm", "\345\212\240\345\267\245\351\235\242\347\247\257", nullptr));
-        label_5->setText(QCoreApplication::translate("RunAutoParamForm", "\345\212\240\345\267\245\346\267\261\345\272\246", nullptr));
-        label_12->setText(QCoreApplication::translate("RunAutoParamForm", "\345\212\240\345\267\245\350\275\264", nullptr));
-        label_14->setText(QCoreApplication::translate("RunAutoParamForm", "\345\217\202\350\200\203\346\267\261\345\272\246", nullptr));
-        label_1->setText(QCoreApplication::translate("RunAutoParamForm", "\346\235\220\346\226\231\347\273\204\345\220\210", nullptr));
+        label_19->setText(QCoreApplication::translate("RunAutoParamForm", "DBHHW", nullptr));
+        label_13->setText(QCoreApplication::translate("RunAutoParamForm", "JGMJ", nullptr));
+        label_5->setText(QCoreApplication::translate("RunAutoParamForm", "JGSD", nullptr));
+        label_12->setText(QCoreApplication::translate("RunAutoParamForm", "JGZ", nullptr));
+        label_14->setText(QCoreApplication::translate("RunAutoParamForm", "CKSD", nullptr));
+        label_1->setText(QCoreApplication::translate("RunAutoParamForm", "CLZH", nullptr));
         inCksd->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
-        label_18->setText(QCoreApplication::translate("RunAutoParamForm", "\345\212\240\345\267\245\351\207\215\350\247\206", nullptr));
-        label_16->setText(QCoreApplication::translate("RunAutoParamForm", "\346\221\207\345\212\250\345\275\242\347\212\266", nullptr));
-        label_11->setText(QCoreApplication::translate("RunAutoParamForm", "\345\275\242\347\212\266\351\200\211\346\213\251", nullptr));
-        inClzh->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "\347\237\263\345\242\250 - \351\222\242", nullptr));
+        label_18->setText(QCoreApplication::translate("RunAutoParamForm", "JGZS", nullptr));
+        label_16->setText(QCoreApplication::translate("RunAutoParamForm", "YDXZ", nullptr));
+        label_11->setText(QCoreApplication::translate("RunAutoParamForm", "XZXZ", nullptr));
+        inClzh->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "SM G", nullptr));
 
         inJgsd->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
-        inJgsd2->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
-        inJgsd3->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
         label_17->setText(QCoreApplication::translate("RunAutoParamForm", "\346\221\207\345\212\250\346\250\241\345\274\217", nullptr));
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("RunAutoParamForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };

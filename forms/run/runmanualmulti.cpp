@@ -29,7 +29,7 @@ RunManualMulti::RunManualMulti(QWidget *parent, QString objectName)
 	
 	ui.setupUi(this);
 
-	QString headers[] = { "No.", QStringLiteral("加工"), "X", "Y", "U", QStringLiteral("坐标系"), QStringLiteral("起始"), QStringLiteral("结束")};
+	QString headers[] = { "No.", tr("JG"), "X", "Y", "U", tr("ZBX"), tr("QS"), tr("JS")};
 	int columnWidth[] = { 50, 75, 150, 150, 150, 100, 50, 50 };
 	QString defaultRowValues[] = { "Y", "0.000", "0.000", "0.000", "054", "", ""};
 	
@@ -100,24 +100,24 @@ RunManualMulti::RunManualMulti(QWidget *parent, QString objectName)
 
 	mbw = new MultiButtonsWidget(this);
 	mbw->addDefaultButtons(table3);
-	mbw->addButton(QStringLiteral("导入"), [this](bool) {
+	mbw->addButton(tr("DR"), [this](bool) {
 		if (table3->isReadOnly())
 			return;
 		QString path = this->GetProjectDir() + QDir::separator() + QString("WeiZhiJiYiForm");
 
-		QString fileName = NFileDialog::getOpenFileName(this, QStringLiteral("打开文件"), path, QStringLiteral("(*.json.pos);;"));
+		QString fileName = NFileDialog::getOpenFileName(this, tr("DKWJ"), path, QString("(*.json.pos);;"));
 
 		if (fileName.isEmpty())
 			return;
 
 		table3->deserialize(fileName);
 		});
-	mbw->addButton(QStringLiteral("全选"), [this](bool) {
+	mbw->addButton(tr("SelectAll"), [this](bool) {
 		for (int i = 0; i < table3->getDataCount(); ++i) {
 			table3->setValue(i, -1, "True");
 		}
 		});
-	mbw->addButton(QStringLiteral("复位"), [this](bool) {
+	mbw->addButton(tr("Reset"), [this](bool) {
 		if (table3->isReadOnly())
 			return;
 		this->table3->setRowSelection(-1, false);
@@ -463,14 +463,14 @@ QString RunManualMulti::GetGCodeV1()
 
 void RunManualMulti::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = QStringLiteral("手动多个");
+	SystemSettings::instance().LastRunNCFileName = tr("SDDG");
 
 	QString gcode = GetGCode();
 
 	this->table3->setRowSelection(-1, false);
 	//this->setEnabled(false);
 	
-	RunManual* runManualForm = qobject_cast<RunManual *>(BaseChildWindow::GetMainWindow()->getChildWindow(QStringLiteral("手动单个")));
+	RunManual* runManualForm = qobject_cast<RunManual *>(BaseChildWindow::GetMainWindow()->getChildWindow(tr("SDDG")));
 	runManualForm->SetCurrentRunLine(true);
 
 	//bool unsetPreviousLine = !ui.btnJgff->isChecked();
@@ -711,5 +711,5 @@ void RunManualMulti::UpdateState()
 void RunManualMulti::on_btnJghs_clicked()
 {
 	BaseMainWindow* mainWindow = GetMainWindow();
-	mainWindow->showChildWindow(QStringLiteral("手动单个"));
+	mainWindow->showChildWindow(tr("SDDG"));
 }

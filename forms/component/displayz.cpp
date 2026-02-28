@@ -1,4 +1,4 @@
-#include "displayz.h"
+ï»¿#include "displayz.h"
 
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QChart>
@@ -26,7 +26,7 @@ DisplayZ::DisplayZ(QWidget *parent)
     chart->setBackgroundBrush(QBrush(Qt::transparent));
     chart->legend()->hide();
     chart->createDefaultAxes();
-    chart->setTitle(QStringLiteral("ZÖá Éî¶È"));
+    chart->setTitle(tr("ZZ SD"));
 
     this->setChart(chart);
 
@@ -35,7 +35,7 @@ DisplayZ::DisplayZ(QWidget *parent)
 
     QDateTimeAxis* axisX = new QDateTimeAxis(chart);
     axisX->setFormat("mm:ss");
-    axisX->setTitleText(QStringLiteral("Ê±¼ä"));
+    axisX->setTitleText(tr("SJ"));
     //QFont font = axisX->labelsFont();
     //font.setPointSize(4);
     //axisX->setLabelsFont(font);
@@ -49,9 +49,9 @@ DisplayZ::DisplayZ(QWidget *parent)
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
-    // ´´½¨Ò»¸ö QValueAxis ¶ÔÏó£¬²¢ÉèÖÃÆä·¶Î§
+    // åˆ›å»ºä¸€ä¸ª QValueAxis å¯¹è±¡ï¼Œå¹¶è®¾ç½®å…¶èŒƒå›´
     QValueAxis* axisY = new QValueAxis(this);
-    axisX->setTitleText(QStringLiteral("Éî¶È"));
+    axisX->setTitleText(tr("ShenDu"));
     axisY->setMin(0);
     axisY->setMax(10);
     chart->addAxis(axisY, Qt::AlignLeft);

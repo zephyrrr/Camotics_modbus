@@ -34,7 +34,7 @@ QVector<double> PointGenratorByGrid::generatePoints()
 			double dy = ui->txtStepY->text().toDouble();
 			if (dx < 0.001 || dy < 0.001)
 			{
-				throw std::exception("步长太小");
+				throw std::exception("姝ラ暱澶皬");
 			}
 			for (double x = x1; x <= x2; x += dx)
 			{
@@ -55,7 +55,7 @@ QVector<double> PointGenratorByGrid::generatePoints()
 
 QString PointGenratorByGrid::getName()
 {
-	return QStringLiteral("格子1");
+	return tr("GZ1");
 }
 
 QWidget* PointGenratorByGrid::getWidget()

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Gaotiao4JiagongClass</class>
  <widget class="QWidget" name="Gaotiao4JiagongClass">
@@ -11,11 +10,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>高跳</string>
+   <string>GT</string>
   </property>
    <widget class="QWidget" name="centralWidget" />
  </widget>
- <layoutdefault spacing="6" margin="11"/>
- <resources/>
- <connections/>
+ <layoutdefault spacing="6" margin="11" />
+ <resources />
+ <connections />
 </ui>

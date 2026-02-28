@@ -46,7 +46,8 @@ namespace {
 void RealtimeJsonMachine::doTask(cb::JSON::ValuePtr sink, bool checkContinue)
 {
     if (simpleMode) {
-		throw std::runtime_error("¼òµ¥Ä£Ê½ÏÂ²»Ö§³ÖÈÎÎñÏß³ÌÄ£Ê½");
+        // ç®€å•æ¨¡å¼ä¸‹ä¸æ”¯æŒä»»åŠ¡çº¿ç¨‹æ¨¡å¼
+		throw std::runtime_error("not support async mode in simpleMode now.");
     }
 
     if (checkContinue) {
@@ -61,8 +62,8 @@ void RealtimeJsonMachine::doTask(cb::JSON::ValuePtr sink, bool checkContinue)
             if (!m_exceptionThrown) {
                 m_exceptionThrown = true;
                 //throw GCode::EndProgram();
-                throw GCodeInterruptException(EUtils::QString2StdString(QStringLiteral("ÓÃ»§È¡Ïû")));
-                //throw cb::Exception(EUtils::QString2StdString(QStringLiteral("ÓÃ»§È¡Ïû")), this->getLocation().getStart());
+                throw GCodeInterruptException(EUtils::QString2StdString("User Cancelled"));
+                //throw cb::Exception(EUtils::QString2StdString(tr("YHQX")), this->getLocation().getStart());
             }
             else {
                 return;
@@ -89,7 +90,7 @@ void RealtimeJsonMachine::doTask(cb::JSON::ValuePtr sink, bool checkContinue)
         if (!m_taskToContinue) {
             if (!m_exceptionThrown) {
                 m_exceptionThrown = true;
-                throw GCodeInterruptException(EUtils::QString2StdString(QStringLiteral("ÓÃ»§È¡Ïû")));
+                throw GCodeInterruptException(EUtils::QString2StdString("User Cancelled"));
             }
             else {
                 return;
@@ -359,7 +360,7 @@ void RealtimeJsonMachine::move(const Axes& _target, int axes, bool rapid, double
         string next = dtos(target.get(*axis), imperial).toString();
 
         // Always output axis the first time
-        // SPK ¿ÉÒÔÏàÍ¬×ø±ê¼ÌĞø¼Ó¹¤
+        // SPK å¯ä»¥ç›¸åŒåæ ‡ç»§ç»­åŠ å·¥
         if (rapid) {
             if (wasSeen && last == next) continue;
         }

@@ -1,4 +1,4 @@
-#include "weizhijiyi.h"
+ï»¿#include "weizhijiyi.h"
 #include "ui_weizhijiyi.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -34,8 +34,8 @@ WeiZhiJiYiForm::WeiZhiJiYiForm(QWidget *parent) :
 		int tabIndex = tabBar->currentIndex();
         this->LoadData();
         for (int j = 0; j < POS_SET_COUNT_PERPAGE; ++j) {
-            this->inButtons[j]->setText(QStringLiteral("¼ÇÒä%1%2").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
-            this->inButtons2[j]->setText(QStringLiteral("ÒÆ¶¯%1%2").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
+            this->inButtons[j]->setText(tr("JY") + QString("%1").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
+            this->inButtons2[j]->setText(tr("YD") + QString("%1").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
         }
         });
 
@@ -49,7 +49,7 @@ WeiZhiJiYiForm::WeiZhiJiYiForm(QWidget *parent) :
     table->setMinimumHeight(400);
 
     // Add header labels 
-    QString headers[] = { "", QStringLiteral("×ø±êÏµ"), "X", "Y", "Z", "U", ""};
+    QString headers[] = { "", tr("ZBX"), "X", "Y", "Z", "U", ""};
     for (int i = 0; i < POS_SET_COUNT_PERPAGE + 1; ++i) {
         QLabel* label = new QLabel(headers[i], table);
         label->setTextInteractionFlags(Qt::TextInteractionFlag::NoTextInteraction);
@@ -61,7 +61,7 @@ WeiZhiJiYiForm::WeiZhiJiYiForm(QWidget *parent) :
     for (int row = 1; row <= POS_SET_COUNT_PERPAGE + 1; ++row) {
 
         if (row != POS_SET_COUNT_PERPAGE + 1) {
-            QPushButton* button = new QPushButton(QStringLiteral("¼ÇÒä%1").arg(row), table);
+            QPushButton* button = new QPushButton(tr("JY") + QString("%1").arg(row), table);
             inButtons[row - 1] = button;
             button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
             button->setStyle(button->style());
@@ -75,7 +75,7 @@ WeiZhiJiYiForm::WeiZhiJiYiForm(QWidget *parent) :
                 });
             table->setCellWidget(row, 0, button);
 
-            QPushButton* button2 = new QPushButton(QStringLiteral("ÒÆ¶¯%1").arg(row), table);
+            QPushButton* button2 = new QPushButton(tr("YD") + QString("%1").arg(row), table);
             inButtons2[row - 1] = button2;
             button2->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
             button2->setStyle(button2->style());
@@ -156,7 +156,7 @@ void WeiZhiJiYiForm::LoadData(QString filePath)
                 for (int i = 0; i < POS_AXIS_LEN + 1; ++i)
                 {
                     if (i == 0) {
-                        inEdits[row - 1][i]->setText(QStringLiteral("»úÐµ"));
+                        inEdits[row - 1][i]->setText(tr("JX"));
                     }
                     else {
                         double v = pos.get(GCodeTool::axis[i - 1]);
@@ -212,11 +212,11 @@ void WeiZhiJiYiForm::SaveData(QString filePath)
         {
             QJsonArray jsonArrayRow;
             if (row == 0) {
-                jsonArrayRow.append(QJsonValue(QStringLiteral("×ø±êÏµ")));
-				jsonArrayRow.append(QJsonValue(QStringLiteral("X")));
-				jsonArrayRow.append(QJsonValue(QStringLiteral("Y")));
-				jsonArrayRow.append(QJsonValue(QStringLiteral("Z")));
-				jsonArrayRow.append(QJsonValue(QStringLiteral("U")));
+                jsonArrayRow.append(QJsonValue(tr("ZBX")));
+				jsonArrayRow.append(QJsonValue(QString("X")));
+				jsonArrayRow.append(QJsonValue(QString("Y")));
+				jsonArrayRow.append(QJsonValue(QString("Z")));
+				jsonArrayRow.append(QJsonValue(QString("U")));
             }
             else {
                 for (int i = 0; i < POS_AXIS_LEN + 1; ++i)

@@ -117,9 +117,9 @@ public:
     void retranslateUi(QWidget *JiaGongJiLuFormClass)
     {
         JiaGongJiLuFormClass->setWindowTitle(QCoreApplication::translate("JiaGongJiLuFormClass", "jiagongjilu", nullptr));
-        prevPageButton->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "\344\270\212\344\270\200\351\241\265", nullptr));
-        pageLabel->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "\345\212\240\345\267\245\350\256\260\345\275\225", nullptr));
-        nextPageButton->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "\344\270\213\344\270\200\351\241\265", nullptr));
+        prevPageButton->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "SYY", nullptr));
+        pageLabel->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "JGJL", nullptr));
+        nextPageButton->setText(QCoreApplication::translate("JiaGongJiLuFormClass", "XYY", nullptr));
     } // retranslateUi
 
 };

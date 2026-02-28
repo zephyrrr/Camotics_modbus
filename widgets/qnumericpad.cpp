@@ -13,7 +13,7 @@ QNumericPad::QNumericPad(QWidget *parent)
 	: QDialog(parent), m_receiver(NULL), m_text("")
 {
 	ui.setupUi(this);
-    this->setWindowTitle(QStringLiteral("键盘"));
+    this->setWindowTitle(tr("JP"));
     //  | Qt::WindowStaysOnTopHint
     this->setWindowFlags(Qt::WindowDoesNotAcceptFocus | Qt::Tool | Qt::FramelessWindowHint | Qt::BypassWindowManagerHint);  //  | Qt::WindowStaysOnTopHint
     this->setFocusPolicy(Qt::FocusPolicy::NoFocus);
@@ -79,7 +79,7 @@ void QNumericPad::setButtonDownModeWhenInTouch(QWidget* parent, QAbstractButton*
         connect(btn, &QPushButton::clicked, [btn] {
             btn->setDown(true);
 
-            // 然后，你可以使用 QTimer::singleShot 来在一段时间后释放按钮
+            // 鐒跺悗锛屼綘鍙互浣跨敤 QTimer::singleShot 鏉ュ湪涓�娈垫椂闂村悗閲婃斁鎸夐挳
             QTimer::singleShot(keepMs, btn, [btn] {
                 btn->setDown(false);
                 });
@@ -94,7 +94,7 @@ void QNumericPad::setButtonDownModeWhenInTouch(QWidget* parent, QAbstractButton*
         connect(btn, &QToolButton::clicked, [btn] {
             btn->setDown(true);
 
-            // 然后，你可以使用 QTimer::singleShot 来在一段时间后释放按钮
+            // 鐒跺悗锛屼綘鍙互浣跨敤 QTimer::singleShot 鏉ュ湪涓�娈垫椂闂村悗閲婃斁鎸夐挳
             QTimer::singleShot(keepMs, btn, [btn] {
                 btn->setDown(false);
                 });

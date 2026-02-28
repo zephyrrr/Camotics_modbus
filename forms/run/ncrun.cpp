@@ -1,4 +1,4 @@
-#include "ncrun.h"
+ï»¿#include "ncrun.h"
 #include "ui_ncrun.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -85,7 +85,7 @@ do_light 2;
 	m_ncMachine->RunGCode(gcode, [this]() {
 			this->setHValues();
 
-			// ²»ÐÐ
+			// ä¸è¡Œ
 			//m_ncMachine->RunGCodeSync("do_beep 200");
 
 			if (m_ncMachine->GetRealtimeJsonMachine()->isTaskToContinue()) {
@@ -98,7 +98,7 @@ do_light 2;
 			QMetaObject::invokeMethod(this, [this]() {
 				QTimer::singleShot(500, this, [this] {
 					BaseMainWindow* mainWindow = GetMainWindow();
-					mainWindow->showChildWindow(QStringLiteral("NC"));
+					mainWindow->showChildWindow(QString("NC"));
 					});
 			}, Qt::QueuedConnection);
 		});

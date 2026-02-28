@@ -206,16 +206,9 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 			this->SetData("inJgsd", ui->inJgsd->text());
 			this->SetData("inJgmj", ui->inJgmj->currentData());
 			this->SetData("inCcd", ui->inCcd->currentData());
-			QString inYdxz;
-			if (ui->inYdxz->currentIndex() == 6) {
-				inYdxz = ui->inYdxzSpecial->text();
-			}
-			else {
-				inYdxz = QString::number(ui->inYdxz->currentIndex()).repeated(4);
-			}
-			this->SetData("inYdxz", inYdxz);
-			this->SetData("inYdms", ui->inYdms->currentIndex());
-			this->SetData("inJgcz", ui->inJgcz->currentIndex() + 1);
+			this->SetData("inYdxz", ui->inYdxz->text());
+			this->SetData("inYdms", ui->inYdms->text());
+			this->SetData("inJgcz", ui->inJgcz->text());
 			this->SetData("inDbhhw", ui->inDbhhw->text());
 			//this->SetData("inYdxzSpecial", ui->inYdxzSpecial->text());
 
@@ -344,7 +337,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		table1.serialize(filePath1);
 
 		//BaseMainWindow* mainWindow = GetMainWindow();
-		//mainWindow->showChildWindow(QStringLiteral("手动单个"));
+		//mainWindow->showChildWindow(tr("SDDG"));
 
 		return cCode;
 	}
@@ -358,7 +351,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		QFile::remove(filePath2);
 
 		return QString();
-		FormUtils::MessageBoxInfo(QStringLiteral("没有相应数据！"));
+		FormUtils::MessageBoxInfo(tr("MYXYSJ"));
 	}
 }
 
@@ -472,7 +465,7 @@ QString RunAutoParamForm::GenerateManualData_V1(QString parentName)
 		table1.serialize(filePath1);
 
 		//BaseMainWindow* mainWindow = GetMainWindow();
-		//mainWindow->showChildWindow(QStringLiteral("手动单个"));
+		//mainWindow->showChildWindow(tr("SDDG"));
 	}
 	else {
 		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());

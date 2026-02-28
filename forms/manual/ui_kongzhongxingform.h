@@ -275,37 +275,23 @@ public:
     void retranslateUi(QWidget *KongZhongXingForm)
     {
         KongZhongXingForm->setWindowTitle(QCoreApplication::translate("KongZhongXingForm", "Form", nullptr));
-        label_3->setText(QCoreApplication::translate("KongZhongXingForm", "\345\235\220\346\240\2070\350\256\276\345\256\232", nullptr));
+        label_3->setText(QCoreApplication::translate("KongZhongXingForm", "ZB0SD", nullptr));
         btnZ->setText(QCoreApplication::translate("KongZhongXingForm", "Z", nullptr));
         inZ->setText(QString());
-        label_2->setText(QCoreApplication::translate("KongZhongXingForm", "\347\273\223\346\236\234", nullptr));
+        label_2->setText(QCoreApplication::translate("KongZhongXingForm", "JG", nullptr));
         inSetToZero->setText(QCoreApplication::translate("KongZhongXingForm", "ON", nullptr));
         pushButton_6->setText(QCoreApplication::translate("KongZhongXingForm", "OFF", nullptr));
         btnY->setText(QCoreApplication::translate("KongZhongXingForm", "Y", nullptr));
         inY->setText(QString());
         btnX->setText(QCoreApplication::translate("KongZhongXingForm", "X", nullptr));
         inX->setText(QString());
-        label_1->setText(QCoreApplication::translate("KongZhongXingForm", "\345\277\253\350\277\233\351\207\217", nullptr));
-        label_4->setText(QCoreApplication::translate("KongZhongXingForm", "\346\216\245\350\247\246\346\204\237\347\237\245\345\233\236\351\200\200\345\200\274", nullptr));
+        label_1->setText(QCoreApplication::translate("KongZhongXingForm", "KJL", nullptr));
+        label_4->setText(QCoreApplication::translate("KongZhongXingForm", "JCGZHTZ", nullptr));
         inBack->setText(QCoreApplication::translate("KongZhongXingForm", "0.5", nullptr));
-        label_5->setText(QCoreApplication::translate("KongZhongXingForm", "\346\254\241\346\225\260", nullptr));
+        label_5->setText(QCoreApplication::translate("KongZhongXingForm", "CS", nullptr));
         inCnt->setText(QCoreApplication::translate("KongZhongXingForm", "1", nullptr));
         labelPix->setText(QString());
-        textBrowser->setHtml(QCoreApplication::translate("KongZhongXingForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\350\275\264\345\217\267]</"
-                        "span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\345\257\271\345\272\224\350\275\264\345\217\267\343\200\202</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">[\346\226\271\345\220\221]</span>                 </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'SimSun'; font-size:20pt; font-weight:696;\">\345\212\250\344\275\234\347\232\204\346\226\271\345\220\221\357\274\214\342\200\234+\342\200\235\344\270\272\345\257\271\345\272\224\350\275\264\346\255\243\346\226\271\345\220\221\357\274\214\342\200\234-\342\200\235\344\270\272"
-                        "\345\257\271\345\272\224\350\275\264\347\232\204\350\264\237\346\226\271\345\220\221\343\200\202</span>               </p></body></html>", nullptr));
+        textBrowser->setHtml(QString());
     } // retranslateUi
 
 };
