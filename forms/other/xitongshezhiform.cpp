@@ -306,7 +306,7 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 		dynamicForm->setValue("FMQKG", "True");
 		dynamicForm->setLabelCaption("FMQKG", tr("FMQKG"));
 		dynamicForm->setValue("GDMMWZJFH", "False");
-		dynamicForm->setLabelCaption("GDMMWZJFH", QStringLiteral("G代码末尾加分号"));
+		dynamicForm->setLabelCaption("GDMMWZJFH", tr("GDMMWZJFH"));
 		
 		dynamicForm->setValue("ZDKQYB2", "True");
 		dynamicForm->setLabelCaption("ZDKQYB2", tr("JGSZDKQYB2"));

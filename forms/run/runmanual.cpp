@@ -90,7 +90,7 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	//	//}
 	//});
 	QString headers2[] = { tr("HS"), tr("JG"), "C.No", "LN", "LP", "STEP", tr("JGYL"), tr("DS"), tr("SJ"), tr("Detail") };
-	QString defaultRowValues[] = { "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "..." };
+	QString defaultRowValues[] = { "Y", "000", "000", "0000", "0.000", "0.000", "OFF", "00000", "...", "" };
 	int visibleColumnCount = 9;
 	int hiddenColumnCount = 1;
 
@@ -1067,7 +1067,7 @@ QString RunManual::GetGCode(bool forRun)
 	//}
 
 	if (table2->getDataCount() <= 0) {
-		FormUtils::MessageBoxInfo(QStringLiteral(""));
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
 		return QString();
 	}
 	QStringList toAxis;
@@ -1082,7 +1082,7 @@ QString RunManual::GetGCode(bool forRun)
 		}
 	}
 	if (toAxis.length() == 0) {
-		FormUtils::MessageBoxInfo(QStringLiteral(""));
+		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
 		return QString();
 	}
 

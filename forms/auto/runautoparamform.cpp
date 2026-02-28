@@ -86,7 +86,7 @@ void RunAutoParamForm::ReloadData4Jgmj()
 	QString sqlQuery = QStringLiteral("SELECT DISTINCT(面积) FROM 库 WHERE 切入 = 0 AND 材料 = ? AND 形状 = ? ORDER BY 面积");
 	QSqlQuery query(db);
 	if (!query.prepare(sqlQuery)) {
-		qDebug() << "Prepare 失败:" << query.lastError().text();
+		qDebug() << "SQL Prepare Error:" << query.lastError().text();
 	}
 	query.addBindValue(ui->inClzh->currentIndex() + 1);
 	query.addBindValue(ui->inDjxz->currentIndex() + 1);
@@ -112,7 +112,7 @@ void RunAutoParamForm::ReloadData4Jgmj()
 		}
 	}
 	else {
-		qDebug() << "SQL 错误:" << query.lastError().text();
+		qDebug() << "SQL Error:" << query.lastError().text();
 	}
 	ui->inJgmj->blockSignals(false);
 }
@@ -131,7 +131,7 @@ void RunAutoParamForm::ReloadData4Ccd()
 	QString sqlQuery = QStringLiteral("SELECT DISTINCT(粗糙度) FROM 库 WHERE 切入 = 0 AND 材料 = ? AND 形状 = ? AND 面积 = ? AND 粗糙度 > 0 ORDER BY 粗糙度");
 	QSqlQuery query(db);
 	if (!query.prepare(sqlQuery)) {
-		qDebug() << "Prepare 失败:" << query.lastError().text();
+		qDebug() << "SQL Prepare Error:" << query.lastError().text();
 	}
 
 	query.addBindValue(ui->inClzh->currentIndex() + 1);
@@ -150,7 +150,7 @@ void RunAutoParamForm::ReloadData4Ccd()
 		}
 	}
 	else {
-		qDebug() << "SQL 错误:" << query.lastError().text();
+		qDebug() << "SQL Error:" << query.lastError().text();
 	}
 }
 
@@ -206,11 +206,17 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 			this->SetData("inJgsd", ui->inJgsd->text());
 			this->SetData("inJgmj", ui->inJgmj->currentData());
 			this->SetData("inCcd", ui->inCcd->currentData());
-			this->SetData("inYdxz", ui->inYdxz->text());
-			this->SetData("inYdms", ui->inYdms->text());
-			this->SetData("inJgcz", ui->inJgcz->text());
+			QString inYdxz;
+			if (ui->inYdxz->currentIndex() == 6) {
+				inYdxz = ui->inYdxzSpecial->text();
+			}
+			else {
+				inYdxz = QString::number(ui->inYdxz->currentIndex()).repeated(4);
+			}
+			this->SetData("inYdxz", inYdxz);
+			this->SetData("inYdms", ui->inYdms->currentIndex());
+			this->SetData("inJgcz", ui->inJgcz->currentIndex() + 1);
 			this->SetData("inDbhhw", ui->inDbhhw->text());
-			//this->SetData("inYdxzSpecial", ui->inYdxzSpecial->text());
 
 			QString value = pyFiles.value(pyFileName);
 			PluginUtils::RunFile(value, this);
