@@ -6,7 +6,6 @@
 #include <cmath>
 #include <iomanip> // For std::fixed and std::setprecision
 #include <cbang/json/JSON.h>
-#include <cbang/SmartPointer.h>
 #include <cbang/io/InputSource.h>
 #include <cbang/Catch.h>
 #include <cbang/log/Logger.h>
@@ -216,7 +215,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 	if (m_state[2] != NCT_STATE_JOG_RUN) {
 		if (m_isJogDuanlu > 0) {
 			m_isJogDuanlu = 0;
-			if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE_ON) {
+			if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE2) {
 				enterSetPriority(0);
 				Beep(0, 0);
 				exitSetPriority();
@@ -238,7 +237,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 	}
 
 	if (m_isJogDuanlu > 0 && m_key != KNLK_ST) {
-		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() != FmqPropertyObject::MjfsEnum::TYPE_ON) {
+		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() != FmqPropertyObject::MjfsEnum::TYPE2) {
 			enterSetPriority(0);
 			Beep(0, -1);
 			exitSetPriority();
@@ -246,7 +245,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 		}
 	}
 	else {
-		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE_ON) {
+		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE2) {
 			enterSetPriority(0);
 			Beep(0, 0);
 			exitSetPriority();
@@ -511,9 +510,10 @@ QList<ModbusTask*> NCMachine::executeCmdsInFile(std::string filename)
 		return executeCmds(json);
 	}
 	catch (const std::exception& e) {
-		LOG_WARNING("NCMachine: exception: " << e.what());
+		LOG_WARNING("NCMachine: exception: " << e.what() << ", executeCmdsInFile" << filename);
 	}
 	catch (...) {
+		LOG_ERROR("NCMachine: " << "Unknown error" << ", executeCmdsInFile" << filename);
 	}
 	return QList<ModbusTask*>();
 }
@@ -525,9 +525,10 @@ QList<ModbusTask*> NCMachine::executeCmds(std::string s)
 		return executeCmds(json);
 	}
 	catch (const std::exception& e) {
-		LOG_WARNING("NCMachine: exception: " << e.what());
+		LOG_WARNING("NCMachine: exception: " << e.what() << ", executeCmds" << s);
 	}
 	catch (...) {
+		LOG_ERROR("NCMachine: exception: " << "Unknown error" << ", executeCmds" << s);
 	}
 	return QList<ModbusTask*>();
 }
@@ -596,9 +597,10 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 		}
 	}
 	catch (const std::exception& e) {
-		LOG_WARNING("NCMachine: exception: " << e.what());
+		LOG_WARNING("NCMachine: exception: " << e.what() << ", executeCmds" << json->toString());
 	}
 	catch (...) {
+		LOG_ERROR("NCMachine: exception: " << "Unknown error" << ", executeCmds" << json->toString());
 	}
 	return tasks;
 }
@@ -1282,7 +1284,7 @@ void NCMachine::Beep(int n, int ms)
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
 	}
 	else if (ms == -1) {
-		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE_ON);
+		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE2);
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
 	}
 	else {
@@ -2680,12 +2682,14 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 				SystemSettings::instance().SetValue("LEJS", QString::number(v));
 			}
 			else if (n == "MDIV") {
+				//SystemSettings::instance().SetValue("MDIV", QString::number(v));
 				PropertyObjects::getInstance()->propertyObjectYd->setsdjcxfs((int)v);
 				//PropertyObjects::getInstance()->propertyObjectYd->ExecuteCmds(this);
-				//SystemSettings::instance().SetValue("MDIV", QString::number(v));
+				
 			}
 			else if (n == "AOD") {
-				SystemSettings::instance().SetValue("AOD", QString::number(v));
+				//SystemSettings::instance().SetValue("AOD", QString::number(v));
+				PropertyObjects::getInstance()->propertyObjectReg84->setv((int)v);
 			}
 			else {
 				NCMachineParametersC& cInst = NCMachineParametersC::instance();
@@ -2971,12 +2975,11 @@ int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 			}
 		}
 	}
-	catch (const std::exception& e)
-	{
+	catch (const std::exception& e){
 		exitSetPriority();
 
 		//int ret2 = -9;
-		LOG_ERROR("EDM: " << e.what());
+		LOG_ERROR("EDM: " << e.what() << ", doTask " << task->jCode);
 		// already append in LOG_ERROR
 		//LineLogger::instance().append("ERROR:" + e.getMessage());
 
@@ -3296,7 +3299,7 @@ bool NCMachine::RunGCodeSync(QString gcode)
 		//m_realtimeJsonMachine2->setSimpleMode(false);
 	}
 	catch (const std::exception& e) {
-		LOG_ERROR("EDM: " << e.what());
+		LOG_ERROR("EDM: " << e.what() << ", RunGCodeSync " << EUtils::QString2StdString(gcode));
 		return false;
 	}
 }
@@ -3320,7 +3323,7 @@ bool NCMachine::RunGCodeAsync(QString gcode, std::function<void()> functionDoFin
 		gcode = RunHCode(gcode);
 	}
 	catch (const std::exception& e) {
-		LOG_ERROR("EDM: " << e.what());
+		LOG_ERROR("EDM: " << e.what() << ", RunGCodeAsync " << EUtils::QString2StdString(gcode));
 		if (functionDoFinished) {
 			functionDoFinished();
 		}
@@ -3416,7 +3419,7 @@ void NCMachine::SaveWorkTimeToDb()
 		}
 	}
 	catch (const std::exception& e) {
-		LOG_ERROR("EDM: " << e.what());
+		LOG_ERROR("EDM: " << e.what() << ", SaveWorkTimeToDb ");
 	}
 }
 

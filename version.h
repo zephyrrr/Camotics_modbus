@@ -4,7 +4,7 @@
 #define PRODUCT_NAME "EDM"
 #define COMPANY_NAME "EDM"
 
-#define PRODUCT_VERSION "1.3.1"
+#define PRODUCT_VERSION "1.3.3"
 
 #endif
 

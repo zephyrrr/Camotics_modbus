@@ -126,13 +126,13 @@
     <ClCompile Include="forms\manual\weizhiyidongform.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseMainWindow.cpp">
+    <ClCompile Include="forms\BaseMainWindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="forms\mainwindow2.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseChildWindow.cpp">
+    <ClCompile Include="forms\BaseChildWindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="forms\manual\zuobiaoxishezi.cpp">
@@ -536,10 +536,10 @@
     <QtMoc Include="widgets\editabletextwidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="BaseChildWindow.h">
+    <QtMoc Include="forms\BaseChildWindow.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
-    <QtMoc Include="BaseMainWindow.h">
+    <QtMoc Include="forms\BaseMainWindow.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
     <QtMoc Include="forms\other\huilingform.h">
@@ -945,6 +945,7 @@
     <None Include="plugins_src\python\template\dgjg1_template.gcode" />
     <None Include="plugins_src\python\gcode_generator.py" />
     <None Include="plugins_src\sdjg\getgcode1.py" />
+    <None Include="plugins_src\python\gcode_converter.py" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="Translation_zh_CN.ts" />

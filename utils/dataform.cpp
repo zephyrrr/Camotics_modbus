@@ -37,6 +37,12 @@ void DataForm::setValue(const QString& caption, const QString& text)
 	m_data[caption] = text;
 }
 
+void DataForm::deleteItem(const QString& caption)
+{
+    if (m_data.contains(caption))
+        m_data.remove(caption);
+}
+
 bool DataForm::serialize(QString filePathName)
 {
     try {

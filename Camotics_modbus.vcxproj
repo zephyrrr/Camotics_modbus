@@ -387,8 +387,8 @@
     </QtTranslation>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseChildWindow.cpp" />
-    <ClCompile Include="BaseMainWindow.cpp" />
+    <ClCompile Include="forms\BaseChildWindow.cpp" />
+    <ClCompile Include="forms\BaseMainWindow.cpp" />
     <ClCompile Include="camotics\project\File.cpp" />
     <ClCompile Include="camotics\project\Files.cpp" />
     <ClCompile Include="camotics\project\Project.cpp" />
@@ -604,8 +604,8 @@
     <QtMoc Include="widgets\qnumericpad.h" />
     <QtMoc Include="widgets\qlineedit4axisvalue.h" />
     <QtMoc Include="forms\manual\weizhiyidongform.h" />
-    <QtMoc Include="BaseChildWindow.h" />
-    <QtMoc Include="BaseMainWindow.h" />
+    <QtMoc Include="forms\BaseChildWindow.h" />
+    <QtMoc Include="forms\BaseMainWindow.h" />
     <QtMoc Include="forms\mainwindow2.h" />
     <QtMoc Include="forms\manual\zuobiaoxishezi.h" />
     <QtMoc Include="forms\manual\weizhijiyi.h" />
@@ -887,6 +887,7 @@
   <ItemGroup>
     <None Include="plugins\main\test_plugin.test.py" />
     <None Include="plugins\WeiZhiYiDongForm\init.py.test" />
+    <None Include="plugins_src\python\gcode_converter.py" />
     <None Include="plugins_src\python\gcode_generator.py" />
     <None Include="plugins_src\python\template\dgjg1_template.gcode" />
     <None Include="plugins_src\sdjg\getgcode1.py" />

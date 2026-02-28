@@ -27,6 +27,7 @@ public:
 	QString getValue(const QString& caption) const override;
 	QString getValue(const QString& caption, bool raiseWarning) const;
 	void setValue(const QString& caption, const QString& text) override;
+	void deleteItem(const QString& caption);
 
 	bool serialize(QString filePathName);
 	bool deserialize(QString filePathName);

@@ -13,4 +13,6 @@ duckdb -c "ATTACH 'cp.db' (TYPE SQLITE); CREATE TABLE cp.加工侧重 AS FROM '�
 rem duckdb -c "ATTACH 'cp.db' (TYPE SQLITE); CREATE TABLE cp.材料形状表 AS FROM '材料形状表.csv';"
 rem duckdb -c "ATTACH 'cp.db' (TYPE SQLITE); CREATE TABLE cp.目标余量粗糙度 AS FROM '目标余量粗糙度.csv';"
 
-duckdb -c "ATTACH 'cp.db' (TYPE SQLITE); CREATE TABLE cp.库 AS FROM '库.csv';"
+duckdb -c "ATTACH 'cp.db' (TYPE SQLITE); CREATE TABLE cp.库 AS SELECT * FROM read_csv('库.csv', types={'底部余量': 'DOUBLE', '侧面余量': 'DOUBLE', '材料': 'DOUBLE', '面积': 'DOUBLE', '形状': 'DOUBLE', 'Ra': 'DOUBLE', '加工速度': 'DOUBLE'});"
+
+pause

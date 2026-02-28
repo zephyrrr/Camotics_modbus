@@ -200,7 +200,6 @@ QString RunManualMulti::GetGCode(bool forRun)
 			QString s = table1->getValue(i, 0);
 			if (!s.isEmpty()) {
 				toAxis.append(QString("XYZ").at(i));
-				break;
 			}
 		}
 		bool emptyStartEndRunIndex = true;
@@ -261,6 +260,11 @@ QString RunManualMulti::GetGCodeV2()
 	}
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
 	//QString gcode;// = RunManual::GetGCodeStatic(table1, table2, dataForm->getValue("inAbsolute") == "true", axisPositions);
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+	if (isAbsolutePosition) {
+		FormUtils::MessageBoxInfo("");
+		return QString();
+	}
 
 	int maxJgff = 0;
 	for (int i = 0; i < table2->getDataCount(); ++i) {
@@ -301,9 +305,8 @@ QString RunManualMulti::GetGCodeV2()
 				continue;
 			gcode += QString("(debug, do_call_ui set_runmanualmulti_table3_current_row_%1)").arg(i + 1) + "\n";
 
-			gcode += QString("G%1\n").arg(table3->getValue(i, 4));
-			if (!ui.lineEditZAnQuan->text().isEmpty())
-				gcode += QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text());
+			gcode += QString("G%1 ").arg(table3->getValue(i, 4));
+			
 			gcode += QString("G00 ");
 			for (int j = 0; j < axisLen - 1; ++j)
 			{
@@ -316,7 +319,7 @@ QString RunManualMulti::GetGCodeV2()
 
 			double startAxisPositions[] = { table3->getValue(i, 1).toDouble(), table3->getValue(i, 2).toDouble(), ui.lineEditZKaisi->text().toDouble(), table3->getValue(i, 3).toDouble(), };
 			double toAxisPositions[] = { toAxisLength[0], toAxisLength[1], toAxisLength[2], toAxisLength[3] };
-			bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+
 			if (!isAbsolutePosition) {
 				// G91
 				for (int i = 0; i < axisLen; ++i) {
@@ -329,12 +332,13 @@ QString RunManualMulti::GetGCodeV2()
 				double d = startAxisPositions[i];
 				gcode += QString("H%1   = %2\n").arg(661 + i).arg(d, 0, 'f', 3);
 				gcode += QString("H%1   = %2\n").arg(771 + i).arg(toAxisLength[i] == INFINITE ? d : toAxisLength[i], 0, 'f', 3);
+				gcode += QString("H%1   = %2\n").arg(881 + i).arg(toAxisLength[i] == INFINITE ? 0 : 1);
 			}
 
 			QString startRunManualIndex = table3->getValue(i, 5);
 			QString endManualIndex = table3->getValue(i, 6);
 			if (startRunManualIndex.isEmpty() && endManualIndex.isEmpty()) {
-				gcode += QString("o800 call [%1]\n\n").arg(iJgff);
+				gcode += QString("o800 call [%1]\n").arg(iJgff);
 			}
 			else {
 				int startIndex = 0;
@@ -355,18 +359,21 @@ QString RunManualMulti::GetGCodeV2()
 				if (iJgff == 0) {
 					for (int iJgff2 = startIndex; iJgff2 <= endIndex; ++iJgff2)
 					{
-						gcode += QString("o800 call [%1]\n\n").arg(iJgff2);
+						gcode += QString("o800 call [%1]\n").arg(iJgff2);
 					}
 				}
 				else {
 					if (iJgff >= startIndex && iJgff <= endIndex) {
-						gcode += QString("o800 call [%1]\n\n").arg(iJgff);
+						gcode += QString("o800 call [%1]\n").arg(iJgff);
 					}
 					else {
-						gcode += "\n\n";
+						gcode += "\n";
 					}
 				}
 			}
+			if (!ui.lineEditZAnQuan->text().isEmpty())
+				gcode += QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text());
+
 			gcode += QString("(debug, do_call_ui unset_runmanualmulti_table3_current_row_%1)").arg(i + 1) + "\n";
 
 			//int nowLines = gcode.split("\n").size();
@@ -395,22 +402,22 @@ do_light 2
 M02
 )").arg(beepTime);
 
-	mapLine2Row.clear();
-	QStringList lines = gcode.split('\n'); // Splits by newline character
-	int lineNumber = 0;
-	int findedRow = 0;
-	QString toSearchLine = QString("G00 %1%2").arg("Z").arg(ui.lineEditZKaisi->text());
-	for (const QString& line : lines) {
-		lineNumber++;
-		if (line == toSearchLine) {
-			this->mapLine2Row[lineNumber] = (todoRows[findedRow] - 1) % table3->getDataCount() + 1;
-			findedRow++;
-		}
-		if (line.startsWith("M02")) {
-			this->mapLine2Row[lineNumber] = this->table3->getDataCount() + 1;
-			findedRow++;
-		}
-	}
+	//mapLine2Row.clear();
+	//QStringList lines = gcode.split('\n'); // Splits by newline character
+	//int lineNumber = 0;
+	//int findedRow = 0;
+	//QString toSearchLine = QString("G00 %1%2").arg("Z").arg(ui.lineEditZKaisi->text());
+	//for (const QString& line : lines) {
+	//	lineNumber++;
+	//	if (line == toSearchLine) {
+	//		this->mapLine2Row[lineNumber] = (todoRows[findedRow] - 1) % table3->getDataCount() + 1;
+	//		findedRow++;
+	//	}
+	//	if (line.startsWith("M02")) {
+	//		this->mapLine2Row[lineNumber] = this->table3->getDataCount() + 1;
+	//		findedRow++;
+	//	}
+	//}
 
 	return gcode;
 }
@@ -426,7 +433,7 @@ QString RunManualMulti::GetGCodeV1()
 	}
 
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
-	QString gcode0 = RunManual::GetGCodeV1(dataForm, table1, table2);
+	QString gcode0 = RunManual::GetGCodeV1(dataForm, table1, table2, m_ncMachine);
 
 
 	QString gcode;
@@ -437,8 +444,8 @@ QString RunManualMulti::GetGCodeV1()
 			}
 			if (table3->getValue(i, 1).isEmpty() || table3->getValue(i, 2).isEmpty())
 				continue;
-			gcode += QString("G%1\n").arg(table3->getValue(i, 4));
-			gcode += QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text());
+			gcode += QString("G%1 ").arg(table3->getValue(i, 4));
+			
 			gcode += QString("G00 ");
 			for (int j = 0; j < axisLen - 1; ++j)
 			{
@@ -446,9 +453,11 @@ QString RunManualMulti::GetGCodeV1()
 			}
 
 			gcode += "M98P0000\n";
-			gcode += QString("G00 %1 %2\n").arg("Z").arg(ui.lineEditZKaisi->text());
 		}
 	}
+	gcode0 = gcode0.replace("N0000", "N0000\n" + QString("G00 %1 %2\n").arg("Z").arg(ui.lineEditZKaisi->text()));
+	gcode0 = gcode0.replace("M99", QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text()) + "\nM99");
+
 	return gcode0.replace("M98P0000", gcode);
 }
 

@@ -40,7 +40,7 @@ private:
 	
 	DataTable* table1;
 	DataTable* table2;
-	QHash<int, int> mapLine2Row;
+	//QHash<int, int> mapLine2Row;
 	int lastLine4DoneMulti = -1;
 	int lastLine4DoneOne = -1;
 private slots:

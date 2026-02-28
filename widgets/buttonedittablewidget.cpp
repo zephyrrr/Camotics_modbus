@@ -303,7 +303,6 @@ bool ButtonEditTableWidget::deserialize(QString filePathName)
 }
 
 
-
 QString ButtonEditTableWidget::getValue(int row, int col) const
 {
     if (row < 0 || row > inButtons.count() - 1) {

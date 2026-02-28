@@ -7,7 +7,7 @@
 #include "../modbus/NCMachineProperties.h"
 #include "modbus/NCMachineParametersC.h"
 #include "widgets/qlineedit4axisvalue.h"
-
+#include "modbus/eutils.h"
 // Todo: arg(v, 0, 'f', 3)
 
 // (debug, #<total_v>)
@@ -90,16 +90,29 @@ QString GCodeUtils::CleanGCode(QString gcode)
     QStringList lines = gcode.split(QRegularExpression("[\r\n]+"), Qt::KeepEmptyParts);
     QStringList filteredLines;
 
-    // 2. Iterate and filter
+    bool addCommaAtEnd = false;
+    DataForm* dataForm = DataForms::getInstance()->getDataForm("xitongshezhi5");
+    if (dataForm->getValue("GDMMWZJFH") == "1") {
+        addCommaAtEnd = true;
+    }
+
     for (const QString& line : lines) {
         // Trim spaces to ensure a match even if there's leading whitespace
         if (line.trimmed().startsWith("(debug, ", Qt::CaseInsensitive)) {
         }
+        else if (line.trimmed().startsWith("do_", Qt::CaseInsensitive)) {
+        }
         else {
-            filteredLines << line; // Keep original line (even if it was already empty)
+            if (line.isEmpty()) {
+                filteredLines << line;
+            }
+            else {
+                filteredLines << line + (addCommaAtEnd ? ";" : ""); // Keep original line (even if it was already empty)
+            }
         }
     }
 
+    
     // 3. Join back into a single multiline string
     return filteredLines.join("\n");
 }
@@ -670,7 +683,7 @@ N0000;
     QString cCode;
     cCode += QString::fromStdString(NCMachineParametersC::GetNamesAsString());
 
-    QHash<int, int> cNos;
+    QHash<int, QString> cNos;
     for (int i = 0; i < table2->getDataCount(); ++i) {
         if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
             continue;
@@ -694,24 +707,34 @@ N0000;
                 // will not happen
                 continue;
             }
+
+            c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
+
             if (cNos.contains(nowcNo)) {
-                int nextcNo = cNos[nowcNo] + 10;
-                while (true) {
-                    if (!cNos.contains(nextcNo)) {
-                        cNos[nextcNo] = 1;
-                        c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
-                        nowcNo = nextcNo;
-                        break;
-                    }
-                    else {
-                        nextcNo += 10;
+                if (cNos[nowcNo] == c) {
+                    // ok, it's same
+                }
+                else {
+                    int nextcNo = nowcNo + 10;
+                    while (true) {
+                        if (!cNos.contains(nextcNo)) {
+                            c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
+                            nowcNo = nextcNo;
+
+                            cCode += c;
+                            cNos[nowcNo] = c;
+                            break;
+                        }
+                        else {
+                            nextcNo += 10;
+                        }
                     }
                 }
             }
             else {
-                cNos[nowcNo] = 1;
+                cCode += c;
+                cNos[nowcNo] = c;
             }
-            cCode += c;
 
             QString gcode3;
             for (int j = 0; j < toAxis.size(); ++j) {

@@ -57,6 +57,8 @@ public:
     NComboBox *inClzh;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit4AxisValue *inJgsd;
+    QLineEdit4AxisValue *inJgsd2;
+    QLineEdit4AxisValue *inJgsd3;
     QLabel *label_17;
     QSpacerItem *horizontalSpacer_2;
     QLineEdit4Int *inYdxzSpecial;
@@ -215,6 +217,16 @@ public:
 
         horizontalLayout_3->addWidget(inJgsd);
 
+        inJgsd2 = new QLineEdit4AxisValue(RunAutoParamForm);
+        inJgsd2->setObjectName(QString::fromUtf8("inJgsd2"));
+
+        horizontalLayout_3->addWidget(inJgsd2);
+
+        inJgsd3 = new QLineEdit4AxisValue(RunAutoParamForm);
+        inJgsd3->setObjectName(QString::fromUtf8("inJgsd3"));
+
+        horizontalLayout_3->addWidget(inJgsd3);
+
 
         gridLayout->addLayout(horizontalLayout_3, 3, 1, 1, 1);
 
@@ -290,6 +302,8 @@ public:
         inClzh->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "\347\237\263\345\242\250 - \351\222\242", nullptr));
 
         inJgsd->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
+        inJgsd2->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
+        inJgsd3->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
         label_17->setText(QCoreApplication::translate("RunAutoParamForm", "\346\221\207\345\212\250\346\250\241\345\274\217", nullptr));
         labelPix->setText(QString());
         textBrowser->setHtml(QCoreApplication::translate("RunAutoParamForm", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"

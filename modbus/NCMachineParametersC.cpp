@@ -273,7 +273,7 @@ bool NCMachineParametersC::SetCurrentByName(std::string name, std::string value2
 			//PropertyObjects::getInstance()->propertyObjectFdhl->setHLV(x == 2);
 			x = x >= 1 && x <= 4 ? x : 1;
 
-			int x2 = v[0].digitValue();
+			int x2 = len > 0 ? v[0].digitValue() : 0;
 			PropertyObjects::getInstance()->propertyObjectFdhl->setLV(x > x2 ? x : x2);
 		}
 
@@ -673,11 +673,20 @@ std::string NCMachineParametersC::GetCurrentByName(std::string name)
 
 void NCMachineParametersC::ExecuteCmds(NCMachine* ncMachine)
 {
+	DataForm* dataForm3 = DataForms::getInstance()->getDataForm("xitongshezhi3");
+	PropertyObjects::getInstance()->propertyObjectYd->setsdjcxfs(dataForm3->getValue("JGJSPDFGS").toInt());
+	PropertyObjects::getInstance()->propertyObjectYd->settdqmshtjl(dataForm3->getValue("MTDGD").toInt());
+	PropertyObjects::getInstance()->propertyObjectYd->settdqmshtsd(dataForm3->getValue("MTDSD").toInt());
+
+	DataForm* dataForm5 = DataForms::getInstance()->getDataForm("xitongshezhi5");
+	PropertyObjects::getInstance()->propertyObjectReg84->setv(dataForm5->getValue("SFHFJL").toInt());
+
 	PropertyObjects::getInstance()->propertyObjectFdhl->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectFdjg->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectFdwc->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectYd->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectReg83->ExecuteCmds(ncMachine);
+	PropertyObjects::getInstance()->propertyObjectReg84->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectReg86->ExecuteCmds(ncMachine);
 }
 

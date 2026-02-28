@@ -11,6 +11,7 @@
 #include "modbus/NCMachine.h"
 #include "utils/gcodeutils.h"
 #include "utils/pluginutils.h"
+#include "utils/formutils.h"
 
 class QCompleterWithoutInput : public QCompleter
 {
@@ -428,10 +429,16 @@ H122 = H662-H772
 H123 = H663-H773
 H111 = SQRT[H121*H121+H122*H122+H123*H123]
 
-;MDIV16 AOD0.0300 LEJL0.150 LEJS2000.0
-
 )");
-	QHash<int, int> cNos;
+
+
+	gcode += QString("MDIV%1 AOD%2 LEJL%3 LEJS%4\n")
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("JGJSPDFGS").toInt())
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi5")->getValue("SFHFJL").toInt() / 1000.0, 0, 'f', 3)
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("MTDGD").toInt() / 1000.0, 0, 'f', 3)
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("MTDSD").toInt());
+
+	QHash<int, QString> cNos;
 	int cOperationCount = 1;
 	for (int i = 0; i < table2->getDataCount(); ++i) {
 		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
@@ -465,28 +472,35 @@ H111 = SQRT[H121*H121+H122*H122+H123*H123]
 			//table2->setValue(i, 9, c);
 			return "";
 		}
+		c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
+
 		if (cNos.contains(nowcNo)) {
-			//int nextcNo = cNos[nowcNo] + 10;
-			//while (true) {
-			//	if (!cNos.contains(nextcNo)) {
-			//		cNos[nextcNo] = 1;
-			//		c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
-			//		nowcNo = nextcNo;
-			//		break;
-			//	}
-			//	else {
-			//		nextcNo += 10;
-			//	}
-			//}
+			if (cNos[nowcNo] == c) {
+				// ok, it's same
+			}
+			else {
+				int nextcNo = nowcNo + 10;
+				while (true) {
+					if (!cNos.contains(nextcNo)) {
+						c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
+						nowcNo = nextcNo;
+
+						cCode += c;
+						cNos[nowcNo] = c;
+						break;
+					}
+					else {
+						nextcNo += 10;
+					}
+				}
+			}
 		}
 		else {
-			cNos[nowcNo] = 1;
-
-			c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
 			cCode += c;
+			cNos[nowcNo] = c;
 		}
 
-		s += QString("C%1 H000=%4 H222=%5 H001=%2 H002=%3\n")
+		s += QString("C%1 H000=%4 H001=%2 H002=%3 H222=%5 \n")
 			.arg(QString::number(nowcNo).rightJustified(3, '0'))
 			.arg(table2->getValue(i, 2))
 			.arg(table2->getValue(i, 3))
@@ -694,6 +708,7 @@ QString RunManual::GetGCodeV2()
 	for (int i = 0; i < axisLen; ++i) {
 		axisPositions[i] = m_ncMachine->GetController()->getAxisPosition(GCodeTool::axis[i]);
 	}
+
 	//QString gcode = GetGCodeStatic(table1, table2, ui.inAbsolute->isChecked(), axisPositions, &this->mapLine2Row);
 	QString gcode = GetGCodeOSub803(table2);
 	if (gcode.isEmpty()) {
@@ -704,7 +719,7 @@ QString RunManual::GetGCodeV2()
 
 	//gcode += GetGCodeOne(ui.inAbsolute->isChecked(), toAxisLength, axisPositions);
 	if (!ui.inAbsolute->isChecked()) {
-		// G91
+		////// G90: To G91
 		for (int i = 0; i < axisLen; ++i) {
 			if (toAxisLength[i] != INFINITE) {
 				toAxisLength[i] += axisPositions[i];
@@ -753,44 +768,104 @@ M02
 	return gcode;
 }
 
-QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2)
+QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2, NCMachine* ncMachine)
 {
-	QStringList toAxis, toAxisLength;
-	for (int i = 0; i < 3; ++i) {
+	//QStringList toAxis, toAxisLength;
+	//for (int i = 0; i < 3; ++i) {
+	//	if (table1->getValue(i, -1) != "True") {
+	//		continue;
+	//	}
+
+	//	QString s = table1->getValue(i, 0);
+	//	if (!s.isEmpty()) {
+	//		toAxis.append(QString("XYZ").at(i));
+	//		toAxisLength.append(s);
+	//		break;
+	//	}
+	//}
+	// 只针对单轴
+	//if (toAxis.isEmpty() || toAxis.count() > 1) {
+	//	return QString();
+	//}
+
+	int realAxisLen = 0;
+	int selectedAxisIndex = -1;
+	int axisLen = 3;
+	double toAxisLength[] = { INFINITE, INFINITE, INFINITE };
+	for (int i = 0; i < axisLen; ++i) {
 		if (table1->getValue(i, -1) != "True") {
 			continue;
 		}
 
 		QString s = table1->getValue(i, 0);
 		if (!s.isEmpty()) {
-			toAxis.append(QString("XYZ").at(i));
-			toAxisLength.append(s);
-			break;
+			double d = s.toDouble();
+			toAxisLength[i] = d;
+			realAxisLen++;
+			selectedAxisIndex = i;
 		}
 	}
-	if (toAxis.isEmpty() || toAxis.count() > 3) {
+	if (toAxisLength[0] == INFINITE && toAxisLength[1] == INFINITE && toAxisLength[2] == INFINITE) {
+		return QString();
+	}
+	if (realAxisLen != 1) {
 		return QString();
 	}
 
+	double axisPositions[] = { 0.0, 0.0, 0.0 };
+	for (int i = 0; i < axisLen; ++i) {
+		axisPositions[i] = ncMachine->GetController()->getAxisPosition(GCodeTool::axis[i]);
+	}
+
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+	if (!isAbsolutePosition) {
+		////// G90: To G91
+		for (int i = 0; i < axisLen; ++i) {
+			if (toAxisLength[i] != INFINITE) {
+				toAxisLength[i] += axisPositions[i];
+			}
+		}
+	}
+	
+
 	QString gcode;
-	for (int i = 0; i < toAxis.size(); ++i) {
-		gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[i]);
+	for (int i = 0; i < realAxisLen; ++i) {
+		gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[selectedAxisIndex]);
+	}
+
+	double gcode_dbhhw = -1;
+	if (!dataForm->getValue("GCODE_DBHHW").isEmpty()) {
+		gcode += QString("H%1   = %2\n").arg(101).arg(dataForm->getValue("GCODE_DBHHW"));
+		gcode_dbhhw = dataForm->getValue("GCODE_DBHHW").toDouble();
+	}
+	QString gcode_ln = dataForm->getValue("GCODE_LN");
+	if (!gcode_ln.isEmpty()) {
+		gcode += QString("H%1   = %2\n").arg(102).arg(dataForm->getValue("GCODE_LN"));
+	}
+	QString gcode_lp = dataForm->getValue("GCODE_LP");
+	if (!gcode_lp.isEmpty()) {
+		gcode += QString("H%1   = %2\n").arg(103).arg(dataForm->getValue("GCODE_LP"));
 	}
 
 	gcode += "\n\n";
-	gcode += "G11 G24 T84\n";
+	gcode += "G90 G11 G24 T84\n";
 
 	//if (ui.inAbsolute->isChecked())
 	//	gcode += "G90\n";
 	//else
 	//	gcode += "G91\n";
 	
-	if (dataForm->getValue("inAbsolute") == "true")
-		gcode += "G90\n";
-	else
-		gcode += "G91\n";
+	// 不能用G91相对坐标，不然多个G01坐标会递增
+	//if (dataForm->getValue("inAbsolute") == "true")
+	//	gcode += "G90\n";
+	//else
+	//	gcode += "G91\n";
 
-	gcode += ";MDIV16 AOD0.0300 LEJL0.150 LEJS2000.0\n";
+	gcode += QString("MDIV%1 AOD%2 LEJL%3 LEJS%4\n")
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("JGJSPDFGS").toInt())
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi5")->getValue("SFHFJL").toInt() / 1000.0, 0, 'f', 3)
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("MTDGD").toInt() / 1000.0, 0, 'f', 3)
+		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("MTDSD").toInt());
 
 	gcode += QString(R"(M98P0000
 
@@ -808,7 +883,8 @@ M02
 	cCode += QString::fromStdString(NCMachineParametersC::GetNamesAsString());
 
 	gcode += "N0000\n";
-	QHash<int, int> cNos;
+	//gcode += "G91\n";
+	QHash<int, QString> cNos;
 	int cOperationCount = 1;
 	for (int i = 0; i < table2->getDataCount(); ++i) {
 		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
@@ -832,23 +908,40 @@ M02
 		if (c.isEmpty()) {
 			return "";
 		}
+		c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
 
 		if (cNos.contains(nowcNo)) {
+			if (cNos[nowcNo] == c) {
+				// ok, it's same
+			}
+			else {
+				int nextcNo = nowcNo + 10;
+				while (true) {
+					if (!cNos.contains(nextcNo)) {
+						c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
+						nowcNo = nextcNo;
+						
+						cCode += c;
+						cNos[nowcNo] = c;
+						break;
+					}
+					else {
+						nextcNo += 10;
+					}
+				}
+			}
 		}
 		else {
-			cNos[nowcNo] = 1;
-
-			c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
 			cCode += c;
-
+			cNos[nowcNo] = c;
 		}
 
 
 		s += QString("(debug, do_call_ui set_runmanual_table2_current_row_%1)").arg(i + 1) + "\n";
 
 		QString gcode3;
-		for (int j = 0; j < toAxis.size(); ++j) {
-			gcode3 += QString("%1H%2+%3").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
+		for (int j = 0; j < realAxisLen; ++j) {
+			gcode3 += QString("%1H%2+%3").arg(GCodeTool::axis[selectedAxisIndex]).arg(100 + j).arg(table2->getValue(i, 5));
 		}
 		QString doM04 = "";
 		DataForm* dataForm = DataForms::getInstance()->getDataForm("xitongshezhi3");
@@ -857,9 +950,9 @@ M02
 		}
 		s += QString("C%1 STEP%4 LN%2 LP%3 G01 %5 %06\n")
 			.arg(QString::number(nowcNo).rightJustified(3, '0'))
-			.arg(table2->getValue(i, 2))
-			.arg(table2->getValue(i, 3))
-			.arg(table2->getValue(i, 4))
+			.arg(gcode_ln != table2->getValue(i, 2) ? table2->getValue(i, 2) : "H102")
+			.arg(gcode_lp != table2->getValue(i, 3) ? table2->getValue(i, 3) : "H103")
+			.arg(gcode_dbhhw < 0 ? table2->getValue(i, 4) : QString("H101-%1").arg(gcode_dbhhw - table2->getValue(i, 4).toDouble(), 0, 'f', 3))
 			.arg(gcode3)
 			.arg(doM04);
 
@@ -868,6 +961,7 @@ M02
 
 		gcode += s;
 	}
+	//gcode += "G90\n";
 	gcode += QString("M99\n");
 
 	if (!cCode.isEmpty()) {
@@ -953,43 +1047,52 @@ QString RunManual::GetGCode(bool forRun)
 	SaveFanDianCanShuForm();
 	SaveData();
 
-	if (!forRun) {
-		QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts(this->objectName());
-		for (const auto& pyFileName : pyFiles.keys()) {
-			if (pyFileName == "getgcode") {
-				this->SetData("result", NULL);
-				this->SetData("ui_data", BaseChildWindow::GetData(this, true).toVariantMap());
+	//if (!forRun) {
+	//	QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts(this->objectName());
+	//	for (const auto& pyFileName : pyFiles.keys()) {
+	//		if (pyFileName == "getgcode") {
+	//			this->SetData("result", NULL);
+	//			this->SetData("ui_data", BaseChildWindow::GetData(this, true).toVariantMap());
 
-				QString value = pyFiles.value(pyFileName);
-				PluginUtils::RunFile(value, this);
-				 
-				QVariant result = this->GetData("result");
-				if (result != NULL && result.isValid()) {
-					QString gcode = this->GetData("result").value<QString>();
-					return gcode;
-				}
-			}
+	//			QString value = pyFiles.value(pyFileName);
+	//			PluginUtils::RunFile(value, this);
+	//			 
+	//			QVariant result = this->GetData("result");
+	//			if (result != NULL && result.isValid()) {
+	//				QString gcode = this->GetData("result").value<QString>();
+	//				return gcode;
+	//			}
+	//		}
+	//	}
+	//}
+
+	if (table2->getDataCount() <= 0) {
+		FormUtils::MessageBoxInfo(QStringLiteral(""));
+		return QString();
+	}
+	QStringList toAxis;
+	for (int i = 0; i < 3; ++i) {
+		if (table1->getValue(i, -1) != "True") {
+			continue;
 		}
+
+		QString s = table1->getValue(i, 0);
+		if (!s.isEmpty()) {
+			toAxis.append(QString("XYZ").at(i));
+		}
+	}
+	if (toAxis.length() == 0) {
+		FormUtils::MessageBoxInfo(QStringLiteral(""));
+		return QString();
 	}
 
 	// 导出G代码，且单轴加工时候
 	if (!forRun) {
-		QStringList toAxis;
-		for (int i = 0; i < 3; ++i) {
-			if (table1->getValue(i, -1) != "True") {
-				continue;
-			}
-
-			QString s = table1->getValue(i, 0);
-			if (!s.isEmpty()) {
-				toAxis.append(QString("XYZ").at(i));
-				break;
-			}
-		}
+		
 		if (toAxis.length() == 1) {
 			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName(), SystemSettings::instance().GetProjectDir());
 
-			return GetGCodeV1(dataForm, table1, table2);
+			return GetGCodeV1(dataForm, table1, table2, m_ncMachine);
 		}
 	}
 

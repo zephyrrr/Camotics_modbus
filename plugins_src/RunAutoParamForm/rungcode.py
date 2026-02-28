@@ -207,8 +207,6 @@ def get_ccode(r, other_cs):
             v = other_cs[c]
         else:
             v = ''
-        if c == 'V':
-            v = f'0{v // 10}'
         s += f"{v} "
     return s
 
@@ -289,7 +287,7 @@ if __name__ == "__main__":
         #inClzhNo = allClzh.index(inClzh) + 1
         #inDjxzNo = allDjxz.index(inDjxz) + 1
         #inJgczNo = allJgcz.index(inJgcz) + 1
-        r1 = get_data("库.csv", f"材料='{inClzh}' AND 形状='{inDjxz}' AND 重视='{inJgcz}' AND 切入=1 AND 侧面余量='{inDbhhw}'", f"")
+        r1 = get_data("库.csv", f"材料='{inClzh}' AND 形状='{inDjxz}' AND 重视='{inJgcz}' AND 切入=1 AND 侧面余量<={inDbhhw} ORDER BY 侧面余量 DESC", f"")
         if type(r1) is list:
             if len(r1) > 1:
                 print('!!!duplicate result: ', r1)

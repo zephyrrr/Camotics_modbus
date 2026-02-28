@@ -37,14 +37,27 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 
 	ui->inYdxzSpecial->setValidator(new QRegExpValidator(QRegExp("^[1-5]{4}$"), ui->inYdxzSpecial));
 	ui->inYdxzSpecial->setVisible(false);
-	connect(ui->inYdxz, &QComboBox::currentTextChanged, this, [this](const QString& text) {
-		if (text == QStringLiteral("象限")) {
+	connect(ui->inYdxz, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
+		if (index == ui->inYdxz->count() - 1) {
 			ui->inYdxzSpecial->setVisible(true);
 		}
 		else {
 			ui->inYdxzSpecial->setVisible(false);
 		}
 		});
+
+	ui->inJgsd2->setVisible(false);
+	ui->inJgsd3->setVisible(false);
+	//connect(ui->inJgz, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
+	//	if (index == ui->inJgz->count() - 1) {
+	//		ui->inJgsd2->setVisible(true);
+	//		ui->inJgsd3->setVisible(true);
+	//	}
+	//	else {
+	//		ui->inJgsd2->setVisible(false);
+	//		ui->inJgsd3->setVisible(false);
+	//	}
+	//	});
 
 	CreateDb();
 	connect(ui->inClzh, &QComboBox::currentTextChanged, this, &RunAutoParamForm::ReloadData4Jgmj);
@@ -129,6 +142,8 @@ void RunAutoParamForm::ReloadData4Ccd()
 		while (query.next()) {
 			double v = query.value(0).toDouble();
 			int vdi = round(log10(v / 0.1) * 20);
+			if (vdi < 0)
+				vdi = 0;
 			QString displayText = QStringLiteral("VDI%1-Ra%2").arg(vdi).arg(v);
 
 			ui->inCcd->addItem(displayText, v);
@@ -260,6 +275,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 			}
 			else if (ss[row].startsWith("H102")) {
 				ln = ss[row].mid(7).trimmed();
+				this->SetData("inLN", ln);
 			}
 		}
 
@@ -282,7 +298,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 				QString tz = gTzs[row].mid(3);
 				if (tz[0] == 'Z' || tz[0] == 'T') {
 					table2.setValue(row, 6, QString(tz[0]));
-					table2.setValue(row, 7, tz.mid(1).replace(";", "").leftJustified(5, '0'));
+					table2.setValue(row, 7, tz.mid(1).replace(";", "").rightJustified(5, '0'));
 				}
 			}
 		}
@@ -306,6 +322,22 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		else if (ui->inJgz->currentText() == "Y") {
 			table1.setValue(1, 0, toz);
 			table1.setValue(1, -1, "True");
+		}
+		// 多轴
+		else
+		{
+			if (!ui->inJgsd->text().isEmpty()) {
+				table1.setValue(0, 0, ui->inJgsd->text());
+				table1.setValue(0, -1, "True");
+			}
+			if (!ui->inJgsd2->text().isEmpty()) {
+				table1.setValue(1, 0, ui->inJgsd->text());
+				table1.setValue(1, -1, "True");
+			}
+			if (!ui->inJgsd3->text().isEmpty()) {
+				table1.setValue(2, 0, ui->inJgsd->text());
+				table1.setValue(2, -1, "True");
+			}
 		}
 		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));

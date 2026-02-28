@@ -7,7 +7,6 @@
 #include <QMessageBox>
 
 #include <cbang/json/JSON.h>
-#include <cbang/SmartPointer.h>
 #include <cbang/io/InputSource.h>
 #include <cbang/Catch.h>
 

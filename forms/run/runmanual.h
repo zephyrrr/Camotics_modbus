@@ -29,7 +29,7 @@ public:
 	//void LoadDataFromCCode(QString cCode);
 	static QString GetGCodeOSub803(IDataTable* table2);
 	//static QString GetGCodeOne(bool isAbsolutePosition, double toAxisLength[], double startAxisPositions[]);
-	static QString GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2);
+	static QString GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2, NCMachine* ncMachine);
 	ButtonEditTableWidget* table1;
 	ButtonEditTableWidget* table2;
 
@@ -45,7 +45,7 @@ private:
 	FangDianCanShuSingleForm* m_fangDianCanShuForm;
 	int m_fangDianCanShuFormRow = -1;
 	QStackedWidget* stackedChildWidget;
-	QHash<int, int> mapLine2Row;
+	//QHash<int, int> mapLine2Row;
 	int lastLine4DoneOne = -1;
 private:
 	void ShowDetailForm(int row);

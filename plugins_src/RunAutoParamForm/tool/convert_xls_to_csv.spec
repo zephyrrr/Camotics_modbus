@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['convert_xls_to_csv.py'],
+    ['..\\..\\..\\Camotics_modbus2\\plugins_src\\RunAutoParamForm\\tool\\convert_xls_to_csv.py'],
     pathex=[],
     binaries=[],
     datas=[],

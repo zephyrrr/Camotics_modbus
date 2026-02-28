@@ -1,4 +1,4 @@
-#include "runautomulti.h"
+﻿#include "runautomulti.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -37,6 +37,9 @@ RunAutoMulti::RunAutoMulti(QWidget* parent)
 	ui.btnJgff->hide();
 	ui.btnJgff2->hide();
 	ui.label_5->hide();
+
+	this->table3->hideColumn(6);
+	this->table3->hideColumn(7);
 }
 
 RunAutoMulti::~RunAutoMulti()

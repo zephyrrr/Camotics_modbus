@@ -1,6 +1,8 @@
 ﻿#include <thread>
 #include <chrono>
 #include <sstream>
+#include <iostream>
+#include <exception>
 #include <QApplication>
 #include <QtDebug>
 #include "modbusadapter.h"
@@ -676,14 +678,17 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 	}
 	catch (const std::exception& e) {
 		//LOG_WARNING("Modbus: exception: " << e.what());
-		LOG_ERROR("Modbus: " << e.what());
+		LOG_ERROR("Modbus: " << e.what() << ", " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << task->preDoFunctionDesc << "," << task->postDoFunctionDesc);
 		//QMetaObject::invokeMethod(parent(), [this]() {
 		//	NCMachine* machine = qobject_cast<NCMachine*>(parent());
 		//	machine->StopRun();
 		//	}, Qt::QueuedConnection);
+		//LOG_WARNING("Modbus:" << std::stacktrace::current())
+		return -1;
 	}
 	catch (...)
 	{
+		LOG_ERROR("Modbus: " << "Unknown error" << ", " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << task->preDoFunctionDesc << "," << task->postDoFunctionDesc);
 		return -1;
 	}
 }
