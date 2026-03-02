@@ -2898,9 +2898,13 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="396"/>
-        <location filename="forms/mainwindow2.cpp" line="399"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="399"/>
+        <source>SDMG</source>
+        <translation>手动多个</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="408"/>
@@ -3481,22 +3485,22 @@
 <context>
     <name>RunAutoOne</name>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="110"/>
+        <location filename="forms/auto/runautoone.cpp" line="116"/>
         <source>SDDMSC</source>
         <translation>手动代码输出</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="112"/>
+        <location filename="forms/auto/runautoone.cpp" line="118"/>
         <source>NWJSC</source>
         <translation>NC文件输出</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="122"/>
+        <location filename="forms/auto/runautoone.cpp" line="128"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="150"/>
+        <location filename="forms/auto/runautoone.cpp" line="156"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
@@ -3591,7 +3595,7 @@
         <translation type="vanished">消息</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoparamform.cpp" line="360"/>
+        <location filename="forms/auto/runautoparamform.cpp" line="363"/>
         <source>MYXYSJ</source>
         <translation>没有相应数据！</translation>
     </message>
@@ -3651,12 +3655,12 @@
     <message>
         <location filename="forms/run/runmanual.cpp" line="1070"/>
         <source>JGHSWL</source>
-        <translation type="unfinished"></translation>
+        <translation>加工回数为零</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="1085"/>
         <source>JGZBZWXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>加工坐标轴未选择</translation>
     </message>
 </context>
 <context>
@@ -3770,9 +3774,28 @@
         <translation>复位</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="466"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="473"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="714"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="229"/>
+        <source>JGHSWL</source>
+        <translation>加工回数为零</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="256"/>
+        <source>JGZBZWXZ</source>
+        <translation>加工坐标轴未选择</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="280"/>
+        <source>DZJGSYGYXDZB</source>
+        <translation>多个加工时应该用相对坐标</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="486"/>
+        <source>SDMG</source>
+        <translation>手动多个</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="493"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="734"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>

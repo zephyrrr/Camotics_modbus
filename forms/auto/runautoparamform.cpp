@@ -48,16 +48,19 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 
 	ui->inJgsd2->setVisible(false);
 	ui->inJgsd3->setVisible(false);
-	//connect(ui->inJgz, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
-	//	if (index == ui->inJgz->count() - 1) {
-	//		ui->inJgsd2->setVisible(true);
-	//		ui->inJgsd3->setVisible(true);
-	//	}
-	//	else {
-	//		ui->inJgsd2->setVisible(false);
-	//		ui->inJgsd3->setVisible(false);
-	//	}
-	//	});
+
+	if (ui->inJgz->count() == 4) {
+		connect(ui->inJgz, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
+			if (index == ui->inJgz->count() - 1) {
+				ui->inJgsd2->setVisible(true);
+				ui->inJgsd3->setVisible(true);
+			}
+			else {
+				ui->inJgsd2->setVisible(false);
+				ui->inJgsd3->setVisible(false);
+			}
+			});
+	}
 
 	CreateDb();
 	connect(ui->inClzh, &QComboBox::currentTextChanged, this, &RunAutoParamForm::ReloadData4Jgmj);
@@ -330,11 +333,11 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 				table1.setValue(0, -1, "True");
 			}
 			if (!ui->inJgsd2->text().isEmpty()) {
-				table1.setValue(1, 0, ui->inJgsd->text());
+				table1.setValue(1, 0, ui->inJgsd2->text());
 				table1.setValue(1, -1, "True");
 			}
 			if (!ui->inJgsd3->text().isEmpty()) {
-				table1.setValue(2, 0, ui->inJgsd->text());
+				table1.setValue(2, 0, ui->inJgsd3->text());
 				table1.setValue(2, -1, "True");
 			}
 		}

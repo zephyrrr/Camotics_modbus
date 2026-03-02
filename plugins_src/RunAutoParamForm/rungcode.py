@@ -239,7 +239,7 @@ if __name__ == "__main__":
         inClzh = window.getData("inClzh")  # 材料组合
         inDjxz = window.getData("inDjxz")  # 电极形状
         inJgz = window.getData("inJgz")  # 加工轴
-        inJgsd = float(window.getData("inJgsd"))   # 加工深度
+        inJgsd = float(window.getData("inJgsd") or '0')   # 加工深度
         inJgmj = window.getData("inJgmj")  # 加工面积
         inCcd = window.getData("inCcd")  # 粗糙度
         inYdxz = window.getData("inYdxz")  # 摇动形状

@@ -396,7 +396,7 @@ QtWin2::QtWin2(QWidget* parent)
 			AddChildWindow(tr("SDDG"), layout1, [this]() {
 				return new RunManual(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(tr("SDDG"), layout1, [this]() {
+			AddChildWindow(tr("SDMG"), layout1, [this]() {
 				return new RunManualMulti(this->ui->stackedChildWidget);
 				});
 			//AddChildWindow(tr("YXDG"), layout1, [this]() {

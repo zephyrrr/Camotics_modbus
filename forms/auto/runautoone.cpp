@@ -74,8 +74,14 @@ void RunAutoOne::ExportData()
 
 		QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
 		DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
-		dataFormDest->setValue("inAbsolute", "true");
-		dataFormDest->setValue("inAbsolute2", "false");
+		if (w->windowA->GetData("inJgz") == "XYZ") {
+			dataFormDest->setValue("inAbsolute", "false");
+			dataFormDest->setValue("inAbsolute2", "true");
+		}
+		else {
+			dataFormDest->setValue("inAbsolute", "true");
+			dataFormDest->setValue("inAbsolute2", "false");
+		}
 		dataFormDest->serialize(filePath4Dest);
 	}
 

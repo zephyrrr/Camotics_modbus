@@ -216,14 +216,23 @@ QString RunManualMulti::GetGCode(bool forRun)
 		if (toAxis.length() == 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
 			return GetGCodeV1();
 		}
+		else if (toAxis.length() > 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
+			return GetGCodeV1_Multi();
+		}
 	}
 
 	return GetGCodeV2();
 }
 QString RunManualMulti::GetGCodeV2()
 {
+	if (table2->getDataCount() <= 0) {
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
+		return QString();
+	}
+
 	QString otherAxis[] = { "X", "Y", "U"};
 
+	int realAxisLen = 0;
 	int axisLen = SPK_AXIS_LEN;
 	if (table3->isColumnHidden(4))
 	{
@@ -240,7 +249,12 @@ QString RunManualMulti::GetGCodeV2()
 		if (!s.isEmpty()) {
 			double d = s.toDouble();
 			toAxisLength[i] = d;
+			realAxisLen++;
 		}
+	}
+	if (realAxisLen == 0) {
+		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
+		return QString();
 	}
 	if (toAxisLength[0] == INFINITE && toAxisLength[1] == INFINITE && toAxisLength[2] == INFINITE) {
 		return QString();
@@ -261,8 +275,9 @@ QString RunManualMulti::GetGCodeV2()
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
 	//QString gcode;// = RunManual::GetGCodeStatic(table1, table2, dataForm->getValue("inAbsolute") == "true", axisPositions);
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
-	if (isAbsolutePosition) {
-		FormUtils::MessageBoxInfo("");
+
+	if (isAbsolutePosition && (toAxisLength[0] != INFINITE || toAxisLength[1] != INFINITE)){
+		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));
 		return QString();
 	}
 
@@ -331,7 +346,7 @@ QString RunManualMulti::GetGCodeV2()
 			for (int i = 0; i < axisLen; ++i) {
 				double d = startAxisPositions[i];
 				gcode += QString("H%1   = %2\n").arg(661 + i).arg(d, 0, 'f', 3);
-				gcode += QString("H%1   = %2\n").arg(771 + i).arg(toAxisLength[i] == INFINITE ? d : toAxisLength[i], 0, 'f', 3);
+				gcode += QString("H%1   = %2\n").arg(771 + i).arg(toAxisPositions[i] == INFINITE ? d : toAxisPositions[i], 0, 'f', 3);
 				gcode += QString("H%1   = %2\n").arg(881 + i).arg(toAxisLength[i] == INFINITE ? 0 : 1);
 			}
 
@@ -461,9 +476,14 @@ QString RunManualMulti::GetGCodeV1()
 	return gcode0.replace("M98P0000", gcode);
 }
 
+QString RunManualMulti::GetGCodeV1_Multi()
+{
+	return QString();
+}
+
 void RunManualMulti::RunGCode()
 {
-	SystemSettings::instance().LastRunNCFileName = tr("SDDG");
+	SystemSettings::instance().LastRunNCFileName = tr("SDMG");
 
 	QString gcode = GetGCode();
 
