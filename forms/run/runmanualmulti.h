@@ -22,7 +22,6 @@ public:
 
 	QString GetGCode(bool forRun = true) override;
 	QString GetGCodeV1();
-	QString GetGCodeV1_Multi();
 	QString GetGCodeV2();
 	void RunGCode() override;
 

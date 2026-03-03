@@ -1,4 +1,4 @@
-#ifndef MODBUSADAPTER_H
+﻿#ifndef MODBUSADAPTER_H
 #define MODBUSADAPTER_H
 
 #pragma warning(disable : 4100)
@@ -18,6 +18,7 @@
 #include "registersmodel.h"
 #include "rawdatamodel.h"
 #include <QTimer>
+#include <QFile>
 #include "eutils.h"
 #include "utils/TaskThread.h"
 #include "libmodbus/modbus.h"
@@ -98,6 +99,11 @@ public:
 private:
     int modbusWriteDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* writeData);
     int modbusReadDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* readData = NULL);
+
+    // Replay log functionality
+    void logWriteOperation(int startAddr, int numOfRegs, uint16_t* writeData);
+    std::mutex m_replayLogMutex;
+    QFile* m_replayLogFile;
 
 public:
     uint16_t* GetReadedData16() { return readDataDest16; }

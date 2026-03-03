@@ -13,6 +13,11 @@
 #include <random>
 #include <algorithm>
 #include "NCMachineProperties.h"
+#include <QStandardPaths>
+#include <QDir>
+#include <QFile>
+#include <QTextStream>
+#include <QTime>
 
 ModbusAdapter* s_instance;
 
@@ -22,7 +27,8 @@ ModbusAdapter* s_instance;
 ModbusAdapter::ModbusAdapter(QObject* parent, RegistersModel* regModel, RawDataModel* rawdataModel) :
 	QObject(parent), m_taskThread(NULL),
 	m_modbus(NULL), m_regModel(regModel), m_rawModel(rawdataModel),
-	m_useThread(true), m_connected(false), m_packets(0), m_errors(0), m_currentGuiTask(0, 0, 0, 0), m_timerCount(0)
+	m_useThread(true), m_connected(false), m_packets(0), m_errors(0), m_currentGuiTask(0, 0, 0, 0), m_timerCount(0),
+	m_replayLogFile(nullptr)
 {
 	s_instance = this;
 
@@ -44,6 +50,27 @@ ModbusAdapter::ModbusAdapter(QObject* parent, RegistersModel* regModel, RawDataM
 	writeDataDest16 = (uint16_t*)malloc(DATA16_BUFFER_LEN * sizeof(uint16_t));
 	if (writeDataDest16)
 		memset(writeDataDest16, 0, DATA16_BUFFER_LEN * sizeof(uint16_t));
+
+	// 初始化日志文件
+	QString logDir = "./logs";
+	QString logFileName = logDir + "/modbus_write_log.csv";
+	logFileName = "";
+	if (!logFileName.isEmpty()) {
+		QDir dir(logDir);
+		if (!dir.exists()) {
+			dir.mkpath(logDir);
+		}
+
+		m_replayLogFile = new QFile(logFileName);
+		if (m_replayLogFile->open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append)) {
+			LOG_INFO(1, "Modbus write log initialized: " << logFileName.toUtf8().constData());
+		}
+		else {
+			LOG_WARNING("Modbus: Failed to initialize write log file");
+			delete m_replayLogFile;
+			m_replayLogFile = nullptr;
+		}
+	}
 }
 
 ModbusAdapter::~ModbusAdapter()
@@ -61,6 +88,11 @@ ModbusAdapter::~ModbusAdapter()
 	free(readDataDest16);
 	//free(writeDataDest);
 	free(writeDataDest16);
+
+	if (m_replayLogFile) {
+		m_replayLogFile->close();
+		delete m_replayLogFile;
+	}
 }
 
 void ModbusAdapter::modbusConnectRTU(QString port, int baud, QChar parity, int dataBits, int stopBits, int RTS, int responseTimeOut, int byteTimeout)
@@ -507,7 +539,35 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	QTime time2 = QTime::currentTime();
 	m_msecComm += time1.msecsTo(time2);
 
+	// Log write operation for replay
+	logWriteOperation(startAddr, numOfRegs, writeData);
+
 	return ret;
+}
+
+void ModbusAdapter::logWriteOperation(int startAddr, int numOfRegs, uint16_t* writeData)
+{
+	if (!m_replayLogFile)
+		return;
+
+	std::lock_guard<std::mutex> lock(m_replayLogMutex);
+
+	if (!m_replayLogFile->isOpen())
+		return;
+
+	// 格式：startAddr,numOfRegs,hexdata1,hexdata2,...
+	QStringList hexData;
+	for (int i = 0; i < numOfRegs; ++i) {
+		hexData << QString("%1").arg(writeData[i], 4, 16, QChar('0'));
+	}
+
+	QString logLine = QString("%1,%2,%3\n")
+		.arg(startAddr)
+		.arg(numOfRegs)
+		.arg(hexData.join(":"));
+
+	m_replayLogFile->write(logLine.toUtf8());
+	m_replayLogFile->flush();
 }
 
 ModbusTask* ModbusAdapter::getTaskWriteFile(int subAddr, int nb, std::string writeData)

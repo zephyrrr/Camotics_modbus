@@ -188,7 +188,7 @@ public:
         btnJghs->setText(QCoreApplication::translate("RunManualMulti", "8", nullptr));
         label_5->setText(QCoreApplication::translate("RunManualMulti", "JGHS", nullptr));
         label_1->setText(QCoreApplication::translate("RunManualMulti", "JGFF", nullptr));
-        btnJgff->setText(QCoreApplication::translate("RunManualMulti", "DD", nullptr));
+        btnJgff->setText(QCoreApplication::translate("RunManualMulti", "DANDU", nullptr));
         btnJgff2->setText(QCoreApplication::translate("RunManualMulti", "LX", nullptr));
         label_3->setText(QCoreApplication::translate("RunManualMulti", "ZZKSGD", nullptr));
         label_2->setText(QCoreApplication::translate("RunManualMulti", "ZZAQGD", nullptr));

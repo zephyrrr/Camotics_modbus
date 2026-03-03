@@ -189,6 +189,38 @@ QString RunManualMulti::GetGCode(bool forRun)
 {
 	SaveData();
 
+	if (table2->getDataCount() <= 0) {
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
+		return QString();
+	}
+
+	int realAxisLen = 0;
+	double toAxisLength[] = { INFINITE, INFINITE, INFINITE, INFINITE };
+	for (int i = 0; i < table1->getDataCount(); ++i) {
+		if (table1->getValue(i, -1) != "True") {
+			continue;
+		}
+
+		QString s = table1->getValue(i, 0);
+		if (!s.isEmpty()) {
+			realAxisLen++;
+			toAxisLength[i] = s.toDouble();
+		}
+	}
+	if (realAxisLen == 0) {
+		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
+		return QString();
+	}
+
+	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+
+	if (isAbsolutePosition && (toAxisLength[0] != INFINITE || toAxisLength[1] != INFINITE)) {
+		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));
+		return QString();
+	}
+
+
 	// 导出G代码，且单轴加工时候
 	if (!forRun) {
 		QStringList toAxis;
@@ -217,7 +249,7 @@ QString RunManualMulti::GetGCode(bool forRun)
 			return GetGCodeV1();
 		}
 		else if (toAxis.length() > 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
-			return GetGCodeV1_Multi();
+			return GetGCodeV1();
 		}
 	}
 
@@ -225,14 +257,8 @@ QString RunManualMulti::GetGCode(bool forRun)
 }
 QString RunManualMulti::GetGCodeV2()
 {
-	if (table2->getDataCount() <= 0) {
-		FormUtils::MessageBoxInfo(tr("JGHSWL"));
-		return QString();
-	}
-
 	QString otherAxis[] = { "X", "Y", "U"};
 
-	int realAxisLen = 0;
 	int axisLen = SPK_AXIS_LEN;
 	if (table3->isColumnHidden(4))
 	{
@@ -240,7 +266,7 @@ QString RunManualMulti::GetGCodeV2()
 	}
 
 	double toAxisLength[] = { INFINITE, INFINITE, INFINITE, INFINITE };
-	for (int i = 0; i < axisLen; ++i) {
+	for (int i = 0; i < table1->getDataCount(); ++i) {
 		if (table1->getValue(i, -1) != "True") {
 			continue;
 		}
@@ -249,13 +275,9 @@ QString RunManualMulti::GetGCodeV2()
 		if (!s.isEmpty()) {
 			double d = s.toDouble();
 			toAxisLength[i] = d;
-			realAxisLen++;
 		}
 	}
-	if (realAxisLen == 0) {
-		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
-		return QString();
-	}
+
 	if (toAxisLength[0] == INFINITE && toAxisLength[1] == INFINITE && toAxisLength[2] == INFINITE) {
 		return QString();
 	}
@@ -439,6 +461,11 @@ M02
 
 QString RunManualMulti::GetGCodeV1()
 {
+	if (!ui.btnJgff->isChecked()) {
+		FormUtils::MessageBoxInfo(tr("BZCLXJGMS"));
+		return QString();
+	}
+
 	QString otherAxis[] = { "X", "Y", "U" };
 
 	int axisLen = SPK_AXIS_LEN;
@@ -448,19 +475,47 @@ QString RunManualMulti::GetGCodeV1()
 	}
 
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
-	QString gcode0 = RunManual::GetGCodeV1(dataForm, table1, table2, m_ncMachine);
-
+	QString gcode0 = RunManual::GetGCodeV1(dataForm, table1, table2, NULL);
 
 	QString gcode;
-	if (ui.btnJgff->isChecked()) {
+
+	// 多轴
+	if (gcode0.contains("N0001")) {
+
+		double toAxisLength[] = { INFINITE, INFINITE, INFINITE, INFINITE };
+		for (int i = 0; i < table1->getDataCount(); ++i) {
+			if (table1->getValue(i, -1) != "True") {
+				continue;
+			}
+
+			QString s = table1->getValue(i, 0);
+			if (!s.isEmpty()) {
+				toAxisLength[i] = s.toDouble();
+			}
+		}
+
 		for (int i = 0; i < table3->getDataCount(); ++i) {
 			if (!QLineEditLikeButton::IsYes(table3->getValue(i, 0))) {
 				continue;
 			}
 			if (table3->getValue(i, 1).isEmpty() || table3->getValue(i, 2).isEmpty())
 				continue;
+
+			// 相对坐标
+			for (int j = 0; j < axisLen - 1; ++j) {
+				double d = table3->getValue(i, j + 1).toDouble();
+				// Z, not U
+				if (j == 2) {
+					//d = m_ncMachine->GetController()->getAxisPosition(GCodeTool::axis[j]);
+					d = ui.lineEditZKaisi->text().toDouble();
+				}
+				gcode += QString("H%1   = %2\n").arg(661 + j).arg(d, 0, 'f', 3);
+				gcode += QString("H%1   = %2\n").arg(771 + j).arg(toAxisLength[j] == INFINITE ? d : d + toAxisLength[j], 0, 'f', 3);
+				//gcode += QString("H%1   = %2\n").arg(881 + i).arg(toAxisLength[i] == INFINITE ? 0 : 1);
+			}
+
 			gcode += QString("G%1 ").arg(table3->getValue(i, 4));
-			
+
 			gcode += QString("G00 ");
 			for (int j = 0; j < axisLen - 1; ++j)
 			{
@@ -469,16 +524,32 @@ QString RunManualMulti::GetGCodeV1()
 
 			gcode += "M98P0000\n";
 		}
+
+		gcode0 = gcode0.replace("N0000", "N0000\n" + QString("G00 %1 %2\n").arg("Z").arg(ui.lineEditZKaisi->text()));
+		gcode0 = gcode0.replace("M99\nN0001", QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text()) + "\nM99\nN0001");
 	}
-	gcode0 = gcode0.replace("N0000", "N0000\n" + QString("G00 %1 %2\n").arg("Z").arg(ui.lineEditZKaisi->text()));
-	gcode0 = gcode0.replace("M99", QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text()) + "\nM99");
+	else {
+		for (int i = 0; i < table3->getDataCount(); ++i) {
+			if (!QLineEditLikeButton::IsYes(table3->getValue(i, 0))) {
+				continue;
+			}
+			if (table3->getValue(i, 1).isEmpty() || table3->getValue(i, 2).isEmpty())
+				continue;
+			gcode += QString("G%1 ").arg(table3->getValue(i, 4));
+
+			gcode += QString("G00 ");
+			for (int j = 0; j < axisLen - 1; ++j)
+			{
+				gcode += QString("%1%2 ").arg(otherAxis[j]).arg(table3->getValue(i, j + 1));
+			}
+
+			gcode += "M98P0000\n";
+		}
+		gcode0 = gcode0.replace("N0000", "N0000\n" + QString("G00 %1 %2\n").arg("Z").arg(ui.lineEditZKaisi->text()));
+		gcode0 = gcode0.replace("M99", QString("G00 %1%2\n").arg("Z").arg(ui.lineEditZAnQuan->text()) + "\nM99");
+	}
 
 	return gcode0.replace("M98P0000", gcode);
-}
-
-QString RunManualMulti::GetGCodeV1_Multi()
-{
-	return QString();
 }
 
 void RunManualMulti::RunGCode()

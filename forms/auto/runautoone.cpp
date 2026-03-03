@@ -53,8 +53,18 @@ void RunAutoOne::ExportData()
 	if (this->table2->getDataCount() == 0) {
 		return;
 	}
+
+	
 	RunAutoForm* w = this->GetParentOfThis<RunAutoForm>(this);
 	w->windowB->SaveData();
+
+	if (w->windowA->GetData("inJgz") == "XYZ") {
+		ui.inAbsolute2->setChecked(true);
+	}
+	else {
+		ui.inAbsolute->setChecked(true);
+	}
+	this->SaveData();
 
 	{
 		QString parentName = "runautoone";
@@ -72,17 +82,17 @@ void RunAutoOne::ExportData()
 		filePath1Dest = SystemSettings::AppendDataFilePath(filePath1Dest, QString("%1_table1").arg(parentNameDest));
 		FormUtils::CopyFileWithOverwrite(filePath1, filePath1Dest);
 
-		QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
-		DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
-		if (w->windowA->GetData("inJgz") == "XYZ") {
-			dataFormDest->setValue("inAbsolute", "false");
-			dataFormDest->setValue("inAbsolute2", "true");
-		}
-		else {
-			dataFormDest->setValue("inAbsolute", "true");
-			dataFormDest->setValue("inAbsolute2", "false");
-		}
-		dataFormDest->serialize(filePath4Dest);
+		//QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
+		//DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
+		//if (w->windowA->GetData("inJgz") == "XYZ") {
+		//	dataFormDest->setValue("inAbsolute", "false");
+		//	dataFormDest->setValue("inAbsolute2", "true");
+		//}
+		//else {
+		//	dataFormDest->setValue("inAbsolute", "true");
+		//	dataFormDest->setValue("inAbsolute2", "false");
+		//}
+		//dataFormDest->serialize(filePath4Dest);
 	}
 
 	{

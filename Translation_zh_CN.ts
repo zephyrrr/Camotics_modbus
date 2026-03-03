@@ -1575,27 +1575,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="649"/>
+        <location filename="modbus/modbusadapter.cpp" line="709"/>
         <source>MXCW</source>
         <translation>Modbus: 写错误</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="736"/>
+        <location filename="modbus/modbusadapter.cpp" line="796"/>
         <source>Write data failed. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="742"/>
+        <location filename="modbus/modbusadapter.cpp" line="802"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="796"/>
+        <location filename="modbus/modbusadapter.cpp" line="856"/>
         <source>Read data failed. Error : </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="802"/>
+        <location filename="modbus/modbusadapter.cpp" line="862"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation type="unfinished"></translation>
     </message>
@@ -3485,22 +3485,22 @@
 <context>
     <name>RunAutoOne</name>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="116"/>
+        <location filename="forms/auto/runautoone.cpp" line="126"/>
         <source>SDDMSC</source>
         <translation>手动代码输出</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="118"/>
+        <location filename="forms/auto/runautoone.cpp" line="128"/>
         <source>NWJSC</source>
         <translation>NC文件输出</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="128"/>
+        <location filename="forms/auto/runautoone.cpp" line="138"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoone.cpp" line="156"/>
+        <location filename="forms/auto/runautoone.cpp" line="166"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
@@ -3648,17 +3648,17 @@
         <translation>复位</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="976"/>
+        <location filename="forms/run/runmanual.cpp" line="1081"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="1070"/>
+        <location filename="forms/run/runmanual.cpp" line="1175"/>
         <source>JGHSWL</source>
         <translation>加工回数为零</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="1085"/>
+        <location filename="forms/run/runmanual.cpp" line="1190"/>
         <source>JGZBZWXZ</source>
         <translation>加工坐标轴未选择</translation>
     </message>
@@ -3715,8 +3715,8 @@
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="80"/>
-        <source>DD</source>
-        <translation>对刀</translation>
+        <source>DANDU</source>
+        <translation>单独</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="96"/>
@@ -3774,28 +3774,34 @@
         <translation>复位</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="229"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="193"/>
         <source>JGHSWL</source>
         <translation>加工回数为零</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="256"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="211"/>
         <source>JGZBZWXZ</source>
         <translation>加工坐标轴未选择</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="280"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="219"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="302"/>
         <source>DZJGSYGYXDZB</source>
         <translation>多个加工时应该用相对坐标</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="486"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="465"/>
+        <source>BZCLXJGMS</source>
+        <translation>不支持连续加工模式</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="557"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="493"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="734"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="564"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="805"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>

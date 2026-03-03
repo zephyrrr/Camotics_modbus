@@ -29,7 +29,7 @@ public:
 	//void LoadDataFromCCode(QString cCode);
 	static QString GetGCodeOSub803(IDataTable* table2);
 	//static QString GetGCodeOne(bool isAbsolutePosition, double toAxisLength[], double startAxisPositions[]);
-	static QString GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2, NCMachine* ncMachine);
+	static QString GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTable* table2, double axisPositions[]);
 	ButtonEditTableWidget* table1;
 	ButtonEditTableWidget* table2;
 

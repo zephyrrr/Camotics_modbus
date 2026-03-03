@@ -77,7 +77,7 @@
               <item>
                 <widget class="QPushButton" name="btnJgff">
                   <property name="text">
-                    <string>DD</string>
+                    <string>DANDU</string>
                   </property>
                   <property name="checkable">
                     <bool>true</bool>
