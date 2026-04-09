@@ -3,6 +3,7 @@
 
 #define TASKQUEUE_MAX_COUNT 3
 #define TASK_WAIT_MILLSECONDS 50
+#define TASKQUEUE_ITEM_MAX_COUNT 100
 
 #include <thread>
 #include <functional>

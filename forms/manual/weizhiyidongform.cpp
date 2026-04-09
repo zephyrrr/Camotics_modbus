@@ -155,7 +155,7 @@ void WeiZhiYiDongForm::RunGCode()
 		}
 		else if (ui->btnX_3_N->isChecked()) {
 			//ncMachine->BacktoZero(DdfxEnum::X_MINUS);
-			gcode = "do_backtozeron Z\n";
+			gcode = "do_backtozeron X\n";
 			selectedAxisI = 0;
 		}
 		else if (ui->btnY_3_P->isChecked()) {

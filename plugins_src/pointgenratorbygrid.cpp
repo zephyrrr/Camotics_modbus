@@ -1,4 +1,4 @@
-#include "pointgenratorbygrid.h"
+﻿#include "pointgenratorbygrid.h"
 #include "ui_pointgeneratorbygrid.h"
 #include "widgets/buttonedittablewidget.h"
 
@@ -34,7 +34,7 @@ QVector<double> PointGenratorByGrid::generatePoints()
 			double dy = ui->txtStepY->text().toDouble();
 			if (dx < 0.001 || dy < 0.001)
 			{
-				throw std::exception("步长太小");
+				throw std::exception("too small step");
 			}
 			for (double x = x1; x <= x2; x += dx)
 			{

@@ -1,10 +1,15 @@
-﻿1.4.0
-1. 多语言支持
-2. 加工坐标轴未选择、加工回数为零时，提示用户
-3. 蜂鸣器控制了类型用2，等待按键的方式；
-4. 多点加工，如果加工轴不是Z轴(多轴或者X/Y轴)，则需要相对坐标模式
-5. 多轴加工G代码输出格式更改
+﻿1.4.1
+1. 多轴加工G代码输出格式更改
+2. 设定里管理员窗口需要输入密码，默认密码97532
 
+1.4.0
+1. 多语言支持。根据系统语言自动选择，如需手动，更改qGlobal.ini，英文 Lang=en, 中文 Lang=zh_CN
+	目前是自动翻译的，如需修改：记事本打开Translation_en.ts，修改。可以对照着Translation_zh_CN.ts看。
+2. 加工坐标轴未选择、加工回数为零时，提示用户
+3. 加工完成后，蜂鸣器控制类型用2，等待按键的方式；
+4. 手动多个加工，多坐标轴，需要相对坐标模式
+5. AOD,MDIV等参数数值根据nc文件中的代码更新
+6. 柱中心定位，未回退问题
 
 1.3.3
 1. 自动参数中，单轴加工G代码格式更改（STEP,LN,LP)
@@ -47,7 +52,7 @@ pyinstaller -F ..\..\..\Camotics_modbus2\plugins_src\RunAutoParamForm\tool\conve
 其他：
 C:\Qt\5.15.2\msvc2019\bin\lupdate.exe e:\cnc\cnc\Camotics_modbus2 -ts e:\cnc\cnc\Camotics_modbus2\Translation_en.ts
 
-C:\Qt\5.15.2\msvc2019\bin\lrelease.exe e:\cnc\cnc\Camotics_modbus2\Translation_en.ts
+C:\Qt\5.15.2\msvc2019\bin\lrelease.exe e:\cnc\cnc\Camotics_modbus2\Translation_en.ts -qm e:\cnc\cnc\Camotics_modbus2\translations\Translation_en.qm
 C:\Qt\5.15.2\msvc2019\bin\lrelease.exe e:\cnc\cnc\Camotics_modbus2\Translation_zh_CN.ts -qm e:\cnc\cnc\Camotics_modbus2\translations\Translation_zh_CN.qm
 [轴号] 动作的对应轴号。
 [方向] 动作的方向，“+”为对应轴正方向，“-”为对应轴的负方向。

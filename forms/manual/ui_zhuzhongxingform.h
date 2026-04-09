@@ -332,7 +332,7 @@ public:
         label_3->setText(QCoreApplication::translate("ZhuZhongXingForm", "ZB0SD", nullptr));
         inSetToZero->setText(QCoreApplication::translate("ZhuZhongXingForm", "ON", nullptr));
         pushButton_6->setText(QCoreApplication::translate("ZhuZhongXingForm", "OFF", nullptr));
-        label_7->setText(QCoreApplication::translate("ZhuZhongXingForm", "CS", nullptr));
+        label_7->setText(QCoreApplication::translate("ZhuZhongXingForm", "ChiShu", nullptr));
         inCnt->setText(QCoreApplication::translate("ZhuZhongXingForm", "1", nullptr));
         label_6->setText(QCoreApplication::translate("ZhuZhongXingForm", "JG", nullptr));
         labelPix->setText(QString());

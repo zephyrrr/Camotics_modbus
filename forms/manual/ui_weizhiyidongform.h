@@ -751,7 +751,7 @@ public:
         label_1->setText(QCoreApplication::translate("WeiZhiYiDongForm", "SJSR", nullptr));
         btnY->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Y", nullptr));
         btnX->setText(QCoreApplication::translate("WeiZhiYiDongForm", "X", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("WeiZhiYiDongForm", "YD", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("WeiZhiYiDongForm", "YiDong", nullptr));
         btnZ_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "Z", nullptr));
         inTouchSense_2->setText(QCoreApplication::translate("WeiZhiYiDongForm", "ON", nullptr));
         pushButton_9->setText(QCoreApplication::translate("WeiZhiYiDongForm", "OFF", nullptr));

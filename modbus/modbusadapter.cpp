@@ -293,10 +293,15 @@ void ModbusAdapter::fillWriteData(int functionCode, int numOfRegs)
 
 void ModbusAdapter::modbusTransaction()
 {
-	if (!m_taskThread || m_taskThread->getTasksCnt(TASK_TIMER_PRIORITY) > 100)
+	if (!m_taskThread || m_taskThread->getTasksCnt(TASK_TIMER_PRIORITY) > TASKQUEUE_ITEM_MAX_COUNT)
 		return;
 
 	m_timerCount++;
+
+	if (m_tasksNormal.size() == 0) {
+		QMetaObject::invokeMethod(this, "updateState", Qt::QueuedConnection, Q_ARG(int, 1));
+		return;
+	}
 
 	for (std::tuple<ModbusTask, int, bool> taskIt : m_tasksNormal) {
 		ModbusTask task = std::get<0>(taskIt);
@@ -603,6 +608,8 @@ ModbusTask* ModbusAdapter::getTaskWait(std::function<void(int, ModbusTask*, Modb
 
 void ModbusAdapter::addTaskAsNormal(ModbusTask* task, int timeInterval, bool showInGui)
 {
+	// 运行G代码任务时，不能依赖于定时器的状态读取。即使没有这个也要能执行完成
+	//return;
 	m_tasksNormal.push_back(std::make_tuple(*task, timeInterval, showInGui));
 	//return task;
 }

@@ -404,6 +404,7 @@
     <ClCompile Include="camotics\qt\SidebarWidget.cpp" />
     <ClCompile Include="camotics\qt\TPLHighlighter.cpp" />
     <ClCompile Include="forms\auto\runautoone.cpp" />
+    <ClCompile Include="forms\component\pythonpluginchildwindow.cpp" />
     <ClCompile Include="utils\LocaleUtils.cpp" />
     <ClCompile Include="utils\simplecrypt.cpp" />
     <ClCompile Include="utils\QSqliteListModel.cpp" />
@@ -573,6 +574,7 @@
     <QtMoc Include="utils\EventLogger.h" />
     <ClInclude Include="camotics\qt\TPLHighlighter.h" />
     <QtMoc Include="forms\auto\runautoone.h" />
+    <QtMoc Include="forms\component\pythonpluginchildwindow.h" />
     <ClInclude Include="forms\component\tool4base.h" />
     <QtMoc Include="utils\QTextFileModel.h" />
     <QtMoc Include="utils\QSqliteListModel.h" />

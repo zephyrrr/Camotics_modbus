@@ -24,7 +24,7 @@
 #include "libmodbus/modbus.h"
 
 #define TASK_TIMER_PRIORITY 2
-#define TASK_DELAY_PRIORITY 1
+//#define TASK_DELAY_PRIORITY 1
 
 class ModbusAdapter;
 

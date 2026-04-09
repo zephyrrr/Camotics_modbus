@@ -21,13 +21,11 @@ QT_END_NAMESPACE
 class Gaotiao4Jiagong;
 class FangDianCanShuSingleForm;
 
-class ModbusMainWindow : public BaseMainWindow
+class ModbusMain
 {
-    Q_OBJECT
-
 public:
-    ModbusMainWindow(QWidget* parent);
-    ~ModbusMainWindow();
+    ModbusMain(QObject* parent);
+    ~ModbusMain();
 
 public:
     void modbusConnect(bool connect);
@@ -41,10 +39,13 @@ protected:
 
     RawDataModel* m_rawModel = NULL;
     RegistersModel* m_regModel = NULL;
+
+private:
+    QObject* m_parent;
 };
 
 
-class QtWin2 : public ModbusMainWindow
+class QtWin2 : public BaseMainWindow, public ModbusMain
 {
     Q_OBJECT
 
@@ -87,7 +88,7 @@ private slots:
     void on_btnJgtjGt_clicked();
     
 private:
-    void showDebug();
+    void switchUserMode();
     static QString SecondsToStr(qint64 totalSeconds);
     void OpenRegWindow();
 
@@ -115,9 +116,9 @@ private:
     DisplayZ* m_displayZ;
     int m_displayIdx = 0;
 #ifdef _DEBUG
-    bool m_showFullScreen = true;
+    bool m_isUserMode = true;
 #else
-	bool m_showFullScreen = true;
+	bool m_isUserMode = true;
 #endif
 
     QScrollArea* scrollArea;
@@ -139,7 +140,7 @@ private:
     bool m_serialPortNeedReconnect = false;
 };
 
-class QtWin3 : public ModbusMainWindow
+class QtWin3 : public BaseMainWindow, public ModbusMain
 {
 	Q_OBJECT
 

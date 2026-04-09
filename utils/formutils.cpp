@@ -1,4 +1,4 @@
-#include "formutils.h"
+﻿#include "formutils.h"
 #include <QMessageBox>
 #include <QPushButton>
 #include <QFile>
@@ -94,6 +94,7 @@ QString FormUtils::ShowPasswordInput()
 {
     QNumericPad numericPad;
     numericPad.setWindowFlag(Qt::WindowContextHelpButtonHint, false);
+    numericPad.setWindowFlag(Qt::FramelessWindowHint, false);
     numericPad.setWindowTitle(QObject::tr("Please enter password"));
     numericPad.exec();
     return numericPad.getText();

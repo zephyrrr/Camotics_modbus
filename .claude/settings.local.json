@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//mnt/e/cnc/cnc/deploy/1.3.3/**)",
+      "Bash(ls -la *.exe)",
+      "Bash(do:*)",
+      "Bash(cp:*)",
+      "Bash(python3*)",
+      "Bash(python3 *)",
+      "Bash(python3:*)",
+      "Bash(dd:*)",
+      "Bash(echo === Verifying all three locations ===:*)",
+      "Bash(find:*)"
+    ]
+  }
+}

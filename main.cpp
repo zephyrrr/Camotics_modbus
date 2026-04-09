@@ -288,7 +288,7 @@ static LONG __stdcall CrashHandlerExceptionFilter(EXCEPTION_POINTERS* pExp)
 //        _T("   Please report!"),
 //        pExPtrs->ExceptionRecord->ExceptionCode, pExPtrs->ExceptionRecord->ExceptionFlags,
 //        pExPtrs->ExceptionRecord->ExceptionAddress);
-	_stprintf_s(lString, _T("程序出现异常，即将退出！"));
+	_stprintf_s(lString, _T("Unhandled Exception, the App will quit now!"));
     FatalAppExit(-1, lString);
     return EXCEPTION_CONTINUE_SEARCH;
 }
@@ -399,7 +399,7 @@ void signalHandler(int signal)
     // Raise a custom Qt message to be handled by the message handler
     //qFatal("Segmentation fault caught (signal %d)", signal);
     TCHAR lString[500];
-    _stprintf_s(lString, _T("程序出现异常，即将退出！"));
+    _stprintf_s(lString, _T("Unhandled Exception, the App will quit now!"));
     FatalAppExit(-1, lString);
 }
 
@@ -702,12 +702,12 @@ int main(int argc, char* argv[])
             __except (ExpFilter(GetExceptionInformation(), GetExceptionCode()))
             {
                 TCHAR lString[500];
-                _stprintf_s(lString, _T("程序出现异常，即将退出！"));
+                _stprintf_s(lString, _T("Unhandled Exception, the App will quit now!"));
 
                 DWORD exceptionCode = GetExceptionCode();
                 TCHAR hexBuffer[16]; // Enough for 8 hex digits + null terminator
                 _stprintf_s(hexBuffer, _countof(hexBuffer), _T("0x%X\n"), exceptionCode);
-                _tcscat_s(lString, _countof(lString), _T(" 异常代码: "));
+                _tcscat_s(lString, _countof(lString), _T(" Exception Code: "));
                 _tcscat_s(lString, _countof(lString), hexBuffer);
 
                 HMODULE hNtDll = LoadLibrary(_T("NTDLL.DLL"));

@@ -384,6 +384,9 @@
     <ClCompile Include="utils\LocaleUtils.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="forms\component\pythonpluginchildwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="forms_v1\mainwindow.h">
@@ -639,6 +642,9 @@
       <Filter>Generated Files</Filter>
     </QtMoc>
     <QtMoc Include="utils\QSqliteListModel.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
+    <QtMoc Include="forms\component\pythonpluginchildwindow.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
   </ItemGroup>

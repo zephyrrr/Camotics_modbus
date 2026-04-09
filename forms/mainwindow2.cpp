@@ -1,6 +1,8 @@
 ﻿#include <QToolButton>
 #include <QToolBar>
 #include <QDateTime>
+#include <QFile>
+#include <QCoreApplication>
 #include <cbang/io/LineBufferStream.h>
 #include <cbang/os/SystemUtilities.h>
 #include <QtSerialPort/QSerialPortInfo>
@@ -39,6 +41,7 @@
 #include "utils/MathTool.h"
 #include "component/gaotiao4jiagong.h"
 #include "component/containerchildwindow.h"
+#include "component/pythonpluginchildwindow.h"
 #include "../../widgets/advancedtoolbox.h"
 #include "widgets/menuwith2frames.h"
 #include "modbus/NCMachineParametersC.h"
@@ -50,21 +53,21 @@
 
 #define LOGGER_FILE_NAME "logs/logger.txt"
 
-ModbusMainWindow::ModbusMainWindow(QWidget* parent)
-	: BaseMainWindow(parent)
+ModbusMain::ModbusMain(QObject* parent)
+	: m_parent(parent)
 {
 	//m_regModel = new RegistersModel(this);
 	if (true || cb::Logger::instance().getVerbosity() >= 10) {
-		m_rawModel = new RawDataModel(this);
+		m_rawModel = new RawDataModel(m_parent);
 		m_rawModel->enableAddLines(true);
-		connect(m_rawModel, &RawDataModel::lineAdded, [](QString line) {
+		m_parent->connect(m_rawModel, &RawDataModel::lineAdded, [](QString line) {
 			LOG_INFO(10, EUtils::QString2StdString(line));
 			});
 	}
 
 	m_modbusCommSettings = new ModbusCommSettings("data/qModMaster.ini");
-	m_modbus = new ModbusAdapter(this, m_regModel, m_rawModel);
-	m_ncMachine = new NCMachine(this, m_modbus);
+	m_modbus = new ModbusAdapter(m_parent, m_regModel, m_rawModel);
+	m_ncMachine = new NCMachine(m_parent, m_modbus);
 
 	modbusConnect(true);
 
@@ -73,7 +76,7 @@ ModbusMainWindow::ModbusMainWindow(QWidget* parent)
 	}
 }
 
-ModbusMainWindow::~ModbusMainWindow()
+ModbusMain::~ModbusMain()
 {
 	modbusConnect(false);
 
@@ -106,11 +109,11 @@ ModbusMainWindow::~ModbusMainWindow()
 	}
 }
 
-void ModbusMainWindow::modbusConnect(bool connect)
+void ModbusMain::modbusConnect(bool connect)
 {
 	modbusConnect(connect, m_modbus, m_modbusCommSettings, m_ncMachine);
 }
-void ModbusMainWindow::modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine)
+void ModbusMain::modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine)
 {
 	if (connect) {
 		modbus->modbusConnectRTU(
@@ -136,7 +139,7 @@ void ModbusMainWindow::modbusConnect(bool connect, ModbusAdapter* modbus, Modbus
 	}
 }
 
-void ModbusMainWindow::addNormalTasks()
+void ModbusMain::addNormalTasks()
 {
 	std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 		if (ret == -1)
@@ -181,7 +184,7 @@ void ModbusMainWindow::addNormalTasks()
 }
 
 QtWin2::QtWin2(QWidget* parent)
-	: ModbusMainWindow(parent)
+	: ModbusMain(parent), BaseMainWindow(parent)
 	, ui(new Ui::QtWin2)
 {
 	bool isPythonOk = PythonQtRuntime::getInstance()->Init();
@@ -415,7 +418,7 @@ QtWin2::QtWin2(QWidget* parent)
 				});
 
 			AddChildWindow(tr("XTSZ"), layout1, xtszForm);
-			AddChildWindow(tr("FDCS"), layout1, [this]() {
+			AddChildWindow(tr("FangDianCanShu"), layout1, [this]() {
 				return new FangDianCanShuForm(this->ui->stackedChildWidget);
 				});
 			AddChildWindow(tr("FDCS"), layout1, fdcsForm);
@@ -460,7 +463,6 @@ QtWin2::QtWin2(QWidget* parent)
 		}
 	}
 
-	
 
 	//connect(ui->actionRun, SIGNAL(triggered()), this, SLOT(on_actionRun_triggered()));
 	//connect(ui->actionCancel, SIGNAL(triggered()), this, SLOT(on_actionCancel_triggered()));
@@ -577,7 +579,7 @@ QtWin2::QtWin2(QWidget* parent)
 			}
 			});
 
-		if (m_showFullScreen) {
+		if (m_isUserMode) {
 			QTimer::singleShot(500, this, [this] {
 				ui->actionPowerOn->trigger();
 				});
@@ -666,7 +668,7 @@ QtWin2::QtWin2(QWidget* parent)
 		});
 
 	if (true) {
-		showWindowMode(m_showFullScreen);
+		showWindowMode(m_isUserMode);
 
 		QLineEdit* lineEdit = new QLineEdit(ui->toolBar);
 		lineEdit->setText("4000");
@@ -752,9 +754,9 @@ bool QtWin2::serialize()
 	//jsonObj["history"] = jsonArray;
 	jsonObj["active_project"] = SystemSettings::instance().GetProjectDir();
 #ifdef _DEBUG
-	jsonObj["is_release"] = m_showFullScreen ? "true" : "false";
+	jsonObj["is_usermode"] = m_isUserMode ? "true" : "false";
 #else
-	jsonObj["is_release"] = "true";
+	jsonObj["is_usermode"] = "true";
 #endif // DEBUG
 
 	QJsonDocument jsonDoc(jsonObj);
@@ -796,23 +798,23 @@ bool QtWin2::deserialize()
 	}
 	
 #ifdef _DEBUG
-	QString str = jsonObj["is_release"].toString();
+	QString str = jsonObj["is_usermode"].toString();
 	if (!str.isEmpty()) {
 		if (str == "true")
-			m_showFullScreen = true;
+			m_isUserMode = true;
 		else if (str == "false")
-			m_showFullScreen = false;
+			m_isUserMode = false;
 	}
 #else
-	m_showFullScreen = true;
+	m_isUserMode = true;
 #endif // !_DEBUG
 
 	return true;
 }
 
-void QtWin2::showWindowMode(bool isRelease)
+void QtWin2::showWindowMode(bool isUserMode)
 {
-	if (isRelease) {
+	if (isUserMode) {
 		ui->statusbar->hide();
 		ui->toolBar->hide();
 		setWindowFlag(Qt::FramelessWindowHint);
@@ -828,6 +830,12 @@ void QtWin2::showWindowMode(bool isRelease)
 		showTaskbar();
 		showMaximized();
 	}
+
+	//m_buttonsText[tr("XTSZ")]->setVisible(!m_isUserMode);
+	//m_buttonsText[tr("FDCS")]->setVisible(!m_isUserMode);
+	//m_buttonsText[tr("FangDianCanShu")]->setVisible(!m_isUserMode);
+	//m_buttonsText[tr("LJBC")]->setVisible(!m_isUserMode);
+	//m_buttonsText[tr("CKSZ")]->setVisible(!m_isUserMode);
 }
 
 void QtWin2::addNormalTasks()
@@ -844,7 +852,7 @@ void QtWin2::addNormalTasks()
 	task1->setPostFunction(function1, "Read Dssysj&Jgcyl");	// // 定时剩余时间,加工残余量
 	m_modbus->addTaskAsNormal(task1, 100, true);
 
-	ModbusMainWindow::addNormalTasks();
+	ModbusMain::addNormalTasks();
 }
 
 void QtWin2::showChildWindow(QString windowTitle)
@@ -874,8 +882,8 @@ void QtWin2::showChildWindow(QString windowTitle)
 
 void QtWin2::showEvent(QShowEvent* event)
 {
-	if (m_showFullScreen && ui->statusbar->isVisible())
-		showWindowMode(m_showFullScreen);
+	if (m_isUserMode && ui->statusbar->isVisible())
+		showWindowMode(m_isUserMode);
 	//else if (!m_showFullScreen)
 	//	showWindowMode(m_showFullScreen);
 
@@ -893,6 +901,23 @@ void QtWin2::on_actionRun_triggered()
 
 	try {
 		currentChild->HideKeyboard();
+
+#ifdef PYTHON_SUPPORT
+		QString childName = currentChild->objectName();
+
+		QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts(childName);
+		for (const auto& pyFileName : pyFiles.keys()) {
+			if (pyFileName == "init") {
+				QString value = pyFiles.value(pyFileName);
+				PluginUtils::RunFile(value, currentChild);
+
+				ui->actionRun->setEnabled(false);
+				ui->lblResultMessage->setText(tr("YXZ"));
+				return;
+				//break;
+			}
+		}
+#endif
 
 		currentChild->RunGCode();
 
@@ -917,6 +942,8 @@ void QtWin2::on_actionCancel_triggered()
 
 void QtWin2::on_actionDebug_triggered()
 {
+	//QString pw = FormUtils::ShowPasswordInput();
+
 	//if (m_ncMachine->GetG01Data().isRunning) {
 
 	//	if (!m_ncMachine->GetG01Data().isPausing)
@@ -1214,20 +1241,24 @@ void QtWin2::onNavigatorButtonClicked()
 	else
 	{
 		auto childWidget = m_buttonForms[button]();
-		childWidget->SetMachine(m_ncMachine);
-		m_buttonIdxs[button] = m_currentChildWindowCnt;
-		m_currentChildWindowCnt++;
+		if (childWidget != nullptr) {
+			childWidget->SetMachine(m_ncMachine);
+			m_buttonIdxs[button] = m_currentChildWindowCnt;
+			m_currentChildWindowCnt++;
 
-		ui->stackedChildWidget->addWidget(childWidget);
-		//QWidget* childPage2 = new QWidget();
-		//childPage2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-		//QVBoxLayout* childLayout = new QVBoxLayout(childPage2);
-		//childLayout->addWidget(childWidget);
-		//ui->stackedChildWidget->addWidget(childPage2);
+			ui->stackedChildWidget->addWidget(childWidget);
+			//QWidget* childPage2 = new QWidget();
+			//childPage2->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+			//QVBoxLayout* childLayout = new QVBoxLayout(childPage2);
+			//childLayout->addWidget(childWidget);
+			//ui->stackedChildWidget->addWidget(childPage2);
+		}
 	}
 	//qobject_cast<BaseChildWindow*>(ui->stackedChildWidget->currentWidget())->HideKeyboard();
 
-	ui->stackedChildWidget->setCurrentIndex(m_buttonIdxs[button]);
+	if (m_buttonIdxs.contains(button)) {
+		ui->stackedChildWidget->setCurrentIndex(m_buttonIdxs[button]);
+	}
 
 	if (m_dialog4FangDianCheShi != NULL && m_dialog4FangDianCheShi->isVisible()) {
 		m_dialog4FangDianCheShi->hide();
@@ -1378,10 +1409,10 @@ void QtWin2::on_btnJgtjGt_clicked()
 	}
 }
 
-void QtWin2::showDebug()
+void QtWin2::switchUserMode()
 {
-	m_showFullScreen = !m_showFullScreen;
-	showWindowMode(m_showFullScreen);
+	m_isUserMode = !m_isUserMode;
+	showWindowMode(m_isUserMode);
 }
 
 void QtWin2::hideTaskbar() {
@@ -1944,30 +1975,110 @@ void QtWin2::AddChildWindow(QString title, QBoxLayout* layout, std::function<Bas
 
 void QtWin2::LoadPluginsAsChildWindow()
 {
+	// Load Python init scripts (global scripts without UI)
+	QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts("main");
+	for (const auto& pyFileName : pyFiles.keys()) {
+		if (pyFileName == "init") {
+			QString value = pyFiles.value(pyFileName);
+			PluginUtils::RunFile(value, this);
+		}
+	}
+
+	// Track Python plugin names for priority (Python overrides C++ and system)
+	QSet<QString> pythonPluginNames;
+
+	// Load Python menu plugins from different directories
+	// Directory mapping: directory name -> page index
+	// Page 0: Manual, Page 1: Auto, Page 2: Edit, Page 3: Run, Page 4: Settings
+	QList<QPair<QString, int>> pluginDirs = {
+		{"menu/manual",   0},
+		{"menu/auto",     1},
+		{"menu/edit",     2},
+		{"menu/run",      3},
+		{"menu/settings", 4}
+	};
+
+	for (const auto& dirInfo : pluginDirs) {
+		QString dir = dirInfo.first;
+		int pageIdx = dirInfo.second;
+		QList<PythonPluginInfo> pyPlugins = PluginUtils::loadPythonMenuPlugins(dir, pageIdx);
+		for (const auto& pluginInfo : pyPlugins) {
+			QString menuText = pluginInfo.name;
+			QString filePath = pluginInfo.filePath;
+			int pageIndex = pluginInfo.pageIndex;
+
+			// Mark as Python plugin
+			pythonPluginNames.insert(menuText);
+
+			// Ensure page index is valid
+			if (pageIndex < 0 || pageIndex >= m_layouts.size()) {
+				pageIndex = 1;
+			}
+
+			// Create the factory function
+			auto factoryFunc = [this, filePath, menuText]() -> BaseChildWindow* {
+				QWidget* pyWidget = PluginUtils::createPythonWidget(filePath, this);
+				if (pyWidget) {
+					PythonPluginChildWindow* child = new PythonPluginChildWindow(this);
+					child->SetPythonWidget(pyWidget);
+					child->SetPluginFile(filePath);
+					child->SetPluginName(menuText);
+					return child;
+				}
+				return nullptr;
+			};
+
+			// Check if menu with same name already exists (Python > system)
+			if (m_buttonsText.contains(menuText)) {
+				// Replace existing button's function
+				QAbstractButton* btn = m_buttonsText[menuText];
+				m_buttonForms[btn] = factoryFunc;
+			}
+			else {
+				// Add new menu item
+				AddChildWindow(menuText, m_layouts[pageIndex], factoryFunc);
+			}
+		}
+	}
+
+	// Load C++ plugins (DLL) - skip if Python version exists
 	QList<IDoPlugin*> plugins = PluginUtils::loadPlugin<IDoPlugin>("main");
 	for (IDoPlugin* it : plugins) {
 		QString menuText = it->getName();
-		AddChildWindow(menuText, m_layouts[1], [it, this]() {
-			QWidget* itWidget = it->getWidget();
-			if (itWidget) {
-				ContainerChildWindow* child = new ContainerChildWindow(this);
-				child->SetPlugin(it);
-				QHBoxLayout* layout = new QHBoxLayout(child);
-				layout->addWidget(itWidget);
-				return (BaseChildWindow*)child;
-			}
-			return (BaseChildWindow *)NULL;
-		});
-	}
 
-	QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts("main");
-	for (const auto& pyFileName : pyFiles.keys()) {
-		if (pyFileName == "test_plugin") {
+		// Skip if Python version already loaded (Python has priority)
+		if (pythonPluginNames.contains(menuText)) {
+			continue;
+		}
 
-			QString value = pyFiles.value(pyFileName);
-			QVariant result = PluginUtils::RunFile(value, this);
-
-			//QVariant result = PythonQtRuntime::getInstance()->RunScript("import test_plugin; return test_plugin.doIt()", this);
+		// Check if menu with same name already exists (C++ > system, but Python > C++)
+		if (m_buttonsText.contains(menuText)) {
+			// Replace existing button's function
+			QAbstractButton* btn = m_buttonsText[menuText];
+			m_buttonForms[btn] = [it, this]() -> BaseChildWindow* {
+				QWidget* itWidget = it->getWidget();
+				if (itWidget) {
+					ContainerChildWindow* child = new ContainerChildWindow(this);
+					child->SetPlugin(it);
+					QHBoxLayout* layout = new QHBoxLayout(child);
+					layout->addWidget(itWidget);
+					return child;
+				}
+				return nullptr;
+			};
+		}
+		else {
+			AddChildWindow(menuText, m_layouts[1], [it, this]() -> BaseChildWindow* {
+				QWidget* itWidget = it->getWidget();
+				if (itWidget) {
+					ContainerChildWindow* child = new ContainerChildWindow(this);
+					child->SetPlugin(it);
+					QHBoxLayout* layout = new QHBoxLayout(child);
+					layout->addWidget(itWidget);
+					return child;
+				}
+				return nullptr;
+			});
 		}
 	}
 }
@@ -1975,12 +2086,17 @@ void QtWin2::LoadPluginsAsChildWindow()
 void QtWin2::keyPressEvent(QKeyEvent* event)
 {
 	if (event->key() == Qt::Key_F12) {
-		QString pw = "123123";
-		//pw = FormUtils::ShowPasswordInput();
-		if (pw == "123123")
-		{
-			showDebug();
+		if (!m_isUserMode) {
+			switchUserMode();
 			event->accept();
+		}
+		else {
+			//QString pw = FormUtils::ShowPasswordInput();
+			//if (!pw.isEmpty() && pw == SystemSettings::instance().GetValue("System/Password")) 
+			{
+				switchUserMode();
+				event->accept();
+			}
 		}
 	}
 	else if (event->key() == Qt::Key_F11) {
@@ -1991,7 +2107,7 @@ void QtWin2::keyPressEvent(QKeyEvent* event)
 }
 
 QtWin3::QtWin3(QWidget* parent)
-	: ModbusMainWindow(parent)
+	: ModbusMain(parent), BaseMainWindow(parent)
 {
 	mdiForm = new MdiForm(this);
 	this->resize(1400, 500);

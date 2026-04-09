@@ -215,7 +215,7 @@ QString RunManualMulti::GetGCode(bool forRun)
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
 
-	if (isAbsolutePosition && (toAxisLength[0] != INFINITE || toAxisLength[1] != INFINITE)) {
+	if (isAbsolutePosition && realAxisLen > 1) {
 		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));
 		return QString();
 	}
@@ -248,9 +248,9 @@ QString RunManualMulti::GetGCode(bool forRun)
 		if (toAxis.length() == 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
 			return GetGCodeV1();
 		}
-		else if (toAxis.length() > 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
-			return GetGCodeV1();
-		}
+		//else if (toAxis.length() > 1 && ui.btnJgff->isChecked() && emptyStartEndRunIndex) {
+		//	return GetGCodeV1();
+		//}
 	}
 
 	return GetGCodeV2();
@@ -265,6 +265,7 @@ QString RunManualMulti::GetGCodeV2()
 		axisLen = 3;
 	}
 
+	int realAxisLen = 0;
 	double toAxisLength[] = { INFINITE, INFINITE, INFINITE, INFINITE };
 	for (int i = 0; i < table1->getDataCount(); ++i) {
 		if (table1->getValue(i, -1) != "True") {
@@ -273,11 +274,15 @@ QString RunManualMulti::GetGCodeV2()
 
 		QString s = table1->getValue(i, 0);
 		if (!s.isEmpty()) {
+			realAxisLen++;
 			double d = s.toDouble();
 			toAxisLength[i] = d;
 		}
 	}
-
+	if (realAxisLen == 0) {
+		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
+		return QString();
+	}
 	if (toAxisLength[0] == INFINITE && toAxisLength[1] == INFINITE && toAxisLength[2] == INFINITE) {
 		return QString();
 	}
@@ -298,7 +303,7 @@ QString RunManualMulti::GetGCodeV2()
 	//QString gcode;// = RunManual::GetGCodeStatic(table1, table2, dataForm->getValue("inAbsolute") == "true", axisPositions);
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
 
-	if (isAbsolutePosition && (toAxisLength[0] != INFINITE || toAxisLength[1] != INFINITE)){
+	if (isAbsolutePosition && realAxisLen > 1){
 		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));
 		return QString();
 	}

@@ -1,10 +1,15 @@
-#include "pluginutils.h"
+﻿#include "pluginutils.h"
 #include <QObject>
 #include <QDir>
 #include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QPushButton>
+#include <QDebug>
 #include "PythonQtRuntime.h"
+
+#ifdef PYTHON_SUPPORT
+#include "../pythonqt/src/PythonQt.h"
+#endif
 
 
 SimpleCrypt PluginUtils::crypto(Q_UINT64_C(0x0c2ad3a3acb9f023));
@@ -217,4 +222,171 @@ QVariant PluginUtils::RunFile(const QString& fileName, QObject* window)
     catch (...) {
         return QVariant::Invalid;
 	}
+}
+
+QList<PythonPluginInfo> PluginUtils::loadPythonMenuPlugins(const QString& pluginPath, int defaultPageIndex)
+{
+    QList<PythonPluginInfo> result;
+
+#ifdef PYTHON_SUPPORT
+    if (!PythonQtRuntime::getInstance()->IsInit()) {
+        return result;
+    }
+
+    // Get plugin directory
+    QString appPath = QCoreApplication::applicationDirPath();
+    QDir pluginsDir(appPath);
+#if defined(Q_OS_WIN)
+    if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
+        pluginsDir.cdUp();
+    if (pluginsDir.dirName().toLower() == "x64")
+        pluginsDir.cdUp();
+#elif defined(Q_OS_MAC)
+    if (pluginsDir.dirName() == "MacOS") {
+        pluginsDir.cdUp();
+        pluginsDir.cdUp();
+        pluginsDir.cdUp();
+    }
+#endif
+    pluginsDir.cd(PLUGIN_PATH);
+    pluginsDir.cd(pluginPath);
+
+    // List Python files
+    QStringList filters;
+    filters << "*.py";
+    const QStringList entries = pluginsDir.entryList(filters, QDir::Files, QDir::Name);
+
+    for (const QString& fileName : entries) {
+        // Skip init files and private files
+        if (fileName == "init.py" || fileName.startsWith("_") || fileName.startsWith("P_")) {
+            continue;
+        }
+
+        QString filePath = pluginsDir.absoluteFilePath(fileName);
+        QFileInfo fileInfo(fileName);
+        QString baseName = fileInfo.baseName();
+
+        // Read plugin metadata by executing and getting variables
+        PythonPluginInfo info;
+        info.filePath = filePath;
+        info.pageIndex = defaultPageIndex;
+
+        try {
+            PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+
+            // Execute the plugin file to get metadata
+            QString script = QString(
+                "import sys\n"
+                "import importlib.util\n"
+                "_temp_plugin_path = r'%1'\n"
+                "_temp_spec = importlib.util.spec_from_file_location('_temp_plugin', _temp_plugin_path)\n"
+                "_temp_mod = importlib.util.module_from_spec(_temp_spec)\n"
+                "_temp_spec.loader.exec_module(_temp_mod)\n"
+                "_temp_name = getattr(_temp_mod, 'PLUGIN_NAME', '%2')\n"
+                "_temp_page = getattr(_temp_mod, 'PLUGIN_PAGE', %3)\n"
+                "_temp_result = {'name': _temp_name, 'page': _temp_page}\n"
+            ).arg(QString(filePath).replace("\\", "/"), baseName, QString::number(defaultPageIndex));
+
+            mainContext.evalScript(script);
+            QVariantMap pluginData = mainContext.getVariable("_temp_result").toMap();
+
+            info.name = pluginData.value("name", baseName).toString();
+            info.pageIndex = pluginData.value("page", defaultPageIndex).toInt();
+
+            // Validate page index
+            if (info.pageIndex < 0 || info.pageIndex > 4) {
+                info.pageIndex = defaultPageIndex;
+            }
+
+            result.append(info);
+        }
+        catch (...) {
+            // On error, use defaults
+            info.name = baseName;
+            info.pageIndex = defaultPageIndex;
+            result.append(info);
+        }
+    }
+#endif
+
+    return result;
+}
+
+QWidget* PluginUtils::createPythonWidget(const QString& filePath, QObject* window)
+{
+#ifdef PYTHON_SUPPORT
+    if (!PythonQtRuntime::getInstance()->IsInit()) {
+        qDebug("PluginUtils::createPythonWidget: Python not initialized");
+        return nullptr;
+    }
+
+    try {
+        PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
+
+        // Add window to context
+        mainContext.addObject("_create_window", window);
+
+        // Execute the plugin and call create_widget
+        QString script = QString(
+            "import sys\n"
+            "import importlib.util\n"
+            "_plugin_path = r'%1'\n"
+            "_plugin_spec = importlib.util.spec_from_file_location('_create_plugin', _plugin_path)\n"
+            "_plugin_mod = importlib.util.module_from_spec(_plugin_spec)\n"
+            "_plugin_spec.loader.exec_module(_plugin_mod)\n"
+            "_plugin_widget = None\n"
+            "_plugin_error = None\n"
+            "try:\n"
+            "    if hasattr(_plugin_mod, 'create_widget'):\n"
+            "        _plugin_widget = _plugin_mod.create_widget(_create_window)\n"
+            "    else:\n"
+            "        _plugin_error = 'create_widget function not found'\n"
+            "except Exception as e:\n"
+            "    _plugin_error = str(e)\n"
+            "    print(f'[Python Error] {e}')\n"
+        ).arg(QString(filePath).replace("\\", "/"));
+
+        mainContext.evalScript(script);
+
+        // Check for errors
+        QVariant errorVar = mainContext.getVariable("_plugin_error");
+        if (errorVar.isValid() && !errorVar.toString().isEmpty()) {
+            qDebug("PluginUtils::createPythonWidget: Python error: %s", qPrintable(errorVar.toString()));
+            return nullptr;
+        }
+
+        // Get the widget
+        QVariant widgetVar = mainContext.getVariable("_plugin_widget");
+        if (!widgetVar.isValid()) {
+            qDebug("PluginUtils::createPythonWidget: _plugin_widget is not valid");
+            return nullptr;
+        }
+
+        // PythonQt returns QWidget* as QObject*
+        QObject* obj = widgetVar.value<QObject*>();
+        if (!obj) {
+            qDebug("PluginUtils::createPythonWidget: Failed to get QObject from variant, type=%d", widgetVar.type());
+            return nullptr;
+        }
+
+        QWidget* widget = qobject_cast<QWidget*>(obj);
+        if (!widget) {
+            qDebug("PluginUtils::createPythonWidget: Object is not a QWidget: %s", obj->metaObject()->className());
+            return nullptr;
+        }
+
+        qDebug("PluginUtils::createPythonWidget: Successfully created widget: %s", widget->objectName().toUtf8().constData());
+        return widget;
+    }
+    catch (const std::exception& e) {
+        qDebug("PluginUtils::createPythonWidget: Exception: %s", e.what());
+        return nullptr;
+    }
+    catch (...) {
+        qDebug("PluginUtils::createPythonWidget: Unknown exception");
+        return nullptr;
+    }
+#else
+    return nullptr;
+#endif
 }

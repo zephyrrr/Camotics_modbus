@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QList>
 #include <QHash>
@@ -13,7 +13,13 @@
 #define PLUGIN_PATH "plugins/"  //"dist/plugins/"
 #endif // _DEBUG
 
-
+// Python plugin info structure
+struct PythonPluginInfo {
+	QString name;           // Display name in menu
+	QString filePath;       // Full path to .py file
+	int pageIndex;          // Menu page index (0-4)
+	QVariantMap metadata;   // Additional metadata from plugin
+};
 
 class PluginUtils
 {
@@ -56,6 +62,14 @@ public:
 	}
 
     static QMap<QString, QString> loadPythonScripts(const QString& pluginPath);
+
+    // Load Python plugins with menu support
+    // Returns list of plugin info with name, file path, and page index
+    static QList<PythonPluginInfo> loadPythonMenuPlugins(const QString& pluginPath, int defaultPageIndex = 1);
+
+    // Create a widget from Python plugin
+    // Python plugin should define: create_widget(window) -> QWidget
+    static QWidget* createPythonWidget(const QString& filePath, QObject* window);
 
     //static void AddPluginsToLayout(const QString& pluginPath, QLayout* layout);
     static QList<QWidget*> CreateScripts(const QString& pluginPath, QObject* parent);

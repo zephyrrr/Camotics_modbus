@@ -19,7 +19,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class QtWin; }
 QT_END_NAMESPACE
 
-class QtWin : public ModbusMainWindow
+class QtWin : public BaseMainWindow, public ModbusMain
 {
     Q_OBJECT;
 

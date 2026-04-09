@@ -186,6 +186,7 @@ bool NCMachine::ConvertModbusData4State(ModbusTask* task, uint16_t* readData)
 	}
 	if (task->numOfRegs >= TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN) {
 		m_state = cb::Vector<3, uint16_t>(readData[0], readData[1], readData[2]);
+		m_stateDirty = 0;
 		for (int i = 0; i < 3; ++i) {
 			if (m_stateDebug[i] != 0) {
 				m_state[i] = m_stateDebug[i];
@@ -215,7 +216,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 	if (m_state[2] != NCT_STATE_JOG_RUN) {
 		if (m_isJogDuanlu > 0) {
 			m_isJogDuanlu = 0;
-			if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE2) {
+			if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE_ON) {
 				enterSetPriority(0);
 				Beep(0, 0);
 				exitSetPriority();
@@ -237,7 +238,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 	}
 
 	if (m_isJogDuanlu > 0 && m_key != KNLK_ST) {
-		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() != FmqPropertyObject::MjfsEnum::TYPE2) {
+		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() != FmqPropertyObject::MjfsEnum::TYPE_ON) {
 			enterSetPriority(0);
 			Beep(0, -1);
 			exitSetPriority();
@@ -245,7 +246,7 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 		}
 	}
 	else {
-		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE2) {
+		if (PropertyObjects::getInstance()->propertyObjectFengMingQi->mjfs() == FmqPropertyObject::MjfsEnum::TYPE_ON) {
 			enterSetPriority(0);
 			Beep(0, 0);
 			exitSetPriority();
@@ -843,6 +844,9 @@ std::function<int()> NCMachine::waitUntilNctState(uint16_t state)
 	std::function<int()> func = [this, state]() {
 		//if (m_g01Data.isRunning && m_g01Data.isPausing)
 		//	return -2;
+		if (m_stateDirty) {
+			return -2;
+		}
 
 		if (m_state[2] == state) {
 			return 1;
@@ -893,7 +897,7 @@ std::function<int()> NCMachine::waitUntilNctState(uint16_t state)
 }
 std::function<void(int, ModbusTask*, ModbusAdapter*)> NCMachine::convertWaitFunction(std::function<int()> func2, int timeout)
 {
-	std::function<void(int, ModbusTask*, ModbusAdapter*)> func = [func2, timeout](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+	std::function<void(int, ModbusTask*, ModbusAdapter*)> func = [this, func2, timeout](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 		int r = func2();
 		if (task != NULL) {
 			if (r == 1) {
@@ -903,6 +907,10 @@ std::function<void(int, ModbusTask*, ModbusAdapter*)> NCMachine::convertWaitFunc
 				task->startAddr = -9;
 			}
 			else {
+				enterSetPriority(TASK_TIMER_PRIORITY);
+				ReadAllPosAndState();
+				exitSetPriority();
+
 				task->startAddr = -2;
 				task->numOfRegs++;
 				if (timeout != -1 && task->numOfRegs > timeout) {
@@ -919,6 +927,7 @@ std::function<void(int, ModbusTask*, ModbusAdapter*)> NCMachine::convertWaitFunc
 					break;
 				}
 				else {
+					ReadAllPosAndState();
 					std::this_thread::sleep_for(std::chrono::milliseconds(TASK_WAIT_MILLSECONDS));
 					cnt++;
 				}
@@ -1003,6 +1012,10 @@ ZL+;Zl-…
 std::function<int()> NCMachine::waitUntilRLST(uint16_t rslt, uint16_t para)
 {
 	std::function<int()> func = [this, rslt, para]() {
+		if (m_stateDirty) {
+			return -2;
+		}
+
 		if (m_g01Data.isRunning && m_g01Data.isPausing && rslt == NCT_STATE_SPK_EXTOC)
 			return -2;
 		// 调试时候用
@@ -1012,6 +1025,8 @@ std::function<int()> NCMachine::waitUntilRLST(uint16_t rslt, uint16_t para)
 		if ((m_state[0] & 0xFF00) == (rslt & 0xFF00)) {		// 同一个类型的指令执行结果数据
 			// 正常完成退出 or 手动退出 // 
 			if ((m_state[0] >= rslt && m_state[0] <= rslt + 1) && (m_state[1] == para || para == 0)) {
+				// for log current position
+				GetController()->getAbsolutePosition();
 				return 1;		// 完成任务
 			}
 			else {
@@ -1223,9 +1238,13 @@ void NCMachine::Loc(int* axis, int* value, int size)
 		auto v = locP->GetValues();
 		this->executeCmdsByTncOrder(TNC_ORDER0_LOC, v);
 
+		m_stateDirty = 1;
 		executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_LOC_RUN)), "wait for LOC_RUN");
 		executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_LOC_EXIT)), "wait for LOC_EXIT");
 		executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
+	}
+	else {
+		LOG_INFO(8, "NCMachine: Loc no new position, just ignore");
 	}
 }
 void NCMachine::Loc(int axis, int value)
@@ -1303,8 +1322,8 @@ void NCMachine::Spk(int* axis, int* value, int size, int zgj)
 	auto v = spkP->GetValues();
 	this->executeCmdsByTncOrder(TNC_ORDER0_SPK, v);
 
+	m_stateDirty = 1;
 	executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_SPK_RUN)), "wait for SPK_RUN");
-
 	executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_SPK_EXTOC, 0)), "wait for SPK_EXTOC");
 
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
@@ -1323,16 +1342,22 @@ void NCMachine::Beep(int n, int ms)
 	if (dataForm->getValue("FMQKG") == "0")
 		return;
 
+	// 关闭
 	if (ms == 0) {
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE_OFF);
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
 	}
+	// 连续鸣叫
 	else if (ms == -1) {
-		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE2);
+		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE_ON);
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
 	}
+	//else if (ms == -2) {
+	//	PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE_ON);
+	//	PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
+	//}
 	else {
-		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE1);
+		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE2);
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->setdata2(ms);
 		for (int i = 0; i < n; ++i) {
 			PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
@@ -1355,6 +1380,7 @@ void NCMachine::Touch(DdfxEnum ddfx)
 
 	pCmvTouch->ExecuteCmds(this);
 
+	m_stateDirty = 1;
 	//executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_CMV_RUN)), "wait for CMV_RUN");
 	executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_CMV_EXIT)), "wait for CMV_EXIT in Touch");
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
@@ -1406,6 +1432,7 @@ void NCMachine::ToLMT(DdfxEnum ddfx)
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
 	pCmvTouch->ExecuteCmds(this);
 	
+	m_stateDirty = 1;
 	//executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_CMV_RUN)), "wait for CMV_RUN");
 	executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_CMV_EXIT)), "wait for CMV_EXIT in ToLMT");
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
@@ -1421,6 +1448,7 @@ void NCMachine::FromLMT(DdfxEnum ddfx)
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
 	pCmvTouch->ExecuteCmds(this);
 
+	m_stateDirty = 1;
 	// 如果限位，不会进入CMV_RUN状态, comment it
 	//executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_CMV_RUN)), "wait for CMV_RUN");
 	executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_CMV_EXIT)), "wait for CMV_EXIT in FromLMT");
@@ -1437,6 +1465,7 @@ void NCMachine::ToZSig(DdfxEnum ddfx)
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
 	pCmvTouch->ExecuteCmds(this);
 
+	m_stateDirty = 1;
 	//executeCmdWait(convertWaitFunction(waitUntilNctState(NCT_STATE_CMV_RUN)), "wait for CMV_RUN");
 	executeCmdWait(convertWaitFunction(waitUntilRLST(NCT_STATE_CMV_EXIT)), "wait for CMV_EXIT in ToZSig");
 	executeCmdWait(m_functionWaitUntilApirun, "wait for API_RUN");
@@ -2732,11 +2761,10 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 				//SystemSettings::instance().SetValue("MDIV", QString::number(v));
 				PropertyObjects::getInstance()->propertyObjectYd->setsdjcxfs((int)v);
 				//PropertyObjects::getInstance()->propertyObjectYd->ExecuteCmds(this);
-				
 			}
 			else if (n == "AOD") {
 				//SystemSettings::instance().SetValue("AOD", QString::number(v));
-				PropertyObjects::getInstance()->propertyObjectReg84->setv((int)v);
+				PropertyObjects::getInstance()->propertyObjectReg84->setv((int)(v * 1000));
 			}
 			else {
 				NCMachineParametersC& cInst = NCMachineParametersC::instance();

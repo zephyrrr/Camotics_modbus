@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
@@ -6,27 +6,27 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1034"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1036"/>
         <source>AZYXS</source>
-        <translation type="unfinished"></translation>
+        <translation>ADC Gain</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1038"/>
         <source>AJZSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>ADC Calib</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1040"/>
         <source>CFDYSCBLXS</source>
-        <translation type="unfinished"></translation>
+        <translation>Servo V Ratio</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1042"/>
         <source>GOBLXS</source>
-        <translation type="unfinished"></translation>
+        <translation>Opto Ratio</translation>
     </message>
 </context>
 <context>
@@ -34,7 +34,7 @@
     <message>
         <location filename="widgets/advancedtoolbox.cpp" line="1163"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -42,17 +42,17 @@
     <message>
         <location filename="widgets/boollineedit.ui" line="14"/>
         <source>BoolLineEdit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/boollineedit.ui" line="35"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/boollineedit.ui" line="48"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -60,12 +60,12 @@
     <message>
         <location filename="camotics/qt/NCEdit.cpp" line="575"/>
         <source>&amp;Find &amp;&amp; Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Find/Replace</translation>
     </message>
     <message>
         <location filename="camotics/qt/NCEdit.cpp" line="577"/>
         <source>Find &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Find Next</translation>
     </message>
 </context>
 <context>
@@ -73,32 +73,32 @@
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="14"/>
         <source>CAMotics_gcode_editor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="43"/>
         <source>Parse</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="48"/>
         <source>Simu</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="53"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="58"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="63"/>
         <source>Run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -106,32 +106,32 @@
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="28"/>
         <source>YDCFMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Mode</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="35"/>
         <source>JJHHT,CFZHYDZLDCF</source>
-        <translation type="unfinished"></translation>
+        <translation>Feed/Retract Link</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="42"/>
         <source>HTS,CFZZCSD、YDTZYDBD；JJSLD</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract: Servo Normal</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="49"/>
         <source>YDJCDHT,YDQDHZX</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Return Center</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="65"/>
         <source>QD</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -139,27 +139,27 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="424"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="426"/>
         <source>ZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="428"/>
         <source>JSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Accel Time</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="430"/>
         <source>DDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Dir</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="432"/>
         <source>JCDL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Det</translation>
     </message>
 </context>
 <context>
@@ -167,27 +167,27 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="384"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="386"/>
         <source>ZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="388"/>
         <source>JSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Accel Time</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="390"/>
         <source>DDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Dir</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="392"/>
         <source>JCDL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Det</translation>
     </message>
 </context>
 <context>
@@ -195,32 +195,32 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="341"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="343"/>
         <source>XZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>X Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="345"/>
         <source>XZJSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>X Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="347"/>
         <source>YZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="349"/>
         <source>YZJSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="351"/>
         <source>DDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Dir</translation>
     </message>
 </context>
 <context>
@@ -228,27 +228,27 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="464"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="466"/>
         <source>ZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="468"/>
         <source>JSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Accel Time</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="470"/>
         <source>DDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Dir</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="472"/>
         <source>JCDL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Det</translation>
     </message>
 </context>
 <context>
@@ -256,17 +256,17 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="900"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="902"/>
         <source>JJZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Feed Axis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="904"/>
         <source>BJJJMCS</source>
-        <translation type="unfinished"></translation>
+        <translation>Step Pulses</translation>
     </message>
 </context>
 <context>
@@ -274,12 +274,12 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="936"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="938"/>
         <source>DJSN</source>
-        <translation type="unfinished"></translation>
+        <translation>Motor En</translation>
     </message>
 </context>
 <context>
@@ -287,33 +287,30 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1007"/>
         <source>TSYT</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug Use</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1009"/>
         <source>DL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short</translation>
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="16"/>
-        <location filename="forms/edit/cp/ui_widget_cp_lp.h" line="70"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="50"/>
-        <location filename="forms/edit/cp/ui_widget_cp_lp.h" line="71"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="57"/>
-        <location filename="forms/edit/cp/ui_widget_cp_lp.h" line="72"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancel</translation>
     </message>
 </context>
 <context>
@@ -321,17 +318,17 @@
     <message>
         <location filename="forms/component/displayz.cpp" line="29"/>
         <source>ZZ SD</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Depth</translation>
     </message>
     <message>
         <location filename="forms/component/displayz.cpp" line="38"/>
         <source>SJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Time</translation>
     </message>
     <message>
         <location filename="forms/component/displayz.cpp" line="54"/>
         <source>ShenDu</source>
-        <translation type="unfinished"></translation>
+        <translation>Depth</translation>
     </message>
 </context>
 <context>
@@ -339,12 +336,12 @@
     <message>
         <location filename="forms/manual/duanmianform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="45"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="69"/>
@@ -352,7 +349,7 @@
         <location filename="forms/manual/duanmianform.ui" line="277"/>
         <location filename="forms/manual/duanmianform.ui" line="350"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="93"/>
@@ -360,52 +357,52 @@
         <location filename="forms/manual/duanmianform.ui" line="301"/>
         <location filename="forms/manual/duanmianform.ui" line="374"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="105"/>
         <source>ZB0SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/duanmianform.ui" line="125"/>
-        <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Set Coord 0</translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="185"/>
         <source>SJSR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/duanmianform.ui" line="200"/>
-        <source>ON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/duanmianform.ui" line="222"/>
-        <source>OFF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/duanmianform.ui" line="253"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/duanmianform.ui" line="326"/>
-        <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation>Data In</translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="386"/>
         <source>JCGZHTZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Retract</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/duanmianform.ui" line="125"/>
+        <source>Z</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/duanmianform.ui" line="200"/>
+        <source>ON</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/duanmianform.ui" line="222"/>
+        <source>OFF</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/duanmianform.ui" line="253"/>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/duanmianform.ui" line="326"/>
+        <source>U</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="404"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -413,7 +410,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1078"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1080"/>
@@ -424,57 +421,59 @@
         <location filename="modbus/NCMachineProperties.cpp" line="1090"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1092"/>
         <source>KDLS</source>
-        <translation type="unfinished"></translation>
+        <oldsource>KDLS（</oldsource>
+        <translation>Current Num</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1094"/>
         <source>FZDL1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I1(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1096"/>
         <source>FZDL2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I2(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1098"/>
         <source>DYDYD</source>
-        <translation type="unfinished"></translation>
+        <oldsource>DYDYD（</oldsource>
+        <translation>Low Voltage Power Level 1</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1100"/>
         <source>FZDL3</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I3(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1102"/>
         <source>KGYGZS</source>
-        <translation type="unfinished"></translation>
+        <translation>HV Tube Num</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1104"/>
         <source>FDDRXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Cap Sel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1106"/>
         <source>DGSNW</source>
-        <translation type="unfinished"></translation>
+        <translation>Ind Dis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1108"/>
         <source>DZSNW</source>
-        <translation type="unfinished"></translation>
+        <translation>Res Dis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1110"/>
         <source>ZFJXKZW</source>
-        <translation type="unfinished"></translation>
+        <translation>Polarity Ctrl</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1112"/>
         <source>FZDYXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux V Sel</translation>
     </message>
 </context>
 <context>
@@ -482,52 +481,52 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1192"/>
         <source>FDJGCFDY</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Servo V</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1194"/>
         <source>JGMCMK</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse Width</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1196"/>
         <source>JGMCMJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse Gap</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1198"/>
         <source>-JGMCDNLSN</source>
-        <translation type="unfinished"></translation>
+        <translation>--Pulse Equ En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1200"/>
         <source>-JGMCDYYCJCSN</source>
-        <translation type="unfinished"></translation>
+        <translation>--V Abn En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1202"/>
         <source>JGMCFZMCXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux Pulse Sel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1204"/>
         <source>JCYCJCMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Breakdown Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1206"/>
         <source>JCYCSJYZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Breakdown Thres</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1208"/>
         <source>FDCFSD</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Servo Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1210"/>
         <source>FDCFTZSD</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Adj Spd</translation>
     </message>
 </context>
 <context>
@@ -535,7 +534,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="547"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="549"/>
@@ -546,122 +545,123 @@
         <location filename="modbus/NCMachineProperties.cpp" line="559"/>
         <location filename="modbus/NCMachineProperties.cpp" line="561"/>
         <source>KDLS</source>
-        <translation type="unfinished"></translation>
+        <translation>Current Num</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="563"/>
         <source>FZDL1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I1(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="565"/>
         <source>FZDL2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I2(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="567"/>
         <source>DYDY1D</source>
-        <translation type="unfinished"></translation>
+        <translation>Low Voltage Power Level 1 (LLV)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="569"/>
         <source>DYDY2D</source>
-        <translation type="unfinished"></translation>
+        <oldsource>DYDY2D（</oldsource>
+        <translation>Low Voltage Power Level 2 (HLV)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="571"/>
         <source>FZDL3</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux I3(32A)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="573"/>
         <source>KGYGZS</source>
-        <translation type="unfinished"></translation>
+        <translation>HV Tube Num</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="575"/>
         <source>FDDRXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Cap Sel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="577"/>
         <source>DGSNW</source>
-        <translation type="unfinished"></translation>
+        <translation>Ind Dis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="579"/>
         <source>DZSNW</source>
-        <translation type="unfinished"></translation>
+        <translation>Res Dis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="581"/>
         <source>FJXJGW</source>
-        <translation type="unfinished"></translation>
+        <translation>Rev Polarity</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="583"/>
         <source>FZDYXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux V Sel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="588"/>
         <source>BKGY</source>
-        <translation type="unfinished"></translation>
+        <translation>HV Off</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="590"/>
         <source>WDR</source>
-        <translation type="unfinished"></translation>
+        <translation>No Cap</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="592"/>
         <source>DGJRHL</source>
-        <translation type="unfinished"></translation>
+        <translation>Ind In Circuit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="594"/>
         <source>DLDG</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Ind</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="596"/>
         <source>DZJRHL</source>
-        <translation type="unfinished"></translation>
+        <translation>Res In Circuit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="598"/>
         <source>DLDZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Res</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="600"/>
         <source>DJWZJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Electrode(+)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="602"/>
         <source>DJWFJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Electrode(-)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="604"/>
         <source>BWQGB</source>
-        <translation type="unfinished"></translation>
+        <translation>Partial Close</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="606"/>
         <source>ZYFZ</source>
-        <translation type="unfinished"></translation>
+        <translation>MV Aux</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="608"/>
         <source>GYFZ</source>
-        <translation type="unfinished"></translation>
+        <translation>HV Aux</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="610"/>
         <source>WQGB</source>
-        <translation type="unfinished"></translation>
+        <translation>Full Close</translation>
     </message>
 </context>
 <context>
@@ -669,42 +669,42 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1260"/>
         <source>FDWCMS</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Done Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1262"/>
         <source>FDDSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Timer</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1264"/>
         <source>TDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Dir</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1266"/>
         <source>TDGD</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Ht</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1268"/>
         <source>TDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1270"/>
         <source>FDSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Time</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1272"/>
         <source>ECTDXYDTDCS</source>
-        <translation type="unfinished"></translation>
+        <translation>2nd Retract Cnt</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1274"/>
         <source>ECTDGDBS</source>
-        <translation type="unfinished"></translation>
+        <translation>2nd Retract Mult</translation>
     </message>
 </context>
 <context>
@@ -712,37 +712,37 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="662"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="664"/>
         <source>YB1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pump1</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="666"/>
         <source>YB2</source>
-        <translation type="unfinished"></translation>
+        <translation>Pump2</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="668"/>
         <source>HSBJD</source>
-        <translation type="unfinished"></translation>
+        <translation>Red Alarm</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="670"/>
         <source>LSBJD</source>
-        <translation type="unfinished"></translation>
+        <translation>Green Alarm</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="671"/>
         <source>OUT3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="672"/>
         <source>OUT4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -750,45 +750,45 @@
     <message>
         <location filename="forms/other/fangdiancanshuform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.ui" line="27"/>
         <source>DC</source>
-        <translation type="unfinished"></translation>
+        <translation>Export</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.ui" line="34"/>
         <source>DR</source>
-        <translation type="unfinished"></translation>
+        <translation>Import</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="128"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="186"/>
         <source>ZBDUP</source>
-        <translation type="unfinished"></translation>
+        <translation>No USB</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="132"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="134"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="192"/>
         <source>txt Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Text Files</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="135"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="193"/>
         <source>csv Files</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV Files</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="190"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
 </context>
 <context>
@@ -796,12 +796,12 @@
     <message>
         <location filename="forms/manual/fangdianform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="64"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="88"/>
@@ -809,7 +809,7 @@
         <location filename="forms/manual/fangdianform.ui" line="276"/>
         <location filename="forms/manual/fangdianform.ui" line="349"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="112"/>
@@ -817,42 +817,42 @@
         <location filename="forms/manual/fangdianform.ui" line="300"/>
         <location filename="forms/manual/fangdianform.ui" line="373"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="124"/>
         <source>JGTJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/fangdianform.ui" line="157"/>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/fangdianform.ui" line="230"/>
-        <source>777</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/fangdianform.ui" line="252"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/fangdianform.ui" line="325"/>
-        <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Cond</translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="385"/>
         <source>SJSR</source>
-        <translation type="unfinished"></translation>
+        <translation>Data In</translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="392"/>
         <source>HTL</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Qty</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/fangdianform.ui" line="157"/>
+        <source>U</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/fangdianform.ui" line="230"/>
+        <source>777</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/fangdianform.ui" line="252"/>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/fangdianform.ui" line="325"/>
+        <source>Z</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -861,47 +861,47 @@
         <location filename="camotics/qt/find_dialog.ui" line="26"/>
         <location filename="camotics/qt/find_dialog.ui" line="129"/>
         <source>Find</source>
-        <translation type="unfinished"></translation>
+        <translation>Find</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="37"/>
         <source>Find:</source>
-        <translation type="unfinished"></translation>
+        <translation>Find</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="47"/>
         <source>Replace:</source>
-        <translation type="unfinished"></translation>
+        <translation>Replace</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="57"/>
         <source>Regular expression</source>
-        <translation type="unfinished"></translation>
+        <translation>Regular Expression</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="64"/>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation>Match Case</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="71"/>
         <source>Match whole words</source>
-        <translation type="unfinished"></translation>
+        <translation>Match Whole Word</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="115"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>Replace</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="122"/>
         <source>Replace All</source>
-        <translation type="unfinished"></translation>
+        <translation>Replace All</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="139"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -909,37 +909,37 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="962"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="964"/>
         <source>MJFS</source>
-        <translation type="unfinished"></translation>
+        <translation>Beep Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="971"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="973"/>
         <source>MJYS</source>
-        <translation type="unfinished"></translation>
+        <translation>Beep Once</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="975"/>
         <source>DDAJAXGCZYZMJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Beep Continuously</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="977"/>
         <source>DDAJAXGCZJXMJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Beep Interval</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="979"/>
         <source>KQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Open</translation>
     </message>
 </context>
 <context>
@@ -947,12 +947,12 @@
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="26"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="39"/>
         <source>Current U position</source>
-        <translation type="unfinished"></translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="42"/>
@@ -960,37 +960,37 @@
         <location filename="forms_v1/NCMachinePosition.ui" line="125"/>
         <location filename="forms_v1/NCMachinePosition.ui" line="166"/>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="59"/>
         <source>Current Z position</source>
-        <translation type="unfinished"></translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="87"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="109"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="122"/>
         <source>Current X position</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="150"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="163"/>
         <source>Current Y position</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -998,19 +998,19 @@
     <message>
         <location filename="forms_v1/NCMachineState.ui" line="25"/>
         <source>YXZT</source>
-        <translation type="unfinished"></translation>
+        <translation>Run Status</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachineState.ui" line="38"/>
         <location filename="forms_v1/NCMachineState.ui" line="80"/>
         <location filename="forms_v1/NCMachineState.ui" line="98"/>
         <source>ZC</source>
-        <translation type="unfinished"></translation>
+        <translation>Normal</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachineState.ui" line="67"/>
         <source>ZXJG</source>
-        <translation type="unfinished"></translation>
+        <translation>Exec Result</translation>
     </message>
 </context>
 <context>
@@ -1018,17 +1018,17 @@
     <message>
         <location filename="forms/component/gaotiao4jiagong.cpp" line="31"/>
         <source>SheDing</source>
-        <translation type="unfinished"></translation>
+        <translation>Set</translation>
     </message>
     <message>
         <location filename="forms/component/gaotiao4jiagong.cpp" line="32"/>
         <source>ZQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Cycle</translation>
     </message>
     <message>
         <location filename="forms/component/gaotiao4jiagong.cpp" line="33"/>
         <source>GD</source>
-        <translation type="unfinished"></translation>
+        <translation>Height</translation>
     </message>
 </context>
 <context>
@@ -1036,7 +1036,7 @@
     <message>
         <location filename="forms/component/gaotiao4jiagong.ui" line="13"/>
         <source>GT</source>
-        <translation type="unfinished"></translation>
+        <translation>Jump</translation>
     </message>
 </context>
 <context>
@@ -1044,7 +1044,7 @@
     <message>
         <location filename="forms/other/huilingform.cpp" line="67"/>
         <source>SFQLJXZB？</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Mach Coord?</translation>
     </message>
 </context>
 <context>
@@ -1052,17 +1052,17 @@
     <message>
         <location filename="forms/other/huilingform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="36"/>
         <source>HLFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Home Dir</translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="56"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="80"/>
@@ -1070,7 +1070,7 @@
         <location filename="forms/other/huilingform.ui" line="264"/>
         <location filename="forms/other/huilingform.ui" line="356"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="107"/>
@@ -1078,22 +1078,22 @@
         <location filename="forms/other/huilingform.ui" line="291"/>
         <location filename="forms/other/huilingform.ui" line="383"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="148"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="240"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="332"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1102,32 +1102,32 @@
         <location filename="forms/other/jiagongjiluform.cpp" line="106"/>
         <location filename="forms/other/jiagongjiluform.cpp" line="130"/>
         <source>name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="107"/>
         <source>start_date</source>
-        <translation type="unfinished"></translation>
+        <translation>Start Time</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="108"/>
         <source>end_date</source>
-        <translation type="unfinished"></translation>
+        <translation>End Time</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="109"/>
         <source>total_time</source>
-        <translation type="unfinished"></translation>
+        <translation>Total Time</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="131"/>
         <source>time</source>
-        <translation type="unfinished"></translation>
+        <translation>Time</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="309"/>
         <source>DY ZGJLS</source>
-        <translation type="unfinished"></translation>
+        <translation>Page %1/%2 (Total Records: %3)</translation>
     </message>
 </context>
 <context>
@@ -1135,22 +1135,22 @@
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="13"/>
         <source>jiagongjilu</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Log</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="42"/>
         <source>SYY</source>
-        <translation type="unfinished"></translation>
+        <translation>Prev Page</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="49"/>
         <source>JGJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Log</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="62"/>
         <source>XYY</source>
-        <translation type="unfinished"></translation>
+        <translation>Next Page</translation>
     </message>
 </context>
 <context>
@@ -1158,99 +1158,99 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="53"/>
-        <source>JCGZHTZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="60"/>
-        <source>JWZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="75"/>
-        <source>ZS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="97"/>
-        <source>ZX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="116"/>
-        <source>YS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="135"/>
-        <source>YX</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="161"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="178"/>
-        <source>KJL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="185"/>
-        <source>ZB0SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/jiaodingweiform.ui" line="192"/>
-        <source>ZZJCGZDZ</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="212"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="53"/>
+        <source>JCGZHTZ</source>
+        <translation>Touch Retract</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="60"/>
+        <source>JWZ</source>
+        <translation>Corner Pos</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="75"/>
+        <source>ZS</source>
+        <translation>Top-Left</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="97"/>
+        <source>ZX</source>
+        <translation>Bottom-Left</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="116"/>
+        <source>YS</source>
+        <translation>Top-Right</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="135"/>
+        <source>YX</source>
+        <translation>Bottom-Right</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="178"/>
+        <source>KJL</source>
+        <translation>Fast Feed</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="185"/>
+        <source>ZB0SD</source>
+        <translation>Set Coord 0</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/jiaodingweiform.ui" line="192"/>
+        <source>ZZJCGZDZ</source>
+        <translation>Z Touch Action</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="245"/>
         <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="265"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="306"/>
         <location filename="forms/manual/jiaodingweiform.ui" line="400"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="328"/>
         <location filename="forms/manual/jiaodingweiform.ui" line="422"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="359"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="437"/>
-        <source>CS</source>
-        <translation type="unfinished"></translation>
+        <source>ChiShu</source>
+        <translation>Count</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="444"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1258,92 +1258,92 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="104"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="106"/>
         <source>JSN</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="108"/>
         <source>TDDZSNW</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Dis</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="110"/>
         <source>FDZTW</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Pause Bit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="112"/>
         <source>MS</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="114"/>
         <source>JCDL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Det</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="116"/>
         <source>GZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Metric</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="118"/>
         <source>XZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>X Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="120"/>
         <source>JSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Accel Time</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="122"/>
         <source>YZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="124"/>
         <source>YZJSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="126"/>
         <source>ZZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="128"/>
         <source>ZZJSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="130"/>
         <source>UZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>U Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="132"/>
         <source>UZJSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>U Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="137"/>
         <source>SDMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="139"/>
         <source>DDMS</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="141"/>
         <source>SLMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Handwheel Mode</translation>
     </message>
 </context>
 <context>
@@ -1351,67 +1351,71 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/kongzhongxingform.ui" line="53"/>
-        <source>ZB0SD</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="73"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/kongzhongxingform.ui" line="53"/>
+        <source>ZB0SD</source>
+        <translation>Set Coord 0</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="106"/>
         <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="121"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="143"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="174"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="220"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="253"/>
         <source>KJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Fast Feed</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="270"/>
         <source>JCGZHTZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Retract</translation>
+    </message>
+    <message>
+        <source>CS</source>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="288"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="295"/>
-        <source>CS</source>
-        <translation type="unfinished"></translation>
+        <source>ChiShu</source>
+        <translation>Count</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="302"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1419,42 +1423,42 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="284"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="286"/>
         <source>XZMBZB</source>
-        <translation type="unfinished"></translation>
+        <translation>X Target</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="288"/>
         <source>YZMBZB</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Target</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="290"/>
         <source>ZZMBZB</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Target</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="292"/>
         <source>UZMBZB</source>
-        <translation type="unfinished"></translation>
+        <translation>U Target</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="294"/>
         <source>JCDL</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Det</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="296"/>
         <source>ZSDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="298"/>
         <source>JSSJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Accel Time</translation>
     </message>
 </context>
 <context>
@@ -1462,74 +1466,74 @@
     <message>
         <location filename="forms/other/luojubuchangform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.ui" line="27"/>
         <source>DC</source>
-        <translation type="unfinished"></translation>
+        <translation>Export</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.ui" line="34"/>
         <source>DR</source>
-        <translation type="unfinished"></translation>
+        <translation>Import</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>CKDBCH</source>
-        <translation type="unfinished"></translation>
+        <translation>Ref Comp No</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>FFXBCH</source>
-        <translation type="unfinished"></translation>
+        <translation>Neg Comp No</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>ZFXBCH</source>
-        <translation type="unfinished"></translation>
+        <translation>Pos Comp No</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>BCDJG</source>
-        <translation type="unfinished"></translation>
+        <translation>Comp Interval</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>JXBC</source>
-        <translation type="unfinished"></translation>
+        <translation>Gap Comp</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>JXBCSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Gap Comp Spd</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="49"/>
         <source>QKDQX</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Line</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="52"/>
         <source>QKQB</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear All</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="55"/>
         <source>DQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Read</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="232"/>
         <location filename="forms/other/luojubuchangform.cpp" line="257"/>
         <source>ZBDUP</source>
-        <translation type="unfinished"></translation>
+        <translation>No USB</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="236"/>
         <location filename="forms/other/luojubuchangform.cpp" line="245"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="238"/>
@@ -1537,13 +1541,13 @@
         <location filename="forms/other/luojubuchangform.cpp" line="263"/>
         <location filename="forms/other/luojubuchangform.cpp" line="271"/>
         <source>Json Files</source>
-        <translation type="unfinished"></translation>
+        <translation>JSON Files</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="261"/>
         <location filename="forms/other/luojubuchangform.cpp" line="269"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
 </context>
 <context>
@@ -1551,46 +1555,46 @@
     <message>
         <location filename="forms/manual/mdiform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/mdiform.ui" line="38"/>
         <source>JP</source>
-        <translation type="unfinished"></translation>
+        <translation>Key</translation>
     </message>
     <message>
         <location filename="forms/manual/mdiform.cpp" line="50"/>
         <location filename="forms/manual/mdiform.cpp" line="103"/>
         <source>EDMZYCW，QXGZ</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROR: Code Error, Fix First</translation>
     </message>
 </context>
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="649"/>
+        <location filename="modbus/modbusadapter.cpp" line="716"/>
         <source>MXCW</source>
-        <translation type="unfinished"></translation>
+        <translation>Modbus: Write Error</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="736"/>
+        <location filename="modbus/modbusadapter.cpp" line="803"/>
         <source>Write data failed. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="742"/>
+        <location filename="modbus/modbusadapter.cpp" line="809"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="796"/>
+        <location filename="modbus/modbusadapter.cpp" line="863"/>
         <source>Read data failed. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="802"/>
+        <location filename="modbus/modbusadapter.cpp" line="869"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1598,53 +1602,53 @@
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="14"/>
         <source>ModbusFile</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="31"/>
         <source>FileNum</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="38"/>
         <location filename="forms_v1/ModbusFile.ui" line="45"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="52"/>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="59"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="66"/>
         <source>Data</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="73"/>
         <source>Num</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="96"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="112"/>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.cpp" line="58"/>
         <source>SJGSBF</source>
-        <translation type="unfinished"></translation>
+        <translation>Data Mismatch</translation>
     </message>
 </context>
 <context>
@@ -1652,42 +1656,42 @@
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="27"/>
         <source>CR</source>
-        <translation type="unfinished"></translation>
+        <translation>Ins</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="34"/>
         <source>SC</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="39"/>
         <source>FZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="44"/>
         <source>ZT</source>
-        <translation type="unfinished"></translation>
+        <translation>Paste</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="49"/>
         <source>DQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Read</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="58"/>
         <source>DKWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="62"/>
         <source>BC</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
     </message>
     <message>
         <location filename="widgets/multibuttonswidget.cpp" line="71"/>
         <source>BCWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
 </context>
 <context>
@@ -1695,253 +1699,254 @@
     <message>
         <location filename="widgets/multibuttonswidget.ui" line="14"/>
         <source>MultiButtonsWidget</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="354"/>
+        <location filename="modbus/NCMachine.cpp" line="355"/>
         <source>WYDZT</source>
-        <translation type="unfinished"></translation>
+        <oldsource>WYDZT（</oldsource>
+        <translation>No Motion(API)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="357"/>
+        <location filename="modbus/NCMachine.cpp" line="358"/>
         <source>JYX</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="360"/>
+        <location filename="modbus/NCMachine.cpp" line="361"/>
         <source>JTC</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="363"/>
+        <location filename="modbus/NCMachine.cpp" line="364"/>
         <source>LYX</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="366"/>
+        <location filename="modbus/NCMachine.cpp" line="367"/>
         <source>CYX</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="369"/>
+        <location filename="modbus/NCMachine.cpp" line="370"/>
         <source>CTC</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="372"/>
+        <location filename="modbus/NCMachine.cpp" line="373"/>
         <source>CWC</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="375"/>
+        <location filename="modbus/NCMachine.cpp" line="376"/>
         <source>SYX</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="378"/>
+        <location filename="modbus/NCMachine.cpp" line="379"/>
         <source>STCQHZX</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Exit Center</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="381"/>
+        <location filename="modbus/NCMachine.cpp" line="382"/>
         <source>STCQHT（XHZXZHT）</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Exit Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="384"/>
+        <location filename="modbus/NCMachine.cpp" line="385"/>
         <source>STDQHT</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Pre-Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="387"/>
+        <location filename="modbus/NCMachine.cpp" line="388"/>
         <source>STD</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="390"/>
+        <location filename="modbus/NCMachine.cpp" line="391"/>
         <source>STDJSQJG</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Retract Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="393"/>
+        <location filename="modbus/NCMachine.cpp" line="394"/>
         <source>WDYZT: </source>
-        <translation type="unfinished"></translation>
+        <translation>Undef Status: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="407"/>
+        <location filename="modbus/NCMachine.cpp" line="408"/>
         <source>JSDTC</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="412"/>
+        <location filename="modbus/NCMachine.cpp" line="413"/>
         <source>LZCWCTC</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="417"/>
+        <location filename="modbus/NCMachine.cpp" line="418"/>
         <source>LSDTC</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="422"/>
+        <location filename="modbus/NCMachine.cpp" line="423"/>
         <source>LQDQBJTC：</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="426"/>
+        <location filename="modbus/NCMachine.cpp" line="427"/>
         <source>LCFXWTC：</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="431"/>
+        <location filename="modbus/NCMachine.cpp" line="432"/>
         <source>LDLTC</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="436"/>
+        <location filename="modbus/NCMachine.cpp" line="437"/>
         <source>LCSFF</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Param Invalid</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="441"/>
+        <location filename="modbus/NCMachine.cpp" line="442"/>
         <source>LJYCW</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Check Error</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="446"/>
+        <location filename="modbus/NCMachine.cpp" line="447"/>
         <source>LWXGN</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="451"/>
+        <location filename="modbus/NCMachine.cpp" line="452"/>
         <source>CZCWCTC</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="456"/>
+        <location filename="modbus/NCMachine.cpp" line="457"/>
         <source>CSDTC</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="461"/>
+        <location filename="modbus/NCMachine.cpp" line="462"/>
         <source>CQDQBJTC：</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="465"/>
+        <location filename="modbus/NCMachine.cpp" line="466"/>
         <source>CCFXWTC：</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="470"/>
+        <location filename="modbus/NCMachine.cpp" line="471"/>
         <source>CDLTC</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="475"/>
+        <location filename="modbus/NCMachine.cpp" line="476"/>
         <source>CZBMCW</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="480"/>
+        <location filename="modbus/NCMachine.cpp" line="481"/>
         <source>CCZMCW</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="485"/>
+        <location filename="modbus/NCMachine.cpp" line="486"/>
         <source>CWXGN</source>
-        <translation type="unfinished"></translation>
+        <translation>CMV Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="490"/>
+        <location filename="modbus/NCMachine.cpp" line="491"/>
         <source>SZCWCTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="495"/>
+        <location filename="modbus/NCMachine.cpp" line="496"/>
         <source>SSDTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="500"/>
+        <location filename="modbus/NCMachine.cpp" line="501"/>
         <source>SQDQBJTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Driver Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="504"/>
+        <location filename="modbus/NCMachine.cpp" line="505"/>
         <source>SCFXWTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Limit Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="509"/>
+        <location filename="modbus/NCMachine.cpp" line="510"/>
         <source>SDLTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="516"/>
-        <location filename="modbus/NCMachine.cpp" line="519"/>
+        <location filename="modbus/NCMachine.cpp" line="517"/>
+        <location filename="modbus/NCMachine.cpp" line="520"/>
         <source>YW</source>
-        <translation type="unfinished"></translation>
+        <translation>Oil Level</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="522"/>
+        <location filename="modbus/NCMachine.cpp" line="523"/>
         <source>HY</source>
-        <translation type="unfinished"></translation>
+        <translation>Flame</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="524"/>
+        <location filename="modbus/NCMachine.cpp" line="525"/>
         <source>SBJTC</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK%1 Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="530"/>
+        <location filename="modbus/NCMachine.cpp" line="531"/>
         <source>SZBMCW</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="535"/>
+        <location filename="modbus/NCMachine.cpp" line="536"/>
         <source>SCZMCW</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="540"/>
+        <location filename="modbus/NCMachine.cpp" line="541"/>
         <source>SWXGN</source>
-        <translation type="unfinished"></translation>
+        <translation>SPK Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="546"/>
+        <location filename="modbus/NCMachine.cpp" line="547"/>
         <source>WDY：</source>
-        <translation type="unfinished"></translation>
+        <translation>Undef: %1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2300"/>
+        <location filename="modbus/NCMachine.cpp" line="2329"/>
         <source>MQBZCDY4GZBZJG</source>
-        <translation type="unfinished"></translation>
+        <translation>Max 4 Axes</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2692"/>
-        <location filename="modbus/NCMachine.cpp" line="2701"/>
-        <location filename="modbus/NCMachine.cpp" line="3254"/>
+        <location filename="modbus/NCMachine.cpp" line="2721"/>
+        <location filename="modbus/NCMachine.cpp" line="2730"/>
+        <location filename="modbus/NCMachine.cpp" line="3282"/>
         <source>CMLCSBMZYQ</source>
-        <translation type="unfinished"></translation>
+        <translation>C Param %1=%2 Invalid!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2757"/>
+        <location filename="modbus/NCMachine.cpp" line="2785"/>
         <source>to_clear_machine_axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3240"/>
+        <location filename="modbus/NCMachine.cpp" line="3268"/>
         <source>CMLCSSLHYQDBYZ</source>
-        <translation type="unfinished"></translation>
+        <translation>C Param Count Mismatch!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3440"/>
+        <location filename="modbus/NCMachine.cpp" line="3468"/>
         <source>ESYGCXHZYX</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROR: Previous Running</translation>
     </message>
 </context>
 <context>
@@ -1949,56 +1954,56 @@
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="31"/>
         <source>KJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Power On</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="38"/>
         <source>GJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Power Off</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="45"/>
         <source>HLX</source>
-        <translation type="unfinished"></translation>
+        <translation>Home X</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="52"/>
         <source>HLY</source>
-        <translation type="unfinished"></translation>
+        <translation>Home Y</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="59"/>
         <source>HLZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Home Z</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="81"/>
         <location filename="forms_v1/NCMachinePanel.ui" line="88"/>
         <location filename="forms_v1/NCMachinePanel.ui" line="95"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="108"/>
         <source>SetState</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="115"/>
         <source>Debug2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.cpp" line="29"/>
         <location filename="forms_v1/NCMachinePanel.cpp" line="34"/>
         <location filename="forms_v1/NCMachinePanel.cpp" line="39"/>
         <source>QSY SZ-GL</source>
-        <translation type="unfinished"></translation>
+        <translation>Use Setup-Home</translation>
     </message>
 </context>
 <context>
@@ -2006,7 +2011,7 @@
     <message>
         <location filename="widgets/filedialog.cpp" line="131"/>
         <source>SC</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
 </context>
 <context>
@@ -2014,108 +2019,108 @@
     <message>
         <location filename="forms/edit/nceditform.ui" line="19"/>
         <source>NCEdit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="32"/>
         <source>XJ</source>
-        <translation type="unfinished"></translation>
+        <translation>New</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="50"/>
         <source>DK</source>
-        <translation type="unfinished"></translation>
+        <translation>Open</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="68"/>
         <source>BC</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="86"/>
         <source>LC</source>
-        <translation type="unfinished"></translation>
+        <translation>Save As</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="104"/>
         <source>DR</source>
-        <translation type="unfinished"></translation>
+        <translation>Import</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="122"/>
         <source>DC</source>
-        <translation type="unfinished"></translation>
+        <translation>Export</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="140"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Close</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="216"/>
         <source>Undo</source>
-        <translation type="unfinished"></translation>
+        <translation>Undo</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="223"/>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Redo</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="230"/>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Cut</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="237"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="244"/>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Paste</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="251"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="258"/>
         <source>SelectAll</source>
-        <translation type="unfinished"></translation>
+        <translation>Select All</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="265"/>
         <source>Find</source>
-        <translation type="unfinished"></translation>
+        <translation>Find/Replace</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="272"/>
         <source>FindNext</source>
-        <translation type="unfinished"></translation>
+        <translation>Find Next</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="292"/>
         <source>Keyboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Key</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="124"/>
         <source>EDMZYCW，QXGZ</source>
-        <translation type="unfinished"></translation>
+        <translation>ERROR: Code Error, Fix First</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="156"/>
         <source>NJG</source>
-        <translation type="unfinished"></translation>
+        <translation>NC Mach</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="218"/>
         <location filename="forms/edit/nceditform.cpp" line="358"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="219"/>
@@ -2124,7 +2129,7 @@
         <location filename="forms/edit/nceditform.cpp" line="359"/>
         <location filename="forms/edit/nceditform.cpp" line="408"/>
         <source>Supported Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Supported Files</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="220"/>
@@ -2133,20 +2138,20 @@
         <location filename="forms/edit/nceditform.cpp" line="360"/>
         <location filename="forms/edit/nceditform.cpp" line="409"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>All Files</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="303"/>
         <location filename="forms/edit/nceditform.cpp" line="331"/>
         <location filename="forms/edit/nceditform.cpp" line="407"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="353"/>
         <location filename="forms/edit/nceditform.cpp" line="400"/>
         <source>ZBDUP</source>
-        <translation type="unfinished"></translation>
+        <translation>No USB</translation>
     </message>
 </context>
 <context>
@@ -2154,134 +2159,7 @@
     <message>
         <location filename="forms/run/ncrun.ui" line="20"/>
         <source>NcRun</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PointGenratorByGrid</name>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="18"/>
-        <source>YZGS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="25"/>
-        <source>XZQSD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="32"/>
-        <source>XZGS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="39"/>
-        <source>YZQSD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="46"/>
-        <source>XZJG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="53"/>
-        <source>YZJG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="60"/>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="81"/>
-        <source>0.000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="67"/>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="88"/>
-        <source>1.000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="74"/>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="95"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="67"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="70"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="125"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="125"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="128"/>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg/pointgeneratorbygrid.ui" line="132"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="132"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="135"/>
-        <source>Cancel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="18"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="21"/>
-        <source>JSDY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="25"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="39"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="28"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="42"/>
-        <source>KSDX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="32"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="35"/>
-        <source>JSDX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="46"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="53"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="49"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="56"/>
-        <source>BZX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="60"/>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="81"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="63"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="84"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="74"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="77"/>
-        <source>9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="88"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="91"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/ddjg2/pointgeneratorbygrid.ui" line="95"/>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="98"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="plugins_src/pointgeneratorbygrid.ui" line="13"/>
-        <location filename="plugins_src/pointgenratorbygrid.cpp" line="58"/>
-        <source>GZ1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2289,12 +2167,12 @@
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>N</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
 </context>
 <context>
@@ -2302,7 +2180,7 @@
     <message>
         <location filename="widgets/qnumericpad.cpp" line="16"/>
         <source>JP</source>
-        <translation type="unfinished"></translation>
+        <translation>Key</translation>
     </message>
 </context>
 <context>
@@ -2310,285 +2188,280 @@
     <message>
         <location filename="widgets/qnumericpad.ui" line="13"/>
         <source>JP</source>
-        <translation type="unfinished"></translation>
+        <translation>Key</translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="34"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="56"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="78"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="103"/>
         <source>+/-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="125"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="147"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="169"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="191"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="213"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="235"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="257"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="279"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="301"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="323"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="345"/>
         <source>HT</source>
-        <translation type="unfinished"></translation>
+        <translation>Back</translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="367"/>
         <source>QK</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear</translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="389"/>
         <source>QR</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirm</translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="411"/>
         <source>QX</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancel</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="camotics/qt/FileDialog.cpp" line="72"/>
-        <source>Cannot open directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1639"/>
         <source>JPZ</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Settings</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1641"/>
         <source>LPZ</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Settings</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1643"/>
         <source>DD</source>
-        <translation type="unfinished"></translation>
+        <translation>Tool Setting</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1645"/>
         <source>QJX</source>
-        <translation type="unfinished"></translation>
+        <translation>Go to Limit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1647"/>
         <source>TCJX</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit Limit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1649"/>
         <source>ZLW</source>
-        <translation type="unfinished"></translation>
+        <translation>Find Zero</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1650"/>
         <source>SPK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1652"/>
         <source>FDI</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM IO</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1654"/>
         <source>FZI</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux IO</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1656"/>
         <source>SKHKZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox Control</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1659"/>
         <source>ZLJBC</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Pitch Comp</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1661"/>
         <source>DDYD</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Move</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1663"/>
         <source>DJSN</source>
-        <translation type="unfinished"></translation>
+        <translation>Motor En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1665"/>
         <source>FMQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Buzzer</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1667"/>
         <source>TSYT</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug Use</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1668"/>
         <source>ADC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1670"/>
         <source>FDHL</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Circuit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1672"/>
         <source>FDJG</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1674"/>
         <source>FDWC</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Done</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1676"/>
         <source>YD</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1679"/>
         <source>BBH</source>
-        <translation type="unfinished"></translation>
+        <translation>Version</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1681"/>
         <source>YWJC</source>
-        <translation type="unfinished"></translation>
+        <translation>Oil Temp Det</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1682"/>
         <source>AJC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1684"/>
         <source>Reg78</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1685"/>
         <source>Reg81</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1686"/>
         <source>Reg83</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1687"/>
         <source>Reg84</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1688"/>
         <source>Reg85</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1689"/>
         <source>Reg86</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirm</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="32"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="33"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>N</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="41"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>Message</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="56"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="57"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="utils/formutils.cpp" line="97"/>
+        <location filename="utils/formutils.cpp" line="98"/>
         <source>Please enter password</source>
-        <translation type="unfinished"></translation>
+        <translation>Please enter password</translation>
     </message>
 </context>
 <context>
@@ -2596,12 +2469,12 @@
     <message>
         <location filename="modbus/QtPropertyEditor.cpp" line="391"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/QtPropertyEditor.cpp" line="393"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2609,325 +2482,80 @@
     <message>
         <location filename="forms_v1/mainwindow.ui" line="19"/>
         <source>MainWindow2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="40"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="52"/>
         <source>RZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Log</translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="84"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="89"/>
         <source>RegWindow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.cpp" line="65"/>
         <source>JCQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Register</translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.cpp" line="73"/>
         <source>DM</source>
-        <translation type="unfinished"></translation>
+        <translation>Code</translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.cpp" line="96"/>
         <source>YXZT</source>
-        <translation type="unfinished"></translation>
+        <translation>Run Status</translation>
     </message>
 </context>
 <context>
     <name>QtWin2</name>
     <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="13"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="63"/>
-        <location filename="forms/mainwindow2.ui" line="231"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="76"/>
-        <source>Current X position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="79"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="108"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="137"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="166"/>
-        <source>00000.000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="92"/>
-        <location filename="forms/mainwindow2.ui" line="244"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="105"/>
-        <source>Current Y position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="121"/>
-        <location filename="forms/mainwindow2.ui" line="257"/>
-        <source>Z</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="134"/>
-        <source>Current Z position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="150"/>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="163"/>
-        <source>Current U position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="192"/>
-        <location filename="forms/mainwindow2.ui" line="585"/>
-        <source>WJM：</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="226"/>
-        <source>RQ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="239"/>
-        <location filename="forms/mainwindow2.ui" line="605"/>
-        <source>2024-02-20</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="252"/>
-        <source>SJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="265"/>
-        <location filename="forms/mainwindow2.ui" line="612"/>
-        <source>09:03:29</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="383"/>
-        <source>QZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="396"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="451"/>
-        <source>(mm)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="409"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="464"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="645"/>
-        <location filename="forms/mainwindow2.ui" line="401"/>
-        <location filename="forms/mainwindow2.ui" line="435"/>
-        <location filename="forms/mainwindow2.ui" line="486"/>
-        <location filename="forms/mainwindow2.ui" line="520"/>
-        <source>0.0000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="438"/>
-        <source>CYL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="493"/>
-        <source>JGSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="506"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="548"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="590"/>
-        <location filename="forms/mainwindow2.ui" line="469"/>
-        <location filename="forms/mainwindow2.ui" line="503"/>
-        <location filename="forms/mainwindow2.ui" line="537"/>
-        <location filename="forms/mainwindow2.ui" line="554"/>
-        <source>00:00:00</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="535"/>
-        <source>CYSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="577"/>
-        <location filename="forms/mainwindow2.ui" line="547"/>
-        <source>GCYSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="619"/>
-        <location filename="forms/mainwindow2.ui" line="479"/>
-        <source>JGSD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="632"/>
-        <source>(mm/min)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="675"/>
-        <location filename="forms/mainwindow2.ui" line="95"/>
-        <source>G54</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="700"/>
-        <source>BJXQ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="783"/>
-        <source>ZC</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="808"/>
-        <location filename="forms/mainwindow2.ui" line="116"/>
-        <source>ST</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="836"/>
-        <location filename="forms/mainwindow2.ui" line="102"/>
-        <source>T0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="872"/>
-        <location filename="forms/mainwindow2.ui" line="812"/>
-        <source>CD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="914"/>
-        <source>CY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="919"/>
-        <location filename="forms/mainwindow2.cpp" line="302"/>
-        <location filename="forms/mainwindow2.cpp" line="322"/>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="924"/>
-        <source>BJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="929"/>
-        <location filename="forms/mainwindow2 - 副本.ui" line="1012"/>
-        <location filename="forms/mainwindow2.cpp" line="325"/>
-        <source>YX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="934"/>
-        <location filename="forms/mainwindow2.cpp" line="326"/>
-        <source>QT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="945"/>
-        <source>SZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="977"/>
-        <location filename="forms/mainwindow2.ui" line="152"/>
-        <source>JGTJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="996"/>
-        <location filename="forms/mainwindow2.ui" line="842"/>
-        <source>toolBar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="1017"/>
-        <source>QX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="1022"/>
-        <location filename="forms/mainwindow2.ui" line="875"/>
-        <source>TS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2 - 副本.ui" line="1027"/>
-        <source>DL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="forms/mainwindow2.ui" line="13"/>
         <source>EDM</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="95"/>
+        <source>G54</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="102"/>
+        <source>T0</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="109"/>
         <source>T1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="124"/>
-        <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1710"/>
-        <location filename="forms/mainwindow2.cpp" line="1713"/>
-        <source>YW</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="138"/>
-        <source>HY</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.ui" line="116"/>
+        <source>ST</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="145"/>
         <source>FLOAT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1329"/>
-        <source>GT</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.ui" line="231"/>
+        <source>X</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="234"/>
@@ -2935,369 +2563,484 @@
         <location filename="forms/mainwindow2.ui" line="292"/>
         <location filename="forms/mainwindow2.ui" line="304"/>
         <source>+00000.000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="244"/>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="257"/>
+        <source>Z</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="260"/>
         <source>-00000.000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="332"/>
-        <source>PDGJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="356"/>
-        <source>DYXLT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="394"/>
-        <source>QZ(</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="411"/>
-        <source>TJH</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.ui" line="401"/>
+        <location filename="forms/mainwindow2.ui" line="435"/>
+        <location filename="forms/mainwindow2.ui" line="486"/>
+        <location filename="forms/mainwindow2.ui" line="520"/>
+        <source>0.0000</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="418"/>
         <source>C000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="428"/>
-        <source>CYL(</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="445"/>
-        <source>GJH</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="452"/>
         <source>T000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="462"/>
-        <source>ZDJGSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="496"/>
-        <source>CDJGSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="513"/>
-        <source>XZZSD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.ui" line="530"/>
-        <source>CDCYSJ</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.ui" line="469"/>
+        <location filename="forms/mainwindow2.ui" line="503"/>
+        <location filename="forms/mainwindow2.ui" line="537"/>
+        <location filename="forms/mainwindow2.ui" line="554"/>
+        <source>00:00:00</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="598"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Default</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="605"/>
+        <source>2024-02-20</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="612"/>
+        <source>09:03:29</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="653"/>
         <source>ErrorMessage</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="842"/>
+        <source>toolBar</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="865"/>
         <source>Run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="870"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="124"/>
+        <location filename="forms/mainwindow2.ui" line="131"/>
+        <location filename="forms/mainwindow2.cpp" line="1741"/>
+        <location filename="forms/mainwindow2.cpp" line="1744"/>
+        <source>YW</source>
+        <translation>Oil Level</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="138"/>
+        <source>HY</source>
+        <translation>Flame</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="152"/>
+        <source>JGTJ</source>
+        <translation>Mach Cond</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="159"/>
+        <location filename="forms/mainwindow2.cpp" line="1360"/>
+        <source>GT</source>
+        <translation>Jump</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="332"/>
+        <source>PDGJ</source>
+        <translation>Orbit Path</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="356"/>
+        <source>DYXLT</source>
+        <translation>V Efficiency</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="394"/>
+        <source>QZ(</source>
+        <translation>Length(mm)</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="411"/>
+        <source>TJH</source>
+        <translation>Cond No</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="428"/>
+        <source>CYL(</source>
+        <translation>Remainder(mm)</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="445"/>
+        <source>GJH</source>
+        <translation>Tool No</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="462"/>
+        <source>ZDJGSJ</source>
+        <translation>Total Mach Time</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="479"/>
+        <source>JGSD</source>
+        <translation>Mach Depth</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="496"/>
+        <source>CDJGSJ</source>
+        <translation>This Mach Time</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="513"/>
+        <source>XZZSD</source>
+        <translation>Rotary Spd</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="530"/>
+        <source>CDCYSJ</source>
+        <translation>This Remain Time</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="547"/>
+        <source>GCYSJ</source>
+        <translation>G04 Remain Time</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="585"/>
+        <source>WJM：</source>
+        <translation>File Name:</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="812"/>
+        <source>CD</source>
+        <translation>Menu</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="328"/>
+        <source>YX</source>
+        <translation>Bottom-Right</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="875"/>
+        <source>TS</source>
+        <translation>Debug</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="880"/>
         <source>DL1</source>
-        <translation type="unfinished"></translation>
+        <translation>Short1</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="888"/>
         <source>DL2</source>
-        <translation type="unfinished"></translation>
+        <translation>Short2</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="893"/>
         <source>SS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="898"/>
         <source>Script</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="903"/>
         <source>PowerOn</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="908"/>
         <source>PowerOff</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="913"/>
         <source>SendLog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="918"/>
         <source>SaveGCode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="273"/>
+        <location filename="forms/mainwindow2.cpp" line="276"/>
         <source>XMML</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="303"/>
-        <source>EZD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="304"/>
-        <location filename="forms/mainwindow2.cpp" line="324"/>
-        <source>BianJi</source>
-        <translation type="unfinished"></translation>
+        <translation>Project Dir</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="305"/>
-        <source>JG</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.cpp" line="325"/>
+        <source>SD</source>
+        <translation>Manual</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="306"/>
+        <source>EZD</source>
+        <translation>EDM Auto</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
+        <source>JG</source>
+        <translation>Mach</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="309"/>
         <source>SheDing</source>
-        <translation type="unfinished"></translation>
+        <translation>Set</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="323"/>
+        <location filename="forms/mainwindow2.cpp" line="326"/>
         <source>ZD</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="353"/>
-        <source>ZBSZ</source>
-        <translation type="unfinished"></translation>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
+        <location filename="forms/mainwindow2.cpp" line="327"/>
+        <source>BianJi</source>
+        <translation>Edit</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="329"/>
+        <source>QT</source>
+        <translation>Other</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="356"/>
-        <source>DWYD</source>
-        <translation type="unfinished"></translation>
+        <source>ZBSZ</source>
+        <translation>Coord Setup</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="359"/>
-        <source>WZJY</source>
-        <translation type="unfinished"></translation>
+        <source>DWYD</source>
+        <translation>Loc Move</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="362"/>
-        <source>DMDW</source>
-        <translation type="unfinished"></translation>
+        <source>WZJY</source>
+        <translation>Pos Memory</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="365"/>
-        <source>ZZX</source>
-        <translation type="unfinished"></translation>
+        <source>DMDW</source>
+        <translation>Face Loc</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="368"/>
-        <source>JZX</source>
-        <translation type="unfinished"></translation>
+        <source>ZZX</source>
+        <translation>Cylinder Ctr</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="371"/>
-        <source>KZX</source>
-        <translation type="unfinished"></translation>
+        <source>JZX</source>
+        <translation>Corner Ctr</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="374"/>
-        <source>SDDY</source>
-        <translation type="unfinished"></translation>
+        <source>KZX</source>
+        <translation>Hole Ctr</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="377"/>
+        <source>SDDY</source>
+        <translation>3-Point Circle</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="380"/>
         <source>FDDW</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Loc</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="385"/>
+        <location filename="forms/mainwindow2.cpp" line="388"/>
         <source>ZDCS</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto Param</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
         <location filename="forms/mainwindow2.cpp" line="399"/>
         <source>SDDG</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Single</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="408"/>
+        <location filename="forms/mainwindow2.cpp" line="402"/>
+        <source>SDMG</source>
+        <translation>Manual Multi</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="411"/>
         <source>NJG</source>
-        <translation type="unfinished"></translation>
+        <translation>NC Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="413"/>
+        <location filename="forms/mainwindow2.cpp" line="416"/>
         <source>JGJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Log</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="417"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>XTSZ</source>
-        <translation type="unfinished"></translation>
+        <translation>System Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="418"/>
         <location filename="forms/mainwindow2.cpp" line="421"/>
-        <location filename="forms/mainwindow2.cpp" line="1257"/>
+        <source>FangDianCanShu</source>
+        <translation>EDM Param</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="424"/>
+        <location filename="forms/mainwindow2.cpp" line="1288"/>
         <source>FDCS</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Test</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="422"/>
+        <location filename="forms/mainwindow2.cpp" line="425"/>
         <source>LJBC</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="427"/>
-        <source>CKSZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Pitch Comp</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="430"/>
+        <source>CKSZ</source>
+        <translation>Serial Setup</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="433"/>
         <source>GY</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="474"/>
-        <location filename="forms/mainwindow2.cpp" line="1428"/>
+        <location filename="forms/mainwindow2.cpp" line="476"/>
+        <location filename="forms/mainwindow2.cpp" line="1459"/>
         <source>CKWLJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Serial Port Not Connected</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="479"/>
-        <location filename="forms/mainwindow2.cpp" line="1539"/>
-        <source>DDYX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="653"/>
-        <source>MNJG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="661"/>
-        <source>JGHGJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="904"/>
-        <location filename="forms/mainwindow2.cpp" line="1573"/>
-        <source>YXZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="982"/>
-        <source>to_clear_machine_axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="989"/>
-        <source>SFJXZDHL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1103"/>
-        <source>BCWJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1269"/>
-        <location filename="forms/mainwindow2.cpp" line="1338"/>
-        <source>FS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1270"/>
-        <location filename="forms/mainwindow2.cpp" line="1339"/>
-        <source>GB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1554"/>
-        <source>DDZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1557"/>
-        <source>HLZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1562"/>
-        <source>FDZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="1565"/>
-        <source>FDZT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
+        <location filename="forms/mainwindow2.cpp" line="481"/>
         <location filename="forms/mainwindow2.cpp" line="1570"/>
+        <source>DDYX</source>
+        <translation>Waiting</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="655"/>
+        <source>MNJG</source>
+        <translation>Simulate</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="663"/>
+        <source>JGHGJ</source>
+        <translation>Shutdown After Mach</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="915"/>
+        <location filename="forms/mainwindow2.cpp" line="929"/>
+        <location filename="forms/mainwindow2.cpp" line="1604"/>
+        <source>YXZ</source>
+        <translation>Running</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1009"/>
+        <source>to_clear_machine_axis</source>
+        <translation>Clear Mach Coord?</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1016"/>
+        <source>SFJXZDHL</source>
+        <translation>Auto Home?</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1130"/>
+        <source>BCWJ</source>
+        <translation>Save File</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1300"/>
+        <location filename="forms/mainwindow2.cpp" line="1369"/>
+        <source>FS</source>
+        <translation>Send</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1301"/>
+        <location filename="forms/mainwindow2.cpp" line="1370"/>
+        <source>GB</source>
+        <translation>Close</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1585"/>
+        <source>DDZ</source>
+        <translation>Touching</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1588"/>
+        <source>HLZ</source>
+        <translation>Homing</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1593"/>
+        <source>FDZ</source>
+        <translation>EDM On</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1596"/>
+        <source>FDZT</source>
+        <translation>EDM Pause</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="1601"/>
         <source>ZTZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Paused</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1587"/>
+        <location filename="forms/mainwindow2.cpp" line="1618"/>
         <source>DLBJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Short Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1627"/>
+        <location filename="forms/mainwindow2.cpp" line="1658"/>
         <source>CFDJBJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Servo Motor Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1643"/>
+        <location filename="forms/mainwindow2.cpp" line="1674"/>
         <source>DDYWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Waiting Oil</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1664"/>
-        <location filename="forms/mainwindow2.cpp" line="1668"/>
+        <location filename="forms/mainwindow2.cpp" line="1695"/>
+        <location filename="forms/mainwindow2.cpp" line="1699"/>
         <source>XXW</source>
-        <translation type="unfinished"></translation>
+        <translation>X-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1672"/>
-        <location filename="forms/mainwindow2.cpp" line="1676"/>
+        <location filename="forms/mainwindow2.cpp" line="1703"/>
+        <location filename="forms/mainwindow2.cpp" line="1707"/>
         <source>YXW</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1680"/>
-        <location filename="forms/mainwindow2.cpp" line="1684"/>
+        <location filename="forms/mainwindow2.cpp" line="1711"/>
+        <location filename="forms/mainwindow2.cpp" line="1715"/>
         <source>ZXW</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Limit</translation>
     </message>
 </context>
 <context>
@@ -3305,24 +3048,24 @@
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="210"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="212"/>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="227"/>
         <source>GCode Files</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="213"/>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="228"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="225"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3330,7 +3073,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1482"/>
         <source>FSYCGBSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Fan Delay Off</translation>
     </message>
 </context>
 <context>
@@ -3338,107 +3081,92 @@
     <message>
         <location filename="forms_v1/regwindow.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="26"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="36"/>
         <source>JCQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Register</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="44"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="54"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="61"/>
         <source>Verbosity</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="71"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="78"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="88"/>
         <source>Read Reg</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="95"/>
         <source>Write Reg</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="108"/>
         <source>JOG</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="125"/>
         <source>QDJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Start JOG</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="141"/>
         <source>TCJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit JOG</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="157"/>
         <source>DDYD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="162"/>
-        <source>LOC</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Move</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="177"/>
         <source>QDDW</source>
-        <translation type="unfinished"></translation>
+        <translation>Start Loc</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="193"/>
         <source>TCDW</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="204"/>
-        <source>CMV_TOUCH</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit Loc</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="219"/>
         <source>QDDD</source>
-        <translation type="unfinished"></translation>
+        <translation>Start Touch</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="235"/>
         <source>JSDD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="246"/>
-        <source>CMV_TOLMT</source>
-        <translation type="unfinished"></translation>
+        <translation>End Touch</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="261"/>
@@ -3446,7 +3174,7 @@
         <location filename="forms_v1/regwindow.ui" line="345"/>
         <location filename="forms_v1/regwindow.ui" line="387"/>
         <source>QD</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="277"/>
@@ -3454,37 +3182,22 @@
         <location filename="forms_v1/regwindow.ui" line="361"/>
         <location filename="forms_v1/regwindow.ui" line="403"/>
         <source>JS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="288"/>
-        <source>CMV_FRMLMT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="330"/>
-        <source>CMV_TOZSIG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms_v1/regwindow.ui" line="372"/>
-        <source>SPK</source>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="414"/>
         <source>JC</source>
-        <translation type="unfinished"></translation>
+        <translation>Monitor</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="430"/>
         <source>SKH</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="435"/>
         <source>FDI</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM IO</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="450"/>
@@ -3495,115 +3208,236 @@
         <location filename="forms_v1/regwindow.cpp" line="262"/>
         <location filename="forms_v1/regwindow.cpp" line="397"/>
         <source>FS</source>
-        <translation type="unfinished"></translation>
+        <translation>Send</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="464"/>
         <source>FZI</source>
-        <translation type="unfinished"></translation>
+        <translation>Aux IO</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="493"/>
         <source>SKHKZSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox Ctrl Data</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="524"/>
         <source>DQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Read</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="538"/>
         <source>BC</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="162"/>
+        <source>LOC</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="204"/>
+        <source>CMV_TOUCH</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="246"/>
+        <source>CMV_TOLMT</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="288"/>
+        <source>CMV_FRMLMT</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="330"/>
+        <source>CMV_TOZSIG</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.ui" line="372"/>
+        <source>SPK</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="572"/>
         <source>Modbus File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="126"/>
         <source>JXZBSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Coord Set</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="235"/>
         <source>SKHCZSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox Op Data</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="253"/>
         <source>DQZYZBXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Current Coord Sys</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
         <location filename="forms_v1/regwindow.cpp" line="529"/>
         <source>XZ</source>
-        <translation type="unfinished"></translation>
+        <translation>X Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
         <location filename="forms_v1/regwindow.cpp" line="532"/>
         <source>YZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
         <location filename="forms_v1/regwindow.cpp" line="535"/>
         <source>ZZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
         <source>UZ</source>
-        <translation type="unfinished"></translation>
+        <translation>U Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="312"/>
         <source>ZLJBC</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Pitch Comp</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="355"/>
         <source>ADC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="362"/>
         <source>FDHL</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Circuit</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="369"/>
         <source>FDJG</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="376"/>
         <source>FDWC</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Done</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="383"/>
         <source>YD</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="541"/>
         <source>WCZ</source>
-        <translation type="unfinished"></translation>
+        <translation>No Op</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="544"/>
         <source>SDDQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Set Current</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="548"/>
         <source>DWYD</source>
-        <translation type="unfinished"></translation>
+        <translation>Loc Move</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="104"/>
+        <source>XZZFXXW</source>
+        <translation>X+ Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="105"/>
+        <source>XZFFXXW</source>
+        <translation>X- Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="106"/>
+        <source>YZZFXXW</source>
+        <translation>Y+ Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="107"/>
+        <source>YZFFXXW</source>
+        <translation>Y- Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="108"/>
+        <source>ZZZFXXW</source>
+        <translation>Z+ Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="109"/>
+        <source>ZZFFXXW</source>
+        <translation>Z- Limit</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="112"/>
+        <location filename="forms_v1/regwindow.h" line="113"/>
+        <source>YWXH</source>
+        <translation>Oil Level Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="114"/>
+        <source>HYXH</source>
+        <translation>Flame Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="115"/>
+        <source>WBXH0</source>
+        <translation>Ext Signal 0</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="116"/>
+        <source>WBXH1</source>
+        <translation>Ext Signal 1</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="117"/>
+        <source>WBXH2</source>
+        <translation>Ext Signal 2</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="118"/>
+        <source>WBXH3</source>
+        <translation>Ext Signal 3</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="120"/>
+        <source>XZLDXH</source>
+        <translation>X Zero Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="121"/>
+        <source>YZLDXH</source>
+        <translation>Y Zero Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="122"/>
+        <source>ZZLDXH</source>
+        <translation>Z Zero Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="123"/>
+        <source>UZLDXH</source>
+        <translation>U Zero Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="124"/>
+        <source>VZLDXH</source>
+        <translation>V Zero Signal</translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.h" line="127"/>
+        <source>CFBJXH</source>
+        <translation>Servo Alarm Signal</translation>
     </message>
 </context>
 <context>
@@ -3611,194 +3445,50 @@
     <message>
         <location filename="forms/auto/runautoform.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="31"/>
         <source>JGJH</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Plan</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="32"/>
         <source>JGWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Pos</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="33"/>
         <source>TJXX</source>
-        <translation type="unfinished"></translation>
+        <translation>Cond Detail</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="40"/>
         <source>MYXYSJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>RunAutoMulti</name>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="13"/>
-        <source>RunManual</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="56"/>
-        <source>JGFF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="63"/>
-        <source>ZZKSZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="73"/>
-        <source>8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="80"/>
-        <source>JGHS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="87"/>
-        <source>JGWZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="99"/>
-        <source>DD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="115"/>
-        <source>LX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.ui" line="130"/>
-        <source>YDSZZZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="31"/>
-        <source>JG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="31"/>
-        <source>ZBX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="33"/>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="44"/>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="155"/>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="184"/>
-        <location filename="forms/auto/obsolete/runautomulti.cpp" line="308"/>
-        <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation>No Data!</translation>
     </message>
 </context>
 <context>
     <name>RunAutoOne</name>
     <message>
-        <location filename="forms/auto/obsolete/runautoone.ui" line="13"/>
-        <source>RunAutoOne</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.ui" line="62"/>
-        <source>ZB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.ui" line="77"/>
-        <source>JD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.ui" line="99"/>
-        <source>XD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.ui" line="117"/>
-        <source>JGSD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="34"/>
-        <source>ZBZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="34"/>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>HS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>JG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>JGYL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>DS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>SJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="69"/>
-        <source>XX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="70"/>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="86"/>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="387"/>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="526"/>
-        <source>S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="738"/>
-        <location filename="forms/auto/runautoone.cpp" line="110"/>
+        <location filename="forms/auto/runautoone.cpp" line="126"/>
         <source>SDDMSC</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Code Out</translation>
     </message>
     <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="740"/>
-        <location filename="forms/auto/runautoone.cpp" line="112"/>
+        <location filename="forms/auto/runautoone.cpp" line="128"/>
         <source>NWJSC</source>
-        <translation type="unfinished"></translation>
+        <translation>NC File Out</translation>
     </message>
     <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="784"/>
-        <location filename="forms/auto/runautoone.cpp" line="122"/>
+        <location filename="forms/auto/runautoone.cpp" line="138"/>
         <source>SDDG</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Single</translation>
     </message>
     <message>
-        <location filename="forms/auto/obsolete/runautoone.cpp" line="798"/>
-        <location filename="forms/auto/runautoone.cpp" line="150"/>
+        <location filename="forms/auto/runautoone.cpp" line="166"/>
         <source>BCWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
 </context>
 <context>
@@ -3806,52 +3496,77 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="38"/>
         <source>CCD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.ui" line="45"/>
-        <source>0.350</source>
-        <translation type="unfinished"></translation>
+        <translation>Roughness</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="55"/>
         <source>TY</source>
-        <translation type="unfinished"></translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="65"/>
         <source>DBHHW</source>
-        <translation type="unfinished"></translation>
+        <translation>Spark Gap</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="72"/>
         <source>JGMJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Area</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="79"/>
         <source>JGSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Depth</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="99"/>
         <source>JGZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Axis</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="112"/>
         <source>CKSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Ref Depth</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="119"/>
         <source>CLZH</source>
-        <translation type="unfinished"></translation>
+        <translation>Material</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="144"/>
+        <source>JGZS</source>
+        <translation>Mach Priority</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="154"/>
+        <source>YDXZ</source>
+        <translation>Orbit Shape</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="164"/>
+        <source>XZXZ</source>
+        <translation>Shape Sel</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="177"/>
+        <source>SM G</source>
+        <translation>Graphite-Steel</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="212"/>
+        <source>YDMS</source>
+        <translation>Orbit Mode</translation>
+    </message>
+    <message>
+        <location filename="forms/auto/runautoparamform.ui" line="45"/>
+        <source>0.350</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="135"/>
@@ -3859,37 +3574,12 @@
         <location filename="forms/auto/runautoparamform.ui" line="196"/>
         <location filename="forms/auto/runautoparamform.ui" line="203"/>
         <source>0.000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/auto/runautoparamform.ui" line="144"/>
-        <source>JGZS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.ui" line="154"/>
-        <source>YDXZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.ui" line="164"/>
-        <source>XZXZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.ui" line="177"/>
-        <source>SM G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.ui" line="212"/>
-        <source>YDMS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/auto/runautoparamform.cpp" line="360"/>
+        <location filename="forms/auto/runautoparamform.cpp" line="363"/>
         <source>MYXYSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>No Data!</translation>
     </message>
 </context>
 <context>
@@ -3897,62 +3587,62 @@
     <message>
         <location filename="forms/run/runmanual.cpp" line="51"/>
         <source>ZBZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord Axis</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="51"/>
         <source>SD</source>
-        <translation type="unfinished"></translation>
+        <translation>Depth</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>HS</source>
-        <translation type="unfinished"></translation>
+        <translation>Count</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>JGYL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Allowance</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>DS</source>
-        <translation type="unfinished"></translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>SJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Time</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>Detail</source>
-        <translation type="unfinished"></translation>
+        <translation>Detail</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="318"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="976"/>
+        <location filename="forms/run/runmanual.cpp" line="1081"/>
         <source>SDDG</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Single</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="1070"/>
+        <location filename="forms/run/runmanual.cpp" line="1175"/>
         <source>JGHSWL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Count Zero</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanual.cpp" line="1085"/>
+        <location filename="forms/run/runmanual.cpp" line="1190"/>
         <source>JGZBZWXZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Axis Not Selected</translation>
     </message>
 </context>
 <context>
@@ -3960,27 +3650,27 @@
     <message>
         <location filename="forms/run/runmanual.ui" line="13"/>
         <source>RunManual</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="62"/>
         <source>ZB</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="77"/>
         <source>JD</source>
-        <translation type="unfinished"></translation>
+        <translation>Absolute</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="99"/>
         <source>XD</source>
-        <translation type="unfinished"></translation>
+        <translation>Relative</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="117"/>
         <source>JGSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Depth</translation>
     </message>
 </context>
 <context>
@@ -3988,89 +3678,115 @@
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="13"/>
         <source>RunManual</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="56"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="63"/>
         <source>JGHS</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Count</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="71"/>
         <source>JGFF</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Method</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="80"/>
-        <source>DD</source>
-        <translation type="unfinished"></translation>
+        <source>DANDU</source>
+        <translation>Single</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="96"/>
         <source>LX</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuous</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="112"/>
         <source>ZZKSGD</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Start Ht</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="123"/>
         <source>ZZAQGD</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Safe Ht</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>ZBX</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord Sys</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>QS</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>JS</source>
-        <translation type="unfinished"></translation>
+        <translation>End</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="103"/>
         <source>DR</source>
-        <translation type="unfinished"></translation>
+        <translation>Import</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="108"/>
         <source>DKWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="115"/>
         <source>SelectAll</source>
-        <translation type="unfinished"></translation>
+        <translation>Select All</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="120"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="466"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="473"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="714"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="193"/>
+        <source>JGHSWL</source>
+        <translation>Mach Count Zero</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="211"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="283"/>
+        <source>JGZBZWXZ</source>
+        <translation>Mach Axis Not Selected</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="219"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="307"/>
+        <source>DZJGSYGYXDZB</source>
+        <translation>Multi Mach Needs Relative</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="470"/>
+        <source>BZCLXJGMS</source>
+        <translation>Continuous Mode N/A</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="562"/>
+        <source>SDMG</source>
+        <translation>Manual Multi</translation>
+    </message>
+    <message>
+        <location filename="forms/run/runmanualmulti.cpp" line="569"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="810"/>
         <source>SDDG</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual Single</translation>
     </message>
 </context>
 <context>
@@ -4078,77 +3794,77 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="704"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="706"/>
         <source>ZTKZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Status Ctrl</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="708"/>
         <source>XSSN</source>
-        <translation type="unfinished"></translation>
+        <translation>Display En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="710"/>
         <source>JPSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Key Lock</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="712"/>
         <source>ZCZSN</source>
-        <translation type="unfinished"></translation>
+        <translation>Axis Op En</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="714"/>
         <source>SC3WJM</source>
-        <translation type="unfinished"></translation>
+        <translation>Upload 32bit Key</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="716"/>
         <source>GZ（</source>
-        <translation type="unfinished"></translation>
+        <translation>Metric(mm)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="718"/>
         <source>XS/CZZGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Display/Op Axis Num</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="720"/>
         <source>SDXSKZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Spd Display Ctrl</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="722"/>
         <source>DD/SDXSKZ</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG/Manual Display Ctrl</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="726"/>
         <source>WZT</source>
-        <translation type="unfinished"></translation>
+        <translation>No Status</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="728"/>
         <source>ZTJGZT</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause Status</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="730"/>
         <source>JGZT</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach Status</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="732"/>
         <source>SD（LXYD）</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual(Continuous)</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="734"/>
         <source>DDYD</source>
-        <translation type="unfinished"></translation>
+        <translation>JOG Move</translation>
     </message>
 </context>
 <context>
@@ -4156,7 +3872,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="507"/>
         <source>ZGJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Sub Path</translation>
     </message>
 </context>
 <context>
@@ -4164,100 +3880,104 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/sandiandingwei.ui" line="61"/>
-        <source>WJ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/sandiandingwei.ui" line="83"/>
-        <source>NJ</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="106"/>
         <location filename="forms/manual/sandiandingwei.ui" line="260"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="128"/>
         <location filename="forms/manual/sandiandingwei.ui" line="282"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/sandiandingwei.ui" line="61"/>
+        <source>WJ</source>
+        <translation>Outer Dia</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/sandiandingwei.ui" line="83"/>
+        <source>NJ</source>
+        <translation>Inner Dia</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="143"/>
         <source>JD</source>
-        <translation type="unfinished"></translation>
+        <translation>Absolute</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="150"/>
         <location filename="forms/manual/sandiandingwei.ui" line="310"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="170"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="214"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="221"/>
         <source>ZB0SD</source>
-        <translation type="unfinished"></translation>
+        <translation>Set Coord 0</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="228"/>
         <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="235"/>
         <source>ZZJCGZDZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/sandiandingwei.ui" line="343"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/sandiandingwei.ui" line="376"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Touch Action</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="403"/>
         <source>KJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Fast Feed</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="410"/>
         <source>JCGZHTZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Retract</translation>
+    </message>
+    <message>
+        <source>CS</source>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="417"/>
-        <source>CS</source>
-        <translation type="unfinished"></translation>
+        <source>ChiShu</source>
+        <translation>Count</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="424"/>
         <source>CDWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure Pos</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/sandiandingwei.ui" line="343"/>
+        <source>2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/sandiandingwei.ui" line="376"/>
+        <source>3</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="444"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4265,77 +3985,77 @@
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="20"/>
         <source>Modbus RTU Settings</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="48"/>
         <source>Serial device</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="55"/>
         <source>Response Timeout (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="75"/>
         <source>Data Bits</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="120"/>
         <source>Stop Bits</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="133"/>
         <source>Scan Rate (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="140"/>
         <source>Byte Timeout (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="196"/>
         <source>Serial port</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="206"/>
         <source>Baud</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="223"/>
         <source>/dev/ttyS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="228"/>
         <source>/dev/ttyUSB</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="323"/>
         <source>Parity</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="340"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="345"/>
         <source>Odd</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="350"/>
         <source>Even</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4343,7 +4063,7 @@
     <message>
         <location filename="forms/component/tool4zeroandhalfaxis.ui" line="14"/>
         <source>Tool4ZeroAndHalfAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4351,7 +4071,7 @@
     <message>
         <location filename="forms/component/tool4buttons.ui" line="14"/>
         <source>Tool4Buttons</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4359,12 +4079,12 @@
     <message>
         <location filename="forms/component/tool4coorset.cpp" line="26"/>
         <source>JLZBXSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Record Coord(G054-%1)?</translation>
     </message>
     <message>
         <location filename="forms/component/tool4coorset.cpp" line="66"/>
         <source>HFSJDZBX，SFYX？</source>
-        <translation type="unfinished"></translation>
+        <translation>Restore Coord?</translation>
     </message>
 </context>
 <context>
@@ -4372,17 +4092,17 @@
     <message>
         <location filename="forms/component/tool4coorset.ui" line="13"/>
         <source>Tool4CoorSet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4coorset.ui" line="24"/>
         <source>JL</source>
-        <translation type="unfinished"></translation>
+        <translation>Record</translation>
     </message>
     <message>
         <location filename="forms/component/tool4coorset.ui" line="31"/>
         <source>SZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Setup</translation>
     </message>
 </context>
 <context>
@@ -4390,7 +4110,7 @@
     <message>
         <location filename="forms/component/tool4gcode.cpp" line="34"/>
         <source>BCWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
 </context>
 <context>
@@ -4398,12 +4118,12 @@
     <message>
         <location filename="forms/component/tool4gcode.ui" line="13"/>
         <source>Tool4GCode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4gcode.ui" line="24"/>
         <source>GDMBC</source>
-        <translation type="unfinished"></translation>
+        <translation>G-Code Save</translation>
     </message>
 </context>
 <context>
@@ -4411,22 +4131,22 @@
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="14"/>
         <source>Tool4HalfAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="31"/>
         <source>X 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="44"/>
         <source>Y 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="57"/>
         <source>Z 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4434,7 +4154,7 @@
     <message>
         <location filename="forms/component/tool4itercoor.cpp" line="38"/>
         <source>SFYX？</source>
-        <translation type="unfinished"></translation>
+        <translation>Run?</translation>
     </message>
 </context>
 <context>
@@ -4442,22 +4162,22 @@
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="13"/>
         <source>Tool4IterCoor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="27"/>
         <source>G054</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="37"/>
         <source>G54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="44"/>
         <source>PLYX</source>
-        <translation type="unfinished"></translation>
+        <translation>Batch Run</translation>
     </message>
 </context>
 <context>
@@ -4465,12 +4185,12 @@
     <message>
         <location filename="forms/component/tool4loadsave.cpp" line="26"/>
         <source>DKWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Open File</translation>
     </message>
     <message>
         <location filename="forms/component/tool4loadsave.cpp" line="34"/>
         <source>BCWJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Save File</translation>
     </message>
 </context>
 <context>
@@ -4478,17 +4198,17 @@
     <message>
         <location filename="forms/component/tool4loadsave.ui" line="13"/>
         <source>Tool4LoadSave</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4loadsave.ui" line="24"/>
         <source>DQ</source>
-        <translation type="unfinished"></translation>
+        <translation>Read</translation>
     </message>
     <message>
         <location filename="forms/component/tool4loadsave.ui" line="31"/>
         <source>BC</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
     </message>
 </context>
 <context>
@@ -4496,22 +4216,22 @@
     <message>
         <location filename="forms/component/tool4posset.ui" line="13"/>
         <source>Tool4PosSet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4posset.ui" line="24"/>
         <source>JY</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/component/tool4posset.ui" line="34"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>Memory</translation>
     </message>
     <message>
         <location filename="forms/component/tool4posset.ui" line="41"/>
         <source>SZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Setup</translation>
+    </message>
+    <message>
+        <location filename="forms/component/tool4posset.ui" line="34"/>
+        <source>1</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4519,22 +4239,22 @@
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="14"/>
         <source>Tool4SwitchCoor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="25"/>
         <source>&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="35"/>
         <source>G54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="42"/>
         <source>&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4542,22 +4262,22 @@
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="14"/>
         <source>Tool4ZeroAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="26"/>
         <source>X = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="33"/>
         <source>Y = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="40"/>
         <source>Z = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4565,1453 +4285,795 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1403"/>
         <source>SKHBB</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox Ver</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1405"/>
         <source>XSKZBB</source>
-        <translation type="unfinished"></translation>
+        <translation>Display Control Version</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1407"/>
         <source>XWJBB</source>
-        <translation type="unfinished"></translation>
+        <translation>Lower Computer Version</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1409"/>
         <source>XWJNHBB</source>
-        <translation type="unfinished"></translation>
+        <translation>Lower Computer Kernel Version</translation>
     </message>
 </context>
 <context>
     <name>WeiZhiJiYiForm</name>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="13"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="185"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="36"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="186"/>
         <source>UZYD</source>
-        <translation type="unfinished"></translation>
+        <translation>U Axis Move</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="43"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="187"/>
         <source>ZBXQH</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord Switch</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="66"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="188"/>
         <source>ZZYD</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Axis Move</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="73"/>
         <location filename="forms/manual/weizhijiyi.ui" line="102"/>
         <location filename="forms/manual/weizhijiyi.ui" line="134"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="189"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="191"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="193"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="89"/>
         <location filename="forms/manual/weizhijiyi.ui" line="118"/>
         <location filename="forms/manual/weizhijiyi.ui" line="150"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="190"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="192"/>
-        <location filename="forms/manual/ui_weizhijiyi.h" line="194"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="37"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="64"/>
         <source>JY</source>
-        <translation type="unfinished"></translation>
+        <oldsource>JY</oldsource>
+        <translation>Memory</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="38"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="78"/>
         <source>YD</source>
-        <translation type="unfinished"></translation>
+        <oldsource>YD</oldsource>
+        <translation>Move</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="52"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="215"/>
         <source>ZBX</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord Sys</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="159"/>
         <source>JX</source>
-        <translation type="unfinished"></translation>
+        <translation>Mechanical</translation>
     </message>
 </context>
 <context>
     <name>WeiZhiYiDongForm</name>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="13"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="13"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="741"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="41"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="46"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="754"/>
-        <source>YD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="87"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="434"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="1012"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="224"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="612"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="1020"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="747"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="759"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="775"/>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="117"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="464"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="260"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="682"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="748"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="762"/>
-        <source>ZBX</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="139"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="128"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="744"/>
-        <source>YDFS</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="154"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="275"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="749"/>
-        <source>JD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="176"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="297"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="750"/>
-        <source>XD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="194"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="489"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="115"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="668"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="743"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="760"/>
-        <source>JCGZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="209"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="504"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="156"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="501"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="745"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="756"/>
-        <source>ON</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="231"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="526"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="178"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="523"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="746"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="757"/>
-        <source>OFF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="262"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="557"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="736"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="384"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="554"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="768"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="753"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="758"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="765"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="305"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="600"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="828"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="341"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="702"/>
-        <location filename="forms/manual/weizhiyidongform.ui" line="854"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="752"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="763"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="768"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="348"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="643"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="920"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="79"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="463"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="927"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="742"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="755"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="771"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="378"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="673"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="716"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="115"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="668"/>
+        <source>JCGZ</source>
+        <translation>Touch Sens</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="128"/>
+        <source>YDFS</source>
+        <translation>Move Mode</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="156"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="501"/>
+        <source>ON</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="178"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="523"/>
+        <source>OFF</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="224"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="612"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="1020"/>
+        <source>U</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="260"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="682"/>
+        <source>ZBX</source>
+        <translation>Coord Sys</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="275"/>
+        <source>JD</source>
+        <translation>Absolute</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="297"/>
+        <source>XD</source>
+        <translation>Relative</translation>
+    </message>
+    <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="321"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="675"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="987"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="751"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="761"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="774"/>
         <source>SJSR</source>
-        <translation type="unfinished"></translation>
+        <translation>Data In</translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="388"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="430"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="764"/>
         <source>BCYD</source>
-        <translation type="unfinished"></translation>
+        <translation>Half Move</translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="683"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="735"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="778"/>
         <source>XWYD</source>
-        <translation type="unfinished"></translation>
+        <translation>Limit Move</translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="760"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="852"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="944"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="1036"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="341"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="702"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="854"/>
+        <source>Y</source>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="46"/>
+        <source>YiDong</source>
+        <translation>Move</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="384"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="554"/>
+        <location filename="forms/manual/weizhiyidongform.ui" line="768"/>
+        <source>X</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="792"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="878"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="951"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="1044"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="766"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="769"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="772"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="776"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="787"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="879"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="971"/>
-        <location filename="forms/manual/weizhiyidongform - 副本.ui" line="1063"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="816"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="902"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="975"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="1068"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="767"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="770"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="773"/>
-        <location filename="forms/manual/ui_weizhiyidongform.h" line="777"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.cpp" line="66"/>
         <source>to_clear_machine_axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Mach Coord?</translation>
     </message>
 </context>
 <context>
     <name>WidgetKeyboard</name>
     <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="14"/>
-        <source>Virtual Keyboard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="44"/>
-        <source>0x01000000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="50"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="53"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="650"/>
-        <source>Esc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="89"/>
-        <source>0x01000030</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="92"/>
-        <source>F1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="113"/>
-        <source>0x01000031</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="116"/>
-        <source>F2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="137"/>
-        <source>0x01000032</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="140"/>
-        <source>F3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="161"/>
-        <source>0x01000033</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="164"/>
-        <source>F4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="205"/>
-        <source>0x01000034</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="208"/>
-        <source>F5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="229"/>
-        <source>0x01000035</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="232"/>
-        <source>F6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="256"/>
-        <source>F7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="277"/>
-        <source>0x01000037</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="280"/>
-        <source>F8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="321"/>
-        <source>0x01000038</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="324"/>
-        <source>F9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="345"/>
-        <source>0x01000039</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="348"/>
-        <source>F10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="369"/>
-        <source>0x0100003a</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="372"/>
-        <source>F11</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="393"/>
-        <source>0x0100003b</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="396"/>
-        <source>F12</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="429"/>
-        <source>0x01000009</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="432"/>
-        <source>Print
-Screen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="457"/>
-        <source>0x01000026</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="460"/>
-        <source>Scroll
-Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="485"/>
-        <source>0x01000008</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="488"/>
-        <source>Pause
-Break</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="522"/>
-        <source>0x01000006</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="525"/>
-        <source>Insert</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="549"/>
-        <source>0x01000010</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="552"/>
-        <source>Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="573"/>
-        <source>0x01000016</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="576"/>
-        <source>PgUP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="597"/>
-        <source>0x01000007</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="600"/>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="621"/>
-        <source>0x01000011</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="624"/>
-        <source>End</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="645"/>
-        <source>0x01000017</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="648"/>
-        <source>PgDn</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="660"/>
-        <source>Show Numeric Keypad</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="696"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="792"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="800"/>
-        <source>0x01000013</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="724"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="891"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="817"/>
-        <source>0x01000012</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="752"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="907"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="821"/>
-        <source>0x01000015</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="780"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="923"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="825"/>
-        <source>0x01000014</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="822"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="50"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="648"/>
-        <source>0x60</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="825"/>
-        <source>`</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="846"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2484"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="69"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="652"/>
-        <source>0x31</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="849"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2487"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="72"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="654"/>
-        <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="870"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2508"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="88"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="656"/>
-        <source>0x32</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="873"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2511"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="91"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="658"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="894"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2532"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="107"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="660"/>
-        <source>0x33</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="897"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2535"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="110"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="662"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="918"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2388"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="126"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="664"/>
-        <source>0x34</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="921"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2391"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="129"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="666"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="942"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2412"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="145"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="668"/>
-        <source>0x35</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="945"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2415"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="148"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="670"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="966"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2436"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="164"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="672"/>
-        <source>0x36</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="969"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2439"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="167"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="674"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="990"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2316"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="183"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="676"/>
-        <source>0x37</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="993"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2319"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="186"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="678"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1014"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2340"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="202"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="680"/>
-        <source>0x38</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1017"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2343"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="205"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="682"/>
-        <source>8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1038"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2364"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="221"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="684"/>
-        <source>0x39</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1041"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2367"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="224"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="686"/>
-        <source>9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1062"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2556"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="240"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="688"/>
-        <source>0x30</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1065"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2559"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="243"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="690"/>
-        <source>0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1086"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2292"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="259"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="692"/>
-        <source>0x2d</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1089"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2295"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="262"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="694"/>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1110"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="278"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="696"/>
-        <source>13</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1113"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="281"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="698"/>
-        <source>=</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1134"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="297"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="700"/>
-        <source>0x01000003</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1137"/>
-        <source>Backspace</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1165"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="323"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="704"/>
-        <source>0x01000024</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1168"/>
-        <source>    Caps   </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1192"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="345"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="708"/>
-        <source>0x41</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1195"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="348"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="710"/>
-        <source>A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1216"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="364"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="712"/>
-        <source>0x53</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1219"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="367"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="714"/>
-        <source>S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1240"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="383"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="716"/>
-        <source>0x44</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1243"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="386"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="718"/>
-        <source>D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1264"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="402"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="720"/>
-        <source>0x46</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1267"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="405"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="722"/>
-        <source>F</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1288"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="421"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="724"/>
-        <source>0x47</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1291"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="424"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="726"/>
-        <source>G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1312"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="440"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="728"/>
-        <source>0x48</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1315"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="443"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="730"/>
-        <source>H</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1336"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="459"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="732"/>
-        <source>0x4a</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1339"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="462"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="734"/>
-        <source>J</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1360"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="478"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="736"/>
-        <source>0x4b</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1363"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="481"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="738"/>
-        <source>K</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1384"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="497"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="740"/>
-        <source>0x4c</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1387"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="500"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="742"/>
-        <source>L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1408"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="516"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="744"/>
-        <source>0x3b</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1411"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="519"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="746"/>
-        <source>;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1432"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="535"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="748"/>
-        <source>0x27</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1435"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="538"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="750"/>
-        <source>&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1456"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="554"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="752"/>
-        <source>0x01000004</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1459"/>
-        <source>    Return   </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1487"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1754"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="580"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="756"/>
-        <source>0x01000020</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1490"/>
-        <source>     Shift     </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1514"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="602"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="760"/>
-        <source>0x5a</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1517"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="605"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="762"/>
-        <source>Z</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1538"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="621"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="764"/>
-        <source>0x58</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1541"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="624"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="766"/>
-        <source>X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1562"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="640"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="768"/>
-        <source>0x43</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1565"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="643"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="770"/>
-        <source>C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1586"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="659"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="772"/>
-        <source>0x56</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1589"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="662"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="774"/>
-        <source>V</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1610"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="678"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="776"/>
-        <source>0x42</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1613"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="681"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="778"/>
-        <source>B</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1634"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="697"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="780"/>
-        <source>0x4e</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1637"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="700"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="782"/>
-        <source>N</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1658"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="716"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="784"/>
-        <source>0x4d</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1661"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="719"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="786"/>
-        <source>M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1682"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="735"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="788"/>
-        <source>0x2c</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1685"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="738"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="790"/>
-        <source>,</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1706"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2580"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="754"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="792"/>
-        <source>0x2e</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1709"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2583"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="757"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="794"/>
-        <source>.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1730"/>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2244"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="773"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="796"/>
-        <source>0x2f</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1733"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="776"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="798"/>
-        <source>/</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1757"/>
-        <source>     Shift      </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1788"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="828"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="805"/>
-        <source>0x01000021</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1791"/>
-        <source>    Ctrl     </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1815"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="850"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="809"/>
-        <source>0x01000023</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1818"/>
-        <source>   Alt  </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1842"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="872"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="813"/>
-        <source>0x20</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1861"/>
-        <source>Transparency</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1889"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="946"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="829"/>
-        <source>0x01000001</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1892"/>
-        <source>  Tab   </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1913"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="965"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="833"/>
-        <source>0x51</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1916"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="968"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="835"/>
-        <source>Q</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1937"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="984"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="837"/>
-        <source>0x57</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1940"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="987"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="839"/>
-        <source>W</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1961"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1003"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="841"/>
-        <source>0x45</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1964"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1006"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="843"/>
-        <source>E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1985"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1022"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="845"/>
-        <source>0x52</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="1988"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1025"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="847"/>
-        <source>R</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2009"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1041"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="849"/>
-        <source>0x54</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2012"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1044"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="851"/>
-        <source>T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2033"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1060"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="853"/>
-        <source>0x59</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2036"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1063"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="855"/>
-        <source>Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2057"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1079"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="857"/>
-        <source>0x55</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2060"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1082"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="859"/>
-        <source>U</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2081"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1098"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="861"/>
-        <source>0x49</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2084"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1101"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="863"/>
-        <source>I</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2105"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1117"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="865"/>
-        <source>0x4f</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2108"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1120"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="867"/>
-        <source>O</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2129"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1136"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="869"/>
-        <source>0x50</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2132"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1139"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="871"/>
-        <source>P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2153"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1155"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="873"/>
-        <source>0x5b</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2156"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1158"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="875"/>
-        <source>[</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2177"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1174"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="877"/>
-        <source>0x5d</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2180"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1177"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="879"/>
-        <source>]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2201"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1193"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="881"/>
-        <source>0x5c</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2204"/>
-        <location filename="widgets/WidgetKeyboard.ui" line="1196"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="883"/>
-        <source>\</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2247"/>
-        <source>  / </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2268"/>
-        <source>0x2a</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2271"/>
-        <source> * </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2460"/>
-        <source>0x2b</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2463"/>
-        <source>+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2604"/>
-        <source>0x01000005</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2607"/>
-        <source>Enter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2631"/>
-        <source>0x01000025</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="widgets/WidgetKeyboard - 副本.ui" line="2634"/>
-        <source>Num
-Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="widgets/WidgetKeyboard.ui" line="20"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="646"/>
         <source>XNJP</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtual Key</translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="50"/>
+        <source>0x60</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="53"/>
+        <source>Esc</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="69"/>
+        <source>0x31</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="72"/>
+        <source>1</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="88"/>
+        <source>0x32</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="91"/>
+        <source>2</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="107"/>
+        <source>0x33</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="110"/>
+        <source>3</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="126"/>
+        <source>0x34</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="129"/>
+        <source>4</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="145"/>
+        <source>0x35</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="148"/>
+        <source>5</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="164"/>
+        <source>0x36</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="167"/>
+        <source>6</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="183"/>
+        <source>0x37</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="186"/>
+        <source>7</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="202"/>
+        <source>0x38</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="205"/>
+        <source>8</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="221"/>
+        <source>0x39</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="224"/>
+        <source>9</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="240"/>
+        <source>0x30</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="243"/>
+        <source>0</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="259"/>
+        <source>0x2d</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="262"/>
+        <source>-</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="278"/>
+        <source>13</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="281"/>
+        <source>=</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="297"/>
+        <source>0x01000003</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="300"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="702"/>
         <source>←</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="323"/>
+        <source>0x01000024</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="326"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="706"/>
         <source>Caps</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="345"/>
+        <source>0x41</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="348"/>
+        <source>A</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="364"/>
+        <source>0x53</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="367"/>
+        <source>S</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="383"/>
+        <source>0x44</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="386"/>
+        <source>D</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="402"/>
+        <source>0x46</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="405"/>
+        <source>F</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="421"/>
+        <source>0x47</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="424"/>
+        <source>G</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="440"/>
+        <source>0x48</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="443"/>
+        <source>H</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="459"/>
+        <source>0x4a</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="462"/>
+        <source>J</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="478"/>
+        <source>0x4b</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="481"/>
+        <source>K</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="497"/>
+        <source>0x4c</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="500"/>
+        <source>L</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="516"/>
+        <source>0x3b</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="519"/>
+        <source>;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="535"/>
+        <source>0x27</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="538"/>
+        <source>&apos;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="554"/>
+        <source>0x01000004</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="557"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="754"/>
         <source>  ↵  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="580"/>
+        <source>0x01000020</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="583"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="758"/>
         <source>Shift</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="602"/>
+        <source>0x5a</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="605"/>
+        <source>Z</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="621"/>
+        <source>0x58</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="624"/>
+        <source>X</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="640"/>
+        <source>0x43</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="643"/>
+        <source>C</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="659"/>
+        <source>0x56</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="662"/>
+        <source>V</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="678"/>
+        <source>0x42</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="681"/>
+        <source>B</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="697"/>
+        <source>0x4e</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="700"/>
+        <source>N</source>
+        <translation>N</translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="716"/>
+        <source>0x4d</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="719"/>
+        <source>M</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="735"/>
+        <source>0x2c</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="738"/>
+        <source>,</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="754"/>
+        <source>0x2e</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="757"/>
+        <source>.</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="773"/>
+        <source>0x2f</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="776"/>
+        <source>/</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="792"/>
+        <source>0x01000013</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="795"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="802"/>
         <source>  ↑  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="828"/>
+        <source>0x01000021</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="831"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="807"/>
         <source>Ctrl</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="850"/>
+        <source>0x01000023</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="853"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="811"/>
         <source>Alt</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="872"/>
+        <source>0x20</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="891"/>
+        <source>0x01000012</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="894"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="819"/>
         <source>  ←  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="907"/>
+        <source>0x01000015</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="910"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="823"/>
         <source>  ↓  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="923"/>
+        <source>0x01000014</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="926"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="827"/>
         <source>  →  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="946"/>
+        <source>0x01000001</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="949"/>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="831"/>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="widgets/ui_WidgetKeyboard.h" line="803"/>
-        <source>  &#x3000; </source>
-        <translation type="unfinished"></translation>
+        <location filename="widgets/WidgetKeyboard.ui" line="965"/>
+        <source>0x51</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="968"/>
+        <source>Q</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="984"/>
+        <source>0x57</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="987"/>
+        <source>W</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1003"/>
+        <source>0x45</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1006"/>
+        <source>E</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1022"/>
+        <source>0x52</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1025"/>
+        <source>R</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1041"/>
+        <source>0x54</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1044"/>
+        <source>T</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1060"/>
+        <source>0x59</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1063"/>
+        <source>Y</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1079"/>
+        <source>0x55</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1082"/>
+        <source>U</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1098"/>
+        <source>0x49</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1101"/>
+        <source>I</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1117"/>
+        <source>0x4f</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1120"/>
+        <source>O</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1136"/>
+        <source>0x50</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1139"/>
+        <source>P</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1155"/>
+        <source>0x5b</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1158"/>
+        <source>[</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1174"/>
+        <source>0x5d</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1177"/>
+        <source>]</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1193"/>
+        <source>0x5c</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widgets/WidgetKeyboard.ui" line="1196"/>
+        <source>\</source>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6019,245 +5081,247 @@ Lock</source>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="69"/>
         <source>XZHLFX</source>
-        <translation type="unfinished"></translation>
+        <translation>X Home Dir</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="72"/>
         <source>YZHLFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Home Dir</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="75"/>
         <source>ZZHLFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Home Dir</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="79"/>
         <location filename="forms/other/xitongshezhiform.cpp" line="82"/>
         <source>XJXWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>X-Limit Pos</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="85"/>
         <location filename="forms/other/xitongshezhiform.cpp" line="88"/>
         <source>YJXWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-Limit Pos</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="91"/>
         <location filename="forms/other/xitongshezhiform.cpp" line="94"/>
         <source>ZJXWZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Z-Limit Pos</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="124"/>
         <source>XZZDJSD</source>
-        <translation type="unfinished"></translation>
+        <translation>X Max JOG Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="127"/>
         <source>XZJJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>X JOG Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="130"/>
         <source>YZZDJSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Y Max JOG Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="133"/>
         <source>YZJJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Y JOG Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="136"/>
         <source>ZZZDJSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Max JOG Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="139"/>
         <source>ZZJJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Z JOG Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="142"/>
         <source>UZZDJSD</source>
-        <translation type="unfinished"></translation>
+        <translation>U Max JOG Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="145"/>
         <source>UZJJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>U JOG Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="149"/>
         <source>LSD</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="152"/>
         <source>LJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>LOC Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="156"/>
         <source>DDYDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="159"/>
         <source>DDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="163"/>
         <source>HCKDYDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Ref Point Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="166"/>
         <source>HCKDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Ref Point Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="182"/>
         <source>DDCS</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Count</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="186"/>
         <source>DDGCZHTJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Retract Dist</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="190"/>
         <source>TDGDJS</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Ht Base</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="194"/>
         <source>TDSDJS</source>
-        <translation type="unfinished"></translation>
+        <translation>Retract Spd Base</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="198"/>
         <source>FDSJJS</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Time Base</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="202"/>
         <source>YDSDJS</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Spd Base</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="206"/>
         <source>HZXTDGD</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Ht</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="210"/>
         <source>HZXTDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="214"/>
         <source>HZXTDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="218"/>
         <source>JGJSPDFGS</source>
-        <translation type="unfinished"></translation>
+        <translation>Mach End Segments</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="222"/>
         <source>MTDGD(</source>
-        <translation type="unfinished"></translation>
+        <translation>Slow Retract Ht(um)</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="226"/>
         <source>MTDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Slow Retract Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="230"/>
         <source>TCQHTJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit Retract Dist</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="237"/>
         <source>SDMSX</source>
-        <translation type="unfinished"></translation>
+        <translation>Manual M04 En</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="241"/>
         <source>ZTDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Main Retract Accel</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="254"/>
         <source>FJDL1</source>
-        <translation type="unfinished"></translation>
+        <translation>Add Current 1</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="258"/>
         <source>FJDL2</source>
-        <translation type="unfinished"></translation>
+        <translation>Add Current 2</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="262"/>
         <source>FJDL3</source>
-        <translation type="unfinished"></translation>
+        <translation>Add Current 3</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="266"/>
         <source>FSYCGBSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Fan Delay Off</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="270"/>
         <source>ZTHQSDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause Return Spd</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="297"/>
         <source>KZSDBS</source>
-        <translation type="unfinished"></translation>
+        <oldsource>KZSDBS</oldsource>
+        <translation>No-Load Speed Multiplier</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="303"/>
         <source>CFSDBS</source>
-        <translation type="unfinished"></translation>
+        <oldsource>CFSDBS</oldsource>
+        <translation>Servo Speed Multiplier</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="307"/>
         <source>FMQKG</source>
-        <translation type="unfinished"></translation>
+        <translation>Buzzer Switch</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="309"/>
         <source>GDMMWZJFH</source>
-        <translation type="unfinished"></translation>
+        <translation>Add Comma in GCode Line</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="312"/>
         <source>JGSZDKQYB2</source>
-        <translation type="unfinished"></translation>
+        <translation>Auto Open Pump 2 in Mach Mode</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="315"/>
         <source>FDWCHMJSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Done Beep Time</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="318"/>
         <source>CFHFJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Servo Recover Dist</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="321"/>
         <source>AFHJL</source>
-        <translation type="unfinished"></translation>
+        <translation>AJC Return Dist</translation>
     </message>
 </context>
 <context>
@@ -6265,92 +5329,92 @@ Lock</source>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1311"/>
         <source>YDFX</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Dir</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1313"/>
         <source>ZDYDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Max Orbit Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1315"/>
         <source>SDJCXFS</source>
-        <translation type="unfinished"></translation>
+        <translation>Depth Detect Div</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1317"/>
         <source>YDFWCFMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Reset Mode</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1319"/>
         <source>YDFWDZMS</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Reset Action</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1321"/>
         <source>YDPM</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Plane</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1323"/>
         <source>D1XXYDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Q1 Orbit Code</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1325"/>
         <source>D2XXYDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Q2 Orbit Code</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1327"/>
         <source>D3XXYDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Q3 Orbit Code</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1329"/>
         <source>D4XXYDM</source>
-        <translation type="unfinished"></translation>
+        <translation>Q4 Orbit Code</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1331"/>
         <source>YDBJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Orbit Radius</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1333"/>
         <source>HZXTDGD</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Ht</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1335"/>
         <source>HZXTDSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Spd</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1337"/>
         <source>HZXTDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Center Retract Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1339"/>
         <source>ZTDJSSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Main Retract Accel</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1341"/>
         <source>TCQHTJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit Retract Dist</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1343"/>
         <source>TDQMSHTJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Pre-Retract Slow Dist</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1345"/>
         <source>TDQMSHTSD</source>
-        <translation type="unfinished"></translation>
+        <translation>Pre-Retract Slow Spd</translation>
     </message>
 </context>
 <context>
@@ -6359,12 +5423,12 @@ Lock</source>
         <location filename="modbus/NCMachineProperties.cpp" line="1433"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1435"/>
         <source>YWJC</source>
-        <translation type="unfinished"></translation>
+        <translation>Oil Temp Det</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1437"/>
         <source>HYJC</source>
-        <translation type="unfinished"></translation>
+        <translation>Flame Det</translation>
     </message>
 </context>
 <context>
@@ -6372,158 +5436,145 @@ Lock</source>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="770"/>
         <source>MC</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="772"/>
         <source>BCJG</source>
-        <translation type="unfinished"></translation>
+        <translation>Comp Interval</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="774"/>
         <source>BCCKD</source>
-        <translation type="unfinished"></translation>
+        <translation>Comp Ref</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="776"/>
         <source>ZFXBCSYDZDJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Pos Comp Max</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="778"/>
         <source>FFXBCSYDZXJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Neg Comp Min</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="780"/>
         <source>FXJXBCSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Backlash Comp</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="782"/>
         <source>DWSJZDBCSJ</source>
-        <translation type="unfinished"></translation>
+        <translation>Max Comp Data</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="784"/>
         <source>BCSX</source>
-        <translation type="unfinished"></translation>
+        <translation>Comp Enable</translation>
     </message>
 </context>
 <context>
     <name>ZhuZhongXingForm</name>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="13"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="319"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="56"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="320"/>
         <source>KJL</source>
-        <translation type="unfinished"></translation>
+        <translation>Fast Feed</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="76"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="321"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="122"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="323"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="168"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="325"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="201"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="327"/>
         <source>JCGZHTZ</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/zhuzhongxingform.ui" line="219"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="328"/>
-        <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation>Touch Retract</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="226"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="329"/>
         <source>ZZJCGZDZ</source>
-        <translation type="unfinished"></translation>
+        <translation>Z Touch Action</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/zhuzhongxingform.ui" line="278"/>
+        <source>ZB0SD</source>
+        <translation>Set Coord 0</translation>
+    </message>
+    <message>
+        <source>CS</source>
+        <translation type="vanished">Test</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/zhuzhongxingform.ui" line="333"/>
+        <source>ChiShu</source>
+        <translation>Count</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/zhuzhongxingform.ui" line="347"/>
+        <location filename="forms/manual/zhuzhongxingform.cpp" line="225"/>
+        <source>JG</source>
+        <translation>Mach</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/zhuzhongxingform.ui" line="219"/>
+        <source>0.5</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="241"/>
         <location filename="forms/manual/zhuzhongxingform.ui" line="293"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="330"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="333"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="263"/>
         <location filename="forms/manual/zhuzhongxingform.ui" line="315"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="331"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="334"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/zhuzhongxingform.ui" line="278"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="332"/>
-        <source>ZB0SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/zhuzhongxingform.ui" line="333"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="335"/>
-        <source>CS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="340"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="336"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/zhuzhongxingform.ui" line="347"/>
-        <location filename="forms/manual/ui_zhuzhongxingform.h" line="337"/>
-        <location filename="forms/manual/zhuzhongxingform.cpp" line="225"/>
-        <source>JG</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.cpp" line="223"/>
         <source>DJC</source>
-        <translation type="unfinished"></translation>
+        <translation>#%1</translation>
     </message>
 </context>
 <context>
     <name>ZuoBiaoXiSheZiForm</name>
     <message>
         <location filename="forms/manual/zuobiaoxishezi.ui" line="18"/>
-        <location filename="forms/manual/ui_zuobiaoxishezi.h" line="112"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zuobiaoxishezi.cpp" line="50"/>
         <source>ZBX</source>
-        <translation type="unfinished"></translation>
+        <translation>Coord Sys</translation>
     </message>
     <message>
         <location filename="forms/manual/zuobiaoxishezi.cpp" line="60"/>
         <source>JX</source>
-        <translation type="unfinished"></translation>
+        <translation>Mechanical</translation>
     </message>
 </context>
 <context>
@@ -6531,41 +5582,40 @@ Lock</source>
     <message>
         <location filename="forms/other/about.ui" line="13"/>
         <source>about</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="21"/>
         <source>SWJBB：</source>
-        <translation type="unfinished"></translation>
+        <translation>HMI Ver:</translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="49"/>
         <source>XWJBB：</source>
-        <translation type="unfinished"></translation>
+        <translation>NC Ver:</translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="65"/>
         <source>XWJNHBB：</source>
-        <translation type="unfinished"></translation>
+        <translation>NC Core Ver:</translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="80"/>
         <source>XSKZBB：</source>
-        <translation type="unfinished"></translation>
+        <translation>Display Ver:</translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="95"/>
         <source>SKHBB：</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbox Ver:</translation>
     </message>
 </context>
 <context>
     <name>displayloranClass</name>
     <message>
         <location filename="forms/component/displayloran.ui" line="14"/>
-        <location filename="forms/component/ui_displayloran.h" line="48"/>
         <source>displayloran</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -6573,7 +5623,7 @@ Lock</source>
     <message>
         <location filename="forms/other/fangdiancheshiform.ui" line="16"/>
         <source>FDCS</source>
-        <translation type="unfinished"></translation>
+        <translation>EDM Param</translation>
     </message>
 </context>
 <context>
@@ -6581,7 +5631,7 @@ Lock</source>
     <message>
         <location filename="forms/other/xitongshezhiform.ui" line="16"/>
         <source>xitongshezhiform</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>

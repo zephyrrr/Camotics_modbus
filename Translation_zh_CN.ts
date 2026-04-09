@@ -2,13 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
-    <name></name>
-    <message>
-        <source>DY ZGJLS:</source>
-        <translation type="vanished">第%1/%2页 (总共记录数: %3)</translation>
-    </message>
-</context>
-<context>
     <name>ADCPropertyObject</name>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1034"/>
@@ -41,7 +34,7 @@
     <message>
         <location filename="widgets/advancedtoolbox.cpp" line="1163"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -49,17 +42,17 @@
     <message>
         <location filename="widgets/boollineedit.ui" line="14"/>
         <source>BoolLineEdit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/boollineedit.ui" line="35"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/boollineedit.ui" line="48"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -67,12 +60,12 @@
     <message>
         <location filename="camotics/qt/NCEdit.cpp" line="575"/>
         <source>&amp;Find &amp;&amp; Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>查找/替换</translation>
     </message>
     <message>
         <location filename="camotics/qt/NCEdit.cpp" line="577"/>
         <source>Find &amp;Next</source>
-        <translation type="unfinished"></translation>
+        <translation>查找下一个</translation>
     </message>
 </context>
 <context>
@@ -80,32 +73,32 @@
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="14"/>
         <source>CAMotics_gcode_editor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="43"/>
         <source>Parse</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="48"/>
         <source>Simu</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="53"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="58"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.ui" line="63"/>
         <source>Run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -113,7 +106,7 @@
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_ln.ui" line="28"/>
@@ -307,17 +300,17 @@
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="16"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="50"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="forms/edit/cp/widget_cp_lp.ui" line="57"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
 </context>
 <context>
@@ -343,12 +336,12 @@
     <message>
         <location filename="forms/manual/duanmianform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="45"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="69"/>
@@ -356,7 +349,7 @@
         <location filename="forms/manual/duanmianform.ui" line="277"/>
         <location filename="forms/manual/duanmianform.ui" line="350"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="93"/>
@@ -364,7 +357,7 @@
         <location filename="forms/manual/duanmianform.ui" line="301"/>
         <location filename="forms/manual/duanmianform.ui" line="374"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="105"/>
@@ -384,32 +377,32 @@
     <message>
         <location filename="forms/manual/duanmianform.ui" line="125"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="200"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="222"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="253"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="326"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/duanmianform.ui" line="404"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -429,7 +422,7 @@
         <location filename="modbus/NCMachineProperties.cpp" line="1092"/>
         <source>KDLS</source>
         <oldsource>KDLS（</oldsource>
-        <translation type="unfinished">开电流数</translation>
+        <translation>开电流数</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1094"/>
@@ -445,7 +438,7 @@
         <location filename="modbus/NCMachineProperties.cpp" line="1098"/>
         <source>DYDYD</source>
         <oldsource>DYDYD（</oldsource>
-        <translation type="unfinished">低压电源1档</translation>
+        <translation>低压电源1档</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1100"/>
@@ -567,13 +560,13 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="567"/>
         <source>DYDY1D</source>
-        <translation type="unfinished">低压电源1档（LLV）</translation>
+        <translation>低压电源1档（LLV）</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="569"/>
         <source>DYDY2D</source>
         <oldsource>DYDY2D（</oldsource>
-        <translation type="unfinished">低压电源2档（HLV）</translation>
+        <translation>低压电源2档（HLV）</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="571"/>
@@ -744,12 +737,12 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="671"/>
         <source>OUT3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="672"/>
         <source>OUT4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -757,7 +750,7 @@
     <message>
         <location filename="forms/other/fangdiancanshuform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.ui" line="27"/>
@@ -778,24 +771,24 @@
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="132"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>保存文件</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="134"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="192"/>
         <source>txt Files</source>
-        <translation type="unfinished"></translation>
+        <translation>txt文件</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="135"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="193"/>
         <source>csv Files</source>
-        <translation type="unfinished"></translation>
+        <translation>csv文件</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="190"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>打开文件</translation>
     </message>
 </context>
 <context>
@@ -803,12 +796,12 @@
     <message>
         <location filename="forms/manual/fangdianform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="64"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="88"/>
@@ -816,7 +809,7 @@
         <location filename="forms/manual/fangdianform.ui" line="276"/>
         <location filename="forms/manual/fangdianform.ui" line="349"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="112"/>
@@ -824,7 +817,7 @@
         <location filename="forms/manual/fangdianform.ui" line="300"/>
         <location filename="forms/manual/fangdianform.ui" line="373"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="124"/>
@@ -844,22 +837,22 @@
     <message>
         <location filename="forms/manual/fangdianform.ui" line="157"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="230"/>
         <source>777</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="252"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="325"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -868,47 +861,47 @@
         <location filename="camotics/qt/find_dialog.ui" line="26"/>
         <location filename="camotics/qt/find_dialog.ui" line="129"/>
         <source>Find</source>
-        <translation type="unfinished">查找/替换</translation>
+        <translation>查找</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="37"/>
         <source>Find:</source>
-        <translation type="unfinished"></translation>
+        <translation>查找</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="47"/>
         <source>Replace:</source>
-        <translation type="unfinished"></translation>
+        <translation>替换</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="57"/>
         <source>Regular expression</source>
-        <translation type="unfinished"></translation>
+        <translation>正则表达式</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="64"/>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation>匹配大小写</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="71"/>
         <source>Match whole words</source>
-        <translation type="unfinished"></translation>
+        <translation>全词匹配</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="115"/>
         <source>Replace</source>
-        <translation type="unfinished"></translation>
+        <translation>替换</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="122"/>
         <source>Replace All</source>
-        <translation type="unfinished"></translation>
+        <translation>全部替换</translation>
     </message>
     <message>
         <location filename="camotics/qt/find_dialog.ui" line="139"/>
         <source>Done</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
 </context>
 <context>
@@ -954,12 +947,12 @@
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="26"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="39"/>
         <source>Current U position</source>
-        <translation type="unfinished"></translation>
+        <translation>U</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="42"/>
@@ -967,37 +960,37 @@
         <location filename="forms_v1/NCMachinePosition.ui" line="125"/>
         <location filename="forms_v1/NCMachinePosition.ui" line="166"/>
         <source>0.0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="59"/>
         <source>Current Z position</source>
-        <translation type="unfinished"></translation>
+        <translation>Z</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="87"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="109"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="122"/>
         <source>Current X position</source>
-        <translation type="unfinished"></translation>
+        <translation>X</translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="150"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePosition.ui" line="163"/>
         <source>Current Y position</source>
-        <translation type="unfinished"></translation>
+        <translation>Y</translation>
     </message>
 </context>
 <context>
@@ -1059,7 +1052,7 @@
     <message>
         <location filename="forms/other/huilingform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="36"/>
@@ -1069,7 +1062,7 @@
     <message>
         <location filename="forms/other/huilingform.ui" line="56"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="80"/>
@@ -1077,7 +1070,7 @@
         <location filename="forms/other/huilingform.ui" line="264"/>
         <location filename="forms/other/huilingform.ui" line="356"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="107"/>
@@ -1085,22 +1078,22 @@
         <location filename="forms/other/huilingform.ui" line="291"/>
         <location filename="forms/other/huilingform.ui" line="383"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="148"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="240"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/huilingform.ui" line="332"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1134,7 +1127,7 @@
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="309"/>
         <source>DY ZGJLS</source>
-        <translation type="unfinished">第%1/%2页 (总共记录数: %3)</translation>
+        <translation>第%1/%2页 (总共记录数: %3)</translation>
     </message>
 </context>
 <context>
@@ -1142,7 +1135,7 @@
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="13"/>
         <source>jiagongjilu</source>
-        <translation type="unfinished"></translation>
+        <translation>加工记录</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="42"/>
@@ -1165,17 +1158,17 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="161"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="212"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="53"/>
@@ -1230,34 +1223,34 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="265"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="306"/>
         <location filename="forms/manual/jiaodingweiform.ui" line="400"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="328"/>
         <location filename="forms/manual/jiaodingweiform.ui" line="422"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="359"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="437"/>
-        <source>CS</source>
-        <translation>测试</translation>
+        <source>ChiShu</source>
+        <translation>次数</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="444"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1358,12 +1351,12 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="73"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="53"/>
@@ -1378,22 +1371,22 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="121"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="143"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="174"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="220"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="253"/>
@@ -1406,19 +1399,23 @@
         <translation>接触感知回退值</translation>
     </message>
     <message>
-        <location filename="forms/manual/kongzhongxingform.ui" line="295"/>
         <source>CS</source>
-        <translation>测试</translation>
+        <translation type="vanished">测试</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="288"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/kongzhongxingform.ui" line="295"/>
+        <source>ChiShu</source>
+        <translation>次数</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="302"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1469,7 +1466,7 @@
     <message>
         <location filename="forms/other/luojubuchangform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.ui" line="27"/>
@@ -1536,7 +1533,7 @@
         <location filename="forms/other/luojubuchangform.cpp" line="236"/>
         <location filename="forms/other/luojubuchangform.cpp" line="245"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>保存文件</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="238"/>
@@ -1544,13 +1541,13 @@
         <location filename="forms/other/luojubuchangform.cpp" line="263"/>
         <location filename="forms/other/luojubuchangform.cpp" line="271"/>
         <source>Json Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Json文件</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="261"/>
         <location filename="forms/other/luojubuchangform.cpp" line="269"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>打开文件</translation>
     </message>
 </context>
 <context>
@@ -1558,7 +1555,7 @@
     <message>
         <location filename="forms/manual/mdiform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/mdiform.ui" line="38"/>
@@ -1575,29 +1572,29 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="709"/>
+        <location filename="modbus/modbusadapter.cpp" line="716"/>
         <source>MXCW</source>
         <translation>Modbus: 写错误</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="796"/>
+        <location filename="modbus/modbusadapter.cpp" line="803"/>
         <source>Write data failed. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="802"/>
+        <location filename="modbus/modbusadapter.cpp" line="809"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="856"/>
+        <location filename="modbus/modbusadapter.cpp" line="863"/>
         <source>Read data failed. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="862"/>
+        <location filename="modbus/modbusadapter.cpp" line="869"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1605,48 +1602,48 @@
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="14"/>
         <source>ModbusFile</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="31"/>
         <source>FileNum</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="38"/>
         <location filename="forms_v1/ModbusFile.ui" line="45"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="52"/>
         <source>Record</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="59"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="66"/>
         <source>Data</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="73"/>
         <source>Num</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="96"/>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.ui" line="112"/>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/ModbusFile.cpp" line="58"/>
@@ -1702,252 +1699,252 @@
     <message>
         <location filename="widgets/multibuttonswidget.ui" line="14"/>
         <source>MultiButtonsWidget</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="354"/>
+        <location filename="modbus/NCMachine.cpp" line="355"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>无移动状态（API）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="357"/>
+        <location filename="modbus/NCMachine.cpp" line="358"/>
         <source>JYX</source>
         <translation>JOG运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="360"/>
+        <location filename="modbus/NCMachine.cpp" line="361"/>
         <source>JTC</source>
         <translation>JOG退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="363"/>
+        <location filename="modbus/NCMachine.cpp" line="364"/>
         <source>LYX</source>
         <translation>LOC运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="366"/>
+        <location filename="modbus/NCMachine.cpp" line="367"/>
         <source>CYX</source>
         <translation>CMV运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="369"/>
+        <location filename="modbus/NCMachine.cpp" line="370"/>
         <source>CTC</source>
         <translation>CMV退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="372"/>
+        <location filename="modbus/NCMachine.cpp" line="373"/>
         <source>CWC</source>
         <translation>CMV完成</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="375"/>
+        <location filename="modbus/NCMachine.cpp" line="376"/>
         <source>SYX</source>
         <translation>SPK运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="378"/>
+        <location filename="modbus/NCMachine.cpp" line="379"/>
         <source>STCQHZX</source>
         <translation>SPK退出前回中心</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="381"/>
+        <location filename="modbus/NCMachine.cpp" line="382"/>
         <source>STCQHT（XHZXZHT）</source>
         <translation>SPK退出前回退（先回中心再回退）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="384"/>
+        <location filename="modbus/NCMachine.cpp" line="385"/>
         <source>STDQHT</source>
         <translation>SPK抬刀前回退</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="387"/>
+        <location filename="modbus/NCMachine.cpp" line="388"/>
         <source>STD</source>
         <translation>SPK抬刀</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="390"/>
+        <location filename="modbus/NCMachine.cpp" line="391"/>
         <source>STDJSQJG</source>
         <translation>SPK抬刀结束去加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="393"/>
+        <location filename="modbus/NCMachine.cpp" line="394"/>
         <source>WDYZT: </source>
         <translation>未定义状态：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="407"/>
+        <location filename="modbus/NCMachine.cpp" line="408"/>
         <source>JSDTC</source>
         <translation>JOG手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="412"/>
+        <location filename="modbus/NCMachine.cpp" line="413"/>
         <source>LZCWCTC</source>
         <translation>LOC正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="417"/>
+        <location filename="modbus/NCMachine.cpp" line="418"/>
         <source>LSDTC</source>
         <translation>LOC手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="422"/>
+        <location filename="modbus/NCMachine.cpp" line="423"/>
         <source>LQDQBJTC：</source>
         <translation>LOC驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="426"/>
+        <location filename="modbus/NCMachine.cpp" line="427"/>
         <source>LCFXWTC：</source>
         <translation>LOC触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="431"/>
+        <location filename="modbus/NCMachine.cpp" line="432"/>
         <source>LDLTC</source>
         <translation>LOC短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="436"/>
+        <location filename="modbus/NCMachine.cpp" line="437"/>
         <source>LCSFF</source>
         <translation>LOC参数非法</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="441"/>
+        <location filename="modbus/NCMachine.cpp" line="442"/>
         <source>LJYCW</source>
         <translation>LOC校验错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="446"/>
+        <location filename="modbus/NCMachine.cpp" line="447"/>
         <source>LWXGN</source>
         <translation>LOC无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="451"/>
+        <location filename="modbus/NCMachine.cpp" line="452"/>
         <source>CZCWCTC</source>
         <translation>CMV正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="456"/>
+        <location filename="modbus/NCMachine.cpp" line="457"/>
         <source>CSDTC</source>
         <translation>CMV手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="461"/>
+        <location filename="modbus/NCMachine.cpp" line="462"/>
         <source>CQDQBJTC：</source>
         <translation>CMV驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="465"/>
+        <location filename="modbus/NCMachine.cpp" line="466"/>
         <source>CCFXWTC：</source>
         <translation>CMV触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="470"/>
+        <location filename="modbus/NCMachine.cpp" line="471"/>
         <source>CDLTC</source>
         <translation>CMV短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="475"/>
+        <location filename="modbus/NCMachine.cpp" line="476"/>
         <source>CZBMCW</source>
         <translation>CMV轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="480"/>
+        <location filename="modbus/NCMachine.cpp" line="481"/>
         <source>CCZMCW</source>
         <translation>CMV操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="485"/>
+        <location filename="modbus/NCMachine.cpp" line="486"/>
         <source>CWXGN</source>
         <translation>CMV无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="490"/>
+        <location filename="modbus/NCMachine.cpp" line="491"/>
         <source>SZCWCTC</source>
         <translation>SPK正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="495"/>
+        <location filename="modbus/NCMachine.cpp" line="496"/>
         <source>SSDTC</source>
         <translation>SPK手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="500"/>
+        <location filename="modbus/NCMachine.cpp" line="501"/>
         <source>SQDQBJTC</source>
         <translation>SPK驱动器报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="504"/>
+        <location filename="modbus/NCMachine.cpp" line="505"/>
         <source>SCFXWTC</source>
         <translation>SPK触发限位退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="509"/>
+        <location filename="modbus/NCMachine.cpp" line="510"/>
         <source>SDLTC</source>
         <translation>SPK短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="516"/>
-        <location filename="modbus/NCMachine.cpp" line="519"/>
+        <location filename="modbus/NCMachine.cpp" line="517"/>
+        <location filename="modbus/NCMachine.cpp" line="520"/>
         <source>YW</source>
         <translation>油位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="522"/>
+        <location filename="modbus/NCMachine.cpp" line="523"/>
         <source>HY</source>
         <translation>火焰</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="524"/>
+        <location filename="modbus/NCMachine.cpp" line="525"/>
         <source>SBJTC</source>
         <translation>SPK%1报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="530"/>
+        <location filename="modbus/NCMachine.cpp" line="531"/>
         <source>SZBMCW</source>
         <translation>SPK轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="535"/>
+        <location filename="modbus/NCMachine.cpp" line="536"/>
         <source>SCZMCW</source>
         <translation>SPK操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="540"/>
+        <location filename="modbus/NCMachine.cpp" line="541"/>
         <source>SWXGN</source>
         <translation>SPK无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="546"/>
+        <location filename="modbus/NCMachine.cpp" line="547"/>
         <source>WDY：</source>
         <translation>未定义：%1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2300"/>
+        <location filename="modbus/NCMachine.cpp" line="2329"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>目前不支持多于4个坐标轴加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2692"/>
-        <location filename="modbus/NCMachine.cpp" line="2701"/>
-        <location filename="modbus/NCMachine.cpp" line="3254"/>
+        <location filename="modbus/NCMachine.cpp" line="2721"/>
+        <location filename="modbus/NCMachine.cpp" line="2730"/>
+        <location filename="modbus/NCMachine.cpp" line="3282"/>
         <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2757"/>
+        <location filename="modbus/NCMachine.cpp" line="2785"/>
         <source>to_clear_machine_axis</source>
-        <translation type="unfinished">是否清零机械坐标？</translation>
+        <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3240"/>
+        <location filename="modbus/NCMachine.cpp" line="3268"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3440"/>
+        <location filename="modbus/NCMachine.cpp" line="3468"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR:上一个程序还在运行</translation>
     </message>
@@ -1957,7 +1954,7 @@
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="31"/>
@@ -1989,17 +1986,17 @@
         <location filename="forms_v1/NCMachinePanel.ui" line="88"/>
         <location filename="forms_v1/NCMachinePanel.ui" line="95"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="108"/>
         <source>SetState</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.ui" line="115"/>
         <source>Debug2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/NCMachinePanel.cpp" line="29"/>
@@ -2022,7 +2019,7 @@
     <message>
         <location filename="forms/edit/nceditform.ui" line="19"/>
         <source>NCEdit</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.ui" line="32"/>
@@ -2123,7 +2120,7 @@
         <location filename="forms/edit/nceditform.cpp" line="218"/>
         <location filename="forms/edit/nceditform.cpp" line="358"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>打开文件</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="219"/>
@@ -2132,7 +2129,7 @@
         <location filename="forms/edit/nceditform.cpp" line="359"/>
         <location filename="forms/edit/nceditform.cpp" line="408"/>
         <source>Supported Files</source>
-        <translation type="unfinished"></translation>
+        <translation>支持的文件</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="220"/>
@@ -2141,14 +2138,14 @@
         <location filename="forms/edit/nceditform.cpp" line="360"/>
         <location filename="forms/edit/nceditform.cpp" line="409"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>全部文件</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="303"/>
         <location filename="forms/edit/nceditform.cpp" line="331"/>
         <location filename="forms/edit/nceditform.cpp" line="407"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation>保存文件</translation>
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="353"/>
@@ -2162,7 +2159,7 @@
     <message>
         <location filename="forms/run/ncrun.ui" line="20"/>
         <source>NcRun</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2170,12 +2167,12 @@
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
         <source>N</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
 </context>
 <context>
@@ -2196,72 +2193,72 @@
     <message>
         <location filename="widgets/qnumericpad.ui" line="34"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="56"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="78"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="103"/>
         <source>+/-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="125"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="147"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="169"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="191"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="213"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="235"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="257"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="279"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="301"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="323"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/qnumericpad.ui" line="345"/>
@@ -2319,7 +2316,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1650"/>
         <source>SPK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1652"/>
@@ -2364,7 +2361,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1668"/>
         <source>ADC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1670"/>
@@ -2399,80 +2396,72 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1682"/>
         <source>AJC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1684"/>
         <source>Reg78</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1685"/>
         <source>Reg81</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1686"/>
         <source>Reg83</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1687"/>
         <source>Reg84</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1688"/>
         <source>Reg85</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1689"/>
         <source>Reg86</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
         <source>Confirm</source>
-        <translation type="unfinished"></translation>
+        <translation>确认</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="32"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="33"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="41"/>
         <source>Message</source>
-        <translation type="unfinished"></translation>
+        <translation>消息</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="56"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>确定</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="57"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
-        <location filename="utils/formutils.cpp" line="97"/>
+        <location filename="utils/formutils.cpp" line="98"/>
         <source>Please enter password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Y</source>
-        <translation type="vanished">是</translation>
-    </message>
-    <message>
-        <source>N</source>
-        <translation type="vanished">否</translation>
+        <translation>请输入密码</translation>
     </message>
 </context>
 <context>
@@ -2480,12 +2469,12 @@
     <message>
         <location filename="modbus/QtPropertyEditor.cpp" line="391"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="modbus/QtPropertyEditor.cpp" line="393"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2493,12 +2482,12 @@
     <message>
         <location filename="forms_v1/mainwindow.ui" line="19"/>
         <source>MainWindow2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="40"/>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="52"/>
@@ -2508,12 +2497,12 @@
     <message>
         <location filename="forms_v1/mainwindow.ui" line="84"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.ui" line="89"/>
         <source>RegWindow</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/mainwindow.cpp" line="65"/>
@@ -2536,37 +2525,37 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="13"/>
         <source>EDM</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="95"/>
         <source>G54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="102"/>
         <source>T0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="109"/>
         <source>T1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="116"/>
         <source>ST</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="145"/>
         <source>FLOAT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="231"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="234"/>
@@ -2574,22 +2563,22 @@
         <location filename="forms/mainwindow2.ui" line="292"/>
         <location filename="forms/mainwindow2.ui" line="304"/>
         <source>+00000.000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="244"/>
         <source>Y</source>
-        <translation type="unfinished">是</translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="257"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="260"/>
         <source>-00000.000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="401"/>
@@ -2597,17 +2586,17 @@
         <location filename="forms/mainwindow2.ui" line="486"/>
         <location filename="forms/mainwindow2.ui" line="520"/>
         <source>0.0000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="418"/>
         <source>C000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="452"/>
         <source>T000</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="469"/>
@@ -2615,48 +2604,48 @@
         <location filename="forms/mainwindow2.ui" line="537"/>
         <location filename="forms/mainwindow2.ui" line="554"/>
         <source>00:00:00</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="598"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>默认</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="605"/>
         <source>2024-02-20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="612"/>
         <source>09:03:29</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="653"/>
         <source>ErrorMessage</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="842"/>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="865"/>
         <source>Run</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="870"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="124"/>
         <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1710"/>
-        <location filename="forms/mainwindow2.cpp" line="1713"/>
+        <location filename="forms/mainwindow2.cpp" line="1741"/>
+        <location filename="forms/mainwindow2.cpp" line="1744"/>
         <source>YW</source>
         <translation>油位</translation>
     </message>
@@ -2672,7 +2661,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1329"/>
+        <location filename="forms/mainwindow2.cpp" line="1360"/>
         <source>GT</source>
         <translation>高跳</translation>
     </message>
@@ -2747,13 +2736,9 @@
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="325"/>
+        <location filename="forms/mainwindow2.cpp" line="328"/>
         <source>YX</source>
         <translation>右下</translation>
-    </message>
-    <message>
-        <source>QX</source>
-        <translation type="vanished">取消</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="875"/>
@@ -2773,286 +2758,287 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="893"/>
         <source>SS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="898"/>
         <source>Script</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="903"/>
         <source>PowerOn</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="908"/>
         <source>PowerOff</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="913"/>
         <source>SendLog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="918"/>
         <source>SaveGCode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="273"/>
+        <location filename="forms/mainwindow2.cpp" line="276"/>
         <source>XMML</source>
         <translation>项目目录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="302"/>
-        <location filename="forms/mainwindow2.cpp" line="322"/>
+        <location filename="forms/mainwindow2.cpp" line="305"/>
+        <location filename="forms/mainwindow2.cpp" line="325"/>
         <source>SD</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="303"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
         <source>EZD</source>
         <translation>EDM自动</translation>
     </message>
     <message>
-        <source>BJ</source>
-        <translation type="vanished">报警</translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="305"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>JG</source>
         <translation>加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="306"/>
+        <location filename="forms/mainwindow2.cpp" line="309"/>
         <source>SheDing</source>
-        <translation type="unfinished">设定</translation>
+        <translation>设定</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="323"/>
+        <location filename="forms/mainwindow2.cpp" line="326"/>
         <source>ZD</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="304"/>
-        <location filename="forms/mainwindow2.cpp" line="324"/>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
+        <location filename="forms/mainwindow2.cpp" line="327"/>
         <source>BianJi</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="326"/>
+        <location filename="forms/mainwindow2.cpp" line="329"/>
         <source>QT</source>
         <translation>其他</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="353"/>
+        <location filename="forms/mainwindow2.cpp" line="356"/>
         <source>ZBSZ</source>
         <translation>坐标设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="356"/>
+        <location filename="forms/mainwindow2.cpp" line="359"/>
         <source>DWYD</source>
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="359"/>
+        <location filename="forms/mainwindow2.cpp" line="362"/>
         <source>WZJY</source>
         <translation>位置记忆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="362"/>
+        <location filename="forms/mainwindow2.cpp" line="365"/>
         <source>DMDW</source>
         <translation>端面定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="365"/>
+        <location filename="forms/mainwindow2.cpp" line="368"/>
         <source>ZZX</source>
         <translation>柱中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="368"/>
+        <location filename="forms/mainwindow2.cpp" line="371"/>
         <source>JZX</source>
         <translation>角中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="371"/>
+        <location filename="forms/mainwindow2.cpp" line="374"/>
         <source>KZX</source>
         <translation>孔中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="374"/>
+        <location filename="forms/mainwindow2.cpp" line="377"/>
         <source>SDDY</source>
         <translation>三点定圆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="377"/>
+        <location filename="forms/mainwindow2.cpp" line="380"/>
         <source>FDDW</source>
         <translation>放电定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="385"/>
+        <location filename="forms/mainwindow2.cpp" line="388"/>
         <source>ZDCS</source>
         <translation>自动参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
+        <location filename="forms/mainwindow2.cpp" line="399"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="399"/>
+        <location filename="forms/mainwindow2.cpp" line="402"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="408"/>
+        <location filename="forms/mainwindow2.cpp" line="411"/>
         <source>NJG</source>
         <translation>NC加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="413"/>
+        <location filename="forms/mainwindow2.cpp" line="416"/>
         <source>JGJL</source>
         <translation>加工记录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="417"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>XTSZ</source>
         <translation>系统设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="418"/>
         <location filename="forms/mainwindow2.cpp" line="421"/>
-        <location filename="forms/mainwindow2.cpp" line="1257"/>
-        <source>FDCS</source>
+        <source>FangDianCanShu</source>
         <translation>放电参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="422"/>
+        <location filename="forms/mainwindow2.cpp" line="424"/>
+        <location filename="forms/mainwindow2.cpp" line="1288"/>
+        <source>FDCS</source>
+        <translation>放电测试</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="425"/>
         <source>LJBC</source>
         <translation>螺距补偿</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="427"/>
+        <location filename="forms/mainwindow2.cpp" line="430"/>
         <source>CKSZ</source>
         <translation>串口设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="430"/>
+        <location filename="forms/mainwindow2.cpp" line="433"/>
         <source>GY</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="474"/>
-        <location filename="forms/mainwindow2.cpp" line="1428"/>
+        <location filename="forms/mainwindow2.cpp" line="476"/>
+        <location filename="forms/mainwindow2.cpp" line="1459"/>
         <source>CKWLJ</source>
-        <translation>串口未连接！</translation>
+        <translation>串口未连接</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="479"/>
-        <location filename="forms/mainwindow2.cpp" line="1539"/>
+        <location filename="forms/mainwindow2.cpp" line="481"/>
+        <location filename="forms/mainwindow2.cpp" line="1570"/>
         <source>DDYX</source>
         <translation>等待运行</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="653"/>
+        <location filename="forms/mainwindow2.cpp" line="655"/>
         <source>MNJG</source>
         <translation>模拟加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="661"/>
+        <location filename="forms/mainwindow2.cpp" line="663"/>
         <source>JGHGJ</source>
         <translation>加工后关机</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="904"/>
-        <location filename="forms/mainwindow2.cpp" line="1573"/>
+        <location filename="forms/mainwindow2.cpp" line="915"/>
+        <location filename="forms/mainwindow2.cpp" line="929"/>
+        <location filename="forms/mainwindow2.cpp" line="1604"/>
         <source>YXZ</source>
         <translation>运行中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="982"/>
+        <location filename="forms/mainwindow2.cpp" line="1009"/>
         <source>to_clear_machine_axis</source>
-        <translation type="unfinished">是否清零机械坐标？</translation>
+        <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="989"/>
+        <location filename="forms/mainwindow2.cpp" line="1016"/>
         <source>SFJXZDHL</source>
         <translation>是否进行自动回零？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1103"/>
+        <location filename="forms/mainwindow2.cpp" line="1130"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1269"/>
-        <location filename="forms/mainwindow2.cpp" line="1338"/>
+        <location filename="forms/mainwindow2.cpp" line="1300"/>
+        <location filename="forms/mainwindow2.cpp" line="1369"/>
         <source>FS</source>
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1270"/>
-        <location filename="forms/mainwindow2.cpp" line="1339"/>
+        <location filename="forms/mainwindow2.cpp" line="1301"/>
+        <location filename="forms/mainwindow2.cpp" line="1370"/>
         <source>GB</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1554"/>
+        <location filename="forms/mainwindow2.cpp" line="1585"/>
         <source>DDZ</source>
         <translation>对刀中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1557"/>
+        <location filename="forms/mainwindow2.cpp" line="1588"/>
         <source>HLZ</source>
-        <translation>回零Z</translation>
+        <translation>回零中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1562"/>
+        <location filename="forms/mainwindow2.cpp" line="1593"/>
         <source>FDZ</source>
         <translation>放电中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1565"/>
+        <location filename="forms/mainwindow2.cpp" line="1596"/>
         <source>FDZT</source>
         <translation>放电暂停</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1570"/>
+        <location filename="forms/mainwindow2.cpp" line="1601"/>
         <source>ZTZ</source>
         <translation>暂停中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1587"/>
+        <location filename="forms/mainwindow2.cpp" line="1618"/>
         <source>DLBJ</source>
         <translation>短路报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1627"/>
+        <location filename="forms/mainwindow2.cpp" line="1658"/>
         <source>CFDJBJ</source>
         <translation>伺服电机报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1643"/>
+        <location filename="forms/mainwindow2.cpp" line="1674"/>
         <source>DDYWZ</source>
         <translation>等待液位中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1664"/>
-        <location filename="forms/mainwindow2.cpp" line="1668"/>
+        <location filename="forms/mainwindow2.cpp" line="1695"/>
+        <location filename="forms/mainwindow2.cpp" line="1699"/>
         <source>XXW</source>
         <translation>X-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1672"/>
-        <location filename="forms/mainwindow2.cpp" line="1676"/>
+        <location filename="forms/mainwindow2.cpp" line="1703"/>
+        <location filename="forms/mainwindow2.cpp" line="1707"/>
         <source>YXW</source>
         <translation>Y-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1680"/>
-        <location filename="forms/mainwindow2.cpp" line="1684"/>
+        <location filename="forms/mainwindow2.cpp" line="1711"/>
+        <location filename="forms/mainwindow2.cpp" line="1715"/>
         <source>ZXW</source>
         <translation>Z-限位</translation>
     </message>
@@ -3062,24 +3048,24 @@
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="210"/>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="212"/>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="227"/>
         <source>GCode Files</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="213"/>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="228"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="editor/CAMotics_gcode_editor.cpp" line="225"/>
         <source>Save File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3095,7 +3081,7 @@
     <message>
         <location filename="forms_v1/regwindow.ui" line="13"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="26"/>
@@ -3110,42 +3096,42 @@
     <message>
         <location filename="forms_v1/regwindow.ui" line="44"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="54"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="61"/>
         <source>Verbosity</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="71"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="78"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="88"/>
         <source>Read Reg</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="95"/>
         <source>Write Reg</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="108"/>
         <source>JOG</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="125"/>
@@ -3247,37 +3233,37 @@
     <message>
         <location filename="forms_v1/regwindow.ui" line="162"/>
         <source>LOC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="204"/>
         <source>CMV_TOUCH</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="246"/>
         <source>CMV_TOLMT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="288"/>
         <source>CMV_FRMLMT</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="330"/>
         <source>CMV_TOZSIG</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="372"/>
         <source>SPK</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.ui" line="572"/>
         <source>Modbus File</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="126"/>
@@ -3325,7 +3311,7 @@
     <message>
         <location filename="forms_v1/regwindow.cpp" line="355"/>
         <source>ADC</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="362"/>
@@ -3459,7 +3445,7 @@
     <message>
         <location filename="forms/auto/runautoform.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="31"/>
@@ -3510,7 +3496,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="38"/>
@@ -3580,7 +3566,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
         <source>0.350</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="135"/>
@@ -3588,11 +3574,7 @@
         <location filename="forms/auto/runautoparamform.ui" line="196"/>
         <location filename="forms/auto/runautoparamform.ui" line="203"/>
         <source>0.000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XX</source>
-        <translation type="vanished">消息</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.cpp" line="363"/>
@@ -3668,7 +3650,7 @@
     <message>
         <location filename="forms/run/runmanual.ui" line="13"/>
         <source>RunManual</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="62"/>
@@ -3696,12 +3678,12 @@
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="13"/>
         <source>RunManual</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="56"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="63"/>
@@ -3780,28 +3762,29 @@
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="211"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="283"/>
         <source>JGZBZWXZ</source>
         <translation>加工坐标轴未选择</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="219"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="302"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="307"/>
         <source>DZJGSYGYXDZB</source>
         <translation>多个加工时应该用相对坐标</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="465"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="470"/>
         <source>BZCLXJGMS</source>
         <translation>不支持连续加工模式</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="557"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="562"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/run/runmanualmulti.cpp" line="564"/>
-        <location filename="forms/run/runmanualmulti.cpp" line="805"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="569"/>
+        <location filename="forms/run/runmanualmulti.cpp" line="810"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
@@ -3897,19 +3880,19 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="106"/>
         <location filename="forms/manual/sandiandingwei.ui" line="260"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="128"/>
         <location filename="forms/manual/sandiandingwei.ui" line="282"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="61"/>
@@ -3930,17 +3913,17 @@
         <location filename="forms/manual/sandiandingwei.ui" line="150"/>
         <location filename="forms/manual/sandiandingwei.ui" line="310"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="170"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="214"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="221"/>
@@ -3968,9 +3951,8 @@
         <translation>接触感知回退值</translation>
     </message>
     <message>
-        <location filename="forms/manual/sandiandingwei.ui" line="417"/>
         <source>CS</source>
-        <translation>测试</translation>
+        <translation type="vanished">测试</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="424"/>
@@ -3980,17 +3962,22 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="343"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="376"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/sandiandingwei.ui" line="417"/>
+        <source>ChiShu</source>
+        <translation>次数</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="444"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -3998,77 +3985,77 @@
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="20"/>
         <source>Modbus RTU Settings</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="48"/>
         <source>Serial device</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="55"/>
         <source>Response Timeout (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="75"/>
         <source>Data Bits</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="120"/>
         <source>Stop Bits</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="133"/>
         <source>Scan Rate (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="140"/>
         <source>Byte Timeout (ms)</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="196"/>
         <source>Serial port</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="206"/>
         <source>Baud</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="223"/>
         <source>/dev/ttyS</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="228"/>
         <source>/dev/ttyUSB</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="323"/>
         <source>Parity</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="340"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="345"/>
         <source>Odd</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms_v1/settingsmodbusrtu.ui" line="350"/>
         <source>Even</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4076,7 +4063,7 @@
     <message>
         <location filename="forms/component/tool4zeroandhalfaxis.ui" line="14"/>
         <source>Tool4ZeroAndHalfAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4084,7 +4071,7 @@
     <message>
         <location filename="forms/component/tool4buttons.ui" line="14"/>
         <source>Tool4Buttons</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4105,7 +4092,7 @@
     <message>
         <location filename="forms/component/tool4coorset.ui" line="13"/>
         <source>Tool4CoorSet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4coorset.ui" line="24"/>
@@ -4131,7 +4118,7 @@
     <message>
         <location filename="forms/component/tool4gcode.ui" line="13"/>
         <source>Tool4GCode</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4gcode.ui" line="24"/>
@@ -4144,22 +4131,22 @@
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="14"/>
         <source>Tool4HalfAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="31"/>
         <source>X 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="44"/>
         <source>Y 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4halfaxis.ui" line="57"/>
         <source>Z 1/2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4175,17 +4162,17 @@
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="13"/>
         <source>Tool4IterCoor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="27"/>
         <source>G054</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="37"/>
         <source>G54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="44"/>
@@ -4211,7 +4198,7 @@
     <message>
         <location filename="forms/component/tool4loadsave.ui" line="13"/>
         <source>Tool4LoadSave</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4loadsave.ui" line="24"/>
@@ -4229,7 +4216,7 @@
     <message>
         <location filename="forms/component/tool4posset.ui" line="13"/>
         <source>Tool4PosSet</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4posset.ui" line="24"/>
@@ -4244,7 +4231,7 @@
     <message>
         <location filename="forms/component/tool4posset.ui" line="34"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4252,22 +4239,22 @@
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="14"/>
         <source>Tool4SwitchCoor</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="25"/>
         <source>&lt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="35"/>
         <source>G54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4switchcoor.ui" line="42"/>
         <source>&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4275,22 +4262,22 @@
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="14"/>
         <source>Tool4ZeroAxis</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="26"/>
         <source>X = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="33"/>
         <source>Y = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/component/tool4zeroaxis.ui" line="40"/>
         <source>Z = 0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -4321,7 +4308,7 @@
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="36"/>
@@ -4343,28 +4330,28 @@
         <location filename="forms/manual/weizhijiyi.ui" line="102"/>
         <location filename="forms/manual/weizhijiyi.ui" line="134"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="89"/>
         <location filename="forms/manual/weizhijiyi.ui" line="118"/>
         <location filename="forms/manual/weizhijiyi.ui" line="150"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="37"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="64"/>
         <source>JY</source>
         <oldsource>JY</oldsource>
-        <translation type="unfinished">记忆</translation>
+        <translation>记忆</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="38"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="78"/>
         <source>YD</source>
         <oldsource>YD</oldsource>
-        <translation type="unfinished">移动</translation>
+        <translation>移动</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="52"/>
@@ -4383,19 +4370,14 @@
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="79"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="463"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="927"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="forms/manual/weizhiyidongform.ui" line="46"/>
-        <source>YD</source>
-        <translation>摇动</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="115"/>
@@ -4412,20 +4394,20 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="156"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="501"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="178"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="523"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="224"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="612"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="1020"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="260"/>
@@ -4465,14 +4447,19 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="702"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="854"/>
         <source>Y</source>
-        <translation type="unfinished">Y</translation>
+        <translation>Y</translation>
+    </message>
+    <message>
+        <location filename="forms/manual/weizhiyidongform.ui" line="46"/>
+        <source>YiDong</source>
+        <translation>移动</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="384"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="554"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="768"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="792"/>
@@ -4480,7 +4467,7 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="951"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="1044"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="816"/>
@@ -4488,12 +4475,12 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="975"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="1068"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.cpp" line="66"/>
         <source>to_clear_machine_axis</source>
-        <translation type="unfinished">是否清零机械坐标？</translation>
+        <translation>是否清零机械坐标？</translation>
     </message>
 </context>
 <context>
@@ -4506,587 +4493,587 @@
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="50"/>
         <source>0x60</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="53"/>
         <source>Esc</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="69"/>
         <source>0x31</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="72"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="88"/>
         <source>0x32</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="91"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="107"/>
         <source>0x33</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="110"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="126"/>
         <source>0x34</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="129"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="145"/>
         <source>0x35</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="148"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="164"/>
         <source>0x36</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="167"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="183"/>
         <source>0x37</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="186"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="202"/>
         <source>0x38</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="205"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="221"/>
         <source>0x39</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="224"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="240"/>
         <source>0x30</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="243"/>
         <source>0</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="259"/>
         <source>0x2d</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="262"/>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="278"/>
         <source>13</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="281"/>
         <source>=</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="297"/>
         <source>0x01000003</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="300"/>
         <source>←</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="323"/>
         <source>0x01000024</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="326"/>
         <source>Caps</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="345"/>
         <source>0x41</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="348"/>
         <source>A</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="364"/>
         <source>0x53</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="367"/>
         <source>S</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="383"/>
         <source>0x44</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="386"/>
         <source>D</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="402"/>
         <source>0x46</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="405"/>
         <source>F</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="421"/>
         <source>0x47</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="424"/>
         <source>G</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="440"/>
         <source>0x48</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="443"/>
         <source>H</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="459"/>
         <source>0x4a</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="462"/>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="478"/>
         <source>0x4b</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="481"/>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="497"/>
         <source>0x4c</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="500"/>
         <source>L</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="516"/>
         <source>0x3b</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="519"/>
         <source>;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="535"/>
         <source>0x27</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="538"/>
         <source>&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="554"/>
         <source>0x01000004</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="557"/>
         <source>  ↵  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="580"/>
         <source>0x01000020</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="583"/>
         <source>Shift</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="602"/>
         <source>0x5a</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="605"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="621"/>
         <source>0x58</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="624"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="640"/>
         <source>0x43</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="643"/>
         <source>C</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="659"/>
         <source>0x56</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="662"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="678"/>
         <source>0x42</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="681"/>
         <source>B</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="697"/>
         <source>0x4e</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="700"/>
         <source>N</source>
-        <translation type="unfinished">否</translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="716"/>
         <source>0x4d</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="719"/>
         <source>M</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="735"/>
         <source>0x2c</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="738"/>
         <source>,</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="754"/>
         <source>0x2e</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="757"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="773"/>
         <source>0x2f</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="776"/>
         <source>/</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="792"/>
         <source>0x01000013</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="795"/>
         <source>  ↑  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="828"/>
         <source>0x01000021</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="831"/>
         <source>Ctrl</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="850"/>
         <source>0x01000023</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="853"/>
         <source>Alt</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="872"/>
         <source>0x20</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="891"/>
         <source>0x01000012</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="894"/>
         <source>  ←  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="907"/>
         <source>0x01000015</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="910"/>
         <source>  ↓  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="923"/>
         <source>0x01000014</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="926"/>
         <source>  →  </source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="946"/>
         <source>0x01000001</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="949"/>
         <source>Tab</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="965"/>
         <source>0x51</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="968"/>
         <source>Q</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="984"/>
         <source>0x57</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="987"/>
         <source>W</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1003"/>
         <source>0x45</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1006"/>
         <source>E</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1022"/>
         <source>0x52</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1025"/>
         <source>R</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1041"/>
         <source>0x54</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1044"/>
         <source>T</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1060"/>
         <source>0x59</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1063"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1079"/>
         <source>0x55</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1082"/>
         <source>U</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1098"/>
         <source>0x49</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1101"/>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1117"/>
         <source>0x4f</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1120"/>
         <source>O</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1136"/>
         <source>0x50</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1139"/>
         <source>P</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1155"/>
         <source>0x5b</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1158"/>
         <source>[</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1174"/>
         <source>0x5d</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1177"/>
         <source>]</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1193"/>
         <source>0x5c</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="widgets/WidgetKeyboard.ui" line="1196"/>
         <source>\</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5298,13 +5285,13 @@
         <location filename="forms/other/xitongshezhiform.cpp" line="297"/>
         <source>KZSDBS</source>
         <oldsource>KZSDBS</oldsource>
-        <translation type="unfinished">空载速度倍数</translation>
+        <translation>空载速度倍数</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="303"/>
         <source>CFSDBS</source>
         <oldsource>CFSDBS</oldsource>
-        <translation type="unfinished">伺服速度倍数</translation>
+        <translation>伺服速度倍数</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="307"/>
@@ -5314,7 +5301,7 @@
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="309"/>
         <source>GDMMWZJFH</source>
-        <translation type="unfinished"></translation>
+        <translation>G代码末尾增加分号</translation>
     </message>
     <message>
         <location filename="forms/other/xitongshezhiform.cpp" line="312"/>
@@ -5492,7 +5479,7 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="13"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="56"/>
@@ -5502,17 +5489,17 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="76"/>
         <source>X</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="122"/>
         <source>Y</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="168"/>
         <source>Z</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="201"/>
@@ -5530,9 +5517,8 @@
         <translation>坐标0设定</translation>
     </message>
     <message>
-        <location filename="forms/manual/zhuzhongxingform.ui" line="333"/>
         <source>CS</source>
-        <translation>测试</translation>
+        <translation type="vanished">测试</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="347"/>
@@ -5543,24 +5529,29 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="219"/>
         <source>0.5</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="241"/>
         <location filename="forms/manual/zhuzhongxingform.ui" line="293"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="263"/>
         <location filename="forms/manual/zhuzhongxingform.ui" line="315"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/manual/zhuzhongxingform.ui" line="333"/>
+        <source>ChiShu</source>
+        <translation>次数</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="340"/>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.cpp" line="223"/>
@@ -5573,7 +5564,7 @@
     <message>
         <location filename="forms/manual/zuobiaoxishezi.ui" line="18"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/manual/zuobiaoxishezi.cpp" line="50"/>
@@ -5591,7 +5582,7 @@
     <message>
         <location filename="forms/other/about.ui" line="13"/>
         <source>about</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="forms/other/about.ui" line="21"/>
@@ -5624,7 +5615,7 @@
     <message>
         <location filename="forms/component/displayloran.ui" line="14"/>
         <source>displayloran</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -5640,7 +5631,7 @@
     <message>
         <location filename="forms/other/xitongshezhiform.ui" line="16"/>
         <source>xitongshezhiform</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>

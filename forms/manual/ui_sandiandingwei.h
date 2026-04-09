@@ -424,7 +424,7 @@ public:
         btnA3->setText(QCoreApplication::translate("SanDianDingWeiForm", "3", nullptr));
         label_1->setText(QCoreApplication::translate("SanDianDingWeiForm", "KJL", nullptr));
         label_4->setText(QCoreApplication::translate("SanDianDingWeiForm", "JCGZHTZ", nullptr));
-        label_9->setText(QCoreApplication::translate("SanDianDingWeiForm", "CS", nullptr));
+        label_9->setText(QCoreApplication::translate("SanDianDingWeiForm", "ChiShu", nullptr));
         label_8->setText(QCoreApplication::translate("SanDianDingWeiForm", "CDWZ", nullptr));
         btnZ->setText(QCoreApplication::translate("SanDianDingWeiForm", "Z", nullptr));
         inZ->setText(QString());

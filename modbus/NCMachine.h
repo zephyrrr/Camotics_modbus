@@ -86,6 +86,10 @@ class ModbusTaskCache
 public:
 	void addTask(ModbusTask* task, int priority = 0) {
 		assert(priority >= 0 && priority < TASKQUEUE_MAX_COUNT);
+		if (m_modbusTasksCache[priority].size() > TASKQUEUE_ITEM_MAX_COUNT) {
+			LOG_WARNING("ModbusTaskCache: addTask: priority " << priority << " has too many tasks, ignore the new task. ");
+			return;
+		}
 		m_modbusTasksCache[priority].push(task);
 	}
 	//ModbusTask* addTaskWriteFile(int subAddr, int nb, std::string writeData, int priority = 0) {
@@ -283,6 +287,7 @@ private:
 	// 2: 运行状态
 	// 0: RLST.u16Rslt
 	// 1: RLST.u16Para 
+	std::atomic<int> m_stateDirty = 1;
 	cb::Vector<3, uint16_t> m_state;
 	// 端口输入信息，限位、回零等
 	cb::Vector<2, uint16_t> m_inputFlag;

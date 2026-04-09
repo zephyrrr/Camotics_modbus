@@ -1,4 +1,4 @@
-﻿<ui version="4.0">
+<ui version="4.0">
  <class>WeiZhiYiDongForm</class>
  <widget class="QWidget" name="WeiZhiYiDongForm">
   <property name="geometry">
@@ -43,7 +43,7 @@
          </property>
          <widget class="QWidget" name="tab">
           <attribute name="title">
-           <string>YiDong</string>
+           <string>YD</string>
           </attribute>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>

@@ -388,7 +388,7 @@ public:
         inY->setText(QString());
         inSetToZTouch->setText(QCoreApplication::translate("JiaoDingWeiForm", "ON", nullptr));
         pushButton->setText(QCoreApplication::translate("JiaoDingWeiForm", "OFF", nullptr));
-        label_6->setText(QCoreApplication::translate("JiaoDingWeiForm", "CS", nullptr));
+        label_6->setText(QCoreApplication::translate("JiaoDingWeiForm", "ChiShu", nullptr));
         inCnt->setText(QCoreApplication::translate("JiaoDingWeiForm", "1", nullptr));
         labelPix->setText(QString());
         textBrowser->setHtml(QString());

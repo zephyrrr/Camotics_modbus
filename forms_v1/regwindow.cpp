@@ -554,7 +554,7 @@ void RegWindow::UpdateState2(unsigned long long key)
 
 void RegWindow::on_btnStart_clicked()
 {
-	ModbusMainWindow::modbusConnect(true, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMain::modbusConnect(true, m_modbus, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbus->isConnected());
 	ui->btnStop->setEnabled(m_modbus->isConnected());
@@ -564,7 +564,7 @@ void RegWindow::on_btnStart_clicked()
 
 void RegWindow::on_btnStop_clicked()
 {
-	ModbusMainWindow::modbusConnect(false, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMain::modbusConnect(false, m_modbus, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbus->isConnected());
 	ui->btnStop->setEnabled(m_modbus->isConnected());

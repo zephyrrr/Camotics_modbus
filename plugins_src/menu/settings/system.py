@@ -1,0 +1,215 @@
+# system.py - 系统设置页面
+# 放置在"设置"菜单下，提供关机和管理员模式切换功能
+#
+# 目录映射: menu/settings -> Page 4 (设置)
+#
+# 多语言支持说明:
+# Python 中使用 QCoreApplication.translate("Context", "sourceText") 实现多语言
+# 对应 .ts 文件中需要添加翻译条目:
+#   <context>
+#     <name>SystemPlugin</name>
+#     <message>
+#       <source>System Settings</source>
+#       <translation>系统设置</translation>
+#     </message>
+#   </context>
+#
+# 翻译流程:
+# 1. 在 Python 中使用 tr() 函数包裹字符串
+# 2. 手动编辑 Translation_zh_CN.ts 添加翻译条目 (context name: SystemPlugin)
+# 3. 运行 lrelease 编译 .qm 文件
+
+from PythonQt.QtGui import *
+from PythonQt.QtCore import *
+import subprocess
+import os
+
+# Plugin metadata
+PLUGIN_NAME = "系统"  # 可使用 tr() 支持多语言: tr("System")
+
+
+# =====================================================
+# 多语言翻译辅助函数
+# =====================================================
+# 方法1: 使用 QCoreApplication.translate (推荐)
+# 参数: context - 上下文名称(对应 .ts 文件中的 <name>)
+#       sourceText - 源文本
+#       disambiguation - 可选，消歧义
+#       n - 可选，用于复数形式
+def tr(source_text, context="SystemPlugin"):
+    """
+    翻译函数 - 类似 Qt 的 tr()
+
+    Args:
+        source_text: 源文本（英文或拼音缩写）
+        context: 翻译上下文，对应 .ts 文件中的 <name>
+
+    Returns:
+        翻译后的文本
+    """
+    return QCoreApplication.translate(context, source_text)
+
+
+def create_widget(window):
+    """Create and return the plugin widget."""
+    widget = QWidget()
+    widget.setObjectName("SystemSettingsWidget")
+
+    layout = QVBoxLayout(widget)
+    layout.setSpacing(20)
+    layout.setContentsMargins(30, 30, 30, 30)
+
+    # Title
+    title = QLabel(tr("XTSZ"))  # 系统设置
+    title.setStyleSheet("font-size: 24px; font-weight: bold; color: #333;")
+    title.setAlignment(Qt.AlignCenter)
+    layout.addWidget(title)
+
+    # Spacer
+    layout.addSpacing(30)
+
+    # Button container
+    btn_container = QWidget()
+    btn_layout = QHBoxLayout(btn_container)
+    btn_layout.setSpacing(40)
+
+    # Shutdown button
+    btn_shutdown = QPushButton(tr("GJ"))  # 关机
+    btn_shutdown.setObjectName("btnShutdown")
+    btn_shutdown.setMinimumSize(150, 80)
+    btn_shutdown.setStyleSheet("""
+        QPushButton {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 10px;
+        }
+        QPushButton:hover {
+            background-color: #c0392b;
+        }
+        QPushButton:pressed {
+            background-color: #a93226;
+        }
+    """)
+
+    # Admin button
+    btn_admin = QPushButton(tr("GLY"))  # 管理员
+    btn_admin.setObjectName("btnAdmin")
+    btn_admin.setMinimumSize(150, 80)
+    btn_admin.setStyleSheet("""
+        QPushButton {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #3498db;
+            color: white;
+            border-radius: 10px;
+        }
+        QPushButton:hover {
+            background-color: #2980b9;
+        }
+        QPushButton:pressed {
+            background-color: #21618c;
+        }
+    """)
+
+    btn_layout.addWidget(btn_shutdown)
+    btn_layout.addWidget(btn_admin)
+    layout.addWidget(btn_container)
+
+    # Status label
+    status_label = QLabel("")
+    status_label.setObjectName("statusLabel")
+    status_label.setStyleSheet("font-size: 14px; color: #666;")
+    status_label.setAlignment(Qt.AlignCenter)
+    layout.addWidget(status_label)
+
+    layout.addStretch()
+
+    # Button handlers
+    def on_shutdown():
+        """Handle shutdown button click."""
+        # Confirm shutdown
+        confirm = QMessageBox.question(
+            widget,
+            tr("QRGJ"),  # 确认关机
+            tr("QDYGBXTM"),  # 确定要关闭系统吗？
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No
+        )
+
+        if confirm == QMessageBox.Yes:
+            status_label.setText(tr("ZGJ"))  # 正在关机...
+            status_label.setStyleSheet("font-size: 14px; color: #e74c3c;")
+            # Windows shutdown command
+            try:
+                subprocess.run(["shutdown", "/s", "/t", "5"], shell=True)
+            except Exception as e:
+                status_label.setText(f"{tr('GJSB')}: {str(e)}")  # 关机失败
+                status_label.setStyleSheet("font-size: 14px; color: red;")
+
+    def on_admin():
+        """Handle admin button click - enter admin mode with password."""
+        # Use QInputDialog to get password
+        password, ok = QInputDialog.getText(
+            widget,
+            tr("GLYDL"),  # 管理员登录
+            tr("QSRMM"),  # 请输入密码:
+            QLineEdit.Password,
+            ""
+        )
+
+        if ok and password:
+            # Check password
+            # Reference: keyPressEvent in QtWin2
+            # Password is stored in SystemSettings with key "System/Password"
+            # Default password is "1234"
+
+            correct_password = "1234"  # Default password
+
+            if password == correct_password:
+                status_label.setText(tr("JGLYMS"))  # 进入管理员模式
+                status_label.setStyleSheet("font-size: 14px; color: green;")
+
+                # Send F12 key event to trigger switchUserMode
+                # This simulates pressing F12 which triggers the admin mode toggle
+                print("[System] Sending F12 key event to switch mode")
+
+                # Create F12 key press event
+                key_event = QKeyEvent(QEvent.KeyPress, Qt.Key_F12, Qt.NoModifier)
+
+                # Send to the main window
+                QApplication.postEvent(window, key_event)
+
+                # Also send key release event
+                key_release_event = QKeyEvent(QEvent.KeyRelease, Qt.Key_F12, Qt.NoModifier)
+                QApplication.postEvent(window, key_release_event)
+
+                print("[System] F12 key events sent")
+            else:
+                status_label.setText(tr("MMCW"))  # 密码错误
+                status_label.setStyleSheet("font-size: 14px; color: red;")
+                QMessageBox.warning(widget, tr("CW"), tr("MMCW"))  # 错误, 密码错误！
+
+    btn_shutdown.clicked.connect(on_shutdown)
+    btn_admin.clicked.connect(on_admin)
+
+    print("[System Settings Plugin] Widget loaded")
+    return widget
+
+
+def on_show(window):
+    """Called when the widget is shown."""
+    print("[System Settings] Widget shown")
+    # Update status based on current mode
+    widget = window.findChild(QWidget, "SystemSettingsWidget")
+    if widget:
+        status_label = widget.findChild(QLabel, "statusLabel")
+        if status_label:
+            status_label.setText("")
+            status_label.setStyleSheet("font-size: 14px; color: #666;")
+
+
+def on_hide(window):
+    """Called when the widget is hidden."""
+    print("[System Settings] Widget hidden")

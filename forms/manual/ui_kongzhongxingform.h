@@ -288,7 +288,7 @@ public:
         label_1->setText(QCoreApplication::translate("KongZhongXingForm", "KJL", nullptr));
         label_4->setText(QCoreApplication::translate("KongZhongXingForm", "JCGZHTZ", nullptr));
         inBack->setText(QCoreApplication::translate("KongZhongXingForm", "0.5", nullptr));
-        label_5->setText(QCoreApplication::translate("KongZhongXingForm", "CS", nullptr));
+        label_5->setText(QCoreApplication::translate("KongZhongXingForm", "ChiShu", nullptr));
         inCnt->setText(QCoreApplication::translate("KongZhongXingForm", "1", nullptr));
         labelPix->setText(QString());
         textBrowser->setHtml(QString());

@@ -673,13 +673,13 @@ std::string NCMachineParametersC::GetCurrentByName(std::string name)
 
 void NCMachineParametersC::ExecuteCmds(NCMachine* ncMachine)
 {
-	DataForm* dataForm3 = DataForms::getInstance()->getDataForm("xitongshezhi3");
-	PropertyObjects::getInstance()->propertyObjectYd->setsdjcxfs(dataForm3->getValue("JGJSPDFGS").toInt());
-	PropertyObjects::getInstance()->propertyObjectYd->settdqmshtjl(dataForm3->getValue("MTDGD").toInt());
-	PropertyObjects::getInstance()->propertyObjectYd->settdqmshtsd(dataForm3->getValue("MTDSD").toInt());
+	//DataForm* dataForm3 = DataForms::getInstance()->getDataForm("xitongshezhi3");
+	//PropertyObjects::getInstance()->propertyObjectYd->setsdjcxfs(dataForm3->getValue("JGJSPDFGS").toInt());
+	//PropertyObjects::getInstance()->propertyObjectYd->settdqmshtjl(dataForm3->getValue("MTDGD").toInt());
+	//PropertyObjects::getInstance()->propertyObjectYd->settdqmshtsd(dataForm3->getValue("MTDSD").toInt());
 
-	DataForm* dataForm5 = DataForms::getInstance()->getDataForm("xitongshezhi5");
-	PropertyObjects::getInstance()->propertyObjectReg84->setv(dataForm5->getValue("SFHFJL").toInt());
+	//DataForm* dataForm5 = DataForms::getInstance()->getDataForm("xitongshezhi5");
+	//PropertyObjects::getInstance()->propertyObjectReg84->setv(dataForm5->getValue("SFHFJL").toInt());
 
 	PropertyObjects::getInstance()->propertyObjectFdhl->ExecuteCmds(ncMachine);
 	PropertyObjects::getInstance()->propertyObjectFdjg->ExecuteCmds(ncMachine);
