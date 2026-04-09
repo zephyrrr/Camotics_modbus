@@ -367,3 +367,15 @@ FodyWeavers.xsd
 /plugins_src/RunAutoParamForm/tool/dist
 /plugins_src/RunAutoParamForm/tool/build/convert_xls_to_csv
 /Translation_zh_CN - 副本.ts
+/plugins_src/RunAutoParamForm/v1/EDM工具.zip
+/plugins_src/RunAutoParamForm/v1/source_parsed.csv
+/plugins_src/RunAutoParamForm/v1/.claude
+/plugins_src/RunAutoParamForm/v1/agent-harness
+/plugins_src/RunAutoParamForm/v1/ap_parser.py
+/plugins_src/RunAutoParamForm/v1/autoEx_parsed.csv
+/plugins_src/RunAutoParamForm/v1/auto_parsed.csv
+/plugins_src/RunAutoParamForm/v1/edm_auto_process.py
+/plugins_src/bak/RunAutoParamForm/tool/build/convert_xls_to_csv
+/plugins_src/bak/RunAutoParamForm/tool/dist
+/plugins_src/bak
+/plugins_src/RunAutoParamForm/v1/EDM工具
