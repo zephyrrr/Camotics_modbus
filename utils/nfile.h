@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QObject>
 #include <QSaveFile>
@@ -18,4 +18,7 @@ public:
 
 public:
 	void close();
+
+	// 新增：静态清理函数，一键清理残留临时文件
+	static void cleanStaleTempFiles(const QString& dirPath);
 };

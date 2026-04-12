@@ -220,6 +220,10 @@ QtWin2::QtWin2(QWidget* parent)
 	//cb::Logger::instance().setScreenStream(NULL);
 	cb::Logger::instance().startLogFile(LOGGER_FILE_NAME);
 
+	NFile::cleanStaleTempFiles("data");
+	NFile::cleanStaleTempFiles(SystemSettings::instance().GetProjectDir());
+	NFile::cleanStaleTempFiles("data/nc");
+
 	PropertyObjects::getInstance()->CreateData();
 	PropertyObjects::getInstance()->LoadData();
 
