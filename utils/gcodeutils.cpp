@@ -144,7 +144,7 @@ QString GCodeUtils::Duidao(QString axisName, double axisValue, int doCnt, double
     gcode += QString("M05 G90 G00 %01 #<_value>\n").arg(axisName);
 
     if (inJieChuHouFanZhuang != 0) {
-        gcode += QString("G91 M05 G00 %01%02\n").arg(axisName).arg(inJieChuHouFanZhuang * (axisValue > 0 ? -1 : 1), 0, 'f', 3);
+        gcode += QString("M05 G91 G00 %01%02\n").arg(axisName).arg(inJieChuHouFanZhuang * (axisValue > 0 ? -1 : 1), 0, 'f', 3);
     }
 
     return gcode;
@@ -204,7 +204,7 @@ QString GCodeUtils::Duanmian(double inX, double inY, double inZ, double inU, dou
             gcode += QString("G92 %01 0\n").arg(axisName);
         }
         if (inJieChuHouFanZhuang != 0) {
-            gcode += QString("G91 M05 G00 %01%02\n").arg(axisName).arg(inJieChuHouFanZhuang * (axisValues[k] > 0 ? -1 : 1), 0, 'f', 3);
+            gcode += QString("M05 G91 G00 %01%02\n").arg(axisName).arg(inJieChuHouFanZhuang * (axisValues[k] > 0 ? -1 : 1), 0, 'f', 3);
         }
     }
 
@@ -388,14 +388,14 @@ QString GCodeUtils::Kongzhongxing(double inKuaiJingX, double inKuaiJingY, double
             "G91 G00 X-%2\n"
             "o900 call [%3] [2] [%4]\n"//"G80 X-\n"
             "#<_H1>=#<_value>\n"//"G83 X001\n"
-            //"G91 M05 G00 X+%1\n"  // 忽略，直接返回到初始点
+            //"M05 G91 G00 X+%1\n"  // 忽略，直接返回到初始点
 
-            "G90 M05 G00 XH011\n"
+            "M05 G90 G00 XH011\n"
 
             "G91 G00 X+%2\n"
             "o900 call [%3] [1] [%4]\n"//"G80 X+\n"
             "#<_H2>=#<_value>\n"//"G83 X002\n"
-            "G91 M05 G00 X-%1\n"
+            "M05 G91 G00 X-%1\n"
         )
             .arg(inJieChuHouFanZhuang, 0, 'f', 3)
             .arg(inKuaiJingX, 0, 'f', 3)
@@ -412,14 +412,14 @@ QString GCodeUtils::Kongzhongxing(double inKuaiJingX, double inKuaiJingY, double
             "G91 G00 Y-%2\n"
             "o900 call [%3] [12] [%4]\n"//"G80 Y-\n"
             "#<_H3>=#<_value>\n"//"G83 Y003\n"
-            //"G91 M05 G00 Y+%1\n" // 忽略，直接返回到初始点
+            //"M05 G91 G00 Y+%1\n" // 忽略，直接返回到初始点
 
-            "G90 M05 G00 YH012\n"
+            "M05 G90 G00 YH012\n"
 
             "G91 G00 Y+%2\n"
             "o900 call [%3] [11] [%4]\n"//"G80 Y+\n"
             "#<_H4>=#<_value>\n"//"G83 Y004\n"
-            "G91 M05 G00 Y-%1\n"
+            "M05 G91 G00 Y-%1\n"
         )
             .arg(inJieChuHouFanZhuang, 0, 'f', 3)
             .arg(inKuaiJingY, 0, 'f', 3)
@@ -484,7 +484,7 @@ QString GCodeUtils::Jiaodingwei(int dX, int dY, double inKuaiJingX, double inKua
         "G83 X013\n"
         "o900 call [%04] [%06] [%05]\n"//"G80 X-%4\n"
         "#<_H1>=#<_value>\n"//"G83 X001\n"
-        "G91 M05 G00 X%07%01\n"
+        "M05 G91 G00 X%07%01\n"
         "G90 G00 XH013\n"
         "G91 G00 Z+%3\n"
         "G90 G00 X[H011]Y[H012]\n"
@@ -503,7 +503,7 @@ QString GCodeUtils::Jiaodingwei(int dX, int dY, double inKuaiJingX, double inKua
         "G83 Y014\n"
         "o900 call [%04] [%06] [%05]\n"//"G80 Y-%4\n"
         "#<_H2>=#<_value>\n"//"G83 Y002\n"
-        "G91 M05 G00 Y%07%01\n"
+        "M05 G91 G00 Y%07%01\n"
         "G90 G00 YH014\n"
         "G91 G00 Z+%3\n"
         "G90 G00 X[H011]Y[H012]\n"
@@ -562,7 +562,7 @@ QString GCodeUtils::Sandiandingwei(double inKuaiJingR, double inKuaiJingZ, doubl
                 "o900 call [%08] [%09] [%10]\n"
                 "#<_H%06>=#<_value>\n"  // H1=对刀点
                 "#<_H%07>=#<_H22>\n"   // H2=Y, 没变
-                "G91 M05 G00 X%04%05\n" // 回退
+                "M05 G91 G00 X%04%05\n" // 回退
 				"G90 G00 XH021YH022\n"  // 回到记录点
 				"G91 G00 Z+%03\n"       // Z回升
 				"G90 G00 XH011YH012\n"  // 回到起始点
@@ -594,7 +594,7 @@ QString GCodeUtils::Sandiandingwei(double inKuaiJingR, double inKuaiJingZ, doubl
                 "o900 call [%08] [%09] [%10]\n"
                 "#<_H%06>=#<_value>\n"  // H1=对刀点
                 "#<_H%07>=#<_H22>\n"   // H2=Y, 没变
-				"G91 M05 G00 X%04%05\n"     // 回退
+				"M05 G91 G00 X%04%05\n"     // 回退
 				"G90 G00 XH021YH022\n"      // 回到记录点
                 "G90 G00 XH011YH012\n"
                 "G91 G00 Z+%03\n"

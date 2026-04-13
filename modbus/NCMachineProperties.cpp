@@ -713,7 +713,7 @@ SKHKZPropertyObject::SKHKZPropertyObject(QObject* parent, const QString& name) :
 // [AUTO-TRANSLATION-COMMENT] 上传32位键码
 			{ "sc32wjm", tr("SC3WJM") },
 // [AUTO-TRANSLATION-COMMENT] 公制（mm）
-			{ "isgz", tr("GZ（") },
+			{ "isgz", tr("GZ") },
 // [AUTO-TRANSLATION-COMMENT] 显示/操作轴个数
 			{ "zgs", tr("XS/CZZGS") },
 // [AUTO-TRANSLATION-COMMENT] 速度显示控制
@@ -729,7 +729,7 @@ SKHKZPropertyObject::SKHKZPropertyObject(QObject* parent, const QString& name) :
 // [AUTO-TRANSLATION-COMMENT] 加工状态
 		{ "JGZT", tr("JGZT")},
 // [AUTO-TRANSLATION-COMMENT] 手动（连续移动）
-		{ "SD", tr("SD（LXYD）")},
+		{ "SD", tr("SDLXYD")},
 // [AUTO-TRANSLATION-COMMENT] 点动移动
 		{ "DD", tr("DDYD")},
 	};

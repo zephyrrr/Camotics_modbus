@@ -1,4 +1,4 @@
-
+﻿
 #include "RealtimeJsonMachine.h"
 
 #include <cbang/Exception.h>
@@ -376,7 +376,7 @@ void RealtimeJsonMachine::move(const Axes& _target, int axes, bool rapid, double
         doTask(sink);
     }
     else {
-
+		LOG_INFO(8, "EDM: RealtimeJsonMachine::move: no axis data to move, position and target is same. " << position);
     }
 }
 

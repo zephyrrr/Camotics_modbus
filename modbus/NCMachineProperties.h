@@ -735,6 +735,23 @@ protected:
 };
 
 // 蜂鸣器
+/***    
+蜂鸣器控制数据
+Data1：鸣叫方式
+  0：关闭
+1：鸣叫一声，鸣叫时间为Data2 * 1ms；
+  2：等待按键按下过程中一直鸣叫，当有按键按下或超时，则自动关闭。等待超时时间为Data3 *10ms；
+  3：等待按键按下过程中间歇鸣叫，当有按键按下或超时，则自动关闭。间歇时间为Data3 * 10ms，超时时间为Data4 *Data3 * 10ms。
+  4：蜂鸣器一直开启
+Data2：鸣叫一声的时间，单位ms
+Data3：
+Data1为0、1、4时：无用
+Data1为2时：超时时间，单位10ms。
+Data1为3时：间歇时间。
+Data4：
+Data1为3时：间歇超时时间为
+Data4 * Data3 * 10ms
+***/
 class FmqPropertyObject : public BasePropertyObject
 {
     Q_OBJECT;

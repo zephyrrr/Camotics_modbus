@@ -164,7 +164,7 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 	GetController()->setAxisAbsolutePosition('Z', m_pos.z() / 1000.0, unit);
 	GetController()->setAxisAbsolutePosition('U', m_pos.data[3] / 1000.0, unit);
 
-	ProcessPos();
+	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
 
 	return true;
 }
@@ -907,9 +907,9 @@ std::function<void(int, ModbusTask*, ModbusAdapter*)> NCMachine::convertWaitFunc
 				task->startAddr = -9;
 			}
 			else {
-				enterSetPriority(TASK_TIMER_PRIORITY);
-				ReadAllPosAndState();
-				exitSetPriority();
+				//enterSetPriority(TASK_TIMER_PRIORITY);
+				//ReadAllPosAndState();
+				//exitSetPriority();
 
 				task->startAddr = -2;
 				task->numOfRegs++;
@@ -927,7 +927,7 @@ std::function<void(int, ModbusTask*, ModbusAdapter*)> NCMachine::convertWaitFunc
 					break;
 				}
 				else {
-					ReadAllPosAndState();
+					//ReadAllPosAndState();
 					std::this_thread::sleep_for(std::chrono::milliseconds(TASK_WAIT_MILLSECONDS));
 					cnt++;
 				}
@@ -1358,11 +1358,18 @@ void NCMachine::Beep(int n, int ms)
 	//}
 	else {
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE2);
-		PropertyObjects::getInstance()->propertyObjectFengMingQi->setdata2(ms);
+		PropertyObjects::getInstance()->propertyObjectFengMingQi->setdata3(ms / 10);
+
+		if (m_key != KNLK_NONE && m_key != KNLK_INVALID)
+		{
+			// add one more to avoid first beep is useless
+			PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
+		}
+
 		for (int i = 0; i < n; ++i) {
 			PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
-			std::function<void()> doFuncWait = []() {
-				EUtils::sleep(80);
+			std::function<void()> doFuncWait = [ms]() {
+				EUtils::sleep(ms);
 				};
 			executeCmdWait(convertWaitFunction(waitno(doFuncWait)), "wait 80ms for beep");
 		}
@@ -1497,7 +1504,7 @@ void NCMachine::PowerOff()
 
 	enterSetPriority(0);
 	this->executeCmds(NCCommand::Shutdown);
-	//this->GoApi();
+	this->GoApi();
 	exitSetPriority();
 
 	// for task done
@@ -1976,7 +1983,7 @@ void NCMachine::ProcessKey()
 			enterSetPriority(0);
 			PropertyObjects::getInstance()->propertyObjectFuzhuIO->setyb2(!PropertyObjects::getInstance()->propertyObjectFuzhuIO->yb2());
 			PropertyObjects::getInstance()->propertyObjectFuzhuIO->ExecuteCmds(this);
-			Beep();
+			Beep(); 
 			exitSetPriority();
 			break;
 		case KNLK_START:

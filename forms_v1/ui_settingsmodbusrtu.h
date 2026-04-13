@@ -133,8 +133,8 @@ public:
         sbScanRate = new QSpinBox(SettingsModbusRTU);
         sbScanRate->setObjectName(QString::fromUtf8("sbScanRate"));
         sbScanRate->setMaximum(10000);
-        sbScanRate->setSingleStep(100);
-        sbScanRate->setValue(1000);
+        sbScanRate->setSingleStep(10);
+        sbScanRate->setValue(50);
 
         gridLayout->addWidget(sbScanRate, 10, 1, 1, 1);
 

@@ -518,7 +518,7 @@ QtWin2::QtWin2(QWidget* parent)
 		m_ncMachine->enterSetPriority(0);
 		PropertyObjects::getInstance()->propertyObjectFdjg->ExecuteCmdsSetSv(m_ncMachine, 3);
 		PropertyObjects::getInstance()->propertyObjectYouwenJianche->ExecuteCmds(m_ncMachine);
-		m_ncMachine->Beep(0);
+		m_ncMachine->Beep(0, 0);
 		m_ncMachine->exitSetPriority();
 		
 		ljbcForm->LoadData();

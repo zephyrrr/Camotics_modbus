@@ -1922,29 +1922,29 @@
         <translation>未定义：%1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2329"/>
+        <location filename="modbus/NCMachine.cpp" line="2336"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>目前不支持多于4个坐标轴加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2721"/>
-        <location filename="modbus/NCMachine.cpp" line="2730"/>
-        <location filename="modbus/NCMachine.cpp" line="3282"/>
+        <location filename="modbus/NCMachine.cpp" line="2728"/>
+        <location filename="modbus/NCMachine.cpp" line="2737"/>
+        <location filename="modbus/NCMachine.cpp" line="3289"/>
         <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2785"/>
+        <location filename="modbus/NCMachine.cpp" line="2792"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3268"/>
+        <location filename="modbus/NCMachine.cpp" line="3275"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3468"/>
+        <location filename="modbus/NCMachine.cpp" line="3475"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR:上一个程序还在运行</translation>
     </message>
@@ -3823,7 +3823,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="716"/>
-        <source>GZ（</source>
+        <source>GZ</source>
         <translation>公制（mm）</translation>
     </message>
     <message>
@@ -3858,7 +3858,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="732"/>
-        <source>SD（LXYD）</source>
+        <source>SDLXYD</source>
         <translation>手动（连续移动）</translation>
     </message>
     <message>
