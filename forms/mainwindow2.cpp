@@ -220,6 +220,8 @@ QtWin2::QtWin2(QWidget* parent)
 	//cb::Logger::instance().setScreenStream(NULL);
 	cb::Logger::instance().startLogFile(LOGGER_FILE_NAME);
 
+	LOG_INFO(1, "Application started. " << EUtils::QString2StdString(QApplication::applicationName()) << ", " << EUtils::QString2StdString(QApplication::applicationVersion()));
+
 	NFile::cleanStaleTempFiles("data");
 	NFile::cleanStaleTempFiles(SystemSettings::instance().GetProjectDir());
 	NFile::cleanStaleTempFiles("data/nc");

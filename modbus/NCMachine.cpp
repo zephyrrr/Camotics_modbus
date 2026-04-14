@@ -379,7 +379,7 @@ QString NCMachine::GetStateDesc(uint16_t state)
 		return tr("STCQHZX");
 	case NCT_STATE_SPK_EXBAK:
 // [AUTO-TRANSLATION-COMMENT] SPK退出前回退（先回中心再回退）
-		return tr("STCQHT（XHZXZHT）");
+		return tr("STCQHT_XHZXZHT");
 	case NCT_STATE_SPK_PMBAK:
 // [AUTO-TRANSLATION-COMMENT] SPK抬刀前回退
 		return tr("STDQHT");
@@ -1780,6 +1780,7 @@ void NCMachine::SetInputKey(unsigned long long key)
 
 void NCMachine::ProcessKey()
 {
+	//return;
 	//if (m_key == KNLK_NONE)
 	//	return;
 	LOG_INFO(8, "NCMachine: ProcessKey " << std::hex << "0x" << m_key << std::dec << ", " << m_state[2] << ", " << m_nowOperating);

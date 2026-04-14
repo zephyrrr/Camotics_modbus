@@ -1752,7 +1752,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachine.cpp" line="382"/>
-        <source>STCQHT（XHZXZHT）</source>
+        <source>STCQHT_XHZXZHT</source>
         <translation>SPK Exit Retract</translation>
     </message>
     <message>
@@ -3823,7 +3823,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="716"/>
-        <source>GZ（</source>
+        <source>GZ</source>
         <translation>Metric(mm)</translation>
     </message>
     <message>
@@ -3858,7 +3858,7 @@
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="732"/>
-        <source>SD（LXYD）</source>
+        <source>SDLXYD</source>
         <translation>Manual(Continuous)</translation>
     </message>
     <message>
