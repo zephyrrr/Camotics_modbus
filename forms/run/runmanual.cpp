@@ -1195,7 +1195,7 @@ QString RunManual::GetGCode(bool forRun)
 	if (!forRun) {
 		
 		if (toAxis.length() >= 1) {
-			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName(), SystemSettings::instance().GetProjectDir());
+			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName());
 
 			int axisLen = 3;
 			double axisPositions[] = { 0.0, 0.0, 0.0 };
@@ -1214,7 +1214,7 @@ void RunManual::LoadData(QString filePath)
 	BaseChildWindow::LoadData(filePath);
 
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table1->deserialize(SystemSettings::AppendDataFilePath(filePath, table1->objectName()));
 	table2->deserialize(SystemSettings::AppendDataFilePath(filePath, table2->objectName()));
@@ -1223,7 +1223,7 @@ void RunManual::LoadData(QString filePath)
 void RunManual::SaveData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table1->serialize(SystemSettings::AppendDataFilePath(filePath, table1->objectName()));
 	table2->serialize(SystemSettings::AppendDataFilePath(filePath, table2->objectName()));

@@ -1,4 +1,4 @@
-#ifndef GCODETOOL_H
+﻿#ifndef GCODETOOL_H
 #define GCODETOOL_H
 
 #include <gcode/ControllerImpl.h>
@@ -15,8 +15,9 @@
 
 #include <iostream>
 #include <QString>
+#include "modbus/NCMachineProperties.h"
 
-#define DATA_FILE_NAME "data/qcnc.dat"
+inline QString GetDataFileName() { return SystemSettings::instance().GetUserDataDir() + "/qcnc.dat"; }
 
 using namespace cb;
 using namespace GCode;
@@ -33,7 +34,7 @@ public:
 
 	bool RunGCode(SmartPointer<MachineInterface> machine, std::string gcode);
 	SmartPointer<ControllerImpl> GetController() { return m_controller; }
-	const bool IsRunning() { return m_isRuning; }
+	const bool IsRunning() { return m_isRunning; }
 
 	void deserialize();
 	void serialize();
@@ -50,7 +51,7 @@ private:
 
 	SmartPointer<ControllerImpl> m_controller;
 	SmartPointer<MachineState> m_machineState;
-	bool m_isRuning = false;
+	bool m_isRunning = false;
 	//SmartPointer<MachinePipeline> m_pipeline;
 	//SmartPointer<JSONMachineWriter> m_jsonMachineWriter;
 

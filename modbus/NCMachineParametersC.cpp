@@ -693,7 +693,7 @@ void NCMachineParametersC::ExecuteCmds(NCMachine* ncMachine)
 bool NCMachineParametersC::deserialize()
 {
 	try {
-		QString filePathName = SystemSettings::GetDataFilePath("fangdiancanshu_global");
+		QString filePathName = SystemSettings::GetDataFilePath("fangdiancanshu_global", SystemSettings::SystemFlag | SystemSettings::UserFlag);
 		
 		if (QFile::exists(filePathName)) {
 			QFile file(filePathName);

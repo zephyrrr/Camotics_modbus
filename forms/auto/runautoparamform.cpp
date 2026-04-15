@@ -25,15 +25,15 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 {
 	ui->setupUi(this);
 
-	ui->inClzh->setModel(new QTextFileModel(this, GetDataFilePath(ui->inClzh)));
-	ui->inDjxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inDjxz)));
-	ui->inJgz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgz)));
+	ui->inClzh->setModel(new QTextFileModel(this, GetDataFilePath(ui->inClzh, SystemSettings::SystemFlag)));
+	ui->inDjxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inDjxz, SystemSettings::SystemFlag)));
+	ui->inJgz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgz, SystemSettings::SystemFlag)));
 	//ui->inJgmj->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgmj)));
 	//ui->inJgmj->setModel(new QSqliteModel(this, "./data/cp.db", QStringLiteral("SELECT 加工面积 FROM 加工面积")));
 	//ui->inCcd->setModel(new QTextFileModel(this, GetDataFilePath(ui->inCcd)));
-	ui->inYdxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdxz)));
-	ui->inYdms->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdms)));
-	ui->inJgcz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgcz)));
+	ui->inYdxz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdxz, SystemSettings::SystemFlag)));
+	ui->inYdms->setModel(new QTextFileModel(this, GetDataFilePath(ui->inYdms, SystemSettings::SystemFlag)));
+	ui->inJgcz->setModel(new QTextFileModel(this, GetDataFilePath(ui->inJgcz, SystemSettings::SystemFlag)));
 
 	ui->inYdxzSpecial->setValidator(new QRegExpValidator(QRegExp("^[1-5]{4}$"), ui->inYdxzSpecial));
 	ui->inYdxzSpecial->setVisible(false);
@@ -305,7 +305,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 			}
 		}
 
-		QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 		filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 		table2.serialize(filePath2);
 
@@ -341,7 +341,7 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 				table1.setValue(2, -1, "True");
 			}
 		}
-		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
 		table1.serialize(filePath1);
 
@@ -351,11 +351,11 @@ QString RunAutoParamForm::GenerateManualData(QString parentName)
 		return cCode;
 	}
 	else {
-		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
 		QFile::remove(filePath1);
 
-		QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 		filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 		QFile::remove(filePath2);
 
@@ -449,7 +449,7 @@ QString RunAutoParamForm::GenerateManualData_V1(QString parentName)
 			table2.setValue(row, 7, "0000");
 		}
 
-		QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 		filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 		table2.serialize(filePath2);
 
@@ -469,7 +469,7 @@ QString RunAutoParamForm::GenerateManualData_V1(QString parentName)
 			table1.setValue(1, 0, toz);
 			table1.setValue(1, -1, "True");
 		}
-		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
 		table1.serialize(filePath1);
 
@@ -477,11 +477,11 @@ QString RunAutoParamForm::GenerateManualData_V1(QString parentName)
 		//mainWindow->showChildWindow(tr("SDDG"));
 	}
 	else {
-		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
 		QFile::remove(filePath1);
 
-		QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 		filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 		QFile::remove(filePath2);
 

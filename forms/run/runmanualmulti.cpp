@@ -212,7 +212,7 @@ QString RunManualMulti::GetGCode(bool forRun)
 		return QString();
 	}
 
-	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
+	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne);
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
 
 	if (isAbsolutePosition && realAxisLen > 1) {
@@ -299,7 +299,7 @@ QString RunManualMulti::GetGCodeV2()
 	for (int i = 0; i < 3; ++i) {
 		axisPositions[i] = m_ncMachine->GetController()->getAxisPosition(GCodeTool::axis[i]);
 	}
-	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
+	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne);
 	//QString gcode;// = RunManual::GetGCodeStatic(table1, table2, dataForm->getValue("inAbsolute") == "true", axisPositions);
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
 
@@ -479,7 +479,7 @@ QString RunManualMulti::GetGCodeV1()
 		axisLen = 3;
 	}
 
-	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne, SystemSettings::instance().GetProjectDir());
+	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne);
 	QString gcode0 = RunManual::GetGCodeV1(dataForm, table1, table2, NULL);
 
 	QString gcode;
@@ -737,11 +737,11 @@ void RunManualMulti::RunGCode()
 void RunManualMulti::LoadData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table3->deserialize(SystemSettings::AppendDataFilePath(filePath, table3->objectName()));
 
-	QString filePath2 = SystemSettings::GetDataFilePath(m_name4RunAutoOne, GetProjectDir());
+	QString filePath2 = SystemSettings::GetDataFilePath(m_name4RunAutoOne);
 	filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(m_name4RunAutoOne));
 	table2->deserialize(filePath2);
 	int n = 0;
@@ -756,7 +756,7 @@ void RunManualMulti::LoadData(QString filePath)
 	}
 	ui.btnJghs->setText(QString::number(n));
 
-	QString filePath1 = SystemSettings::GetDataFilePath(m_name4RunAutoOne, GetProjectDir());
+	QString filePath1 = SystemSettings::GetDataFilePath(m_name4RunAutoOne);
 	filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(m_name4RunAutoOne));
 	table1->deserialize(filePath1);
 
@@ -766,7 +766,7 @@ void RunManualMulti::LoadData(QString filePath)
 void RunManualMulti::SaveData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table3->serialize(SystemSettings::AppendDataFilePath(filePath, table3->objectName()));
 

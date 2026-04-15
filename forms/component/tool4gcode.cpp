@@ -13,7 +13,7 @@ Tool4GCode::Tool4GCode(BaseChildWindow* childWindow, QWidget *parent)
 {
 	ui.setupUi(this);
 
-	m_path = "data/nc";
+	m_path = SystemSettings::instance().GetUserDataDir() + "/nc";
 	QDir directory(m_path);
 	if (!directory.exists()) {
 		directory.mkpath(m_path);

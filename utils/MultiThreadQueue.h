@@ -1,4 +1,4 @@
-#ifndef MULTITHREADQUEUE_H
+﻿#ifndef MULTITHREADQUEUE_H
 #define MULTITHREADQUEUE_H
 
 #include <queue>
@@ -40,10 +40,9 @@ public:
 		std::lock_guard<std::mutex> lock(mutex_);
 		return m_queue.size();
 	}
-public:
-    std::mutex mutex_;
 
 private:
+    std::mutex mutex_;
     std::queue<T> m_queue;
 };
 

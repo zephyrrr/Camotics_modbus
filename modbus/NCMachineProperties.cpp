@@ -1,6 +1,7 @@
 ﻿#include <cmath>
 #include <QDir>
 #include <QSettings>
+#include <QFile>
 #include "NCMachineProperties.h"
 #include "NCMachineDefines.h"
 #include "NCMachine.h"
@@ -8,18 +9,19 @@
 #include "NCCommand.h"
 #include "NCMachineParametersC.h"
 
-void SystemSettings::SetProjectDir(const QString& projectDir)
+void SystemSettings::SetProjectName(const QString& projectName)
 {
-	if (projectDir.isEmpty())
+	if (projectName.isEmpty())
 		return;
-	if (m_projectDir == projectDir)
+	if (m_projectName == projectName)
 		return;
 
+	QString projectDir = GetUserDataDir() + "/" + projectName;
 	QDir dir(projectDir);
 	bool dirExist = false;
 	if (!dir.exists())
 	{
-		dirExist = dir.mkdir(projectDir);
+		dirExist = dir.mkpath(projectDir);
 	}
 	else
 	{
@@ -27,16 +29,63 @@ void SystemSettings::SetProjectDir(const QString& projectDir)
 	}
 	if (dirExist)
 	{
-		m_projectDir = projectDir;
+		m_projectName = projectName;
 	}
 }
 
-QString SystemSettings::GetDataFilePath(const QString& objectName, QString projectDir)
+QString SystemSettings::GetDataFilePath(const QString& objectName, DataDirType dirFlags)
 {
-	if (projectDir == NULL)
-		projectDir = "data";
+	QString fileName = QString("%1_data.json").arg(objectName);
 
-	return projectDir + QDir::separator() + QString("%1_data.json").arg(objectName);
+	// Priority order: Project > User > System
+	QList<DataDirFlag> priorityOrder = { ProjectFlag, UserFlag, SystemFlag };
+
+	for (DataDirFlag flag : priorityOrder) {
+		if (dirFlags & flag) {
+			QString baseDir;
+			switch (flag) {
+				case ProjectFlag:
+					baseDir = SystemSettings::instance().GetProjectDir();
+					break;
+				case UserFlag:
+					baseDir = SystemSettings::instance().GetUserDataDir();
+					break;
+				case SystemFlag:
+					baseDir = SystemSettings::instance().GetSystemDataDir();
+					break;
+			}
+			QString filePath = baseDir + QDir::separator() + fileName;
+			// If only one flag, return path directly
+			if (dirFlags == flag) {
+				return filePath;
+			}
+			// If file exists, return it
+			if (QFile::exists(filePath)) {
+				return filePath;
+			}
+		}
+	}
+
+	// If no existing file found, return the first valid path
+	for (DataDirFlag flag : priorityOrder) {
+		if (dirFlags & flag) {
+			QString baseDir;
+			switch (flag) {
+				case ProjectFlag:
+					baseDir = SystemSettings::instance().GetProjectDir();
+					break;
+				case UserFlag:
+					baseDir = SystemSettings::instance().GetUserDataDir();
+					break;
+				case SystemFlag:
+					baseDir = SystemSettings::instance().GetSystemDataDir();
+					break;
+			}
+			return baseDir + QDir::separator() + fileName;
+		}
+	}
+
+	return fileName;
 }
 
 QString SystemSettings::AppendDataFilePath(const QString& filePath, const QString& append)
@@ -60,6 +109,86 @@ void SystemSettings::LoadFromFile(const QString& filePath)
 		for (const QString& key : allKeys) {
 			QVariant value = settings.value(key);
 			SetValue(key, value.toString());
+		}
+	}
+}
+
+// Helper function for recursive directory migration
+static void migrateDirectoryRecursive(const QString& oldDir, const QString& newDir)
+{
+	QDir().mkpath(newDir);
+	QDir dir(oldDir);
+	QStringList entries = dir.entryList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+	for (const QString& entry : entries) {
+		QString oldPath = oldDir + "/" + entry;
+		QString newPath = newDir + "/" + entry;
+		QFileInfo info(oldPath);
+		if (info.isDir()) {
+			// Recursively migrate subdirectory
+			migrateDirectoryRecursive(oldPath, newPath);
+		} else if (!QFile::exists(newPath)) {
+			QFile::rename(oldPath, newPath);
+		}
+	}
+}
+
+void SystemSettings::MigrateUserDataDir()
+{
+	QString dataDir = GetUserDataDir();
+	if (dataDir == "data")
+		return;
+
+	QDir dir(dataDir);
+	if (dir.exists())
+		return;
+
+	// Create new directory
+	if (!dir.mkpath(dataDir))
+		return;
+
+	// Files and directories to migrate
+	QStringList filesToMigrate = {
+		"ncmachine.json",
+		"settings.json",
+		"work.db",
+		"qcnc.dat"
+	};
+	for (const QString& file : filesToMigrate) {
+		QString oldPath = "data/" + file;
+		QString newPath = dataDir + "/" + file;
+		if (QFile::exists(oldPath) && !QFile::exists(newPath)) {
+			QFile::rename(oldPath, newPath);
+		}
+	}
+
+	// Migrate nc directory (recursive)
+	QString oldNcDir = "data/nc";
+	QString newNcDir = dataDir + "/nc";
+	if (QDir(oldNcDir).exists() && !QDir(newNcDir).exists()) {
+		migrateDirectoryRecursive(oldNcDir, newNcDir);
+	}
+
+	// Migrate default project directory (recursive)
+	QString oldProjectDir = "data/default";
+	QString newProjectDir = dataDir + "/default";
+	if (QDir(oldProjectDir).exists() && !QDir(newProjectDir).exists()) {
+		migrateDirectoryRecursive(oldProjectDir, newProjectDir);
+	}
+
+	// Copy system config files to UserData if not exist
+	QString systemDir = GetSystemDataDir();
+	QStringList systemConfigFiles = {
+		"xitongshezhi_data.json",
+		"xitongshezhi2_data.json",
+		"xitongshezhi3_data.json",
+		"xitongshezhi4_data.json",
+		"xitongshezhi5_data.json"
+	};
+	for (const QString& file : systemConfigFiles) {
+		QString srcPath = systemDir + "/" + file;
+		QString destPath = dataDir + "/" + file;
+		if (QFile::exists(srcPath) && !QFile::exists(destPath)) {
+			QFile::copy(srcPath, destPath);
 		}
 	}
 }

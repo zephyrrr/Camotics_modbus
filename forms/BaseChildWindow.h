@@ -103,7 +103,7 @@ public:
     static BaseMainWindow* GetMainWindow();
 
     QString GetProjectDir();
-    static QString GetDataFilePath(QObject* obj, QString projectDir = NULL);
+    static QString GetDataFilePath(QObject* obj, SystemSettings::DataDirType dirFlags = SystemSettings::ProjectFlag);
 
     void SetData(QString key, QVariant value) { m_data[key] = value; }
     QVariant GetData(QString key) { return m_data.contains(key) ? m_data[key] : NULL; }

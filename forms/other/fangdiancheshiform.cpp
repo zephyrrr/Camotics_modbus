@@ -268,7 +268,7 @@ void FangDianCheShiForm::LoadData(QString filePath)
 {
 	if (LoadFromFile) {
 		if (filePath == NULL) {
-			filePath = GetDataFilePath(this, GetProjectDir());
+			filePath = GetDataFilePath(this);
 		}
 		for (int i = 0; i < 2; ++i) {
 			m_form->GetDynamicForm(i)->deserialize(SystemSettings::AppendDataFilePath(filePath, m_form->GetDynamicForm(i)->objectName()));
@@ -282,7 +282,7 @@ void FangDianCheShiForm::LoadData(QString filePath)
 void FangDianCheShiForm::SaveData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	for (int i = 0; i < 2; ++i) {
 		m_form->GetDynamicForm(i)->serialize(SystemSettings::AppendDataFilePath(filePath, m_form->GetDynamicForm(i)->objectName()));

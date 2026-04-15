@@ -65,7 +65,7 @@ ModbusMain::ModbusMain(QObject* parent)
 			});
 	}
 
-	m_modbusCommSettings = new ModbusCommSettings("data/qModMaster.ini");
+	m_modbusCommSettings = new ModbusCommSettings(SystemSettings::CombinePath(SystemSettings::instance().GetSystemDataDir(), "qModMaster.ini"));
 	m_modbus = new ModbusAdapter(m_parent, m_regModel, m_rawModel);
 	m_ncMachine = new NCMachine(m_parent, m_modbus);
 
@@ -219,12 +219,11 @@ QtWin2::QtWin2(QWidget* parent)
 	cb::Logger::instance().setLogRotateMax(30);
 	//cb::Logger::instance().setScreenStream(NULL);
 	cb::Logger::instance().startLogFile(LOGGER_FILE_NAME);
-
 	LOG_INFO(1, "Application started. " << EUtils::QString2StdString(QApplication::applicationName()) << ", " << EUtils::QString2StdString(QApplication::applicationVersion()));
 
-	NFile::cleanStaleTempFiles("data");
+	NFile::cleanStaleTempFiles(SystemSettings::instance().GetUserDataDir());
 	NFile::cleanStaleTempFiles(SystemSettings::instance().GetProjectDir());
-	NFile::cleanStaleTempFiles("data/nc");
+	NFile::cleanStaleTempFiles(SystemSettings::instance().GetUserDataDir() + "/nc");
 
 	PropertyObjects::getInstance()->CreateData();
 	PropertyObjects::getInstance()->LoadData();
@@ -275,16 +274,23 @@ QtWin2::QtWin2(QWidget* parent)
 	ui->btnFileName->setText(QDir(SystemSettings::instance().GetProjectDir()).dirName());
 
 	connect(ui->btnFileName, &QToolButton::clicked, [this](bool checked) {
-		//NFileDialog* dialog = new NFileDialog(this, SystemSettings::instance().GetProjectDir(), true);
-		//dialog->showNormal();
-		return;
-
+		QString userDataDir = SystemSettings::instance().GetUserDataDir();
 		QString chosenDir = NFileDialog::getExistingDirectory(this, tr("XMML"),
-		"data",
-		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks ); // | QFileDialog::DontUseNativeDialog
-		chosenDir = QDir::cleanPath(chosenDir);
-		SystemSettings::instance().SetProjectDir(QDir::currentPath() + QDir::separator() + chosenDir);
-		ui->btnFileName->setText(QDir(SystemSettings::instance().GetProjectDir()).dirName());
+		userDataDir,
+		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
+		if (!chosenDir.isEmpty()) {
+			chosenDir = QDir::cleanPath(chosenDir);
+			// Extract project name from chosen directory (relative to UserDataDir)
+			if (chosenDir.startsWith(userDataDir)) {
+				QString projectName = chosenDir.mid(userDataDir.length());
+				if (projectName.startsWith("/") || projectName.startsWith("\\"))
+					projectName = projectName.mid(1);
+				if (!projectName.isEmpty()) {
+					SystemSettings::instance().SetProjectName(projectName);
+					ui->btnFileName->setText(projectName);
+				}
+			}
+		}
 	});
 
 	auto ljbcForm = new LuoJuBuChangForm(this->ui->stackedChildWidget);
@@ -758,7 +764,7 @@ bool QtWin2::serialize()
 	//	jsonArray.append(item);
 	//}
 	//jsonObj["history"] = jsonArray;
-	jsonObj["active_project"] = SystemSettings::instance().GetProjectDir();
+	jsonObj["active_project"] = SystemSettings::instance().GetProjectName();
 #ifdef _DEBUG
 	jsonObj["is_usermode"] = m_isUserMode ? "true" : "false";
 #else
@@ -766,7 +772,7 @@ bool QtWin2::serialize()
 #endif // DEBUG
 
 	QJsonDocument jsonDoc(jsonObj);
-	NFile file("data/settings.json");
+	NFile file(SystemSettings::instance().GetUserDataDir() + "/settings.json");
 	if (file.open(QIODevice::WriteOnly)) {
 		file.write(jsonDoc.toJson());
 		file.close();
@@ -777,7 +783,7 @@ bool QtWin2::serialize()
 
 bool QtWin2::deserialize()
 {
-	QFile file("data/settings.json");
+	QFile file(SystemSettings::instance().GetUserDataDir() + "/settings.json");
 	if (!file.open(QIODevice::ReadOnly)) {
 		return false;
 	}
@@ -795,12 +801,19 @@ bool QtWin2::deserialize()
 	//}
 	//m_historyMenus = m_historyMenus.mid(0, 10);
 
-	QString projectDir = jsonObj["active_project"].toString();
-	if (projectDir.startsWith(QDir::currentPath())) {
-		QDir dir(projectDir);
-		if (dir.exists()) {
-			SystemSettings::instance().SetProjectDir(projectDir);
+	QString projectValue = jsonObj["active_project"].toString();
+	if (!projectValue.isEmpty()) {
+		// Handle both old format (path) and new format (project name)
+		QString projectName;
+		if (projectValue.contains("/") || projectValue.contains("\\")) {
+			// Old format: full path, extract the last directory name
+			QDir dir(projectValue);
+			projectName = dir.dirName();
+		} else {
+			// New format: just the project name
+			projectName = projectValue;
 		}
+		SystemSettings::instance().SetProjectName(projectName);
 	}
 	
 #ifdef _DEBUG
@@ -1132,7 +1145,7 @@ void QtWin2::on_actionSaveGCode_triggered()
 	if (currentChild) {
 		QString s = currentChild->GetGCode();
 		if (!s.isEmpty()) {
-			QString m_path = "data/nc";
+			QString m_path = SystemSettings::instance().GetUserDataDir() + "/nc";
 			QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 			if (!filePath.isEmpty()) {
 

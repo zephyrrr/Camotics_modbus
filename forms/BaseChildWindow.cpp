@@ -119,7 +119,7 @@ void BaseChildWindow::LoadData(QWidget* parent, QString filePath, QHash<QString,
 {
 	// 从文件中读取字符串
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(parent, SystemSettings::instance().GetProjectDir());
+		filePath = GetDataFilePath(parent);
 	}
 
 	QFile file(filePath);
@@ -188,7 +188,7 @@ void BaseChildWindow::SaveData(QWidget* parent, QString filePath, QHash<QString,
 	DataForms::getInstance()->removeDataForm(parent->objectName());
 
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(parent, SystemSettings::instance().GetProjectDir());
+		filePath = GetDataFilePath(parent);
 	}
 
 	QJsonObject json = GetData(parent);
@@ -311,9 +311,9 @@ QString BaseChildWindow::GetProjectDir()
 	return SystemSettings::instance().GetProjectDir();
 }
 
-QString BaseChildWindow::GetDataFilePath(QObject* obj, QString projectDir)
+QString BaseChildWindow::GetDataFilePath(QObject* obj, SystemSettings::DataDirType dirFlags)
 {
-	return SystemSettings::GetDataFilePath(obj->objectName(), projectDir);
+	return SystemSettings::GetDataFilePath(obj->objectName(), dirFlags);
 }
 
 SoftKeyboardWidget::SoftKeyboardWidget(QWidget* parent, bool useNumericKeyboard)

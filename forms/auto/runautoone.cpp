@@ -68,22 +68,22 @@ void RunAutoOne::ExportData()
 
 	{
 		QString parentName = "runautoone";
-		QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 		filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
-		QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 		filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 
 		QString parentNameDest = "sdjg";
-		QString filePath2Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+		QString filePath2Dest = SystemSettings::GetDataFilePath(parentNameDest);
 		filePath2Dest = SystemSettings::AppendDataFilePath(filePath2Dest, QString("%1_table2").arg(parentNameDest));
 		FormUtils::CopyFileWithOverwrite(filePath2, filePath2Dest);
 
-		QString filePath1Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+		QString filePath1Dest = SystemSettings::GetDataFilePath(parentNameDest);
 		filePath1Dest = SystemSettings::AppendDataFilePath(filePath1Dest, QString("%1_table1").arg(parentNameDest));
 		FormUtils::CopyFileWithOverwrite(filePath1, filePath1Dest);
 
-		//QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
-		//DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
+		//QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest);
+		//DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest);
 		//if (w->windowA->GetData("inJgz") == "XYZ") {
 		//	dataFormDest->setValue("inAbsolute", "false");
 		//	dataFormDest->setValue("inAbsolute2", "true");
@@ -97,17 +97,17 @@ void RunAutoOne::ExportData()
 
 	{
 		QString parentName = "runautomulti";
-		QString filePath3 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+		QString filePath3 = SystemSettings::GetDataFilePath(parentName);
 		filePath3 = SystemSettings::AppendDataFilePath(filePath3, QString("%1_table3").arg(parentName));
 
 		QString parentNameDest = "ddjg";
-		QString filePath3Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+		QString filePath3Dest = SystemSettings::GetDataFilePath(parentNameDest);
 		filePath3Dest = SystemSettings::AppendDataFilePath(filePath3Dest, QString("%1_table3").arg(parentNameDest));
 		FormUtils::CopyFileWithOverwrite(filePath3, filePath3Dest);
 
-		QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
-		DataForm* dataForm = DataForms::getInstance()->getDataForm(parentName, SystemSettings::instance().GetProjectDir());
-		DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
+		QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest);
+		DataForm* dataForm = DataForms::getInstance()->getDataForm(parentName);
+		DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest);
 		dataFormDest->setValue("lineEditZAnQuan", dataForm->getValue("lineEditZAnQuan"));
 		dataFormDest->setValue("lineEditZKaisi", dataForm->getValue("lineEditZKaisi"));
 		dataFormDest->serialize(filePath4Dest);
@@ -150,7 +150,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			RunAutoForm* w = this->GetParentOfThis<RunAutoForm>(this);
 			w->windowB->LoadData();
 
-			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName(), SystemSettings::instance().GetProjectDir());
+			DataForm* dataForm = DataForms::getInstance()->getDataForm(this->objectName());
 			dataForm->setValue("GCODE_DBHHW", w->windowA->GetData("inDbhhw").toString());
 			dataForm->setValue("GCODE_LN", w->windowA->GetData("inLN").toString());
 			dataForm->setValue("GCODE_LP", w->windowA->GetData("inYdxz").toString());
@@ -161,7 +161,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			dataForm->deleteItem("GCODE_LP");
 
 
-			QString m_path = "data/nc";
+			QString m_path = SystemSettings::instance().GetUserDataDir() + "/nc";
 			if (!s.isEmpty()) {
 				QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 				if (!filePath.isEmpty()) {

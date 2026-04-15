@@ -662,7 +662,7 @@ QString RunAutoOne::GetGCode()
 void RunAutoOne::LoadData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table1->deserialize(SystemSettings::AppendDataFilePath(filePath, table1->objectName()));
 	table2->deserialize(SystemSettings::AppendDataFilePath(filePath, table2->objectName()));
@@ -676,7 +676,7 @@ void RunAutoOne::LoadData(QString filePath)
 void RunAutoOne::SaveData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetDataFilePath(this, GetProjectDir());
+		filePath = GetDataFilePath(this);
 	}
 	table1->serialize(SystemSettings::AppendDataFilePath(filePath, table1->objectName()));
 	table2->serialize(SystemSettings::AppendDataFilePath(filePath, table2->objectName()));
@@ -752,30 +752,30 @@ void RunAutoOne::showEvent(QShowEvent* event)
 
 
 			QString parentName = "runautoone";
-			QString filePath2 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+			QString filePath2 = SystemSettings::GetDataFilePath(parentName);
 			filePath2 = SystemSettings::AppendDataFilePath(filePath2, QString("%1_table2").arg(parentName));
 			QString parentNameDest = "sdjg";
-			QString filePath2Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+			QString filePath2Dest = SystemSettings::GetDataFilePath(parentNameDest);
 			filePath2Dest = SystemSettings::AppendDataFilePath(filePath2Dest, QString("%1_table2").arg(parentNameDest));
 			FormUtils::CopyFileWithOverwrite(filePath2, filePath2Dest);
 
-			QString filePath1 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+			QString filePath1 = SystemSettings::GetDataFilePath(parentName);
 			filePath1 = SystemSettings::AppendDataFilePath(filePath1, QString("%1_table1").arg(parentName));
-			QString filePath1Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+			QString filePath1Dest = SystemSettings::GetDataFilePath(parentNameDest);
 			filePath1Dest = SystemSettings::AppendDataFilePath(filePath1Dest, QString("%1_table1").arg(parentNameDest));
 			FormUtils::CopyFileWithOverwrite(filePath1, filePath1Dest);
 
 			parentName = "runautomulti";
 			parentNameDest = "ddjg";
-			QString filePath3 = SystemSettings::GetDataFilePath(parentName, GetProjectDir());
+			QString filePath3 = SystemSettings::GetDataFilePath(parentName);
 			filePath3 = SystemSettings::AppendDataFilePath(filePath3, QString("%1_table3").arg(parentName));
-			QString filePath3Dest = SystemSettings::GetDataFilePath(parentNameDest, GetProjectDir());
+			QString filePath3Dest = SystemSettings::GetDataFilePath(parentNameDest);
 			filePath3Dest = SystemSettings::AppendDataFilePath(filePath3Dest, QString("%1_table3").arg(parentNameDest));
 			FormUtils::CopyFileWithOverwrite(filePath3, filePath3Dest);
 
-			QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest, SystemSettings::instance().GetProjectDir());
-			DataForm* dataForm = DataForms::getInstance()->getDataForm(parentName, SystemSettings::instance().GetProjectDir());
-			DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest, SystemSettings::instance().GetProjectDir());
+			QString filePath4Dest = SystemSettings::GetDataFilePath(parentNameDest);
+			DataForm* dataForm = DataForms::getInstance()->getDataForm(parentName);
+			DataForm* dataFormDest = DataForms::getInstance()->getDataForm(parentNameDest);
 			dataFormDest->setValue("lineEditZ1", dataForm->getValue("lineEditZ1"));
 			dataFormDest->setValue("lineEditZ2", dataForm->getValue("lineEditZ2"));
 			dataFormDest->serialize(filePath4Dest);

@@ -70,7 +70,7 @@ JiaGongJiLuForm::~JiaGongJiLuForm()
 void JiaGongJiLuForm::openDatabase()
 {
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     //if (db.isOpen()) {
     //    db.close();
@@ -95,7 +95,7 @@ void JiaGongJiLuForm::loadTableData()
     }
 
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     int offset = (currentPage - 1) * rowsPerPage;
     // strftime('%H:%M:%S', datetime((julianday(end_date) - julianday(start_date)) * 86400, 'unixepoch')) AS 总时间
@@ -121,7 +121,7 @@ void JiaGongJiLuForm::loadTableData()
 void JiaGongJiLuForm::loadTableDataDetail(int parentId)
 {
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     QString query = QString("SELECT cNo AS cNo, strftime('%H:%M:%S', datetime(time, 'unixepoch')) AS time FROM %1 WHERE parent = %2 ORDER BY ID ASC")
         .arg("WORK_DETAIL").arg(parentId);
@@ -142,7 +142,7 @@ void JiaGongJiLuForm::loadTableDataDetail(int parentId)
 int JiaGongJiLuForm::getTotalRowCount(const QString& tableName)
 {
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     QSqlQuery query(db);
     query.prepare(QString("SELECT COUNT(*) FROM %1").arg(tableName));
@@ -161,22 +161,22 @@ int JiaGongJiLuForm::getTotalRowCount(const QString& tableName)
 
 bool JiaGongJiLuForm::createDb()
 {
-	//if (WORK_DB_PATH == ":memory:") {
+	//if (GetWorkDbPath() == ":memory:") {
 	//	return true;
 	//}
-    bool dbShouldInit = WORK_DB_PATH == ":memory:" || !QFile::exists(WORK_DB_PATH);
+    bool dbShouldInit = GetWorkDbPath() == ":memory:" || !QFile::exists(GetWorkDbPath());
 
     DatabaseManager& dbManager = DatabaseManager::instance();
 
     // Add database connections
     QVariantMap sqliteOptions;
-    sqliteOptions["databaseName"] = WORK_DB_PATH;
-    dbManager.addDatabase("QSQLITE", WORK_DB_PATH, sqliteOptions);
+    sqliteOptions["databaseName"] = GetWorkDbPath();
+    dbManager.addDatabase("QSQLITE", GetWorkDbPath(), sqliteOptions);
 
-    //if (QFile::exists(WORK_DB_PATH))
+    //if (QFile::exists(GetWorkDbPath()))
     //    return true;
 
-	QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+	QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     if (!db.open()) {
         //QMessageBox::critical(this, "Error", "Could not open database: " + db.lastError().text());
@@ -200,7 +200,7 @@ bool JiaGongJiLuForm::createDb()
             }
         }
 
-        if (WORK_DB_PATH == ":memory:") {
+        if (GetWorkDbPath() == ":memory:") {
             QSqlQuery query(db);
             query.exec("INSERT INTO WORK_MASTER (id, name, start_date, end_date) VALUES (1, 'Alice', '2024-10-01 00:00:00.000', '2024-10-01 01:00:01.000')");
             query.exec("INSERT INTO WORK_MASTER (id, name, start_date, end_date) VALUES (2, 'Bob', '2024-10-01 00:00:00.000', '2024-11-01 01:00:02.000')");
@@ -230,7 +230,7 @@ bool JiaGongJiLuForm::createDb()
 qint64 JiaGongJiLuForm::addRecordWork(QString name, QDateTime startDate, QDateTime endDate, int workSeconds)
 {
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
     if (!db.isValid()) {
         return -1;
     }
@@ -262,7 +262,7 @@ qint64 JiaGongJiLuForm::addRecordWork(QString name, QDateTime startDate, QDateTi
 void JiaGongJiLuForm::addRecordWorkDetail(QString cNo, QDateTime startDate, QDateTime endDate, int workSeconds, qint64 parentId)
 {
     DatabaseManager& dbManager = DatabaseManager::instance();
-    QSqlDatabase db = dbManager.getDatabase(WORK_DB_PATH);
+    QSqlDatabase db = dbManager.getDatabase(GetWorkDbPath());
 
     QSqlQuery query(db);
     QString sql = QString("INSERT INTO WORK_DETAIL (cNo, start_date, end_date, time, parent) VALUES ('%1', '%2', '%3', %4, %5)")

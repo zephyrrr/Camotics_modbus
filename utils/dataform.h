@@ -3,6 +3,7 @@
 
 #include <QString>
 #include <QHash>
+#include "modbus/NCMachineProperties.h"
 
 
 class IDataForm {
@@ -50,7 +51,7 @@ public:
 	~DataForms();
 
 	void removeDataForm(QString objectName);
-	DataForm* getDataForm(QString objectName, QString projectDir=NULL);
+	DataForm* getDataForm(QString objectName, SystemSettings::DataDirType dirFlags = SystemSettings::ProjectFlag);
 	QString getValue(const QString& caption) const;
 
 	void LoadData();

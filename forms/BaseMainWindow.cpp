@@ -5,9 +5,7 @@
 BaseMainWindow::BaseMainWindow(QWidget* parent)
 	:QMainWindow(parent)
 {
-	SystemSettings::instance().SetProjectDir(QDir::currentPath() + "/data/default");
-	SystemSettings::instance().LoadFromFile(QDir::currentPath() + "/data/qGlobal.ini");
-
+	SystemSettings::instance().SetProjectName("default");
 }
 
 BaseMainWindow::~BaseMainWindow()

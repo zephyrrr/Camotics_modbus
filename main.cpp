@@ -528,7 +528,8 @@ int mainQt(int argc, char* argv[])
     /*auto s = QStyleFactory::keys();
     QApplication::setStyle(QStyleFactory::create("windows"));*/
 
-    SystemSettings::instance().LoadFromFile(QDir::currentPath() + "/data/qGlobal.ini");
+    SystemSettings::instance().LoadFromFile(SystemSettings::CombinePath(SystemSettings::instance().GetSystemDataDir(), "qGlobal.ini"));
+	SystemSettings::instance().MigrateUserDataDir();
 
     QApplication qtApp(argc, argv);
 

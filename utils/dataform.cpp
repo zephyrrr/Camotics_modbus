@@ -117,23 +117,23 @@ void DataForms::removeDataForm(QString objectName)
     }
 }
 
-DataForm* DataForms::getDataForm(QString objectName, QString projectDir)
+DataForm* DataForms::getDataForm(QString objectName, SystemSettings::DataDirType dirFlags)
 {
-    DataForm* ret;
-    if (m_dataForms.contains(objectName)) {
-        ret = m_dataForms[objectName];
-    }
+	DataForm* ret;
+	if (m_dataForms.contains(objectName)) {
+		ret = m_dataForms[objectName];
+	}
 	else
-    {
-        ret = new DataForm();
-        ret->setObjectName(objectName);
-        m_dataForms[objectName] = ret;
+	{
+		ret = new DataForm();
+		ret->setObjectName(objectName);
+		m_dataForms[objectName] = ret;
 
-        QString filePathName = SystemSettings::GetDataFilePath(ret->objectName(), projectDir);
-        ret->deserialize(filePathName);
-    }
+		QString filePathName = SystemSettings::GetDataFilePath(ret->objectName(), dirFlags);
+		ret->deserialize(filePathName);
+	}
 
-    return ret;
+	return ret;
 }
 
 void DataForms::LoadData()

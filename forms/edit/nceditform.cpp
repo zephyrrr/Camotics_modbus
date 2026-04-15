@@ -60,7 +60,7 @@ NcEditForm::NcEditForm(QWidget* parent) :
 	//});
 
 	QDir dir;
-	m_defaultDirName = "data/nc";
+	m_defaultDirName = SystemSettings::instance().GetUserDataDir() + "/nc";
 	if (!dir.exists(m_defaultDirName))
 	{
 		dir.mkdir(m_defaultDirName);

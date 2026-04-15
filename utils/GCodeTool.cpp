@@ -1,4 +1,4 @@
-#include "GCodeTool.h"
+﻿#include "GCodeTool.h"
 #include <gcode/machine/MachineState.h>
 #include <gcode/machine/MachineLinearizer.h>
 #include <gcode/machine/MachineUnitAdapter.h>
@@ -236,13 +236,13 @@ std::string GCodeTool::moveAllSubBlocksToFront(const std::string& inputText) {
 bool GCodeTool::RunGCode(SmartPointer<MachineInterface> machine, std::string gcode)
 {
 	LOG_INFO(8, "EDM: RunGCode \n" << gcode);
-	if (m_isRuning) {
+	if (m_isRunning) {
 		LOG_WARNING("EDM: GCodeTool is already running.");
 		return false;
 	}
 
 	bool ret = true;
-	m_isRuning = true;
+	m_isRunning = true;
 	std::string stringGCode = gcode;
 	const InputSource& source = cb::InputSource(stringGCode);
 
@@ -279,14 +279,14 @@ bool GCodeTool::RunGCode(SmartPointer<MachineInterface> machine, std::string gco
 	pipeline.end();
 
 	m_controller->setMachine(*m_machineState);
-	m_isRuning = false;
+	m_isRunning = false;
 
 	return ret;
 }
 
 void GCodeTool::deserialize()
 {
-	QString fileName = DATA_FILE_NAME;
+	QString fileName = GetDataFileName();
 	//QString bakfileName = fileName + ".bak";
 
 	bool loadOk = true;
@@ -392,7 +392,7 @@ QString GCodeTool::FormatPos(double v)
 
 void GCodeTool::serialize()
 {
-	QString fileName = DATA_FILE_NAME;
+	QString fileName = GetDataFileName();
 	//QString bakfileName = fileName + ".bak";
 
 	NFile file(fileName);

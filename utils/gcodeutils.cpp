@@ -627,15 +627,15 @@ QString GCodeUtils::RunManual()
 	DataTable* table1 = &table11;
 	DataTable* table2 = &table22;
 
-    QString filePath2 = SystemSettings::GetDataFilePath("sdjg", SystemSettings::instance().GetProjectDir());
+    QString filePath2 = SystemSettings::GetDataFilePath("sdjg");
     filePath2 = SystemSettings::AppendDataFilePath(filePath2, "sdjg_table2");
     table2->deserialize(filePath2);
 
-    QString filePath1 = SystemSettings::GetDataFilePath("sdjg", SystemSettings::instance().GetProjectDir());
+    QString filePath1 = SystemSettings::GetDataFilePath("sdjg");
     filePath1 = SystemSettings::AppendDataFilePath(filePath1, "sdjg_table1");
     table1->deserialize(filePath1);
 
-    DataForm* dataForm = DataForms::getInstance()->getDataForm("sdjg", SystemSettings::instance().GetProjectDir());
+    DataForm* dataForm = DataForms::getInstance()->getDataForm("sdjg");
 
     //
     QStringList toAxis, toAxisLength;

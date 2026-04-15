@@ -5,9 +5,10 @@
 #include <QSqlQueryModel>
 #include "ui_jiagongjiluform.h"
 #include "BaseChildWindow.h"
+#include "modbus/NCMachineProperties.h"
 
-//#define WORK_DB_PATH ":memory:"
-#define WORK_DB_PATH "./data/work.db"
+// Work database path is now in DataDir (configured via qGlobal.ini)
+inline QString GetWorkDbPath() { return SystemSettings::instance().GetUserDataDir() + "/work.db"; }
 
 class JiaGongJiLuForm : public BaseChildWindow
 {

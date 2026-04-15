@@ -15,7 +15,7 @@
 #include <QThread>
 #include "NCCommand.h"
 #include "NCMachine.h"
-#include "utils/TaskThread.cpp"
+#include "utils/TaskThread.h"
 #include "utils/GCodeTool.h"
 #include "utils/LineLogger.h"
 #include "NCMachineParametersC.h"
@@ -1793,7 +1793,7 @@ void NCMachine::ProcessKey()
 				break;
 			case KNLK_XSUB:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				//PropertyObjects::getInstance()->propertyObjectCmvTouch->setddfx(DdfxEnum::X_MINUS);
 				//PropertyObjects::getInstance()->propertyObjectCmvTouch->ExecuteCmds(this);
 				gcode = GCodeUtils::Duidao("X", -1, 0, 0, inBack.toDouble());
@@ -1801,31 +1801,31 @@ void NCMachine::ProcessKey()
 				break;
 			case KNLK_XADD:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				gcode = GCodeUtils::Duidao("X", 1, 0, 0, inBack.toDouble());
 			}
 				break;
 			case KNLK_YSUB:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				gcode = GCodeUtils::Duidao("Y", -1, 0, 0, inBack.toDouble());
 			}
 				break;
 			case KNLK_YADD:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				gcode = GCodeUtils::Duidao("Y", 1, 0, 0, inBack.toDouble());
 			}
 				break;
 			case KNLK_ZSUB:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				gcode = GCodeUtils::Duidao("Z", -1, 0, 0, inBack.toDouble());
 			}
 				break;
 			case KNLK_ZADD:
 			{
-				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm", SystemSettings::instance().GetProjectDir())->getValue("inBack");
+				QString inBack = DataForms::getInstance()->getDataForm("DuanMianForm")->getValue("inBack");
 				gcode = GCodeUtils::Duidao("Z", 1, 0, 0, inBack.toDouble());
 			}
 				break;
@@ -3772,7 +3772,7 @@ bool NCMachine::serialize()
 	jsonObj["currentJCode"] = QString::fromStdString(m_currentJCode);
 
 	QJsonDocument jsonDoc(jsonObj);
-	NFile file("data/ncmachine.json");
+	NFile file(SystemSettings::instance().GetUserDataDir() + "/ncmachine.json");
 	if (file.open(QIODevice::WriteOnly)) {
 		file.write(jsonDoc.toJson());
 		file.close();
@@ -3783,7 +3783,7 @@ bool NCMachine::serialize()
 
 bool NCMachine::deserialize()
 {
-	QFile file("data/ncmachine.json");
+	QFile file(SystemSettings::instance().GetUserDataDir() + "/ncmachine.json");
 	if (!file.open(QIODevice::ReadOnly)) {
 		return false;
 	}
