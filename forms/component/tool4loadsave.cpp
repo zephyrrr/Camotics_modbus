@@ -9,7 +9,7 @@ Tool4LoadSave::Tool4LoadSave(BaseChildWindow* childWindow, QWidget *parent)
 {
 	ui.setupUi(this);
 
-	m_path = m_childWindow->GetProjectDir() + QDir::separator() + QString("%1").arg(m_childWindow->objectName());
+	m_path = SystemSettings::GetPath(QString("%1").arg(m_childWindow->objectName()), SystemSettings::ProjectFlag);
 	QDir directory(m_path);
 	if (!directory.exists()) {
 		directory.mkpath(m_path);

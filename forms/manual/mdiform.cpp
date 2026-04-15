@@ -120,8 +120,7 @@ void MdiForm::RunGCode()
 
 bool MdiForm::serialize()
 {
-	QString projectDir = GetProjectDir();
-	NFile file(projectDir + QDir::separator() + "mdiform.nc");
+	NFile file(SystemSettings::GetPath("mdiform.nc", SystemSettings::ProjectFlag));
 	if (file.open(QIODevice::WriteOnly)) {
 		QTextStream out(&file);
 		out << this->editor->toPlainText();
@@ -133,8 +132,7 @@ bool MdiForm::serialize()
 
 bool MdiForm::deserialize()
 {
-	QString projectDir = GetProjectDir();
-	QFile file(projectDir + QDir::separator() + "mdiform.nc");
+	QFile file(SystemSettings::GetPath("mdiform.nc", SystemSettings::ProjectFlag));
 	if (file.open(QIODevice::ReadOnly)) {
 		QTextStream in(&file);
 		QString text = in.readAll();

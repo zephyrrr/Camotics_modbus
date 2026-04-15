@@ -1,4 +1,4 @@
-#include "fangdiancanshuform.h"
+﻿#include "fangdiancanshuform.h"
 #include "ui_fangdiancanshuform.h"
 #include "widgets/spreadsheet.h"
 #include <QHeaderView>
@@ -107,7 +107,7 @@ FangDianCanShuForm::~FangDianCanShuForm()
 void FangDianCanShuForm::SaveData(QString filePath)
 {
     if (filePath == NULL) {
-        filePath = GetDataFilePath(table1);
+        filePath = GetDataFilePath(table1, SystemSettings::UserFlag);
     }
     table1->serialize(filePath);
     NCMachineParametersC::instance().deserialize();
@@ -116,7 +116,7 @@ void FangDianCanShuForm::SaveData(QString filePath)
 void FangDianCanShuForm::LoadData(QString filePath)
 {
     if (filePath == NULL) {
-        filePath = GetDataFilePath(table1);
+        filePath = GetDataFilePath(table1, SystemSettings::UserFlag);
     }
     table1->deserialize(filePath);
 }

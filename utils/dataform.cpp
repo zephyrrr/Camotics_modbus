@@ -43,7 +43,7 @@ void DataForm::deleteItem(const QString& caption)
         m_data.remove(caption);
 }
 
-bool DataForm::serialize(QString filePathName)
+bool DataForm::serialize(const QString& filePathName)
 {
     try {
         QJsonObject data;
@@ -66,7 +66,7 @@ bool DataForm::serialize(QString filePathName)
     return true;
 }
 
-bool DataForm::deserialize(QString filePathName)
+bool DataForm::deserialize(const QString& filePathName)
 {
     try {
         if (QFile::exists(filePathName)) {
@@ -140,7 +140,7 @@ void DataForms::LoadData()
 {
     // #define DYNAMIC_FORMS_COUNT 5
     for (int i = 0; i < 5; ++i) {
-        getDataForm(QString("xitongshezhi%01").arg(i == 0 ? "" : QString::number(i + 1)));
+        getDataForm(QString("xitongshezhi%01").arg(i == 0 ? "" : QString::number(i + 1)), SystemSettings::UserFlag);
     }
 }
 

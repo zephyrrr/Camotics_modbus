@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
 **
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
@@ -70,16 +70,16 @@ public:
 
     void addNewRow();
 
-    bool serialize(QString filePathName);
-    bool deserialize(QString filePathName);
+    bool serialize(const QString& filePathName);
+    bool deserialize(const QString& filePathName);
 
-    static bool serialize(QTableWidget *table, QString filePathName);
-    static bool deserialize(QTableWidget *table, QString filePathName);
+    static bool serialize(QTableWidget *table, const QString& filePathName);
+    static bool deserialize(QTableWidget *table, const QString& filePathName);
 
     void enableAddNew(bool b);
 
-    static bool exportToCsv(QTableWidget* table, QString fileName);
-    static bool importFromCsv(QTableWidget* table, QString fileName);
+    static bool exportToCsv(QTableWidget* table, const QString& fileName);
+    static bool importFromCsv(QTableWidget* table, const QString& fileName);
 
 public slots:
     //void updateColor(QTableWidgetItem *item);

@@ -306,11 +306,6 @@ BaseMainWindow* BaseChildWindow::GetMainWindow()
 	return mainWindow;
 }
 
-QString BaseChildWindow::GetProjectDir()
-{
-	return SystemSettings::instance().GetProjectDir();
-}
-
 QString BaseChildWindow::GetDataFilePath(QObject* obj, SystemSettings::DataDirType dirFlags)
 {
 	return SystemSettings::GetDataFilePath(obj->objectName(), dirFlags);

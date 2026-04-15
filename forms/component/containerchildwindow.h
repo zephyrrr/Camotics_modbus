@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "BaseChildWindow.h"
 #include "../plugins/iplugin.h"
@@ -15,6 +15,7 @@ public:
 	void RunGCode() override;
 	void SetPlugin(IDoPlugin* plugin) { m_plugin = plugin; }
 
+	void SetContent(QWidget* widget);
 private:
 	IDoPlugin* m_plugin;
 };

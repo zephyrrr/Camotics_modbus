@@ -1,4 +1,4 @@
-/****************************************************************************
+﻿/****************************************************************************
 **
 ** Copyright (C) 2016 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
@@ -101,7 +101,7 @@ void SpreadSheet::enableAddNew(bool b)
     }
 }
 
-bool SpreadSheet::exportToCsv(QTableWidget* table, QString fileName)
+bool SpreadSheet::exportToCsv(QTableWidget* table, const QString& fileName)
 {
     NFile file(fileName);
     if (file.open(QIODevice::WriteOnly)) {
@@ -125,7 +125,7 @@ bool SpreadSheet::exportToCsv(QTableWidget* table, QString fileName)
     return false;
 }
 
-bool SpreadSheet::importFromCsv(QTableWidget* table, QString fileName)
+bool SpreadSheet::importFromCsv(QTableWidget* table, const QString& fileName)
 {
     QFile file(fileName);
     if (file.open(QIODevice::ReadOnly)) {
@@ -167,19 +167,19 @@ void  SpreadSheet::addNewRow() {
     }
 }
 
-bool SpreadSheet::serialize(QString filePathName)
+bool SpreadSheet::serialize(const QString& filePathName)
 {
     return serialize(this, filePathName);
 }
 
-bool SpreadSheet::deserialize(QString filePathName)
+bool SpreadSheet::deserialize(const QString& filePathName)
 {
     return deserialize(this, filePathName);
 }
 
 QHash<QString, QString> SpreadSheet::m_fileContents;
 
-bool SpreadSheet::serialize(QTableWidget* table, QString filePathName)
+bool SpreadSheet::serialize(QTableWidget* table, const QString& filePathName)
 {
     try {
         auto model = table->model();
@@ -212,7 +212,7 @@ bool SpreadSheet::serialize(QTableWidget* table, QString filePathName)
     return true;
 }
 
-bool SpreadSheet::deserialize(QTableWidget* table, QString filePathName)
+bool SpreadSheet::deserialize(QTableWidget* table, const QString& filePathName)
 {
     try {
         auto model = table->model();

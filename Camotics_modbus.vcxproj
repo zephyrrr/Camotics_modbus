@@ -405,6 +405,8 @@
     <ClCompile Include="camotics\qt\TPLHighlighter.cpp" />
     <ClCompile Include="forms\auto\runautoone.cpp" />
     <ClCompile Include="forms\component\pythonpluginchildwindow.cpp" />
+    <ClCompile Include="forms_v1\settingsmodbustcp.cpp" />
+    <ClCompile Include="modbus\SystemSettings.cpp" />
     <ClCompile Include="utils\LocaleUtils.cpp" />
     <ClCompile Include="utils\simplecrypt.cpp" />
     <ClCompile Include="utils\QSqliteListModel.cpp" />
@@ -578,6 +580,8 @@
     <ClInclude Include="forms\component\tool4base.h" />
     <QtMoc Include="utils\QTextFileModel.h" />
     <QtMoc Include="utils\QSqliteListModel.h" />
+    <QtMoc Include="forms_v1\settingsmodbustcp.h" />
+    <ClInclude Include="modbus\SystemSettings.h" />
     <ClInclude Include="utils\LocaleUtils.h" />
     <ClInclude Include="plugins\iplugin.h" />
     <ClInclude Include="resource.h" />
@@ -703,6 +707,7 @@
     <QtUic Include="forms\other\about.ui" />
     <QtUic Include="forms\other\jiagongjiluform.ui" />
     <QtUic Include="forms\run\ncrun.ui" />
+    <QtUic Include="forms_v1\settingsmodbustcp.ui" />
     <QtUic Include="widgets\boollineedit.ui">
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>

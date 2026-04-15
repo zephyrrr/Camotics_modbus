@@ -150,19 +150,19 @@ void ModbusCommSettings::setScanRate(int scanRate)
     m_scanRate = scanRate;
 }
 
-void ModbusCommSettings::loadSession(QString fName)
-{
-    //QLOG_INFO()<<  "Load session config from file " << fName;
-    QSettings m_save_session(fName, QSettings::IniFormat, this);
-    load(&m_save_session);
-}
+//void ModbusCommSettings::loadSession(QString fName)
+//{
+//    //QLOG_INFO()<<  "Load session config from file " << fName;
+//    QSettings m_save_session(fName, QSettings::IniFormat, this);
+//    load(&m_save_session);
+//}
 
-void ModbusCommSettings::saveSession(QString fName)
-{
-    //QLOG_INFO()<<  "Save session config to file " << fName;
-    QSettings m_save_session(fName, QSettings::IniFormat, this);
-    save(&m_save_session);
-}
+//void ModbusCommSettings::saveSession(QString fName)
+//{
+//    //QLOG_INFO()<<  "Save session config to file " << fName;
+//    QSettings m_save_session(fName, QSettings::IniFormat, this);
+//    save(&m_save_session);
+//}
 
 void ModbusCommSettings::load(QSettings *s)
 {

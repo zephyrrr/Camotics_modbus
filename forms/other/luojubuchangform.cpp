@@ -93,7 +93,7 @@ void LuoJuBuChangForm::onActionReadTriggered() {
                 table2->model()->setData(index, (int16_t)data[j]);
             }
             table2->viewport()->update();
-            table2->serialize(GetDataFilePath(table2));
+            table2->serialize(GetDataFilePath(table2, SystemSettings::UserFlag));
             };
         ModbusTask* task = m_ncMachine->getModbus()->getTaskReadFile(i * table2->columnCount(), table2->columnCount());
 		task->setPostFunction(func, "Read LuoJuBuChang");
@@ -129,8 +129,8 @@ void LuoJuBuChangForm::SaveData(QString filePath)
     if (filePath != NULL) {
         throw std::invalid_argument("filePath must be NULL");
     }
-    table1->serialize(GetDataFilePath(table1));
-    table2->serialize(GetDataFilePath(table2));
+    table1->serialize(GetDataFilePath(table1, SystemSettings::UserFlag));
+    table2->serialize(GetDataFilePath(table2, SystemSettings::UserFlag));
 }
 
 void LuoJuBuChangForm::LoadData(QString filePath)
@@ -139,8 +139,8 @@ void LuoJuBuChangForm::LoadData(QString filePath)
         throw std::invalid_argument("filePath must be NULL");
     }
 
-    table1->deserialize(GetDataFilePath(table1));
-    table2->deserialize(GetDataFilePath(table2));
+    table1->deserialize(GetDataFilePath(table1, SystemSettings::UserFlag));
+    table2->deserialize(GetDataFilePath(table2, SystemSettings::UserFlag));
 
     for (int i = 0; i < LJBC_AXIS_LEN; ++i) {
         if (table1->item(3, i) != NULL && table1->item(3, i)->text().isEmpty())

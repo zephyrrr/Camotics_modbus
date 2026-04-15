@@ -3,7 +3,7 @@
 #include "regwindow.h"
 
 NCMachinePanel::NCMachinePanel(QWidget *parent, NCMachine* ncMachine, ModbusAdapter* adapter, ModbusCommSettings* settings)
-	: BaseChildWindow(parent), m_modbus(adapter), m_modbusCommSettings(settings), ui(new Ui::NCMachinePanel)
+	: BaseChildWindow(parent), m_modbusAdapter(adapter), m_modbusCommSettings(settings), ui(new Ui::NCMachinePanel)
 {
     m_ncMachine = ncMachine;
 	ui->setupUi(this);

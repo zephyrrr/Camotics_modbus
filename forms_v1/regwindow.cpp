@@ -19,12 +19,12 @@
 #include "forms/mainwindow2.h"
 
 RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings)
-	: QDialog{ parent }, m_ncMachine(machine), m_modbus(adapter), m_modbusCommSettings(settings), ui(new Ui::RegWindow)
+	: QDialog{ parent }, m_ncMachine(machine), m_modbusAdapter(adapter), m_modbusCommSettings(settings), ui(new Ui::RegWindow)
 {
 	ui->setupUi(this);
 	this->setWindowFlags(this->windowFlags() | Qt::WindowMaximizeButtonHint | Qt::WindowMinimizeButtonHint);
 
-	auto regModel = m_modbus->GetRegistersModel();
+	auto regModel = m_modbusAdapter->GetRegistersModel();
 	if (regModel != NULL) {
 		ui->tblRegisters->setItemDelegate(regModel->itemDelegate());
 		ui->tblRegisters->setModel(regModel->model);
@@ -52,22 +52,22 @@ RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter
 			model->setItem(0, i, item);
 		}
 	}
-	m_modbus->resetCounters();
-	//m_modbus->setSlave(1);
-	//m_modbus->setFunctionCode(EUtils::ModbusFunctionCode(2));
-	//m_modbus->setStartAddr(0);
-	//m_modbus->setNumOfRegs(18);
-	m_modbus->addItems(0, 13);
+	m_modbusAdapter->resetCounters();
+	//m_modbusAdapter->setSlave(1);
+	//m_modbusAdapter->setFunctionCode(EUtils::ModbusFunctionCode(2));
+	//m_modbusAdapter->setStartAddr(0);
+	//m_modbusAdapter->setNumOfRegs(18);
+	m_modbusAdapter->addItems(0, 13);
 
 	//QLOG_INFO() << "Add Items. Function Code = " << QString::number(EUtils::ModbusFunctionCode(ui->cmbFunctionCode->currentIndex()), 16);
 
-	//m_modbus->modbusTransaction();
+	//m_modbusAdapter->modbusTransaction();
 
 	// Connect the clicked() signal of the button to the slot function
 	/*connect(ui->btnStart, SIGNAL(clicked()), this, SLOT(on_btnStart_clicked()));
 	connect(ui->btnStop, SIGNAL(clicked()), this, SLOT(on_btnStop_clicked()));*/
 
-	connect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+	connect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 	//connect(m_ncMachine, SIGNAL(keyPressed(unsigned long long)), this, SLOT(UpdateState2(unsigned long long)));
 
 	init();
@@ -79,7 +79,7 @@ RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter
 
 RegWindow::~RegWindow()
 {
-	disconnect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+	disconnect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 
 	delete ui;
 
@@ -322,7 +322,7 @@ void RegWindow::init()
 
 	// Tab15
 	{
-		ModbusFile* dialog = new ModbusFile(this, m_modbus);
+		ModbusFile* dialog = new ModbusFile(this, m_modbusAdapter);
 		ui->verticalLayoutTab15->addWidget(dialog, 1);
 	}
 
@@ -340,7 +340,7 @@ void RegWindow::init()
 
 	// Tab17
 	{
-		NCMachinePanel* dialog = new NCMachinePanel(this, m_ncMachine, m_modbus, m_modbusCommSettings);
+		NCMachinePanel* dialog = new NCMachinePanel(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
 		ui->verticalLayoutTab17->addWidget(dialog, 1);
 	}
 
@@ -554,28 +554,28 @@ void RegWindow::UpdateState2(unsigned long long key)
 
 void RegWindow::on_btnStart_clicked()
 {
-	ModbusMain::modbusConnect(true, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMain::modbusConnect(true, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
 
-	ui->btnStart->setEnabled(!m_modbus->isConnected());
-	ui->btnStop->setEnabled(m_modbus->isConnected());
-	ui->btnReadOnce->setEnabled(m_modbus->isConnected());
-	//ui->btnWriteReg->setEnabled(m_modbus->isConnected());
+	ui->btnStart->setEnabled(!m_modbusAdapter->isConnected());
+	ui->btnStop->setEnabled(m_modbusAdapter->isConnected());
+	ui->btnReadOnce->setEnabled(m_modbusAdapter->isConnected());
+	//ui->btnWriteReg->setEnabled(m_modbusAdapter->isConnected());
 }
 
 void RegWindow::on_btnStop_clicked()
 {
-	ModbusMain::modbusConnect(false, m_modbus, m_modbusCommSettings, m_ncMachine);
+	ModbusMain::modbusConnect(false, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
 
-	ui->btnStart->setEnabled(!m_modbus->isConnected());
-	ui->btnStop->setEnabled(m_modbus->isConnected());
-	ui->btnReadOnce->setEnabled(m_modbus->isConnected());
-	//ui->btnWriteReg->setEnabled(m_modbus->isConnected());
+	ui->btnStart->setEnabled(!m_modbusAdapter->isConnected());
+	ui->btnStop->setEnabled(m_modbusAdapter->isConnected());
+	ui->btnReadOnce->setEnabled(m_modbusAdapter->isConnected());
+	//ui->btnWriteReg->setEnabled(m_modbusAdapter->isConnected());
 }
 
 void RegWindow::on_btnReadOnce_clicked()
 {
 	//m_ncMachine->executeCmds();
-	//m_modbus->modbusTransaction();
+	//m_modbusAdapter->modbusTransaction();
 
 	int regAddr = ui->lineEditReadRegAddr->text().toInt();
 	int regLen = ui->lineEditReadRegNum->text().toInt();
@@ -596,9 +596,9 @@ void RegWindow::on_btnReadOnce_clicked()
 			}
 		}
 	};
-	ModbusTask* task = m_modbus->getTaskRead(regAddr, regLen);
+	ModbusTask* task = m_modbusAdapter->getTaskRead(regAddr, regLen);
 	task->setPostFunction(function, "Read Reg");
-	m_modbus->addTask(task, 0);
+	m_modbusAdapter->addTask(task, 0);
 }
 
 void RegWindow::on_btnWriteReg_clicked()
@@ -638,13 +638,13 @@ void RegWindow::on_btnWriteReg_clicked()
 
 void RegWindow::on_ckbVerbosity_stateChanged(int state)
 {
-	if (m_modbus->isConnected()) {
+	if (m_modbusAdapter->isConnected()) {
 		if (state == Qt::Checked) {
-			//m_modbus->startPollTimer();
+			//m_modbusAdapter->startPollTimer();
 			cb::Logger::instance().setVerbosity(10);
 		}
 		else {
-			//m_modbus->stopPollTimer();
+			//m_modbusAdapter->stopPollTimer();
 			cb::Logger::instance().setVerbosity(1);
 		}
 	}
@@ -774,9 +774,9 @@ void RegWindow::on_btnSendKshkz2_clicked()
 		uint16_t* readData = adapter->GetReadedData16();
 		PropertyObjects::getInstance()->propertyObjectVersion->SetValues1(std::vector<uint16_t> {  readData[0], readData[1]});
 		};
-	ModbusTask* task = m_modbus->getTaskRead(TMBS_MAP0_ID_HANDVER, TMBS_MAP0_ID_HANDVER_LEN + TMBS_MAP0_ID_DISPVER_LEN);
+	ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_HANDVER, TMBS_MAP0_ID_HANDVER_LEN + TMBS_MAP0_ID_DISPVER_LEN);
 	task->setPostFunction(function, "Read HandVer and DispVer");
-	m_modbus->addTask(task, 0);
+	m_modbusAdapter->addTask(task, 0);
 }
 
 

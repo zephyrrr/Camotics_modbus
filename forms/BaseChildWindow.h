@@ -102,7 +102,6 @@ public:
     static BaseChildWindow* GetChildWindow(QWidget* widget);
     static BaseMainWindow* GetMainWindow();
 
-    QString GetProjectDir();
     static QString GetDataFilePath(QObject* obj, SystemSettings::DataDirType dirFlags = SystemSettings::ProjectFlag);
 
     void SetData(QString key, QVariant value) { m_data[key] = value; }

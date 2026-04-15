@@ -202,7 +202,7 @@ Bit8~15：保留
 	static QString GetRLSTDesc(uint16_t rslt, uint16_t para);
 
 	// Modbus
-	ModbusAdapter* getModbus() { return m_modbus; }
+	ModbusAdapter* getModbus() { return m_modbusAdapter; }
 	QList<ModbusTask*> executeCmdsInFile(std::string filename);
 	QList<ModbusTask*> executeCmds(std::string s);
 	QList<ModbusTask*> executeCmds(cb::JSON::ValuePtr json);
@@ -273,7 +273,7 @@ private:
 
 	void ProcessPos();
 
-	ModbusAdapter* m_modbus;
+	ModbusAdapter* m_modbusAdapter;
 
 	// 机械坐标
 	cb::Vector4I m_pos;
@@ -385,8 +385,8 @@ private:
 	void SaveWorkTimeToDb();
 public:
 	// modbus队列中如果有任务，也算在运行中
-	// || this->m_modbus->getTaskCnt(0) > 0: 这个不能加，可能某些时候会有其他命令，但这时GCode可以运行
-	bool IsGCodeRunning() { return this->getTaskCnt(1) > 0 || this->getTaskCnt(0) > 0 || this->IsRealtimeJsonMachineRunning() || this->m_modbus->getTaskCnt(1) > 0; }
+	// || this->m_modbusAdapter->getTaskCnt(0) > 0: 这个不能加，可能某些时候会有其他命令，但这时GCode可以运行
+	bool IsGCodeRunning() { return this->getTaskCnt(1) > 0 || this->getTaskCnt(0) > 0 || this->IsRealtimeJsonMachineRunning() || this->m_modbusAdapter->getTaskCnt(1) > 0; }
 	bool IsRealtimeJsonMachineRunning() { return m_gcodeTool->IsRunning() || !m_realtimeJsonMachineThreadDone;  }
 	cb::SmartPointer<ControllerImpl> GetController() { return m_gcodeTool->GetController(); }
 	cb::SmartPointer<RealtimeJsonMachine> GetRealtimeJsonMachine() { return m_realtimeJsonMachine; }

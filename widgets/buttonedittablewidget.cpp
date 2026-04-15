@@ -175,7 +175,7 @@ QJsonArray ButtonEditTableWidget::GetData(ButtonEditTableWidget* parent, bool as
     return data;
 }
 
-bool ButtonEditTableWidget::serialize(QString filePathName)
+bool ButtonEditTableWidget::serialize(const QString& filePathName)
 {
     try {
         QJsonArray data = GetData(this);
@@ -194,7 +194,7 @@ bool ButtonEditTableWidget::serialize(QString filePathName)
     return true;
 }
 
-bool ButtonEditTableWidget::deserialize(QString filePathName)
+bool ButtonEditTableWidget::deserialize(const QString& filePathName)
 {
  //   for (QPushButton* btn : inButtons)
  //   {

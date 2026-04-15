@@ -1,4 +1,4 @@
-#include "dynamicform.h"
+﻿#include "dynamicform.h"
 
 #include <QtWidgets>
 #include <QVBoxLayout>
@@ -165,7 +165,7 @@ void DynamicForm::hideItem(QString caption) const
     }
 }
 
-bool DynamicForm::serialize(QString filePathName)
+bool DynamicForm::serialize(const QString& filePathName)
 {
     try {
         QJsonObject data;
@@ -190,7 +190,7 @@ bool DynamicForm::serialize(QString filePathName)
     return true;
 }
 
-bool DynamicForm::deserialize(QString filePathName)
+bool DynamicForm::deserialize(const QString& filePathName)
 {
     try {
         if (QFile::exists(filePathName)) {

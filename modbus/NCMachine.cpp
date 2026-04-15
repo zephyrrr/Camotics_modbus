@@ -31,7 +31,7 @@
 //template class TaskThread<cb::JSON::Value>;
 
 NCMachine::NCMachine(QObject* parent, ModbusAdapter* adapter) :
-	QObject(parent), m_modbus(adapter), m_taskThread(NULL),
+	QObject(parent), m_modbusAdapter(adapter), m_taskThread(NULL),
 	m_keyPrev(0), m_key(0), m_targetPosX(0), m_targetType(0)
 {
 	//Vector3D p = MathTool::TransformPoint(Vector3D(2.5, 4.5, 0), Vector3D(0, 0, 0), Vector3D(6, 2, 0));
@@ -82,11 +82,11 @@ void NCMachine::ReadAllPosAndState()
 		uint16_t* readData2 = &readData[TMBS_MAP0_ID_XPOS_LEN * 4];
 		ConvertModbusData4State(task, readData2);
 	};
-	ModbusTask* task = m_modbus->getTaskRead(TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * 4 + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN);
+	ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * 4 + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN);
 	task->setPostFunction(function1, "Read Pos and State");
 	m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 	if (m_currentTaskPriority <= 1)
-		LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "):" << TMBS_MAP0_ID_XPOS << ", " << (TMBS_MAP0_ID_XPOS_LEN * 4 + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN));
+		LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << TMBS_MAP0_ID_XPOS << ", " << (TMBS_MAP0_ID_XPOS_LEN * 4 + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN));
 }
 
 bool NCMachine::ConvertModbusData4Key(ModbusTask* task, uint16_t* readData)
@@ -254,58 +254,6 @@ bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData
 	}
 	return true;
 }
-//cb::Vector4I NCMachine::GetXYZUDirect()
-//{
-//	uint16_t* readData = new uint16_t[TMBS_MAP0_ID_XPOS_LEN * 4];
-//
-//	m_modbus->modbusReadDataRaw(m_modbus->getSlave(), MODBUS_FC_READ_HOLDING_REGISTERS, TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * 4, readData);
-//	int x = readData[0] + (readData[1] << 16);
-//	int y = readData[2] + (readData[3] << 16);
-//	int z = readData[4] + (readData[5] << 16);
-//	int u = readData[6] + (readData[7] << 16);
-//	delete[] readData;
-//
-//	cb::Vector4I pos = cb::Vector4I(x, y, z, u);
-//	return pos;
-//}
-//
-//cb::Vector3I NCMachine::GetXYZDirect()
-//{
-//	uint16_t* readData = new uint16_t[TMBS_MAP0_ID_XPOS_LEN * 3];
-//
-//	m_modbus->modbusReadDataRaw(m_modbus->getSlave(), MODBUS_FC_READ_HOLDING_REGISTERS, TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * 3, readData);
-//	int x = readData[0] + (readData[1] << 16);
-//	int y = readData[2] + (readData[3] << 16);
-//	int z = readData[4] + (readData[5] << 16);
-//	delete[] readData;
-//
-//	cb::Vector3I pos = cb::Vector3I(x, y, z);
-//	return pos;
-//}
-//
-//cb::Vector2I NCMachine::GetXYDirect()
-//{
-//	uint16_t* readData = new uint16_t[TMBS_MAP0_ID_XPOS_LEN * 2];
-//
-//	m_modbus->modbusReadDataRaw(m_modbus->getSlave(), MODBUS_FC_READ_HOLDING_REGISTERS, TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * 2, readData);
-//	int x = readData[0] + (readData[1] << 16);
-//	int y = readData[2] + (readData[3] << 16);
-//	delete[] readData;
-//
-//	cb::Vector2I pos = cb::Vector2I(x, y);
-//	return pos;
-//}
-//
-//cb::Vector<3, uint16_t> NCMachine::GetNCTStateDirect()
-//{
-//	assert(TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_NCTSTATE_LEN == 3);
-//
-//	uint16_t* readData = new uint16_t[TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_NCTSTATE_LEN];
-//	m_modbus->modbusReadDataRaw(m_modbus->getSlave(), MODBUS_FC_READ_HOLDING_REGISTERS, TMBS_MAP0_ID_NCTSTATE, TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_NCTSTATE_LEN, readData);
-//	cb::Vector<3, uint16_t> ret = cb::Vector<3, uint16_t>(readData[0], readData[1], readData[2]);
-//	delete[] readData;
-//	return ret;
-//}
 
 bool NCMachine::GetScamanulFlag(int bitIndex) const
 {
@@ -339,8 +287,8 @@ QString NCMachine::GetDebugMsg()
 	std::lock_guard<std::mutex> lock(m_mutex);
 	return QString("Speed: %1\n Modbus Task: %2,%3,%4 \nCurrent: %5; GCode Task: %6,%7 \nCurrent: %8,%9,%10")
 		.arg(PropertyObjects::getInstance()->propertyObjectJog->xV())
-		.arg(m_modbus->getTaskCnt(0)).arg(m_modbus->getTaskCnt(1)).arg(m_modbus->getTaskCnt(2))
-		.arg(QString::fromStdString(m_modbus->getCurrentTaskDesc()))
+		.arg(m_modbusAdapter->getTaskCnt(0)).arg(m_modbusAdapter->getTaskCnt(1)).arg(m_modbusAdapter->getTaskCnt(2))
+		.arg(QString::fromStdString(m_modbusAdapter->getCurrentTaskDesc()))
 		.arg(m_taskThread->getTasksCnt(0)).arg(m_taskThread->getTasksCnt(1))
 		.arg(m_currentGCodeLine).arg(QString::fromStdString(m_currentJCode))
 		.arg(QString::fromStdString(m_currentTaskDesc));
@@ -606,18 +554,18 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 						//}, Qt::QueuedConnection);
 					}
 				};
-				task = m_modbus->getTaskWrite(address, quantity, data);
+				task = m_modbusAdapter->getTaskWrite(address, quantity, data);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
-					LOG_INFO(8, "NCMachine-Modbus: addTaskWrite(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
+					LOG_INFO(8, "NCMachine-Modbus: addTaskWrite(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
 			}
 			else if (action == "read") {
 				int quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
-				task = m_modbus->getTaskRead(address, quantity);
+				task = m_modbusAdapter->getTaskRead(address, quantity);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
-					LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
+					LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
 			} else if (action == "write_file") {
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
@@ -626,7 +574,7 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, address, quantity, data);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
-					LOG_INFO(8, "NCMachine-Modbus: addTaskWriteFile(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
+					LOG_INFO(8, "NCMachine-Modbus: addTaskWriteFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
 			}
 			else if (action == "read_file") {
 				int quantity = json->getS32("quantity");
@@ -634,7 +582,7 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, address, quantity);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
-					LOG_INFO(8, "NCMachine-Modbus: addTaskReadFile(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
+					LOG_INFO(8, "NCMachine-Modbus: addTaskReadFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
 			}
 			if (task) {
 				tasks.append(task);
@@ -808,10 +756,10 @@ QList<ModbusTask*> NCMachine::executeCmdsByTncOrder(int tncOrder, std::vector<ui
 ModbusTask* NCMachine::executeCmdWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> func, std::string desc)
 {
 	ReadAllPosAndState();
-	ModbusTask* task = m_modbus->getTaskWait(func, desc);
+	ModbusTask* task = m_modbusAdapter->getTaskWait(func, desc);
 	m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 	if (m_currentTaskPriority <= 1)
-		LOG_INFO(8, "NCMachine-Modbus: addTaskWait(" << m_currentTaskPriority << ", " << m_modbus->getTaskCnt(m_currentTaskPriority) << "): " << desc << ", " << func.target_type().name());
+		LOG_INFO(8, "NCMachine-Modbus: addTaskWait(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << desc << ", " << func.target_type().name());
 	return task;
 }
 
@@ -2118,7 +2066,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 	std::vector<std::tuple<std::function<int()>, std::string>> checkFunctions;
 	checkFunctions.push_back(std::tuple<std::function<int()>, std::string>([this, task]() {
 		//EUtils::sleep(10000); // just for test
-		int cnt = m_modbus->getTaskCnt(task->priority);
+		int cnt = m_modbusAdapter->getTaskCnt(task->priority);
 		return cnt == 0 ? 1 : -2;
 		}, "wait for modbus-thread finish all tasks"));
 
@@ -2915,7 +2863,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 					GetController()->set("_reg_" + std::to_string(task->startAddr + i), readData[i]);
 				}
 				};
-			ModbusTask* task = m_modbus->getTaskRead(addr, cnt);
+			ModbusTask* task = m_modbusAdapter->getTaskRead(addr, cnt);
 			task->setPostFunction(function1, "readreg");
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
@@ -2938,7 +2886,7 @@ do_writereg 82
 				vs.push_back((int)GetController()->get("_reg_" + std::to_string(addr + i)));
 			}
 			std::string data = NCCommand::UIntsToString(vs);
-			ModbusTask* task = m_modbus->getTaskWrite(addr, cnt, data);
+			ModbusTask* task = m_modbusAdapter->getTaskWrite(addr, cnt, data);
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
 		else if (action2 == "message") {
@@ -3014,7 +2962,7 @@ void NCMachine::exitSetPriority()
 		return;
 	}
 	assert(m_currentTaskPriority != -1);
-	m_modbusTaskCache.AddToModbusTask(m_modbus, m_currentTaskPriority);
+	m_modbusTaskCache.AddToModbusTask(m_modbusAdapter, m_currentTaskPriority);
 
 	m_currentTaskPriority = -1;
 	m_currentTaskPriorityLockCnt = 0;
@@ -3023,7 +2971,7 @@ void NCMachine::exitSetPriority()
 
 int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 {
-	m_modbus->clearTaskLastRet(task->priority);
+	m_modbusAdapter->clearTaskLastRet(task->priority);
 
 	//LOG_INFO(5, "EDM: GCode Runing, Line(after parse): " << task->lineNumber << ", Code: " << task->code);
 
@@ -3102,8 +3050,8 @@ int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 
 		while (true)
 		{
-			if (m_modbus->getTaskLastRet(task->priority) == -9) {
-				m_modbus->clearTaskLastRet(task->priority);
+			if (m_modbusAdapter->getTaskLastRet(task->priority) == -9) {
+				m_modbusAdapter->clearTaskLastRet(task->priority);
 				ret2 = -9;
 			}
 			else
@@ -3593,7 +3541,7 @@ void NCMachine::StopRun()
 
 	LOG_INFO(8, "Modbus: clearTasks");
 	for (int i = 0; i < 2; ++i) {
-		m_modbus->clearTasks(i);
+		m_modbusAdapter->clearTasks(i);
 	}
 
 	// in gcodet task, maybe there is some modbus task to add which will do after clearTask
@@ -3631,7 +3579,7 @@ void NCMachine::PauseRun()
 	if (m_g01Data.isRunning) {
 		if (!m_g01Data.isPausing) {
 			// 如果此时modbus任务队列里正好运行到检测加工停止状态，可能会导致加工完成进行到下一段
-			m_modbus->getTaskThread()->pauseTaskThread();
+			m_modbusAdapter->getTaskThread()->pauseTaskThread();
 			std::this_thread::sleep_for(std::chrono::milliseconds(TASK_WAIT_MILLSECONDS_LARGE));
 
 			m_g01Data.isPausing = true;
@@ -3672,7 +3620,7 @@ void NCMachine::PauseRun()
 
 			exitSetPriority();
 
-			m_modbus->getTaskThread()->resumeTaskThread();
+			m_modbusAdapter->getTaskThread()->resumeTaskThread();
 			LOG_INFO(8, "NCMachine: PauseRun, set lastPos after goApi, lastSV=" << m_g01Data.lastSV);
 		}
 	}
@@ -3772,7 +3720,7 @@ bool NCMachine::serialize()
 	jsonObj["currentJCode"] = QString::fromStdString(m_currentJCode);
 
 	QJsonDocument jsonDoc(jsonObj);
-	NFile file(SystemSettings::instance().GetUserDataDir() + "/ncmachine.json");
+	NFile file(SystemSettings::GetPath("ncmachine.json", SystemSettings::UserFlag));
 	if (file.open(QIODevice::WriteOnly)) {
 		file.write(jsonDoc.toJson());
 		file.close();
@@ -3783,7 +3731,7 @@ bool NCMachine::serialize()
 
 bool NCMachine::deserialize()
 {
-	QFile file(SystemSettings::instance().GetUserDataDir() + "/ncmachine.json");
+	QFile file(SystemSettings::GetPath("ncmachine.json", SystemSettings::UserFlag));
 	if (!file.open(QIODevice::ReadOnly)) {
 		return false;
 	}

@@ -58,7 +58,7 @@ QtWin::QtWin(QWidget *parent)
     //m_rawModel->enableAddLines(true);
     //connect(m_rawModel, SIGNAL(lineAdded(QString)), this, SLOT(logModbusMsg(QString)));
 
-    m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbus, m_modbusCommSettings);
+    m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
 
     // reg window
     {
@@ -102,7 +102,7 @@ QtWin::QtWin(QWidget *parent)
 
     modbusConnect(true);
     addNormalTasks();
-    connect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+    connect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 
     //connect(m_ncMachine, SIGNAL(log(int, QString)), this, SLOT(logWithLevel(int, QString)));
 
@@ -167,7 +167,7 @@ void QtWin::openOptions()
     if (m_dlgModbusRTU == NULL) {
         m_dlgModbusRTU = new SettingsModbusRTU(this,m_modbusCommSettings);
     }
-    m_dlgModbusRTU->modbus_connected = m_modbus->isConnected();
+    m_dlgModbusRTU->modbus_connected = m_modbusAdapter->isConnected();
 
     m_dlgModbusRTU->show();
     //if (m_dlgModbusRTU->exec()==QDialog::Accepted) {
@@ -210,8 +210,8 @@ void QtWin::UpdateState()
     m_console->writeToConsole();
 
     QString msg = QString("Time: %1 / %2, %3%. Packet: %4 / %5")
-        .arg(m_modbus->getCommMSec()).arg(m_modbus->getAllMSec()).arg(m_modbus->getCommMSec() * 100 / (m_modbus->getAllMSec() + 1))
-        .arg(m_modbus->getErrorsCount()).arg(m_modbus->getPacketsCount());
+        .arg(m_modbusAdapter->getCommMSec()).arg(m_modbusAdapter->getAllMSec()).arg(m_modbusAdapter->getCommMSec() * 100 / (m_modbusAdapter->getAllMSec() + 1))
+        .arg(m_modbusAdapter->getErrorsCount()).arg(m_modbusAdapter->getPacketsCount());
     m_statusbar->showMessage(msg);
 }
 

@@ -387,6 +387,12 @@
     <ClCompile Include="forms\component\pythonpluginchildwindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="modbus\SystemSettings.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="forms_v1\settingsmodbustcp.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="forms_v1\mainwindow.h">
@@ -647,6 +653,9 @@
     <QtMoc Include="forms\component\pythonpluginchildwindow.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
+    <QtMoc Include="forms_v1\settingsmodbustcp.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="forms_v1\mainwindow.ui">
@@ -802,6 +811,9 @@
     <QtUic Include="forms\component\tool4itercoor.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="forms_v1\settingsmodbustcp.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="modbus\libmodbus\config.h">
@@ -940,6 +952,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\LocaleUtils.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\SystemSettings.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,11 +1,11 @@
-#include "ModbusFile.h"
+﻿#include "ModbusFile.h"
 #include "ui_ModbusFile.h"
 #include "../modbus/libmodbus/modbus.h"
 #include <QMessageBox>
 #include <cbang/log/Logger.h>
 
 ModbusFile::ModbusFile(QWidget* parent, ModbusAdapter* adapter)
-	: QDialog(parent), ui(new Ui::ModbusFile), m_modbus(adapter)
+	: QDialog(parent), ui(new Ui::ModbusFile), m_modbusAdapter(adapter)
 {
 	ui->setupUi(this);
 }
@@ -19,7 +19,7 @@ void ModbusFile::on_btnRead_clicked()
 	int sub_addr = ui->editRecord->text().toInt();
 	int nb = ui->editNum->text().toInt();
 	uint16_t* dest = new uint16_t[nb];
-	int ret = modbus_read_file_record(m_modbus->GetRawInterface(), addr, sub_addr, nb, dest);
+	int ret = modbus_read_file_record(m_modbusAdapter->GetRawInterface(), addr, sub_addr, nb, dest);
 
 	if (ret == nb) {
 		char* hexString = new char[nb * 5 + 1];
@@ -68,7 +68,7 @@ void ModbusFile::on_btnWrite_clicked()
 		src[i / 4] = value;
 	}
 
-	int ret = modbus_write_file_record(m_modbus->GetRawInterface(), addr, sub_addr, nb, src);
+	int ret = modbus_write_file_record(m_modbusAdapter->GetRawInterface(), addr, sub_addr, nb, src);
 	delete[] src;
 	if (ret == -1) {
 		LOG_ERROR("Modbus: write failed: " << addr << ", " << sub_addr << ", " << EUtils::QString2StdString(EUtils::libmodbus_strerror(errno)));

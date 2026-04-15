@@ -30,8 +30,8 @@ public:
 	void setValue(const QString& caption, const QString& text) override;
 	void deleteItem(const QString& caption);
 
-	bool serialize(QString filePathName);
-	bool deserialize(QString filePathName);
+	bool serialize(const QString& filePathName);
+	bool deserialize(const QString& filePathName);
 
 private:
 	QString m_objectName;

@@ -50,7 +50,7 @@ void MultiButtonsWidget::addDefaultButtons(ButtonEditTableWidget* table)
 		if (table->isReadOnly())
 			return;
 		BaseChildWindow* childWindow = BaseChildWindow::GetChildWindow(table);
-		QString path = childWindow->GetProjectDir() + QDir::separator() + QString("%1").arg(childWindow->objectName()) + QDir::separator() + "table";
+		QString path = SystemSettings::GetPath(QString("%1/table").arg(childWindow->objectName()), SystemSettings::ProjectFlag);
 		QDir directory(path);
 		if (!directory.exists()) {
 			directory.mkpath(path);
@@ -63,7 +63,7 @@ void MultiButtonsWidget::addDefaultButtons(ButtonEditTableWidget* table)
 		if (table->isReadOnly())
 			return;
 		BaseChildWindow* childWindow = BaseChildWindow::GetChildWindow(table);
-		QString path = childWindow->GetProjectDir() + QDir::separator() + QString("%1").arg(childWindow->objectName()) + QDir::separator() + "table";
+		QString path = SystemSettings::GetPath(QString("%1/table").arg(childWindow->objectName()), SystemSettings::ProjectFlag);
 		QDir directory(path);
 		if (!directory.exists()) {
 			directory.mkpath(path);

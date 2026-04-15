@@ -1,4 +1,5 @@
 import os
+import sys
 import zipfile
 import ftplib  # Assuming FTP network storage
 from datetime import datetime
@@ -53,8 +54,12 @@ def send_zipped_logs(log_folder, archive_base_name, ftp_host, ftp_username, ftp_
     except Exception as e:
         print(f"Error sending zipped logs: {e}")
 
-# Example usage (replace placeholders with your details)
-log_folder = "logs"
+# Get log_folder from command line argument if provided
+if len(sys.argv) > 1:
+    log_folder = sys.argv[1]
+else:
+    log_folder = "logs"
+
 archive_name = "cnc_logs"
 ftp_host = "wx6.nbwxgj.com"
 ftp_username = "ftpuaser"

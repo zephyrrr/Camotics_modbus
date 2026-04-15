@@ -8,7 +8,7 @@
 #include "modbus/NCMachineProperties.h"
 
 // Work database path is now in DataDir (configured via qGlobal.ini)
-inline QString GetWorkDbPath() { return SystemSettings::instance().GetUserDataDir() + "/work.db"; }
+inline QString GetWorkDbPath() { return SystemSettings::GetPath("work.db", SystemSettings::UserFlag); }
 
 class JiaGongJiLuForm : public BaseChildWindow
 {

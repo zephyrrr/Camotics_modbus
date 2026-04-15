@@ -144,7 +144,7 @@ void NcRunForm::setHValues() {
 void NcRunForm::LoadData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetProjectDir() + QDir::separator() + "ncrun.txt";
+		filePath = SystemSettings::GetPath("ncrun.txt", SystemSettings::ProjectFlag);
 	}
 	srcFilePath = "";
 	{

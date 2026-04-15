@@ -1,4 +1,4 @@
-#include "containerchildwindow.h"
+﻿#include "containerchildwindow.h"
 #include "../modbus/NCMachine.h"
 
 ContainerChildWindow::ContainerChildWindow(QWidget *parent)
@@ -16,4 +16,10 @@ void ContainerChildWindow::RunGCode()
 			m_ncMachine->RunGCode(gcode);
 		}
 	}
+}
+
+void ContainerChildWindow::SetContent(QWidget* widget)
+{
+	QHBoxLayout* layout = new QHBoxLayout(this);
+	layout->addWidget(widget);
 }

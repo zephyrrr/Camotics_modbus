@@ -103,7 +103,7 @@ RunManualMulti::RunManualMulti(QWidget *parent, QString objectName)
 	mbw->addButton(tr("DR"), [this](bool) {
 		if (table3->isReadOnly())
 			return;
-		QString path = this->GetProjectDir() + QDir::separator() + QString("WeiZhiJiYiForm");
+		QString path = SystemSettings::GetPath("WeiZhiJiYiForm", SystemSettings::ProjectFlag);
 
 		QString fileName = NFileDialog::getOpenFileName(this, tr("DKWJ"), path, QString("(*.json.pos);;"));
 

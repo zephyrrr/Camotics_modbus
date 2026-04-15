@@ -17,7 +17,7 @@
 #include <QString>
 #include "modbus/NCMachineProperties.h"
 
-inline QString GetDataFileName() { return SystemSettings::instance().GetUserDataDir() + "/qcnc.dat"; }
+inline QString GetDataFileName() { return SystemSettings::GetPath("qcnc.dat", SystemSettings::UserFlag); }
 
 using namespace cb;
 using namespace GCode;

@@ -35,7 +35,7 @@ class RegWindow : public QDialog
         void addProperyEditor(QHBoxLayout* horizontalLayout, BasePropertyObject* propertyObject);
 
         ModbusCommSettings* m_modbusCommSettings;
-        ModbusAdapter *m_modbus;
+        ModbusAdapter * m_modbusAdapter;
         NCMachine* m_ncMachine;
 
         ZLJBCPropertyObject* propertyObjectZLJBC[4];

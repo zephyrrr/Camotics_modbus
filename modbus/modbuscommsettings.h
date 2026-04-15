@@ -1,4 +1,4 @@
-#ifndef MODBUSCOMMSETTINGS_H
+﻿#ifndef MODBUSCOMMSETTINGS_H
 #define MODBUSCOMMSETTINGS_H
 
 #include <QSettings>
@@ -29,21 +29,20 @@ public:
     void setParity(QString parity);
     QString RTS();
     void setRTS(QString RTS);
-    //Var
-    QString  maxNoOfLines();
-    void setMaxNoOfLines(QString maxNoOfLines);
+    ////Var
+    //QString  maxNoOfLines();
+    //void setMaxNoOfLines(QString maxNoOfLines);
     QString  responseTimeOut();
     void setResponseTimeOut(QString timeOut);
     QString  byteTimeOut();
     void setByteTimeOut(QString timeOut);
-    void loadSettings();
-    void saveSettings();
-    
-    //session
     int scanRate();
     void setScanRate(int scanRate);
-    void loadSession(QString fName);
-    void saveSession(QString fName);
+
+    //void loadSession(QString fName);
+    //void saveSession(QString fName);
+    void loadSettings();
+    void saveSettings();
 
 private:
     //TCP

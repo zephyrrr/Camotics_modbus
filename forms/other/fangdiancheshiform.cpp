@@ -1,4 +1,4 @@
-#include <QLineEdit>
+﻿#include <QLineEdit>
 #include <QStringBuilder>
 #include "fangdiancheshiform.h"
 #include "modbus/NCMachineParametersC.h"

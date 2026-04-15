@@ -52,7 +52,7 @@ ModbusAdapter::ModbusAdapter(QObject* parent, RegistersModel* regModel, RawDataM
 		memset(writeDataDest16, 0, DATA16_BUFFER_LEN * sizeof(uint16_t));
 
 	// 初始化日志文件
-	QString logDir = "./logs";
+		QString logDir = SystemSettings::GetPath("logs", SystemSettings::UserFlag);
 	QString logFileName = logDir + "/modbus_write_log.csv";
 	logFileName = "";
 	if (!logFileName.isEmpty()) {

@@ -33,8 +33,8 @@ public:
 	//void enableDeleteRow(bool b);
 
 	static QJsonArray GetData(ButtonEditTableWidget* parent, bool asMap = false);
-	bool serialize(QString filePathName);
-	bool deserialize(QString filePathName);
+	bool serialize(const QString& filePathName);
+	bool deserialize(const QString& filePathName);
 
 	void setReadOnlyOnCell(int row, int col, bool readonly);
 	// row是数据Index，=原始Index+1

@@ -1,8 +1,10 @@
 ﻿#include "forms_v1/mainwindow.h"
 #include "forms/mainwindow2.h"
+#include "modbus/SystemSettings.h"
 
 #include <random>
 #include <ctime>
+#include <string>
 
 #include <QApplication>
 #include <QStyleFactory>
@@ -10,27 +12,23 @@
 #include <QLibraryInfo>
 #include <QDir>
 #include <QFile>
-#include <QString>
-#include <QDesktopWidget>
 #include <QScreen>
-#include <QStatusBar>
 #include <QFileSystemWatcher>
 #include <QMessageBox>
+#include <QProcess>
 #include <QtPlugin>
-
 
 #include <signal.h>
 #include <windows.h>
 #include <DbgHelp.h>
 #include <tchar.h>
 #include "StackWalker/StackWalker.h"
-#include <QProcess>
+
 #include <cbang/os/SystemUtilities.h>
 #include <cbang/time/Time.h>
 #include <cbang/String.h>
 #include "version.h"
-
-#include <string>
+#include "utils/EventLogger.h"
 
 #ifdef _UNICODE
 typedef std::wstring tstring;
@@ -39,21 +37,7 @@ typedef std::string tstring;
 #endif
 
 
-#include <QApplication>
-#include <QWidget>
-#include <QPushButton>
-#include <QLineEdit>
-#include <QComboBox>
-#include <QCheckBox>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QFormLayout>
-#include <QSlider>
-#include "utils/EventLogger.h"
-
-
-//#define STYLE_SHEET_PATH 
-#define APPLICATION_LOG_PATH "./logs/application.log"
+//#define STYLE_SHEET_PATH
 
 
 void realRefreshStyle(QFileSystemWatcher* fileWatcher)
@@ -108,7 +92,8 @@ void logTo(QString logMessage)
     header += Time(now).toString("%Y-%m-%d:");
     header += Time(now).toString("%H:%M:%S:");
 
-    QFile logFile(QDir::currentPath() + APPLICATION_LOG_PATH);
+    QString logFilePath = SystemSettings::GetPath("logs/application.log", SystemSettings::UserFlag);
+    QFile logFile(logFilePath);
     if (logFile.open(QIODevice::WriteOnly | QIODevice::Append)) {
         logFile.write(header.c_str());
         logFile.write(logMessage.toLocal8Bit());
@@ -234,7 +219,8 @@ void create_minidump(struct _EXCEPTION_POINTERS* pExceptionPointers)
     //if (SendCrashInfoToDumper(crashingProcessId)) {
     //}
 
-    HANDLE  hDumpFile = ::CreateFile(_T("logs/core.dmp"), GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
+    QString dumpPath = SystemSettings::GetPath("logs/core.dmp", SystemSettings::UserFlag);
+    HANDLE  hDumpFile = ::CreateFileW((LPCWSTR)dumpPath.utf16(), GENERIC_WRITE, FILE_SHARE_WRITE, NULL, CREATE_ALWAYS,
         FILE_ATTRIBUTE_NORMAL, NULL);
     if (hDumpFile != INVALID_HANDLE_VALUE) {
         MINIDUMP_EXCEPTION_INFORMATION dumpInfo;
@@ -502,23 +488,21 @@ int mainQt(int argc, char* argv[])
     }
 
     // https://doc.qt.io/qt-6/qlocale.html#toString-21
-    //int n = QLocale::FloatingPointShortest;
+    //int n = QLocale::FloatingPointShortest
 
-    QFile logFile(QDir::currentPath() + APPLICATION_LOG_PATH);
-  //  QFileInfo fileInfo(logFile.fileName());
-  //  if (fileInfo.exists()) {
-		//// rename the existing log file
-		//QString newFileName = fileInfo.baseName() + "-" + QDateTime::currentDateTime().toString("yyMMdd-hhmmss") + "." + fileInfo.completeSuffix();
-		//logFile.rename(QDir::currentPath() + "/logs/" + newFileName);
-  //  }
-    //qint64 fileSize = fileInfo.size();
-    //if (fileSize > 100000000L)
-    //{
-    //    logFile.remove();
-    //}
+    SystemSettings::instance().LoadFromFile(SystemSettings::GetPath("qGlobal.ini", SystemSettings::SystemFlag));
+    SystemSettings::instance().MigrateUserDataDir();
+
+    // Ensure logs directory exists in UserDataDir
+    QString logsDir = SystemSettings::GetPath("logs", SystemSettings::UserFlag);
+    QDir().mkpath(logsDir);
+
+    QString logFilePath = SystemSettings::GetPath("logs/application.log", SystemSettings::UserFlag);
+    QFile logFile(logFilePath);
     try {
         cb::SystemUtilities::rotate(
-            EUtils::QString2StdString(logFile.fileName()), "logs", 30);
+            EUtils::QString2StdString(logFile.fileName()),
+            EUtils::QString2StdString(logsDir), 30);
     } CATCH_ERROR;
 
     logTo("EDM Start...\n");
@@ -527,9 +511,6 @@ int mainQt(int argc, char* argv[])
 
     /*auto s = QStyleFactory::keys();
     QApplication::setStyle(QStyleFactory::create("windows"));*/
-
-    SystemSettings::instance().LoadFromFile(SystemSettings::CombinePath(SystemSettings::instance().GetSystemDataDir(), "qGlobal.ini"));
-	SystemSettings::instance().MigrateUserDataDir();
 
     QApplication qtApp(argc, argv);
 

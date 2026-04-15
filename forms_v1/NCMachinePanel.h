@@ -24,7 +24,7 @@ private:
 	Ui::NCMachinePanel* ui;
 
 	ModbusCommSettings* m_modbusCommSettings;
-	ModbusAdapter* m_modbus;
+	ModbusAdapter* m_modbusAdapter;
 
 private slots:
 	void on_btnSendKaiji_clicked();

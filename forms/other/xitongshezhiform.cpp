@@ -338,7 +338,7 @@ void XiTongSheZhiForm::SaveData(QString filePath)
 	}
 
 	for (int i = 0; i < DYNAMIC_FORMS_COUNT; i++) {
-		m_dynamicForms[i]->serialize(GetDataFilePath(m_dynamicForms[i]));
+		m_dynamicForms[i]->serialize(GetDataFilePath(m_dynamicForms[i], SystemSettings::UserFlag));
 	}
 }
 
@@ -349,7 +349,7 @@ void XiTongSheZhiForm::LoadData(QString filePath)
 	}
 
 	for (int i = 0; i < DYNAMIC_FORMS_COUNT; i++) {
-		m_dynamicForms[i]->deserialize(GetDataFilePath(m_dynamicForms[i]));
+		m_dynamicForms[i]->deserialize(GetDataFilePath(m_dynamicForms[i], SystemSettings::UserFlag));
 	}
 }
 

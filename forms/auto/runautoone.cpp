@@ -161,7 +161,7 @@ void RunAutoOne::showEvent(QShowEvent* event)
 			dataForm->deleteItem("GCODE_LP");
 
 
-			QString m_path = SystemSettings::instance().GetUserDataDir() + "/nc";
+			QString m_path = SystemSettings::GetPath("nc", SystemSettings::UserFlag);
 			if (!s.isEmpty()) {
 				QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 				if (!filePath.isEmpty()) {

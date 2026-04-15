@@ -22,6 +22,7 @@
 #include "edit/nceditform.h"
 #include "auto/runautoform.h"
 #include "../forms_v1/settingsmodbusrtu.h"
+#include "../forms_v1/settingsmodbustcp.h"
 #include "../forms_v1/NCMachinePanel.h"
 #include "other/luojubuchangform.h"
 #include "other/fangdiancheshiform.h"
@@ -51,8 +52,6 @@
 
 //#pragma execution_character_set("utf-8")
 
-#define LOGGER_FILE_NAME "logs/logger.txt"
-
 ModbusMain::ModbusMain(QObject* parent)
 	: m_parent(parent)
 {
@@ -65,13 +64,13 @@ ModbusMain::ModbusMain(QObject* parent)
 			});
 	}
 
-	m_modbusCommSettings = new ModbusCommSettings(SystemSettings::CombinePath(SystemSettings::instance().GetSystemDataDir(), "qModMaster.ini"));
-	m_modbus = new ModbusAdapter(m_parent, m_regModel, m_rawModel);
-	m_ncMachine = new NCMachine(m_parent, m_modbus);
+	m_modbusCommSettings = new ModbusCommSettings(SystemSettings::GetPath("qModMaster.ini", SystemSettings::SystemFlag));
+	m_modbusAdapter = new ModbusAdapter(m_parent, m_regModel, m_rawModel);
+	m_ncMachine = new NCMachine(m_parent, m_modbusAdapter);
 
 	modbusConnect(true);
 
-	if (m_modbus->isConnected()) {
+	if (m_modbusAdapter->isConnected()) {
 
 	}
 }
@@ -80,9 +79,9 @@ ModbusMain::~ModbusMain()
 {
 	modbusConnect(false);
 
-	if (m_modbus != NULL) {
-		m_modbus->stopPollTimer();
-		m_modbus->modbusDisConnect();
+	if (m_modbusAdapter != NULL) {
+		m_modbusAdapter->stopPollTimer();
+		m_modbusAdapter->modbusDisConnect();
 	}
 
 	if (m_ncMachine != NULL) {
@@ -90,9 +89,9 @@ ModbusMain::~ModbusMain()
 		m_ncMachine = NULL;
 	}
 
-	if (m_modbus != NULL) {
-		delete m_modbus;
-		m_modbus = NULL;
+	if (m_modbusAdapter != NULL) {
+		delete m_modbusAdapter;
+		m_modbusAdapter = NULL;
 	}
 
 	if (m_modbusCommSettings != NULL) {
@@ -111,7 +110,7 @@ ModbusMain::~ModbusMain()
 
 void ModbusMain::modbusConnect(bool connect)
 {
-	modbusConnect(connect, m_modbus, m_modbusCommSettings, m_ncMachine);
+	modbusConnect(connect, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
 }
 void ModbusMain::modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine)
 {
@@ -150,9 +149,9 @@ void ModbusMain::addNormalTasks()
 		uint16_t* readData2 = &readData[TMBS_MAP0_ID_XPOS_LEN * 4];
 		m_ncMachine->ConvertModbusData4State(task, readData2);
 		};
-	ModbusTask* task1 = m_modbus->getTaskRead(TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * POS_AXIS_LEN + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_SCAMANUL_LEN + TMBS_MAP0_ID_INPUT_LEN);
+	ModbusTask* task1 = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_XPOS_LEN * POS_AXIS_LEN + TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_SCAMANUL_LEN + TMBS_MAP0_ID_INPUT_LEN);
 	task1->setPostFunction(function1, "Read Pos & State");
-	m_modbus->addTaskAsNormal(task1, 100, true);
+	m_modbusAdapter->addTaskAsNormal(task1, 100, true);
 
 	//std::function<void(int, ModbusTask*, ModbusAdapter*)> function3 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 	//    if (ret == -1)
@@ -160,7 +159,7 @@ void ModbusMain::addNormalTasks()
 	//    uint16_t* readData = adapter->GetReadedData16();
 	//    m_ncMachine->ConvertModbusDataResult(task, readData);
 	//};
-	//m_modbus->addTaskAsNormal(m_modbus->addTaskRead(TMBS_MAP0_ID_RSLT, TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_SCAMANUL_LEN + TMBS_MAP0_ID_INPUT_LEN, function3), 100, false);
+	//m_modbusAdapter->addTaskAsNormal(m_modbusAdapter->addTaskRead(TMBS_MAP0_ID_RSLT, TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_SCAMANUL_LEN + TMBS_MAP0_ID_INPUT_LEN, function3), 100, false);
 
 	std::function<void(int, ModbusTask*, ModbusAdapter*)> function2 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 		if (ret == -1)
@@ -168,9 +167,9 @@ void ModbusMain::addNormalTasks()
 		uint16_t* readData = adapter->GetReadedData16();
 		m_ncMachine->ConvertModbusData4Key(task, readData);
 		};
-	ModbusTask* task2 = m_modbus->getTaskRead(TMBS_MAP0_ID_KEY, TMBS_MAP0_ID_KEY_LEN + TMBS_MAP0_ID_HOPR_LEN);
+	ModbusTask* task2 = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_KEY, TMBS_MAP0_ID_KEY_LEN + TMBS_MAP0_ID_HOPR_LEN);
 	task2->setPostFunction(function2, "Read Key");
-	m_modbus->addTaskAsNormal(task2, 50, false);
+	m_modbusAdapter->addTaskAsNormal(task2, 50, false);
 
 	std::function<void(int, ModbusTask*, ModbusAdapter*)> function3 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 		if (ret == -1)
@@ -178,9 +177,9 @@ void ModbusMain::addNormalTasks()
 		uint16_t* readData = adapter->GetReadedData16();
 		m_ncMachine->ConvertModbusData4JogDuanlu(task, readData);
 		};
-	ModbusTask* task3 = m_modbus->getTaskRead(TMBS_MAP0_ID_JOG_DUANLU, TMBS_MAP0_ID_JOG_DUANLU_LEN);
+	ModbusTask* task3 = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_JOG_DUANLU, TMBS_MAP0_ID_JOG_DUANLU_LEN);
 	task3->setPostFunction(function3, "Read Jog Duanlu");
-	m_modbus->addTaskAsNormal(task3, 100, false);
+	m_modbusAdapter->addTaskAsNormal(task3, 100, false);
 }
 
 QtWin2::QtWin2(QWidget* parent)
@@ -218,12 +217,9 @@ QtWin2::QtWin2(QWidget* parent)
 	cb::Logger::instance().setLogDebug(true);
 	cb::Logger::instance().setLogRotateMax(30);
 	//cb::Logger::instance().setScreenStream(NULL);
-	cb::Logger::instance().startLogFile(LOGGER_FILE_NAME);
+	cb::Logger::instance().startLogFile(EUtils::QString2StdString(SystemSettings::GetPath("logs/logger.txt", SystemSettings::UserFlag)));
 	LOG_INFO(1, "Application started. " << EUtils::QString2StdString(QApplication::applicationName()) << ", " << EUtils::QString2StdString(QApplication::applicationVersion()));
 
-	NFile::cleanStaleTempFiles(SystemSettings::instance().GetUserDataDir());
-	NFile::cleanStaleTempFiles(SystemSettings::instance().GetProjectDir());
-	NFile::cleanStaleTempFiles(SystemSettings::instance().GetUserDataDir() + "/nc");
 
 	PropertyObjects::getInstance()->CreateData();
 	PropertyObjects::getInstance()->LoadData();
@@ -271,10 +267,10 @@ QtWin2::QtWin2(QWidget* parent)
 
 	ui->lblResultMessage->setText("");
 	//ui->labelFileName->setText(getProjectName());
-	ui->btnFileName->setText(QDir(SystemSettings::instance().GetProjectDir()).dirName());
+	ui->btnFileName->setText(QDir(SystemSettings::GetPath("", SystemSettings::ProjectFlag)).dirName());
 
 	connect(ui->btnFileName, &QToolButton::clicked, [this](bool checked) {
-		QString userDataDir = SystemSettings::instance().GetUserDataDir();
+		QString userDataDir = SystemSettings::GetPath("", SystemSettings::UserFlag);
 		QString chosenDir = NFileDialog::getExistingDirectory(this, tr("XMML"),
 		userDataDir,
 		QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks );
@@ -436,12 +432,19 @@ QtWin2::QtWin2(QWidget* parent)
 			AddChildWindow(tr("FDCS"), layout1, fdcsForm);
 			AddChildWindow(tr("LJBC"), layout1, ljbcForm);
 			//AddChildWindow(tr("HL"), layout1, [this]() {
-			//	//return new NCMachinePanel(this, m_ncMachine, m_modbus, m_modbusCommSettings);
+			//	//return new NCMachinePanel(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
 			//	return new HuiLingForm(this);
 			//	});
 			AddChildWindow(tr("CKSZ"), layout1, [this]() {
 				return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusCommSettings);
 				});
+			//AddChildWindow(tr("CKSZ"), layout1, [this]() {
+			//	//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
+			//	//ccw->SetContent(new SettingsModbusTCP(ccw, m_modbusCommSettings));
+			//	//return ccw;
+			//	return new SettingsModbusTCP(this->ui->stackedChildWidget, m_modbusCommSettings);
+
+			//	});
 			AddChildWindow(tr("GY"), layout1, [this]() {
 				return new AboutForm(this->ui->stackedChildWidget);
 				});
@@ -482,7 +485,7 @@ QtWin2::QtWin2(QWidget* parent)
 	//this->showMaximized();
 
 
-	if (!m_modbus->isConnected()) {
+	if (!m_modbusAdapter->isConnected()) {
 		m_serialPortNeedReconnect = true;
 		//ui->CNCstate->setText(tr("BJ"));
 		ui->lblResultMessage->setText(tr("CKWLJ"));
@@ -501,9 +504,9 @@ QtWin2::QtWin2(QWidget* parent)
 				uint16_t* readData = adapter->GetReadedData16();
 				PropertyObjects::getInstance()->propertyObjectVersion->SetValues1(std::vector<uint16_t> {  readData[0], readData[1]});
 				};
-			ModbusTask* task = m_modbus->getTaskRead(TMBS_MAP0_ID_HANDVER, TMBS_MAP0_ID_HANDVER_LEN + TMBS_MAP0_ID_DISPVER_LEN);
+			ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_HANDVER, TMBS_MAP0_ID_HANDVER_LEN + TMBS_MAP0_ID_DISPVER_LEN);
 			task->setPostFunction(function, "Read Haredware Version");
-			m_modbus->addTask(task, 0);
+			m_modbusAdapter->addTask(task, 0);
 		}
 		{
 			std::function<void(int, ModbusTask*, ModbusAdapter*)> function = [](int ret, ModbusTask*, ModbusAdapter* adapter) {
@@ -512,9 +515,9 @@ QtWin2::QtWin2(QWidget* parent)
 				uint16_t* readData = adapter->GetReadedData16();
 				PropertyObjects::getInstance()->propertyObjectVersion->SetValues2(std::vector<uint16_t> {  readData[0], readData[1] });
 				};
-			ModbusTask* task = m_modbus->getTaskRead(TMBS_MAP0_ID_HANDVER2, TMBS_MAP0_ID_HANDVER2_LEN);
+			ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_HANDVER2, TMBS_MAP0_ID_HANDVER2_LEN);
 			task->setPostFunction(function, "Read Haredware Version 2");
-			m_modbus->addTask(task, 0);
+			m_modbusAdapter->addTask(task, 0);
 		}
 
 		xtszForm->LoadData();
@@ -692,7 +695,7 @@ QtWin2::QtWin2(QWidget* parent)
 	ui->labelManufactoryIcon->hide();
 	ui->widgetInfoIcons->setLayoutDirection(Qt::RightToLeft);
 
-	connect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+	connect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 
 	m_pollTimer = new QTimer(this);
 	connect(m_pollTimer, SIGNAL(timeout()), this, SLOT(UpdateStateByTimer()));
@@ -720,7 +723,7 @@ QtWin2::~QtWin2()
 		m_pollTimer->stop();
 	}
 
-	disconnect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+	disconnect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 
 	showTaskbar();
 
@@ -772,7 +775,7 @@ bool QtWin2::serialize()
 #endif // DEBUG
 
 	QJsonDocument jsonDoc(jsonObj);
-	NFile file(SystemSettings::instance().GetUserDataDir() + "/settings.json");
+	NFile file(SystemSettings::GetPath("settings.json", SystemSettings::UserFlag));
 	if (file.open(QIODevice::WriteOnly)) {
 		file.write(jsonDoc.toJson());
 		file.close();
@@ -783,7 +786,7 @@ bool QtWin2::serialize()
 
 bool QtWin2::deserialize()
 {
-	QFile file(SystemSettings::instance().GetUserDataDir() + "/settings.json");
+	QFile file(SystemSettings::GetPath("settings.json", SystemSettings::UserFlag));
 	if (!file.open(QIODevice::ReadOnly)) {
 		return false;
 	}
@@ -867,9 +870,9 @@ void QtWin2::addNormalTasks()
 		g01Data.dssysj = readData[0] + (readData[1] << 16);
 		g01Data.jgcyl = readData[2] + (readData[3] << 16);
 		};
-	ModbusTask* task1 = m_modbus->getTaskRead(TMBS_MAP0_ID_REG79, 4);
+	ModbusTask* task1 = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_REG79, 4);
 	task1->setPostFunction(function1, "Read Dssysj&Jgcyl");	// // 定时剩余时间,加工残余量
-	m_modbus->addTaskAsNormal(task1, 100, true);
+	m_modbusAdapter->addTaskAsNormal(task1, 100, true);
 
 	ModbusMain::addNormalTasks();
 }
@@ -1026,7 +1029,7 @@ void QtWin2::on_actionPythonScript_triggered()
 void QtWin2::on_actionPowerOn_triggered()
 {
 	tr("to_clear_machine_axis");
-	if (m_modbus->isConnected()) {
+	if (m_modbusAdapter->isConnected()) {
 		this->setEnabled(false);
 
 		// PowerOn
@@ -1118,25 +1121,29 @@ void QtWin2::on_actionSaveScreen_triggered()
 		screen = window->screen();
 	}
 	if (screen) {
+		QString logsDir = SystemSettings::GetPath("logs", SystemSettings::UserFlag);
 		try {
 			SystemUtilities::rotate(
-				"logs/screenshot.png", "logs", 10);
+				EUtils::QString2StdString(SystemSettings::GetPath("logs/screenshot.png", SystemSettings::UserFlag)),
+				EUtils::QString2StdString(logsDir), 10);
 		} CATCH_ERROR;
 
 		try {
 			SystemUtilities::rotate(
-				"logs/core.dmp", "logs", 5);
+				EUtils::QString2StdString(SystemSettings::GetPath("logs/core.dmp", SystemSettings::UserFlag)),
+				EUtils::QString2StdString(logsDir), 5);
 		} CATCH_ERROR;
 
-		QDateTime now = QDateTime::currentDateTime();
-		//QString fileName = QString("logs/screenshot-%1.png").arg(now.toString("yyMMdd-hhmmss"));
-		QString fileName = QString("logs/screenshot.png");
+		QString fileName = SystemSettings::GetPath("logs/screenshot.png", SystemSettings::UserFlag);
 		QPixmap originalPixmap = screen->grabWindow(0);
 		originalPixmap.save(fileName);
 	}
 
-	QString filePath = QDir::currentPath() + QDir::separator() + PLUGIN_PATH + "/python/send_logs.py";
-	PythonQtRuntime::getInstance()->RunFile(filePath);
+
+	//QString logsDir = SystemSettings::GetPath("logs", SystemSettings::UserFlag);
+	//PythonQtRuntime::getInstance()->RunScript(QString("log_folder = '%1'")arg(logsDir));
+	//const QString filePath = QDir::currentPath() + QDir::separator() + PLUGIN_PATH + "/python/send_logs.py";
+	//PythonQtRuntime::getInstance()->RunFile(filePath);
 }
 
 void QtWin2::on_actionSaveGCode_triggered()
@@ -1145,7 +1152,7 @@ void QtWin2::on_actionSaveGCode_triggered()
 	if (currentChild) {
 		QString s = currentChild->GetGCode();
 		if (!s.isEmpty()) {
-			QString m_path = SystemSettings::instance().GetUserDataDir() + "/nc";
+			QString m_path = SystemSettings::GetPath("nc", SystemSettings::UserFlag);
 			QString filePath = NFileDialog::getSaveFileName(this, tr("BCWJ"), m_path, QString("(*.nc)"));
 			if (!filePath.isEmpty()) {
 
@@ -1466,7 +1473,7 @@ void QtWin2::UpdateStateByTimer()
 		if (!serialPortIsFound) {
 			m_serialPortNeedReconnect = true;
 		}
-		if (m_modbus->getErrorsCount() > 100)
+		if (m_modbusAdapter->getErrorsCount() > 100)
 		{
 			m_serialPortNeedReconnect = true;
 		}
@@ -1474,7 +1481,7 @@ void QtWin2::UpdateStateByTimer()
 		{
 			modbusConnect(false);
 			modbusConnect(true);
-			if (!m_modbus->isConnected()) {
+			if (!m_modbusAdapter->isConnected()) {
 				ui->lblResultMessage->setText(tr("CKWLJ"));
 				ui->actionRun->setEnabled(false);
 				ui->actionCancel->setEnabled(false);
@@ -1546,7 +1553,7 @@ void QtWin2::UpdateState()
 
 		bool isRunning = m_ncMachine->IsGCodeRunning() || m_ncMachine->GetNowOperating() > 0;
 
-		//ui->rb3->setChecked(m_modbus->isConnected());
+		//ui->rb3->setChecked(m_modbusAdapter->isConnected());
 		//ui->rb2->setChecked(isRunning);
 
 		//{
@@ -1905,8 +1912,8 @@ void QtWin2::UpdateState()
 
 		if (!ui->statusbar->isHidden()) {
 			QString msg = QString("Modbus Time: %1 / %2, %3%. Packet: %4 / %5. UI Time: %6 / %2, %7. State: %8,%9.  Debug Msg: %10")
-				.arg(m_modbus->getCommMSec()).arg(m_modbus->getAllMSec()).arg(m_modbus->getCommMSec() * 100 / (m_modbus->getAllMSec() + 1))
-				.arg(m_modbus->getErrorsCount()).arg(m_modbus->getPacketsCount())
+				.arg(m_modbusAdapter->getCommMSec()).arg(m_modbusAdapter->getAllMSec()).arg(m_modbusAdapter->getCommMSec() * 100 / (m_modbusAdapter->getAllMSec() + 1))
+				.arg(m_modbusAdapter->getErrorsCount()).arg(m_modbusAdapter->getPacketsCount())
 				.arg(m_msecUI).arg(m_cntUI)
 				.arg(NCMachine::GetStateDesc(state[2])).arg(NCMachine::GetRLSTDesc(state[0], state[1]))
 				.arg(m_ncMachine->GetDebugMsg());
@@ -1956,7 +1963,7 @@ QString QtWin2::SecondsToStr(qint64 totalSeconds)
 void QtWin2::OpenRegWindow()
 {
 	if (m_dlgRegWindow == NULL) {
-		m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbus, m_modbusCommSettings);
+		m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
 	}
 	m_dlgRegWindow->show();
 }
@@ -2136,16 +2143,16 @@ QtWin3::QtWin3(QWidget* parent)
 	statusBar = new QStatusBar(this);
 	this->setStatusBar(statusBar);
 
-	if (m_modbus->isConnected()) {
+	if (m_modbusAdapter->isConnected()) {
 		addNormalTasks();
 
-		connect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+		connect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 	}
 }
 
 QtWin3::~QtWin3()
 {
-	disconnect(m_modbus, SIGNAL(refreshView()), this, SLOT(UpdateState()));
+	disconnect(m_modbusAdapter, SIGNAL(refreshView()), this, SLOT(UpdateState()));
 
 	delete mdiForm;
 }

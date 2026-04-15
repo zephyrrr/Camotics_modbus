@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QObject>
 #include <QDialog>
@@ -19,7 +19,7 @@ public:
 private:
 	Ui::ModbusFile* ui;
 
-	ModbusAdapter* m_modbus;
+	ModbusAdapter* m_modbusAdapter;
 
 private slots:
 	void on_btnRead_clicked();

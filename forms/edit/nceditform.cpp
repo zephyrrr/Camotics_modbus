@@ -60,7 +60,7 @@ NcEditForm::NcEditForm(QWidget* parent) :
 	//});
 
 	QDir dir;
-	m_defaultDirName = SystemSettings::instance().GetUserDataDir() + "/nc";
+	m_defaultDirName = SystemSettings::GetPath("nc", SystemSettings::UserFlag);
 	if (!dir.exists(m_defaultDirName))
 	{
 		dir.mkdir(m_defaultDirName);
@@ -141,7 +141,7 @@ void NcEditForm::RunGCode()
 		SystemSettings::instance().LastRunNCFileName = QString::fromStdString(editor->getFile()->getBasename());
 	}
 
-	QString destFilePath = GetProjectDir() + QDir::separator() + "ncrun.txt";
+	QString destFilePath = SystemSettings::GetPath("ncrun.txt", SystemSettings::ProjectFlag);
 	if (QFile::exists(destFilePath)) {
 		QFile::remove(destFilePath);
 	}
@@ -541,7 +541,7 @@ void NcEditForm::LoadData(QString filePath)
 {
 	try {
 		if (filePath == NULL) {
-			filePath = GetProjectDir() + QDir::separator() + "nceditform.json";
+			filePath = SystemSettings::GetPath("nceditform.json", SystemSettings::ProjectFlag);
 		}
 		QFile file(filePath);
 		if (!file.open(QIODevice::ReadOnly)) {
@@ -624,7 +624,7 @@ void NcEditForm::LoadData(QString filePath)
 void NcEditForm::SaveData(QString filePath)
 {
 	if (filePath == NULL) {
-		filePath = GetProjectDir() + QDir::separator() + "nceditform.json";
+		filePath = SystemSettings::GetPath("nceditform.json", SystemSettings::ProjectFlag);
 	}
 
 	// do real thing

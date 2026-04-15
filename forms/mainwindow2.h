@@ -34,7 +34,7 @@ public:
 
 protected:
     ModbusCommSettings* m_modbusCommSettings;
-    ModbusAdapter* m_modbus;
+    ModbusAdapter* m_modbusAdapter;
     NCMachine* m_ncMachine;
 
     RawDataModel* m_rawModel = NULL;
