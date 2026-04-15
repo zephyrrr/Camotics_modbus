@@ -164,6 +164,7 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 	GetController()->setAxisAbsolutePosition('Z', m_pos.z() / 1000.0, unit);
 	GetController()->setAxisAbsolutePosition('U', m_pos.data[3] / 1000.0, unit);
 
+	ProcessPos();
 	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
 
 	return true;
