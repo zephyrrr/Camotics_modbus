@@ -24,15 +24,35 @@ ModbusAdapter* s_instance;
 #define DATA_BUFFER_LEN 2000
 #define DATA16_BUFFER_LEN 125
 
-ModbusAdapter::ModbusAdapter(QObject* parent, RegistersModel* regModel, RawDataModel* rawdataModel) :
+ModbusAdapter::ModbusAdapter(QObject* parent) :
 	QObject(parent), m_taskThread(NULL),
-	m_modbus(NULL), m_regModel(regModel), m_rawModel(rawdataModel),
-	m_useThread(true), m_connected(false), m_packets(0), m_errors(0), m_currentGuiTask(0, 0, 0, 0), m_timerCount(0),
-	m_replayLogFile(nullptr)
+	m_useThread(true), m_packets(0), m_errors(0), m_currentGuiTask(0, 0, 0, 0), m_timerCount(0),
+	m_replayLogFile(nullptr), m_regModel(NULL), m_rawModel(NULL)
 {
+	if (true || cb::Logger::instance().getVerbosity() >= 10) {
+		m_rawModel = new RawDataModel(this);
+		m_rawModel->enableAddLines(true);
+		connect(m_rawModel, &RawDataModel::lineAdded, [](QString line) {
+			LOG_INFO(10, EUtils::QString2StdString(line));
+			});
+	}
+	for (int i = 0; i < MODBUS_CONNECTION_COUNT; ++i) {
+		QString iniFile = SystemSettings::GetPath("qModMaster.ini", SystemSettings::SystemFlag);
+		if (i > 0) {
+			// For additional connections, use qModMaster1.ini, qModMaster2.ini, etc.
+			iniFile = SystemSettings::GetPath(QString("qModMaster%1.ini").arg(i + 1), SystemSettings::SystemFlag);
+		}
+		m_modbusCommSettings[i] = new ModbusCommSettings(iniFile);
+	}
+
 	s_instance = this;
 
-	m_ModBusMode = EUtils::None;
+	// Initialize connection arrays
+	for (int i = 0; i < MODBUS_CONNECTION_COUNT; ++i) {
+		m_modbusList[i] = NULL;
+		m_connectedList[i] = false;
+	}
+
 	m_pollTimer = new QTimer(this);
 
 	connect(m_pollTimer, SIGNAL(timeout()), this, SLOT(modbusTransaction()));
@@ -80,8 +100,21 @@ ModbusAdapter::~ModbusAdapter()
 		delete m_taskThread;
 	}
 
-	if (m_connected) {
-		modbusDisConnect();
+	modbusDisConnect();
+
+	if (m_rawModel != NULL) {
+		delete m_rawModel;
+		m_rawModel = NULL;
+	}
+	if (m_regModel != NULL) {
+		delete m_regModel;
+		m_regModel = NULL;
+	}
+	for (int i = 0; i < MODBUS_CONNECTION_COUNT; ++i) {
+		if (m_modbusCommSettings[i] != NULL) {
+			delete m_modbusCommSettings[i];
+			m_modbusCommSettings[i] = NULL;
+		}
 	}
 
 	free(readDataDest);
@@ -95,161 +128,225 @@ ModbusAdapter::~ModbusAdapter()
 	}
 }
 
-void ModbusAdapter::modbusConnectRTU(QString port, int baud, QChar parity, int dataBits, int stopBits, int RTS, int responseTimeOut, int byteTimeout)
+void ModbusAdapter::modbusConnect(int connectionIndex)
+{
+	if (connectionIndex == -1) {
+		// Connect all
+		for (int i = 0; i < MODBUS_CONNECTION_COUNT; ++i) {
+			modbusConnect(i);
+		}
+		return;
+	}
+
+	if (connectionIndex < 0 || connectionIndex >= MODBUS_CONNECTION_COUNT)
+		return;
+
+	ModbusCommSettings* settings = m_modbusCommSettings[connectionIndex];
+	if (!settings)
+		return;
+
+	QString mode = settings->mode();
+	if (mode == "TCP") {
+		modbusConnectTCP(settings->slaveIP(),
+			settings->TCPPort().toInt(),
+			settings->responseTimeOut().toInt() / 1000,
+			connectionIndex);
+	}
+	else if (mode == "RTU") {
+		modbusConnectRTU(settings->serialPortName(),
+			settings->baud().toInt(),
+			EUtils::parity(settings->parity()),
+			settings->dataBits().toInt(),
+			settings->stopBits().toInt(),
+			settings->RTS().toInt(),
+			settings->responseTimeOut().toInt(),
+			settings->byteTimeOut().toInt(),
+			connectionIndex);
+	}
+	if (connectionIndex == 0) {
+		this->setScanRate(settings->scanRate());
+	}
+}
+
+void ModbusAdapter::modbusConnectRTU(QString port, int baud, QChar parity, int dataBits, int stopBits, int RTS, int responseTimeOut, int byteTimeout, int connectionIndex)
 {
 	//Modbus RTU connect
 
-	modbusDisConnect();
+	modbusDisConnect(connectionIndex);
 
-	//QLOG_INFO()<<  "Modbus Connect RTU";
+	modbus_t* modbus = modbus_new_rtu(port.toLatin1().constData(), baud, parity.toLatin1(), dataBits, stopBits);
 
-	m_modbus = modbus_new_rtu(port.toLatin1().constData(), baud, parity.toLatin1(), dataBits, stopBits);  // RTS
-
-	//QLOG_TRACE() <<  line;
-
-	//Debug messages from libmodbus
 #ifdef LIB_MODBUS_DEBUG_OUTPUT
-	modbus_set_debug(m_modbus, 1);
+	if (modbus) modbus_set_debug(modbus, 1);
 #endif
 
-	if (m_modbus == NULL) {
+	bool connected = false;
+	if (modbus == NULL) {
 		//mainWin->showUpInfoBar(tr("Unable to create the libmodbus context."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Unable to create the libmodbus context";
+
 		return;
 	}
-	else if (m_modbus && modbus_set_slave(m_modbus, DEFAULT_MODBUS_SLAVE) == -1) {
-		modbus_free(m_modbus);
-		m_modbus = NULL;
+	else if (modbus_set_slave(modbus, DEFAULT_MODBUS_SLAVE) == -1) {
+		modbus_free(modbus);
 		//mainWin->showUpInfoBar(tr("Invalid slave ID."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Invalid slave ID";
+
 		return;
 	}
 #if HAVE_DECL_TIOCM_RTS
-	else if (m_modbus && modbus_rtu_set_rts(m_modbus, RTS) == -1) {
-		modbus_free(m_modbus);
-		m_modbus = NULL;
+	else if (modbus_rtu_set_rts(modbus, RTS) == -1) {
+		modbus_free(modbus);
 		return;
 	}
 #endif
-	else if (m_modbus && modbus_connect(m_modbus) == -1) {
-		modbus_free(m_modbus);
-		m_modbus = NULL;
+	else if (modbus_connect(modbus) == -1) {
+		modbus_free(modbus);
 		//mainWin->showUpInfoBar(tr("Connection failed\nCould not connect to serial port."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Could not connect to serial port";
-		m_connected = false;
 	}
 	else {
 		//error recovery mode
 		//modbus_set_error_recovery(m_modbus, MODBUS_ERROR_RECOVERY_PROTOCOL);
-		modbus_set_error_recovery(m_modbus, MODBUS_ERROR_RECOVERY_NONE);
-		//response_timeout;
-		modbus_set_response_timeout(m_modbus, 0, responseTimeOut * 1000);
-		modbus_set_byte_timeout(m_modbus, 0, byteTimeout * 1000);
 
-		m_connected = true;
-
-		//mainWin->hideInfoBar();
-		//QLOG_TRACE() << line;
+		modbus_set_error_recovery(modbus, MODBUS_ERROR_RECOVERY_NONE);
+		modbus_set_response_timeout(modbus, 0, responseTimeOut * 1000);
+		modbus_set_byte_timeout(modbus, 0, byteTimeout * 1000);
+		connected = true;
 	}
 
-	m_ModBusMode = EUtils::RTU;
+	// Ensure index is within bounds
+	if (connectionIndex < 0 || connectionIndex >= MODBUS_CONNECTION_COUNT)
+		return;
+
+	m_modbusList[connectionIndex] = modbus;
+	m_connectedList[connectionIndex] = connected;
 
 	if (m_rawModel != NULL) {
-		//Add line to raw data model
 		QString line;
 		line = "Connecting to Serial Port [" + port + "]...";
-		if (m_connected)
-			line += "OK";
-		else
-			line += "Failed";
+		line += connected ? "OK" : "Failed";
 		line = EUtils::SysTimeStamp() + line;
 		m_rawModel->addLine(line);
 	}
 }
 
-void ModbusAdapter::modbusConnectTCP(QString ip, int port, int timeOut)
+void ModbusAdapter::modbusConnectTCP(QString ip, int port, int timeOut, int connectionIndex)
 {
 	//Modbus TCP connect
-	QString strippedIP = "";
-
-	modbusDisConnect();
 
 	//QLOG_INFO()<<  "Modbus Connect TCP";
 
-
-	//QLOG_TRACE() <<  line;
-	strippedIP = stripIP(ip);
+	QString strippedIP = stripIP(ip);
 	if (strippedIP == "") {
 		//mainWin->showUpInfoBar(tr("Connection failed\nBlank IP Address."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Blank IP Address";
 		return;
 	}
-	else {
-		m_modbus = modbus_new_tcp(strippedIP.toLatin1().constData(), port);
-		//mainWin->hideInfoBar();
-		//QLOG_TRACE() <<  "Connecting to IP : " << ip << ":" << port;
-	}
 
-	//Debug messages from libmodbus
+	modbusDisConnect(connectionIndex);
+
+	modbus_t* modbus = modbus_new_tcp(strippedIP.toLatin1().constData(), port);
+	//mainWin->hideInfoBar();
+	//QLOG_TRACE() <<  "Connecting to IP : " << ip << ":" << port;
+
 #ifdef LIB_MODBUS_DEBUG_OUTPUT
-	modbus_set_debug(m_modbus, 1);
+	if (modbus) modbus_set_debug(modbus, 1);
 #endif
 
-	if (m_modbus == NULL) {
+	bool connected = false;
+	if (modbus == NULL) {
 		//mainWin->showUpInfoBar(tr("Unable to create the libmodbus context."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Unable to create the libmodbus context";
 		return;
 	}
-	else if (m_modbus && modbus_connect(m_modbus) == -1) {
-		modbus_free(m_modbus);
-		m_modbus = NULL;
+	else if (modbus_connect(modbus) == -1) {
+		modbus_free(modbus);
 		//mainWin->showUpInfoBar(tr("Connection failed\nCould not connect to TCP port."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection to IP : " << ip << ":" << port << "...failed. Could not connect to TCP port";
-		m_connected = false;
 	}
 	else {
 		//error recovery mode
-		modbus_set_error_recovery(m_modbus, MODBUS_ERROR_RECOVERY_PROTOCOL);
+		modbus_set_error_recovery(modbus, MODBUS_ERROR_RECOVERY_PROTOCOL);
 		//response_timeout;
-		modbus_set_response_timeout(m_modbus, timeOut, 0);
-		m_connected = true;
+		modbus_set_response_timeout(modbus, timeOut, 0);
+		connected = true;
 		//mainWin->hideInfoBar();
 		//QLOG_TRACE() << line;
 	}
 
-	m_ModBusMode = EUtils::TCP;
+	// Ensure index is within bounds
+	if (connectionIndex < 0 || connectionIndex >= MODBUS_CONNECTION_COUNT)
+		return;
+
+	m_modbusList[connectionIndex] = modbus;
+	m_connectedList[connectionIndex] = connected;
 
 	if (m_rawModel != NULL) {
 		//Add line to raw data model
 		QString line;
 		line = "Connecting to IP : " + ip + ":" + QString::number(port);
-		if (m_connected)
-			line += "OK";
-		else
-			line += "Failed";
+		line += connected ? "OK" : "Failed";
 		line = EUtils::SysTimeStamp() + line;
 		m_rawModel->addLine(line);
 	}
 }
 
-void ModbusAdapter::modbusDisConnect()
+void ModbusAdapter::modbusDisConnect(int connectionIndex)
 {
 	//Modbus disconnect
 
 	//QLOG_INFO()<<  "Modbus disconnected";
 	resetCounters();
 
-	if (m_modbus) {
-		if (m_connected) {
-			modbus_close(m_modbus);
-			modbus_free(m_modbus);
+	if (connectionIndex == -1) {
+		// Disconnect all
+		for (int i = 0; i < MODBUS_CONNECTION_COUNT; ++i) {
+			if (m_modbusList[i]) {
+				if (m_connectedList[i]) {
+					modbus_close(m_modbusList[i]);
+					modbus_free(m_modbusList[i]);
+				}
+				m_modbusList[i] = NULL;
+				m_connectedList[i] = false;
+			}
 		}
-		m_modbus = NULL;
 	}
+	else if (connectionIndex >= 0 && connectionIndex < MODBUS_CONNECTION_COUNT) {
+		if (m_modbusList[connectionIndex]) {
+			if (m_connectedList[connectionIndex]) {
+				modbus_close(m_modbusList[connectionIndex]);
+				modbus_free(m_modbusList[connectionIndex]);
+			}
+			m_modbusList[connectionIndex] = NULL;
+			m_connectedList[connectionIndex] = false;
+		}
+	}
+}
 
-	m_connected = false;
 
-	m_ModBusMode = EUtils::None;
+bool ModbusAdapter::isConnected(int connectionIndex) const
+{
+	if (connectionIndex >= 0 && connectionIndex < MODBUS_CONNECTION_COUNT) {
+		return m_connectedList[connectionIndex];
+	}
+	return false;
+}
+
+modbus_t* ModbusAdapter::getModbusContext(int connectionIndex)
+{
+	if (connectionIndex >= 0 && connectionIndex < MODBUS_CONNECTION_COUNT) {
+		return m_modbusList[connectionIndex];
+	}
+	return NULL;
+}
+
+ModbusCommSettings* ModbusAdapter::getCommSettings(int connectionIndex)
+{
+	if (connectionIndex >= 0 && connectionIndex < MODBUS_CONNECTION_COUNT) {
+		return m_modbusCommSettings[connectionIndex];
+	}
+	return NULL;
 }
 
 void ModbusAdapter::fillWriteData(int functionCode, int numOfRegs)
@@ -378,9 +475,10 @@ void ModbusAdapter::modbusTransaction()
 	}
 }
 
-int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* readData)
+int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* readData, int connectionIndex)
 {
-	if (m_modbus == NULL)
+	modbus_t* modbus = getModbusContext(connectionIndex);
+	if (modbus == NULL)
 		return -1;
 
 	// Test condition when modbus read error
@@ -389,7 +487,7 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 	//double randomNumberReal = realDistribution(engine);
 	//if (randomNumberReal < 0.1) {
 	//	m_errors += 1;
-	//	modbus_flush(m_modbus); //flush data
+	//	modbus_flush(modbus); //flush data
 	//	return -1;
 	//}
 
@@ -398,33 +496,33 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 	int ret = -1; //return value from read functions
 	bool is16Bit = false;
 
-	modbus_set_slave(m_modbus, slave);
+	modbus_set_slave(modbus, slave);
 	//request data from modbus
 	switch (functionCode)
 	{
 	case MODBUS_FC_READ_COILS:
 		assert(numOfRegs <= DATA_BUFFER_LEN);
-		ret = modbus_read_bits(m_modbus, startAddr, numOfRegs, readDataDest);
+		ret = modbus_read_bits(modbus, startAddr, numOfRegs, readDataDest);
 		break;
 
 	case MODBUS_FC_READ_DISCRETE_INPUTS:
 		assert(numOfRegs <= DATA_BUFFER_LEN);
-		ret = modbus_read_input_bits(m_modbus, startAddr, numOfRegs, readDataDest);
+		ret = modbus_read_input_bits(modbus, startAddr, numOfRegs, readDataDest);
 		break;
 
 	case MODBUS_FC_READ_HOLDING_REGISTERS:
 		assert(numOfRegs <= DATA16_BUFFER_LEN);
-		ret = modbus_read_registers(m_modbus, startAddr, numOfRegs, readDataDest16);
+		ret = modbus_read_registers(modbus, startAddr, numOfRegs, readDataDest16);
 		is16Bit = true;
 		break;
 
 	case MODBUS_FC_READ_INPUT_REGISTERS:
 		assert(numOfRegs <= DATA16_BUFFER_LEN);
-		ret = modbus_read_input_registers(m_modbus, startAddr, numOfRegs, readDataDest16);
+		ret = modbus_read_input_registers(modbus, startAddr, numOfRegs, readDataDest16);
 		is16Bit = true;
 		break;
 	case MODBUS_FC_READ_FILE_RECORD:
-		ret = modbus_read_file_record(m_modbus, DEFAULT_MODBUS_FILE_ADDRESS, startAddr, numOfRegs, readDataDest16);
+		ret = modbus_read_file_record(modbus, DEFAULT_MODBUS_FILE_ADDRESS, startAddr, numOfRegs, readDataDest16);
 		is16Bit = true;
 		break;
 	default:
@@ -446,7 +544,7 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 	}
 	else {
 		m_errors += 1;
-		modbus_flush(m_modbus); //flush data
+		modbus_flush(modbus); //flush data
 	}
 
 	QTime time2 = QTime::currentTime();
@@ -465,14 +563,15 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 	return ret;
 }
 
-int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* writeData)
+int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* writeData, int connectionIndex)
 {
 	//std::random_device rd;
 	//std::mt19937 gen(rd());
 	//std::uniform_int_distribution<short> distrib2(-32768, 32767);
 	//std::generate(writeDataDest16, writeDataDest16 + DATA16_BUFFER_LEN, [&]() { return distrib2(gen); });
 
-	if (m_modbus == NULL)
+	modbus_t* modbus = getModbusContext(connectionIndex);
+	if (modbus == NULL)
 		return -1;
 
 	// Test condition when modbus write error
@@ -481,7 +580,7 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	//double randomNumberReal = realDistribution(engine);
 	//if (randomNumberReal < 0.1) {
 	//	m_errors += 1;
-	//	modbus_flush(m_modbus); //flush data
+	//	modbus_flush(modbus); //flush data
 	//	return -1;
 	//}
 
@@ -489,20 +588,20 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	m_packets += 1;
 	int ret = -1; //return value from functions
 
-	modbus_set_slave(m_modbus, slave);
+	modbus_set_slave(modbus, slave);
 
 	switch (functionCode)
 	{
 	case MODBUS_FC_WRITE_SINGLE_COIL:
 	{
 		uint8_t data = (uint8_t)writeData[0];
-		ret = modbus_write_bit(m_modbus, startAddr, data);
+		ret = modbus_write_bit(modbus, startAddr, data);
 		numOfRegs = 1;
 		break;
 	}
 	case MODBUS_FC_WRITE_SINGLE_REGISTER:
 	{
-		ret = modbus_write_register(m_modbus, startAddr, writeData[0]);
+		ret = modbus_write_register(modbus, startAddr, writeData[0]);
 		numOfRegs = 1;
 		break;
 	}
@@ -513,18 +612,18 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 		{
 			data[i] = writeData[i];
 		}
-		ret = modbus_write_bits(m_modbus, startAddr, numOfRegs, data);
+		ret = modbus_write_bits(modbus, startAddr, numOfRegs, data);
 		delete[] data;
 		break;
 	}
 	case MODBUS_FC_WRITE_MULTIPLE_REGISTERS:
 	{
-		ret = modbus_write_registers(m_modbus, startAddr, numOfRegs, writeData);
+		ret = modbus_write_registers(modbus, startAddr, numOfRegs, writeData);
 		break;
 	}
 	case MODBUS_FC_WRITE_FILE_RECORD:
 	{
-		ret= modbus_write_file_record(m_modbus, DEFAULT_MODBUS_FILE_ADDRESS, startAddr, numOfRegs, writeData);
+		ret= modbus_write_file_record(modbus, DEFAULT_MODBUS_FILE_ADDRESS, startAddr, numOfRegs, writeData);
 		break;
 	}
 
@@ -538,7 +637,7 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	else
 	{
 		m_errors += 1;
-		modbus_flush(m_modbus); //flush data
+		modbus_flush(modbus); //flush data
 	}
 
 	QTime time2 = QTime::currentTime();
@@ -575,27 +674,27 @@ void ModbusAdapter::logWriteOperation(int startAddr, int numOfRegs, uint16_t* wr
 	m_replayLogFile->flush();
 }
 
-ModbusTask* ModbusAdapter::getTaskWriteFile(int subAddr, int nb, std::string writeData)
+ModbusTask* ModbusAdapter::getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, subAddr, nb, writeData);
+	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, subAddr, nb, writeData, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskReadFile(int subAddr, int nb)
+ModbusTask* ModbusAdapter::getTaskReadFile(int subAddr, int nb, int connectionIndex)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, subAddr, nb);
+	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, subAddr, nb, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskWrite(int startAddr, int numOfRegs, std::string writeData)
+ModbusTask* ModbusAdapter::getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_WRITE_FUNCTION, startAddr, numOfRegs, writeData);
+	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_WRITE_FUNCTION, startAddr, numOfRegs, writeData, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskRead(int startAddr, int numOfRegs)
+ModbusTask* ModbusAdapter::getTaskRead(int startAddr, int numOfRegs, int connectionIndex)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs);
+	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs, connectionIndex);
 	return task;
 }
 
@@ -684,7 +783,7 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 					quantity = idx;
 				}
 				std::function<int()> func = [modbusAdapter, task, writeData]() {
-					return modbusAdapter->modbusWriteDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, writeData); 
+					return modbusAdapter->modbusWriteDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, writeData, task->connectionIndex); 
 				};
 				int retryCnt = 3;
 				ret = EUtils::doUntilOk(func, retryCnt);
@@ -695,7 +794,7 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 			}
 			else {
 				fillWriteData(task->functionCode, task->numOfRegs);
-				ret = modbusWriteDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, writeDataDest16);
+				ret = modbusWriteDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, writeDataDest16, task->connectionIndex);
 			}
 			//if (task->startAddr == 61)
 			//	ret = -1;
@@ -728,7 +827,7 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 		else
 		{
 			//m_currentTask = "Read Reg";
-			ret = modbusAdapter->modbusReadDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, NULL);
+			ret = modbusAdapter->modbusReadDataRaw(task->slave, task->functionCode, task->startAddr, task->numOfRegs, NULL, task->connectionIndex);
 			if (ret == -1) {
 				LOG_WARNING("Modbus: " << EUtils::ModbusDataTypeName(task->functionCode) << " failed, " << task->startAddr << ", " << task->numOfRegs << ", " << EUtils::QString2StdString(EUtils::libmodbus_strerror(errno)));
 				//LOG_ERROR(EUtils::QString2StdString(tr("MDCW")));
@@ -762,7 +861,8 @@ int ModbusAdapter::doTask(ModbusTask* task, TaskThread<ModbusTask>* taskThread)
 
 void ModbusAdapter::updateState(int ret)
 {
-	if (m_modbus == NULL)
+	modbus_t* modbus = getModbusContext(m_currentGuiTask.connectionIndex);
+	if (modbus == NULL)
 		return;
 
 	//int slave = task.slave;
@@ -889,7 +989,8 @@ void ModbusAdapter::busMonitorRequestData(uint8_t* data, int dataLen)
 		}
 
 		//QLOG_INFO() << "Tx Data : " << line;
-		line = EUtils::TxTimeStamp(m_ModBusMode) + line.toUpper();
+		int mode = (m_modbusCommSettings[0] && m_modbusCommSettings[0]->mode() == "TCP") ? EUtils::TCP : EUtils::RTU;
+		line = EUtils::TxTimeStamp(mode) + line.toUpper();
 
 		m_rawModel->addLine(line);
 	}
@@ -906,7 +1007,8 @@ void ModbusAdapter::busMonitorResponseData(uint8_t* data, int dataLen)
 		}
 
 		//QLOG_INFO() << "Rx Data : " << line;
-		line = EUtils::RxTimeStamp(m_ModBusMode) + line.toUpper();
+		int mode = (m_modbusCommSettings[0] && m_modbusCommSettings[0]->mode() == "TCP") ? EUtils::TCP : EUtils::RTU;
+		line = EUtils::RxTimeStamp(mode) + line.toUpper();
 
 		m_rawModel->addLine(line);
 	}
@@ -919,7 +1021,7 @@ void ModbusAdapter::addItems(int startAddr, int numOfRegs)
 		m_regModel->addItems(startAddr, numOfRegs, false);
 	}
 	//If it is a write function -> read registers
-	if (!m_connected)
+	if (!isConnected(0))
 		return;
 	/*else if (EUtils::ModbusIsWriteCoilsFunction(m_functionCode)){
 		afterModbusReadData(m_slave,EUtils::ReadCoils,m_startAddr,m_numOfRegs);
@@ -952,7 +1054,7 @@ void ModbusAdapter::startPollTimer()
 		m_taskThread->startTaskThread();
 	}
 
-	if (m_modbus == NULL || !m_connected)
+	if (!isConnected(0))
 		return;
 	if (!m_pollTimer->isActive()) {
 		m_pollTimer->start(m_scanRate);
@@ -965,7 +1067,7 @@ void ModbusAdapter::stopPollTimer()
 		m_taskThread->stopTaskThread();
 	}
 
-	if (m_modbus == NULL || !m_connected)
+	if (!isConnected(0))
 		return;
 	
 	if (m_pollTimer->isActive()) {

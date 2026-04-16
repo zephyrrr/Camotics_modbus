@@ -1572,27 +1572,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="716"/>
+        <location filename="modbus/modbusadapter.cpp" line="815"/>
         <source>MXCW</source>
         <translation>Modbus: 写错误</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="803"/>
+        <location filename="modbus/modbusadapter.cpp" line="903"/>
         <source>Write data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="809"/>
+        <location filename="modbus/modbusadapter.cpp" line="909"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="863"/>
+        <location filename="modbus/modbusadapter.cpp" line="963"/>
         <source>Read data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="869"/>
+        <location filename="modbus/modbusadapter.cpp" line="969"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
@@ -2644,8 +2644,8 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="124"/>
         <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1767"/>
-        <location filename="forms/mainwindow2.cpp" line="1770"/>
+        <location filename="forms/mainwindow2.cpp" line="1739"/>
+        <location filename="forms/mainwindow2.cpp" line="1742"/>
         <source>YW</source>
         <translation>油位</translation>
     </message>
@@ -2661,7 +2661,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1386"/>
+        <location filename="forms/mainwindow2.cpp" line="1358"/>
         <source>GT</source>
         <translation>高跳</translation>
     </message>
@@ -2736,7 +2736,7 @@
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="336"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>YX</source>
         <translation>右下</translation>
     </message>
@@ -2786,259 +2786,259 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="274"/>
+        <location filename="forms/mainwindow2.cpp" line="246"/>
         <source>XMML</source>
         <translation>项目目录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="313"/>
-        <location filename="forms/mainwindow2.cpp" line="333"/>
+        <location filename="forms/mainwindow2.cpp" line="285"/>
+        <location filename="forms/mainwindow2.cpp" line="305"/>
         <source>SD</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="314"/>
+        <location filename="forms/mainwindow2.cpp" line="286"/>
         <source>EZD</source>
         <translation>EDM自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="316"/>
+        <location filename="forms/mainwindow2.cpp" line="288"/>
         <source>JG</source>
         <translation>加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="317"/>
+        <location filename="forms/mainwindow2.cpp" line="289"/>
         <source>SheDing</source>
         <translation>设定</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="334"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
         <source>ZD</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="315"/>
-        <location filename="forms/mainwindow2.cpp" line="335"/>
+        <location filename="forms/mainwindow2.cpp" line="287"/>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
         <source>BianJi</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="337"/>
+        <location filename="forms/mainwindow2.cpp" line="309"/>
         <source>QT</source>
         <translation>其他</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="364"/>
+        <location filename="forms/mainwindow2.cpp" line="336"/>
         <source>ZBSZ</source>
         <translation>坐标设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="367"/>
+        <location filename="forms/mainwindow2.cpp" line="339"/>
         <source>DWYD</source>
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="370"/>
+        <location filename="forms/mainwindow2.cpp" line="342"/>
         <source>WZJY</source>
         <translation>位置记忆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="373"/>
+        <location filename="forms/mainwindow2.cpp" line="345"/>
         <source>DMDW</source>
         <translation>端面定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="376"/>
+        <location filename="forms/mainwindow2.cpp" line="348"/>
         <source>ZZX</source>
         <translation>柱中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="379"/>
+        <location filename="forms/mainwindow2.cpp" line="351"/>
         <source>JZX</source>
         <translation>角中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="382"/>
+        <location filename="forms/mainwindow2.cpp" line="354"/>
         <source>KZX</source>
         <translation>孔中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="385"/>
+        <location filename="forms/mainwindow2.cpp" line="357"/>
         <source>SDDY</source>
         <translation>三点定圆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="388"/>
+        <location filename="forms/mainwindow2.cpp" line="360"/>
         <source>FDDW</source>
         <translation>放电定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
+        <location filename="forms/mainwindow2.cpp" line="368"/>
         <source>ZDCS</source>
         <translation>自动参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="407"/>
+        <location filename="forms/mainwindow2.cpp" line="379"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="410"/>
+        <location filename="forms/mainwindow2.cpp" line="382"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="419"/>
+        <location filename="forms/mainwindow2.cpp" line="391"/>
         <source>NJG</source>
         <translation>NC加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="424"/>
+        <location filename="forms/mainwindow2.cpp" line="396"/>
         <source>JGJL</source>
         <translation>加工记录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="428"/>
+        <location filename="forms/mainwindow2.cpp" line="400"/>
         <source>XTSZ</source>
         <translation>系统设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="429"/>
+        <location filename="forms/mainwindow2.cpp" line="401"/>
         <source>FangDianCanShu</source>
         <translation>放电参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="432"/>
-        <location filename="forms/mainwindow2.cpp" line="1314"/>
+        <location filename="forms/mainwindow2.cpp" line="404"/>
+        <location filename="forms/mainwindow2.cpp" line="1286"/>
         <source>FDCS</source>
         <translation>放电测试</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="433"/>
+        <location filename="forms/mainwindow2.cpp" line="405"/>
         <source>LJBC</source>
         <translation>螺距补偿</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="438"/>
+        <location filename="forms/mainwindow2.cpp" line="410"/>
         <source>CKSZ</source>
         <translation>串口设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="448"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>GY</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="491"/>
-        <location filename="forms/mainwindow2.cpp" line="1485"/>
+        <location filename="forms/mainwindow2.cpp" line="463"/>
+        <location filename="forms/mainwindow2.cpp" line="1457"/>
         <source>CKWLJ</source>
         <translation>串口未连接</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="496"/>
-        <location filename="forms/mainwindow2.cpp" line="1596"/>
+        <location filename="forms/mainwindow2.cpp" line="468"/>
+        <location filename="forms/mainwindow2.cpp" line="1568"/>
         <source>DDYX</source>
         <translation>等待运行</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="670"/>
+        <location filename="forms/mainwindow2.cpp" line="642"/>
         <source>MNJG</source>
         <translation>模拟加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="678"/>
+        <location filename="forms/mainwindow2.cpp" line="650"/>
         <source>JGHGJ</source>
         <translation>加工后关机</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="937"/>
-        <location filename="forms/mainwindow2.cpp" line="951"/>
-        <location filename="forms/mainwindow2.cpp" line="1630"/>
+        <location filename="forms/mainwindow2.cpp" line="909"/>
+        <location filename="forms/mainwindow2.cpp" line="923"/>
+        <location filename="forms/mainwindow2.cpp" line="1602"/>
         <source>YXZ</source>
         <translation>运行中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1031"/>
+        <location filename="forms/mainwindow2.cpp" line="1003"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1038"/>
+        <location filename="forms/mainwindow2.cpp" line="1010"/>
         <source>SFJXZDHL</source>
         <translation>是否进行自动回零？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1156"/>
+        <location filename="forms/mainwindow2.cpp" line="1128"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1326"/>
-        <location filename="forms/mainwindow2.cpp" line="1395"/>
+        <location filename="forms/mainwindow2.cpp" line="1298"/>
+        <location filename="forms/mainwindow2.cpp" line="1367"/>
         <source>FS</source>
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1327"/>
-        <location filename="forms/mainwindow2.cpp" line="1396"/>
+        <location filename="forms/mainwindow2.cpp" line="1299"/>
+        <location filename="forms/mainwindow2.cpp" line="1368"/>
         <source>GB</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1611"/>
+        <location filename="forms/mainwindow2.cpp" line="1583"/>
         <source>DDZ</source>
         <translation>对刀中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1614"/>
+        <location filename="forms/mainwindow2.cpp" line="1586"/>
         <source>HLZ</source>
         <translation>回零中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1619"/>
+        <location filename="forms/mainwindow2.cpp" line="1591"/>
         <source>FDZ</source>
         <translation>放电中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1622"/>
+        <location filename="forms/mainwindow2.cpp" line="1594"/>
         <source>FDZT</source>
         <translation>放电暂停</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1627"/>
+        <location filename="forms/mainwindow2.cpp" line="1599"/>
         <source>ZTZ</source>
         <translation>暂停中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1644"/>
+        <location filename="forms/mainwindow2.cpp" line="1616"/>
         <source>DLBJ</source>
         <translation>短路报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1684"/>
+        <location filename="forms/mainwindow2.cpp" line="1656"/>
         <source>CFDJBJ</source>
         <translation>伺服电机报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1700"/>
+        <location filename="forms/mainwindow2.cpp" line="1672"/>
         <source>DDYWZ</source>
         <translation>等待液位中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1721"/>
-        <location filename="forms/mainwindow2.cpp" line="1725"/>
+        <location filename="forms/mainwindow2.cpp" line="1693"/>
+        <location filename="forms/mainwindow2.cpp" line="1697"/>
         <source>XXW</source>
         <translation>X-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1729"/>
-        <location filename="forms/mainwindow2.cpp" line="1733"/>
+        <location filename="forms/mainwindow2.cpp" line="1701"/>
+        <location filename="forms/mainwindow2.cpp" line="1705"/>
         <source>YXW</source>
         <translation>Y-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1737"/>
-        <location filename="forms/mainwindow2.cpp" line="1741"/>
+        <location filename="forms/mainwindow2.cpp" line="1709"/>
+        <location filename="forms/mainwindow2.cpp" line="1713"/>
         <source>ZXW</source>
         <translation>Z-限位</translation>
     </message>
@@ -3079,131 +3079,132 @@
 <context>
     <name>RegWindow</name>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="13"/>
+        <location filename="forms_v1/regwindow.ui" line="14"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="26"/>
+        <location filename="forms_v1/regwindow.ui" line="27"/>
         <source>MB</source>
         <translation>面板</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="36"/>
+        <location filename="forms_v1/regwindow.ui" line="37"/>
         <source>JCQ</source>
         <translation>寄存器</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="44"/>
+        <location filename="forms_v1/regwindow.ui" line="45"/>
         <source>Connect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="54"/>
+        <location filename="forms_v1/regwindow.ui" line="55"/>
         <source>Disconnect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="61"/>
+        <location filename="forms_v1/regwindow.ui" line="69"/>
         <source>Verbosity</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="71"/>
+        <location filename="forms_v1/regwindow.ui" line="62"/>
+        <location filename="forms_v1/regwindow.ui" line="79"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="78"/>
+        <location filename="forms_v1/regwindow.ui" line="86"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="88"/>
+        <location filename="forms_v1/regwindow.ui" line="96"/>
         <source>Read Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="95"/>
+        <location filename="forms_v1/regwindow.ui" line="103"/>
         <source>Write Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="108"/>
+        <location filename="forms_v1/regwindow.ui" line="116"/>
         <source>JOG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="125"/>
+        <location filename="forms_v1/regwindow.ui" line="133"/>
         <source>QDJ</source>
         <translation>启动JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="141"/>
+        <location filename="forms_v1/regwindow.ui" line="149"/>
         <source>TCJ</source>
         <translation>退出JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="157"/>
+        <location filename="forms_v1/regwindow.ui" line="165"/>
         <source>DDYD</source>
         <translation>点动移动</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="177"/>
+        <location filename="forms_v1/regwindow.ui" line="185"/>
         <source>QDDW</source>
         <translation>启动定位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="193"/>
+        <location filename="forms_v1/regwindow.ui" line="201"/>
         <source>TCDW</source>
         <translation>退出定位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="219"/>
+        <location filename="forms_v1/regwindow.ui" line="227"/>
         <source>QDDD</source>
         <translation>启动对刀</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="235"/>
+        <location filename="forms_v1/regwindow.ui" line="243"/>
         <source>JSDD</source>
         <translation>结束对刀</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="261"/>
-        <location filename="forms_v1/regwindow.ui" line="303"/>
-        <location filename="forms_v1/regwindow.ui" line="345"/>
-        <location filename="forms_v1/regwindow.ui" line="387"/>
+        <location filename="forms_v1/regwindow.ui" line="269"/>
+        <location filename="forms_v1/regwindow.ui" line="311"/>
+        <location filename="forms_v1/regwindow.ui" line="353"/>
+        <location filename="forms_v1/regwindow.ui" line="395"/>
         <source>QD</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="277"/>
-        <location filename="forms_v1/regwindow.ui" line="319"/>
-        <location filename="forms_v1/regwindow.ui" line="361"/>
-        <location filename="forms_v1/regwindow.ui" line="403"/>
+        <location filename="forms_v1/regwindow.ui" line="285"/>
+        <location filename="forms_v1/regwindow.ui" line="327"/>
+        <location filename="forms_v1/regwindow.ui" line="369"/>
+        <location filename="forms_v1/regwindow.ui" line="411"/>
         <source>JS</source>
         <translation>结束</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="414"/>
+        <location filename="forms_v1/regwindow.ui" line="422"/>
         <source>JC</source>
         <translation>监测</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="430"/>
+        <location filename="forms_v1/regwindow.ui" line="438"/>
         <source>SKH</source>
         <translation>手控盒</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="435"/>
+        <location filename="forms_v1/regwindow.ui" line="443"/>
         <source>FDI</source>
         <translation>放电IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="450"/>
-        <location filename="forms_v1/regwindow.ui" line="479"/>
-        <location filename="forms_v1/regwindow.ui" line="508"/>
-        <location filename="forms_v1/regwindow.ui" line="558"/>
+        <location filename="forms_v1/regwindow.ui" line="458"/>
+        <location filename="forms_v1/regwindow.ui" line="487"/>
+        <location filename="forms_v1/regwindow.ui" line="516"/>
+        <location filename="forms_v1/regwindow.ui" line="566"/>
         <location filename="forms_v1/regwindow.cpp" line="135"/>
         <location filename="forms_v1/regwindow.cpp" line="262"/>
         <location filename="forms_v1/regwindow.cpp" line="397"/>
@@ -3211,57 +3212,57 @@
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="464"/>
+        <location filename="forms_v1/regwindow.ui" line="472"/>
         <source>FZI</source>
         <translation>辅助IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="493"/>
+        <location filename="forms_v1/regwindow.ui" line="501"/>
         <source>SKHKZSJ</source>
         <translation>手控盒控制数据</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="524"/>
+        <location filename="forms_v1/regwindow.ui" line="532"/>
         <source>DQ</source>
         <translation>读取</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="538"/>
+        <location filename="forms_v1/regwindow.ui" line="546"/>
         <source>BC</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="162"/>
+        <location filename="forms_v1/regwindow.ui" line="170"/>
         <source>LOC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="204"/>
+        <location filename="forms_v1/regwindow.ui" line="212"/>
         <source>CMV_TOUCH</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="246"/>
+        <location filename="forms_v1/regwindow.ui" line="254"/>
         <source>CMV_TOLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="288"/>
+        <location filename="forms_v1/regwindow.ui" line="296"/>
         <source>CMV_FRMLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="330"/>
+        <location filename="forms_v1/regwindow.ui" line="338"/>
         <source>CMV_TOZSIG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="372"/>
+        <location filename="forms_v1/regwindow.ui" line="380"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="572"/>
+        <location filename="forms_v1/regwindow.ui" line="580"/>
         <source>Modbus File</source>
         <translation></translation>
     </message>
@@ -3349,93 +3350,93 @@
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="104"/>
+        <location filename="forms_v1/regwindow.h" line="103"/>
         <source>XZZFXXW</source>
         <translation>X轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="105"/>
+        <location filename="forms_v1/regwindow.h" line="104"/>
         <source>XZFFXXW</source>
         <translation>X轴负方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="106"/>
+        <location filename="forms_v1/regwindow.h" line="105"/>
         <source>YZZFXXW</source>
         <translation>Y轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="107"/>
+        <location filename="forms_v1/regwindow.h" line="106"/>
         <source>YZFFXXW</source>
         <translation>Y轴负方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="108"/>
+        <location filename="forms_v1/regwindow.h" line="107"/>
         <source>ZZZFXXW</source>
         <translation>Z轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="109"/>
+        <location filename="forms_v1/regwindow.h" line="108"/>
         <source>ZZFFXXW</source>
         <translation>Z轴负方向限位</translation>
     </message>
     <message>
+        <location filename="forms_v1/regwindow.h" line="111"/>
         <location filename="forms_v1/regwindow.h" line="112"/>
-        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>YWXH</source>
         <translation>油位信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="114"/>
+        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>HYXH</source>
         <translation>火焰信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="115"/>
+        <location filename="forms_v1/regwindow.h" line="114"/>
         <source>WBXH0</source>
         <translation>外部信号0</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="116"/>
+        <location filename="forms_v1/regwindow.h" line="115"/>
         <source>WBXH1</source>
         <translation>外部信号1</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="117"/>
+        <location filename="forms_v1/regwindow.h" line="116"/>
         <source>WBXH2</source>
         <translation>外部信号2</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="118"/>
+        <location filename="forms_v1/regwindow.h" line="117"/>
         <source>WBXH3</source>
         <translation>外部信号3</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="120"/>
+        <location filename="forms_v1/regwindow.h" line="119"/>
         <source>XZLDXH</source>
         <translation>X轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="121"/>
+        <location filename="forms_v1/regwindow.h" line="120"/>
         <source>YZLDXH</source>
         <translation>Y轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="122"/>
+        <location filename="forms_v1/regwindow.h" line="121"/>
         <source>ZZLDXH</source>
         <translation>Z轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="123"/>
+        <location filename="forms_v1/regwindow.h" line="122"/>
         <source>UZLDXH</source>
         <translation>U轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="124"/>
+        <location filename="forms_v1/regwindow.h" line="123"/>
         <source>VZLDXH</source>
         <translation>V轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="127"/>
+        <location filename="forms_v1/regwindow.h" line="126"/>
         <source>CFBJXH</source>
         <translation>伺服报警信号</translation>
     </message>

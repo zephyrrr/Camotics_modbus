@@ -14,6 +14,7 @@
 #include <queue>
 #include <mutex>
 #include <tuple>
+#include <vector>
 #include <QObject>
 #include "registersmodel.h"
 #include "rawdatamodel.h"
@@ -22,20 +23,23 @@
 #include "eutils.h"
 #include "utils/TaskThread.h"
 #include "libmodbus/modbus.h"
+#include "modbuscommsettings.h"
 
 #define TASK_TIMER_PRIORITY 2
 //#define TASK_DELAY_PRIORITY 1
+
+#define MODBUS_CONNECTION_COUNT 2
 
 class ModbusAdapter;
 
 struct ModbusTask
 {
-    ModbusTask(int slave, int functionCode, int startAddr, int numOfRegs)
-		: slave(slave), functionCode(functionCode), startAddr(startAddr), numOfRegs(numOfRegs), postDoFunction(NULL), preDoFunction(NULL)
+    ModbusTask(int slave, int functionCode, int startAddr, int numOfRegs, int connectionIndex = 0)
+		: slave(slave), functionCode(functionCode), startAddr(startAddr), numOfRegs(numOfRegs), connectionIndex(connectionIndex), postDoFunction(NULL), preDoFunction(NULL)
     {
     }
-    ModbusTask(int slave, int functionCode, int startAddr, int numOfRegs, std::string writeData)
-        : slave(slave), functionCode(functionCode), startAddr(startAddr), numOfRegs(numOfRegs), writeData(writeData), postDoFunction(NULL), preDoFunction(NULL)
+    ModbusTask(int slave, int functionCode, int startAddr, int numOfRegs, std::string writeData, int connectionIndex = 0)
+        : slave(slave), functionCode(functionCode), startAddr(startAddr), numOfRegs(numOfRegs), writeData(writeData), connectionIndex(connectionIndex), postDoFunction(NULL), preDoFunction(NULL)
     {
     }
     int slave;
@@ -43,6 +47,7 @@ struct ModbusTask
     int startAddr;
     int numOfRegs;
     std::string writeData;
+	int connectionIndex;  // 0: RTU (default), 1+: TCP
 
     void setPostFunction(std::function<void(int, ModbusTask*, ModbusAdapter*)> function, std::string functionDesc) { postDoFunction = function; postDoFunctionDesc = functionDesc; }
     std::function<void(int, ModbusTask*, ModbusAdapter*)> postDoFunction;
@@ -57,16 +62,20 @@ class ModbusAdapter : public QObject
 {
     Q_OBJECT;
 public:
-    explicit ModbusAdapter(QObject *parent, RegistersModel *regModel, RawDataModel *rawdataModel);
+    explicit ModbusAdapter(QObject *parent);
     ~ModbusAdapter();
     void busMonitorRequestData(uint8_t * data,int dataLen);
     void busMonitorResponseData(uint8_t * data,int dataLen);
 
-    void modbusConnectRTU(QString port, int baud, QChar parity, int dataBits, int stopBits, int RTS, int responseTimeOut, int byteTimeout);
-    void modbusConnectTCP(QString ip, int port, int timeOut=1);
-    void modbusDisConnect();
-     
-    bool isConnected() const { return m_connected; }
+    void modbusConnect(int connectionIndex = -1);
+    void modbusConnectRTU(QString port, int baud, QChar parity, int dataBits, int stopBits, int RTS, int responseTimeOut, int byteTimeout, int connectionIndex = 0);
+    void modbusConnectTCP(QString ip, int port, int timeOut=1, int connectionIndex = 0);
+	void modbusDisConnect(int connectionIndex = -1);  // -1: disconnect all, 0+: specific connection
+
+	bool isConnected(int connectionIndex = 0) const;
+	int getConnectionCount() const { return MODBUS_CONNECTION_COUNT; }
+	modbus_t* getModbusContext(int connectionIndex = 0);
+	ModbusCommSettings* getCommSettings(int connectionIndex = 0);
 
     //void setSlave(int slave) { m_slave = slave; }
     //int getSlave() { return m_slave; }
@@ -97,8 +106,8 @@ public:
     RawDataModel* GetRawDatasModel() { return m_rawModel; }
 
 private:
-    int modbusWriteDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* writeData);
-    int modbusReadDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* readData = NULL);
+    int modbusWriteDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* writeData, int connectionIndex = 0);
+    int modbusReadDataRaw(int slave, int functionCode, int startAddr, int numOfRegs, uint16_t* readData = NULL, int connectionIndex = 0);
 
     // Replay log functionality
     void logWriteOperation(int startAddr, int numOfRegs, uint16_t* writeData);
@@ -108,16 +117,16 @@ private:
 public:
     uint16_t* GetReadedData16() { return readDataDest16; }
     uint16_t* GetWritedData16() { return writeDataDest16; }
-    modbus_t* GetRawInterface() { return m_modbus; }
+	modbus_t* GetRawInterface(int connectionIndex = 0) { return getModbusContext(connectionIndex); }
 
 private:
+	ModbusCommSettings* m_modbusCommSettings[MODBUS_CONNECTION_COUNT];
+
     RegistersModel* m_regModel;
     RawDataModel* m_rawModel;
     QString stripIP(QString ip);
-    bool m_connected;
-    int m_ModBusMode;
 
-    ModbusTask m_currentGuiTask;
+	ModbusTask m_currentGuiTask;
     //int m_slave;
     //int m_functionCode;
     //int m_startAddr;
@@ -136,7 +145,8 @@ private:
     //uint8_t* writeDataDest;
     uint16_t* writeDataDest16;
 
-    modbus_t* m_modbus;
+	modbus_t* m_modbusList[MODBUS_CONNECTION_COUNT];
+	bool m_connectedList[MODBUS_CONNECTION_COUNT];
 
     bool m_useThread;
     
@@ -154,11 +164,11 @@ public:
     TaskThread<ModbusTask>* getTaskThread() { return m_taskThread; }
 
 public:
-    ModbusTask* getTaskWriteFile(int subAddr, int nb, std::string writeData);
-    ModbusTask* getTaskReadFile(int subAddr, int nb);
+    ModbusTask* getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex = 0);
+    ModbusTask* getTaskReadFile(int subAddr, int nb, int connectionIndex = 0);
 
-    ModbusTask* getTaskWrite(int startAddr, int numOfRegs, std::string writeData);
-    ModbusTask* getTaskRead(int startAddr, int numOfRegs);
+    ModbusTask* getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex = 0);
+    ModbusTask* getTaskRead(int startAddr, int numOfRegs, int connectionIndex = 0);
     ModbusTask* getTaskWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> function = NULL, std::string postDoFuncDesc = "");
     
 public:

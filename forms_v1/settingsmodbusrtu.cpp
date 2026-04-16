@@ -1,4 +1,4 @@
-#include <QtDebug>
+﻿#include <QtDebug>
 #include "settingsmodbusrtu.h"
 #include "ui_settingsmodbusrtu.h"
 #include "widgets/qlineedit4axisvalue.h"
@@ -83,6 +83,9 @@ void SettingsModbusRTU::showEvent(QShowEvent * event)
 void SettingsModbusRTU::changesAccepted()
 {
     if (m_settings != NULL) {
+        m_settings->setSlaveIP("");
+        m_settings->setTCPPort("");
+
         m_settings->setSerialPort(QString::number(ui->sbPort->value()), ui->cmbDev->currentText());
         m_settings->setBaud(ui->cmbBaud->currentText());
         m_settings->setDataBits(ui->cmbDataBits->currentText());

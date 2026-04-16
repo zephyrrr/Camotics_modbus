@@ -38,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout1;
     QPushButton *btnStart;
     QPushButton *btnStop;
+    QLineEdit *lineEditConnectionIndex;
     QCheckBox *ckbVerbosity;
     QLineEdit *lineEditReadRegAddr;
     QLineEdit *lineEditReadRegNum;
@@ -157,6 +158,11 @@ public:
 
         horizontalLayout1->addWidget(btnStop);
 
+        lineEditConnectionIndex = new QLineEdit(tab);
+        lineEditConnectionIndex->setObjectName(QString::fromUtf8("lineEditConnectionIndex"));
+
+        horizontalLayout1->addWidget(lineEditConnectionIndex);
+
         ckbVerbosity = new QCheckBox(tab);
         ckbVerbosity->setObjectName(QString::fromUtf8("ckbVerbosity"));
         ckbVerbosity->setChecked(false);
@@ -186,11 +192,11 @@ public:
 
         horizontalLayout1->setStretch(0, 2);
         horizontalLayout1->setStretch(1, 2);
-        horizontalLayout1->setStretch(2, 2);
-        horizontalLayout1->setStretch(3, 1);
+        horizontalLayout1->setStretch(3, 2);
         horizontalLayout1->setStretch(4, 1);
-        horizontalLayout1->setStretch(5, 2);
+        horizontalLayout1->setStretch(5, 1);
         horizontalLayout1->setStretch(6, 2);
+        horizontalLayout1->setStretch(7, 2);
 
         verticalLayout->addLayout(horizontalLayout1);
 
@@ -540,6 +546,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_17), QCoreApplication::translate("RegWindow", "MB", nullptr));
         btnStart->setText(QCoreApplication::translate("RegWindow", "Connect", nullptr));
         btnStop->setText(QCoreApplication::translate("RegWindow", "Disconnect", nullptr));
+        lineEditConnectionIndex->setText(QCoreApplication::translate("RegWindow", "0", nullptr));
         ckbVerbosity->setText(QCoreApplication::translate("RegWindow", "Verbosity", nullptr));
         lineEditReadRegAddr->setText(QCoreApplication::translate("RegWindow", "0", nullptr));
         lineEditReadRegNum->setText(QCoreApplication::translate("RegWindow", "2", nullptr));
