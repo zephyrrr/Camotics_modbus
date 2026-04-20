@@ -244,10 +244,11 @@ void RealtimeJsonMachine::changeTool(unsigned tool) {
     MachineAdapter::changeTool(tool);
 
     if (tool != currentTool) {
-        //sink.appendDict(true);
-        //sink.insert("type", "tool");
-        //sink.insert("value", tool);
-        //sink.endDict();
+        cb::JSON::ValuePtr sink = JSON::Factory().createDict();
+        sink->insert("type", "tool");
+        sink->insert("value", tool);
+
+        doTask(sink);
     }
 }
 

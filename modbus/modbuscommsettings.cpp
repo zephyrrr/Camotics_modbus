@@ -152,10 +152,10 @@ void ModbusCommSettings::setScanRate(int scanRate)
 
 QString ModbusCommSettings::mode()
 {
-    if (!m_slaveIP.isEmpty())
+    if (!m_serialDev.isEmpty())
+        return "RTU";
+	else if (!m_slaveIP.isEmpty())
         return "TCP";
-	else if (!m_serialDev.isEmpty())
-		return "RTU";
     else
 		return "NONE";
 }

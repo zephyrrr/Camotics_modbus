@@ -1321,6 +1321,36 @@ class Reg86PropertyObject : public RegOnePropertyObject
 public:
     Reg86PropertyObject(QObject* parent = nullptr, const QString& name = "") : RegOnePropertyObject(parent, name, TMBS_MAP0_ID_REG86) {};
 };
+
+// PLC 操作
+class PLCOperationPropertyObject : public BasePropertyObject
+{
+    Q_OBJECT;
+    Q_PROPERTY(int operation READ operation WRITE setoperation)
+    Q_PROPERTY(int param1 READ param1 WRITE setparam1)
+    Q_PROPERTY(int param2 READ param2 WRITE setparam2)
+    Q_PROPERTY(int param3 READ param3 WRITE setparam3)
+public:
+    PLCOperationPropertyObject(QObject* parent = nullptr, const QString& name = "");
+
+    int operation() const { return m_operation; }
+    int param1() const { return m_param1; }
+    int param2() const { return m_param2; }
+    int param3() const { return m_param3; }
+
+    void setoperation(int v) { m_operation = v; }
+    void setparam1(int v) { m_param1 = v; }
+    void setparam2(int v) { m_param2 = v; }
+    void setparam3(int v) { m_param3 = v; }
+
+    std::vector<uint16_t> GetValues() const override;
+    int GetCmdAddress() const override;
+protected:
+    int m_operation = 0;
+    int m_param1 = 0;
+    int m_param2 = 0;
+    int m_param3 = 0;
+};
 //////////////////////////////
 
 class PropertyObjects
@@ -1367,6 +1397,8 @@ public:
     Reg84PropertyObject* propertyObjectReg84;
     Reg85PropertyObject* propertyObjectReg85;
     Reg86PropertyObject* propertyObjectReg86;
+
+    PLCOperationPropertyObject* propertyObjectPLCOperation;
 };
 
 #endif

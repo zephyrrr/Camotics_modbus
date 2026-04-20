@@ -11,6 +11,8 @@ BasePropertyObject::BasePropertyObject(QObject* parent, const QString& name) :
 	QObject(parent)
 {
 	setObjectName(name);
+
+	headers["objectName"] = tr("MC");
 }
 
 QList<ModbusTask*> BasePropertyObject::ExecuteCmds(NCMachine* ncMachine, int idx) const
@@ -21,17 +23,31 @@ QList<ModbusTask*> BasePropertyObject::ExecuteCmds(NCMachine* ncMachine, int idx
 		ncMachine->enterSetPriority(idx);
 	}
 	int n = GetCmdAddress();
+
+	int connectionIndex = 0;
+	if (n >= TCPIPBASEADDR) {
+		n -= TCPIPBASEADDR;
+		connectionIndex = 1;
+	}
+
 	if (n >= TMBS_MAP0_ID_MAX) {
 		tasks = ncMachine->executeCmdsByTncOrder(n - TMBS_MAP0_ID_MAX, GetValues());
 	}
 	else {
 		tasks = ncMachine->executeCmdsByAddress(GetCmdAddress(), GetValues());
 	}
+	if (connectionIndex > 0) {
+		for (auto t : tasks) {
+			t->connectionIndex = connectionIndex;
+		}
+	}
+
 	if (idx != -1) {
 		ncMachine->exitSetPriority();
 		// 如果已经exitSetPriority，说明任务已经加入到队列并可能执行并delete了，不能再操作tasks
 		return QList<ModbusTask*> { NULL };
 	}
+	
 	return tasks;
 }
 
@@ -1342,14 +1358,15 @@ VersionPropertyObject::VersionPropertyObject(QObject* parent, const QString& nam
 	: BasePropertyObject(parent, name)
 {
 	headers = {
+		{ "objectName", tr("MC")},
 // [AUTO-TRANSLATION-COMMENT] 手控盒版本
-			{ "versionSkh", tr("SKHBB") },
+		{ "versionSkh", tr("SKHBB") },
 // [AUTO-TRANSLATION-COMMENT] 显示控制版本
-			{ "versionXskz", tr("XSKZBB") },
+		{ "versionXskz", tr("XSKZBB") },
 // [AUTO-TRANSLATION-COMMENT] 下位机版本
-			{ "versionXwj", tr("XWJBB") },
+		{ "versionXwj", tr("XWJBB") },
 // [AUTO-TRANSLATION-COMMENT] 下位机内核版本
-			{ "versionXwjnh", tr("XWJNHBB") },
+		{ "versionXwjnh", tr("XWJNHBB") },
 	};
 }
 
@@ -1372,12 +1389,13 @@ YouwenJianchePropertyObject::YouwenJianchePropertyObject(QObject* parent, const 
 	: BasePropertyObject(parent, name)
 {
 	headers = {
+		{ "objectName", tr("MC")},
 // [AUTO-TRANSLATION-COMMENT] 油温检测
-			{ "youWen", tr("YWJC") },
+		{ "youWen", tr("YWJC") },
 // [AUTO-TRANSLATION-COMMENT] 油温检测
-			{ "youWei", tr("YWJC") },
+		{ "youWei", tr("YWJC") },
 // [AUTO-TRANSLATION-COMMENT] 火焰检测
-			{ "huoYan", tr("HYJC") },
+		{ "huoYan", tr("HYJC") },
 	};
 }
 
@@ -1399,8 +1417,7 @@ int YouwenJianchePropertyObject::GetCmdAddress() const
 AJCPropertyObject::AJCPropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
 {
 	headers = {
-			{ "Ajc", QString("Ajc") },
-			
+		{ "Ajc", QString("Ajc") },	
 	};
 }
 
@@ -1421,8 +1438,9 @@ int AJCPropertyObject::GetCmdAddress() const
 Reg78PropertyObject::Reg78PropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
 {
 	headers = {
+		{ "objectName", tr("MC")},
 // [AUTO-TRANSLATION-COMMENT] 风扇延迟关闭时间
-			{ "fsycgbsj", tr("FSYCGBSJ") },
+		{ "fsycgbsj", tr("FSYCGBSJ") },
 
 	};
 }
@@ -1491,6 +1509,32 @@ std::vector<uint16_t> Reg83PropertyObject::GetValues() const
 int Reg83PropertyObject::GetCmdAddress() const
 {
 	return TMBS_MAP0_ID_REG83;
+}
+
+PLCOperationPropertyObject::PLCOperationPropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
+{
+	headers = {
+		{ "objectName", tr("MC")},
+		{ "operation", tr("operation") },
+		{ "param1", tr("param") + "1"},
+		{ "param2", tr("param") + "2" },
+		{ "param3", tr("param") + "3" },
+	};
+}
+
+std::vector<uint16_t> PLCOperationPropertyObject::GetValues() const
+{
+	std::vector<uint16_t> ret;
+	ret.push_back(m_operation);
+	ret.push_back(m_param1);
+	ret.push_back(m_param2);
+	ret.push_back(m_param3);
+	return ret;
+}
+
+int PLCOperationPropertyObject::GetCmdAddress() const
+{
+	return TMBS_MAP1_ID_PLCOPERATION;
 }
 
 ///////////////////////////////////////////////////////
@@ -1571,6 +1615,8 @@ PropertyObjects::~PropertyObjects() {
 		delete propertyObjectReg85;
 	if (propertyObjectReg86)
 		delete propertyObjectReg86;
+	if (propertyObjectPLCOperation)
+		delete propertyObjectPLCOperation;
 	//if (instance != nullptr) {
 	//	delete instance;
 	//}
@@ -1630,6 +1676,8 @@ void PropertyObjects::CreateData()
 	propertyObjectReg84 = new Reg84PropertyObject(nullptr, QObject::tr("Reg84"));
 	propertyObjectReg85 = new Reg85PropertyObject(nullptr, QObject::tr("Reg85"));
 	propertyObjectReg86 = new Reg86PropertyObject(nullptr, QObject::tr("Reg86"));
+
+	propertyObjectPLCOperation = new PLCOperationPropertyObject(nullptr, QObject::tr("PLCOPERATION"));
 }
 
 void PropertyObjects::LoadData()

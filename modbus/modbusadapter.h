@@ -28,7 +28,7 @@
 #define TASK_TIMER_PRIORITY 2
 //#define TASK_DELAY_PRIORITY 1
 
-#define MODBUS_CONNECTION_COUNT 2
+#define MODBUS_CONNECTION_COUNT 1
 
 class ModbusAdapter;
 
@@ -117,7 +117,6 @@ private:
 public:
     uint16_t* GetReadedData16() { return readDataDest16; }
     uint16_t* GetWritedData16() { return writeDataDest16; }
-	modbus_t* GetRawInterface(int connectionIndex = 0) { return getModbusContext(connectionIndex); }
 
 private:
 	ModbusCommSettings* m_modbusCommSettings[MODBUS_CONNECTION_COUNT];

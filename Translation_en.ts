@@ -1,30 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
     <name>ADCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1034"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="993"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1036"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="995"/>
         <source>AZYXS</source>
         <translation>ADC Gain</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1038"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="997"/>
         <source>AJZSJ</source>
         <translation>ADC Calib</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1040"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="999"/>
         <source>CFDYSCBLXS</source>
         <translation>Servo V Ratio</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1042"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1001"/>
         <source>GOBLXS</source>
         <translation>Opto Ratio</translation>
     </message>
@@ -35,6 +35,14 @@
         <location filename="widgets/advancedtoolbox.cpp" line="1163"/>
         <source>Hide</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>BasePropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="15"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
     </message>
 </context>
 <context>
@@ -137,27 +145,27 @@
 <context>
     <name>CmvFrmlmtPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="424"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="383"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="426"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="385"/>
         <source>ZSDM</source>
         <translation>Axis Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="428"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="387"/>
         <source>JSSJM</source>
         <translation>Accel Time</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="430"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="389"/>
         <source>DDFX</source>
         <translation>Touch Dir</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="432"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="391"/>
         <source>JCDL</source>
         <translation>Short Det</translation>
     </message>
@@ -165,27 +173,27 @@
 <context>
     <name>CmvTolmtPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="384"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="343"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="386"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="345"/>
         <source>ZSDM</source>
         <translation>Axis Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="388"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="347"/>
         <source>JSSJM</source>
         <translation>Accel Time</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="390"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="349"/>
         <source>DDFX</source>
         <translation>Touch Dir</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="392"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="351"/>
         <source>JCDL</source>
         <translation>Short Det</translation>
     </message>
@@ -193,32 +201,32 @@
 <context>
     <name>CmvTouchPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="341"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="300"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="343"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="302"/>
         <source>XZSDM</source>
         <translation>X Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="345"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="304"/>
         <source>XZJSSJM</source>
         <translation>X Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="347"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="306"/>
         <source>YZSDM</source>
         <translation>Y Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="349"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="308"/>
         <source>YZJSSJM</source>
         <translation>Y Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="351"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="310"/>
         <source>DDFX</source>
         <translation>Touch Dir</translation>
     </message>
@@ -226,27 +234,27 @@
 <context>
     <name>CmvTozsigPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="464"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="423"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="466"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="425"/>
         <source>ZSDM</source>
         <translation>Axis Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="468"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="427"/>
         <source>JSSJM</source>
         <translation>Accel Time</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="470"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="429"/>
         <source>DDFX</source>
         <translation>Touch Dir</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="472"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="431"/>
         <source>JCDL</source>
         <translation>Short Det</translation>
     </message>
@@ -254,17 +262,17 @@
 <context>
     <name>DDYDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="900"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="859"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="902"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="861"/>
         <source>JJZ</source>
         <translation>Feed Axis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="904"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="863"/>
         <source>BJJJMCS</source>
         <translation>Step Pulses</translation>
     </message>
@@ -272,12 +280,12 @@
 <context>
     <name>DJSNPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="936"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="895"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="938"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="897"/>
         <source>DJSN</source>
         <translation>Motor En</translation>
     </message>
@@ -285,12 +293,12 @@
 <context>
     <name>DebugPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1007"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="966"/>
         <source>TSYT</source>
         <translation>Debug Use</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1009"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="968"/>
         <source>DL</source>
         <translation>Short</translation>
     </message>
@@ -408,70 +416,70 @@
 <context>
     <name>FDHLPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1078"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1037"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1080"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1082"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1084"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1086"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1088"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1090"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1092"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1039"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1041"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1043"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1045"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1047"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1049"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1051"/>
         <source>KDLS</source>
         <oldsource>KDLS（</oldsource>
         <translation>Current Num</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1094"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1053"/>
         <source>FZDL1</source>
         <translation>Aux I1(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1096"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1055"/>
         <source>FZDL2</source>
         <translation>Aux I2(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1098"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1057"/>
         <source>DYDYD</source>
         <oldsource>DYDYD（</oldsource>
         <translation>Low Voltage Power Level 1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1100"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1059"/>
         <source>FZDL3</source>
         <translation>Aux I3(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1102"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1061"/>
         <source>KGYGZS</source>
         <translation>HV Tube Num</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1104"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1063"/>
         <source>FDDRXZ</source>
         <translation>Cap Sel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1106"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1065"/>
         <source>DGSNW</source>
         <translation>Ind Dis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1108"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1067"/>
         <source>DZSNW</source>
         <translation>Res Dis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1110"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1069"/>
         <source>ZFJXKZW</source>
         <translation>Polarity Ctrl</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1112"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1071"/>
         <source>FZDYXZ</source>
         <translation>Aux V Sel</translation>
     </message>
@@ -479,52 +487,52 @@
 <context>
     <name>FDJGPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1192"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1151"/>
         <source>FDJGCFDY</source>
         <translation>EDM Servo V</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1194"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1153"/>
         <source>JGMCMK</source>
         <translation>Pulse Width</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1196"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1155"/>
         <source>JGMCMJ</source>
         <translation>Pulse Gap</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1198"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1157"/>
         <source>-JGMCDNLSN</source>
         <translation>--Pulse Equ En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1200"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1159"/>
         <source>-JGMCDYYCJCSN</source>
         <translation>--V Abn En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1202"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1161"/>
         <source>JGMCFZMCXZ</source>
         <translation>Aux Pulse Sel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1204"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1163"/>
         <source>JCYCJCMS</source>
         <translation>Breakdown Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1206"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1165"/>
         <source>JCYCSJYZ</source>
         <translation>Breakdown Thres</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1208"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1167"/>
         <source>FDCFSD</source>
         <translation>EDM Servo Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1210"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1169"/>
         <source>FDCFTZSD</source>
         <translation>EDM Adj Spd</translation>
     </message>
@@ -532,134 +540,134 @@
 <context>
     <name>FDQDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="547"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="506"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="549"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="551"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="553"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="555"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="557"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="559"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="561"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="508"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="510"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="512"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="514"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="516"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="518"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="520"/>
         <source>KDLS</source>
         <translation>Current Num</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="563"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="522"/>
         <source>FZDL1</source>
         <translation>Aux I1(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="565"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="524"/>
         <source>FZDL2</source>
         <translation>Aux I2(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="567"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="526"/>
         <source>DYDY1D</source>
         <translation>Low Voltage Power Level 1 (LLV)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="569"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="528"/>
         <source>DYDY2D</source>
         <oldsource>DYDY2D（</oldsource>
         <translation>Low Voltage Power Level 2 (HLV)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="571"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="530"/>
         <source>FZDL3</source>
         <translation>Aux I3(32A)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="573"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="532"/>
         <source>KGYGZS</source>
         <translation>HV Tube Num</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="575"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="534"/>
         <source>FDDRXZ</source>
         <translation>Cap Sel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="577"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="536"/>
         <source>DGSNW</source>
         <translation>Ind Dis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="579"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="538"/>
         <source>DZSNW</source>
         <translation>Res Dis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="581"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="540"/>
         <source>FJXJGW</source>
         <translation>Rev Polarity</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="583"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="542"/>
         <source>FZDYXZ</source>
         <translation>Aux V Sel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="588"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="547"/>
         <source>BKGY</source>
         <translation>HV Off</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="590"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="549"/>
         <source>WDR</source>
         <translation>No Cap</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="592"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="551"/>
         <source>DGJRHL</source>
         <translation>Ind In Circuit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="594"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="553"/>
         <source>DLDG</source>
         <translation>Short Ind</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="596"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="555"/>
         <source>DZJRHL</source>
         <translation>Res In Circuit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="598"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="557"/>
         <source>DLDZ</source>
         <translation>Short Res</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="600"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="559"/>
         <source>DJWZJ</source>
         <translation>Electrode(+)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="602"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="561"/>
         <source>DJWFJ</source>
         <translation>Electrode(-)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="604"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="563"/>
         <source>BWQGB</source>
         <translation>Partial Close</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="606"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="565"/>
         <source>ZYFZ</source>
         <translation>MV Aux</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="608"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="567"/>
         <source>GYFZ</source>
         <translation>HV Aux</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="610"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="569"/>
         <source>WQGB</source>
         <translation>Full Close</translation>
     </message>
@@ -667,42 +675,42 @@
 <context>
     <name>FDWCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1260"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1219"/>
         <source>FDWCMS</source>
         <translation>EDM Done Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1262"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1221"/>
         <source>FDDSSJ</source>
         <translation>EDM Timer</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1264"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1223"/>
         <source>TDFX</source>
         <translation>Retract Dir</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1266"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1225"/>
         <source>TDGD</source>
         <translation>Retract Ht</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1268"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1227"/>
         <source>TDSD</source>
         <translation>Retract Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1270"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1229"/>
         <source>FDSJ</source>
         <translation>EDM Time</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1272"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1231"/>
         <source>ECTDXYDTDCS</source>
         <translation>2nd Retract Cnt</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1274"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1233"/>
         <source>ECTDGDBS</source>
         <translation>2nd Retract Mult</translation>
     </message>
@@ -710,37 +718,37 @@
 <context>
     <name>FZQDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="662"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="621"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="664"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="623"/>
         <source>YB1</source>
         <translation>Pump1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="666"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="625"/>
         <source>YB2</source>
         <translation>Pump2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="668"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="627"/>
         <source>HSBJD</source>
         <translation>Red Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="670"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="629"/>
         <source>LSBJD</source>
         <translation>Green Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="671"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="630"/>
         <source>OUT3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="672"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="631"/>
         <source>OUT4</source>
         <translation></translation>
     </message>
@@ -907,37 +915,37 @@
 <context>
     <name>FmqPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="962"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="921"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="964"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="923"/>
         <source>MJFS</source>
         <translation>Beep Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="971"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="930"/>
         <source>GB</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="973"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="932"/>
         <source>MJYS</source>
         <translation>Beep Once</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="975"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="934"/>
         <source>DDAJAXGCZYZMJ</source>
         <translation>Beep Continuously</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="977"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="936"/>
         <source>DDAJAXGCZJXMJ</source>
         <translation>Beep Interval</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="979"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="938"/>
         <source>KQ</source>
         <translation>Open</translation>
     </message>
@@ -1256,92 +1264,92 @@
 <context>
     <name>JogPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="104"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="63"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="106"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="65"/>
         <source>JSN</source>
         <translation>JOG En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="108"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="67"/>
         <source>TDDZSNW</source>
         <translation>Retract Dis</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="110"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="69"/>
         <source>FDZTW</source>
         <translation>EDM Pause Bit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="112"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="71"/>
         <source>MS</source>
         <translation>Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="114"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="73"/>
         <source>JCDL</source>
         <translation>Short Det</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="116"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="75"/>
         <source>GZ</source>
         <translation>Metric</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="118"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="77"/>
         <source>XZSDM</source>
         <translation>X Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="120"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="79"/>
         <source>JSSJM</source>
         <translation>Accel Time</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="122"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="81"/>
         <source>YZSDM</source>
         <translation>Y Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="124"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="83"/>
         <source>YZJSSJM</source>
         <translation>Y Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="126"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="85"/>
         <source>ZZSDM</source>
         <translation>Z Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="128"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="87"/>
         <source>ZZJSSJM</source>
         <translation>Z Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="130"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="89"/>
         <source>UZSDM</source>
         <translation>U Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="132"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="91"/>
         <source>UZJSSJM</source>
         <translation>U Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="137"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="96"/>
         <source>SDMS</source>
         <translation>Manual Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="139"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="98"/>
         <source>DDMS</source>
         <translation>JOG Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="141"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="100"/>
         <source>SLMS</source>
         <translation>Handwheel Mode</translation>
     </message>
@@ -1421,42 +1429,42 @@
 <context>
     <name>LocPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="284"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="243"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="286"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="245"/>
         <source>XZMBZB</source>
         <translation>X Target</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="288"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="247"/>
         <source>YZMBZB</source>
         <translation>Y Target</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="290"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="249"/>
         <source>ZZMBZB</source>
         <translation>Z Target</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="292"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="251"/>
         <source>UZMBZB</source>
         <translation>U Target</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="294"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="253"/>
         <source>JCDL</source>
         <translation>Short Det</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="296"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="255"/>
         <source>ZSDM</source>
         <translation>Axis Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="298"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="257"/>
         <source>JSSJM</source>
         <translation>Accel Time</translation>
     </message>
@@ -1572,27 +1580,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="716"/>
+        <location filename="modbus/modbusadapter.cpp" line="815"/>
         <source>MXCW</source>
         <translation>Modbus: Write Error</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="803"/>
+        <location filename="modbus/modbusadapter.cpp" line="903"/>
         <source>Write data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="809"/>
+        <location filename="modbus/modbusadapter.cpp" line="909"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="863"/>
+        <location filename="modbus/modbusadapter.cpp" line="963"/>
         <source>Read data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="869"/>
+        <location filename="modbus/modbusadapter.cpp" line="969"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
@@ -1705,246 +1713,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="355"/>
+        <location filename="modbus/NCMachine.cpp" line="332"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>No Motion(API)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="358"/>
+        <location filename="modbus/NCMachine.cpp" line="335"/>
         <source>JYX</source>
         <translation>JOG Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="361"/>
+        <location filename="modbus/NCMachine.cpp" line="338"/>
         <source>JTC</source>
         <translation>JOG Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="364"/>
+        <location filename="modbus/NCMachine.cpp" line="341"/>
         <source>LYX</source>
         <translation>LOC Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="367"/>
+        <location filename="modbus/NCMachine.cpp" line="344"/>
         <source>CYX</source>
         <translation>CMV Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="370"/>
+        <location filename="modbus/NCMachine.cpp" line="347"/>
         <source>CTC</source>
         <translation>CMV Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="373"/>
+        <location filename="modbus/NCMachine.cpp" line="350"/>
         <source>CWC</source>
         <translation>CMV Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="376"/>
+        <location filename="modbus/NCMachine.cpp" line="353"/>
         <source>SYX</source>
         <translation>SPK Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="379"/>
+        <location filename="modbus/NCMachine.cpp" line="356"/>
         <source>STCQHZX</source>
         <translation>SPK Exit Center</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="382"/>
+        <location filename="modbus/NCMachine.cpp" line="359"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK Exit Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="385"/>
+        <location filename="modbus/NCMachine.cpp" line="362"/>
         <source>STDQHT</source>
         <translation>SPK Pre-Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="388"/>
+        <location filename="modbus/NCMachine.cpp" line="365"/>
         <source>STD</source>
         <translation>SPK Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="368"/>
         <source>STDJSQJG</source>
         <translation>SPK Retract Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="394"/>
+        <location filename="modbus/NCMachine.cpp" line="371"/>
         <source>WDYZT: </source>
         <translation>Undef Status: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="408"/>
+        <location filename="modbus/NCMachine.cpp" line="385"/>
         <source>JSDTC</source>
         <translation>JOG Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="413"/>
+        <location filename="modbus/NCMachine.cpp" line="390"/>
         <source>LZCWCTC</source>
         <translation>LOC Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="418"/>
+        <location filename="modbus/NCMachine.cpp" line="395"/>
         <source>LSDTC</source>
         <translation>LOC Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="423"/>
+        <location filename="modbus/NCMachine.cpp" line="400"/>
         <source>LQDQBJTC：</source>
         <translation>LOC Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="427"/>
+        <location filename="modbus/NCMachine.cpp" line="404"/>
         <source>LCFXWTC：</source>
         <translation>LOC Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="432"/>
+        <location filename="modbus/NCMachine.cpp" line="409"/>
         <source>LDLTC</source>
         <translation>LOC Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="437"/>
+        <location filename="modbus/NCMachine.cpp" line="414"/>
         <source>LCSFF</source>
         <translation>LOC Param Invalid</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="442"/>
+        <location filename="modbus/NCMachine.cpp" line="419"/>
         <source>LJYCW</source>
         <translation>LOC Check Error</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="447"/>
+        <location filename="modbus/NCMachine.cpp" line="424"/>
         <source>LWXGN</source>
         <translation>LOC Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="452"/>
+        <location filename="modbus/NCMachine.cpp" line="429"/>
         <source>CZCWCTC</source>
         <translation>CMV Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="457"/>
+        <location filename="modbus/NCMachine.cpp" line="434"/>
         <source>CSDTC</source>
         <translation>CMV Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="462"/>
+        <location filename="modbus/NCMachine.cpp" line="439"/>
         <source>CQDQBJTC：</source>
         <translation>CMV Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="466"/>
+        <location filename="modbus/NCMachine.cpp" line="443"/>
         <source>CCFXWTC：</source>
         <translation>CMV Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="471"/>
+        <location filename="modbus/NCMachine.cpp" line="448"/>
         <source>CDLTC</source>
         <translation>CMV Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="476"/>
+        <location filename="modbus/NCMachine.cpp" line="453"/>
         <source>CZBMCW</source>
         <translation>CMV Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="481"/>
+        <location filename="modbus/NCMachine.cpp" line="458"/>
         <source>CCZMCW</source>
         <translation>CMV OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="486"/>
+        <location filename="modbus/NCMachine.cpp" line="463"/>
         <source>CWXGN</source>
         <translation>CMV Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="491"/>
+        <location filename="modbus/NCMachine.cpp" line="468"/>
         <source>SZCWCTC</source>
         <translation>SPK Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="496"/>
+        <location filename="modbus/NCMachine.cpp" line="473"/>
         <source>SSDTC</source>
         <translation>SPK Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="478"/>
         <source>SQDQBJTC</source>
         <translation>SPK Driver Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="505"/>
+        <location filename="modbus/NCMachine.cpp" line="482"/>
         <source>SCFXWTC</source>
         <translation>SPK Limit Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="510"/>
+        <location filename="modbus/NCMachine.cpp" line="487"/>
         <source>SDLTC</source>
         <translation>SPK Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="517"/>
-        <location filename="modbus/NCMachine.cpp" line="520"/>
-        <source>YW</source>
+        <location filename="modbus/NCMachine.cpp" line="494"/>
+        <source>YouWei</source>
         <translation>Oil Level</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="523"/>
+        <location filename="modbus/NCMachine.cpp" line="497"/>
+        <source>YouWen</source>
+        <translation>Oil Temp</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachine.cpp" line="500"/>
         <source>HY</source>
         <translation>Flame</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="502"/>
         <source>SBJTC</source>
         <translation>SPK%1 Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="531"/>
+        <location filename="modbus/NCMachine.cpp" line="508"/>
         <source>SZBMCW</source>
         <translation>SPK Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="536"/>
+        <location filename="modbus/NCMachine.cpp" line="513"/>
         <source>SCZMCW</source>
         <translation>SPK OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="541"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
         <source>SWXGN</source>
         <translation>SPK Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="547"/>
+        <location filename="modbus/NCMachine.cpp" line="524"/>
         <source>WDY：</source>
         <translation>Undef: %1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2329"/>
+        <location filename="modbus/NCMachine.cpp" line="2315"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>Max 4 Axes</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2721"/>
-        <location filename="modbus/NCMachine.cpp" line="2730"/>
-        <location filename="modbus/NCMachine.cpp" line="3282"/>
+        <location filename="modbus/NCMachine.cpp" line="2713"/>
+        <location filename="modbus/NCMachine.cpp" line="2722"/>
+        <location filename="modbus/NCMachine.cpp" line="3274"/>
         <source>CMLCSBMZYQ</source>
         <translation>C Param %1=%2 Invalid!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2785"/>
+        <location filename="modbus/NCMachine.cpp" line="2777"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3268"/>
+        <location filename="modbus/NCMachine.cpp" line="3260"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C Param Count Mismatch!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3468"/>
+        <location filename="modbus/NCMachine.cpp" line="3460"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR: Previous Running</translation>
     </message>
@@ -2163,6 +2175,26 @@
     </message>
 </context>
 <context>
+    <name>PLCOperationPropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1517"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1518"/>
+        <source>operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1519"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1520"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1521"/>
+        <source>param</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QLineEditLikeButton</name>
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
@@ -2284,149 +2316,154 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1639"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1628"/>
         <source>JPZ</source>
         <translation>JOG Settings</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1641"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1630"/>
         <source>LPZ</source>
         <translation>LOC Settings</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1643"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1632"/>
         <source>DD</source>
         <translation>Tool Setting</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1645"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1634"/>
         <source>QJX</source>
         <translation>Go to Limit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1647"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1636"/>
         <source>TCJX</source>
         <translation>Exit Limit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1649"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1638"/>
         <source>ZLW</source>
         <translation>Find Zero</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1650"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1639"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1652"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1641"/>
         <source>FDI</source>
         <translation>EDM IO</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1654"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1643"/>
         <source>FZI</source>
         <translation>Aux IO</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1656"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1645"/>
         <source>SKHKZ</source>
         <translation>Handbox Control</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1659"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1648"/>
         <source>ZLJBC</source>
         <translation>Axis Pitch Comp</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1661"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1650"/>
         <source>DDYD</source>
         <translation>JOG Move</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1663"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1652"/>
         <source>DJSN</source>
         <translation>Motor En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1665"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1654"/>
         <source>FMQ</source>
         <translation>Buzzer</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1667"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1656"/>
         <source>TSYT</source>
         <translation>Debug Use</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1668"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1657"/>
         <source>ADC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1670"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1659"/>
         <source>FDHL</source>
         <translation>EDM Circuit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1672"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1661"/>
         <source>FDJG</source>
         <translation>EDM</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1674"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1663"/>
         <source>FDWC</source>
         <translation>EDM Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1676"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1665"/>
         <source>YD</source>
         <translation>Orbit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1679"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1668"/>
         <source>BBH</source>
         <translation>Version</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1681"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1670"/>
         <source>YWJC</source>
         <translation>Oil Temp Det</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1682"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1671"/>
         <source>AJC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1684"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1673"/>
         <source>Reg78</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1685"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1674"/>
         <source>Reg81</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1686"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1675"/>
         <source>Reg83</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1687"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1676"/>
         <source>Reg84</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1688"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1677"/>
         <source>Reg85</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1689"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1678"/>
         <source>Reg86</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1680"/>
+        <source>PLCOPERATION</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
@@ -2548,6 +2585,18 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="forms/mainwindow2.ui" line="124"/>
+        <location filename="forms/mainwindow2.cpp" line="1739"/>
+        <source>YouWei</source>
+        <translation type="unfinished">Oil Level</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="131"/>
+        <location filename="forms/mainwindow2.cpp" line="1742"/>
+        <source>YouWen</source>
+        <translation type="unfinished">Oil Temp</translation>
+    </message>
+    <message>
         <location filename="forms/mainwindow2.ui" line="145"/>
         <source>FLOAT</source>
         <translation></translation>
@@ -2642,14 +2691,6 @@
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="124"/>
-        <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1741"/>
-        <location filename="forms/mainwindow2.cpp" line="1744"/>
-        <source>YW</source>
-        <translation>Oil Level</translation>
-    </message>
-    <message>
         <location filename="forms/mainwindow2.ui" line="138"/>
         <source>HY</source>
         <translation>Flame</translation>
@@ -2661,7 +2702,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1360"/>
+        <location filename="forms/mainwindow2.cpp" line="1358"/>
         <source>GT</source>
         <translation>Jump</translation>
     </message>
@@ -2736,7 +2777,7 @@
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="328"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>YX</source>
         <translation>Bottom-Right</translation>
     </message>
@@ -2786,259 +2827,259 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="276"/>
+        <location filename="forms/mainwindow2.cpp" line="246"/>
         <source>XMML</source>
         <translation>Project Dir</translation>
     </message>
     <message>
+        <location filename="forms/mainwindow2.cpp" line="285"/>
         <location filename="forms/mainwindow2.cpp" line="305"/>
-        <location filename="forms/mainwindow2.cpp" line="325"/>
         <source>SD</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="306"/>
+        <location filename="forms/mainwindow2.cpp" line="286"/>
         <source>EZD</source>
         <translation>EDM Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="308"/>
+        <location filename="forms/mainwindow2.cpp" line="288"/>
         <source>JG</source>
         <translation>Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="309"/>
+        <location filename="forms/mainwindow2.cpp" line="289"/>
         <source>SheDing</source>
         <translation>Set</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="326"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
         <source>ZD</source>
         <translation>Auto</translation>
     </message>
     <message>
+        <location filename="forms/mainwindow2.cpp" line="287"/>
         <location filename="forms/mainwindow2.cpp" line="307"/>
-        <location filename="forms/mainwindow2.cpp" line="327"/>
         <source>BianJi</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="329"/>
+        <location filename="forms/mainwindow2.cpp" line="309"/>
         <source>QT</source>
         <translation>Other</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="356"/>
+        <location filename="forms/mainwindow2.cpp" line="336"/>
         <source>ZBSZ</source>
         <translation>Coord Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="359"/>
+        <location filename="forms/mainwindow2.cpp" line="339"/>
         <source>DWYD</source>
         <translation>Loc Move</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="362"/>
+        <location filename="forms/mainwindow2.cpp" line="342"/>
         <source>WZJY</source>
         <translation>Pos Memory</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="365"/>
+        <location filename="forms/mainwindow2.cpp" line="345"/>
         <source>DMDW</source>
         <translation>Face Loc</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="368"/>
+        <location filename="forms/mainwindow2.cpp" line="348"/>
         <source>ZZX</source>
         <translation>Cylinder Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="371"/>
+        <location filename="forms/mainwindow2.cpp" line="351"/>
         <source>JZX</source>
         <translation>Corner Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="374"/>
+        <location filename="forms/mainwindow2.cpp" line="354"/>
         <source>KZX</source>
         <translation>Hole Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="377"/>
+        <location filename="forms/mainwindow2.cpp" line="357"/>
         <source>SDDY</source>
         <translation>3-Point Circle</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="380"/>
+        <location filename="forms/mainwindow2.cpp" line="360"/>
         <source>FDDW</source>
         <translation>EDM Loc</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="388"/>
+        <location filename="forms/mainwindow2.cpp" line="368"/>
         <source>ZDCS</source>
         <translation>Auto Param</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="399"/>
+        <location filename="forms/mainwindow2.cpp" line="379"/>
         <source>SDDG</source>
         <translation>Manual Single</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="402"/>
+        <location filename="forms/mainwindow2.cpp" line="382"/>
         <source>SDMG</source>
         <translation>Manual Multi</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="411"/>
+        <location filename="forms/mainwindow2.cpp" line="391"/>
         <source>NJG</source>
         <translation>NC Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="416"/>
+        <location filename="forms/mainwindow2.cpp" line="396"/>
         <source>JGJL</source>
         <translation>Mach Log</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="420"/>
+        <location filename="forms/mainwindow2.cpp" line="400"/>
         <source>XTSZ</source>
         <translation>System Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="421"/>
+        <location filename="forms/mainwindow2.cpp" line="401"/>
         <source>FangDianCanShu</source>
         <translation>EDM Param</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="424"/>
-        <location filename="forms/mainwindow2.cpp" line="1288"/>
+        <location filename="forms/mainwindow2.cpp" line="404"/>
+        <location filename="forms/mainwindow2.cpp" line="1286"/>
         <source>FDCS</source>
         <translation>EDM Test</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="425"/>
+        <location filename="forms/mainwindow2.cpp" line="405"/>
         <source>LJBC</source>
         <translation>Pitch Comp</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="430"/>
+        <location filename="forms/mainwindow2.cpp" line="410"/>
         <source>CKSZ</source>
         <translation>Serial Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="433"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>GY</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="476"/>
-        <location filename="forms/mainwindow2.cpp" line="1459"/>
+        <location filename="forms/mainwindow2.cpp" line="463"/>
+        <location filename="forms/mainwindow2.cpp" line="1457"/>
         <source>CKWLJ</source>
         <translation>Serial Port Not Connected</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="481"/>
-        <location filename="forms/mainwindow2.cpp" line="1570"/>
+        <location filename="forms/mainwindow2.cpp" line="468"/>
+        <location filename="forms/mainwindow2.cpp" line="1568"/>
         <source>DDYX</source>
         <translation>Waiting</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="655"/>
+        <location filename="forms/mainwindow2.cpp" line="642"/>
         <source>MNJG</source>
         <translation>Simulate</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="663"/>
+        <location filename="forms/mainwindow2.cpp" line="650"/>
         <source>JGHGJ</source>
         <translation>Shutdown After Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="915"/>
-        <location filename="forms/mainwindow2.cpp" line="929"/>
-        <location filename="forms/mainwindow2.cpp" line="1604"/>
+        <location filename="forms/mainwindow2.cpp" line="909"/>
+        <location filename="forms/mainwindow2.cpp" line="923"/>
+        <location filename="forms/mainwindow2.cpp" line="1602"/>
         <source>YXZ</source>
         <translation>Running</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1009"/>
+        <location filename="forms/mainwindow2.cpp" line="1003"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1016"/>
+        <location filename="forms/mainwindow2.cpp" line="1010"/>
         <source>SFJXZDHL</source>
         <translation>Auto Home?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1130"/>
+        <location filename="forms/mainwindow2.cpp" line="1128"/>
         <source>BCWJ</source>
         <translation>Save File</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1300"/>
-        <location filename="forms/mainwindow2.cpp" line="1369"/>
+        <location filename="forms/mainwindow2.cpp" line="1298"/>
+        <location filename="forms/mainwindow2.cpp" line="1367"/>
         <source>FS</source>
         <translation>Send</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1301"/>
-        <location filename="forms/mainwindow2.cpp" line="1370"/>
+        <location filename="forms/mainwindow2.cpp" line="1299"/>
+        <location filename="forms/mainwindow2.cpp" line="1368"/>
         <source>GB</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1585"/>
+        <location filename="forms/mainwindow2.cpp" line="1583"/>
         <source>DDZ</source>
         <translation>Touching</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1588"/>
+        <location filename="forms/mainwindow2.cpp" line="1586"/>
         <source>HLZ</source>
         <translation>Homing</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1593"/>
+        <location filename="forms/mainwindow2.cpp" line="1591"/>
         <source>FDZ</source>
         <translation>EDM On</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1596"/>
+        <location filename="forms/mainwindow2.cpp" line="1594"/>
         <source>FDZT</source>
         <translation>EDM Pause</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1601"/>
+        <location filename="forms/mainwindow2.cpp" line="1599"/>
         <source>ZTZ</source>
         <translation>Paused</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1618"/>
+        <location filename="forms/mainwindow2.cpp" line="1616"/>
         <source>DLBJ</source>
         <translation>Short Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1658"/>
+        <location filename="forms/mainwindow2.cpp" line="1656"/>
         <source>CFDJBJ</source>
         <translation>Servo Motor Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1674"/>
+        <location filename="forms/mainwindow2.cpp" line="1672"/>
         <source>DDYWZ</source>
         <translation>Waiting Oil</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1695"/>
-        <location filename="forms/mainwindow2.cpp" line="1699"/>
+        <location filename="forms/mainwindow2.cpp" line="1693"/>
+        <location filename="forms/mainwindow2.cpp" line="1697"/>
         <source>XXW</source>
         <translation>X-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1703"/>
-        <location filename="forms/mainwindow2.cpp" line="1707"/>
+        <location filename="forms/mainwindow2.cpp" line="1701"/>
+        <location filename="forms/mainwindow2.cpp" line="1705"/>
         <source>YXW</source>
         <translation>Y-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1711"/>
-        <location filename="forms/mainwindow2.cpp" line="1715"/>
+        <location filename="forms/mainwindow2.cpp" line="1709"/>
+        <location filename="forms/mainwindow2.cpp" line="1713"/>
         <source>ZXW</source>
         <translation>Z-Limit</translation>
     </message>
@@ -3071,7 +3112,12 @@
 <context>
     <name>Reg78PropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1482"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1441"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1443"/>
         <source>FSYCGBSJ</source>
         <translation>Fan Delay Off</translation>
     </message>
@@ -3079,189 +3125,190 @@
 <context>
     <name>RegWindow</name>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="13"/>
+        <location filename="forms_v1/regwindow.ui" line="14"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="26"/>
+        <location filename="forms_v1/regwindow.ui" line="27"/>
         <source>MB</source>
         <translation>Panel</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="36"/>
+        <location filename="forms_v1/regwindow.ui" line="37"/>
         <source>JCQ</source>
         <translation>Register</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="44"/>
+        <location filename="forms_v1/regwindow.ui" line="45"/>
         <source>Connect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="54"/>
+        <location filename="forms_v1/regwindow.ui" line="55"/>
         <source>Disconnect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="61"/>
+        <location filename="forms_v1/regwindow.ui" line="69"/>
         <source>Verbosity</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="71"/>
+        <location filename="forms_v1/regwindow.ui" line="62"/>
+        <location filename="forms_v1/regwindow.ui" line="79"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="78"/>
+        <location filename="forms_v1/regwindow.ui" line="86"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="88"/>
+        <location filename="forms_v1/regwindow.ui" line="96"/>
         <source>Read Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="95"/>
+        <location filename="forms_v1/regwindow.ui" line="103"/>
         <source>Write Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="108"/>
+        <location filename="forms_v1/regwindow.ui" line="116"/>
         <source>JOG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="125"/>
+        <location filename="forms_v1/regwindow.ui" line="133"/>
         <source>QDJ</source>
         <translation>Start JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="141"/>
+        <location filename="forms_v1/regwindow.ui" line="149"/>
         <source>TCJ</source>
         <translation>Exit JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="157"/>
+        <location filename="forms_v1/regwindow.ui" line="165"/>
         <source>DDYD</source>
         <translation>JOG Move</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="177"/>
+        <location filename="forms_v1/regwindow.ui" line="185"/>
         <source>QDDW</source>
         <translation>Start Loc</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="193"/>
+        <location filename="forms_v1/regwindow.ui" line="201"/>
         <source>TCDW</source>
         <translation>Exit Loc</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="219"/>
+        <location filename="forms_v1/regwindow.ui" line="227"/>
         <source>QDDD</source>
         <translation>Start Touch</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="235"/>
+        <location filename="forms_v1/regwindow.ui" line="243"/>
         <source>JSDD</source>
         <translation>End Touch</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="261"/>
-        <location filename="forms_v1/regwindow.ui" line="303"/>
-        <location filename="forms_v1/regwindow.ui" line="345"/>
-        <location filename="forms_v1/regwindow.ui" line="387"/>
+        <location filename="forms_v1/regwindow.ui" line="269"/>
+        <location filename="forms_v1/regwindow.ui" line="311"/>
+        <location filename="forms_v1/regwindow.ui" line="353"/>
+        <location filename="forms_v1/regwindow.ui" line="395"/>
         <source>QD</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="277"/>
-        <location filename="forms_v1/regwindow.ui" line="319"/>
-        <location filename="forms_v1/regwindow.ui" line="361"/>
-        <location filename="forms_v1/regwindow.ui" line="403"/>
+        <location filename="forms_v1/regwindow.ui" line="285"/>
+        <location filename="forms_v1/regwindow.ui" line="327"/>
+        <location filename="forms_v1/regwindow.ui" line="369"/>
+        <location filename="forms_v1/regwindow.ui" line="411"/>
         <source>JS</source>
         <translation>End</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="414"/>
+        <location filename="forms_v1/regwindow.ui" line="422"/>
         <source>JC</source>
         <translation>Monitor</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="430"/>
+        <location filename="forms_v1/regwindow.ui" line="438"/>
         <source>SKH</source>
         <translation>Handbox</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="435"/>
+        <location filename="forms_v1/regwindow.ui" line="443"/>
         <source>FDI</source>
         <translation>EDM IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="450"/>
-        <location filename="forms_v1/regwindow.ui" line="479"/>
-        <location filename="forms_v1/regwindow.ui" line="508"/>
-        <location filename="forms_v1/regwindow.ui" line="558"/>
+        <location filename="forms_v1/regwindow.ui" line="458"/>
+        <location filename="forms_v1/regwindow.ui" line="487"/>
+        <location filename="forms_v1/regwindow.ui" line="516"/>
+        <location filename="forms_v1/regwindow.ui" line="566"/>
         <location filename="forms_v1/regwindow.cpp" line="135"/>
         <location filename="forms_v1/regwindow.cpp" line="262"/>
-        <location filename="forms_v1/regwindow.cpp" line="397"/>
+        <location filename="forms_v1/regwindow.cpp" line="405"/>
         <source>FS</source>
         <translation>Send</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="464"/>
+        <location filename="forms_v1/regwindow.ui" line="472"/>
         <source>FZI</source>
         <translation>Aux IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="493"/>
+        <location filename="forms_v1/regwindow.ui" line="501"/>
         <source>SKHKZSJ</source>
         <translation>Handbox Ctrl Data</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="524"/>
+        <location filename="forms_v1/regwindow.ui" line="532"/>
         <source>DQ</source>
         <translation>Read</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="538"/>
+        <location filename="forms_v1/regwindow.ui" line="546"/>
         <source>BC</source>
         <translation>Save</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="162"/>
+        <location filename="forms_v1/regwindow.ui" line="170"/>
         <source>LOC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="204"/>
+        <location filename="forms_v1/regwindow.ui" line="212"/>
         <source>CMV_TOUCH</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="246"/>
+        <location filename="forms_v1/regwindow.ui" line="254"/>
         <source>CMV_TOLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="288"/>
+        <location filename="forms_v1/regwindow.ui" line="296"/>
         <source>CMV_FRMLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="330"/>
+        <location filename="forms_v1/regwindow.ui" line="338"/>
         <source>CMV_TOZSIG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="372"/>
+        <location filename="forms_v1/regwindow.ui" line="380"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="572"/>
+        <location filename="forms_v1/regwindow.ui" line="580"/>
         <source>Modbus File</source>
         <translation></translation>
     </message>
@@ -3282,19 +3329,19 @@
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="529"/>
+        <location filename="forms_v1/regwindow.cpp" line="537"/>
         <source>XZ</source>
         <translation>X Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="532"/>
+        <location filename="forms_v1/regwindow.cpp" line="540"/>
         <source>YZ</source>
         <translation>Y Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="535"/>
+        <location filename="forms_v1/regwindow.cpp" line="543"/>
         <source>ZZ</source>
         <translation>Z Axis</translation>
     </message>
@@ -3334,108 +3381,113 @@
         <translation>Orbit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="541"/>
+        <location filename="forms_v1/regwindow.cpp" line="390"/>
+        <source>PLC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.cpp" line="549"/>
         <source>WCZ</source>
         <translation>No Op</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="544"/>
+        <location filename="forms_v1/regwindow.cpp" line="552"/>
         <source>SDDQ</source>
         <translation>Set Current</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="548"/>
+        <location filename="forms_v1/regwindow.cpp" line="556"/>
         <source>DWYD</source>
         <translation>Loc Move</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="104"/>
+        <location filename="forms_v1/regwindow.h" line="103"/>
         <source>XZZFXXW</source>
         <translation>X+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="105"/>
+        <location filename="forms_v1/regwindow.h" line="104"/>
         <source>XZFFXXW</source>
         <translation>X- Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="106"/>
+        <location filename="forms_v1/regwindow.h" line="105"/>
         <source>YZZFXXW</source>
         <translation>Y+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="107"/>
+        <location filename="forms_v1/regwindow.h" line="106"/>
         <source>YZFFXXW</source>
         <translation>Y- Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="108"/>
+        <location filename="forms_v1/regwindow.h" line="107"/>
         <source>ZZZFXXW</source>
         <translation>Z+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="109"/>
+        <location filename="forms_v1/regwindow.h" line="108"/>
         <source>ZZFFXXW</source>
         <translation>Z- Limit</translation>
     </message>
     <message>
+        <location filename="forms_v1/regwindow.h" line="111"/>
         <location filename="forms_v1/regwindow.h" line="112"/>
-        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>YWXH</source>
         <translation>Oil Level Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="114"/>
+        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>HYXH</source>
         <translation>Flame Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="115"/>
+        <location filename="forms_v1/regwindow.h" line="114"/>
         <source>WBXH0</source>
         <translation>Ext Signal 0</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="116"/>
+        <location filename="forms_v1/regwindow.h" line="115"/>
         <source>WBXH1</source>
         <translation>Ext Signal 1</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="117"/>
+        <location filename="forms_v1/regwindow.h" line="116"/>
         <source>WBXH2</source>
         <translation>Ext Signal 2</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="118"/>
+        <location filename="forms_v1/regwindow.h" line="117"/>
         <source>WBXH3</source>
         <translation>Ext Signal 3</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="120"/>
+        <location filename="forms_v1/regwindow.h" line="119"/>
         <source>XZLDXH</source>
         <translation>X Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="121"/>
+        <location filename="forms_v1/regwindow.h" line="120"/>
         <source>YZLDXH</source>
         <translation>Y Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="122"/>
+        <location filename="forms_v1/regwindow.h" line="121"/>
         <source>ZZLDXH</source>
         <translation>Z Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="123"/>
+        <location filename="forms_v1/regwindow.h" line="122"/>
         <source>UZLDXH</source>
         <translation>U Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="124"/>
+        <location filename="forms_v1/regwindow.h" line="123"/>
         <source>VZLDXH</source>
         <translation>V Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="127"/>
+        <location filename="forms_v1/regwindow.h" line="126"/>
         <source>CFBJXH</source>
         <translation>Servo Alarm Signal</translation>
     </message>
@@ -3792,77 +3844,77 @@
 <context>
     <name>SKHKZPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="704"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="663"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="706"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="665"/>
         <source>ZTKZ</source>
         <translation>Status Ctrl</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="708"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="667"/>
         <source>XSSN</source>
         <translation>Display En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="710"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="669"/>
         <source>JPSD</source>
         <translation>Key Lock</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="712"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="671"/>
         <source>ZCZSN</source>
         <translation>Axis Op En</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="714"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="673"/>
         <source>SC3WJM</source>
         <translation>Upload 32bit Key</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="716"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="675"/>
         <source>GZ</source>
         <translation>Metric(mm)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="718"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="677"/>
         <source>XS/CZZGS</source>
         <translation>Display/Op Axis Num</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="720"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="679"/>
         <source>SDXSKZ</source>
         <translation>Spd Display Ctrl</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="722"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="681"/>
         <source>DD/SDXSKZ</source>
         <translation>JOG/Manual Display Ctrl</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="726"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="685"/>
         <source>WZT</source>
         <translation>No Status</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="728"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="687"/>
         <source>ZTJGZT</source>
         <translation>Pause Status</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="730"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="689"/>
         <source>JGZT</source>
         <translation>Mach Status</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="732"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="691"/>
         <source>SDLXYD</source>
         <translation>Manual(Continuous)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="734"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="693"/>
         <source>DDYD</source>
         <translation>JOG Move</translation>
     </message>
@@ -3870,7 +3922,7 @@
 <context>
     <name>SPKPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="507"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="466"/>
         <source>ZGJ</source>
         <translation>Sub Path</translation>
     </message>
@@ -4056,6 +4108,24 @@
         <location filename="forms_v1/settingsmodbusrtu.ui" line="350"/>
         <source>Even</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsModbusTCP</name>
+    <message>
+        <location filename="forms_v1/settingsmodbustcp.ui" line="26"/>
+        <source>Modbus TCP Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/settingsmodbustcp.ui" line="41"/>
+        <source>Slave IP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/settingsmodbustcp.ui" line="48"/>
+        <source>TCP Port</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4283,22 +4353,27 @@
 <context>
     <name>VersionPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1403"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1361"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1363"/>
         <source>SKHBB</source>
         <translation>Handbox Ver</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1405"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1365"/>
         <source>XSKZBB</source>
         <translation>Display Control Version</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1407"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1367"/>
         <source>XWJBB</source>
         <translation>Lower Computer Version</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1409"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1369"/>
         <source>XWJNHBB</source>
         <translation>Lower Computer Kernel Version</translation>
     </message>
@@ -5327,92 +5402,92 @@
 <context>
     <name>YDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1311"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1270"/>
         <source>YDFX</source>
         <translation>Orbit Dir</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1313"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1272"/>
         <source>ZDYDSD</source>
         <translation>Max Orbit Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1315"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1274"/>
         <source>SDJCXFS</source>
         <translation>Depth Detect Div</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1317"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1276"/>
         <source>YDFWCFMS</source>
         <translation>Orbit Reset Mode</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1319"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1278"/>
         <source>YDFWDZMS</source>
         <translation>Orbit Reset Action</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1321"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1280"/>
         <source>YDPM</source>
         <translation>Orbit Plane</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1323"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1282"/>
         <source>D1XXYDM</source>
         <translation>Q1 Orbit Code</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1325"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1284"/>
         <source>D2XXYDM</source>
         <translation>Q2 Orbit Code</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1327"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1286"/>
         <source>D3XXYDM</source>
         <translation>Q3 Orbit Code</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1329"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1288"/>
         <source>D4XXYDM</source>
         <translation>Q4 Orbit Code</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1331"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1290"/>
         <source>YDBJ</source>
         <translation>Orbit Radius</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1333"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1292"/>
         <source>HZXTDGD</source>
         <translation>Center Retract Ht</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1335"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1294"/>
         <source>HZXTDSD</source>
         <translation>Center Retract Spd</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1337"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1296"/>
         <source>HZXTDJSSJ</source>
         <translation>Center Retract Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1339"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1298"/>
         <source>ZTDJSSJ</source>
         <translation>Main Retract Accel</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1341"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1300"/>
         <source>TCQHTJL</source>
         <translation>Exit Retract Dist</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1343"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1302"/>
         <source>TDQMSHTJL</source>
         <translation>Pre-Retract Slow Dist</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1345"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1304"/>
         <source>TDQMSHTSD</source>
         <translation>Pre-Retract Slow Spd</translation>
     </message>
@@ -5420,13 +5495,18 @@
 <context>
     <name>YouwenJianchePropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1433"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1435"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1392"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1394"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1396"/>
         <source>YWJC</source>
         <translation>Oil Temp Det</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1437"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1398"/>
         <source>HYJC</source>
         <translation>Flame Det</translation>
     </message>
@@ -5434,42 +5514,42 @@
 <context>
     <name>ZLJBCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="770"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="729"/>
         <source>MC</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="772"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="731"/>
         <source>BCJG</source>
         <translation>Comp Interval</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="774"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="733"/>
         <source>BCCKD</source>
         <translation>Comp Ref</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="776"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="735"/>
         <source>ZFXBCSYDZDJL</source>
         <translation>Pos Comp Max</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="778"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="737"/>
         <source>FFXBCSYDZXJL</source>
         <translation>Neg Comp Min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="780"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="739"/>
         <source>FXJXBCSJ</source>
         <translation>Backlash Comp</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="782"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="741"/>
         <source>DWSJZDBCSJ</source>
         <translation>Max Comp Data</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="784"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="743"/>
         <source>BCSX</source>
         <translation>Comp Enable</translation>
     </message>
