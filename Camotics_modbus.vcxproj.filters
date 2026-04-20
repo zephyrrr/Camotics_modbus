@@ -961,6 +961,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="Translation_zh_CN.ts" />
+    <QtTranslation Include="Translation_en.ts" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />

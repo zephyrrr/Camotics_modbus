@@ -899,6 +899,7 @@
     <None Include="resources\stylesheet.qss" />
   </ItemGroup>
   <ItemGroup>
+    <QtTranslation Include="Translation_en.ts" />
     <QtTranslation Include="Translation_zh_CN.ts" />
   </ItemGroup>
   <ItemGroup>

@@ -671,8 +671,8 @@ public:
         btnT0->setText(QCoreApplication::translate("QtWin2", "T0", nullptr));
         btnT1->setText(QCoreApplication::translate("QtWin2", "T1", nullptr));
         btnST->setText(QCoreApplication::translate("QtWin2", "ST", nullptr));
-        btnYouWei->setText(QCoreApplication::translate("QtWin2", "YW", nullptr));
-        btnYouWen->setText(QCoreApplication::translate("QtWin2", "YW", nullptr));
+        btnYouWei->setText(QCoreApplication::translate("QtWin2", "YouWei", nullptr));
+        btnYouWen->setText(QCoreApplication::translate("QtWin2", "YouWen", nullptr));
         btnHuoYan->setText(QCoreApplication::translate("QtWin2", "HY", nullptr));
         btnFloat->setText(QCoreApplication::translate("QtWin2", "FLOAT", nullptr));
         btnJgtj->setText(QCoreApplication::translate("QtWin2", "JGTJ", nullptr));
