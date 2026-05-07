@@ -63,7 +63,7 @@ void Tool4CoorSet::on_btnRecord_clicked()
 
 void Tool4CoorSet::on_btnBatchSet_clicked()
 {
-    if (!FormUtils::MessageBoxYesNo(tr("HFSJDZBX，SFYX？"))) {
+    if (!FormUtils::MessageBoxYesNo(tr("HFSJDZBXSFYX"))) {
         return;
     }
 

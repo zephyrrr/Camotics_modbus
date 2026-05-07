@@ -64,7 +64,7 @@ void HuiLingForm::RunGCode()
     m_ncMachine->GoApi();
 	std::function<void()> doFuncZeroAxis2 = [this, selectedAxisI]() {
 		QMetaObject::invokeMethod(this, [this, selectedAxisI]() {
-			bool b = FormUtils::MessageBoxYesNo(tr("SFQLJXZB？"));
+			bool b = FormUtils::MessageBoxYesNo(tr("SFQLJXZB"));
 			if (b) {
 				m_ncMachine->enterSetPriority(1);
 				m_ncMachine->GoApi();

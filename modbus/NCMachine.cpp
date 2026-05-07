@@ -1309,8 +1309,9 @@ void NCMachine::Beep(int n, int ms)
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->setmjfs(FmqPropertyObject::MjfsEnum::TYPE2);
 		PropertyObjects::getInstance()->propertyObjectFengMingQi->setdata3(ms / 10);
 
-		if (m_key != KNLK_NONE && m_key != KNLK_INVALID)
+		if (m_keyPressCount > 0)
 		{
+			m_keyPressCount = 0;
 			// add one more to avoid first beep is useless
 			PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
 		}
@@ -1953,6 +1954,10 @@ void NCMachine::ProcessKey()
 		}
 	}
 
+	if (m_key != KNLK_NONE && m_key != KNLK_INVALID)
+	{
+		m_keyPressCount++;
+	}
 	emit keyPressed(m_key);
 }
 

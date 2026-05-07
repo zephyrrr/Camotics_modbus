@@ -300,6 +300,8 @@ private:
 	cb::Vector3U m_stateDebug;
 	unsigned long long m_key;
 	unsigned long long m_keyPrev;
+	int m_keyPressCount = 0;
+
 	int m_targetPosX;
 	uint16_t m_targetType;
 

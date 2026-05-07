@@ -1,4 +1,4 @@
-#include "mdiform.h"
+﻿#include "mdiform.h"
 #include "ui_mdiform.h"
 #include <QLabel>
 #include <QButtonGroup>
@@ -47,7 +47,7 @@ void MdiForm::handleEnterKeyPress() {
 	}
 	catch (const std::exception& e) {
 		LOG_WARNING("EDM: exception: " << e.what());
-		LineLogger::instance().append(tr("EDMZYCW，QXGZ"));
+		LineLogger::instance().append(tr("EDMZYCWQXGZ"));
 		return;
 	}
 
@@ -100,7 +100,7 @@ void MdiForm::RunGCode()
 	}
 	catch (const std::exception& e) {
 		LOG_WARNING("EDM: exception: " << e.what());
-		LineLogger::instance().append(tr("EDMZYCW，QXGZ"));
+		LineLogger::instance().append(tr("EDMZYCWQXGZ"));
 		return;
 	}
 	m_ncMachine->GetRealtimeJsonMachine()->setFunctionDoPerLineBefore([this](cb::JSON::ValuePtr sink, int line) {

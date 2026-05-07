@@ -1043,7 +1043,7 @@
     <name>HuiLingForm</name>
     <message>
         <location filename="forms/other/huilingform.cpp" line="67"/>
-        <source>SFQLJXZB？</source>
+        <source>SFQLJXZB</source>
         <translation>Clear Mach Coord?</translation>
     </message>
 </context>
@@ -1565,7 +1565,7 @@
     <message>
         <location filename="forms/manual/mdiform.cpp" line="50"/>
         <location filename="forms/manual/mdiform.cpp" line="103"/>
-        <source>EDMZYCW，QXGZ</source>
+        <source>EDMZYCWQXGZ</source>
         <translation>ERROR: Code Error, Fix First</translation>
     </message>
 </context>
@@ -2108,7 +2108,7 @@
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="124"/>
-        <source>EDMZYCW，QXGZ</source>
+        <source>EDMZYCWQXGZ</source>
         <translation>ERROR: Code Error, Fix First</translation>
     </message>
     <message>
@@ -3561,7 +3561,8 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="212"/>
         <source>YDMS</source>
-        <translation>Orbit Mode</translation>
+        <oldsource>YDMS2</oldsource>
+        <translation type="unfinished">Orbit Mode</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
@@ -4083,7 +4084,7 @@
     </message>
     <message>
         <location filename="forms/component/tool4coorset.cpp" line="66"/>
-        <source>HFSJDZBX，SFYX？</source>
+        <source>HFSJDZBXSFYX</source>
         <translation>Restore Coord?</translation>
     </message>
 </context>
@@ -4153,7 +4154,7 @@
     <name>Tool4IterCoor</name>
     <message>
         <location filename="forms/component/tool4itercoor.cpp" line="38"/>
-        <source>SFYX？</source>
+        <source>SFYX</source>
         <translation>Run?</translation>
     </message>
 </context>

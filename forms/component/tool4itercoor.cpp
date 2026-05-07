@@ -35,7 +35,7 @@ void Tool4IterCoor::UpdateState()
 
 void Tool4IterCoor::on_btnRunIterCoor_clicked()
 {
-	if (!FormUtils::MessageBoxYesNo(tr("SFYX？"))) {
+	if (!FormUtils::MessageBoxYesNo(tr("SFYX"))) {
 		return;
 	}
 	//

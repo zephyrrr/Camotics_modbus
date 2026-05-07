@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
@@ -1043,7 +1043,7 @@
     <name>HuiLingForm</name>
     <message>
         <location filename="forms/other/huilingform.cpp" line="67"/>
-        <source>SFQLJXZB？</source>
+        <source>SFQLJXZB</source>
         <translation>是否清零机械坐标？</translation>
     </message>
 </context>
@@ -1565,7 +1565,7 @@
     <message>
         <location filename="forms/manual/mdiform.cpp" line="50"/>
         <location filename="forms/manual/mdiform.cpp" line="103"/>
-        <source>EDMZYCW，QXGZ</source>
+        <source>EDMZYCWQXGZ</source>
         <translation>ERROR:代码中有错误，请先改正</translation>
     </message>
 </context>
@@ -2108,7 +2108,7 @@
     </message>
     <message>
         <location filename="forms/edit/nceditform.cpp" line="124"/>
-        <source>EDMZYCW，QXGZ</source>
+        <source>EDMZYCWQXGZ</source>
         <translation>ERROR:代码中有错误，请先改正</translation>
     </message>
     <message>
@@ -3561,7 +3561,8 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="212"/>
         <source>YDMS</source>
-        <translation>摇动模式</translation>
+        <oldsource>YDMS2</oldsource>
+        <translation type="unfinished">摇动模式</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
@@ -4101,7 +4102,7 @@
     </message>
     <message>
         <location filename="forms/component/tool4coorset.cpp" line="66"/>
-        <source>HFSJDZBX，SFYX？</source>
+        <source>HFSJDZBXSFYX</source>
         <translation>恢复数据到坐标系，是否运行？</translation>
     </message>
 </context>
@@ -4171,7 +4172,7 @@
     <name>Tool4IterCoor</name>
     <message>
         <location filename="forms/component/tool4itercoor.cpp" line="38"/>
-        <source>SFYX？</source>
+        <source>SFYX</source>
         <translation>是否运行？</translation>
     </message>
 </context>

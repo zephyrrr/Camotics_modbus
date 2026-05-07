@@ -80,13 +80,13 @@ void BaseChildWindow::hideEvent(QHideEvent* event)
 			edit->clearFocus();
 		}
 	}
+	HideKeyboard();
 
 	bool isRunning = m_ncMachine->IsGCodeRunning() || m_ncMachine->GetNowOperating() > 0;
 	if (isRunning)
 		return;
 
 	SaveData();
-	HideKeyboard();
 }
 
 //void BaseChildWindow::focusInEvent(QFocusEvent* event)

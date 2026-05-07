@@ -121,7 +121,7 @@ void NcEditForm::RunGCode()
 	}
 	catch (const std::exception& e) {
 		LOG_ERROR("EDM: " << e.what());
-		LineLogger::instance().append(tr("EDMZYCW，QXGZ"));
+		LineLogger::instance().append(tr("EDMZYCWQXGZ"));
 		return;
 	}
 

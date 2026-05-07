@@ -1,4 +1,4 @@
-﻿/********************************************************************************
+/********************************************************************************
 ** Form generated from reading UI file 'runautoparamform.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.2
@@ -302,7 +302,9 @@ public:
         inClzh->setItemText(0, QCoreApplication::translate("RunAutoParamForm", "SM G", nullptr));
 
         inJgsd->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
-        label_17->setText(QCoreApplication::translate("RunAutoParamForm", "\346\221\207\345\212\250\346\250\241\345\274\217", nullptr));
+        inJgsd2->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
+        inJgsd3->setText(QCoreApplication::translate("RunAutoParamForm", "0.000", nullptr));
+        label_17->setText(QCoreApplication::translate("RunAutoParamForm", "YDMS", nullptr));
         labelPix->setText(QString());
         textBrowser->setHtml(QString());
     } // retranslateUi
