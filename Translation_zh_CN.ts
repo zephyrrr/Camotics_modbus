@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
@@ -1922,29 +1922,29 @@
         <translation>未定义：%1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2286"/>
+        <location filename="modbus/NCMachine.cpp" line="2291"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>目前不支持多于4个坐标轴加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2678"/>
-        <location filename="modbus/NCMachine.cpp" line="2687"/>
-        <location filename="modbus/NCMachine.cpp" line="3239"/>
+        <location filename="modbus/NCMachine.cpp" line="2683"/>
+        <location filename="modbus/NCMachine.cpp" line="2692"/>
+        <location filename="modbus/NCMachine.cpp" line="3244"/>
         <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2742"/>
+        <location filename="modbus/NCMachine.cpp" line="2747"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3225"/>
+        <location filename="modbus/NCMachine.cpp" line="3230"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3425"/>
+        <location filename="modbus/NCMachine.cpp" line="3430"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR:上一个程序还在运行</translation>
     </message>
