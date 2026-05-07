@@ -121,14 +121,14 @@
              <item>
               <widget class="QPushButton" name="btnYouWei">
                <property name="text">
-                <string>YW</string>
+                <string>YouWei</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="btnYouWen">
                <property name="text">
-                <string>YW</string>
+                <string>YouWen</string>
                </property>
               </widget>
              </item>

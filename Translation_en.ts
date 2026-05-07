@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
@@ -1705,246 +1705,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="355"/>
+        <location filename="modbus/NCMachine.cpp" line="356"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>No Motion(API)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="358"/>
+        <location filename="modbus/NCMachine.cpp" line="359"/>
         <source>JYX</source>
         <translation>JOG Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="361"/>
+        <location filename="modbus/NCMachine.cpp" line="362"/>
         <source>JTC</source>
         <translation>JOG Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="364"/>
+        <location filename="modbus/NCMachine.cpp" line="365"/>
         <source>LYX</source>
         <translation>LOC Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="367"/>
+        <location filename="modbus/NCMachine.cpp" line="368"/>
         <source>CYX</source>
         <translation>CMV Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="370"/>
+        <location filename="modbus/NCMachine.cpp" line="371"/>
         <source>CTC</source>
         <translation>CMV Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="373"/>
+        <location filename="modbus/NCMachine.cpp" line="374"/>
         <source>CWC</source>
         <translation>CMV Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="376"/>
+        <location filename="modbus/NCMachine.cpp" line="377"/>
         <source>SYX</source>
         <translation>SPK Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="379"/>
+        <location filename="modbus/NCMachine.cpp" line="380"/>
         <source>STCQHZX</source>
         <translation>SPK Exit Center</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="382"/>
+        <location filename="modbus/NCMachine.cpp" line="383"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK Exit Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="385"/>
+        <location filename="modbus/NCMachine.cpp" line="386"/>
         <source>STDQHT</source>
         <translation>SPK Pre-Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="388"/>
+        <location filename="modbus/NCMachine.cpp" line="389"/>
         <source>STD</source>
         <translation>SPK Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="392"/>
         <source>STDJSQJG</source>
         <translation>SPK Retract Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="394"/>
+        <location filename="modbus/NCMachine.cpp" line="395"/>
         <source>WDYZT: </source>
         <translation>Undef Status: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="408"/>
+        <location filename="modbus/NCMachine.cpp" line="409"/>
         <source>JSDTC</source>
         <translation>JOG Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="413"/>
+        <location filename="modbus/NCMachine.cpp" line="414"/>
         <source>LZCWCTC</source>
         <translation>LOC Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="418"/>
+        <location filename="modbus/NCMachine.cpp" line="419"/>
         <source>LSDTC</source>
         <translation>LOC Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="423"/>
+        <location filename="modbus/NCMachine.cpp" line="424"/>
         <source>LQDQBJTC：</source>
         <translation>LOC Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="427"/>
+        <location filename="modbus/NCMachine.cpp" line="428"/>
         <source>LCFXWTC：</source>
         <translation>LOC Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="432"/>
+        <location filename="modbus/NCMachine.cpp" line="433"/>
         <source>LDLTC</source>
         <translation>LOC Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="437"/>
+        <location filename="modbus/NCMachine.cpp" line="438"/>
         <source>LCSFF</source>
         <translation>LOC Param Invalid</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="442"/>
+        <location filename="modbus/NCMachine.cpp" line="443"/>
         <source>LJYCW</source>
         <translation>LOC Check Error</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="447"/>
+        <location filename="modbus/NCMachine.cpp" line="448"/>
         <source>LWXGN</source>
         <translation>LOC Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="452"/>
+        <location filename="modbus/NCMachine.cpp" line="453"/>
         <source>CZCWCTC</source>
         <translation>CMV Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="457"/>
+        <location filename="modbus/NCMachine.cpp" line="458"/>
         <source>CSDTC</source>
         <translation>CMV Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="462"/>
+        <location filename="modbus/NCMachine.cpp" line="463"/>
         <source>CQDQBJTC：</source>
         <translation>CMV Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="466"/>
+        <location filename="modbus/NCMachine.cpp" line="467"/>
         <source>CCFXWTC：</source>
         <translation>CMV Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="471"/>
+        <location filename="modbus/NCMachine.cpp" line="472"/>
         <source>CDLTC</source>
         <translation>CMV Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="476"/>
+        <location filename="modbus/NCMachine.cpp" line="477"/>
         <source>CZBMCW</source>
         <translation>CMV Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="481"/>
+        <location filename="modbus/NCMachine.cpp" line="482"/>
         <source>CCZMCW</source>
         <translation>CMV OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="486"/>
+        <location filename="modbus/NCMachine.cpp" line="487"/>
         <source>CWXGN</source>
         <translation>CMV Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="491"/>
+        <location filename="modbus/NCMachine.cpp" line="492"/>
         <source>SZCWCTC</source>
         <translation>SPK Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="496"/>
+        <location filename="modbus/NCMachine.cpp" line="497"/>
         <source>SSDTC</source>
         <translation>SPK Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="502"/>
         <source>SQDQBJTC</source>
         <translation>SPK Driver Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="505"/>
+        <location filename="modbus/NCMachine.cpp" line="506"/>
         <source>SCFXWTC</source>
         <translation>SPK Limit Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="510"/>
+        <location filename="modbus/NCMachine.cpp" line="511"/>
         <source>SDLTC</source>
         <translation>SPK Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="517"/>
-        <location filename="modbus/NCMachine.cpp" line="520"/>
-        <source>YW</source>
+        <location filename="modbus/NCMachine.cpp" line="521"/>
+        <source>YouWei</source>
         <translation>Oil Level</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="523"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
+        <source>YouWen</source>
+        <translation>Oil Temp</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachine.cpp" line="524"/>
         <source>HY</source>
         <translation>Flame</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="526"/>
         <source>SBJTC</source>
         <translation>SPK%1 Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="531"/>
+        <location filename="modbus/NCMachine.cpp" line="532"/>
         <source>SZBMCW</source>
         <translation>SPK Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="536"/>
+        <location filename="modbus/NCMachine.cpp" line="537"/>
         <source>SCZMCW</source>
         <translation>SPK OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="541"/>
+        <location filename="modbus/NCMachine.cpp" line="542"/>
         <source>SWXGN</source>
         <translation>SPK Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="547"/>
+        <location filename="modbus/NCMachine.cpp" line="548"/>
         <source>WDY：</source>
         <translation>Undef: %1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2329"/>
+        <location filename="modbus/NCMachine.cpp" line="2338"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>Max 4 Axes</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2721"/>
         <location filename="modbus/NCMachine.cpp" line="2730"/>
-        <location filename="modbus/NCMachine.cpp" line="3282"/>
+        <location filename="modbus/NCMachine.cpp" line="2739"/>
+        <location filename="modbus/NCMachine.cpp" line="3291"/>
         <source>CMLCSBMZYQ</source>
         <translation>C Param %1=%2 Invalid!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2785"/>
+        <location filename="modbus/NCMachine.cpp" line="2794"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3268"/>
+        <location filename="modbus/NCMachine.cpp" line="3277"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C Param Count Mismatch!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3468"/>
+        <location filename="modbus/NCMachine.cpp" line="3477"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR: Previous Running</translation>
     </message>
@@ -2548,6 +2552,18 @@
         <translation></translation>
     </message>
     <message>
+        <location filename="forms/mainwindow2.ui" line="124"/>
+        <location filename="forms/mainwindow2.cpp" line="1747"/>
+        <source>YouWei</source>
+        <translation>Oil Level</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="131"/>
+        <location filename="forms/mainwindow2.cpp" line="1750"/>
+        <source>YouWen</source>
+        <translation>Oil Temp</translation>
+    </message>
+    <message>
         <location filename="forms/mainwindow2.ui" line="145"/>
         <source>FLOAT</source>
         <translation></translation>
@@ -2642,14 +2658,6 @@
         <translation>Cancel</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.ui" line="124"/>
-        <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1741"/>
-        <location filename="forms/mainwindow2.cpp" line="1744"/>
-        <source>YW</source>
-        <translation>Oil Level</translation>
-    </message>
-    <message>
         <location filename="forms/mainwindow2.ui" line="138"/>
         <source>HY</source>
         <translation>Flame</translation>
@@ -2661,7 +2669,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1360"/>
+        <location filename="forms/mainwindow2.cpp" line="1366"/>
         <source>GT</source>
         <translation>Jump</translation>
     </message>
@@ -2736,7 +2744,7 @@
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="328"/>
+        <location filename="forms/mainwindow2.cpp" line="334"/>
         <source>YX</source>
         <translation>Bottom-Right</translation>
     </message>
@@ -2786,259 +2794,259 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="276"/>
+        <location filename="forms/mainwindow2.cpp" line="282"/>
         <source>XMML</source>
         <translation>Project Dir</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="305"/>
-        <location filename="forms/mainwindow2.cpp" line="325"/>
+        <location filename="forms/mainwindow2.cpp" line="311"/>
+        <location filename="forms/mainwindow2.cpp" line="331"/>
         <source>SD</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="306"/>
+        <location filename="forms/mainwindow2.cpp" line="312"/>
         <source>EZD</source>
         <translation>EDM Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="308"/>
+        <location filename="forms/mainwindow2.cpp" line="314"/>
         <source>JG</source>
         <translation>Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="309"/>
+        <location filename="forms/mainwindow2.cpp" line="315"/>
         <source>SheDing</source>
         <translation>Set</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="326"/>
+        <location filename="forms/mainwindow2.cpp" line="332"/>
         <source>ZD</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="307"/>
-        <location filename="forms/mainwindow2.cpp" line="327"/>
+        <location filename="forms/mainwindow2.cpp" line="313"/>
+        <location filename="forms/mainwindow2.cpp" line="333"/>
         <source>BianJi</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="329"/>
+        <location filename="forms/mainwindow2.cpp" line="335"/>
         <source>QT</source>
         <translation>Other</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="356"/>
+        <location filename="forms/mainwindow2.cpp" line="362"/>
         <source>ZBSZ</source>
         <translation>Coord Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="359"/>
+        <location filename="forms/mainwindow2.cpp" line="365"/>
         <source>DWYD</source>
         <translation>Loc Move</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="362"/>
+        <location filename="forms/mainwindow2.cpp" line="368"/>
         <source>WZJY</source>
         <translation>Pos Memory</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="365"/>
+        <location filename="forms/mainwindow2.cpp" line="371"/>
         <source>DMDW</source>
         <translation>Face Loc</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="368"/>
+        <location filename="forms/mainwindow2.cpp" line="374"/>
         <source>ZZX</source>
         <translation>Cylinder Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="371"/>
+        <location filename="forms/mainwindow2.cpp" line="377"/>
         <source>JZX</source>
         <translation>Corner Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="374"/>
+        <location filename="forms/mainwindow2.cpp" line="380"/>
         <source>KZX</source>
         <translation>Hole Ctr</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="377"/>
+        <location filename="forms/mainwindow2.cpp" line="383"/>
         <source>SDDY</source>
         <translation>3-Point Circle</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="380"/>
+        <location filename="forms/mainwindow2.cpp" line="386"/>
         <source>FDDW</source>
         <translation>EDM Loc</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="388"/>
+        <location filename="forms/mainwindow2.cpp" line="394"/>
         <source>ZDCS</source>
         <translation>Auto Param</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="399"/>
+        <location filename="forms/mainwindow2.cpp" line="405"/>
         <source>SDDG</source>
         <translation>Manual Single</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="402"/>
+        <location filename="forms/mainwindow2.cpp" line="408"/>
         <source>SDMG</source>
         <translation>Manual Multi</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="411"/>
+        <location filename="forms/mainwindow2.cpp" line="417"/>
         <source>NJG</source>
         <translation>NC Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="416"/>
+        <location filename="forms/mainwindow2.cpp" line="422"/>
         <source>JGJL</source>
         <translation>Mach Log</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="420"/>
+        <location filename="forms/mainwindow2.cpp" line="426"/>
         <source>XTSZ</source>
         <translation>System Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="421"/>
+        <location filename="forms/mainwindow2.cpp" line="427"/>
         <source>FangDianCanShu</source>
         <translation>EDM Param</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="424"/>
-        <location filename="forms/mainwindow2.cpp" line="1288"/>
+        <location filename="forms/mainwindow2.cpp" line="430"/>
+        <location filename="forms/mainwindow2.cpp" line="1294"/>
         <source>FDCS</source>
         <translation>EDM Test</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="425"/>
+        <location filename="forms/mainwindow2.cpp" line="431"/>
         <source>LJBC</source>
         <translation>Pitch Comp</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="430"/>
+        <location filename="forms/mainwindow2.cpp" line="436"/>
         <source>CKSZ</source>
         <translation>Serial Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="433"/>
+        <location filename="forms/mainwindow2.cpp" line="439"/>
         <source>GY</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="476"/>
-        <location filename="forms/mainwindow2.cpp" line="1459"/>
+        <location filename="forms/mainwindow2.cpp" line="482"/>
+        <location filename="forms/mainwindow2.cpp" line="1465"/>
         <source>CKWLJ</source>
         <translation>Serial Port Not Connected</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="481"/>
-        <location filename="forms/mainwindow2.cpp" line="1570"/>
+        <location filename="forms/mainwindow2.cpp" line="487"/>
+        <location filename="forms/mainwindow2.cpp" line="1576"/>
         <source>DDYX</source>
         <translation>Waiting</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="655"/>
+        <location filename="forms/mainwindow2.cpp" line="661"/>
         <source>MNJG</source>
         <translation>Simulate</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="663"/>
+        <location filename="forms/mainwindow2.cpp" line="669"/>
         <source>JGHGJ</source>
         <translation>Shutdown After Mach</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="915"/>
-        <location filename="forms/mainwindow2.cpp" line="929"/>
-        <location filename="forms/mainwindow2.cpp" line="1604"/>
+        <location filename="forms/mainwindow2.cpp" line="921"/>
+        <location filename="forms/mainwindow2.cpp" line="935"/>
+        <location filename="forms/mainwindow2.cpp" line="1610"/>
         <source>YXZ</source>
         <translation>Running</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1009"/>
+        <location filename="forms/mainwindow2.cpp" line="1015"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1016"/>
+        <location filename="forms/mainwindow2.cpp" line="1022"/>
         <source>SFJXZDHL</source>
         <translation>Auto Home?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1130"/>
+        <location filename="forms/mainwindow2.cpp" line="1136"/>
         <source>BCWJ</source>
         <translation>Save File</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1300"/>
-        <location filename="forms/mainwindow2.cpp" line="1369"/>
+        <location filename="forms/mainwindow2.cpp" line="1306"/>
+        <location filename="forms/mainwindow2.cpp" line="1375"/>
         <source>FS</source>
         <translation>Send</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1301"/>
-        <location filename="forms/mainwindow2.cpp" line="1370"/>
+        <location filename="forms/mainwindow2.cpp" line="1307"/>
+        <location filename="forms/mainwindow2.cpp" line="1376"/>
         <source>GB</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1585"/>
+        <location filename="forms/mainwindow2.cpp" line="1591"/>
         <source>DDZ</source>
         <translation>Touching</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1588"/>
+        <location filename="forms/mainwindow2.cpp" line="1594"/>
         <source>HLZ</source>
         <translation>Homing</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1593"/>
+        <location filename="forms/mainwindow2.cpp" line="1599"/>
         <source>FDZ</source>
         <translation>EDM On</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1596"/>
+        <location filename="forms/mainwindow2.cpp" line="1602"/>
         <source>FDZT</source>
         <translation>EDM Pause</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1601"/>
+        <location filename="forms/mainwindow2.cpp" line="1607"/>
         <source>ZTZ</source>
         <translation>Paused</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1618"/>
+        <location filename="forms/mainwindow2.cpp" line="1624"/>
         <source>DLBJ</source>
         <translation>Short Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1658"/>
+        <location filename="forms/mainwindow2.cpp" line="1664"/>
         <source>CFDJBJ</source>
         <translation>Servo Motor Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1674"/>
+        <location filename="forms/mainwindow2.cpp" line="1680"/>
         <source>DDYWZ</source>
         <translation>Waiting Oil</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1695"/>
-        <location filename="forms/mainwindow2.cpp" line="1699"/>
+        <location filename="forms/mainwindow2.cpp" line="1701"/>
+        <location filename="forms/mainwindow2.cpp" line="1705"/>
         <source>XXW</source>
         <translation>X-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1703"/>
-        <location filename="forms/mainwindow2.cpp" line="1707"/>
+        <location filename="forms/mainwindow2.cpp" line="1709"/>
+        <location filename="forms/mainwindow2.cpp" line="1713"/>
         <source>YXW</source>
         <translation>Y-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1711"/>
-        <location filename="forms/mainwindow2.cpp" line="1715"/>
+        <location filename="forms/mainwindow2.cpp" line="1717"/>
+        <location filename="forms/mainwindow2.cpp" line="1721"/>
         <source>ZXW</source>
         <translation>Z-Limit</translation>
     </message>

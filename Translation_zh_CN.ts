@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
@@ -2546,6 +2546,18 @@
         <location filename="forms/mainwindow2.ui" line="116"/>
         <source>ST</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="124"/>
+        <location filename="forms/mainwindow2.cpp" line="1747"/>
+        <source>YouWei</source>
+        <translation>油位</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.ui" line="131"/>
+        <location filename="forms/mainwindow2.cpp" line="1750"/>
+        <source>YouWen</source>
+        <translation>油温</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="145"/>

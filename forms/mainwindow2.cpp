@@ -1764,10 +1764,10 @@ void QtWin2::UpdateState()
 				ui->lblResultMessage->setToolTip(LineLogger::instance().getErrors(5));
 			}
 
-			if (errorMsg.contains(tr("YW"))) {
+			if (errorMsg.contains(tr("YouWei"))) {
 				ui->labelInfoYouWei->show();
 			}
-			if (errorMsg.contains(tr("YW"))) {
+			if (errorMsg.contains(tr("YouWen"))) {
 				ui->labelInfoYouWen->show();
 			}
 			//if (errorMsg.contains(tr("HY"))) {

@@ -166,6 +166,7 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 
 	ProcessPos();
 	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
+	ProcessPos();
 
 	return true;
 }
@@ -462,11 +463,11 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 	{
 		QString s;
 		if (para & 0x1)
-// [AUTO-TRANSLATION-COMMENT] 油位
-			s += tr("YW");
+// [AUTO-TRANSLATION-COMMENT] 油温
+			s += tr("YouWen");
 		if (para & 0x2)
 // [AUTO-TRANSLATION-COMMENT] 油位
-			s += tr("YW");
+			s += tr("YouWei");
 		if (para & 0x4)
 // [AUTO-TRANSLATION-COMMENT] 火焰
 			s += tr("HY");
