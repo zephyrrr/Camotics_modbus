@@ -42,7 +42,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="15"/>
         <source>MC</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
 </context>
 <context>
@@ -1713,254 +1713,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="333"/>
+        <location filename="modbus/NCMachine.cpp" line="332"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>无移动状态（API）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="336"/>
+        <location filename="modbus/NCMachine.cpp" line="335"/>
         <source>JYX</source>
         <translation>JOG运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="339"/>
+        <location filename="modbus/NCMachine.cpp" line="338"/>
         <source>JTC</source>
         <translation>JOG退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="342"/>
+        <location filename="modbus/NCMachine.cpp" line="341"/>
         <source>LYX</source>
         <translation>LOC运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="345"/>
+        <location filename="modbus/NCMachine.cpp" line="344"/>
         <source>CYX</source>
         <translation>CMV运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="348"/>
+        <location filename="modbus/NCMachine.cpp" line="347"/>
         <source>CTC</source>
         <translation>CMV退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="351"/>
+        <location filename="modbus/NCMachine.cpp" line="350"/>
         <source>CWC</source>
         <translation>CMV完成</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="354"/>
+        <location filename="modbus/NCMachine.cpp" line="353"/>
         <source>SYX</source>
         <translation>SPK运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="357"/>
+        <location filename="modbus/NCMachine.cpp" line="356"/>
         <source>STCQHZX</source>
         <translation>SPK退出前回中心</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="360"/>
+        <location filename="modbus/NCMachine.cpp" line="359"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK退出前回退（先回中心再回退）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="363"/>
+        <location filename="modbus/NCMachine.cpp" line="362"/>
         <source>STDQHT</source>
         <translation>SPK抬刀前回退</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="366"/>
+        <location filename="modbus/NCMachine.cpp" line="365"/>
         <source>STD</source>
         <translation>SPK抬刀</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="369"/>
+        <location filename="modbus/NCMachine.cpp" line="368"/>
         <source>STDJSQJG</source>
         <translation>SPK抬刀结束去加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="372"/>
+        <location filename="modbus/NCMachine.cpp" line="371"/>
         <source>WDYZT: </source>
         <translation>未定义状态：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="386"/>
+        <location filename="modbus/NCMachine.cpp" line="385"/>
         <source>JSDTC</source>
         <translation>JOG手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="390"/>
         <source>LZCWCTC</source>
         <translation>LOC正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="396"/>
+        <location filename="modbus/NCMachine.cpp" line="395"/>
         <source>LSDTC</source>
         <translation>LOC手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="401"/>
+        <location filename="modbus/NCMachine.cpp" line="400"/>
         <source>LQDQBJTC：</source>
         <translation>LOC驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="405"/>
+        <location filename="modbus/NCMachine.cpp" line="404"/>
         <source>LCFXWTC：</source>
         <translation>LOC触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="410"/>
+        <location filename="modbus/NCMachine.cpp" line="409"/>
         <source>LDLTC</source>
         <translation>LOC短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="415"/>
+        <location filename="modbus/NCMachine.cpp" line="414"/>
         <source>LCSFF</source>
         <translation>LOC参数非法</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="420"/>
+        <location filename="modbus/NCMachine.cpp" line="419"/>
         <source>LJYCW</source>
         <translation>LOC校验错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="425"/>
+        <location filename="modbus/NCMachine.cpp" line="424"/>
         <source>LWXGN</source>
         <translation>LOC无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="430"/>
+        <location filename="modbus/NCMachine.cpp" line="429"/>
         <source>CZCWCTC</source>
         <translation>CMV正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="435"/>
+        <location filename="modbus/NCMachine.cpp" line="434"/>
         <source>CSDTC</source>
         <translation>CMV手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="440"/>
+        <location filename="modbus/NCMachine.cpp" line="439"/>
         <source>CQDQBJTC：</source>
         <translation>CMV驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="444"/>
+        <location filename="modbus/NCMachine.cpp" line="443"/>
         <source>CCFXWTC：</source>
         <translation>CMV触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="449"/>
+        <location filename="modbus/NCMachine.cpp" line="448"/>
         <source>CDLTC</source>
         <translation>CMV短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="454"/>
+        <location filename="modbus/NCMachine.cpp" line="453"/>
         <source>CZBMCW</source>
         <translation>CMV轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="459"/>
+        <location filename="modbus/NCMachine.cpp" line="458"/>
         <source>CCZMCW</source>
         <translation>CMV操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="464"/>
+        <location filename="modbus/NCMachine.cpp" line="463"/>
         <source>CWXGN</source>
         <translation>CMV无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="469"/>
+        <location filename="modbus/NCMachine.cpp" line="468"/>
         <source>SZCWCTC</source>
         <translation>SPK正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="474"/>
+        <location filename="modbus/NCMachine.cpp" line="473"/>
         <source>SSDTC</source>
         <translation>SPK手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="479"/>
+        <location filename="modbus/NCMachine.cpp" line="478"/>
         <source>SQDQBJTC</source>
         <translation>SPK驱动器报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="483"/>
+        <location filename="modbus/NCMachine.cpp" line="482"/>
         <source>SCFXWTC</source>
         <translation>SPK触发限位退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="488"/>
+        <location filename="modbus/NCMachine.cpp" line="487"/>
         <source>SDLTC</source>
         <translation>SPK短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="495"/>
+        <location filename="modbus/NCMachine.cpp" line="494"/>
         <source>YouWen</source>
-        <translation type="unfinished">油温</translation>
+        <translation>油温</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="498"/>
+        <location filename="modbus/NCMachine.cpp" line="497"/>
         <source>YouWei</source>
-        <translation type="unfinished">油位</translation>
+        <translation>油位</translation>
     </message>
     <message>
-        <source>YW</source>
-        <translation type="vanished">油位</translation>
-    </message>
-    <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="500"/>
         <source>HY</source>
         <translation>火焰</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="503"/>
+        <location filename="modbus/NCMachine.cpp" line="502"/>
         <source>SBJTC</source>
         <translation>SPK%1报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="509"/>
+        <location filename="modbus/NCMachine.cpp" line="508"/>
         <source>SZBMCW</source>
         <translation>SPK轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="514"/>
+        <location filename="modbus/NCMachine.cpp" line="513"/>
         <source>SCZMCW</source>
         <translation>SPK操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="519"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
         <source>SWXGN</source>
         <translation>SPK无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="524"/>
         <source>WDY：</source>
         <translation>未定义：%1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2321"/>
+        <location filename="modbus/NCMachine.cpp" line="2320"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>目前不支持多于4个坐标轴加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2719"/>
-        <location filename="modbus/NCMachine.cpp" line="2728"/>
-        <location filename="modbus/NCMachine.cpp" line="3280"/>
+        <location filename="modbus/NCMachine.cpp" line="2718"/>
+        <location filename="modbus/NCMachine.cpp" line="2727"/>
+        <location filename="modbus/NCMachine.cpp" line="3283"/>
         <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2783"/>
+        <location filename="modbus/NCMachine.cpp" line="2782"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3266"/>
+        <location filename="modbus/NCMachine.cpp" line="3269"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3466"/>
+        <location filename="modbus/NCMachine.cpp" line="3469"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR:上一个程序还在运行</translation>
     </message>
@@ -2183,19 +2179,54 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1517"/>
         <source>MC</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1518"/>
         <source>operation</source>
-        <translation type="unfinished"></translation>
+        <translation>操作</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1519"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1520"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1521"/>
         <source>param</source>
-        <translation type="unfinished"></translation>
+        <translation>参数</translation>
+    </message>
+</context>
+<context>
+    <name>PointGenratorByGrid</name>
+    <message>
+        <source>XZQSD</source>
+        <translation type="vanished">X轴起始点</translation>
+    </message>
+    <message>
+        <source>XZJG</source>
+        <translation type="vanished">X轴间隔</translation>
+    </message>
+    <message>
+        <source>XZGS</source>
+        <translation type="vanished">X轴个数</translation>
+    </message>
+    <message>
+        <source>YZQSD</source>
+        <translation type="vanished">Y轴起始点</translation>
+    </message>
+    <message>
+        <source>YZJG</source>
+        <translation type="vanished">Y轴间隔</translation>
+    </message>
+    <message>
+        <source>YZGS</source>
+        <translation type="vanished">Y轴个数</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="vanished">确定</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">取消</translation>
     </message>
 </context>
 <context>
@@ -2467,7 +2498,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1680"/>
         <source>PLCOPERATION</source>
-        <translation type="unfinished"></translation>
+        <translation>PLC操作</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
@@ -2693,10 +2724,6 @@
         <location filename="forms/mainwindow2.ui" line="870"/>
         <source>Cancel</source>
         <translation>取消</translation>
-    </message>
-    <message>
-        <source>YW</source>
-        <translation type="vanished">油位</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="138"/>
@@ -3122,7 +3149,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1441"/>
         <source>MC</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1443"/>
@@ -3391,7 +3418,7 @@
     <message>
         <location filename="forms_v1/regwindow.cpp" line="390"/>
         <source>PLC</source>
-        <translation type="unfinished"></translation>
+        <translation>PLC</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="549"/>
@@ -3621,8 +3648,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="212"/>
         <source>YDMS</source>
-        <oldsource>YDMS2</oldsource>
-        <translation type="unfinished">摇动模式</translation>
+        <translation>摇动模式</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
@@ -4291,6 +4317,19 @@
     </message>
 </context>
 <context>
+    <name>Tool4Plugins</name>
+    <message>
+        <location filename="forms/component/tool4buttons.cpp" line="45"/>
+        <source>Plugin Grid1</source>
+        <translation>格子1</translation>
+    </message>
+    <message>
+        <location filename="forms/component/tool4buttons.cpp" line="46"/>
+        <source>Plugin Grid2</source>
+        <translation>格子2</translation>
+    </message>
+</context>
+<context>
     <name>Tool4PosSetClass</name>
     <message>
         <location filename="forms/component/tool4posset.ui" line="13"/>
@@ -4364,7 +4403,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1361"/>
         <source>MC</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1363"/>
@@ -5506,7 +5545,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1392"/>
         <source>MC</source>
-        <translation type="unfinished">名称</translation>
+        <translation>名称</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1394"/>

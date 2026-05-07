@@ -1,4 +1,14 @@
-﻿1.4.1
+﻿1.5.0
+1. 测试PLC功能
+2. 数据文件整理，分成系统目录，用户目录和项目目录
+	系统目录：放置系统相关的文件，系统设置文件等。"cp.db", "qGlobal.ini", "qModMaster.ini", "xitongshezhi*_data.json", "fangdiancanshu_global_data.json", "luojubuchang*_data.json"
+	用户目录："ncmachine.json", "settings.json", "work.db", "qcnc.dat", "nc", "default", "logs"
+	项目目录：用户目录下的default 目录，保存各个窗口的值
+3. 蜂鸣器问题：按了手控盒按键后，需要多发送一次蜂鸣器指令，第一次会“噗”一声，第二次才会响“ 这个你可以看看手控盒程序，目前我是多发一次
+4. 位置更新问题(对刀问题)：各个Machine维护各自的Position，需要更新
+5. 插件Plugin翻译问题
+
+##1.4.1
 1. 多轴加工G代码输出格式更改
 2. 设定里管理员窗口需要输入密码，默认密码97532
 

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <QPushButton.h>
@@ -25,8 +25,12 @@ private:
 
 class BaseChildWindow;
 
-class Tool4Plugins
+class Tool4Plugins : public QObject
 {
+	Q_OBJECT
+
+private:
+	static QString getPluginButtonName(const QString& pyFileName);
 public:
 	static QList<Tool4Buttons*> create(BaseChildWindow* childWindow, QWidget* parent = nullptr);
 };

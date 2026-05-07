@@ -1,4 +1,4 @@
-#include "tool4buttons.h"
+﻿#include "tool4buttons.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "../utils/pluginutils.h"
@@ -37,6 +37,18 @@ QPushButton* Tool4Buttons::addButton(const QString & caption)
 	return btn;
 }
 
+QString Tool4Plugins::getPluginButtonName(const QString& pyFileName)
+{
+	// 键：Python 文件名（不带路径）
+	// 值：英文显示名称（可翻译）
+	static const QMap<QString, QString> nameMap = {
+		{"grid1", QT_TR_NOOP("Plugin Grid1")},
+		{"grid2", QT_TR_NOOP("Plugin Grid2")},
+	};
+
+	// 找不到就返回原文件名
+	return tr(nameMap.value(pyFileName, pyFileName).toUtf8());;
+}
 
 QList<Tool4Buttons*> Tool4Plugins::create(BaseChildWindow* childWindow, QWidget* parent)
 {
@@ -54,7 +66,8 @@ QList<Tool4Buttons*> Tool4Plugins::create(BaseChildWindow* childWindow, QWidget*
 			tool = new Tool4Buttons(parent);
 			ret.append(tool);	
 		}
-		QPushButton* btn = tool->addButton(pyFileName.mid(6));
+		QString btnText = getPluginButtonName(pyFileName.mid(6));
+		QPushButton* btn = tool->addButton(btnText);
 		cnt++;
 		QString value = pyFiles.value(pyFileName);
 		QObject::connect(btn, &QPushButton::clicked, [value, childWindow]() {

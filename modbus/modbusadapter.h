@@ -28,7 +28,7 @@
 #define TASK_TIMER_PRIORITY 2
 //#define TASK_DELAY_PRIORITY 1
 
-#define MODBUS_CONNECTION_COUNT 1
+#define MODBUS_CONNECTION_COUNT 2
 
 class ModbusAdapter;
 

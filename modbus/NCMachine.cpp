@@ -166,7 +166,6 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 
 	ProcessPos();
 	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
-	ProcessPos();
 
 	return true;
 }
@@ -2896,6 +2895,9 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 			GetController()->clear("_reg_cnt");
 			if (cnt == 0)
 				cnt = 1;
+			int connectionIndex = (int)GetController()->get("_conn_idx");
+			//GetController()->clear("_conn_idx");
+
 			std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 				if (ret == -1)
 					return;
@@ -2905,7 +2907,7 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 					GetController()->set("_reg_" + std::to_string(task->startAddr + i), readData[i]);
 				}
 				};
-			ModbusTask* task = m_modbusAdapter->getTaskRead(addr, cnt);
+			ModbusTask* task = m_modbusAdapter->getTaskRead(addr, cnt, connectionIndex);
 			task->setPostFunction(function1, "readreg");
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
@@ -2922,13 +2924,14 @@ do_writereg 82
 			GetController()->clear("_reg_cnt");
 			if (cnt == 0)
 				cnt = 1;
-			
+			int connectionIndex = (int)GetController()->get("_conn_idx");
+
 			std::vector<uint16_t> vs;
 			for (int i = 0; i < cnt; ++i) {
 				vs.push_back((int)GetController()->get("_reg_" + std::to_string(addr + i)));
 			}
 			std::string data = NCCommand::UIntsToString(vs);
-			ModbusTask* task = m_modbusAdapter->getTaskWrite(addr, cnt, data);
+			ModbusTask* task = m_modbusAdapter->getTaskWrite(addr, cnt, data, connectionIndex);
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
 		else if (action2 == "message") {

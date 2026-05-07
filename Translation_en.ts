@@ -42,7 +42,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="15"/>
         <source>MC</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
 </context>
 <context>
@@ -1713,250 +1713,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="333"/>
+        <location filename="modbus/NCMachine.cpp" line="332"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>No Motion(API)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="336"/>
+        <location filename="modbus/NCMachine.cpp" line="335"/>
         <source>JYX</source>
         <translation>JOG Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="339"/>
+        <location filename="modbus/NCMachine.cpp" line="338"/>
         <source>JTC</source>
         <translation>JOG Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="342"/>
+        <location filename="modbus/NCMachine.cpp" line="341"/>
         <source>LYX</source>
         <translation>LOC Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="345"/>
+        <location filename="modbus/NCMachine.cpp" line="344"/>
         <source>CYX</source>
         <translation>CMV Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="348"/>
+        <location filename="modbus/NCMachine.cpp" line="347"/>
         <source>CTC</source>
         <translation>CMV Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="351"/>
+        <location filename="modbus/NCMachine.cpp" line="350"/>
         <source>CWC</source>
         <translation>CMV Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="354"/>
+        <location filename="modbus/NCMachine.cpp" line="353"/>
         <source>SYX</source>
         <translation>SPK Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="357"/>
+        <location filename="modbus/NCMachine.cpp" line="356"/>
         <source>STCQHZX</source>
         <translation>SPK Exit Center</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="360"/>
+        <location filename="modbus/NCMachine.cpp" line="359"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK Exit Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="363"/>
+        <location filename="modbus/NCMachine.cpp" line="362"/>
         <source>STDQHT</source>
         <translation>SPK Pre-Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="366"/>
+        <location filename="modbus/NCMachine.cpp" line="365"/>
         <source>STD</source>
         <translation>SPK Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="369"/>
+        <location filename="modbus/NCMachine.cpp" line="368"/>
         <source>STDJSQJG</source>
         <translation>SPK Retract Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="372"/>
+        <location filename="modbus/NCMachine.cpp" line="371"/>
         <source>WDYZT: </source>
         <translation>Undef Status: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="386"/>
+        <location filename="modbus/NCMachine.cpp" line="385"/>
         <source>JSDTC</source>
         <translation>JOG Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="390"/>
         <source>LZCWCTC</source>
         <translation>LOC Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="396"/>
+        <location filename="modbus/NCMachine.cpp" line="395"/>
         <source>LSDTC</source>
         <translation>LOC Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="401"/>
+        <location filename="modbus/NCMachine.cpp" line="400"/>
         <source>LQDQBJTC：</source>
         <translation>LOC Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="405"/>
+        <location filename="modbus/NCMachine.cpp" line="404"/>
         <source>LCFXWTC：</source>
         <translation>LOC Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="410"/>
+        <location filename="modbus/NCMachine.cpp" line="409"/>
         <source>LDLTC</source>
         <translation>LOC Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="415"/>
+        <location filename="modbus/NCMachine.cpp" line="414"/>
         <source>LCSFF</source>
         <translation>LOC Param Invalid</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="420"/>
+        <location filename="modbus/NCMachine.cpp" line="419"/>
         <source>LJYCW</source>
         <translation>LOC Check Error</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="425"/>
+        <location filename="modbus/NCMachine.cpp" line="424"/>
         <source>LWXGN</source>
         <translation>LOC Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="430"/>
+        <location filename="modbus/NCMachine.cpp" line="429"/>
         <source>CZCWCTC</source>
         <translation>CMV Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="435"/>
+        <location filename="modbus/NCMachine.cpp" line="434"/>
         <source>CSDTC</source>
         <translation>CMV Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="440"/>
+        <location filename="modbus/NCMachine.cpp" line="439"/>
         <source>CQDQBJTC：</source>
         <translation>CMV Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="444"/>
+        <location filename="modbus/NCMachine.cpp" line="443"/>
         <source>CCFXWTC：</source>
         <translation>CMV Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="449"/>
+        <location filename="modbus/NCMachine.cpp" line="448"/>
         <source>CDLTC</source>
         <translation>CMV Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="454"/>
+        <location filename="modbus/NCMachine.cpp" line="453"/>
         <source>CZBMCW</source>
         <translation>CMV Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="459"/>
+        <location filename="modbus/NCMachine.cpp" line="458"/>
         <source>CCZMCW</source>
         <translation>CMV OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="464"/>
+        <location filename="modbus/NCMachine.cpp" line="463"/>
         <source>CWXGN</source>
         <translation>CMV Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="469"/>
+        <location filename="modbus/NCMachine.cpp" line="468"/>
         <source>SZCWCTC</source>
         <translation>SPK Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="474"/>
+        <location filename="modbus/NCMachine.cpp" line="473"/>
         <source>SSDTC</source>
         <translation>SPK Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="479"/>
+        <location filename="modbus/NCMachine.cpp" line="478"/>
         <source>SQDQBJTC</source>
         <translation>SPK Driver Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="483"/>
+        <location filename="modbus/NCMachine.cpp" line="482"/>
         <source>SCFXWTC</source>
         <translation>SPK Limit Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="488"/>
+        <location filename="modbus/NCMachine.cpp" line="487"/>
         <source>SDLTC</source>
         <translation>SPK Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="498"/>
+        <location filename="modbus/NCMachine.cpp" line="497"/>
         <source>YouWei</source>
         <translation>Oil Level</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="495"/>
+        <location filename="modbus/NCMachine.cpp" line="494"/>
         <source>YouWen</source>
         <translation>Oil Temp</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="500"/>
         <source>HY</source>
         <translation>Flame</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="503"/>
+        <location filename="modbus/NCMachine.cpp" line="502"/>
         <source>SBJTC</source>
         <translation>SPK%1 Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="509"/>
+        <location filename="modbus/NCMachine.cpp" line="508"/>
         <source>SZBMCW</source>
         <translation>SPK Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="514"/>
+        <location filename="modbus/NCMachine.cpp" line="513"/>
         <source>SCZMCW</source>
         <translation>SPK OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="519"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
         <source>SWXGN</source>
         <translation>SPK Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="524"/>
         <source>WDY：</source>
         <translation>Undef: %1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2321"/>
+        <location filename="modbus/NCMachine.cpp" line="2320"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>Max 4 Axes</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2719"/>
-        <location filename="modbus/NCMachine.cpp" line="2728"/>
-        <location filename="modbus/NCMachine.cpp" line="3280"/>
+        <location filename="modbus/NCMachine.cpp" line="2718"/>
+        <location filename="modbus/NCMachine.cpp" line="2727"/>
+        <location filename="modbus/NCMachine.cpp" line="3283"/>
         <source>CMLCSBMZYQ</source>
         <translation>C Param %1=%2 Invalid!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2783"/>
+        <location filename="modbus/NCMachine.cpp" line="2782"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3266"/>
+        <location filename="modbus/NCMachine.cpp" line="3269"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C Param Count Mismatch!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3466"/>
+        <location filename="modbus/NCMachine.cpp" line="3469"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR: Previous Running</translation>
     </message>
@@ -2179,19 +2179,54 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1517"/>
         <source>MC</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1518"/>
         <source>operation</source>
-        <translation type="unfinished"></translation>
+        <translation>operation</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1519"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1520"/>
         <location filename="modbus/NCMachineProperties.cpp" line="1521"/>
         <source>param</source>
-        <translation type="unfinished"></translation>
+        <translation>parameter</translation>
+    </message>
+</context>
+<context>
+    <name>PointGenratorByGrid</name>
+    <message>
+        <source>XZQSD</source>
+        <translation type="vanished">X Start</translation>
+    </message>
+    <message>
+        <source>XZJG</source>
+        <translation type="vanished">X Step</translation>
+    </message>
+    <message>
+        <source>XZGS</source>
+        <translation type="vanished">X Count</translation>
+    </message>
+    <message>
+        <source>YZQSD</source>
+        <translation type="vanished">Y Start</translation>
+    </message>
+    <message>
+        <source>YZJG</source>
+        <translation type="vanished">Y Step</translation>
+    </message>
+    <message>
+        <source>YZGS</source>
+        <translation type="vanished">Y Count</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="vanished">OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Cancel</translation>
     </message>
 </context>
 <context>
@@ -2463,7 +2498,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1680"/>
         <source>PLCOPERATION</source>
-        <translation type="unfinished"></translation>
+        <translation>PLC OPERATION</translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
@@ -3114,7 +3149,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1441"/>
         <source>MC</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1443"/>
@@ -3383,7 +3418,7 @@
     <message>
         <location filename="forms_v1/regwindow.cpp" line="390"/>
         <source>PLC</source>
-        <translation type="unfinished"></translation>
+        <translation>PLC</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="549"/>
@@ -3613,8 +3648,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="212"/>
         <source>YDMS</source>
-        <oldsource>YDMS2</oldsource>
-        <translation type="unfinished">Orbit Mode</translation>
+        <translation>Orbit Mode</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
@@ -4283,6 +4317,19 @@
     </message>
 </context>
 <context>
+    <name>Tool4Plugins</name>
+    <message>
+        <location filename="forms/component/tool4buttons.cpp" line="45"/>
+        <source>Plugin Grid1</source>
+        <translation>Grid1</translation>
+    </message>
+    <message>
+        <location filename="forms/component/tool4buttons.cpp" line="46"/>
+        <source>Plugin Grid2</source>
+        <translation>Grid2</translation>
+    </message>
+</context>
+<context>
     <name>Tool4PosSetClass</name>
     <message>
         <location filename="forms/component/tool4posset.ui" line="13"/>
@@ -4356,7 +4403,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1361"/>
         <source>MC</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1363"/>
@@ -5498,7 +5545,7 @@
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1392"/>
         <source>MC</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="modbus/NCMachineProperties.cpp" line="1394"/>
