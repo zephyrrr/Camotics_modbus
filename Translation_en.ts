@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
@@ -35,6 +35,14 @@
         <location filename="widgets/advancedtoolbox.cpp" line="1163"/>
         <source>Hide</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>BasePropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="15"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
     </message>
 </context>
 <context>
@@ -1572,27 +1580,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="716"/>
+        <location filename="modbus/modbusadapter.cpp" line="815"/>
         <source>MXCW</source>
         <translation>Modbus: Write Error</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="803"/>
+        <location filename="modbus/modbusadapter.cpp" line="903"/>
         <source>Write data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="809"/>
+        <location filename="modbus/modbusadapter.cpp" line="909"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="863"/>
+        <location filename="modbus/modbusadapter.cpp" line="963"/>
         <source>Read data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="869"/>
+        <location filename="modbus/modbusadapter.cpp" line="969"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
@@ -2167,6 +2175,26 @@
     </message>
 </context>
 <context>
+    <name>PLCOperationPropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1517"/>
+        <source>MC</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1518"/>
+        <source>operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1519"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1520"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1521"/>
+        <source>param</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QLineEditLikeButton</name>
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
@@ -2431,6 +2459,11 @@
         <location filename="modbus/NCMachineProperties.cpp" line="1632"/>
         <source>Reg86</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1680"/>
+        <source>PLCOPERATION</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
@@ -3087,189 +3120,190 @@
 <context>
     <name>RegWindow</name>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="13"/>
+        <location filename="forms_v1/regwindow.ui" line="14"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="26"/>
+        <location filename="forms_v1/regwindow.ui" line="27"/>
         <source>MB</source>
         <translation>Panel</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="36"/>
+        <location filename="forms_v1/regwindow.ui" line="37"/>
         <source>JCQ</source>
         <translation>Register</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="44"/>
+        <location filename="forms_v1/regwindow.ui" line="45"/>
         <source>Connect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="54"/>
+        <location filename="forms_v1/regwindow.ui" line="55"/>
         <source>Disconnect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="61"/>
+        <location filename="forms_v1/regwindow.ui" line="69"/>
         <source>Verbosity</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="71"/>
+        <location filename="forms_v1/regwindow.ui" line="62"/>
+        <location filename="forms_v1/regwindow.ui" line="79"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="78"/>
+        <location filename="forms_v1/regwindow.ui" line="86"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="88"/>
+        <location filename="forms_v1/regwindow.ui" line="96"/>
         <source>Read Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="95"/>
+        <location filename="forms_v1/regwindow.ui" line="103"/>
         <source>Write Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="108"/>
+        <location filename="forms_v1/regwindow.ui" line="116"/>
         <source>JOG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="125"/>
+        <location filename="forms_v1/regwindow.ui" line="133"/>
         <source>QDJ</source>
         <translation>Start JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="141"/>
+        <location filename="forms_v1/regwindow.ui" line="149"/>
         <source>TCJ</source>
         <translation>Exit JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="157"/>
+        <location filename="forms_v1/regwindow.ui" line="165"/>
         <source>DDYD</source>
         <translation>JOG Move</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="177"/>
+        <location filename="forms_v1/regwindow.ui" line="185"/>
         <source>QDDW</source>
         <translation>Start Loc</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="193"/>
+        <location filename="forms_v1/regwindow.ui" line="201"/>
         <source>TCDW</source>
         <translation>Exit Loc</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="219"/>
+        <location filename="forms_v1/regwindow.ui" line="227"/>
         <source>QDDD</source>
         <translation>Start Touch</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="235"/>
+        <location filename="forms_v1/regwindow.ui" line="243"/>
         <source>JSDD</source>
         <translation>End Touch</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="261"/>
-        <location filename="forms_v1/regwindow.ui" line="303"/>
-        <location filename="forms_v1/regwindow.ui" line="345"/>
-        <location filename="forms_v1/regwindow.ui" line="387"/>
+        <location filename="forms_v1/regwindow.ui" line="269"/>
+        <location filename="forms_v1/regwindow.ui" line="311"/>
+        <location filename="forms_v1/regwindow.ui" line="353"/>
+        <location filename="forms_v1/regwindow.ui" line="395"/>
         <source>QD</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="277"/>
-        <location filename="forms_v1/regwindow.ui" line="319"/>
-        <location filename="forms_v1/regwindow.ui" line="361"/>
-        <location filename="forms_v1/regwindow.ui" line="403"/>
+        <location filename="forms_v1/regwindow.ui" line="285"/>
+        <location filename="forms_v1/regwindow.ui" line="327"/>
+        <location filename="forms_v1/regwindow.ui" line="369"/>
+        <location filename="forms_v1/regwindow.ui" line="411"/>
         <source>JS</source>
         <translation>End</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="414"/>
+        <location filename="forms_v1/regwindow.ui" line="422"/>
         <source>JC</source>
         <translation>Monitor</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="430"/>
+        <location filename="forms_v1/regwindow.ui" line="438"/>
         <source>SKH</source>
         <translation>Handbox</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="435"/>
+        <location filename="forms_v1/regwindow.ui" line="443"/>
         <source>FDI</source>
         <translation>EDM IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="450"/>
-        <location filename="forms_v1/regwindow.ui" line="479"/>
-        <location filename="forms_v1/regwindow.ui" line="508"/>
-        <location filename="forms_v1/regwindow.ui" line="558"/>
+        <location filename="forms_v1/regwindow.ui" line="458"/>
+        <location filename="forms_v1/regwindow.ui" line="487"/>
+        <location filename="forms_v1/regwindow.ui" line="516"/>
+        <location filename="forms_v1/regwindow.ui" line="566"/>
         <location filename="forms_v1/regwindow.cpp" line="135"/>
         <location filename="forms_v1/regwindow.cpp" line="262"/>
-        <location filename="forms_v1/regwindow.cpp" line="397"/>
+        <location filename="forms_v1/regwindow.cpp" line="405"/>
         <source>FS</source>
         <translation>Send</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="464"/>
+        <location filename="forms_v1/regwindow.ui" line="472"/>
         <source>FZI</source>
         <translation>Aux IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="493"/>
+        <location filename="forms_v1/regwindow.ui" line="501"/>
         <source>SKHKZSJ</source>
         <translation>Handbox Ctrl Data</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="524"/>
+        <location filename="forms_v1/regwindow.ui" line="532"/>
         <source>DQ</source>
         <translation>Read</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="538"/>
+        <location filename="forms_v1/regwindow.ui" line="546"/>
         <source>BC</source>
         <translation>Save</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="162"/>
+        <location filename="forms_v1/regwindow.ui" line="170"/>
         <source>LOC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="204"/>
+        <location filename="forms_v1/regwindow.ui" line="212"/>
         <source>CMV_TOUCH</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="246"/>
+        <location filename="forms_v1/regwindow.ui" line="254"/>
         <source>CMV_TOLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="288"/>
+        <location filename="forms_v1/regwindow.ui" line="296"/>
         <source>CMV_FRMLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="330"/>
+        <location filename="forms_v1/regwindow.ui" line="338"/>
         <source>CMV_TOZSIG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="372"/>
+        <location filename="forms_v1/regwindow.ui" line="380"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="572"/>
+        <location filename="forms_v1/regwindow.ui" line="580"/>
         <source>Modbus File</source>
         <translation></translation>
     </message>
@@ -3290,19 +3324,19 @@
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="529"/>
+        <location filename="forms_v1/regwindow.cpp" line="537"/>
         <source>XZ</source>
         <translation>X Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="532"/>
+        <location filename="forms_v1/regwindow.cpp" line="540"/>
         <source>YZ</source>
         <translation>Y Axis</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="535"/>
+        <location filename="forms_v1/regwindow.cpp" line="543"/>
         <source>ZZ</source>
         <translation>Z Axis</translation>
     </message>
@@ -3342,108 +3376,113 @@
         <translation>Orbit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="541"/>
+        <location filename="forms_v1/regwindow.cpp" line="390"/>
+        <source>PLC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.cpp" line="549"/>
         <source>WCZ</source>
         <translation>No Op</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="544"/>
+        <location filename="forms_v1/regwindow.cpp" line="552"/>
         <source>SDDQ</source>
         <translation>Set Current</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="548"/>
+        <location filename="forms_v1/regwindow.cpp" line="556"/>
         <source>DWYD</source>
         <translation>Loc Move</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="104"/>
+        <location filename="forms_v1/regwindow.h" line="103"/>
         <source>XZZFXXW</source>
         <translation>X+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="105"/>
+        <location filename="forms_v1/regwindow.h" line="104"/>
         <source>XZFFXXW</source>
         <translation>X- Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="106"/>
+        <location filename="forms_v1/regwindow.h" line="105"/>
         <source>YZZFXXW</source>
         <translation>Y+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="107"/>
+        <location filename="forms_v1/regwindow.h" line="106"/>
         <source>YZFFXXW</source>
         <translation>Y- Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="108"/>
+        <location filename="forms_v1/regwindow.h" line="107"/>
         <source>ZZZFXXW</source>
         <translation>Z+ Limit</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="109"/>
+        <location filename="forms_v1/regwindow.h" line="108"/>
         <source>ZZFFXXW</source>
         <translation>Z- Limit</translation>
     </message>
     <message>
+        <location filename="forms_v1/regwindow.h" line="111"/>
         <location filename="forms_v1/regwindow.h" line="112"/>
-        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>YWXH</source>
         <translation>Oil Level Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="114"/>
+        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>HYXH</source>
         <translation>Flame Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="115"/>
+        <location filename="forms_v1/regwindow.h" line="114"/>
         <source>WBXH0</source>
         <translation>Ext Signal 0</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="116"/>
+        <location filename="forms_v1/regwindow.h" line="115"/>
         <source>WBXH1</source>
         <translation>Ext Signal 1</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="117"/>
+        <location filename="forms_v1/regwindow.h" line="116"/>
         <source>WBXH2</source>
         <translation>Ext Signal 2</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="118"/>
+        <location filename="forms_v1/regwindow.h" line="117"/>
         <source>WBXH3</source>
         <translation>Ext Signal 3</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="120"/>
+        <location filename="forms_v1/regwindow.h" line="119"/>
         <source>XZLDXH</source>
         <translation>X Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="121"/>
+        <location filename="forms_v1/regwindow.h" line="120"/>
         <source>YZLDXH</source>
         <translation>Y Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="122"/>
+        <location filename="forms_v1/regwindow.h" line="121"/>
         <source>ZZLDXH</source>
         <translation>Z Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="123"/>
+        <location filename="forms_v1/regwindow.h" line="122"/>
         <source>UZLDXH</source>
         <translation>U Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="124"/>
+        <location filename="forms_v1/regwindow.h" line="123"/>
         <source>VZLDXH</source>
         <translation>V Zero Signal</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="127"/>
+        <location filename="forms_v1/regwindow.h" line="126"/>
         <source>CFBJXH</source>
         <translation>Servo Alarm Signal</translation>
     </message>

@@ -38,6 +38,7 @@ public:
     void setByteTimeOut(QString timeOut);
     int scanRate();
     void setScanRate(int scanRate);
+    QString mode();  // "RTU" or "TCP"
 
     //void loadSession(QString fName);
     //void saveSession(QString fName);
@@ -59,6 +60,7 @@ private:
 
     QString m_responseTimeOut;
     QString m_byteTimeOut;
+
     void load(QSettings *s);
     void save(QSettings *s);
     //Log

@@ -30,15 +30,11 @@ public:
 public:
     void modbusConnect(bool connect);
     virtual void addNormalTasks();
-    static void modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine);
+    static void modbusConnect(bool connect, ModbusAdapter* modbus, NCMachine* ncMachine);
 
 protected:
-    ModbusCommSettings* m_modbusCommSettings;
     ModbusAdapter* m_modbusAdapter;
     NCMachine* m_ncMachine;
-
-    RawDataModel* m_rawModel = NULL;
-    RegistersModel* m_regModel = NULL;
 
 private:
     QObject* m_parent;

@@ -209,6 +209,34 @@ bool NCMachine::ConvertModbusData4State(ModbusTask* task, uint16_t* readData)
 
 	return true;
 }
+
+void NCMachine::ReadPlcState()
+{
+	std::function<void(int, ModbusTask*, ModbusAdapter*)> function = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+		if (ret == -1)
+			return;
+		uint16_t* readData = adapter->GetReadedData16();
+		ConvertModbusData4PlcState(task, readData);
+	};
+	// Read from connection 1 (TCP), address offset by TCPIPBASEADDR
+	ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP1_ID_PLCSTATE - TCPIPBASEADDR, TMBS_MAP1_ID_PLCSTATE_LEN, 1);
+	task->setPostFunction(function, "Read PLC State");
+	m_modbusAdapter->addTask(task, 0);
+}
+
+bool NCMachine::ConvertModbusData4PlcState(ModbusTask* task, uint16_t* readData)
+{
+	assert(task->connectionIndex == 1);
+
+	if (readData == NULL) {
+		m_statePlc = cb::Vector<3, uint16_t>(0, 0, 0);
+		return false;
+	}
+	m_statePlc = cb::Vector<3, uint16_t>(readData[0], readData[1], readData[2]);
+	m_statePlcDirty = 0;
+	return true;
+}
+
 bool NCMachine::ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData)
 {
 	if (readData == NULL)
@@ -568,7 +596,8 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
-			} else if (action == "write_file") {
+			} 
+			else if (action == "write_file") {
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
 				std::string data = json->getAsString("data");
@@ -2343,6 +2372,12 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 				break;
 			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		}
+	}
+	else if (action == "tool") {
+		int tool = json->getU32("tool");
+		PropertyObjects::getInstance()->propertyObjectPLCOperation->setoperation(1);
+		PropertyObjects::getInstance()->propertyObjectPLCOperation->setparam1(tool);
+		PropertyObjects::getInstance()->propertyObjectPLCOperation->ExecuteCmds(this);
 	}
 	else if (action == "custom")
 	{

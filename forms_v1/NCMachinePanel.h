@@ -16,14 +16,13 @@ class NCMachinePanel : public BaseChildWindow
 	Q_OBJECT
 
 public:
-	NCMachinePanel(QWidget* parent, NCMachine* ncMachine, ModbusAdapter* adapter, ModbusCommSettings* settings);
+	NCMachinePanel(QWidget* parent, NCMachine* ncMachine, ModbusAdapter* adapter);
 	~NCMachinePanel();
 
 	void RunGCode() override {}
 private:
 	Ui::NCMachinePanel* ui;
 
-	ModbusCommSettings* m_modbusCommSettings;
 	ModbusAdapter* m_modbusAdapter;
 
 private slots:

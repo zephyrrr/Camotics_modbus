@@ -150,6 +150,17 @@ void ModbusCommSettings::setScanRate(int scanRate)
     m_scanRate = scanRate;
 }
 
+QString ModbusCommSettings::mode()
+{
+    if (!m_serialDev.isEmpty())
+        return "RTU";
+	else if (!m_slaveIP.isEmpty())
+        return "TCP";
+    else
+		return "NONE";
+}
+
+
 //void ModbusCommSettings::loadSession(QString fName)
 //{
 //    //QLOG_INFO()<<  "Load session config from file " << fName;
@@ -173,13 +184,13 @@ void ModbusCommSettings::load(QSettings *s)
         m_TCPPort = s->value("TCP/TCPPort").toString();
 
     if (s->value("TCP/SlaveIP").isNull())
-        m_slaveIP = "127.000.000.001";
+        m_slaveIP = "";
     else
         m_slaveIP = s->value("TCP/SlaveIP").toString();
 
     if (s->value("RTU/SerialDev").isNull())
         #ifdef Q_OS_WIN32
-            m_serialDev = "COM";
+            m_serialDev = "";
         #else
             m_serialDev = "/dev/ttyS";
         #endif

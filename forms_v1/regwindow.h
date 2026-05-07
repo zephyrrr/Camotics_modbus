@@ -23,7 +23,7 @@ class RegWindow : public QDialog
 {
     Q_OBJECT;
     public:
-        explicit RegWindow(QWidget *parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings);
+        explicit RegWindow(QWidget *parent, NCMachine* machine, ModbusAdapter* adapter);
         ~RegWindow();
         
         void init();
@@ -34,7 +34,6 @@ class RegWindow : public QDialog
         void addProperyEditor(QtPropertyEditor::QtPropertyTreeEditor& propertyEditor, BasePropertyObject* propertyObject);
         void addProperyEditor(QHBoxLayout* horizontalLayout, BasePropertyObject* propertyObject);
 
-        ModbusCommSettings* m_modbusCommSettings;
         ModbusAdapter * m_modbusAdapter;
         NCMachine* m_ncMachine;
 

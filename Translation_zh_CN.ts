@@ -1,30 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>ADCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="977"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="993"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="979"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="995"/>
         <source>AZYXS</source>
         <translation>Adc增益系数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="981"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="997"/>
         <source>AJZSJ</source>
         <translation>Adc校正数据</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="983"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="999"/>
         <source>CFDYSCBLXS</source>
         <translation>伺服电压输出比例系数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="985"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1001"/>
         <source>GOBLXS</source>
         <translation>光耦比例系数</translation>
     </message>
@@ -35,6 +35,14 @@
         <location filename="widgets/advancedtoolbox.cpp" line="1163"/>
         <source>Hide</source>
         <translation></translation>
+    </message>
+</context>
+<context>
+    <name>BasePropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="15"/>
+        <source>MC</source>
+        <translation type="unfinished">名称</translation>
     </message>
 </context>
 <context>
@@ -137,27 +145,27 @@
 <context>
     <name>CmvFrmlmtPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="367"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="383"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="369"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="385"/>
         <source>ZSDM</source>
         <translation>轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="371"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="387"/>
         <source>JSSJM</source>
         <translation>加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="373"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="389"/>
         <source>DDFX</source>
         <translation>对刀方向</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="375"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="391"/>
         <source>JCDL</source>
         <translation>监测短路</translation>
     </message>
@@ -165,27 +173,27 @@
 <context>
     <name>CmvTolmtPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="327"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="343"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="329"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="345"/>
         <source>ZSDM</source>
         <translation>轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="331"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="347"/>
         <source>JSSJM</source>
         <translation>加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="333"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="349"/>
         <source>DDFX</source>
         <translation>对刀方向</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="335"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="351"/>
         <source>JCDL</source>
         <translation>监测短路</translation>
     </message>
@@ -193,32 +201,32 @@
 <context>
     <name>CmvTouchPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="284"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="300"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="286"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="302"/>
         <source>XZSDM</source>
         <translation>X轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="288"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="304"/>
         <source>XZJSSJM</source>
         <translation>X轴加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="290"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="306"/>
         <source>YZSDM</source>
         <translation>Y轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="292"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="308"/>
         <source>YZJSSJM</source>
         <translation>Y轴加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="294"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="310"/>
         <source>DDFX</source>
         <translation>对刀方向</translation>
     </message>
@@ -226,27 +234,27 @@
 <context>
     <name>CmvTozsigPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="407"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="423"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="409"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="425"/>
         <source>ZSDM</source>
         <translation>轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="411"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="427"/>
         <source>JSSJM</source>
         <translation>加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="413"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="429"/>
         <source>DDFX</source>
         <translation>对刀方向</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="415"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="431"/>
         <source>JCDL</source>
         <translation>监测短路</translation>
     </message>
@@ -254,17 +262,17 @@
 <context>
     <name>DDYDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="843"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="859"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="845"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="861"/>
         <source>JJZ</source>
         <translation>进给轴</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="847"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="863"/>
         <source>BJJJMCS</source>
         <translation>步进进给脉冲数</translation>
     </message>
@@ -272,12 +280,12 @@
 <context>
     <name>DJSNPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="879"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="895"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="881"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="897"/>
         <source>DJSN</source>
         <translation>电机使能</translation>
     </message>
@@ -285,12 +293,12 @@
 <context>
     <name>DebugPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="950"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="966"/>
         <source>TSYT</source>
         <translation>调试用途</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="952"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="968"/>
         <source>DL</source>
         <translation>短路</translation>
     </message>
@@ -408,70 +416,70 @@
 <context>
     <name>FDHLPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1021"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1037"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1023"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1025"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1027"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1029"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1031"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1033"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1035"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1039"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1041"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1043"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1045"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1047"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1049"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1051"/>
         <source>KDLS</source>
         <oldsource>KDLS（</oldsource>
         <translation>开电流数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1037"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1053"/>
         <source>FZDL1</source>
         <translation>辅助电流1（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1039"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1055"/>
         <source>FZDL2</source>
         <translation>辅助电流2（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1041"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1057"/>
         <source>DYDYD</source>
         <oldsource>DYDYD（</oldsource>
         <translation>低压电源1档</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1043"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1059"/>
         <source>FZDL3</source>
         <translation>辅助电流3（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1045"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1061"/>
         <source>KGYGZS</source>
         <translation>开高压管子数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1047"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1063"/>
         <source>FDDRXZ</source>
         <translation>放电电容选择</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1049"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1065"/>
         <source>DGSNW</source>
         <translation>电感失能位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1051"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1067"/>
         <source>DZSNW</source>
         <translation>电阻失能位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1053"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1069"/>
         <source>ZFJXKZW</source>
         <translation>正负极性控制位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1055"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1071"/>
         <source>FZDYXZ</source>
         <translation>辅助电压选择</translation>
     </message>
@@ -479,52 +487,52 @@
 <context>
     <name>FDJGPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1135"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1151"/>
         <source>FDJGCFDY</source>
         <translation>放电加工伺服电压</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1137"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1153"/>
         <source>JGMCMK</source>
         <translation>加工脉冲脉宽</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1139"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1155"/>
         <source>JGMCMJ</source>
         <translation>加工脉冲脉间</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1141"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1157"/>
         <source>-JGMCDNLSN</source>
         <translation>--加工脉冲等能量使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1143"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1159"/>
         <source>-JGMCDYYCJCSN</source>
         <translation>--加工脉冲电压异常检测使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1145"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1161"/>
         <source>JGMCFZMCXZ</source>
         <translation>加工脉冲辅助脉冲选择</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1147"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1163"/>
         <source>JCYCJCMS</source>
         <translation>击穿异常检测模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1149"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1165"/>
         <source>JCYCSJYZ</source>
         <translation>击穿异常时间阈值</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1151"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1167"/>
         <source>FDCFSD</source>
         <translation>放电伺服速度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1153"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1169"/>
         <source>FDCFTZSD</source>
         <translation>放电伺服调整速度</translation>
     </message>
@@ -532,134 +540,134 @@
 <context>
     <name>FDQDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="490"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="506"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="492"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="494"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="496"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="498"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="500"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="502"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="504"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="508"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="510"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="512"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="514"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="516"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="518"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="520"/>
         <source>KDLS</source>
         <translation>开电流数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="506"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="522"/>
         <source>FZDL1</source>
         <translation>辅助电流1（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="508"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="524"/>
         <source>FZDL2</source>
         <translation>辅助电流2（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="510"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="526"/>
         <source>DYDY1D</source>
         <translation>低压电源1档（LLV）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="512"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="528"/>
         <source>DYDY2D</source>
         <oldsource>DYDY2D（</oldsource>
         <translation>低压电源2档（HLV）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="514"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="530"/>
         <source>FZDL3</source>
         <translation>辅助电流3（32A）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="516"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="532"/>
         <source>KGYGZS</source>
         <translation>开高压管子数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="518"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="534"/>
         <source>FDDRXZ</source>
         <translation>放电电容选择</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="520"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="536"/>
         <source>DGSNW</source>
         <translation>电感失能位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="522"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="538"/>
         <source>DZSNW</source>
         <translation>电阻失能位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="524"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="540"/>
         <source>FJXJGW</source>
         <translation>反极性加工位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="526"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="542"/>
         <source>FZDYXZ</source>
         <translation>辅助电压选择</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="531"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="547"/>
         <source>BKGY</source>
         <translation>不开高压</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="533"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="549"/>
         <source>WDR</source>
         <translation>无电容</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="535"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="551"/>
         <source>DGJRHL</source>
         <translation>电感接入回路</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="537"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="553"/>
         <source>DLDG</source>
         <translation>短路电感</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="539"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="555"/>
         <source>DZJRHL</source>
         <translation>电阻接入回路</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="541"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="557"/>
         <source>DLDZ</source>
         <translation>短路电阻</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="543"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="559"/>
         <source>DJWZJ</source>
         <translation>电极为正极</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="545"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="561"/>
         <source>DJWFJ</source>
         <translation>电极为负极</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="547"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="563"/>
         <source>BWQGB</source>
         <translation>不完全关闭</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="549"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="565"/>
         <source>ZYFZ</source>
         <translation>中压辅助</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="551"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="567"/>
         <source>GYFZ</source>
         <translation>高压辅助</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="553"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="569"/>
         <source>WQGB</source>
         <translation>完全关闭</translation>
     </message>
@@ -667,42 +675,42 @@
 <context>
     <name>FDWCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1203"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1219"/>
         <source>FDWCMS</source>
         <translation>放电完成模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1205"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1221"/>
         <source>FDDSSJ</source>
         <translation>放电定时时间</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1207"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1223"/>
         <source>TDFX</source>
         <translation>抬刀方向</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1209"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1225"/>
         <source>TDGD</source>
         <translation>抬刀高度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1211"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1227"/>
         <source>TDSD</source>
         <translation>抬刀速度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1213"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1229"/>
         <source>FDSJ</source>
         <translation>放电时间</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1215"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1231"/>
         <source>ECTDXYDTDCS</source>
         <translation>二次抬刀需要的抬刀次数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1217"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1233"/>
         <source>ECTDGDBS</source>
         <translation>二次抬刀高度倍数</translation>
     </message>
@@ -710,37 +718,37 @@
 <context>
     <name>FZQDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="605"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="621"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="607"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="623"/>
         <source>YB1</source>
         <translation>油泵1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="609"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="625"/>
         <source>YB2</source>
         <translation>油泵2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="611"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="627"/>
         <source>HSBJD</source>
         <translation>红色报警灯</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="613"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="629"/>
         <source>LSBJD</source>
         <translation>绿色报警灯</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="614"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="630"/>
         <source>OUT3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="615"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="631"/>
         <source>OUT4</source>
         <translation></translation>
     </message>
@@ -907,37 +915,37 @@
 <context>
     <name>FmqPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="905"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="921"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="907"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="923"/>
         <source>MJFS</source>
         <translation>鸣叫方式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="914"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="930"/>
         <source>GB</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="916"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="932"/>
         <source>MJYS</source>
         <translation>鸣叫一声</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="918"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="934"/>
         <source>DDAJAXGCZYZMJ</source>
         <translation>等待按键按下过程中一直鸣叫</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="920"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="936"/>
         <source>DDAJAXGCZJXMJ</source>
         <translation>等待按键按下过程中间歇鸣叫</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="922"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="938"/>
         <source>KQ</source>
         <translation>开启</translation>
     </message>
@@ -1256,92 +1264,92 @@
 <context>
     <name>JogPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="47"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="63"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="49"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="65"/>
         <source>JSN</source>
         <translation>JOG使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="51"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="67"/>
         <source>TDDZSNW</source>
         <translation>抬刀动作失能位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="53"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="69"/>
         <source>FDZTW</source>
         <translation>放电暂停位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="55"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="71"/>
         <source>MS</source>
         <translation>模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="57"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="73"/>
         <source>JCDL</source>
         <translation>监测短路</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="59"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="75"/>
         <source>GZ</source>
         <translation>公制</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="61"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="77"/>
         <source>XZSDM</source>
         <translation>X轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="63"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="79"/>
         <source>JSSJM</source>
         <translation>加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="65"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="81"/>
         <source>YZSDM</source>
         <translation>Y轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="67"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="83"/>
         <source>YZJSSJM</source>
         <translation>Y轴加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="69"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="85"/>
         <source>ZZSDM</source>
         <translation>Z轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="71"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="87"/>
         <source>ZZJSSJM</source>
         <translation>Z轴加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="73"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="89"/>
         <source>UZSDM</source>
         <translation>U轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="75"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="91"/>
         <source>UZJSSJM</source>
         <translation>U轴加速时间ms</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="80"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="96"/>
         <source>SDMS</source>
         <translation>手动模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="82"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="98"/>
         <source>DDMS</source>
         <translation>点动模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="84"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="100"/>
         <source>SLMS</source>
         <translation>手轮模式</translation>
     </message>
@@ -1421,42 +1429,42 @@
 <context>
     <name>LocPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="227"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="243"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="229"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="245"/>
         <source>XZMBZB</source>
         <translation>X轴目标坐标</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="231"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="247"/>
         <source>YZMBZB</source>
         <translation>Y轴目标坐标</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="233"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="249"/>
         <source>ZZMBZB</source>
         <translation>Z轴目标坐标</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="235"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="251"/>
         <source>UZMBZB</source>
         <translation>U轴目标坐标</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="237"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="253"/>
         <source>JCDL</source>
         <translation>监测短路</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="239"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="255"/>
         <source>ZSDM</source>
         <translation>轴速度mm/min</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="241"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="257"/>
         <source>JSSJM</source>
         <translation>加速时间ms</translation>
     </message>
@@ -1572,27 +1580,27 @@
 <context>
     <name>ModbusAdapter</name>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="716"/>
+        <location filename="modbus/modbusadapter.cpp" line="815"/>
         <source>MXCW</source>
         <translation>Modbus: 写错误</translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="803"/>
+        <location filename="modbus/modbusadapter.cpp" line="903"/>
         <source>Write data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="809"/>
+        <location filename="modbus/modbusadapter.cpp" line="909"/>
         <source>Write data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="863"/>
+        <location filename="modbus/modbusadapter.cpp" line="963"/>
         <source>Read data failed. Error : </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/modbusadapter.cpp" line="869"/>
+        <location filename="modbus/modbusadapter.cpp" line="969"/>
         <source>Read data failed. Number of registers returned does not match number of registers requested!. Error : </source>
         <translation></translation>
     </message>
@@ -2171,6 +2179,26 @@
     </message>
 </context>
 <context>
+    <name>PLCOperationPropertyObject</name>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1517"/>
+        <source>MC</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1518"/>
+        <source>operation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1519"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1520"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1521"/>
+        <source>param</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QLineEditLikeButton</name>
     <message>
         <location filename="widgets/qlineedit4axisvalue.cpp" line="435"/>
@@ -2292,149 +2320,154 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1582"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1628"/>
         <source>JPZ</source>
         <translation>JOG配置</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1584"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1630"/>
         <source>LPZ</source>
         <translation>LOC配置</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1586"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1632"/>
         <source>DD</source>
         <translation>对刀</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1588"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1634"/>
         <source>QJX</source>
         <translation>去极限</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1590"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1636"/>
         <source>TCJX</source>
         <translation>退出极限</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1592"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1638"/>
         <source>ZLW</source>
         <translation>找零位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1593"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1639"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1595"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1641"/>
         <source>FDI</source>
         <translation>放电IO</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1597"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1643"/>
         <source>FZI</source>
         <translation>辅助IO</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1599"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1645"/>
         <source>SKHKZ</source>
         <translation>手控盒控制</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1602"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1648"/>
         <source>ZLJBC</source>
         <translation>轴螺距补偿</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1604"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1650"/>
         <source>DDYD</source>
         <translation>点动移动</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1606"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1652"/>
         <source>DJSN</source>
         <translation>电机使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1608"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1654"/>
         <source>FMQ</source>
         <translation>蜂鸣器</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1610"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1656"/>
         <source>TSYT</source>
         <translation>调试用途</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1611"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1657"/>
         <source>ADC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1613"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1659"/>
         <source>FDHL</source>
         <translation>放电回路</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1615"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1661"/>
         <source>FDJG</source>
         <translation>放电加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1617"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1663"/>
         <source>FDWC</source>
         <translation>放电完成</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1619"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1665"/>
         <source>YD</source>
         <translation>摇动</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1622"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1668"/>
         <source>BBH</source>
         <translation>版本号</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1624"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1670"/>
         <source>YWJC</source>
         <translation>油温检测</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1625"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1671"/>
         <source>AJC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1627"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1673"/>
         <source>Reg78</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1628"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1674"/>
         <source>Reg81</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1629"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1675"/>
         <source>Reg83</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1630"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1676"/>
         <source>Reg84</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1631"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1677"/>
         <source>Reg85</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1632"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1678"/>
         <source>Reg86</source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1680"/>
+        <source>PLCOPERATION</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="utils/formutils.cpp" line="22"/>
@@ -2677,7 +2710,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1386"/>
+        <location filename="forms/mainwindow2.cpp" line="1358"/>
         <source>GT</source>
         <translation>高跳</translation>
     </message>
@@ -2752,7 +2785,7 @@
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="336"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>YX</source>
         <translation>右下</translation>
     </message>
@@ -2802,259 +2835,259 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="274"/>
+        <location filename="forms/mainwindow2.cpp" line="246"/>
         <source>XMML</source>
         <translation>项目目录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="313"/>
-        <location filename="forms/mainwindow2.cpp" line="333"/>
+        <location filename="forms/mainwindow2.cpp" line="285"/>
+        <location filename="forms/mainwindow2.cpp" line="305"/>
         <source>SD</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="314"/>
+        <location filename="forms/mainwindow2.cpp" line="286"/>
         <source>EZD</source>
         <translation>EDM自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="316"/>
+        <location filename="forms/mainwindow2.cpp" line="288"/>
         <source>JG</source>
         <translation>加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="317"/>
+        <location filename="forms/mainwindow2.cpp" line="289"/>
         <source>SheDing</source>
         <translation>设定</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="334"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
         <source>ZD</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="315"/>
-        <location filename="forms/mainwindow2.cpp" line="335"/>
+        <location filename="forms/mainwindow2.cpp" line="287"/>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
         <source>BianJi</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="337"/>
+        <location filename="forms/mainwindow2.cpp" line="309"/>
         <source>QT</source>
         <translation>其他</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="364"/>
+        <location filename="forms/mainwindow2.cpp" line="336"/>
         <source>ZBSZ</source>
         <translation>坐标设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="367"/>
+        <location filename="forms/mainwindow2.cpp" line="339"/>
         <source>DWYD</source>
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="370"/>
+        <location filename="forms/mainwindow2.cpp" line="342"/>
         <source>WZJY</source>
         <translation>位置记忆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="373"/>
+        <location filename="forms/mainwindow2.cpp" line="345"/>
         <source>DMDW</source>
         <translation>端面定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="376"/>
+        <location filename="forms/mainwindow2.cpp" line="348"/>
         <source>ZZX</source>
         <translation>柱中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="379"/>
+        <location filename="forms/mainwindow2.cpp" line="351"/>
         <source>JZX</source>
         <translation>角中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="382"/>
+        <location filename="forms/mainwindow2.cpp" line="354"/>
         <source>KZX</source>
         <translation>孔中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="385"/>
+        <location filename="forms/mainwindow2.cpp" line="357"/>
         <source>SDDY</source>
         <translation>三点定圆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="388"/>
+        <location filename="forms/mainwindow2.cpp" line="360"/>
         <source>FDDW</source>
         <translation>放电定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
+        <location filename="forms/mainwindow2.cpp" line="368"/>
         <source>ZDCS</source>
         <translation>自动参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="407"/>
+        <location filename="forms/mainwindow2.cpp" line="379"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="410"/>
+        <location filename="forms/mainwindow2.cpp" line="382"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="419"/>
+        <location filename="forms/mainwindow2.cpp" line="391"/>
         <source>NJG</source>
         <translation>NC加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="424"/>
+        <location filename="forms/mainwindow2.cpp" line="396"/>
         <source>JGJL</source>
         <translation>加工记录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="428"/>
+        <location filename="forms/mainwindow2.cpp" line="400"/>
         <source>XTSZ</source>
         <translation>系统设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="429"/>
+        <location filename="forms/mainwindow2.cpp" line="401"/>
         <source>FangDianCanShu</source>
         <translation>放电参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="432"/>
-        <location filename="forms/mainwindow2.cpp" line="1314"/>
+        <location filename="forms/mainwindow2.cpp" line="404"/>
+        <location filename="forms/mainwindow2.cpp" line="1286"/>
         <source>FDCS</source>
         <translation>放电测试</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="433"/>
+        <location filename="forms/mainwindow2.cpp" line="405"/>
         <source>LJBC</source>
         <translation>螺距补偿</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="438"/>
+        <location filename="forms/mainwindow2.cpp" line="410"/>
         <source>CKSZ</source>
         <translation>串口设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="448"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>GY</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="491"/>
-        <location filename="forms/mainwindow2.cpp" line="1485"/>
+        <location filename="forms/mainwindow2.cpp" line="463"/>
+        <location filename="forms/mainwindow2.cpp" line="1457"/>
         <source>CKWLJ</source>
         <translation>串口未连接</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="496"/>
-        <location filename="forms/mainwindow2.cpp" line="1596"/>
+        <location filename="forms/mainwindow2.cpp" line="468"/>
+        <location filename="forms/mainwindow2.cpp" line="1568"/>
         <source>DDYX</source>
         <translation>等待运行</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="670"/>
+        <location filename="forms/mainwindow2.cpp" line="642"/>
         <source>MNJG</source>
         <translation>模拟加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="678"/>
+        <location filename="forms/mainwindow2.cpp" line="650"/>
         <source>JGHGJ</source>
         <translation>加工后关机</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="937"/>
-        <location filename="forms/mainwindow2.cpp" line="951"/>
-        <location filename="forms/mainwindow2.cpp" line="1630"/>
+        <location filename="forms/mainwindow2.cpp" line="909"/>
+        <location filename="forms/mainwindow2.cpp" line="923"/>
+        <location filename="forms/mainwindow2.cpp" line="1602"/>
         <source>YXZ</source>
         <translation>运行中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1031"/>
+        <location filename="forms/mainwindow2.cpp" line="1003"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1038"/>
+        <location filename="forms/mainwindow2.cpp" line="1010"/>
         <source>SFJXZDHL</source>
         <translation>是否进行自动回零？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1156"/>
+        <location filename="forms/mainwindow2.cpp" line="1128"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1326"/>
-        <location filename="forms/mainwindow2.cpp" line="1395"/>
+        <location filename="forms/mainwindow2.cpp" line="1298"/>
+        <location filename="forms/mainwindow2.cpp" line="1367"/>
         <source>FS</source>
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1327"/>
-        <location filename="forms/mainwindow2.cpp" line="1396"/>
+        <location filename="forms/mainwindow2.cpp" line="1299"/>
+        <location filename="forms/mainwindow2.cpp" line="1368"/>
         <source>GB</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1611"/>
+        <location filename="forms/mainwindow2.cpp" line="1583"/>
         <source>DDZ</source>
         <translation>对刀中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1614"/>
+        <location filename="forms/mainwindow2.cpp" line="1586"/>
         <source>HLZ</source>
         <translation>回零中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1619"/>
+        <location filename="forms/mainwindow2.cpp" line="1591"/>
         <source>FDZ</source>
         <translation>放电中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1622"/>
+        <location filename="forms/mainwindow2.cpp" line="1594"/>
         <source>FDZT</source>
         <translation>放电暂停</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1627"/>
+        <location filename="forms/mainwindow2.cpp" line="1599"/>
         <source>ZTZ</source>
         <translation>暂停中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1644"/>
+        <location filename="forms/mainwindow2.cpp" line="1616"/>
         <source>DLBJ</source>
         <translation>短路报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1684"/>
+        <location filename="forms/mainwindow2.cpp" line="1656"/>
         <source>CFDJBJ</source>
         <translation>伺服电机报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1700"/>
+        <location filename="forms/mainwindow2.cpp" line="1672"/>
         <source>DDYWZ</source>
         <translation>等待液位中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1721"/>
-        <location filename="forms/mainwindow2.cpp" line="1725"/>
+        <location filename="forms/mainwindow2.cpp" line="1693"/>
+        <location filename="forms/mainwindow2.cpp" line="1697"/>
         <source>XXW</source>
         <translation>X-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1729"/>
-        <location filename="forms/mainwindow2.cpp" line="1733"/>
+        <location filename="forms/mainwindow2.cpp" line="1701"/>
+        <location filename="forms/mainwindow2.cpp" line="1705"/>
         <source>YXW</source>
         <translation>Y-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1737"/>
-        <location filename="forms/mainwindow2.cpp" line="1741"/>
+        <location filename="forms/mainwindow2.cpp" line="1709"/>
+        <location filename="forms/mainwindow2.cpp" line="1713"/>
         <source>ZXW</source>
         <translation>Z-限位</translation>
     </message>
@@ -3087,7 +3120,12 @@
 <context>
     <name>Reg78PropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1425"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1441"/>
+        <source>MC</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1443"/>
         <source>FSYCGBSJ</source>
         <translation>风扇延迟关闭时间</translation>
     </message>
@@ -3095,189 +3133,190 @@
 <context>
     <name>RegWindow</name>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="13"/>
+        <location filename="forms_v1/regwindow.ui" line="14"/>
         <source>Dialog</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="26"/>
+        <location filename="forms_v1/regwindow.ui" line="27"/>
         <source>MB</source>
         <translation>面板</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="36"/>
+        <location filename="forms_v1/regwindow.ui" line="37"/>
         <source>JCQ</source>
         <translation>寄存器</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="44"/>
+        <location filename="forms_v1/regwindow.ui" line="45"/>
         <source>Connect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="54"/>
+        <location filename="forms_v1/regwindow.ui" line="55"/>
         <source>Disconnect</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="61"/>
+        <location filename="forms_v1/regwindow.ui" line="69"/>
         <source>Verbosity</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="71"/>
+        <location filename="forms_v1/regwindow.ui" line="62"/>
+        <location filename="forms_v1/regwindow.ui" line="79"/>
         <source>0</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="78"/>
+        <location filename="forms_v1/regwindow.ui" line="86"/>
         <source>2</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="88"/>
+        <location filename="forms_v1/regwindow.ui" line="96"/>
         <source>Read Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="95"/>
+        <location filename="forms_v1/regwindow.ui" line="103"/>
         <source>Write Reg</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="108"/>
+        <location filename="forms_v1/regwindow.ui" line="116"/>
         <source>JOG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="125"/>
+        <location filename="forms_v1/regwindow.ui" line="133"/>
         <source>QDJ</source>
         <translation>启动JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="141"/>
+        <location filename="forms_v1/regwindow.ui" line="149"/>
         <source>TCJ</source>
         <translation>退出JOG</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="157"/>
+        <location filename="forms_v1/regwindow.ui" line="165"/>
         <source>DDYD</source>
         <translation>点动移动</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="177"/>
+        <location filename="forms_v1/regwindow.ui" line="185"/>
         <source>QDDW</source>
         <translation>启动定位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="193"/>
+        <location filename="forms_v1/regwindow.ui" line="201"/>
         <source>TCDW</source>
         <translation>退出定位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="219"/>
+        <location filename="forms_v1/regwindow.ui" line="227"/>
         <source>QDDD</source>
         <translation>启动对刀</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="235"/>
+        <location filename="forms_v1/regwindow.ui" line="243"/>
         <source>JSDD</source>
         <translation>结束对刀</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="261"/>
-        <location filename="forms_v1/regwindow.ui" line="303"/>
-        <location filename="forms_v1/regwindow.ui" line="345"/>
-        <location filename="forms_v1/regwindow.ui" line="387"/>
+        <location filename="forms_v1/regwindow.ui" line="269"/>
+        <location filename="forms_v1/regwindow.ui" line="311"/>
+        <location filename="forms_v1/regwindow.ui" line="353"/>
+        <location filename="forms_v1/regwindow.ui" line="395"/>
         <source>QD</source>
         <translation>确定</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="277"/>
-        <location filename="forms_v1/regwindow.ui" line="319"/>
-        <location filename="forms_v1/regwindow.ui" line="361"/>
-        <location filename="forms_v1/regwindow.ui" line="403"/>
+        <location filename="forms_v1/regwindow.ui" line="285"/>
+        <location filename="forms_v1/regwindow.ui" line="327"/>
+        <location filename="forms_v1/regwindow.ui" line="369"/>
+        <location filename="forms_v1/regwindow.ui" line="411"/>
         <source>JS</source>
         <translation>结束</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="414"/>
+        <location filename="forms_v1/regwindow.ui" line="422"/>
         <source>JC</source>
         <translation>监测</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="430"/>
+        <location filename="forms_v1/regwindow.ui" line="438"/>
         <source>SKH</source>
         <translation>手控盒</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="435"/>
+        <location filename="forms_v1/regwindow.ui" line="443"/>
         <source>FDI</source>
         <translation>放电IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="450"/>
-        <location filename="forms_v1/regwindow.ui" line="479"/>
-        <location filename="forms_v1/regwindow.ui" line="508"/>
-        <location filename="forms_v1/regwindow.ui" line="558"/>
+        <location filename="forms_v1/regwindow.ui" line="458"/>
+        <location filename="forms_v1/regwindow.ui" line="487"/>
+        <location filename="forms_v1/regwindow.ui" line="516"/>
+        <location filename="forms_v1/regwindow.ui" line="566"/>
         <location filename="forms_v1/regwindow.cpp" line="135"/>
         <location filename="forms_v1/regwindow.cpp" line="262"/>
-        <location filename="forms_v1/regwindow.cpp" line="397"/>
+        <location filename="forms_v1/regwindow.cpp" line="405"/>
         <source>FS</source>
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="464"/>
+        <location filename="forms_v1/regwindow.ui" line="472"/>
         <source>FZI</source>
         <translation>辅助IO</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="493"/>
+        <location filename="forms_v1/regwindow.ui" line="501"/>
         <source>SKHKZSJ</source>
         <translation>手控盒控制数据</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="524"/>
+        <location filename="forms_v1/regwindow.ui" line="532"/>
         <source>DQ</source>
         <translation>读取</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="538"/>
+        <location filename="forms_v1/regwindow.ui" line="546"/>
         <source>BC</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="162"/>
+        <location filename="forms_v1/regwindow.ui" line="170"/>
         <source>LOC</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="204"/>
+        <location filename="forms_v1/regwindow.ui" line="212"/>
         <source>CMV_TOUCH</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="246"/>
+        <location filename="forms_v1/regwindow.ui" line="254"/>
         <source>CMV_TOLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="288"/>
+        <location filename="forms_v1/regwindow.ui" line="296"/>
         <source>CMV_FRMLMT</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="330"/>
+        <location filename="forms_v1/regwindow.ui" line="338"/>
         <source>CMV_TOZSIG</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="372"/>
+        <location filename="forms_v1/regwindow.ui" line="380"/>
         <source>SPK</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.ui" line="572"/>
+        <location filename="forms_v1/regwindow.ui" line="580"/>
         <source>Modbus File</source>
         <translation></translation>
     </message>
@@ -3298,19 +3337,19 @@
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="529"/>
+        <location filename="forms_v1/regwindow.cpp" line="537"/>
         <source>XZ</source>
         <translation>X轴</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="532"/>
+        <location filename="forms_v1/regwindow.cpp" line="540"/>
         <source>YZ</source>
         <translation>Y轴</translation>
     </message>
     <message>
         <location filename="forms_v1/regwindow.cpp" line="307"/>
-        <location filename="forms_v1/regwindow.cpp" line="535"/>
+        <location filename="forms_v1/regwindow.cpp" line="543"/>
         <source>ZZ</source>
         <translation>Z轴</translation>
     </message>
@@ -3350,108 +3389,113 @@
         <translation>摇动</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="541"/>
+        <location filename="forms_v1/regwindow.cpp" line="390"/>
+        <source>PLC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="forms_v1/regwindow.cpp" line="549"/>
         <source>WCZ</source>
         <translation>无操作</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="544"/>
+        <location filename="forms_v1/regwindow.cpp" line="552"/>
         <source>SDDQ</source>
         <translation>设定当前</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.cpp" line="548"/>
+        <location filename="forms_v1/regwindow.cpp" line="556"/>
         <source>DWYD</source>
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="104"/>
+        <location filename="forms_v1/regwindow.h" line="103"/>
         <source>XZZFXXW</source>
         <translation>X轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="105"/>
+        <location filename="forms_v1/regwindow.h" line="104"/>
         <source>XZFFXXW</source>
         <translation>X轴负方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="106"/>
+        <location filename="forms_v1/regwindow.h" line="105"/>
         <source>YZZFXXW</source>
         <translation>Y轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="107"/>
+        <location filename="forms_v1/regwindow.h" line="106"/>
         <source>YZFFXXW</source>
         <translation>Y轴负方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="108"/>
+        <location filename="forms_v1/regwindow.h" line="107"/>
         <source>ZZZFXXW</source>
         <translation>Z轴正方向限位</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="109"/>
+        <location filename="forms_v1/regwindow.h" line="108"/>
         <source>ZZFFXXW</source>
         <translation>Z轴负方向限位</translation>
     </message>
     <message>
+        <location filename="forms_v1/regwindow.h" line="111"/>
         <location filename="forms_v1/regwindow.h" line="112"/>
-        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>YWXH</source>
         <translation>油位信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="114"/>
+        <location filename="forms_v1/regwindow.h" line="113"/>
         <source>HYXH</source>
         <translation>火焰信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="115"/>
+        <location filename="forms_v1/regwindow.h" line="114"/>
         <source>WBXH0</source>
         <translation>外部信号0</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="116"/>
+        <location filename="forms_v1/regwindow.h" line="115"/>
         <source>WBXH1</source>
         <translation>外部信号1</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="117"/>
+        <location filename="forms_v1/regwindow.h" line="116"/>
         <source>WBXH2</source>
         <translation>外部信号2</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="118"/>
+        <location filename="forms_v1/regwindow.h" line="117"/>
         <source>WBXH3</source>
         <translation>外部信号3</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="120"/>
+        <location filename="forms_v1/regwindow.h" line="119"/>
         <source>XZLDXH</source>
         <translation>X轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="121"/>
+        <location filename="forms_v1/regwindow.h" line="120"/>
         <source>YZLDXH</source>
         <translation>Y轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="122"/>
+        <location filename="forms_v1/regwindow.h" line="121"/>
         <source>ZZLDXH</source>
         <translation>Z轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="123"/>
+        <location filename="forms_v1/regwindow.h" line="122"/>
         <source>UZLDXH</source>
         <translation>U轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="124"/>
+        <location filename="forms_v1/regwindow.h" line="123"/>
         <source>VZLDXH</source>
         <translation>V轴零点信号</translation>
     </message>
     <message>
-        <location filename="forms_v1/regwindow.h" line="127"/>
+        <location filename="forms_v1/regwindow.h" line="126"/>
         <source>CFBJXH</source>
         <translation>伺服报警信号</translation>
     </message>
@@ -3809,77 +3853,77 @@
 <context>
     <name>SKHKZPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="647"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="663"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="649"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="665"/>
         <source>ZTKZ</source>
         <translation>状态控制</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="651"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="667"/>
         <source>XSSN</source>
         <translation>显示使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="653"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="669"/>
         <source>JPSD</source>
         <translation>键盘锁定</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="655"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="671"/>
         <source>ZCZSN</source>
         <translation>轴操作使能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="657"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="673"/>
         <source>SC3WJM</source>
         <translation>上传32位键码</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="659"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="675"/>
         <source>GZ</source>
         <translation>公制（mm）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="661"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="677"/>
         <source>XS/CZZGS</source>
         <translation>显示/操作轴个数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="663"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="679"/>
         <source>SDXSKZ</source>
         <translation>速度显示控制</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="665"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="681"/>
         <source>DD/SDXSKZ</source>
         <translation>点动/手动显示控制</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="669"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="685"/>
         <source>WZT</source>
         <translation>无状态</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="671"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="687"/>
         <source>ZTJGZT</source>
         <translation>暂停加工状态</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="673"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="689"/>
         <source>JGZT</source>
         <translation>加工状态</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="675"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="691"/>
         <source>SDLXYD</source>
         <translation>手动（连续移动）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="677"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="693"/>
         <source>DDYD</source>
         <translation>点动移动</translation>
     </message>
@@ -3887,7 +3931,7 @@
 <context>
     <name>SPKPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="450"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="466"/>
         <source>ZGJ</source>
         <translation>子轨迹</translation>
     </message>
@@ -4318,22 +4362,27 @@
 <context>
     <name>VersionPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1346"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1361"/>
+        <source>MC</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1363"/>
         <source>SKHBB</source>
         <translation>手控盒版本</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1348"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1365"/>
         <source>XSKZBB</source>
         <translation>显示控制版本</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1350"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1367"/>
         <source>XWJBB</source>
         <translation>下位机版本</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1352"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1369"/>
         <source>XWJNHBB</source>
         <translation>下位机内核版本</translation>
     </message>
@@ -5362,92 +5411,92 @@
 <context>
     <name>YDPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1254"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1270"/>
         <source>YDFX</source>
         <translation>摇动方向</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1256"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1272"/>
         <source>ZDYDSD</source>
         <translation>最大摇动速度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1258"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1274"/>
         <source>SDJCXFS</source>
         <translation>深度检测细分数</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1260"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1276"/>
         <source>YDFWCFMS</source>
         <translation>摇动复位伺服模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1262"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1278"/>
         <source>YDFWDZMS</source>
         <translation>摇动复位动作模式</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1264"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1280"/>
         <source>YDPM</source>
         <translation>摇动平面</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1266"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1282"/>
         <source>D1XXYDM</source>
         <translation>第1象限摇动码</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1268"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1284"/>
         <source>D2XXYDM</source>
         <translation>第2象限摇动码</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1270"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1286"/>
         <source>D3XXYDM</source>
         <translation>第3象限摇动码</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1272"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1288"/>
         <source>D4XXYDM</source>
         <translation>第4象限摇动码</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1274"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1290"/>
         <source>YDBJ</source>
         <translation>摇动半径</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1276"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1292"/>
         <source>HZXTDGD</source>
         <translation>回中心抬刀高度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1278"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1294"/>
         <source>HZXTDSD</source>
         <translation>回中心抬刀速度</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1280"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1296"/>
         <source>HZXTDJSSJ</source>
         <translation>回中心抬刀加速时间</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1282"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1298"/>
         <source>ZTDJSSJ</source>
         <translation>主抬刀加速时间</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1284"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1300"/>
         <source>TCQHTJL</source>
         <translation>退出前回退距离</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1286"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1302"/>
         <source>TDQMSHTJL</source>
         <translation>抬刀前慢速回退距离</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1288"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1304"/>
         <source>TDQMSHTSD</source>
         <translation>抬刀前慢速回退速度</translation>
     </message>
@@ -5455,13 +5504,18 @@
 <context>
     <name>YouwenJianchePropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1376"/>
-        <location filename="modbus/NCMachineProperties.cpp" line="1378"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1392"/>
+        <source>MC</source>
+        <translation type="unfinished">名称</translation>
+    </message>
+    <message>
+        <location filename="modbus/NCMachineProperties.cpp" line="1394"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1396"/>
         <source>YWJC</source>
         <translation>油温检测</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="1380"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="1398"/>
         <source>HYJC</source>
         <translation>火焰检测</translation>
     </message>
@@ -5469,42 +5523,42 @@
 <context>
     <name>ZLJBCPropertyObject</name>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="713"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="729"/>
         <source>MC</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="715"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="731"/>
         <source>BCJG</source>
         <translation>补偿间隔</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="717"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="733"/>
         <source>BCCKD</source>
         <translation>补偿参考点</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="719"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="735"/>
         <source>ZFXBCSYDZDJL</source>
         <translation>正方向补偿使用的最大记录</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="721"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="737"/>
         <source>FFXBCSYDZXJL</source>
         <translation>负方向补偿使用的最小记录</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="723"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="739"/>
         <source>FXJXBCSJ</source>
         <translation>反向间隙补偿数据</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="725"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="741"/>
         <source>DWSJZDBCSJ</source>
         <translation>单位时间最大补偿数据</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachineProperties.cpp" line="727"/>
+        <location filename="modbus/NCMachineProperties.cpp" line="743"/>
         <source>BCSX</source>
         <translation>补偿生效</translation>
     </message>

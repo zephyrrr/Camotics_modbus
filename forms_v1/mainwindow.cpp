@@ -58,7 +58,7 @@ QtWin::QtWin(QWidget *parent)
     //m_rawModel->enableAddLines(true);
     //connect(m_rawModel, SIGNAL(lineAdded(QString)), this, SLOT(logModbusMsg(QString)));
 
-    m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
+    m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter);
 
     // reg window
     {
@@ -164,15 +164,6 @@ void QtWin::on_logTimer_timeout()
 
 void QtWin::openOptions()
 {
-    if (m_dlgModbusRTU == NULL) {
-        m_dlgModbusRTU = new SettingsModbusRTU(this,m_modbusCommSettings);
-    }
-    m_dlgModbusRTU->modbus_connected = m_modbusAdapter->isConnected();
-
-    m_dlgModbusRTU->show();
-    //if (m_dlgModbusRTU->exec()==QDialog::Accepted) {
-    //    m_modbusCommSettings->saveSettings();
-    //}
 }
 
 void QtWin::UpdateState()

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>RegWindow</class>
  <widget class="QDialog" name="RegWindow">
@@ -27,7 +28,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab17">
        <item>
-        <widget class="QWidget" name="widget17" native="true" />
+        <widget class="QWidget" name="widget17" native="true"/>
        </item>
       </layout>
      </widget>
@@ -37,7 +38,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout1" stretch="2,2,2,1,1,2,2">
+        <layout class="QHBoxLayout" name="horizontalLayout1" stretch="2,2,0,2,1,1,2,2">
          <item>
           <widget class="QPushButton" name="btnStart">
            <property name="text">
@@ -52,6 +53,13 @@
            </property>
            <property name="text">
             <string>Disconnect</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditConnectionIndex">
+           <property name="text">
+            <string>0</string>
            </property>
           </widget>
          </item>
@@ -99,7 +107,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QTableView" name="tblRegisters" />
+        <widget class="QTableView" name="tblRegisters"/>
        </item>
       </layout>
      </widget>
@@ -148,7 +156,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayoutTab2_2" />
+        <layout class="QVBoxLayout" name="verticalLayoutTab2_2"/>
        </item>
       </layout>
      </widget>
@@ -422,7 +430,7 @@
          <height>171</height>
         </rect>
        </property>
-       <layout class="QGridLayout" name="gridLayoutTab9" />
+       <layout class="QGridLayout" name="gridLayoutTab9"/>
       </widget>
      </widget>
      <widget class="QWidget" name="tab_10">
@@ -540,7 +548,7 @@
       <layout class="QVBoxLayout" name="verticalLayoutTab14">
        <item>
         <widget class="QWidget" name="widget14" native="true">
-         <layout class="QHBoxLayout" name="horizontalLayout14" />
+         <layout class="QHBoxLayout" name="horizontalLayout14"/>
         </widget>
        </item>
        <item>
@@ -573,7 +581,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayoutTab15">
        <item>
-        <widget class="QWidget" name="widget15" native="true" />
+        <widget class="QWidget" name="widget15" native="true"/>
        </item>
       </layout>
      </widget>
@@ -581,6 +589,6 @@
    </item>
   </layout>
  </widget>
- <resources />
- <connections />
+ <resources/>
+ <connections/>
 </ui>

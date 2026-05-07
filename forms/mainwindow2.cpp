@@ -55,17 +55,8 @@
 ModbusMain::ModbusMain(QObject* parent)
 	: m_parent(parent)
 {
-	//m_regModel = new RegistersModel(this);
-	if (true || cb::Logger::instance().getVerbosity() >= 10) {
-		m_rawModel = new RawDataModel(m_parent);
-		m_rawModel->enableAddLines(true);
-		m_parent->connect(m_rawModel, &RawDataModel::lineAdded, [](QString line) {
-			LOG_INFO(10, EUtils::QString2StdString(line));
-			});
-	}
-
-	m_modbusCommSettings = new ModbusCommSettings(SystemSettings::GetPath("qModMaster.ini", SystemSettings::SystemFlag));
-	m_modbusAdapter = new ModbusAdapter(m_parent, m_regModel, m_rawModel);
+	
+	m_modbusAdapter = new ModbusAdapter(m_parent);
 	m_ncMachine = new NCMachine(m_parent, m_modbusAdapter);
 
 	modbusConnect(true);
@@ -94,38 +85,19 @@ ModbusMain::~ModbusMain()
 		m_modbusAdapter = NULL;
 	}
 
-	if (m_modbusCommSettings != NULL) {
-		delete m_modbusCommSettings;
-		m_modbusCommSettings = NULL;
-	}
-	if (m_rawModel != NULL) {
-		delete m_rawModel;
-		m_rawModel = NULL;
-	}
-	if (m_regModel != NULL) {
-		delete m_regModel;
-		m_regModel = NULL;
-	}
+	
 }
 
 void ModbusMain::modbusConnect(bool connect)
 {
-	modbusConnect(connect, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
+	modbusConnect(connect, m_modbusAdapter, m_ncMachine);
 }
-void ModbusMain::modbusConnect(bool connect, ModbusAdapter* modbus, ModbusCommSettings* modbusCommSettings, NCMachine* ncMachine)
+
+void ModbusMain::modbusConnect(bool connect, ModbusAdapter* modbus, NCMachine* ncMachine)
 {
 	if (connect) {
-		modbus->modbusConnectRTU(
-			modbusCommSettings->serialPortName(),
-			modbusCommSettings->baud().toInt(),
-			EUtils::parity(modbusCommSettings->parity()),
-			modbusCommSettings->dataBits().toInt(),
-			modbusCommSettings->stopBits().toInt(),
-			modbusCommSettings->RTS().toInt(),
-			modbusCommSettings->responseTimeOut().toInt(),
-			modbusCommSettings->byteTimeOut().toInt()
-		);
-		modbus->setScanRate(modbusCommSettings->scanRate());
+		modbus->modbusConnect();
+
 		modbus->startPollTimer();
 
 		ncMachine->startTaskThread();
@@ -436,7 +408,7 @@ QtWin2::QtWin2(QWidget* parent)
 			//	return new HuiLingForm(this);
 			//	});
 			AddChildWindow(tr("CKSZ"), layout1, [this]() {
-				return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusCommSettings);
+				return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(0));
 				});
 			//AddChildWindow(tr("CKSZ"), layout1, [this]() {
 			//	//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
@@ -1963,7 +1935,7 @@ QString QtWin2::SecondsToStr(qint64 totalSeconds)
 void QtWin2::OpenRegWindow()
 {
 	if (m_dlgRegWindow == NULL) {
-		m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
+		m_dlgRegWindow = new RegWindow(this, m_ncMachine, m_modbusAdapter);
 	}
 	m_dlgRegWindow->show();
 }

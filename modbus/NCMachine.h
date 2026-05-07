@@ -140,10 +140,12 @@ public:
 	~NCMachine();
 
 	void ReadAllPosAndState();
+	void ReadPlcState();
 
 	bool ConvertModbusData4Key(ModbusTask* task, uint16_t* readData);
 	bool ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData);
 	bool ConvertModbusData4State(ModbusTask* task, uint16_t* readData);
+	bool ConvertModbusData4PlcState(ModbusTask* task, uint16_t* readData);
 	bool ConvertModbusData4JogDuanlu(ModbusTask* task, uint16_t* readData);
 
 	//cb::Vector4I GetXYZUDirect();
@@ -155,10 +157,9 @@ public:
 
 	//cb::Vector4I GetXYZUWithOffset() { return m_pos + m_posOffset; }
 	cb::Vector3U GetState() { return m_state; }
-	uint16_t GetNctState() { return m_state[2]; }
 	uint16_t GetRLSTRslt() { return m_state[0]; }
 	uint16_t GetRLSTPara() { return m_state[1]; }
-
+	uint16_t GetNctState() { return m_state[2]; }
 	void SetState4Debug(uint16_t t1, uint16_t t2, uint16_t t3 ) { m_stateDebug[0] = t1; m_stateDebug[1] = t2; m_stateDebug[2] = t3;}
 
 	/*
@@ -286,11 +287,15 @@ private:
 	// 指令执行结果，NCTState
 	// 2: 运行状态
 	// 0: RLST.u16Rslt
-	// 1: RLST.u16Para 
+	// 1: RLST.u16Para
 	std::atomic<int> m_stateDirty = 1;
 	cb::Vector<3, uint16_t> m_state;
 	// 端口输入信息，限位、回零等
 	cb::Vector<2, uint16_t> m_inputFlag;
+
+	// PLC state (connection 1 - TCP)
+	std::atomic<int> m_statePlcDirty = 1;
+	cb::Vector<3, uint16_t> m_statePlc;
 
 	// 手动移动标志
 	uint16_t m_scamanulFlag;

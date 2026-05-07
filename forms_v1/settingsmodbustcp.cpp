@@ -47,6 +47,9 @@ void SettingsModbusTCP::changesAccepted()
             if (m_settings != NULL) {
                 m_settings->setTCPPort(ui->leTCPPort->text());
                 m_settings->setSlaveIP(ui->leSlaveIP->text());
+
+                m_settings->setSerialPort("", "");
+				m_settings->saveSettings();
             }
             break;
         case 1 : // wrong ip

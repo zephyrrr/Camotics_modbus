@@ -18,8 +18,8 @@
 #include "BaseMainWindow.h"
 #include "forms/mainwindow2.h"
 
-RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter, ModbusCommSettings* settings)
-	: QDialog{ parent }, m_ncMachine(machine), m_modbusAdapter(adapter), m_modbusCommSettings(settings), ui(new Ui::RegWindow)
+RegWindow::RegWindow(QWidget* parent, NCMachine* machine, ModbusAdapter* adapter)
+	: QDialog{ parent }, m_ncMachine(machine), m_modbusAdapter(adapter), ui(new Ui::RegWindow)
 {
 	ui->setupUi(this);
 	this->setWindowFlags(this->windowFlags() | Qt::WindowMaximizeButtonHint | Qt::WindowMinimizeButtonHint);
@@ -340,7 +340,7 @@ void RegWindow::init()
 
 	// Tab17
 	{
-		NCMachinePanel* dialog = new NCMachinePanel(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
+		NCMachinePanel* dialog = new NCMachinePanel(this, m_ncMachine, m_modbusAdapter);
 		ui->verticalLayoutTab17->addWidget(dialog, 1);
 	}
 
@@ -381,6 +381,14 @@ void RegWindow::init()
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
 		ui->tabWidget->addTab(newWidget, tr("YD"));
+		// PLC Operation
+		{
+			QHBoxLayout* horizontalLayout = new QHBoxLayout();
+			addProperyEditor(horizontalLayout, propertyObjects->propertyObjectPLCOperation);
+			QWidget* newWidget = new QWidget();
+			newWidget->setLayout(horizontalLayout);
+			ui->tabWidget->addTab(newWidget, tr("PLC"));
+		}
 	}
 }
 
@@ -554,7 +562,7 @@ void RegWindow::UpdateState2(unsigned long long key)
 
 void RegWindow::on_btnStart_clicked()
 {
-	ModbusMain::modbusConnect(true, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
+	//ModbusMain::modbusConnect(true, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbusAdapter->isConnected());
 	ui->btnStop->setEnabled(m_modbusAdapter->isConnected());
@@ -564,7 +572,7 @@ void RegWindow::on_btnStart_clicked()
 
 void RegWindow::on_btnStop_clicked()
 {
-	ModbusMain::modbusConnect(false, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
+	//ModbusMain::modbusConnect(false, m_modbusAdapter, m_modbusCommSettings, m_ncMachine);
 
 	ui->btnStart->setEnabled(!m_modbusAdapter->isConnected());
 	ui->btnStop->setEnabled(m_modbusAdapter->isConnected());
@@ -577,6 +585,7 @@ void RegWindow::on_btnReadOnce_clicked()
 	//m_ncMachine->executeCmds();
 	//m_modbusAdapter->modbusTransaction();
 
+	int connectionIndex = ui->lineEditConnectionIndex->text().toInt();
 	int regAddr = ui->lineEditReadRegAddr->text().toInt();
 	int regLen = ui->lineEditReadRegNum->text().toInt();
 	regLen = regLen > 60 ? 60 : regLen;
@@ -596,7 +605,7 @@ void RegWindow::on_btnReadOnce_clicked()
 			}
 		}
 	};
-	ModbusTask* task = m_modbusAdapter->getTaskRead(regAddr, regLen);
+	ModbusTask* task = m_modbusAdapter->getTaskRead(regAddr, regLen, connectionIndex);
 	task->setPostFunction(function, "Read Reg");
 	m_modbusAdapter->addTask(task, 0);
 }
