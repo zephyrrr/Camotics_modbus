@@ -624,6 +624,7 @@ void RegWindow::on_btnWriteReg_clicked()
 	QStandardItemModel* model = qobject_cast<QStandardItemModel*>(ui->tblRegisters->model());
 	if (model == NULL)
 		return;
+	int connectionIndex = ui->lineEditConnectionIndex->text().toInt();
 	int regAddr = ui->lineEditReadRegAddr->text().toInt();
 	int regLen = ui->lineEditReadRegNum->text().toInt();
 	std::vector<uint16_t> vs;
@@ -638,11 +639,16 @@ void RegWindow::on_btnWriteReg_clicked()
 		else
 			vs.push_back(0);
 	}
-	std::string s = NCCommand::GetWriteString(regAddr, regLen, vs);
-	m_ncMachine->enterSetPriority(0);
-	//m_ncMachine->executeCmdsInFile(filename);
-	m_ncMachine->executeCmds(s);
-	m_ncMachine->exitSetPriority();
+	//std::string s = NCCommand::GetWriteString(regAddr, regLen, vs);
+	//m_ncMachine->enterSetPriority(0);
+	////m_ncMachine->executeCmdsInFile(filename);
+	//m_ncMachine->executeCmds(s);
+	//m_ncMachine->exitSetPriority();
+
+	auto v2 = NCCommand::UIntsToString(vs);
+	ModbusTask* task = m_modbusAdapter->getTaskWrite(regAddr, regLen, v2, connectionIndex);
+	//task->setPostFunction(function, "Write Reg");
+	m_modbusAdapter->addTask(task, 0);
 }
 
 void RegWindow::on_ckbVerbosity_stateChanged(int state)

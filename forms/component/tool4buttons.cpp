@@ -57,14 +57,25 @@ QList<Tool4Buttons*> Tool4Plugins::create(BaseChildWindow* childWindow, QWidget*
 	QMap<QString, QString> pyFiles = PluginUtils::loadPythonScripts(childWindow->objectName());
 	int cnt = MAX_BUTTONS_IN_TOOL;
 	Tool4Buttons* tool = NULL;
+	
+
 	for (const auto& pyFileName : pyFiles.keys()) {
 		if (!pyFileName.startsWith("tools_")) {
+			continue;
+		}
+		//if (!PluginUtils::isAllEnglish(pyFileName)) {
+		//	continue;
+		//}
+		if (pyFileName == QStringLiteral("tools_格子1") || pyFileName == QStringLiteral("tools_格子2"))
+		{
+			// obsolete plugins, delte and skip
+			QFile::remove(pyFiles.value(pyFileName));
 			continue;
 		}
 		if (cnt >= MAX_BUTTONS_IN_TOOL) {
 			cnt = 0;
 			tool = new Tool4Buttons(parent);
-			ret.append(tool);	
+			ret.append(tool);
 		}
 		QString btnText = getPluginButtonName(pyFileName.mid(6));
 		QPushButton* btn = tool->addButton(btnText);

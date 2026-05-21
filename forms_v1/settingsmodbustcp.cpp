@@ -11,11 +11,15 @@ SettingsModbusTCP::SettingsModbusTCP(QWidget *parent, ModbusCommSettings * setti
 {
     ui->setupUi(this);
 
+    modbus_connected = false;
+
     connect(ui->buttonBox,SIGNAL(accepted()),this,SLOT(changesAccepted()));
 
     //QLineEdit4Keyboard::replaceLineEdits(this);
     this->addVirtualKeyboard(ui->leSlaveIP);
     this->addVirtualKeyboard(ui->leTCPPort);
+
+    this->clearFocus();
 }
 
 SettingsModbusTCP::~SettingsModbusTCP()
@@ -64,6 +68,9 @@ void SettingsModbusTCP::changesAccepted()
 
 int SettingsModbusTCP::validateInputs()
 {
+    if (ui->leTCPPort->text().isEmpty())
+        return 0;
+
     //Strip zero's from IP
     QStringList ipBytes;
     bool ok;

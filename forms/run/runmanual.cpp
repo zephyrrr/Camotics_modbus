@@ -1,4 +1,4 @@
-﻿#include "runmanual.h"
+#include "runmanual.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -291,6 +291,33 @@ RunManual::RunManual(QWidget* parent, QString objectName)
 	connect(table2, &ButtonEditTableWidget::rowInserted, [this, defaultRowValues](int rowIndex) {
 		for(int i=0; i<table2->getDataYCount(); ++i) {
 			table2->setValue(rowIndex, i, defaultRowValues[i]);
+		}
+		int axisLen = 3;
+		int realAxisLen = 0;
+		int selectedAxisIndex = -1;
+		for (int i = 0; i < axisLen; ++i) {
+			if (table1->getValue(i, -1) != "True") {
+				continue;
+			}
+
+			QString s = table1->getValue(i, 0);
+			if (!s.isEmpty()) {
+				realAxisLen++;
+				double d = s.toDouble();
+				selectedAxisIndex = i;
+			}
+		}
+		if (realAxisLen == 1) {
+			if (selectedAxisIndex == 2) {
+				table2->setValue(rowIndex, 2, "000");
+			} else if (selectedAxisIndex == 1) {
+				table2->setValue(rowIndex, 2, "001");
+			} else if (selectedAxisIndex == 0) {
+				table2->setValue(rowIndex, 2, "002");
+			}
+		}
+		else {
+			table2->setValue(rowIndex, 2, "000");
 		}
 		});
 	for (int i = 0; i < 1; ++i)
@@ -688,6 +715,9 @@ int RunManual::SetCurrentRunLine(bool initialize)
 QString RunManual::GetGCodeV2()
 {
 	int axisLen = 3;	// XYZ
+
+	int realAxisLen = 0;
+	int selectedAxisIndex = -1;
 	double toAxisLength[] = { INFINITE, INFINITE, INFINITE };
 	for (int i = 0; i < axisLen; ++i) {
 		if (table1->getValue(i, -1) != "True") {
@@ -696,8 +726,10 @@ QString RunManual::GetGCodeV2()
 
 		QString s = table1->getValue(i, 0);
 		if (!s.isEmpty()) {
+			realAxisLen++;
 			double d = s.toDouble();
 			toAxisLength[i] = d;
+			selectedAxisIndex = i;
 		}
 	}
 	if (toAxisLength[0] == INFINITE && toAxisLength[1] == INFINITE && toAxisLength[2] == INFINITE) {
@@ -709,15 +741,6 @@ QString RunManual::GetGCodeV2()
 		axisPositions[i] = m_ncMachine->GetController()->getAxisPosition(GCodeTool::axis[i]);
 	}
 
-	//QString gcode = GetGCodeStatic(table1, table2, ui.inAbsolute->isChecked(), axisPositions, &this->mapLine2Row);
-	QString gcode = GetGCodeOSub803(table2);
-	if (gcode.isEmpty()) {
-		return QString();
-	}
-	gcode += "\n\n";
-	gcode += "G90 G11 G24 T84\n";
-
-	//gcode += GetGCodeOne(ui.inAbsolute->isChecked(), toAxisLength, axisPositions);
 	if (!ui.inAbsolute->isChecked()) {
 		////// G90: To G91
 		for (int i = 0; i < axisLen; ++i) {
@@ -726,6 +749,26 @@ QString RunManual::GetGCodeV2()
 			}
 		}
 	}
+
+	// 这个算法会自动处理起点<终点的情况，无需用户区分输入正负数。
+	//bool negativeJgyl = false;
+	//if (realAxisLen == 1) {
+	//	// 起点<终点, 深度余量自动改为负数。
+	//	if (axisPositions[selectedAxisIndex] < toAxisLength[selectedAxisIndex])
+	//	{
+	//		negativeJgyl = true;
+	//	}
+	//}
+
+	//QString gcode = GetGCodeStatic(table1, table2, ui.inAbsolute->isChecked(), axisPositions, &this->mapLine2Row);
+	QString gcode = GetGCodeOSub803(table2);
+	if (gcode.isEmpty()) {
+		return QString();
+	}
+	gcode += "\n\n";
+	gcode += "G90 G11 G24 T84\n";
+
+	
 	for (int i = 0; i < axisLen; ++i) {
 		double d = axisPositions[i];
 		gcode += QString("H%1   = %2\n").arg(661 + i).arg(d, 0, 'f', 3);
@@ -814,15 +857,33 @@ QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTabl
 
 
 	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+
+	// 不能用G91相对坐标，不然多个G01坐标会递增
+	// 2:我们现在加工完成或者暂停后都是会回到起点的，这个是没问题的
+	//if (!isAbsolutePosition) {
+	//	////// G90: To G91
+	//	for (int i = 0; i < axisLen; ++i) {
+	//		if (toAxisLength[i] != INFINITE && axisPositions != NULL) {
+	//			toAxisLength[i] += axisPositions[i];
+	//		}
+	//	}
+	//}
 	if (!isAbsolutePosition) {
-		////// G90: To G91
-		for (int i = 0; i < axisLen; ++i) {
-			if (toAxisLength[i] != INFINITE && axisPositions != NULL) {
-				toAxisLength[i] += axisPositions[i];
+		if (axisPositions != NULL) {
+			for (int i = 0; i < axisLen; ++i) {
+				axisPositions[i] = 0;
 			}
+		} 
+	}
+
+	bool negativeJgyl = false;
+	if (realAxisLen == 1) {
+		// 起点<终点, 深度余量自动改为负数。
+		if (axisPositions[selectedAxisIndex] < toAxisLength[selectedAxisIndex])
+		{
+			negativeJgyl = true;
 		}
 	}
-	
 
 	QString gcode;
 	double gcode_dbhhw = -1;
@@ -840,7 +901,7 @@ QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTabl
 	}
 	if (realAxisLen == 1) {
 		for (int i = 0; i < realAxisLen; ++i) {
-			gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[selectedAxisIndex]);
+			gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[selectedAxisIndex], 0, 'f', 3);
 		}
 	} else {
 		gcode += "H333 = +0000.0000\n";
@@ -856,18 +917,13 @@ QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTabl
 	}
 
 	gcode += "\n\n";
-	gcode += "G90 G11 G24 T84\n";
-
-	//if (ui.inAbsolute->isChecked())
-	//	gcode += "G90\n";
-	//else
-	//	gcode += "G91\n";
 	
-	// 不能用G91相对坐标，不然多个G01坐标会递增
-	//if (dataForm->getValue("inAbsolute") == "true")
-	//	gcode += "G90\n";
-	//else
-	//	gcode += "G91\n";
+	if (isAbsolutePosition)
+		gcode += "G90 ";
+	else
+		gcode += "G91 ";
+	gcode += "G11 G24 T84\n";
+	
 
 	gcode += QString("MDIV%1 AOD%2 LEJL%3 LEJS%4\n")
 		.arg(DataForms::getInstance()->getDataForm("xitongshezhi3")->getValue("JGJSPDFGS").toInt())
@@ -951,7 +1007,10 @@ M02
 
 			QString gcode3;
 			for (int j = 0; j < realAxisLen; ++j) {
-				gcode3 += QString("%1H%2+%3").arg(GCodeTool::axis[selectedAxisIndex]).arg(100 + j).arg(table2->getValue(i, 5));
+				if (!negativeJgyl)
+					gcode3 += QString("%1H%2+%3").arg(GCodeTool::axis[selectedAxisIndex]).arg(100 + j).arg(table2->getValue(i, 5));
+				else
+					gcode3 += QString("%1H%2-%3").arg(GCodeTool::axis[selectedAxisIndex]).arg(100 + j).arg(table2->getValue(i, 5));
 			}
 			QString doM04 = "";
 			DataForm* dataForm = DataForms::getInstance()->getDataForm("xitongshezhi3");

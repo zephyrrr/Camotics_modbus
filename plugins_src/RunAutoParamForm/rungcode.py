@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import os
 from datetime import datetime
 import sys
@@ -195,7 +195,7 @@ def get_data_by_csv(csv_file_path, where = '', order_by = '', count = 1):
     #     return None
 
 
-def get_ccode(r, other_cs):
+def get_ccode(r, other_cs, inJgz):
     #print(r)
     s = f"C{int(r['C NO.']):03d} = "
     columns = 'ON   OFF MA  IP  SV  UP  DN  LN  LP  STEP    PL  V   HP  PP  C   S   L   AL  JS  JM  OC  LD'.split()
@@ -207,6 +207,13 @@ def get_ccode(r, other_cs):
             v = other_cs[c]
         else:
             v = ''
+
+        if inJgz != 'Z':
+            if c == 'JS':
+                v = int(v / 4)
+                print(v)
+            elif c == 'UP':
+                v = int(v / 2)
         s += f"{v} "
     return s
 
@@ -293,7 +300,7 @@ if __name__ == "__main__":
                 print('!!!duplicate result: ', r1)
             elif len(r1) == 0:
                 raise Exception('No data found in 库.csv for the given parameters with 切入=1')
-        ret_lines.append(get_ccode(r1[0], other_cs))
+        ret_lines.append(get_ccode(r1[0], other_cs, inJgz))
         to_cs.append(int(r1[0]['C NO.']))
         to_cmyls.append(float(r1[0]['侧面余量']))
         to_dbyls.append(float(r1[0]['底部余量']))
@@ -309,7 +316,7 @@ if __name__ == "__main__":
             if float(r2[i]['侧面余量']) > inDbhhw:
                 continue
             #print(get_ccode(r2[i], other_cs))
-            ret_lines.append(get_ccode(r2[i], other_cs))
+            ret_lines.append(get_ccode(r2[i], other_cs, inJgz))
             to_cs.append(int(r2[i]['C NO.']))
             to_cmyls.append(float(r2[i]['侧面余量']))
             to_dbyls.append(float(r2[i]['底部余量']))
@@ -332,7 +339,10 @@ if __name__ == "__main__":
         ret_lines.append(f'H101 =   {B12}')
         B10 = inYdms
         #ret_lines.append('H102 =   {0}'.format('000' if B10 == '无' else ('010' if B10 == '自由' else ('020' if B10 == '锁定' else '300'))))
-        ret_lines.append('H102 =   {0}'.format('000' if B10 == 0 else ('010' if B10 == 1 else ('020' if B10 == 2 else '300'))))
+        final_ln = ['0', '0', '0']
+        final_ln[0] = '0' if B10 == 0 else ('0' if B10 == 1 else ('2' if B10 == 2 else '3'))
+        final_ln[2] = '0' if inJgz == 'Z' else ('1' if inJgz == 'Y' else ('2' if inJgz == 'X' else '0'))
+        ret_lines.append('H102 =   {0}'.format(''.join(final_ln)))
 
         for i in range(len(to_cs)):
             if to_rows[i] and to_rows[i]['定时'] and to_rows[i]['定时时间']:

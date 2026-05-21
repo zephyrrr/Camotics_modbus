@@ -73,6 +73,11 @@ RunAutoParamForm::RunAutoParamForm(QWidget* parent) :
 
 void RunAutoParamForm::ReloadData4Jgmj()
 {
+	// 形状为螺牙时，摇动模式自动设为锁定。
+	if (ui->inDjxz->currentIndex() == 6) {
+		ui->inYdms->setCurrentIndex(2);
+	}
+
 	ui->inCcd->clear(); // 先清空
 
 	ui->inJgmj->blockSignals(true);

@@ -1,12 +1,27 @@
-﻿1.5.0
-1. 测试PLC功能
-2. 数据文件整理，分成系统目录，用户目录和项目目录
-	系统目录：放置系统相关的文件，系统设置文件等。"cp.db", "qGlobal.ini", "qModMaster.ini", "xitongshezhi*_data.json", "fangdiancanshu_global_data.json", "luojubuchang*_data.json"
-	用户目录："ncmachine.json", "settings.json", "work.db", "qcnc.dat", "nc", "default", "logs"
+##1.5.1
+1. 数据文件整理，分成系统目录，用户目录和项目目录。
+	系统目录："C:/Program Fles/***/data", 放置系统相关的文件，用户不能修改。"cp.db", "qGlobal.ini", "qModMaster.ini", "xitongshezhi*_data.json", "fangdiancanshu_global_data.json", "luojubuchang*_data.json"
+	用户目录：默认为"D:/workdata/"，可在qGlobal.ini中修改，注意用"/"。 "ncmachine.json", "settings.json", "work.db", "qcnc.dat", "nc", "default", "logs"
 	项目目录：用户目录下的default 目录，保存各个窗口的值
-3. 蜂鸣器问题：按了手控盒按键后，需要多发送一次蜂鸣器指令，第一次会“噗”一声，第二次才会响“ 这个你可以看看手控盒程序，目前我是多发一次
-4. 位置更新问题(对刀问题)：各个Machine维护各自的Position，需要更新
-5. 插件Plugin翻译问题
+
+1.5.0
+1. 测试PLC功能
+2. 蜂鸣器问题：按了手控盒按键后，需要多发送一次蜂鸣器指令，第一次会“噗”一声，第二次才会响。这个你可以看看手控盒程序，目前我是多发一次
+3. 位置更新问题(对刀未执行LOC问题)：各个Machine维护各自的Position，需要更新
+4. 插件Plugin翻译问题
+
+1. 暂停后再启动，完成后的蜂鸣器提示音没有了。
+2. 自动参数摇动模式为锁定，生成的参数LN为2xx，百位数设为2
+3、形状为螺牙时，摇动模式自动设为锁定。
+4. 加工轴不是Z轴时，自动生成的参数中，JS缩小至1/4，UP缩小至1/2
+5. 位置记忆中，点击记录的时候，保存并显示记录日期时间，每次记录的时候更新覆盖。显示的位置可以放在记录按钮的下方。(主要为了方便客户记录加工时长)
+6. 手动加工，加工方向反向时(起点〈终点)，深度余量自动改为负数。
+7. 限位报警正方向提示不正确，正方也是提示负方向报警，三个轴都是。(X+限位提示的是X-限位报警。)
+8. 绝对坐标动里面是加工深度使用相对坐标时，G代码保存的代码仍然是绝对坐标
+9、自动参数里，LN的个位数根据选定的加工轴自动改变，Z轴入0，Y轴为1，X轴为2，多轴默认为0。
+10. M04处理：回退在下位机处理，上位机也要设置Position到初始位置
+11. 位置记忆界面处理
+
 
 ##1.4.1
 1. 多轴加工G代码输出格式更改

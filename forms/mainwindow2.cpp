@@ -152,6 +152,20 @@ void ModbusMain::addNormalTasks()
 	ModbusTask* task3 = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_JOG_DUANLU, TMBS_MAP0_ID_JOG_DUANLU_LEN);
 	task3->setPostFunction(function3, "Read Jog Duanlu");
 	m_modbusAdapter->addTaskAsNormal(task3, 100, false);
+
+	if (MODBUS_CONNECTION_COUNT > 1) {
+		if (m_modbusAdapter->getModbusContext(1) != NULL) {
+			std::function<void(int, ModbusTask*, ModbusAdapter*)> function4 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+				if (ret == -1)
+					return;
+				uint16_t* readData = adapter->GetReadedData16();
+				m_ncMachine->ConvertModbusData4PlcState(task, readData);
+				};
+			ModbusTask* task4 = m_modbusAdapter->getTaskRead(TMBS_MAP1_ID_PLCSTATE, 3, 1);
+			task4->setPostFunction(function4, "Read PLC State");
+			m_modbusAdapter->addTaskAsNormal(task4, 100);
+		}
+	}
 }
 
 QtWin2::QtWin2(QWidget* parent)
@@ -410,13 +424,16 @@ QtWin2::QtWin2(QWidget* parent)
 			AddChildWindow(tr("CKSZ"), layout1, [this]() {
 				return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(0));
 				});
-			//AddChildWindow(tr("CKSZ"), layout1, [this]() {
-			//	//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
-			//	//ccw->SetContent(new SettingsModbusTCP(ccw, m_modbusCommSettings));
-			//	//return ccw;
-			//	return new SettingsModbusTCP(this->ui->stackedChildWidget, m_modbusCommSettings);
 
-			//	});
+			if (MODBUS_CONNECTION_COUNT > 1) {
+				AddChildWindow(tr("TCPIP"), layout1, [this]() {
+					//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
+					//ccw->SetContent(new SettingsModbusTCP(ccw, m_modbusCommSettings));
+					//return ccw;
+					return new SettingsModbusTCP(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(1));
+					});
+			}
+
 			AddChildWindow(tr("GY"), layout1, [this]() {
 				return new AboutForm(this->ui->stackedChildWidget);
 				});
@@ -1434,8 +1451,10 @@ void QtWin2::UpdateStateByTimer()
 	if (m_pollTimerCounter >= 60) {
 		m_pollTimerCounter = 0;
 
+		int serialPortConnectIndex = 0;
 		bool serialPortIsFound = false;
 		QString targetPortName = "COM7";
+		targetPortName = m_modbusAdapter->getCommSettings(serialPortConnectIndex)->serialPortName();
 		QList<QSerialPortInfo> availablePorts = QSerialPortInfo::availablePorts();
 		for (const QSerialPortInfo& portInfo : availablePorts) {
 			if (portInfo.portName() == targetPortName) {
@@ -1445,7 +1464,7 @@ void QtWin2::UpdateStateByTimer()
 		if (!serialPortIsFound) {
 			m_serialPortNeedReconnect = true;
 		}
-		if (m_modbusAdapter->getErrorsCount() > 100)
+		if (m_modbusAdapter->getErrorsCount(serialPortConnectIndex) > 100)
 		{
 			m_serialPortNeedReconnect = true;
 		}
@@ -1563,7 +1582,7 @@ void QtWin2::UpdateState()
 					setNewLights = true;
 				}
 
-				QString s = NCMachine::GetRLSTDesc(state[0], state[1]);
+				QString s = m_ncMachine->GetRLSTDescAll(); // NCMachine::GetRLSTDesc(state[0], state[1]);
 				if (s.isEmpty()) {
 					ui->lblResultMessage->setText(tr("DDYX"));
 				}
@@ -1690,27 +1709,27 @@ void QtWin2::UpdateState()
 
 
 		if (m_ncMachine->GetInputFlag(0)) {
-			errorMsgs.append(tr("XXW"));
+			errorMsgs.append(tr("XXW1"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(1)) {
-			errorMsgs.append(tr("XXW"));
+			errorMsgs.append(tr("XXW2"));
 			inputFlagError = true;
 		}
 		if (m_ncMachine->GetInputFlag(2)) {
-			errorMsgs.append(tr("YXW"));
+			errorMsgs.append(tr("YXW1"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(3)) {
-			errorMsgs.append(tr("YXW"));
+			errorMsgs.append(tr("YXW2"));
 			inputFlagError = true;
 		}
 		if (m_ncMachine->GetInputFlag(4)) {
-			errorMsgs.append(tr("ZXW"));
+			errorMsgs.append(tr("ZXW1"));
 			inputFlagError = true;
 		}
 		else if (m_ncMachine->GetInputFlag(5)) {
-			errorMsgs.append(tr("ZXW"));
+			errorMsgs.append(tr("ZXW2"));
 			inputFlagError = true;
 		}
 
@@ -2040,7 +2059,7 @@ void QtWin2::LoadPluginsAsChildWindow()
 	}
 
 	// Load C++ plugins (DLL) - skip if Python version exists
-	QList<IDoPlugin*> plugins = PluginUtils::loadPlugin<IDoPlugin>("main");
+	QList<IDoPlugin*> plugins = PluginUtils::loadDllPlugin<IDoPlugin>("main");
 	for (IDoPlugin* it : plugins) {
 		QString menuText = it->getName();
 

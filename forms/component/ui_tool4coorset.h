@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -25,6 +26,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *btnRecord;
     QPushButton *btnBatchSet;
+    QLineEdit *lblRecordDate;
 
     void setupUi(QWidget *Tool4CoorSetClass)
     {
@@ -52,6 +54,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        lblRecordDate = new QLineEdit(Tool4CoorSetClass);
+        lblRecordDate->setObjectName(QString::fromUtf8("lblRecordDate"));
+        lblRecordDate->setReadOnly(true);
+
+        verticalLayout->addWidget(lblRecordDate);
+
 
         retranslateUi(Tool4CoorSetClass);
 
@@ -63,6 +71,7 @@ public:
         Tool4CoorSetClass->setWindowTitle(QCoreApplication::translate("Tool4CoorSetClass", "Tool4CoorSet", nullptr));
         btnRecord->setText(QCoreApplication::translate("Tool4CoorSetClass", "JL", nullptr));
         btnBatchSet->setText(QCoreApplication::translate("Tool4CoorSetClass", "SZ", nullptr));
+        lblRecordDate->setText(QString());
     } // retranslateUi
 
 };

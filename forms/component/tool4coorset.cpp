@@ -18,6 +18,13 @@ Tool4CoorSet::Tool4CoorSet(NCMachine* ncMachine, QWidget* parent)
 Tool4CoorSet::~Tool4CoorSet()
 {}
 
+void Tool4CoorSet::UpdateState()
+{
+    BaseChildWindow::LoadData(this);
+
+    QToolWidget::UpdateState();
+}
+
 void Tool4CoorSet::on_btnRecord_clicked()
 {
 	auto controller = this->ncMachine->GetController();
@@ -26,6 +33,10 @@ void Tool4CoorSet::on_btnRecord_clicked()
     if (!FormUtils::MessageBoxYesNo(tr("JLZBXSJ").arg(Tool4SwitchCoor::GetCoorName(csNow)))) {
         return;
     }
+
+    QDateTime now = QDateTime::currentDateTime();
+    ui.lblRecordDate->setText(now.toString("yy-MM-dd hh:mm:ss"));
+    BaseChildWindow::SaveData(this);
 
     double vsNow[LOC_AXIS_LEN + 1] = {};
 

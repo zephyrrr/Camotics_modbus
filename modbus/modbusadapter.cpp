@@ -26,7 +26,7 @@ ModbusAdapter* s_instance;
 
 ModbusAdapter::ModbusAdapter(QObject* parent) :
 	QObject(parent), m_taskThread(NULL),
-	m_useThread(true), m_packets(0), m_errors(0), m_currentGuiTask(0, 0, 0, 0), m_timerCount(0),
+	m_useThread(true), m_packets{ 0 }, m_errors{ 0 }, m_currentGuiTask(0, 0, 0, 0), m_timerCount(0),
 	m_replayLogFile(nullptr), m_regModel(NULL), m_rawModel(NULL)
 {
 	if (true || cb::Logger::instance().getVerbosity() >= 10) {
@@ -204,6 +204,7 @@ void ModbusAdapter::modbusConnectRTU(QString port, int baud, QChar parity, int d
 		modbus_free(modbus);
 		//mainWin->showUpInfoBar(tr("Connection failed\nCould not connect to serial port."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection failed. Could not connect to serial port";
+		return;
 	}
 	else {
 		//error recovery mode
@@ -264,6 +265,7 @@ void ModbusAdapter::modbusConnectTCP(QString ip, int port, int timeOut, int conn
 		modbus_free(modbus);
 		//mainWin->showUpInfoBar(tr("Connection failed\nCould not connect to TCP port."), InfoBar::Error);
 		//QLOG_ERROR()<<  "Connection to IP : " << ip << ":" << port << "...failed. Could not connect to TCP port";
+		return;
 	}
 	else {
 		//error recovery mode
@@ -427,8 +429,8 @@ void ModbusAdapter::modbusTransaction()
 				}
 			};
 
-			ModbusTask* newtask = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs);
-			newtask->setPostFunction(function, "Normal Task to update GUI");
+			ModbusTask* newtask = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs, task.connectionIndex);
+			newtask->setPostFunction(function, "Normal Task to update state");
 			addTask(newtask, TASK_TIMER_PRIORITY);
 		}
 
@@ -492,7 +494,7 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 	//}
 
 	QTime time1 = QTime::currentTime();
-	m_packets += 1;
+	m_packets[connectionIndex] += 1;
 	int ret = -1; //return value from read functions
 	bool is16Bit = false;
 
@@ -543,7 +545,7 @@ int ModbusAdapter::modbusReadDataRaw(int slave, int functionCode, int startAddr,
 		}
 	}
 	else {
-		m_errors += 1;
+		m_errors[connectionIndex] += 1;
 		modbus_flush(modbus); //flush data
 	}
 
@@ -585,7 +587,7 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	//}
 
 	QTime time1 = QTime::currentTime();
-	m_packets += 1;
+	m_packets[connectionIndex] += 1;
 	int ret = -1; //return value from functions
 
 	modbus_set_slave(modbus, slave);
@@ -636,7 +638,7 @@ int ModbusAdapter::modbusWriteDataRaw(int slave, int functionCode, int startAddr
 	}
 	else
 	{
-		m_errors += 1;
+		m_errors[connectionIndex] += 1;
 		modbus_flush(modbus); //flush data
 	}
 
@@ -1035,8 +1037,9 @@ void ModbusAdapter::addItems(int startAddr, int numOfRegs)
 
 void ModbusAdapter::resetCounters()
 {
-	m_packets = 0;
-	m_errors = 0;
+	std::fill(m_packets, m_packets + MODBUS_CONNECTION_COUNT, 0);
+	std::fill(m_errors, m_errors + MODBUS_CONNECTION_COUNT, 0);
+
 	m_msecComm = 0;
 	m_timeStart = QDateTime::currentDateTime();
 	emit(refreshView());

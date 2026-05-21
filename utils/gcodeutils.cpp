@@ -620,154 +620,154 @@ QString GCodeUtils::Sandiandingwei(double inKuaiJingR, double inKuaiJingZ, doubl
     return gcode;
 }
 
-QString GCodeUtils::RunManual()
-{
-    DataTable table11;
-    DataTable table22;
-	DataTable* table1 = &table11;
-	DataTable* table2 = &table22;
-
-    QString filePath2 = SystemSettings::GetDataFilePath("sdjg");
-    filePath2 = SystemSettings::AppendDataFilePath(filePath2, "sdjg_table2");
-    table2->deserialize(filePath2);
-
-    QString filePath1 = SystemSettings::GetDataFilePath("sdjg");
-    filePath1 = SystemSettings::AppendDataFilePath(filePath1, "sdjg_table1");
-    table1->deserialize(filePath1);
-
-    DataForm* dataForm = DataForms::getInstance()->getDataForm("sdjg");
-
-    //
-    QStringList toAxis, toAxisLength;
-    for (int i = 0; i < 3; ++i) {
-        if (table1->getValue(i, -1) != "True") {
-            continue;
-        }
-
-        QString s = table1->getValue(i, 0);
-        if (!s.isEmpty()) {
-            //double d = s.toDouble();
-            toAxis.append(QString("XYZ").at(i));
-            toAxisLength.append(s);
-            break;
-        }
-    }
-    if (toAxis.isEmpty() || toAxis.count() > 3) {
-        return "";
-    }
-
-    QString gcode;
-    for (int i = 0; i < toAxis.size(); ++i) {
-        gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[i]);
-    }
-
-    gcode += QString("G11\n");
-
-    //if (ui.inAbsolute->isChecked())
-    if (dataForm->getValue("inAbsolute").toLower() == "true")
-        gcode += "G90\n";
-    else
-        gcode += "G91\n";
-
-    gcode += QString(R"(M98P0000;
-;
-)");
-    gcode += QString(R"(T85;
-M02;
-;
-N0000;
-)");
-
-
-    gcode += "T84;\n";
-    QString cCode;
-    cCode += QString::fromStdString(NCMachineParametersC::GetNamesAsString());
-
-    QHash<int, QString> cNos;
-    for (int i = 0; i < table2->getDataCount(); ++i) {
-        if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
-            continue;
-        }
-        if (table2->getValue(i, 1).isEmpty()) {
-            continue;
-        }
-
-        if (table2->getValue(i, 6) == "T") {
-            gcode += QString("G85T%1;\n").arg(table2->getValue(i, 7));
-        }
-        else if (table2->getValue(i, 6) == "Z") {
-            gcode += QString("G85Z%1;\n").arg(table2->getValue(i, 7));
-        }
-        QString s;
-        if (table2->getDataYCount() >= 10) {
-            int row = i;
-            int nowcNo = table2->getValue(row, 1).toInt();
-            QString c = table2->getValue(i, 9);
-            if (c.isEmpty()) {
-                // will not happen
-                continue;
-            }
-
-            c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
-
-            if (cNos.contains(nowcNo)) {
-                if (cNos[nowcNo] == c) {
-                    // ok, it's same
-                }
-                else {
-                    int nextcNo = nowcNo + 10;
-                    while (true) {
-                        if (!cNos.contains(nextcNo)) {
-                            c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
-                            nowcNo = nextcNo;
-
-                            cCode += c;
-                            cNos[nowcNo] = c;
-                            break;
-                        }
-                        else {
-                            nextcNo += 10;
-                        }
-                    }
-                }
-            }
-            else {
-                cCode += c;
-                cNos[nowcNo] = c;
-            }
-
-            QString gcode3;
-            for (int j = 0; j < toAxis.size(); ++j) {
-                gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
-            }
-
-            s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
-                .arg(QString::number(nowcNo).rightJustified(3, '0'))
-                .arg(table2->getValue(i, 2))
-                .arg(table2->getValue(i, 3))
-                .arg(table2->getValue(i, 4))
-                .arg(gcode3);
-        }
-        else {
-            QString gcode3;
-            for (int j = 0; j < toAxis.size(); ++j) {
-                gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
-            }
-
-            s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
-                .arg(QString::number(table2->getValue(i, 1).toInt()).rightJustified(3, '0'))
-                .arg(table2->getValue(i, 2))
-                .arg(table2->getValue(i, 3))
-                .arg(table2->getValue(i, 4))
-                .arg(gcode3);
-        }
-        gcode += s;
-    }
-    //gcode += QString("G00 %1+0.000;\n").arg(toAxis);
-    gcode += QString("M99; ");
-
-    if (!cCode.isEmpty()) {
-        gcode = cCode + "\n" + gcode;
-    }
-    return gcode;
-}
+//QString GCodeUtils::RunManual()
+//{
+//    DataTable table11;
+//    DataTable table22;
+//	DataTable* table1 = &table11;
+//	DataTable* table2 = &table22;
+//
+//    QString filePath2 = SystemSettings::GetDataFilePath("sdjg");
+//    filePath2 = SystemSettings::AppendDataFilePath(filePath2, "sdjg_table2");
+//    table2->deserialize(filePath2);
+//
+//    QString filePath1 = SystemSettings::GetDataFilePath("sdjg");
+//    filePath1 = SystemSettings::AppendDataFilePath(filePath1, "sdjg_table1");
+//    table1->deserialize(filePath1);
+//
+//    DataForm* dataForm = DataForms::getInstance()->getDataForm("sdjg");
+//
+//    //
+//    QStringList toAxis, toAxisLength;
+//    for (int i = 0; i < 3; ++i) {
+//        if (table1->getValue(i, -1) != "True") {
+//            continue;
+//        }
+//
+//        QString s = table1->getValue(i, 0);
+//        if (!s.isEmpty()) {
+//            //double d = s.toDouble();
+//            toAxis.append(QString("XYZ").at(i));
+//            toAxisLength.append(s);
+//            break;
+//        }
+//    }
+//    if (toAxis.isEmpty() || toAxis.count() > 3) {
+//        return "";
+//    }
+//
+//    QString gcode;
+//    for (int i = 0; i < toAxis.size(); ++i) {
+//        gcode += QString("H%1   = %2\n").arg(100 + i).arg(toAxisLength[i], 0, 'f', 3);
+//    }
+//
+//    gcode += QString("G11\n");
+//
+//    //if (ui.inAbsolute->isChecked())
+//    if (dataForm->getValue("inAbsolute").toLower() == "true")
+//        gcode += "G90\n";
+//    else
+//        gcode += "G91\n";
+//
+//    gcode += QString(R"(M98P0000;
+//;
+//)");
+//    gcode += QString(R"(T85;
+//M02;
+//;
+//N0000;
+//)");
+//
+//
+//    gcode += "T84;\n";
+//    QString cCode;
+//    cCode += QString::fromStdString(NCMachineParametersC::GetNamesAsString());
+//
+//    QHash<int, QString> cNos;
+//    for (int i = 0; i < table2->getDataCount(); ++i) {
+//        if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
+//            continue;
+//        }
+//        if (table2->getValue(i, 1).isEmpty()) {
+//            continue;
+//        }
+//
+//        if (table2->getValue(i, 6) == "T") {
+//            gcode += QString("G85T%1;\n").arg(table2->getValue(i, 7));
+//        }
+//        else if (table2->getValue(i, 6) == "Z") {
+//            gcode += QString("G85Z%1;\n").arg(table2->getValue(i, 7));
+//        }
+//        QString s;
+//        if (table2->getDataYCount() >= 10) {
+//            int row = i;
+//            int nowcNo = table2->getValue(row, 1).toInt();
+//            QString c = table2->getValue(i, 9);
+//            if (c.isEmpty()) {
+//                // will not happen
+//                continue;
+//            }
+//
+//            c = QString::fromStdString(NCMachineParametersC::FormatCCode(EUtils::QString2StdString(c)));
+//
+//            if (cNos.contains(nowcNo)) {
+//                if (cNos[nowcNo] == c) {
+//                    // ok, it's same
+//                }
+//                else {
+//                    int nextcNo = nowcNo + 10;
+//                    while (true) {
+//                        if (!cNos.contains(nextcNo)) {
+//                            c = c.replace("C" + QString::number(nowcNo).rightJustified(3, '0') + " = ", "C" + QString::number(nextcNo).rightJustified(3, '0') + " = ");
+//                            nowcNo = nextcNo;
+//
+//                            cCode += c;
+//                            cNos[nowcNo] = c;
+//                            break;
+//                        }
+//                        else {
+//                            nextcNo += 10;
+//                        }
+//                    }
+//                }
+//            }
+//            else {
+//                cCode += c;
+//                cNos[nowcNo] = c;
+//            }
+//
+//            QString gcode3;
+//            for (int j = 0; j < toAxis.size(); ++j) {
+//                gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
+//            }
+//
+//            s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
+//                .arg(QString::number(nowcNo).rightJustified(3, '0'))
+//                .arg(table2->getValue(i, 2))
+//                .arg(table2->getValue(i, 3))
+//                .arg(table2->getValue(i, 4))
+//                .arg(gcode3);
+//        }
+//        else {
+//            QString gcode3;
+//            for (int j = 0; j < toAxis.size(); ++j) {
+//                gcode3 += QString("%1H%2+%3 ").arg(toAxis[j]).arg(100 + j).arg(table2->getValue(i, 5));
+//            }
+//
+//            s = QString("C%1 STEP%4 LN%2 LP%3 G01 %5 M04;\n")
+//                .arg(QString::number(table2->getValue(i, 1).toInt()).rightJustified(3, '0'))
+//                .arg(table2->getValue(i, 2))
+//                .arg(table2->getValue(i, 3))
+//                .arg(table2->getValue(i, 4))
+//                .arg(gcode3);
+//        }
+//        gcode += s;
+//    }
+//    //gcode += QString("G00 %1+0.000;\n").arg(toAxis);
+//    gcode += QString("M99; ");
+//
+//    if (!cCode.isEmpty()) {
+//        gcode = cCode + "\n" + gcode;
+//    }
+//    return gcode;
+//}

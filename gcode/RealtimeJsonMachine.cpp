@@ -591,8 +591,9 @@ void RealtimeJsonMachine::message(const std::string& s) {
             QStringList ss = s2.split(' ');
             JSON::ValuePtr value = JSON::Factory().createDict();
             value->insert("type", ss[0].mid(3).toStdString());
-            value->insert("s", ss[1].toStdString());
-
+            if (ss.length() > 1) {
+                value->insert("s", ss[1].toStdString());
+            }
             sink->insert("type", "custom");
             sink->insert("value", value);
         }

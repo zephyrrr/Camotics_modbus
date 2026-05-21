@@ -76,22 +76,22 @@ XiTongSheZhiForm::XiTongSheZhiForm(QWidget *parent)
 
 		dynamicForm->setValue("JXYD_X+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_X+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X+", tr("XJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_X+", tr("XJXWZ1"));
 		dynamicForm->setValue("JXYD_X-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_X-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_X-", tr("XJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_X-", tr("XJXWZ2"));
 		dynamicForm->setValue("JXYD_Y+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Y+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y+", tr("YJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_Y+", tr("YJXWZ1"));
 		dynamicForm->setValue("JXYD_Y-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Y-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Y-", tr("YJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_Y-", tr("YJXWZ2"));
 		dynamicForm->setValue("JXYD_Z+", "9999999");
 		dynamicForm->setRegexValidation("JXYD_Z+", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z+", tr("ZJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_Z+", tr("ZJXWZ1"));
 		dynamicForm->setValue("JXYD_Z-", "-9999999");
 		dynamicForm->setRegexValidation("JXYD_Z-", "^[+-]?\\d{1,9}$");
-		dynamicForm->setLabelCaption("JXYD_Z-", tr("ZJXWZ"));
+		dynamicForm->setLabelCaption("JXYD_Z-", tr("ZJXWZ2"));
 
 		dynamicForm->setValue("AdGain", "1.0");
 		dynamicForm->setValue("AdCount0V", "2023");

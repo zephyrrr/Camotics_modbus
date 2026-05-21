@@ -192,15 +192,20 @@ Bit4~6：保留
 Bit7：伺服电机报警标志
 Bit8~15：保留
 	*/
-	bool GetInputFlag(int bitIndex);
+	bool GetInputFlag(int bitIndex, int connectionIndex = 0);
 	QString GetDebugMsg();
 	bool GetIsJogDuanlu() { return m_isJogDuanlu; }
 
 	int GetTargetPosOne() const { return m_targetPosX; }
 	uint16_t GetTargetType() const { return m_targetType; }
 
+	QString GetRLSTDescAll();
+
 	static QString GetStateDesc(uint16_t state);
 	static QString GetRLSTDesc(uint16_t rslt, uint16_t para);
+
+	static QString GetPlcStateDesc(uint16_t state);
+	static QString GetPlcRLSTDesc(uint16_t rslt, uint16_t para);
 
 	// Modbus
 	ModbusAdapter* getModbus() { return m_modbusAdapter; }
@@ -211,7 +216,7 @@ Bit8~15：保留
 	QList<ModbusTask*> executeCmdsByAddress(int address, std::vector<uint16_t> vs);
 	QList<ModbusTask*> executeCmdsByTncOrder(int tncOrder, std::vector<uint16_t> vs);
 
-	ModbusTask* executeCmdWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> func, std::string desc = "");
+	ModbusTask* executeCmdWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> func, std::string desc = "", int connectionIndex = 0);
 
 	//std::function<void(int, ModbusTask*, ModbusAdapter*)> waitUntilNctState(uint16_t state, int timeout = TIMEOUT_WAIT_COUNT);
 	//std::function<void(int, ModbusTask*, ModbusAdapter*)> waitUntilRLST(uint16_t rslt, uint16_t para, int timeout = TIMEOUT_WAIT_COUNT);
@@ -222,6 +227,10 @@ Bit8~15：保留
 	std::function<int()> waitUntilRLST(uint16_t rslt, uint16_t para = 0);
 	std::function<void(int, ModbusTask*, ModbusAdapter*)> convertWaitFunction(std::function<int()> func2, int timeout = TIMEOUT_WAIT_COUNT);
 
+	std::function<int()> waitPlcUntilNctState(uint16_t state);
+	std::function<int()> waitPlcUntilRLST(uint16_t rslt, uint16_t para = 0);
+
+	std::function<int()> checkInputIO(uint16_t addr, bool v, int connectionIndex=0);
 	// 设置机械坐标，目前只能清零
 	void SetPosOne(int axis, int value);
 
@@ -296,6 +305,8 @@ private:
 	// PLC state (connection 1 - TCP)
 	std::atomic<int> m_statePlcDirty = 1;
 	cb::Vector<3, uint16_t> m_statePlc;
+	// 端口信息，等
+	cb::Vector<2, uint16_t> m_inputFlagPlc;
 
 	// 手动移动标志
 	uint16_t m_scamanulFlag;

@@ -33,10 +33,15 @@ WeiZhiJiYiForm::WeiZhiJiYiForm(QWidget *parent) :
     connect(tabBar, &QTabBar::currentChanged, [this](int index) {
 		int tabIndex = tabBar->currentIndex();
         this->LoadData();
+        // 1. 先关闭界面更新
+        this->setUpdatesEnabled(false);
+        QString tabIndexStr = (tabIndex == 0) ? "" : QString::number(tabIndex);
         for (int j = 0; j < POS_SET_COUNT_PERPAGE; ++j) {
-            this->inButtons[j]->setText(tr("JY") + QString("%1").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
-            this->inButtons2[j]->setText(tr("YD") + QString("%1").arg(tabIndex == 0 ? "" : QString::number(tabIndex)).arg(j));
+            this->inButtons[j]->setText(tr("JY") + tabIndexStr + QString::number(j));
+            this->inButtons2[j]->setText(tr("YD") + tabIndexStr + QString::number(j));
         }
+        // 3. 操作完成后，重新开启界面更新（此时会触发一次完整的重绘）
+        this->setUpdatesEnabled(true);
         });
 
     QTableWidget* table = new QTableWidget(POS_SET_COUNT_PERPAGE + 2, 7, this);

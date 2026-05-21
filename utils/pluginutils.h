@@ -3,6 +3,8 @@
 #include <QList>
 #include <QHash>
 #include <QMap>
+#include <QDir>
+#include <QCoreApplication>
 #include <QLayout>
 #include "PythonQtRuntime.h"
 #include "../utils/simplecrypt.h"
@@ -23,11 +25,9 @@ struct PythonPluginInfo {
 
 class PluginUtils
 {
-public:
-	template <typename T>
-	static QList<T*> loadPlugin(const QString &pluginPath) {
-        QList<T*> ret;
-
+private:
+    static QDir GetPluginDir(const QString& pluginPath)
+    {
         QDir pluginsDir(QCoreApplication::applicationDirPath());
 #if defined(Q_OS_WIN)
         if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
@@ -39,8 +39,17 @@ public:
             pluginsDir.cdUp();
         }
 #endif
-        pluginsDir.cd("plugins");
+        pluginsDir.cd(PLUGIN_PATH);
         pluginsDir.cd(pluginPath);
+        return pluginsDir;
+    }
+
+public:
+	template <typename T>
+	static QList<T*> loadDllPlugin(const QString &pluginPath) {
+        QList<T*> ret;
+
+        QDir pluginsDir = GetPluginDir(pluginPath);
         const QStringList entries = pluginsDir.entryList(QStringList() << "*.dll", QDir::Files, QDir::Name);
         for (const QString& fileName : entries) {
             QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
@@ -61,6 +70,7 @@ public:
         return ret;
 	}
 
+
     static QMap<QString, QString> loadPythonScripts(const QString& pluginPath);
 
     // Load Python plugins with menu support
@@ -77,7 +87,12 @@ public:
     static bool verifyFile(const QString& filePath);
 	static QString encryptFile(const QString& filePath);
 	static QString decryptFile(const QString& filePath);
+    static bool isAllEnglish(const QString& str);
+
     static QVariant RunFile(const QString& fileName, QObject* window);
+
+
+
 private:
     static SimpleCrypt crypto;
 };

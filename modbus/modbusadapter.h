@@ -28,7 +28,7 @@
 #define TASK_TIMER_PRIORITY 2
 //#define TASK_DELAY_PRIORITY 1
 
-#define MODBUS_CONNECTION_COUNT 2
+#define MODBUS_CONNECTION_COUNT 1
 
 class ModbusAdapter;
 
@@ -97,8 +97,8 @@ public:
     void startPollTimer();
     void stopPollTimer();
 
-    int getPacketsCount() const { return m_packets; }
-    int getErrorsCount() const { return m_errors; }
+    int getPacketsCount(int connectionIndex = 0) const { return m_packets[connectionIndex]; }
+    int getErrorsCount(int connectionIndex = 0) const { return m_errors[connectionIndex]; }
     ulong getCommMSec() const { return m_msecComm;  }
     ulong getAllMSec() const { return m_timeStart.msecsTo(QDateTime::currentDateTime()); }
 
@@ -134,8 +134,8 @@ private:
     int m_scanRate = 200;
     QTimer *m_pollTimer;
     uint m_timerCount;
-    uint m_packets;
-    uint m_errors;
+    uint m_packets[MODBUS_CONNECTION_COUNT];
+    uint m_errors[MODBUS_CONNECTION_COUNT];
     ulong m_msecComm = 0;
     QDateTime m_timeStart;
 
@@ -172,7 +172,7 @@ public:
     
 public:
     void addTask(ModbusTask* task, int priority = 0);
-    void addTaskAsNormal(ModbusTask* task, int timeInterval, bool showInGui);
+    void addTaskAsNormal(ModbusTask* task, int timeInterval, bool showInGui = false);
     int getTaskCnt(int priority = 0) { assert(priority >= 0 && priority < TASKQUEUE_MAX_COUNT); return m_taskThread->getTasksCnt(priority); }
     void clearTasks(int priority = 0) { assert(priority >= 0 && priority < TASKQUEUE_MAX_COUNT); m_taskThread->clearTasks(priority);  assert(m_taskThread->getTasksCnt(priority) == 0); }
     int getTaskLastRet(int priority = 0) { assert(priority >= 0 && priority < TASKQUEUE_MAX_COUNT);  return m_taskThread->LastRets[priority]; }

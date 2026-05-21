@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4PosSetClass</class>
  <widget class="QWidget" name="Tool4PosSetClass">
@@ -13,32 +14,43 @@
    <string>Tool4PosSet</string>
   </property>
   <property name="styleSheet">
-   <string notr="true" />
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QPushButton" name="btnRecord">
-       <property name="text">
-        <string>JY</string>
-       </property>
-      </widget>
-     </item>
-      <item>
-        <widget class="QPushButton" name="btnCurrentPosIdx">
-          <property name="enabled">
-            <bool>false</bool>
-          </property>
-          <property name="text">
-            <string>1</string>
-          </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btnRecord">
+         <property name="text">
+          <string>JY</string>
+         </property>
         </widget>
-      </item>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnCurrentPosIdx">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnBatchSet">
+         <property name="text">
+          <string>SZ</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item>
-      <widget class="QPushButton" name="btnBatchSet">
+      <widget class="QLabel" name="lblRecordDate">
        <property name="text">
-        <string>SZ</string>
+        <string>TextLabel</string>
        </property>
       </widget>
      </item>
@@ -46,7 +58,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5" />
- <resources />
- <connections />
+ <layoutdefault spacing="5" margin="5"/>
+ <resources/>
+ <connections/>
 </ui>

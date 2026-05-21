@@ -1,4 +1,4 @@
-#include "tool4zeroandhalfaxis.h"
+﻿#include "tool4zeroandhalfaxis.h"
 #include "tool4zeroaxis.h"
 #include "tool4halfaxis.h"
 #include "tool4switchcoor.h"
@@ -108,7 +108,12 @@ void Tool4All::ShowIt(Tool4All* tool, int width, int height, int x, int y)
 	tool->setObjectName("tool4ZeroAndHalfAxis");
 	//tool->setParent(this);
 
-	int cnt = tool->ui.verticalLayout->count() - 1;
+	//int cnt = tool->ui.verticalLayout->count() - 1;
+	int cnt = 0;
+	for (QToolWidget* tool : tool->m_tools)
+	{
+		cnt += tool->GetHeightCount();
+	}
 	if (width > 0 && height > 0)
 	{
 		tool->setGeometry(0, 0, width, height);

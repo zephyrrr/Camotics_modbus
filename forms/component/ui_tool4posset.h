@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -22,10 +23,12 @@ class Ui_Tool4PosSetClass
 {
 public:
     QVBoxLayout *verticalLayout;
+    QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     QPushButton *btnRecord;
     QPushButton *btnCurrentPosIdx;
     QPushButton *btnBatchSet;
+    QLabel *lblRecordDate;
 
     void setupUi(QWidget *Tool4PosSetClass)
     {
@@ -37,6 +40,9 @@ public:
         verticalLayout->setSpacing(5);
         verticalLayout->setContentsMargins(5, 5, 5, 5);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setSpacing(5);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(5);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -57,7 +63,15 @@ public:
         horizontalLayout->addWidget(btnBatchSet);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout_2->addLayout(horizontalLayout);
+
+        lblRecordDate = new QLabel(Tool4PosSetClass);
+        lblRecordDate->setObjectName(QString::fromUtf8("lblRecordDate"));
+
+        verticalLayout_2->addWidget(lblRecordDate);
+
+
+        verticalLayout->addLayout(verticalLayout_2);
 
 
         retranslateUi(Tool4PosSetClass);
@@ -71,6 +85,7 @@ public:
         btnRecord->setText(QCoreApplication::translate("Tool4PosSetClass", "JY", nullptr));
         btnCurrentPosIdx->setText(QCoreApplication::translate("Tool4PosSetClass", "1", nullptr));
         btnBatchSet->setText(QCoreApplication::translate("Tool4PosSetClass", "SZ", nullptr));
+        lblRecordDate->setText(QCoreApplication::translate("Tool4PosSetClass", "TextLabel", nullptr));
     } // retranslateUi
 
 };

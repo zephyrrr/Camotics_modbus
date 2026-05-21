@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>Tool4CoorSetClass</class>
  <widget class="QWidget" name="Tool4CoorSetClass">
@@ -13,7 +14,7 @@
    <string>Tool4CoorSet</string>
   </property>
   <property name="styleSheet">
-   <string notr="true" />
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -34,9 +35,19 @@
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="QLineEdit" name="lblRecordDate">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
- <layoutdefault spacing="5" margin="5" />
- <resources />
- <connections />
+ <layoutdefault spacing="5" margin="5"/>
+ <resources/>
+ <connections/>
 </ui>

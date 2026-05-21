@@ -406,6 +406,8 @@
     <ClCompile Include="forms\auto\runautoone.cpp" />
     <ClCompile Include="forms\component\pythonpluginchildwindow.cpp" />
     <ClCompile Include="forms_v1\settingsmodbustcp.cpp" />
+    <ClCompile Include="modbus\NCMachineState.cpp" />
+    <ClCompile Include="utils\JsonTemplateUtil.cpp" />
     <ClCompile Include="modbus\SystemSettings.cpp" />
     <ClCompile Include="utils\LocaleUtils.cpp" />
     <ClCompile Include="utils\simplecrypt.cpp" />
@@ -581,6 +583,8 @@
     <QtMoc Include="utils\QTextFileModel.h" />
     <QtMoc Include="utils\QSqliteListModel.h" />
     <QtMoc Include="forms_v1\settingsmodbustcp.h" />
+    <ClInclude Include="modbus\NCMachineState.h" />
+    <ClInclude Include="utils\JsonTemplateUtil.h" />
     <ClInclude Include="modbus\SystemSettings.h" />
     <ClInclude Include="utils\LocaleUtils.h" />
     <ClInclude Include="plugins\iplugin.h" />
@@ -739,6 +743,7 @@
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)</QtUicDir>
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(RelativeDir)</QtUicDir>
     </QtUic>
+    <None Include="..\exe\x86-release\jsons\enable_loc.json" />
     <None Include="forms\mainwindow2.ui.old">
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)</QtUicDir>
       <QtUicDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(RelativeDir)</QtUicDir>

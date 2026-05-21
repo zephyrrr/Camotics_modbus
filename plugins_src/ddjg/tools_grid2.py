@@ -50,7 +50,12 @@ def load_stylesheet(filename):
         return ""
 
 def do():
-    current_dir = os.path.dirname(os.path.abspath(__file__))  
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 载入翻译 (与 main.cpp 方式一致)
+    translator = QTranslator()
+    translator.load(QLocale(), "ddjg", "_", current_dir)
+    QApplication.instance().installTranslator(translator)
 
     ui_file_name = os.path.join(current_dir, "pointgeneratorbygrid.ui")
     ui_file = QFile(ui_file_name)

@@ -26,6 +26,7 @@
 #include "utils/nfile.h"
 #include "utils/formutils.h"
 #include "utils/MathTool.h"
+#include "utils/JsonTemplateUtil.h"
 #include "forms/other/jiagongjiluform.h"
 
 //template class TaskThread<cb::JSON::Value>;
@@ -164,8 +165,9 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 	GetController()->setAxisAbsolutePosition('Z', m_pos.z() / 1000.0, unit);
 	GetController()->setAxisAbsolutePosition('U', m_pos.data[3] / 1000.0, unit);
 
-	ProcessPos();
 	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
+
+	ProcessPos();
 
 	return true;
 }
@@ -218,21 +220,36 @@ void NCMachine::ReadPlcState()
 		ConvertModbusData4PlcState(task, readData);
 	};
 	// Read from connection 1 (TCP), address offset by TCPIPBASEADDR
-	ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP1_ID_PLCSTATE - TCPIPBASEADDR, TMBS_MAP1_ID_PLCSTATE_LEN, 1);
+	ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP1_ID_PLCSTATE - TCPIPBASEADDR, TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN, 1);
 	task->setPostFunction(function, "Read PLC State");
-	m_modbusAdapter->addTask(task, 0);
+	m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 }
 
 bool NCMachine::ConvertModbusData4PlcState(ModbusTask* task, uint16_t* readData)
 {
 	assert(task->connectionIndex == 1);
 
+
 	if (readData == NULL) {
-		m_statePlc = cb::Vector<3, uint16_t>(0, 0, 0);
+		m_statePlc = cb::Vector<3, uint16_t>(NCT_STATE_INVALID, NCT_STATE_INVALID, NCT_STATE_INVALID);
+		//m_scamanulFlag = 0;
+		m_inputFlagPlc = cb::Vector<2, uint16_t>(0, 0);
 		return false;
 	}
-	m_statePlc = cb::Vector<3, uint16_t>(readData[0], readData[1], readData[2]);
-	m_statePlcDirty = 0;
+	if (task->numOfRegs >= TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN) {
+		m_statePlc = cb::Vector<3, uint16_t>(readData[0], readData[1], readData[2]);
+		m_statePlcDirty = 0;
+
+		//ProcessState();
+	}
+	//if (task->numOfRegs >= TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_SCAMANUL_LEN) {
+	//	m_scamanulFlag = readData[3];
+	//}
+
+	if (task->numOfRegs >= TMBS_MAP0_ID_RSLT_LEN + TMBS_MAP0_ID_NCTSTATE_LEN + TMBS_MAP0_ID_INPUT_LEN) {
+		m_inputFlagPlc = cb::Vector<2, uint16_t>(readData[3], readData[4]);
+	}
+
 	return true;
 }
 
@@ -291,7 +308,7 @@ bool NCMachine::GetScamanulFlag(int bitIndex) const
 	return (m_scamanulFlag >> bitIndex) & 1;
 }
 
-bool NCMachine::GetInputFlag(int bitIndex)
+bool NCMachine::GetInputFlag(int bitIndex, int connectionIndex)
 {
 	//if (bitIndex == 9)
 	//	return true;
@@ -302,11 +319,22 @@ bool NCMachine::GetInputFlag(int bitIndex)
 	m_inputFlag[1] = 0x00;
 	//m_inputFlag[0] = 0x10;
 #endif
-	if (bitIndex < 16) {
-		return (m_inputFlag[0] >> bitIndex) & 1;
-	}
-	else {
-		return (m_inputFlag[1] >> (bitIndex - 16)) & 1;
+
+	if (connectionIndex == 0) {
+		if (bitIndex < 16) {
+			return (m_inputFlag[0] >> bitIndex) & 1;
+		}
+		else {
+			return (m_inputFlag[1] >> (bitIndex - 16)) & 1;
+		}
+	} else if (connectionIndex == 1) {
+		// PLC信号输入
+		if (bitIndex < 16) {
+			return (m_inputFlagPlc[0] >> bitIndex) & 1;
+		}
+		else {
+			return (m_inputFlagPlc[1] >> (bitIndex - 16)) & 1;
+		}
 	}
 	return false;
 }
@@ -321,6 +349,16 @@ QString NCMachine::GetDebugMsg()
 		.arg(m_taskThread->getTasksCnt(0)).arg(m_taskThread->getTasksCnt(1))
 		.arg(m_currentGCodeLine).arg(QString::fromStdString(m_currentJCode))
 		.arg(QString::fromStdString(m_currentTaskDesc));
+}
+
+QString NCMachine::GetRLSTDescAll()
+{
+	QString s = NCMachine::GetRLSTDesc(m_state[0], m_state[1]);
+	if (!s.isEmpty())
+		return s;
+	if (MODBUS_CONNECTION_COUNT > 1)
+		s = NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1]);
+	return s;
 }
 
 QString NCMachine::GetStateDesc(uint16_t state)
@@ -368,7 +406,7 @@ QString NCMachine::GetStateDesc(uint16_t state)
 		return tr("STDJSQJG");
 	}
 // [AUTO-TRANSLATION-COMMENT] 未定义状态：%1
-	return tr("WDYZT: ").arg(state);
+	return tr("WDYZT").arg(state);
 }
 
 QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
@@ -397,11 +435,11 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 	case 3 + 512:
 		//if (para == 0xFFFF)
 // [AUTO-TRANSLATION-COMMENT] LOC驱动器报警退出：%1
-			return tr("LQDQBJTC：").arg(para);
+			return tr("LQDQBJTC").arg(para);
 		break;
 	case 4 + 512:
 // [AUTO-TRANSLATION-COMMENT] LOC触发限位退出：%1
-		return tr("LCFXWTC：").arg(para);
+		return tr("LCFXWTC").arg(para);
 		break;
 	case 5 + 512:
 		//if (para == 0)
@@ -436,11 +474,11 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 	case 3 + 768:
 		//if (para == (0xFFFF))
 // [AUTO-TRANSLATION-COMMENT] CMV驱动器报警退出：%1
-			return tr("CQDQBJTC：").arg(para);
+			return tr("CQDQBJTC").arg(para);
 		break;
 	case 4 + 768:
 // [AUTO-TRANSLATION-COMMENT] CMV触发限位退出：%1
-		return tr("CCFXWTC：").arg(para);
+		return tr("CCFXWTC").arg(para);
 		break;
 	case 5 + 768:
 		//if (para == 0)
@@ -521,7 +559,50 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 		break;
 	}
 // [AUTO-TRANSLATION-COMMENT] 未定义：%1,%2
-	return tr("WDY：").arg(rslt).arg(para);
+	return tr("WDY").arg(rslt).arg(para);
+}
+
+QString NCMachine::GetPlcStateDesc(uint16_t state)
+{
+	switch (state) {
+	case 0:   return QStringLiteral("系统待机");
+	case 1:   return QStringLiteral("刀库右移中");
+	case 2:   return QStringLiteral("刀库右移到位");
+	case 3:   return QStringLiteral("刀库左移中");
+	case 4:   return QStringLiteral("刀库左移到位");
+	case 5:   return QStringLiteral("刀盘旋转中");
+	case 6:   return QStringLiteral("卸刀位为空");
+	case 7:   return QStringLiteral("装刀位有刀");
+	case 8:   return QStringLiteral("刀具松开中");
+	case 9:   return QStringLiteral("刀具夹紧中");
+	case 10:  return QStringLiteral("油槽上升中");
+	case 11:  return QStringLiteral("油槽下降中");
+	case 12:  return QStringLiteral("油槽上升完成");
+	case 13:  return QStringLiteral("油槽下降完成");
+	case 14:  return QStringLiteral("刀盘旋转到位");
+	case 255: return QStringLiteral("故障状态");
+	default:  return QString();
+	}
+}
+
+QString NCMachine::GetPlcRLSTDesc(uint16_t rslt, uint16_t para)
+{
+	switch (rslt) {
+	case 1:  return QStringLiteral("急停触发");
+	case 2:  return QStringLiteral("液压压力异常");
+	case 3:  return QStringLiteral("伺服故障");
+	case 4:  return QStringLiteral("刀库右移超时");
+	case 5:  return QStringLiteral("刀库左移超时");
+	case 6:  return QStringLiteral("油槽上升超时");
+	case 7:  return QStringLiteral("油槽下降超时");
+	case 8:  return QStringLiteral("刀具松开超时");
+	case 9:  return QStringLiteral("刀具夹紧超时");
+	case 10: return QStringLiteral("卸刀位有刀异常");
+	case 11: return QStringLiteral("装刀位无刀异常");
+	case 12: return QStringLiteral("装刀未就位异常");
+	case 13: return QStringLiteral("刀盘旋转超时");
+	default: return QString();
+	}
 }
 
 
@@ -570,6 +651,7 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 			std::string action = json->getAsString("action");
 			ModbusTask* task = NULL;
 			if (action == "write") {
+				int connectionIndex = json->getS32("connection_index", 0);
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
 				std::string data = json->getAsString("data");
@@ -583,36 +665,81 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 						//}, Qt::QueuedConnection);
 					}
 				};
-				task = m_modbusAdapter->getTaskWrite(address, quantity, data);
+				task = m_modbusAdapter->getTaskWrite(address, quantity, data, connectionIndex);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskWrite(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
 			}
 			else if (action == "read") {
+				int connectionIndex = json->getS32("connection_index", 0);
 				int quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
-				task = m_modbusAdapter->getTaskRead(address, quantity);
+				task = m_modbusAdapter->getTaskRead(address, quantity, connectionIndex);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
 			} 
 			else if (action == "write_file") {
+				int connectionIndex = json->getS32("connection_index", 0);
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
 				std::string data = json->getAsString("data");
 
-				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, address, quantity, data);
+				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, address, quantity, data, connectionIndex);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskWriteFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
 			}
 			else if (action == "read_file") {
+				int connectionIndex = json->getS32("connection_index", 0);
 				int quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
-				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, address, quantity);
+				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, address, quantity, connectionIndex);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskReadFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
+			}
+			else if (action == "waitrslt") {
+				int connectionIndex = json->getS32("connection_index", 0);
+				uint16_t rslt = json->getU16("rslt");
+				uint16_t para = json->getU16("rslt_para");
+				std::string desc = json->getString("desc");
+				if (connectionIndex == 0)
+					task = m_modbusAdapter->getTaskWait(convertWaitFunction(waitUntilRLST(rslt, para)), desc);
+				else if (connectionIndex == 1)
+					task = m_modbusAdapter->getTaskWait(convertWaitFunction(waitPlcUntilRLST(rslt, para)), desc);
+				else
+					task = NULL;
+				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
+				if (m_currentTaskPriority <= 1)
+					LOG_INFO(8, "NCMachine-Modbus: addTaskWait(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << desc);
+			}
+			else if (action == "waitnctstate") {
+				int connectionIndex = json->getS32("connection_index", 0);
+				uint16_t state = json->getU16("state");
+				std::string desc = json->getString("desc");
+				if (connectionIndex == 0)
+					task = m_modbusAdapter->getTaskWait(convertWaitFunction(waitUntilNctState(state)), desc);
+				else if (connectionIndex == 1)
+					task = m_modbusAdapter->getTaskWait(convertWaitFunction(waitPlcUntilNctState(state)), desc);
+				else
+					task = NULL;
+				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
+				if (m_currentTaskPriority <= 1)
+					LOG_INFO(8, "NCMachine-Modbus: addTaskWait(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << desc);
+			}
+			else if (action == "checkinputio") {
+				int connectionIndex = json->getS32("connection_index", 0);
+				uint16_t addr = json->getU16("addr");
+				uint16_t v = json->getU16("value");
+				std::string desc = json->getString("desc");
+				if (connectionIndex < MODBUS_CONNECTION_COUNT)
+					task = m_modbusAdapter->getTaskWait(convertWaitFunction(checkInputIO(addr, v == 1, connectionIndex)), desc);
+				else
+					task = NULL;
+				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
+				if (m_currentTaskPriority <= 1)
+					LOG_INFO(8, "NCMachine-Modbus: addTaskWait(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << desc);
 			}
 			if (task) {
 				tasks.append(task);
@@ -783,9 +910,16 @@ QList<ModbusTask*> NCMachine::executeCmdsByTncOrder(int tncOrder, std::vector<ui
 	return tasks;
 }
 
-ModbusTask* NCMachine::executeCmdWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> func, std::string desc)
+ModbusTask* NCMachine::executeCmdWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> func, std::string desc, int connectionIndex)
 {
-	ReadAllPosAndState();
+	if (connectionIndex == 0)
+	{
+		ReadAllPosAndState();
+	}
+	else if (MODBUS_CONNECTION_COUNT > 1 && connectionIndex == 1) 	{
+		 ReadPlcState();
+	}
+
 	ModbusTask* task = m_modbusAdapter->getTaskWait(func, desc);
 	m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 	if (m_currentTaskPriority <= 1)
@@ -1108,7 +1242,116 @@ std::function<int()> NCMachine::waitUntilRLST(uint16_t rslt, uint16_t para)
 //	return func;
 //}
 
+std::function<int()> NCMachine::waitPlcUntilNctState(uint16_t state)
+{
+	std::function<int()> func = [this, state]() {
+		if (m_statePlcDirty) {
+			return -2;
+		}
 
+		if (m_statePlc[2] == state) {
+			return 1;
+		}
+		else {
+			// 检测API状态的时候，只能检测m_state[2], 因为m_state[0] = 0是中间态
+			if (state == 0) {
+				return -2;
+			}
+
+			if ((m_statePlc[0] & 0xFF00) == (state & 0xFF00)) {		// 同一个类型的指令执行结果数据
+				// 正常
+				uint16_t para = 0;
+				uint16_t rslt = state;
+				if ((m_statePlc[0] >= rslt && m_statePlc[0] <= rslt + 2) && (m_statePlc[1] == para || para == 0)) {
+					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return 1, but not by nctState, it's by rslt. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+					return 1;		// 完成任务
+				}
+				else {
+					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+					//if (doAfterFail != NULL) {
+					//	doAfterFail();
+					//}
+					QString error = QString("ERROR:%1").arg(NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1])); // .arg(gcode.replace("\n", ""));
+					LineLogger::instance().append(error);
+
+					enterSetPriority(0);
+					Beep();
+					exitSetPriority();
+
+					if (doWhenWaitFail != NULL) {
+						doWhenWaitFail();
+						doWhenWaitFail = NULL;
+					}
+
+					return -9;		// 清空Modbus任务队列
+				}
+			}
+			else
+			{
+				return -2;
+			}
+
+			//return -2;
+		}
+		};
+	return func;
+}
+std::function<int()> NCMachine::waitPlcUntilRLST(uint16_t rslt, uint16_t para)
+{
+	std::function<int()> func = [this, rslt, para]() {
+		if (m_statePlcDirty) {
+			return -2;
+		}
+
+		if ((m_statePlc[0] & 0xFF00) == (rslt & 0xFF00)) {		// 同一个类型的指令执行结果数据
+			// 正常完成退出 or 手动退出 // 
+			if ((m_statePlc[0] >= rslt && m_statePlc[0] <= rslt + 1) && (m_statePlc[1] == para || para == 0)) {
+				return 1;		// 完成任务
+			}
+			else {
+				LOG_WARNING("NCMachine: Function waitPlcUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+				QString error = QString("ERROR:%1").arg(NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1])); // .arg(gcode.replace("\n", ""));
+				LineLogger::instance().append(error);
+
+				enterSetPriority(0);
+				Beep();
+				exitSetPriority();
+
+				if (doWhenWaitFail != NULL) {
+					doWhenWaitFail();
+					doWhenWaitFail = NULL;
+				}
+
+				return -9;		// 清空Modbus任务队列
+			}
+		}
+		else {
+			return -2;
+		}
+		};
+	return func;
+}
+
+std::function<int()> NCMachine::checkInputIO(uint16_t addr, bool v, int connectionIndex)
+{
+	std::function<int()> func = [this, addr, v, connectionIndex]() {
+		if (connectionIndex == 0 && m_stateDirty) {
+			return -2;
+		}
+		else if (connectionIndex == 1 && m_statePlcDirty) {
+			return -2;
+		}
+
+		if (GetInputFlag(addr, connectionIndex) == v) {
+			return 1;
+		}
+		else {
+			return -9;		// 清空Modbus任务队列
+
+		}
+		};
+	return func;
+}
 
 void NCMachine::SetPosOne(int axis, int value)
 {
@@ -2641,6 +2884,13 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 				v = dataForm3->getValue("TCQHTJL").toInt();
 			}
 			PropertyObjects::getInstance()->propertyObjectYd->settcqhtjl(v);
+
+			// M04 结束的时候，因为是下位机处理回退，上位机以为已经移动到了目标点，会"Set absolute position to"到目标点
+			// 但起始此时Controller里的position应该是初始点，所以要更新一下
+			if (v == -1) {
+				// 没测试过，在Controller里处理了，直接设置成startPoint
+				//ReadAllPosAndState();
+			}
 		}
 		else if (action2 == "dsjg") {
 			double seconds = parameters.getNumber("seconds");
@@ -2933,6 +3183,76 @@ do_writereg 82
 			std::string data = NCCommand::UIntsToString(vs);
 			ModbusTask* task = m_modbusAdapter->getTaskWrite(addr, cnt, data, connectionIndex);
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
+		}
+		else if (action2 == "waitrslt") {
+			int connectionIndex = (int)GetController()->get("_conn_idx");
+
+			uint16_t expectedValue1 = (uint16_t)GetController()->get("_expected_rslt");
+			uint16_t expectedValue2 = (uint16_t)GetController()->get("_expected_rslt_para");
+			GetController()->clear("_expected_rslt");
+			GetController()->clear("_expected_rslt_para");
+			std::stringstream ss;
+			ss << "wait for rlst " << expectedValue1 << ", " << expectedValue2;
+			if (connectionIndex == 0) {
+				executeCmdWait(convertWaitFunction(waitUntilRLST(expectedValue1, expectedValue2)), ss.str(), connectionIndex);
+			} else if (connectionIndex == 1) {
+				executeCmdWait(convertWaitFunction(waitPlcUntilRLST(expectedValue1, expectedValue2)), ss.str(), connectionIndex);
+			} else {
+				LOG_ERROR("EDM: Invalid connection index for waitrslt: " << connectionIndex);
+			}
+		}
+		else if (action2 == "waitnctstate") {
+			/** Examples:
+			#<_expected_state> = 0
+			do_waitnctstate
+			***/
+			int connectionIndex = (int)GetController()->get("_conn_idx");
+
+			uint16_t expectedValue1 = (uint16_t)GetController()->get("_expected_state");
+			GetController()->clear("_expected_state");
+			std::stringstream ss;
+			ss << "wait for nctstate " << expectedValue1;
+			if (connectionIndex == 0) {
+				executeCmdWait(convertWaitFunction(waitUntilNctState(expectedValue1)), ss.str(), connectionIndex);
+			} else if (connectionIndex == 1) {
+				executeCmdWait(convertWaitFunction(waitPlcUntilNctState(expectedValue1)), ss.str(), connectionIndex);
+			}
+			else {
+				LOG_ERROR("EDM: Invalid connection index for waitnctstate: " << connectionIndex);
+			}
+		}
+		else if (action2 == "checkinputio") {
+			int connectionIndex = (int)GetController()->get("_conn_idx");
+			uint16_t addr = (uint16_t)GetController()->get("_expected_addr");
+			uint16_t v = (uint16_t)GetController()->get("_expected_value");
+			GetController()->clear("_expected_addr");
+			GetController()->clear("_expected_value");
+			if (connectionIndex < MODBUS_CONNECTION_COUNT)
+				executeCmdWait(convertWaitFunction(checkInputIO(addr, v == 1, connectionIndex)));
+			else
+			{
+				LOG_ERROR("EDM: Invalid connection index for checkinputio: " << connectionIndex);
+			}
+		}
+		else if (action2 == "runjsoncmd") {
+			std::string s = parameters.getAsString("s");
+			std::string filePath = "data/cmds/" + s + ".json";
+			//executeCmdsInFile(filePath);
+
+			QString tempText;
+			if (JsonTemplateUtil::loadTemplateFile(QString::fromStdString(filePath), tempText))
+			{
+				// 2. 自动提取所有模板参数
+				QStringList allParams = JsonTemplateUtil::extractAllParams(tempText);
+				QMap<QString, QVariant> paramMap;
+				auto controller = GetController();
+				for each(QString p in allParams)
+				{
+					paramMap[p] = controller->get("_" + EUtils::QString2StdString(p));
+				}
+				QString finalJson = JsonTemplateUtil::replaceTemplate(tempText, paramMap);
+				executeCmds(EUtils::QString2StdString(finalJson));
+			}
 		}
 		else if (action2 == "message") {
 			std::string s = parameters.getAsString("s");

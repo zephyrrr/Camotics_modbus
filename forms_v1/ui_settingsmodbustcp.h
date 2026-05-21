@@ -1,4 +1,4 @@
-﻿/********************************************************************************
+/********************************************************************************
 ** Form generated from reading UI file 'settingsmodbustcp.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.15.2
@@ -36,9 +36,9 @@ public:
     {
         if (SettingsModbusTCP->objectName().isEmpty())
             SettingsModbusTCP->setObjectName(QString::fromUtf8("SettingsModbusTCP"));
+        SettingsModbusTCP->setProperty("modal", QVariant(false));
         SettingsModbusTCP->resize(240, 110);
         SettingsModbusTCP->setMinimumSize(QSize(240, 110));
-        SettingsModbusTCP->setMaximumSize(QSize(240, 160));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/network-16.png"), QSize(), QIcon::Normal, QIcon::Off);
         SettingsModbusTCP->setWindowIcon(icon);
@@ -53,7 +53,7 @@ public:
 
         lblTCPPort = new QLabel(SettingsModbusTCP);
         lblTCPPort->setObjectName(QString::fromUtf8("lblTCPPort"));
-        lblTCPPort->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        lblTCPPort->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
         gridLayout->addWidget(lblTCPPort, 2, 0, 1, 1);
 
@@ -74,8 +74,8 @@ public:
 
         buttonBox = new QDialogButtonBox(SettingsModbusTCP);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setOrientation(Qt::Orientation::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
 
         verticalLayout->addWidget(buttonBox);
 

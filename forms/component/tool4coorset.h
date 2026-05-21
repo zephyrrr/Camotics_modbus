@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include "ui_tool4coorset.h"
@@ -14,6 +14,9 @@ class Tool4CoorSet : public QToolWidget
 public:
 	Tool4CoorSet(NCMachine* ncMachine, QWidget *parent = nullptr);
 	~Tool4CoorSet();
+
+	void UpdateState() override;
+	int GetHeightCount() override { return 2; }
 
 private:
 	Ui::Tool4CoorSetClass ui;

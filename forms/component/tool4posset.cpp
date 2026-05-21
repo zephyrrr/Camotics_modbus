@@ -1,4 +1,4 @@
-#include "tool4posset.h"
+﻿#include "tool4posset.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "widgets\filedialog.h"
@@ -57,6 +57,8 @@ void Tool4PosSet::on_btnRecord_clicked()
     if (m_currentPosIdx > POS_SET_COUNT_PERPAGE)
         m_currentPosIdx = 1;
     ui.btnCurrentPosIdx->setText(QString::number(m_currentPosIdx));
+
+    ui.lblRecordDate->setText("222");
 }
 
 void Tool4PosSet::on_btnBatchSet_clicked()

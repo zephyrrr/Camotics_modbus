@@ -4,6 +4,7 @@
 #include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QPushButton>
+#include <QRegularExpression>
 #include <QDebug>
 #include "PythonQtRuntime.h"
 
@@ -24,23 +25,12 @@ QMap<QString, QString> PluginUtils::loadPythonScripts(const QString& pluginPath)
 
     QMap<QString, QString> ret;
 
-    QString appPath = QCoreApplication::applicationDirPath();
-    QDir pluginsDir(appPath);
-    bool bDirExist = true;
-#if defined(Q_OS_WIN)
-    if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
-        bDirExist = pluginsDir.cdUp();
-    if (pluginsDir.dirName().toLower() == "x64" )
-        bDirExist = pluginsDir.cdUp();
-#elif defined(Q_OS_MAC)
-    if (pluginsDir.dirName() == "MacOS") {
-        bDirExist = pluginsDir.cdUp();
-        bDirExist = pluginsDir.cdUp();
-        bDirExist = pluginsDir.cdUp();
-    }
-#endif
-    bDirExist = pluginsDir.cd(PLUGIN_PATH);
-    bDirExist = pluginsDir.cd(pluginPath);
+
+    //bool bDirExist = true;
+
+    QDir pluginsDir = GetPluginDir(pluginPath);
+
+
     QStringList filters;
     // QStringList() << "*.py" << "*.pyc" << "*.pycb"
 
@@ -87,10 +77,6 @@ QMap<QString, QString> PluginUtils::loadPythonScripts(const QString& pluginPath)
     return ret;
 }
 
-//void PluginUtils::AddPluginsToLayout(const QString& pluginPath, QLayout* layout)
-//{
-//
-//}
 QList<QWidget*> PluginUtils::CreateScripts(const QString& pluginPath, QObject* parent)
 {
     QList<QWidget*> ret;
@@ -165,10 +151,10 @@ QString PluginUtils::encryptFile(const QString& filePath)
         file.close();
     }
     
-    int a = fileBytes.length();
+    //int a = fileBytes.length();
 
     QByteArray fileBytes2 = crypto.encryptToByteArray(fileBytes);
-    int b = fileBytes2.length();
+    //int b = fileBytes2.length();
     QFile file2(filePath + ".en");
     if (file2.open(QIODevice::WriteOnly)) {
         file2.write(fileBytes2);
@@ -197,6 +183,27 @@ QString PluginUtils::decryptFile(const QString& filePath)
     }
 
     return file2.fileName();
+}
+
+// 判断函数：全为英文字符返回 true，包含汉字/其他字符返回 false
+bool PluginUtils::isAllEnglish(const QString& str)
+{
+    if (str.isEmpty())
+        return false;  // 空字符串你可以根据需求改
+
+    for (const QChar& ch : str)
+    {
+        ushort unicode = ch.unicode();
+
+        // 唯一合法范围：ASCII 可见字符 + 空格
+        if (unicode >= 0x20 && unicode <= 0x7E) {
+            continue;
+        }
+
+        // 不在这个范围 → 一律非法
+        return false;
+    }
+    return true;
 }
 
 QVariant PluginUtils::RunFile(const QString& fileName, QObject* window)
@@ -233,23 +240,8 @@ QList<PythonPluginInfo> PluginUtils::loadPythonMenuPlugins(const QString& plugin
         return result;
     }
 
-    // Get plugin directory
-    QString appPath = QCoreApplication::applicationDirPath();
-    QDir pluginsDir(appPath);
-#if defined(Q_OS_WIN)
-    if (pluginsDir.dirName().toLower() == "debug" || pluginsDir.dirName().toLower() == "release")
-        pluginsDir.cdUp();
-    if (pluginsDir.dirName().toLower() == "x64")
-        pluginsDir.cdUp();
-#elif defined(Q_OS_MAC)
-    if (pluginsDir.dirName() == "MacOS") {
-        pluginsDir.cdUp();
-        pluginsDir.cdUp();
-        pluginsDir.cdUp();
-    }
-#endif
-    pluginsDir.cd(PLUGIN_PATH);
-    pluginsDir.cd(pluginPath);
+    QDir pluginsDir = GetPluginDir(pluginPath);
+
 
     // List Python files
     QStringList filters;

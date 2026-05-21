@@ -393,6 +393,12 @@
     <ClCompile Include="forms_v1\settingsmodbustcp.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="utils\JsonTemplateUtil.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="modbus\NCMachineState.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="forms_v1\mainwindow.h">
@@ -957,6 +963,12 @@
     <ClInclude Include="modbus\SystemSettings.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="utils\JsonTemplateUtil.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\NCMachineState.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="resources\resources.qrc" />
@@ -973,6 +985,7 @@
     <None Include="plugins_src\python\gcode_generator.py" />
     <None Include="plugins_src\sdjg\getgcode1.py" />
     <None Include="plugins_src\python\gcode_converter.py" />
+    <None Include="..\exe\x86-release\jsons\enable_loc.json" />
   </ItemGroup>
   <ItemGroup>
     <QtTranslation Include="Translation_zh_CN.ts" />
