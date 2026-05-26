@@ -146,7 +146,7 @@ void FangDianForm::RunGCode()
     QString inJgtj = ui->inJgtj->text();
 
 	int lastJogSpeed = PropertyObjects::getInstance()->propertyObjectShouKongHe->sdxskz();
-    QString gcode = "do_jogspeed 1\n";
+    QString gcode = "do_jogspeed 0\n";
     gcode += m_fangdiancheshiForm->GetValuesAsCCode();
     gcode += QString("C%01 G01 ").arg(inJgtj);
         

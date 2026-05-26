@@ -1,10 +1,11 @@
-﻿#include <QToolButton>
+#include <QToolButton>
 #include <QToolBar>
 #include <QDateTime>
 #include <QFile>
 #include <QCoreApplication>
 #include <cbang/io/LineBufferStream.h>
 #include <cbang/os/SystemUtilities.h>
+#include <cbang/config/Options.h>
 #include <QtSerialPort/QSerialPortInfo>
 #include "../modbus/NCMachineProperties.h"
 #include "mainwindow2.h"
@@ -194,6 +195,10 @@ QtWin2::QtWin2(QWidget* parent)
 		PythonQt::self()->registerClass(&MultiButtonsWidget::staticMetaObject, "QtGui", PythonQtCreateObject<MultiButtonsWidgetWrapper>, nullptr);
 
 	}
+	cb::Options options;
+	cb::Logger::instance().addOptions(options);
+	options.set("log-rotate-dir", EUtils::QString2StdString(SystemSettings::GetPath("logs", SystemSettings::UserFlag)));
+	//options.parse("");
 
 	cb::SmartPointer<cb::LineBufferStream<LineLogger>> consoleStream = new cb::LineBufferStream<LineLogger>(LineLogger::instance());
 	cb::Logger::instance().setScreenStream(consoleStream);

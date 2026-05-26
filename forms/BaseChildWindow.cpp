@@ -1,4 +1,4 @@
-﻿#include "BaseChildWindow.h"
+#include "BaseChildWindow.h"
 #include <QDesktopWidget>
 #include <QKeyEvent>
 #include <QApplication>
@@ -104,7 +104,7 @@ void BaseChildWindow::hideEvent(QHideEvent* event)
 
 void BaseChildWindow::LoadData(QString filePath)
 {
-	auto x = this->GetData("inWindow");
+	//auto x = this->GetData("inWindow");
 	BaseChildWindow::LoadData(this, filePath, &m_fileContent);
 }
 
@@ -226,12 +226,13 @@ QJsonObject BaseChildWindow::GetData(QWidget* parent, bool includeTable)
 	// 查找所有的QPushButton部件
 	QList<QPushButton*> buttons = parent->findChildren<QPushButton*>();
 	for (QPushButton* button : buttons) {
-		if (button->isEnabled() && button->isCheckable()) {
+		// 是否存在可能，Running刚好完成，但button还是Disabled的状态，导致未被保存。
+		//if (button->isEnabled() && button->isCheckable()) {
 			QString key = button->objectName();
 			if (!key.isEmpty()) {
 				json.insert(key, QJsonValue(button->isChecked()));
 			}
-		}
+		//}
 	}
 
 	QList<QComboBox*> comboBoxs = parent->findChildren<QComboBox*>();

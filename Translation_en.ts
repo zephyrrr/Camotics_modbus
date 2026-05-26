@@ -774,7 +774,7 @@
         <location filename="forms/other/fangdiancanshuform.cpp" line="128"/>
         <location filename="forms/other/fangdiancanshuform.cpp" line="186"/>
         <source>ZBDUP</source>
-        <translation>No USB</translation>
+        <translation>No U-disk</translation>
     </message>
     <message>
         <location filename="forms/other/fangdiancanshuform.cpp" line="132"/>
@@ -830,7 +830,7 @@
     <message>
         <location filename="forms/manual/fangdianform.ui" line="124"/>
         <source>JGTJ</source>
-        <translation>Mach Cond</translation>
+        <translation>C.NO</translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="385"/>
@@ -840,7 +840,7 @@
     <message>
         <location filename="forms/manual/fangdianform.ui" line="392"/>
         <source>HTL</source>
-        <translation>Retract Qty</translation>
+        <translation>Return</translation>
     </message>
     <message>
         <location filename="forms/manual/fangdianform.ui" line="157"/>
@@ -1110,7 +1110,7 @@
         <location filename="forms/other/jiagongjiluform.cpp" line="106"/>
         <location filename="forms/other/jiagongjiluform.cpp" line="130"/>
         <source>name</source>
-        <translation>Name</translation>
+        <translation>FileName</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.cpp" line="107"/>
@@ -1143,7 +1143,7 @@
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="13"/>
         <source>jiagongjilu</source>
-        <translation>Mach Log</translation>
+        <translation>Records</translation>
     </message>
     <message>
         <location filename="forms/other/jiagongjiluform.ui" line="42"/>
@@ -1181,32 +1181,32 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="53"/>
         <source>JCGZHTZ</source>
-        <translation>Touch Retract</translation>
+        <translation>Touch Return</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="60"/>
         <source>JWZ</source>
-        <translation>Corner Pos</translation>
+        <translation>Corner Sel</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="75"/>
         <source>ZS</source>
-        <translation>Top-Left</translation>
+        <translation>Top-L</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="97"/>
         <source>ZX</source>
-        <translation>Bottom-Left</translation>
+        <translation>Bottom-L</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="116"/>
         <source>YS</source>
-        <translation>Top-Right</translation>
+        <translation>Top-R</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="135"/>
         <source>YX</source>
-        <translation>Bottom-Right</translation>
+        <translation>Bottom-R</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="178"/>
@@ -1216,17 +1216,17 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="185"/>
         <source>ZB0SD</source>
-        <translation>Set Coord 0</translation>
+        <translation>Set 0</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="192"/>
         <source>ZZJCGZDZ</source>
-        <translation>Z Touch Action</translation>
+        <translation>Z Touch</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="245"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Record</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="265"/>
@@ -1253,7 +1253,7 @@
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="437"/>
         <source>ChiShu</source>
-        <translation>Count</translation>
+        <translation>Touch Nums</translation>
     </message>
     <message>
         <location filename="forms/manual/jiaodingweiform.ui" line="444"/>
@@ -1369,12 +1369,12 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="53"/>
         <source>ZB0SD</source>
-        <translation>Set Coord 0</translation>
+        <translation>Set 0</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="106"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Record</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="121"/>
@@ -1404,7 +1404,7 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="270"/>
         <source>JCGZHTZ</source>
-        <translation>Touch Retract</translation>
+        <translation>Touch Return</translation>
     </message>
     <message>
         <source>CS</source>
@@ -1418,7 +1418,7 @@
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="295"/>
         <source>ChiShu</source>
-        <translation>Count</translation>
+        <translation>Touch Nums</translation>
     </message>
     <message>
         <location filename="forms/manual/kongzhongxingform.ui" line="302"/>
@@ -1489,32 +1489,32 @@
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>CKDBCH</source>
-        <translation>Ref Comp No</translation>
+        <translation>AbsZeroNo</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>FFXBCH</source>
-        <translation>Neg Comp No</translation>
+        <translation>BottomNo</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>ZFXBCH</source>
-        <translation>Pos Comp No</translation>
+        <translation>TopNo</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>BCDJG</source>
-        <translation>Comp Interval</translation>
+        <translation>UnitLength</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>JXBC</source>
-        <translation>Gap Comp</translation>
+        <translation>Gap</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="23"/>
         <source>JXBCSD</source>
-        <translation>Gap Comp Spd</translation>
+        <translation>Gap Speed</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="49"/>
@@ -1535,7 +1535,7 @@
         <location filename="forms/other/luojubuchangform.cpp" line="232"/>
         <location filename="forms/other/luojubuchangform.cpp" line="257"/>
         <source>ZBDUP</source>
-        <translation>No USB</translation>
+        <translation>No U-disk</translation>
     </message>
     <message>
         <location filename="forms/other/luojubuchangform.cpp" line="236"/>
@@ -1713,250 +1713,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="370"/>
+        <location filename="modbus/NCMachine.cpp" line="372"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>No Motion(API)</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="373"/>
+        <location filename="modbus/NCMachine.cpp" line="375"/>
         <source>JYX</source>
         <translation>JOG Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="376"/>
+        <location filename="modbus/NCMachine.cpp" line="378"/>
         <source>JTC</source>
         <translation>JOG Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="379"/>
+        <location filename="modbus/NCMachine.cpp" line="381"/>
         <source>LYX</source>
         <translation>LOC Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="382"/>
+        <location filename="modbus/NCMachine.cpp" line="384"/>
         <source>CYX</source>
         <translation>CMV Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="385"/>
+        <location filename="modbus/NCMachine.cpp" line="387"/>
         <source>CTC</source>
         <translation>CMV Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="388"/>
+        <location filename="modbus/NCMachine.cpp" line="390"/>
         <source>CWC</source>
         <translation>CMV Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="393"/>
         <source>SYX</source>
         <translation>SPK Run</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="394"/>
+        <location filename="modbus/NCMachine.cpp" line="396"/>
         <source>STCQHZX</source>
         <translation>SPK Exit Center</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="397"/>
+        <location filename="modbus/NCMachine.cpp" line="399"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK Exit Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="400"/>
+        <location filename="modbus/NCMachine.cpp" line="402"/>
         <source>STDQHT</source>
         <translation>SPK Pre-Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="403"/>
+        <location filename="modbus/NCMachine.cpp" line="405"/>
         <source>STD</source>
         <translation>SPK Retract</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="406"/>
+        <location filename="modbus/NCMachine.cpp" line="408"/>
         <source>STDJSQJG</source>
         <translation>SPK Retract Done</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="409"/>
+        <location filename="modbus/NCMachine.cpp" line="411"/>
         <source>WDYZT</source>
         <translation>Undef Status: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="423"/>
+        <location filename="modbus/NCMachine.cpp" line="425"/>
         <source>JSDTC</source>
         <translation>JOG Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="428"/>
+        <location filename="modbus/NCMachine.cpp" line="430"/>
         <source>LZCWCTC</source>
         <translation>LOC Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="433"/>
+        <location filename="modbus/NCMachine.cpp" line="435"/>
         <source>LSDTC</source>
         <translation>LOC Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="438"/>
+        <location filename="modbus/NCMachine.cpp" line="440"/>
         <source>LQDQBJTC</source>
         <translation>LOC Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="442"/>
+        <location filename="modbus/NCMachine.cpp" line="444"/>
         <source>LCFXWTC</source>
         <translation>LOC Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="447"/>
+        <location filename="modbus/NCMachine.cpp" line="449"/>
         <source>LDLTC</source>
         <translation>LOC Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="452"/>
+        <location filename="modbus/NCMachine.cpp" line="454"/>
         <source>LCSFF</source>
         <translation>LOC Param Invalid</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="457"/>
+        <location filename="modbus/NCMachine.cpp" line="459"/>
         <source>LJYCW</source>
         <translation>LOC Check Error</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="462"/>
+        <location filename="modbus/NCMachine.cpp" line="464"/>
         <source>LWXGN</source>
         <translation>LOC Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="467"/>
+        <location filename="modbus/NCMachine.cpp" line="469"/>
         <source>CZCWCTC</source>
         <translation>CMV Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="472"/>
+        <location filename="modbus/NCMachine.cpp" line="474"/>
         <source>CSDTC</source>
         <translation>CMV Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="477"/>
+        <location filename="modbus/NCMachine.cpp" line="479"/>
         <source>CQDQBJTC</source>
         <translation>CMV Driver Alarm: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="481"/>
+        <location filename="modbus/NCMachine.cpp" line="483"/>
         <source>CCFXWTC</source>
         <translation>CMV Limit Exit: %1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="486"/>
+        <location filename="modbus/NCMachine.cpp" line="488"/>
         <source>CDLTC</source>
         <translation>CMV Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="491"/>
+        <location filename="modbus/NCMachine.cpp" line="493"/>
         <source>CZBMCW</source>
         <translation>CMV Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="496"/>
+        <location filename="modbus/NCMachine.cpp" line="498"/>
         <source>CCZMCW</source>
         <translation>CMV OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="503"/>
         <source>CWXGN</source>
         <translation>CMV Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="506"/>
+        <location filename="modbus/NCMachine.cpp" line="508"/>
         <source>SZCWCTC</source>
         <translation>SPK Normal Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="511"/>
+        <location filename="modbus/NCMachine.cpp" line="513"/>
         <source>SSDTC</source>
         <translation>SPK Manual Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="516"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
         <source>SQDQBJTC</source>
         <translation>SPK Driver Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="520"/>
+        <location filename="modbus/NCMachine.cpp" line="522"/>
         <source>SCFXWTC</source>
         <translation>SPK Limit Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="527"/>
         <source>SDLTC</source>
         <translation>SPK Short Exit</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="535"/>
+        <location filename="modbus/NCMachine.cpp" line="537"/>
         <source>YouWei</source>
         <translation>Oil Level</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="532"/>
+        <location filename="modbus/NCMachine.cpp" line="534"/>
         <source>YouWen</source>
         <translation>Oil Temp</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="538"/>
+        <location filename="modbus/NCMachine.cpp" line="540"/>
         <source>HY</source>
         <translation>Flame</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="540"/>
+        <location filename="modbus/NCMachine.cpp" line="542"/>
         <source>SBJTC</source>
         <translation>SPK%1 Alarm</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="546"/>
+        <location filename="modbus/NCMachine.cpp" line="548"/>
         <source>SZBMCW</source>
         <translation>SPK Axis Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="551"/>
+        <location filename="modbus/NCMachine.cpp" line="553"/>
         <source>SCZMCW</source>
         <translation>SPK OpCode Err</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="556"/>
+        <location filename="modbus/NCMachine.cpp" line="558"/>
         <source>SWXGN</source>
         <translation>SPK Invalid Func</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="562"/>
+        <location filename="modbus/NCMachine.cpp" line="564"/>
         <source>WDY</source>
         <translation>Undef: %1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2563"/>
+        <location filename="modbus/NCMachine.cpp" line="2559"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>Max 4 Axes</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2968"/>
-        <location filename="modbus/NCMachine.cpp" line="2977"/>
-        <location filename="modbus/NCMachine.cpp" line="3603"/>
+        <location filename="modbus/NCMachine.cpp" line="2964"/>
+        <location filename="modbus/NCMachine.cpp" line="2973"/>
+        <location filename="modbus/NCMachine.cpp" line="3599"/>
         <source>CMLCSBMZYQ</source>
         <translation>C Param %1=%2 Invalid!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3032"/>
+        <location filename="modbus/NCMachine.cpp" line="3028"/>
         <source>to_clear_machine_axis</source>
-        <translation>Clear Mach Coord?</translation>
+        <translation>Set Abs Zero?</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3589"/>
+        <location filename="modbus/NCMachine.cpp" line="3585"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C Param Count Mismatch!</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3789"/>
+        <location filename="modbus/NCMachine.cpp" line="3785"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR: Previous Running</translation>
     </message>
@@ -2607,12 +2607,12 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="102"/>
         <source>T0</source>
-        <translation></translation>
+        <translation>P1</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="109"/>
         <source>T1</source>
-        <translation></translation>
+        <translation>P2</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="116"/>
@@ -2621,15 +2621,15 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="124"/>
-        <location filename="forms/mainwindow2.cpp" line="1758"/>
+        <location filename="forms/mainwindow2.cpp" line="1763"/>
         <source>YouWei</source>
-        <translation>Oil Level</translation>
+        <translation>OIL_L</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1761"/>
+        <location filename="forms/mainwindow2.cpp" line="1766"/>
         <source>YouWen</source>
-        <translation>Oil Temp</translation>
+        <translation>OIL_T</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="145"/>
@@ -2728,28 +2728,28 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="138"/>
         <source>HY</source>
-        <translation>Flame</translation>
+        <translation>FIRE</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="152"/>
         <source>JGTJ</source>
-        <translation>Mach Cond</translation>
+        <translation>C.DETL</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1375"/>
+        <location filename="forms/mainwindow2.cpp" line="1380"/>
         <source>GT</source>
-        <translation>Jump</translation>
+        <translation>HAJC</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="332"/>
         <source>PDGJ</source>
-        <translation>Orbit Path</translation>
+        <translation>LORAN</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="356"/>
         <source>DYXLT</source>
-        <translation>V Efficiency</translation>
+        <translation>Rate Table</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="394"/>
@@ -2763,8 +2763,8 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="428"/>
-        <source>CYL(</source>
-        <translation>Remainder(mm)</translation>
+        <source>CYL</source>
+        <translation>Remaind(mm)</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="445"/>
@@ -2774,32 +2774,32 @@
     <message>
         <location filename="forms/mainwindow2.ui" line="462"/>
         <source>ZDJGSJ</source>
-        <translation>Total Mach Time</translation>
+        <translation>Total Run</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="479"/>
         <source>JGSD</source>
-        <translation>Mach Depth</translation>
+        <translation>EDM Rate</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="496"/>
         <source>CDJGSJ</source>
-        <translation>This Mach Time</translation>
+        <translation>This Run</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="513"/>
         <source>XZZSD</source>
-        <translation>Rotary Spd</translation>
+        <translation>U Spd</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="530"/>
         <source>CDCYSJ</source>
-        <translation>This Remain Time</translation>
+        <translation>This Remain</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="547"/>
         <source>GCYSJ</source>
-        <translation>G04 Remain Time</translation>
+        <translation>G04 Remain</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="585"/>
@@ -2812,7 +2812,7 @@
         <translation>Menu</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="322"/>
+        <location filename="forms/mainwindow2.cpp" line="327"/>
         <source>YX</source>
         <translation>Bottom-Right</translation>
     </message>
@@ -2862,276 +2862,276 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="260"/>
+        <location filename="forms/mainwindow2.cpp" line="265"/>
         <source>XMML</source>
         <translation>Project Dir</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="299"/>
-        <location filename="forms/mainwindow2.cpp" line="319"/>
+        <location filename="forms/mainwindow2.cpp" line="304"/>
+        <location filename="forms/mainwindow2.cpp" line="324"/>
         <source>SD</source>
-        <translation>Manual</translation>
+        <translation>Main</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="300"/>
+        <location filename="forms/mainwindow2.cpp" line="305"/>
         <source>EZD</source>
         <translation>EDM Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="302"/>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Manual</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="303"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>SheDing</source>
-        <translation>Set</translation>
+        <translation>Setting</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="320"/>
+        <location filename="forms/mainwindow2.cpp" line="325"/>
         <source>ZD</source>
         <translation>Auto</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="301"/>
-        <location filename="forms/mainwindow2.cpp" line="321"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
+        <location filename="forms/mainwindow2.cpp" line="326"/>
         <source>BianJi</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="323"/>
+        <location filename="forms/mainwindow2.cpp" line="328"/>
         <source>QT</source>
         <translation>Other</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="350"/>
+        <location filename="forms/mainwindow2.cpp" line="355"/>
         <source>ZBSZ</source>
-        <translation>Coord Setup</translation>
+        <translation>Setup</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="353"/>
+        <location filename="forms/mainwindow2.cpp" line="358"/>
         <source>DWYD</source>
-        <translation>Loc Move</translation>
+        <translation>Move</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="356"/>
+        <location filename="forms/mainwindow2.cpp" line="361"/>
         <source>WZJY</source>
-        <translation>Pos Memory</translation>
+        <translation>Offset</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="359"/>
+        <location filename="forms/mainwindow2.cpp" line="364"/>
         <source>DMDW</source>
-        <translation>Face Loc</translation>
+        <translation>TouchFace</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="362"/>
+        <location filename="forms/mainwindow2.cpp" line="367"/>
         <source>ZZX</source>
-        <translation>Cylinder Ctr</translation>
+        <translation>OuterCenter</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="365"/>
+        <location filename="forms/mainwindow2.cpp" line="370"/>
         <source>JZX</source>
-        <translation>Corner Ctr</translation>
+        <translation>CornerCenter</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="368"/>
+        <location filename="forms/mainwindow2.cpp" line="373"/>
         <source>KZX</source>
-        <translation>Hole Ctr</translation>
+        <translation>HoleCenter</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="371"/>
+        <location filename="forms/mainwindow2.cpp" line="376"/>
         <source>SDDY</source>
-        <translation>3-Point Circle</translation>
+        <translation>3PointsCircle</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="374"/>
+        <location filename="forms/mainwindow2.cpp" line="379"/>
         <source>FDDW</source>
-        <translation>EDM Loc</translation>
+        <translation>EDMFace</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="382"/>
+        <location filename="forms/mainwindow2.cpp" line="387"/>
         <source>ZDCS</source>
-        <translation>Auto Param</translation>
+        <translation>AutoParam</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="393"/>
+        <location filename="forms/mainwindow2.cpp" line="398"/>
         <source>SDDG</source>
-        <translation>Manual Single</translation>
+        <translation>Single</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
+        <location filename="forms/mainwindow2.cpp" line="401"/>
         <source>SDMG</source>
-        <translation>Manual Multi</translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="405"/>
-        <source>NJG</source>
-        <translation>NC Mach</translation>
+        <translation>Multiple</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="410"/>
-        <source>JGJL</source>
-        <translation>Mach Log</translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="414"/>
-        <source>XTSZ</source>
-        <translation>System Setup</translation>
+        <source>NJG</source>
+        <translation>NCRun</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="415"/>
-        <source>FangDianCanShu</source>
-        <translation>EDM Param</translation>
-    </message>
-    <message>
-        <location filename="forms/mainwindow2.cpp" line="418"/>
-        <location filename="forms/mainwindow2.cpp" line="1303"/>
-        <source>FDCS</source>
-        <translation>EDM Test</translation>
+        <source>JGJL</source>
+        <translation>Records</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="419"/>
-        <source>LJBC</source>
-        <translation>Pitch Comp</translation>
+        <source>XTSZ</source>
+        <translation>Config</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
+        <source>FangDianCanShu</source>
+        <translation>EDMLibrary</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="423"/>
+        <location filename="forms/mainwindow2.cpp" line="1308"/>
+        <source>FDCS</source>
+        <translation>Debug</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="424"/>
-        <source>CKSZ</source>
-        <translation>Serial Setup</translation>
+        <source>LJBC</source>
+        <translation>PEC</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.cpp" line="429"/>
+        <source>CKSZ</source>
+        <translation>SerialPort</translation>
+    </message>
+    <message>
+        <location filename="forms/mainwindow2.cpp" line="434"/>
         <source>TCPIP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="437"/>
+        <location filename="forms/mainwindow2.cpp" line="442"/>
         <source>GY</source>
         <translation>About</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="480"/>
-        <location filename="forms/mainwindow2.cpp" line="1476"/>
+        <location filename="forms/mainwindow2.cpp" line="485"/>
+        <location filename="forms/mainwindow2.cpp" line="1481"/>
         <source>CKWLJ</source>
         <translation>Serial Port Not Connected</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="485"/>
-        <location filename="forms/mainwindow2.cpp" line="1587"/>
+        <location filename="forms/mainwindow2.cpp" line="490"/>
+        <location filename="forms/mainwindow2.cpp" line="1592"/>
         <source>DDYX</source>
         <translation>Waiting</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="659"/>
+        <location filename="forms/mainwindow2.cpp" line="664"/>
         <source>MNJG</source>
-        <translation>Simulate</translation>
+        <translation>DryRun</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="667"/>
+        <location filename="forms/mainwindow2.cpp" line="672"/>
         <source>JGHGJ</source>
-        <translation>Shutdown After Mach</translation>
+        <translation>Sleep</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="926"/>
-        <location filename="forms/mainwindow2.cpp" line="940"/>
-        <location filename="forms/mainwindow2.cpp" line="1621"/>
+        <location filename="forms/mainwindow2.cpp" line="931"/>
+        <location filename="forms/mainwindow2.cpp" line="945"/>
+        <location filename="forms/mainwindow2.cpp" line="1626"/>
         <source>YXZ</source>
         <translation>Running</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1020"/>
+        <location filename="forms/mainwindow2.cpp" line="1025"/>
         <source>to_clear_machine_axis</source>
         <translation>Clear Mach Coord?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1027"/>
+        <location filename="forms/mainwindow2.cpp" line="1032"/>
         <source>SFJXZDHL</source>
-        <translation>Auto Home?</translation>
+        <translation>Return Abs Zero?</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1145"/>
+        <location filename="forms/mainwindow2.cpp" line="1150"/>
         <source>BCWJ</source>
         <translation>Save File</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1315"/>
-        <location filename="forms/mainwindow2.cpp" line="1384"/>
+        <location filename="forms/mainwindow2.cpp" line="1320"/>
+        <location filename="forms/mainwindow2.cpp" line="1389"/>
         <source>FS</source>
         <translation>Send</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1316"/>
-        <location filename="forms/mainwindow2.cpp" line="1385"/>
+        <location filename="forms/mainwindow2.cpp" line="1321"/>
+        <location filename="forms/mainwindow2.cpp" line="1390"/>
         <source>GB</source>
         <translation>Close</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1602"/>
+        <location filename="forms/mainwindow2.cpp" line="1607"/>
         <source>DDZ</source>
         <translation>Touching</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1605"/>
+        <location filename="forms/mainwindow2.cpp" line="1610"/>
         <source>HLZ</source>
         <translation>Homing</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1610"/>
+        <location filename="forms/mainwindow2.cpp" line="1615"/>
         <source>FDZ</source>
         <translation>EDM On</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1613"/>
+        <location filename="forms/mainwindow2.cpp" line="1618"/>
         <source>FDZT</source>
         <translation>EDM Pause</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1618"/>
+        <location filename="forms/mainwindow2.cpp" line="1623"/>
         <source>ZTZ</source>
         <translation>Paused</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1635"/>
+        <location filename="forms/mainwindow2.cpp" line="1640"/>
         <source>DLBJ</source>
         <translation>Short Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1675"/>
+        <location filename="forms/mainwindow2.cpp" line="1680"/>
         <source>CFDJBJ</source>
         <translation>Servo Motor Alarm</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1691"/>
+        <location filename="forms/mainwindow2.cpp" line="1696"/>
         <source>DDYWZ</source>
         <translation>Waiting Oil</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1712"/>
+        <location filename="forms/mainwindow2.cpp" line="1717"/>
         <source>XXW1</source>
         <translation>X+Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1716"/>
+        <location filename="forms/mainwindow2.cpp" line="1721"/>
         <source>XXW2</source>
         <translation>X-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1720"/>
+        <location filename="forms/mainwindow2.cpp" line="1725"/>
         <source>YXW1</source>
         <translation>Y+Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1724"/>
+        <location filename="forms/mainwindow2.cpp" line="1729"/>
         <source>YXW2</source>
         <translation>Y-Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1728"/>
+        <location filename="forms/mainwindow2.cpp" line="1733"/>
         <source>ZXW1</source>
         <translation>Z+Limit</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1732"/>
+        <location filename="forms/mainwindow2.cpp" line="1737"/>
         <source>ZXW2</source>
         <translation>Z-Limit</translation>
     </message>
@@ -3554,17 +3554,17 @@
     <message>
         <location filename="forms/auto/runautoform.cpp" line="31"/>
         <source>JGJH</source>
-        <translation>Mach Plan</translation>
+        <translation>Plan</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="32"/>
         <source>JGWZ</source>
-        <translation>Mach Pos</translation>
+        <translation>Position</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="33"/>
         <source>TJXX</source>
-        <translation>Cond Detail</translation>
+        <translation>C.NO List</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoform.cpp" line="40"/>
@@ -3577,17 +3577,17 @@
     <message>
         <location filename="forms/auto/runautoone.cpp" line="126"/>
         <source>SDDMSC</source>
-        <translation>Manual Code Out</translation>
+        <translation>Save as Manual Code</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoone.cpp" line="128"/>
         <source>NWJSC</source>
-        <translation>NC File Out</translation>
+        <translation>Save as G Code</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoone.cpp" line="138"/>
         <source>SDDG</source>
-        <translation>Manual Single</translation>
+        <translation>Single</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoone.cpp" line="166"/>
@@ -3605,7 +3605,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="38"/>
         <source>CCD</source>
-        <translation>Roughness</translation>
+        <translation>VDI/RA</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="55"/>
@@ -3620,17 +3620,17 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="72"/>
         <source>JGMJ</source>
-        <translation>Mach Area</translation>
+        <translation>Area</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="79"/>
         <source>JGSD</source>
-        <translation>Mach Depth</translation>
+        <translation>Depth</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="99"/>
         <source>JGZ</source>
-        <translation>Mach Axis</translation>
+        <translation>Axis</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="112"/>
@@ -3645,12 +3645,12 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="144"/>
         <source>JGZS</source>
-        <translation>Mach Priority</translation>
+        <translation>Rate/Loss</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="154"/>
         <source>YDXZ</source>
-        <translation>Orbit Shape</translation>
+        <translation>Loran Shape</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="164"/>
@@ -3665,7 +3665,7 @@
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="212"/>
         <source>YDMS</source>
-        <translation>Orbit Mode</translation>
+        <translation>Loran Mode</translation>
     </message>
     <message>
         <location filename="forms/auto/runautoparamform.ui" line="45"/>
@@ -3701,22 +3701,22 @@
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>HS</source>
-        <translation>Count</translation>
+        <translation>NO.</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Run</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>JGYL</source>
-        <translation>Mach Allowance</translation>
+        <translation>RMN</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>DS</source>
-        <translation>Timer</translation>
+        <translation>TMR</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
@@ -3726,7 +3726,7 @@
     <message>
         <location filename="forms/run/runmanual.cpp" line="92"/>
         <source>Detail</source>
-        <translation>Detail</translation>
+        <translation>Detl</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="345"/>
@@ -3736,12 +3736,12 @@
     <message>
         <location filename="forms/run/runmanual.cpp" line="1140"/>
         <source>SDDG</source>
-        <translation>Manual Single</translation>
+        <translation>Single</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="1234"/>
         <source>JGHSWL</source>
-        <translation>Mach Count Zero</translation>
+        <translation>C.NO Is Zero</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.cpp" line="1249"/>
@@ -3759,22 +3759,22 @@
     <message>
         <location filename="forms/run/runmanual.ui" line="62"/>
         <source>ZB</source>
-        <translation>Coord</translation>
+        <translation>Abs/Inc</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="77"/>
         <source>JD</source>
-        <translation>Absolute</translation>
+        <translation>Abs</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="99"/>
         <source>XD</source>
-        <translation>Relative</translation>
+        <translation>Inc</translation>
     </message>
     <message>
         <location filename="forms/run/runmanual.ui" line="117"/>
         <source>JGSD</source>
-        <translation>Mach Depth</translation>
+        <translation>Depth</translation>
     </message>
 </context>
 <context>
@@ -3792,57 +3792,57 @@
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="63"/>
         <source>JGHS</source>
-        <translation>Mach Count</translation>
+        <translation>C.NO Total</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="71"/>
         <source>JGFF</source>
-        <translation>Mach Method</translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="80"/>
         <source>DANDU</source>
-        <translation>Single</translation>
+        <translation>OnePosAllC.NO</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="96"/>
         <source>LX</source>
-        <translation>Continuous</translation>
+        <translation>OneC.NOAllPos</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="112"/>
         <source>ZZKSGD</source>
-        <translation>Z Start Ht</translation>
+        <translation>Z Start H</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.ui" line="123"/>
         <source>ZZAQGD</source>
-        <translation>Z Safe Ht</translation>
+        <translation>Z Move  H</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Run</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>ZBX</source>
-        <translation>Coord Sys</translation>
+        <translation>Cod</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>QS</source>
-        <translation>Start</translation>
+        <translation>STR</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="32"/>
         <source>JS</source>
-        <translation>End</translation>
+        <translation>END</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="103"/>
         <source>DR</source>
-        <translation>Import</translation>
+        <translation>Impt</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="108"/>
@@ -3852,7 +3852,7 @@
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="115"/>
         <source>SelectAll</source>
-        <translation>Select All</translation>
+        <translation>All</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="120"/>
@@ -3862,35 +3862,35 @@
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="193"/>
         <source>JGHSWL</source>
-        <translation>Mach Count Zero</translation>
+        <translation>C.NO Is Zero</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="211"/>
         <location filename="forms/run/runmanualmulti.cpp" line="283"/>
         <source>JGZBZWXZ</source>
-        <translation>Mach Axis Not Selected</translation>
+        <translation>Axis Not Selected</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="219"/>
         <location filename="forms/run/runmanualmulti.cpp" line="307"/>
         <source>DZJGSYGYXDZB</source>
-        <translation>Multi Mach Needs Relative</translation>
+        <translation>Multi Needs Inc</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="470"/>
         <source>BZCLXJGMS</source>
-        <translation>Continuous Mode N/A</translation>
+        <translation>Mode Not Support</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="562"/>
         <source>SDMG</source>
-        <translation>Manual Multi</translation>
+        <translation>Multiple</translation>
     </message>
     <message>
         <location filename="forms/run/runmanualmulti.cpp" line="569"/>
         <location filename="forms/run/runmanualmulti.cpp" line="810"/>
         <source>SDDG</source>
-        <translation>Manual Single</translation>
+        <translation>Single</translation>
     </message>
 </context>
 <context>
@@ -4001,17 +4001,17 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="61"/>
         <source>WJ</source>
-        <translation>Outer Dia</translation>
+        <translation>Outer</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="83"/>
         <source>NJ</source>
-        <translation>Inner Dia</translation>
+        <translation>Hole</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="143"/>
         <source>JD</source>
-        <translation>Absolute</translation>
+        <translation>Abs</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="150"/>
@@ -4032,17 +4032,17 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="221"/>
         <source>ZB0SD</source>
-        <translation>Set Coord 0</translation>
+        <translation>Set 0</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="228"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Rocord</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="235"/>
         <source>ZZJCGZDZ</source>
-        <translation>Z Touch Action</translation>
+        <translation>Z Touch</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="403"/>
@@ -4052,7 +4052,7 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="410"/>
         <source>JCGZHTZ</source>
-        <translation>Touch Retract</translation>
+        <translation>Touch Return</translation>
     </message>
     <message>
         <source>CS</source>
@@ -4061,12 +4061,12 @@
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="417"/>
         <source>ChiShu</source>
-        <translation>Count</translation>
+        <translation>Touch Nums</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="424"/>
         <source>CDWZ</source>
-        <translation>Measure Pos</translation>
+        <translation>Outer/Hole</translation>
     </message>
     <message>
         <location filename="forms/manual/sandiandingwei.ui" line="343"/>
@@ -4299,7 +4299,7 @@
     <message>
         <location filename="forms/component/tool4itercoor.ui" line="44"/>
         <source>PLYX</source>
-        <translation>Batch Run</translation>
+        <translation>All Run</translation>
     </message>
 </context>
 <context>
@@ -4463,12 +4463,12 @@
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="43"/>
         <source>ZBXQH</source>
-        <translation>Coord Switch</translation>
+        <translation>CoordSw</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="66"/>
         <source>ZZYD</source>
-        <translation>Z Axis Move</translation>
+        <translation>Z Move</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.ui" line="73"/>
@@ -4489,25 +4489,25 @@
         <location filename="forms/manual/weizhijiyi.cpp" line="69"/>
         <source>JY</source>
         <oldsource>JY</oldsource>
-        <translation>Memory</translation>
+        <translation>RCD</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="41"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="83"/>
         <source>YD</source>
         <oldsource>YD</oldsource>
-        <translation>Move</translation>
+        <translation>MOV</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="57"/>
         <location filename="forms/manual/weizhijiyi.cpp" line="220"/>
         <source>ZBX</source>
-        <translation>Coord Sys</translation>
+        <translation>Cod</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhijiyi.cpp" line="164"/>
         <source>JX</source>
-        <translation>Mechanical</translation>
+        <translation>AbsCod</translation>
     </message>
 </context>
 <context>
@@ -4528,12 +4528,12 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="115"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="668"/>
         <source>JCGZ</source>
-        <translation>Touch Sens</translation>
+        <translation>TouchStop</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="128"/>
         <source>YDFS</source>
-        <translation>Move Mode</translation>
+        <translation>Abs/Inc</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="156"/>
@@ -4558,17 +4558,17 @@
         <location filename="forms/manual/weizhiyidongform.ui" line="260"/>
         <location filename="forms/manual/weizhiyidongform.ui" line="682"/>
         <source>ZBX</source>
-        <translation>Coord Sys</translation>
+        <translation>Cod</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="275"/>
         <source>JD</source>
-        <translation>Absolute</translation>
+        <translation>Abs</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="297"/>
         <source>XD</source>
-        <translation>Relative</translation>
+        <translation>Inc</translation>
     </message>
     <message>
         <location filename="forms/manual/weizhiyidongform.ui" line="321"/>
@@ -4625,7 +4625,7 @@
     <message>
         <location filename="forms/manual/weizhiyidongform.cpp" line="66"/>
         <source>to_clear_machine_axis</source>
-        <translation>Clear Mach Coord?</translation>
+        <translation>Set Cod Zero?</translation>
     </message>
 </context>
 <context>
@@ -5666,17 +5666,17 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="201"/>
         <source>JCGZHTZ</source>
-        <translation>Touch Retract</translation>
+        <translation>Touch Return</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="226"/>
         <source>ZZJCGZDZ</source>
-        <translation>Z Touch Action</translation>
+        <translation>Z Touch</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="278"/>
         <source>ZB0SD</source>
-        <translation>Set Coord 0</translation>
+        <translation>Set 0</translation>
     </message>
     <message>
         <source>CS</source>
@@ -5685,13 +5685,13 @@
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="333"/>
         <source>ChiShu</source>
-        <translation>Count</translation>
+        <translation>TouchNums</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="347"/>
         <location filename="forms/manual/zhuzhongxingform.cpp" line="225"/>
         <source>JG</source>
-        <translation>Mach</translation>
+        <translation>Record</translation>
     </message>
     <message>
         <location filename="forms/manual/zhuzhongxingform.ui" line="219"/>
@@ -5731,12 +5731,12 @@
     <message>
         <location filename="forms/manual/zuobiaoxishezi.cpp" line="50"/>
         <source>ZBX</source>
-        <translation>Coord Sys</translation>
+        <translation>Cod</translation>
     </message>
     <message>
         <location filename="forms/manual/zuobiaoxishezi.cpp" line="60"/>
         <source>JX</source>
-        <translation>Mechanical</translation>
+        <translation>AbsCod</translation>
     </message>
 </context>
 <context>

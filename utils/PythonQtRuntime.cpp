@@ -148,7 +148,7 @@ QVariant PythonQtRuntime::RunFile(const QString& fileName, const QHash<QString, 
 		PythonQtObjectPtr mainContext = PythonQt::self()->getMainModule();
 		QFileInfo fileInfo(fileName);
 		QString path = fileInfo.path();
-		// �����ı�ϵͳ��ǰĿ¼
+		// 这个会改变系统当前目录
 		//QString script = QString("import os\nos.chdir('%1')\n").arg(path);
 		//mainContext.evalScript(script);
 		QString script = QString("__file__ = '%1'").arg(fileName);

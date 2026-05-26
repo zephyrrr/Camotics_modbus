@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #ifndef __NCMACHINE_H
 #define __NCMACHINE_H
@@ -287,6 +287,7 @@ private:
 
 	// 机械坐标
 	cb::Vector4I m_pos;
+	cb::Vector4I m_posLast;
 	cb::Vector4I m_axisPositionLastSend;
 	int m_axisCsLast = -1;
 

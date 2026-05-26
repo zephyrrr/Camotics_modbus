@@ -16,7 +16,7 @@ public:
 protected:
 
 public:
-	// Í¨¹ý QOptionWidget ¼Ì³Ð
+	// é€šè¿‡ QOptionWidget ç»§æ‰¿
 	QString getOption() const override;
 
 private:

@@ -697,7 +697,7 @@ public:
         labelLength->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
         labelCNo0->setText(QCoreApplication::translate("QtWin2", "TJH", nullptr));
         labelCNo->setText(QCoreApplication::translate("QtWin2", "C000", nullptr));
-        labelRemnantLength0->setText(QCoreApplication::translate("QtWin2", "CYL(", nullptr));
+        labelRemnantLength0->setText(QCoreApplication::translate("QtWin2", "CYL", nullptr));
         labelRemnantLength->setText(QCoreApplication::translate("QtWin2", "0.0000", nullptr));
         labelTNo0->setText(QCoreApplication::translate("QtWin2", "GJH", nullptr));
         labelTNo->setText(QCoreApplication::translate("QtWin2", "T000", nullptr));

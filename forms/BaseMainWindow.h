@@ -1,4 +1,4 @@
-﻿#ifndef BASEMAINWINDOW_H
+#ifndef BASEMAINWINDOW_H
 #define BASEMAINWINDOW_H
 
 #include <QMainWindow>
@@ -14,7 +14,7 @@ public:
 
 public:
 
-    virtual BaseChildWindow* getChildWindow(QString windowTitle) { return NULL; }
+    virtual BaseChildWindow* getChildWindow(QString windowTitle) { Q_UNUSED(windowTitle);  return NULL; }
     virtual void showChildWindow(QString windowTitle);
 protected:
 };

@@ -1,4 +1,4 @@
-﻿#pragma warning(disable : 4100)
+#pragma warning(disable : 4100)
 
 #include <thread>
 #include <chrono>
@@ -164,9 +164,12 @@ bool NCMachine::ConvertModbusData4Pos(ModbusTask* task, uint16_t* readData)
 	GetController()->setAxisAbsolutePosition('Y', m_pos.y() / 1000.0, unit);
 	GetController()->setAxisAbsolutePosition('Z', m_pos.z() / 1000.0, unit);
 	GetController()->setAxisAbsolutePosition('U', m_pos.data[3] / 1000.0, unit);
-
-	GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
-
+	
+	if (m_posLast != m_pos) {
+		m_posLast = m_pos;
+		GetController()->getMachine().setPosition(GetController()->getAbsolutePosition());
+	}
+	
 	ProcessPos();
 
 	return true;
@@ -228,7 +231,6 @@ void NCMachine::ReadPlcState()
 bool NCMachine::ConvertModbusData4PlcState(ModbusTask* task, uint16_t* readData)
 {
 	assert(task->connectionIndex == 1);
-
 
 	if (readData == NULL) {
 		m_statePlc = cb::Vector<3, uint16_t>(NCT_STATE_INVALID, NCT_STATE_INVALID, NCT_STATE_INVALID);
@@ -358,7 +360,7 @@ QString NCMachine::GetRLSTDescAll()
 		return s;
 	if (MODBUS_CONNECTION_COUNT > 1)
 		s = NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1]);
-	return s;
+	return s; 
 }
 
 QString NCMachine::GetStateDesc(uint16_t state)
@@ -562,46 +564,38 @@ QString NCMachine::GetRLSTDesc(uint16_t rslt, uint16_t para)
 	return tr("WDY").arg(rslt).arg(para);
 }
 
-QString NCMachine::GetPlcStateDesc(uint16_t state)
+QString NCMachine::GetPlcRLSTDesc(uint16_t rslt, uint16_t para)
 {
-	switch (state) {
-	case 0:   return QStringLiteral("系统待机");
-	case 1:   return QStringLiteral("刀库右移中");
-	case 2:   return QStringLiteral("刀库右移到位");
-	case 3:   return QStringLiteral("刀库左移中");
-	case 4:   return QStringLiteral("刀库左移到位");
-	case 5:   return QStringLiteral("刀盘旋转中");
-	case 6:   return QStringLiteral("卸刀位为空");
-	case 7:   return QStringLiteral("装刀位有刀");
-	case 8:   return QStringLiteral("刀具松开中");
-	case 9:   return QStringLiteral("刀具夹紧中");
-	case 10:  return QStringLiteral("油槽上升中");
-	case 11:  return QStringLiteral("油槽下降中");
-	case 12:  return QStringLiteral("油槽上升完成");
-	case 13:  return QStringLiteral("油槽下降完成");
-	case 14:  return QStringLiteral("刀盘旋转到位");
-	case 255: return QStringLiteral("故障状态");
-	default:  return QString();
+	Q_UNUSED(para);
+
+	switch (rslt) {
+	case 0x0101: return QStringLiteral("刀库移动正常完成");
+	case 0x0102: return QStringLiteral("刀库移动超时");
+	case 0x0201: return QStringLiteral("刀具夹子正常完成");
+	case 0x0202: return QStringLiteral("刀具夹子动作异常");
+	case 0x0203: return QStringLiteral("刀位有刀异常");
+	case 0x0204: return QStringLiteral("刀位无刀异常");
+	case 0x0301: return QStringLiteral("刀盘旋转正常完成");
+	case 0x0302: return QStringLiteral("刀盘旋转故障");
+	case 0x0401: return QStringLiteral("油槽移动正常完成");
+	case 0x0402: return QStringLiteral("油槽移动超时");
+	default: return QString();
 	}
 }
 
-QString NCMachine::GetPlcRLSTDesc(uint16_t rslt, uint16_t para)
+QString NCMachine::GetPlcStateDesc(uint16_t state)
 {
-	switch (rslt) {
-	case 1:  return QStringLiteral("急停触发");
-	case 2:  return QStringLiteral("液压压力异常");
-	case 3:  return QStringLiteral("伺服故障");
-	case 4:  return QStringLiteral("刀库右移超时");
-	case 5:  return QStringLiteral("刀库左移超时");
-	case 6:  return QStringLiteral("油槽上升超时");
-	case 7:  return QStringLiteral("油槽下降超时");
-	case 8:  return QStringLiteral("刀具松开超时");
-	case 9:  return QStringLiteral("刀具夹紧超时");
-	case 10: return QStringLiteral("卸刀位有刀异常");
-	case 11: return QStringLiteral("装刀位无刀异常");
-	case 12: return QStringLiteral("装刀未就位异常");
-	case 13: return QStringLiteral("刀盘旋转超时");
-	default: return QString();
+	switch (state) {
+	case 0:       return QStringLiteral("系统待机");
+	case 0x0100:  return QStringLiteral("刀库移动中");
+	case 0x0101:  return QStringLiteral("刀库到达目的地");
+	case 0x0200:  return QStringLiteral("刀具夹子动作中");
+	case 0x0201:  return QStringLiteral("刀具完成动作");
+	case 0x0300:  return QStringLiteral("刀盘旋转中");
+	case 0x0301:  return QStringLiteral("刀盘旋转到位");
+	case 0x0400:  return QStringLiteral("油槽移动中");
+	case 0x0401:  return QStringLiteral("油槽移动到位");
+	default:      return QString();
 	}
 }
 
@@ -702,7 +696,9 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 			else if (action == "waitrslt") {
 				int connectionIndex = json->getS32("connection_index", 0);
 				uint16_t rslt = json->getU16("rslt");
-				uint16_t para = json->getU16("rslt_para");
+				uint16_t para = 0;
+				if (json->has("rslt_para"))
+					para = json->getU16("rslt_para");
 				std::string desc = json->getString("desc");
 				if (connectionIndex == 0)
 					task = m_modbusAdapter->getTaskWait(convertWaitFunction(waitUntilRLST(rslt, para)), desc);
@@ -974,11 +970,11 @@ std::function<int()> NCMachine::waitUntilNctState(uint16_t state)
 				uint16_t para = 0;
 				uint16_t rslt = state;
 				if ((m_state[0] >= rslt && m_state[0] <= rslt + 2) && (m_state[1] == para || para == 0)) {
-					LOG_WARNING("NCMachine: Function waitUntilNctState(" << state << ") return 1, but not by nctState, it's by rslt. Now state is " << m_state[0] << ", " << m_state[1]);
+					LOG_WARNING("NCMachine: Function waitUntilNctState(" << state << ") return 1, but not by nctState, it's by rslt. Now state is " << m_state[0] << ", " << m_state[1] << ", " << m_state[2]);
 					return 1;		// 完成任务
 				}
 				else {
-					LOG_WARNING("NCMachine: Function waitUntilNctState(" << state << ") return -9. Now state is " << m_state[0] << ", " << m_state[1]);
+					LOG_WARNING("NCMachine: Function waitUntilNctState(" << state << ") return -9. Now state is " << m_state[0] << ", " << m_state[1] << ", " << m_state[2]);
 					//if (doAfterFail != NULL) {
 					//	doAfterFail();
 					//}
@@ -1178,7 +1174,7 @@ std::function<int()> NCMachine::waitUntilRLST(uint16_t rslt, uint16_t para)
 				//	return 1;
 				//}
 
-				LOG_WARNING("NCMachine: Function waitUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_state[0] << ", " << m_state[1]);
+				LOG_WARNING("NCMachine: Function waitUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_state[0] << ", " << m_state[1] << ", " << m_state[1]);
 				QString error = QString("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
 				LineLogger::instance().append(error);
 
@@ -1263,11 +1259,11 @@ std::function<int()> NCMachine::waitPlcUntilNctState(uint16_t state)
 				uint16_t para = 0;
 				uint16_t rslt = state;
 				if ((m_statePlc[0] >= rslt && m_statePlc[0] <= rslt + 2) && (m_statePlc[1] == para || para == 0)) {
-					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return 1, but not by nctState, it's by rslt. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return 1, but not by nctState, it's by rslt. Now state is " << m_statePlc[0] << ", " << m_statePlc[1] << ", " << m_statePlc[2]);
 					return 1;		// 完成任务
 				}
 				else {
-					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+					LOG_WARNING("NCMachine: Function waitPlcUntilNctState(" << state << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1] << ", " << m_statePlc[2]);
 					//if (doAfterFail != NULL) {
 					//	doAfterFail();
 					//}
@@ -1309,7 +1305,7 @@ std::function<int()> NCMachine::waitPlcUntilRLST(uint16_t rslt, uint16_t para)
 				return 1;		// 完成任务
 			}
 			else {
-				LOG_WARNING("NCMachine: Function waitPlcUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1]);
+				LOG_WARNING("NCMachine: Function waitPlcUntilRLST(" << rslt << ", " << para << ") return -9. Now state is " << m_statePlc[0] << ", " << m_statePlc[1] << ", " << m_statePlc[2]);
 				QString error = QString("ERROR:%1").arg(NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1])); // .arg(gcode.replace("\n", ""));
 				LineLogger::instance().append(error);
 
@@ -3455,7 +3451,7 @@ int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 			{
 				if (ret2 == -9)
 				{
-					LOG_WARNING("NCMachine: GCodeTask wait function return -9: " << itFuncDesc << ". Now state is " << m_state[0] << ", " << m_state[1]);
+					LOG_WARNING("NCMachine: GCodeTask wait function return -9: " << itFuncDesc << ". Now state is " << m_state[0] << ", " << m_state[1] << ", " << m_state[2]);
 					//// 执行错误：
 					//QString error = QString("ERROR:%1").arg(NCMachine::GetRLSTDesc(m_state[0], m_state[1])); // .arg(gcode.replace("\n", ""));
 					//LineLogger::instance().append(error);
@@ -3904,15 +3900,16 @@ void NCMachine::StopRun()
 		return;
 	}
 
+	// functionDoFinished 中可能有task会加入队列，所以这里不清理队列0的，functionDoFinished中任务也要加入到队列0
 	LOG_INFO(8, "Modbus: clearTasks");
-	for (int i = 0; i < 2; ++i) {
+	for (int i = 1; i < 2; ++i) {
 		m_modbusAdapter->clearTasks(i);
 	}
 
 	// in gcodet task, maybe there is some modbus task to add which will do after clearTask
 	// 例如SV的值设为3，开机待机状态、加工停止后都需要设定
 	LOG_INFO(8, "NCMachine: clearTasks");
-	for (int i = 0; i < 2; ++i){
+	for (int i = 1; i < 2; ++i){
 		this->clearTasks(i);
 	}
 

@@ -1,3 +1,9 @@
+1.5.2
+1. 放电对刀bug, 同时改为X1档
+2. 英文界面更改
+
+
+
 ##1.5.1
 1. 数据文件整理，分成系统目录，用户目录和项目目录。
 	系统目录："C:/Program Fles/***/data", 放置系统相关的文件，用户不能修改。"cp.db", "qGlobal.ini", "qModMaster.ini", "xitongshezhi*_data.json", "fangdiancanshu_global_data.json", "luojubuchang*_data.json"

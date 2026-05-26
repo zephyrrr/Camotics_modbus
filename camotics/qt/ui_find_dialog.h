@@ -48,9 +48,9 @@ public:
     {
         if (FindDialog->objectName().isEmpty())
             FindDialog->setObjectName(QString::fromUtf8("FindDialog"));
-        FindDialog->resize(400, 230);
-        FindDialog->setMinimumSize(QSize(0, 230));
-        FindDialog->setMaximumSize(QSize(1000, 230));
+        FindDialog->resize(400, 350);
+        FindDialog->setMinimumSize(QSize(0, 300));
+        FindDialog->setMaximumSize(QSize(1000, 400));
         FindDialog->setModal(true);
         verticalLayout = new QVBoxLayout(FindDialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));

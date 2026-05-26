@@ -1,4 +1,4 @@
-﻿#include "runmanualmulti.h"
+#include "runmanualmulti.h"
 #include <QHeaderView>
 #include <QComboBox>
 #include <QCompleter>
@@ -213,7 +213,7 @@ QString RunManualMulti::GetGCode(bool forRun)
 	}
 
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne);
-	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") != "false";
 
 	if (isAbsolutePosition && realAxisLen > 1) {
 		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));
@@ -301,7 +301,7 @@ QString RunManualMulti::GetGCodeV2()
 	}
 	DataForm* dataForm = DataForms::getInstance()->getDataForm(m_name4RunAutoOne);
 	//QString gcode;// = RunManual::GetGCodeStatic(table1, table2, dataForm->getValue("inAbsolute") == "true", axisPositions);
-	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") != "false";
 
 	if (isAbsolutePosition && realAxisLen > 1){
 		FormUtils::MessageBoxInfo(tr("DZJGSYGYXDZB"));

@@ -1,4 +1,4 @@
-﻿#include "dataform.h"
+#include "dataform.h"
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QFile>
@@ -26,7 +26,7 @@ QString DataForm::getValue(const QString& caption, bool raiseWarning) const
         return m_data[caption];
     else {
         if (raiseWarning) {
-            LOG_WARNING("No data value in DataForm: " << caption.toUtf8().constData());
+            LOG_WARNING("EDM: No data value in DataForm: " << caption.toUtf8().constData());
         }
         return m_emptyString;
     }

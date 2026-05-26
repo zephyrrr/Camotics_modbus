@@ -1,4 +1,4 @@
-﻿#ifndef BASECHILDWINDOW_H
+#ifndef BASECHILDWINDOW_H
 #define BASECHILDWINDOW_H
 
 #include <QWidget>
@@ -96,7 +96,7 @@ public:
 
     virtual void ClearInputWidgets(QWidget* parent = NULL);
 
-    virtual QString GetGCode(bool forRun = true) { return NULL; }
+    virtual QString GetGCode(bool forRun = true) { Q_UNUSED(forRun); return NULL; }
     virtual void RunGCode() {};
 
     static BaseChildWindow* GetChildWindow(QWidget* widget);

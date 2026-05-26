@@ -18,7 +18,7 @@ class RealtimeJsonMachine : public MachineAdapter {
     std::string filename;
     int line = -1;
     std::string m_lastMessage = "";
-	bool simpleMode = false; // ÊÇ·ñÊÇ¼òµ¥Ä£Ê½(²»×Ô¶¯·¢ËÍAPI,JOG)
+	bool simpleMode = false; // æ˜¯å¦æ˜¯ç®€å•æ¨¡å¼(ä¸è‡ªåŠ¨å‘é€API,JOG)
 
     int m_machinePriority;
     NCMachine* m_ncMachine;

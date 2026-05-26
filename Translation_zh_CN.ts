@@ -1713,250 +1713,250 @@
 <context>
     <name>NCMachine</name>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="370"/>
+        <location filename="modbus/NCMachine.cpp" line="372"/>
         <source>WYDZT</source>
         <oldsource>WYDZT（</oldsource>
         <translation>无移动状态（API）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="373"/>
+        <location filename="modbus/NCMachine.cpp" line="375"/>
         <source>JYX</source>
         <translation>JOG运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="376"/>
+        <location filename="modbus/NCMachine.cpp" line="378"/>
         <source>JTC</source>
         <translation>JOG退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="379"/>
+        <location filename="modbus/NCMachine.cpp" line="381"/>
         <source>LYX</source>
         <translation>LOC运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="382"/>
+        <location filename="modbus/NCMachine.cpp" line="384"/>
         <source>CYX</source>
         <translation>CMV运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="385"/>
+        <location filename="modbus/NCMachine.cpp" line="387"/>
         <source>CTC</source>
         <translation>CMV退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="388"/>
+        <location filename="modbus/NCMachine.cpp" line="390"/>
         <source>CWC</source>
         <translation>CMV完成</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="391"/>
+        <location filename="modbus/NCMachine.cpp" line="393"/>
         <source>SYX</source>
         <translation>SPK运行</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="394"/>
+        <location filename="modbus/NCMachine.cpp" line="396"/>
         <source>STCQHZX</source>
         <translation>SPK退出前回中心</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="397"/>
+        <location filename="modbus/NCMachine.cpp" line="399"/>
         <source>STCQHT_XHZXZHT</source>
         <translation>SPK退出前回退（先回中心再回退）</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="400"/>
+        <location filename="modbus/NCMachine.cpp" line="402"/>
         <source>STDQHT</source>
         <translation>SPK抬刀前回退</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="403"/>
+        <location filename="modbus/NCMachine.cpp" line="405"/>
         <source>STD</source>
         <translation>SPK抬刀</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="406"/>
+        <location filename="modbus/NCMachine.cpp" line="408"/>
         <source>STDJSQJG</source>
         <translation>SPK抬刀结束去加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="409"/>
+        <location filename="modbus/NCMachine.cpp" line="411"/>
         <source>WDYZT</source>
         <translation>未定义状态：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="423"/>
+        <location filename="modbus/NCMachine.cpp" line="425"/>
         <source>JSDTC</source>
         <translation>JOG手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="428"/>
+        <location filename="modbus/NCMachine.cpp" line="430"/>
         <source>LZCWCTC</source>
         <translation>LOC正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="433"/>
+        <location filename="modbus/NCMachine.cpp" line="435"/>
         <source>LSDTC</source>
         <translation>LOC手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="438"/>
+        <location filename="modbus/NCMachine.cpp" line="440"/>
         <source>LQDQBJTC</source>
         <translation>LOC驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="442"/>
+        <location filename="modbus/NCMachine.cpp" line="444"/>
         <source>LCFXWTC</source>
         <translation>LOC触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="447"/>
+        <location filename="modbus/NCMachine.cpp" line="449"/>
         <source>LDLTC</source>
         <translation>LOC短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="452"/>
+        <location filename="modbus/NCMachine.cpp" line="454"/>
         <source>LCSFF</source>
         <translation>LOC参数非法</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="457"/>
+        <location filename="modbus/NCMachine.cpp" line="459"/>
         <source>LJYCW</source>
         <translation>LOC校验错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="462"/>
+        <location filename="modbus/NCMachine.cpp" line="464"/>
         <source>LWXGN</source>
         <translation>LOC无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="467"/>
+        <location filename="modbus/NCMachine.cpp" line="469"/>
         <source>CZCWCTC</source>
         <translation>CMV正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="472"/>
+        <location filename="modbus/NCMachine.cpp" line="474"/>
         <source>CSDTC</source>
         <translation>CMV手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="477"/>
+        <location filename="modbus/NCMachine.cpp" line="479"/>
         <source>CQDQBJTC</source>
         <translation>CMV驱动器报警退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="481"/>
+        <location filename="modbus/NCMachine.cpp" line="483"/>
         <source>CCFXWTC</source>
         <translation>CMV触发限位退出：%1</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="486"/>
+        <location filename="modbus/NCMachine.cpp" line="488"/>
         <source>CDLTC</source>
         <translation>CMV短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="491"/>
+        <location filename="modbus/NCMachine.cpp" line="493"/>
         <source>CZBMCW</source>
         <translation>CMV轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="496"/>
+        <location filename="modbus/NCMachine.cpp" line="498"/>
         <source>CCZMCW</source>
         <translation>CMV操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="501"/>
+        <location filename="modbus/NCMachine.cpp" line="503"/>
         <source>CWXGN</source>
         <translation>CMV无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="506"/>
+        <location filename="modbus/NCMachine.cpp" line="508"/>
         <source>SZCWCTC</source>
         <translation>SPK正常完成退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="511"/>
+        <location filename="modbus/NCMachine.cpp" line="513"/>
         <source>SSDTC</source>
         <translation>SPK手动退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="516"/>
+        <location filename="modbus/NCMachine.cpp" line="518"/>
         <source>SQDQBJTC</source>
         <translation>SPK驱动器报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="520"/>
+        <location filename="modbus/NCMachine.cpp" line="522"/>
         <source>SCFXWTC</source>
         <translation>SPK触发限位退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="525"/>
+        <location filename="modbus/NCMachine.cpp" line="527"/>
         <source>SDLTC</source>
         <translation>SPK短路退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="532"/>
+        <location filename="modbus/NCMachine.cpp" line="534"/>
         <source>YouWen</source>
         <translation>油温</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="535"/>
+        <location filename="modbus/NCMachine.cpp" line="537"/>
         <source>YouWei</source>
         <translation>油位</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="538"/>
+        <location filename="modbus/NCMachine.cpp" line="540"/>
         <source>HY</source>
         <translation>火焰</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="540"/>
+        <location filename="modbus/NCMachine.cpp" line="542"/>
         <source>SBJTC</source>
         <translation>SPK%1报警退出</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="546"/>
+        <location filename="modbus/NCMachine.cpp" line="548"/>
         <source>SZBMCW</source>
         <translation>SPK轴编码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="551"/>
+        <location filename="modbus/NCMachine.cpp" line="553"/>
         <source>SCZMCW</source>
         <translation>SPK操作码错误</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="556"/>
+        <location filename="modbus/NCMachine.cpp" line="558"/>
         <source>SWXGN</source>
         <translation>SPK无效功能</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="562"/>
+        <location filename="modbus/NCMachine.cpp" line="564"/>
         <source>WDY</source>
         <translation>未定义：%1,%2</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2563"/>
+        <location filename="modbus/NCMachine.cpp" line="2559"/>
         <source>MQBZCDY4GZBZJG</source>
         <translation>目前不支持多于4个坐标轴加工</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="2968"/>
-        <location filename="modbus/NCMachine.cpp" line="2977"/>
-        <location filename="modbus/NCMachine.cpp" line="3603"/>
+        <location filename="modbus/NCMachine.cpp" line="2964"/>
+        <location filename="modbus/NCMachine.cpp" line="2973"/>
+        <location filename="modbus/NCMachine.cpp" line="3599"/>
         <source>CMLCSBMZYQ</source>
         <translation>C命令参数%1=%2不满足要求！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3032"/>
+        <location filename="modbus/NCMachine.cpp" line="3028"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3589"/>
+        <location filename="modbus/NCMachine.cpp" line="3585"/>
         <source>CMLCSSLHYQDBYZ</source>
         <translation>C命令参数数量和要求的不一致！</translation>
     </message>
     <message>
-        <location filename="modbus/NCMachine.cpp" line="3789"/>
+        <location filename="modbus/NCMachine.cpp" line="3785"/>
         <source>ESYGCXHZYX</source>
         <translation>ERROR:上一个程序还在运行</translation>
     </message>
@@ -2621,13 +2621,13 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="124"/>
-        <location filename="forms/mainwindow2.cpp" line="1758"/>
+        <location filename="forms/mainwindow2.cpp" line="1763"/>
         <source>YouWei</source>
         <translation>油位</translation>
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="131"/>
-        <location filename="forms/mainwindow2.cpp" line="1761"/>
+        <location filename="forms/mainwindow2.cpp" line="1766"/>
         <source>YouWen</source>
         <translation>油温</translation>
     </message>
@@ -2737,7 +2737,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="159"/>
-        <location filename="forms/mainwindow2.cpp" line="1375"/>
+        <location filename="forms/mainwindow2.cpp" line="1380"/>
         <source>GT</source>
         <translation>高跳</translation>
     </message>
@@ -2763,7 +2763,7 @@
     </message>
     <message>
         <location filename="forms/mainwindow2.ui" line="428"/>
-        <source>CYL(</source>
+        <source>CYL</source>
         <translation>残余量(mm)</translation>
     </message>
     <message>
@@ -2812,7 +2812,7 @@
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="322"/>
+        <location filename="forms/mainwindow2.cpp" line="327"/>
         <source>YX</source>
         <translation>右下</translation>
     </message>
@@ -2862,276 +2862,276 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="260"/>
+        <location filename="forms/mainwindow2.cpp" line="265"/>
         <source>XMML</source>
         <translation>项目目录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="299"/>
-        <location filename="forms/mainwindow2.cpp" line="319"/>
+        <location filename="forms/mainwindow2.cpp" line="304"/>
+        <location filename="forms/mainwindow2.cpp" line="324"/>
         <source>SD</source>
         <translation>手动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="300"/>
+        <location filename="forms/mainwindow2.cpp" line="305"/>
         <source>EZD</source>
         <translation>EDM自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="302"/>
+        <location filename="forms/mainwindow2.cpp" line="307"/>
         <source>JG</source>
         <translation>加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="303"/>
+        <location filename="forms/mainwindow2.cpp" line="308"/>
         <source>SheDing</source>
         <translation>设定</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="320"/>
+        <location filename="forms/mainwindow2.cpp" line="325"/>
         <source>ZD</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="301"/>
-        <location filename="forms/mainwindow2.cpp" line="321"/>
+        <location filename="forms/mainwindow2.cpp" line="306"/>
+        <location filename="forms/mainwindow2.cpp" line="326"/>
         <source>BianJi</source>
         <translation>编辑</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="323"/>
+        <location filename="forms/mainwindow2.cpp" line="328"/>
         <source>QT</source>
         <translation>其他</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="350"/>
+        <location filename="forms/mainwindow2.cpp" line="355"/>
         <source>ZBSZ</source>
         <translation>坐标设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="353"/>
+        <location filename="forms/mainwindow2.cpp" line="358"/>
         <source>DWYD</source>
         <translation>定位移动</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="356"/>
+        <location filename="forms/mainwindow2.cpp" line="361"/>
         <source>WZJY</source>
         <translation>位置记忆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="359"/>
+        <location filename="forms/mainwindow2.cpp" line="364"/>
         <source>DMDW</source>
         <translation>端面定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="362"/>
+        <location filename="forms/mainwindow2.cpp" line="367"/>
         <source>ZZX</source>
         <translation>柱中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="365"/>
+        <location filename="forms/mainwindow2.cpp" line="370"/>
         <source>JZX</source>
         <translation>角中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="368"/>
+        <location filename="forms/mainwindow2.cpp" line="373"/>
         <source>KZX</source>
         <translation>孔中心</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="371"/>
+        <location filename="forms/mainwindow2.cpp" line="376"/>
         <source>SDDY</source>
         <translation>三点定圆</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="374"/>
+        <location filename="forms/mainwindow2.cpp" line="379"/>
         <source>FDDW</source>
         <translation>放电定位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="382"/>
+        <location filename="forms/mainwindow2.cpp" line="387"/>
         <source>ZDCS</source>
         <translation>自动参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="393"/>
+        <location filename="forms/mainwindow2.cpp" line="398"/>
         <source>SDDG</source>
         <translation>手动单个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="396"/>
+        <location filename="forms/mainwindow2.cpp" line="401"/>
         <source>SDMG</source>
         <translation>手动多个</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="405"/>
+        <location filename="forms/mainwindow2.cpp" line="410"/>
         <source>NJG</source>
         <translation>NC加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="410"/>
+        <location filename="forms/mainwindow2.cpp" line="415"/>
         <source>JGJL</source>
         <translation>加工记录</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="414"/>
+        <location filename="forms/mainwindow2.cpp" line="419"/>
         <source>XTSZ</source>
         <translation>系统设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="415"/>
+        <location filename="forms/mainwindow2.cpp" line="420"/>
         <source>FangDianCanShu</source>
         <translation>放电参数</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="418"/>
-        <location filename="forms/mainwindow2.cpp" line="1303"/>
+        <location filename="forms/mainwindow2.cpp" line="423"/>
+        <location filename="forms/mainwindow2.cpp" line="1308"/>
         <source>FDCS</source>
         <translation>放电测试</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="419"/>
+        <location filename="forms/mainwindow2.cpp" line="424"/>
         <source>LJBC</source>
         <translation>螺距补偿</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="424"/>
+        <location filename="forms/mainwindow2.cpp" line="429"/>
         <source>CKSZ</source>
         <translation>串口设置</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="429"/>
+        <location filename="forms/mainwindow2.cpp" line="434"/>
         <source>TCPIP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="437"/>
+        <location filename="forms/mainwindow2.cpp" line="442"/>
         <source>GY</source>
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="480"/>
-        <location filename="forms/mainwindow2.cpp" line="1476"/>
+        <location filename="forms/mainwindow2.cpp" line="485"/>
+        <location filename="forms/mainwindow2.cpp" line="1481"/>
         <source>CKWLJ</source>
         <translation>串口未连接</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="485"/>
-        <location filename="forms/mainwindow2.cpp" line="1587"/>
+        <location filename="forms/mainwindow2.cpp" line="490"/>
+        <location filename="forms/mainwindow2.cpp" line="1592"/>
         <source>DDYX</source>
         <translation>等待运行</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="659"/>
+        <location filename="forms/mainwindow2.cpp" line="664"/>
         <source>MNJG</source>
         <translation>模拟加工</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="667"/>
+        <location filename="forms/mainwindow2.cpp" line="672"/>
         <source>JGHGJ</source>
         <translation>加工后关机</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="926"/>
-        <location filename="forms/mainwindow2.cpp" line="940"/>
-        <location filename="forms/mainwindow2.cpp" line="1621"/>
+        <location filename="forms/mainwindow2.cpp" line="931"/>
+        <location filename="forms/mainwindow2.cpp" line="945"/>
+        <location filename="forms/mainwindow2.cpp" line="1626"/>
         <source>YXZ</source>
         <translation>运行中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1020"/>
+        <location filename="forms/mainwindow2.cpp" line="1025"/>
         <source>to_clear_machine_axis</source>
         <translation>是否清零机械坐标？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1027"/>
+        <location filename="forms/mainwindow2.cpp" line="1032"/>
         <source>SFJXZDHL</source>
         <translation>是否进行自动回零？</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1145"/>
+        <location filename="forms/mainwindow2.cpp" line="1150"/>
         <source>BCWJ</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1315"/>
-        <location filename="forms/mainwindow2.cpp" line="1384"/>
+        <location filename="forms/mainwindow2.cpp" line="1320"/>
+        <location filename="forms/mainwindow2.cpp" line="1389"/>
         <source>FS</source>
         <translation>发送</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1316"/>
-        <location filename="forms/mainwindow2.cpp" line="1385"/>
+        <location filename="forms/mainwindow2.cpp" line="1321"/>
+        <location filename="forms/mainwindow2.cpp" line="1390"/>
         <source>GB</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1602"/>
+        <location filename="forms/mainwindow2.cpp" line="1607"/>
         <source>DDZ</source>
         <translation>对刀中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1605"/>
+        <location filename="forms/mainwindow2.cpp" line="1610"/>
         <source>HLZ</source>
         <translation>回零中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1610"/>
+        <location filename="forms/mainwindow2.cpp" line="1615"/>
         <source>FDZ</source>
         <translation>放电中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1613"/>
+        <location filename="forms/mainwindow2.cpp" line="1618"/>
         <source>FDZT</source>
         <translation>放电暂停</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1618"/>
+        <location filename="forms/mainwindow2.cpp" line="1623"/>
         <source>ZTZ</source>
         <translation>暂停中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1635"/>
+        <location filename="forms/mainwindow2.cpp" line="1640"/>
         <source>DLBJ</source>
         <translation>短路报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1675"/>
+        <location filename="forms/mainwindow2.cpp" line="1680"/>
         <source>CFDJBJ</source>
         <translation>伺服电机报警</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1691"/>
+        <location filename="forms/mainwindow2.cpp" line="1696"/>
         <source>DDYWZ</source>
         <translation>等待液位中</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1712"/>
+        <location filename="forms/mainwindow2.cpp" line="1717"/>
         <source>XXW1</source>
         <translation>X+限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1716"/>
+        <location filename="forms/mainwindow2.cpp" line="1721"/>
         <source>XXW2</source>
         <translation>X-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1720"/>
+        <location filename="forms/mainwindow2.cpp" line="1725"/>
         <source>YXW1</source>
         <translation>Y+限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1724"/>
+        <location filename="forms/mainwindow2.cpp" line="1729"/>
         <source>YXW2</source>
         <translation>Y-限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1728"/>
+        <location filename="forms/mainwindow2.cpp" line="1733"/>
         <source>ZXW1</source>
         <translation>Z+限位</translation>
     </message>
     <message>
-        <location filename="forms/mainwindow2.cpp" line="1732"/>
+        <location filename="forms/mainwindow2.cpp" line="1737"/>
         <source>ZXW2</source>
         <translation>Z-限位</translation>
     </message>

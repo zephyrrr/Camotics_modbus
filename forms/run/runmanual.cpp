@@ -856,7 +856,7 @@ QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTabl
 	//}
 
 
-	bool isAbsolutePosition = dataForm->getValue("inAbsolute") == "true";
+	bool isAbsolutePosition = dataForm->getValue("inAbsolute") != "false";
 
 	// 不能用G91相对坐标，不然多个G01坐标会递增
 	// 2:我们现在加工完成或者暂停后都是会回到起点的，这个是没问题的
@@ -879,7 +879,7 @@ QString RunManual::GetGCodeV1(IDataForm* dataForm, IDataTable* table1, IDataTabl
 	bool negativeJgyl = false;
 	if (realAxisLen == 1) {
 		// 起点<终点, 深度余量自动改为负数。
-		if (axisPositions[selectedAxisIndex] < toAxisLength[selectedAxisIndex])
+		if (axisPositions != NULL && axisPositions[selectedAxisIndex] < toAxisLength[selectedAxisIndex])
 		{
 			negativeJgyl = true;
 		}

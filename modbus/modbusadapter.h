@@ -1,4 +1,4 @@
-﻿#ifndef MODBUSADAPTER_H
+#ifndef MODBUSADAPTER_H
 #define MODBUSADAPTER_H
 
 #pragma warning(disable : 4100)
