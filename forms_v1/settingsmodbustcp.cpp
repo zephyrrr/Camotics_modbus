@@ -1,4 +1,4 @@
-﻿#include <QtDebug>
+#include <QtDebug>
 #include <QMessageBox>
 #include "settingsmodbustcp.h"
 #include "ui_settingsmodbustcp.h"

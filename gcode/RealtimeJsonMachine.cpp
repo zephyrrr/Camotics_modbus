@@ -1,4 +1,4 @@
-﻿
+
 #include "RealtimeJsonMachine.h"
 
 #include <cbang/Exception.h>
@@ -45,10 +45,10 @@ namespace {
 
 void RealtimeJsonMachine::doTask(cb::JSON::ValuePtr sink, bool checkContinue)
 {
-    if (simpleMode) {
-        // 简单模式下不支持任务线程模式
-		throw std::runtime_error("not support async mode in simpleMode now.");
-    }
+  //  if (!m_autoApiJogMode) {
+  //      // 简单模式下不支持任务线程模式
+		//throw std::runtime_error("not support async mode in simpleMode now.");
+  //  }
 
     if (checkContinue) {
         // dont throw exception in endBlock
@@ -122,7 +122,7 @@ void RealtimeJsonMachine::start() {
 
     MachineAdapter::start();
 
-    if (!simpleMode) {
+    if (m_autoApiJogMode) {
         //sink.appendDict(true);
         //sink.insert("type", "units");
         //sink.insert("value", units.toString());
@@ -138,7 +138,7 @@ void RealtimeJsonMachine::start() {
 void RealtimeJsonMachine::end() {
     MachineAdapter::end();
 
-    if (!simpleMode)
+    if (m_autoApiJogMode)
     {
         {
             char selectedAxis = '0';
@@ -163,7 +163,10 @@ void RealtimeJsonMachine::end() {
             doTask(sink, false);
         }
     }
-
+    else
+    {
+        m_autoApiJogMode = true;
+    }
     
 }
 
@@ -247,7 +250,7 @@ void RealtimeJsonMachine::changeTool(unsigned tool) {
         cb::JSON::ValuePtr sink = JSON::Factory().createDict();
         sink->insert("type", "tool");
         sink->insert("value", tool);
-
+		sink->insert("prev", currentTool);
         doTask(sink);
     }
 }

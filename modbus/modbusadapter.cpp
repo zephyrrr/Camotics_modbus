@@ -19,6 +19,8 @@
 #include <QTextStream>
 #include <QTime>
 
+#define LIB_MODBUS_DEBUG_OUTPUT
+
 ModbusAdapter* s_instance;
 
 #define DATA_BUFFER_LEN 2000
@@ -42,7 +44,13 @@ ModbusAdapter::ModbusAdapter(QObject* parent) :
 			// For additional connections, use qModMaster1.ini, qModMaster2.ini, etc.
 			iniFile = SystemSettings::GetPath(QString("qModMaster%1.ini").arg(i + 1), SystemSettings::SystemFlag);
 		}
-		m_modbusCommSettings[i] = new ModbusCommSettings(iniFile);
+		// check whether file exist
+		if (QFile::exists(iniFile)) {
+			m_modbusCommSettings[i] = new ModbusCommSettings(iniFile);
+		}
+		else {
+			m_modbusCommSettings[i] = NULL;
+		}
 	}
 
 	s_instance = this;
@@ -676,27 +684,27 @@ void ModbusAdapter::logWriteOperation(int startAddr, int numOfRegs, uint16_t* wr
 	m_replayLogFile->flush();
 }
 
-ModbusTask* ModbusAdapter::getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex)
+ModbusTask* ModbusAdapter::getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex, int slave)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, subAddr, nb, writeData, connectionIndex);
+	ModbusTask* task = new ModbusTask(slave, MODBUS_FC_WRITE_FILE_RECORD, subAddr, nb, writeData, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskReadFile(int subAddr, int nb, int connectionIndex)
+ModbusTask* ModbusAdapter::getTaskReadFile(int subAddr, int nb, int connectionIndex, int slave)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, subAddr, nb, connectionIndex);
+	ModbusTask* task = new ModbusTask(slave, MODBUS_FC_READ_FILE_RECORD, subAddr, nb, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex)
+ModbusTask* ModbusAdapter::getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex, int slave)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_WRITE_FUNCTION, startAddr, numOfRegs, writeData, connectionIndex);
+	ModbusTask* task = new ModbusTask(slave, DEFAULT_MODBUS_WRITE_FUNCTION, startAddr, numOfRegs, writeData, connectionIndex);
 	return task;
 }
 
-ModbusTask* ModbusAdapter::getTaskRead(int startAddr, int numOfRegs, int connectionIndex)
+ModbusTask* ModbusAdapter::getTaskRead(int startAddr, int numOfRegs, int connectionIndex, int slave)
 {
-	ModbusTask* task = new ModbusTask(DEFAULT_MODBUS_SLAVE, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs, connectionIndex);
+	ModbusTask* task = new ModbusTask(slave, DEFAULT_MODBUS_READ_FUNCTION, startAddr, numOfRegs, connectionIndex);
 	return task;
 }
 

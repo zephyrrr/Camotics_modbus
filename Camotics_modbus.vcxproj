@@ -407,6 +407,7 @@
     <ClCompile Include="forms\component\pythonpluginchildwindow.cpp" />
     <ClCompile Include="forms_v1\settingsmodbustcp.cpp" />
     <ClCompile Include="modbus\NCMachineState.cpp" />
+    <ClCompile Include="utils\MyPythonQtScriptingConsole.cpp" />
     <ClCompile Include="utils\JsonTemplateUtil.cpp" />
     <ClCompile Include="modbus\SystemSettings.cpp" />
     <ClCompile Include="utils\LocaleUtils.cpp" />
@@ -443,7 +444,16 @@
     <ClCompile Include="utils\dataform.cpp" />
     <ClCompile Include="utils\formutils.cpp" />
     <ClCompile Include="utils\gcodeutils.cpp" />
-    <ClCompile Include="utils\PythonQtRuntime.cpp" />
+    <ClCompile Include="utils\PythonQtRuntime.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="utils\pluginutils.cpp" />
     <ClCompile Include="utils\DataTable.cpp" />
     <ClCompile Include="forms\edit\cp\widget_cp_ln.cpp" />
@@ -584,6 +594,7 @@
     <QtMoc Include="utils\QSqliteListModel.h" />
     <QtMoc Include="forms_v1\settingsmodbustcp.h" />
     <ClInclude Include="modbus\NCMachineState.h" />
+    <QtMoc Include="utils\MyPythonQtScriptingConsole.h" />
     <ClInclude Include="utils\JsonTemplateUtil.h" />
     <ClInclude Include="modbus\SystemSettings.h" />
     <ClInclude Include="utils\LocaleUtils.h" />

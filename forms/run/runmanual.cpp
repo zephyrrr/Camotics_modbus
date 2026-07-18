@@ -1230,10 +1230,7 @@ QString RunManual::GetGCode(bool forRun)
 	//	}
 	//}
 
-	if (table2->getDataCount() <= 0) {
-		FormUtils::MessageBoxInfo(tr("JGHSWL"));
-		return QString();
-	}
+	
 	QStringList toAxis;
 	for (int i = 0; i < 3; ++i) {
 		if (table1->getValue(i, -1) != "True") {
@@ -1247,6 +1244,26 @@ QString RunManual::GetGCode(bool forRun)
 	}
 	if (toAxis.length() == 0) {
 		FormUtils::MessageBoxInfo(tr("JGZBZWXZ"));
+		return QString();
+	}
+
+	if (table2->getDataCount() <= 0) {
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
+		return QString();
+	}
+	int jghsCount = 0;
+	for (int i = 0; i < table2->getDataCount(); ++i) {
+		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
+			continue;
+		}
+		if (table2->getValue(i, 1).isEmpty()) {
+			continue;
+		}
+		jghsCount++;
+		break;
+	}
+	if (jghsCount == 0) {
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
 		return QString();
 	}
 

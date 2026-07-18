@@ -21,6 +21,7 @@ PythonPluginChildWindow::~PythonPluginChildWindow()
 void PythonPluginChildWindow::SetPythonWidget(QWidget* widget)
 {
 	m_pythonWidget = widget;
+	m_pythonWidget->setObjectName("python_plugin_widget");
 	if (widget) {
 		QHBoxLayout* layout = new QHBoxLayout(this);
 		layout->setContentsMargins(0, 0, 0, 0);
@@ -43,6 +44,7 @@ void PythonPluginChildWindow::RunGCode()
 void PythonPluginChildWindow::showEvent(QShowEvent* event)
 {
 	BaseChildWindow::showEvent(event);
+	// 这里调用会重新加载 Python 模块，和create_widget时候不同
 	CallPythonFunction("on_show");
 }
 

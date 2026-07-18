@@ -10,7 +10,6 @@
 #define UI_SETTINGSMODBUSRTU_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialogButtonBox>
@@ -55,9 +54,6 @@ public:
             SettingsModbusRTU->setObjectName(QString::fromUtf8("SettingsModbusRTU"));
         SettingsModbusRTU->resize(313, 327);
         SettingsModbusRTU->setMinimumSize(QSize(220, 256));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/icons/options-16.png"), QSize(), QIcon::Normal, QIcon::Off);
-        SettingsModbusRTU->setWindowIcon(icon);
         verticalLayout = new QVBoxLayout(SettingsModbusRTU);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         gridLayout = new QGridLayout();
@@ -227,8 +223,6 @@ public:
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(SettingsModbusRTU);
-        QObject::connect(buttonBox, SIGNAL(accepted()), SettingsModbusRTU, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), SettingsModbusRTU, SLOT(reject()));
 
         cmbStopBits->setCurrentIndex(0);
         cmbDataBits->setCurrentIndex(1);

@@ -27,13 +27,13 @@ private:
 private slots:
     void changesAccepted();
 
-Q_SIGNALS:
-    void accepted();
-    void rejected();
-
-public Q_SLOTS:
-    virtual void accept();
-    virtual void reject();
+//Q_SIGNALS:
+//    void accepted();
+//    void rejected();
+//
+//public Q_SLOTS:
+//    virtual void accept();
+//    virtual void reject();
 
 protected:
     void showEvent(QShowEvent * event);

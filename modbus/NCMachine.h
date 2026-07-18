@@ -399,7 +399,7 @@ private:
 	std::atomic<bool> m_realtimeJsonMachineThreadDone;
 
 	GCodeTool* m_gcodeTool2;
-	SmartPointer<RealtimeJsonMachine> m_realtimeJsonMachine2;
+	SmartPointer<RealtimeJsonMachine> m_realtimeJsonMachine2;	// For Sync RunGCode
 
 	void SaveWorkTimeToDb();
 public:
@@ -431,6 +431,12 @@ public Q_SLOTS:
 	// GetControllerParam(5220)	# CURRENT_COORD_SYSTEM = 5220,
 	double GetControllerParam(NCMachine* o, int addr) { return o->GetController()->get((address_t)addr); }
 
+	QString GetPath(NCMachine* o, const QString& fileName, int dirFlags = 1) const {
+		return SystemSettings::GetPath(fileName, (SystemSettings::DataDirType)dirFlags);
+	}
+
+	void AddReadRegTask(NCMachine* o, int addr, int quantity, int connIdx = 0, int slave = DEFAULT_MODBUS_SLAVE, int priority = 0);
+	void AddWriteRegTask(NCMachine* o, int addr, int quantity, const QVariantList& values, int connIdx = 0, int slave = DEFAULT_MODBUS_SLAVE, int priority = 0);
 private:
 	QVariantList ToQVariantList(const cb::Vector3U& list) {
 		QVariantList varList;

@@ -1,4 +1,4 @@
-﻿#include <QtDebug>
+#include <QtDebug>
 #include "settingsmodbusrtu.h"
 #include "ui_settingsmodbusrtu.h"
 #include "widgets/qlineedit4axisvalue.h"
@@ -30,13 +30,13 @@ SettingsModbusRTU::~SettingsModbusRTU()
     delete ui;
 }
 
-void SettingsModbusRTU::accept()
-{
-}
-
-void SettingsModbusRTU::reject()
-{
-}
+//void SettingsModbusRTU::accept()
+//{
+//}
+//
+//void SettingsModbusRTU::reject()
+//{
+//}
 
 void SettingsModbusRTU::showEvent(QShowEvent * event)
 {

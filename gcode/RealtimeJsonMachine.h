@@ -18,7 +18,7 @@ class RealtimeJsonMachine : public MachineAdapter {
     std::string filename;
     int line = -1;
     std::string m_lastMessage = "";
-	bool simpleMode = false; // 是否是简单模式(不自动发送API,JOG)
+	bool m_autoApiJogMode = true; // 是否是自动模式(自动发送API,JOG)
 
     int m_machinePriority;
     NCMachine* m_ncMachine;
@@ -49,7 +49,7 @@ public:
     void setTaskToContinue(bool b) { m_taskToContinue = b; }
 	bool isTaskToContinue() { return m_taskToContinue; }    
 
-    void setSimpleMode(bool b) { simpleMode = b; }
+    void disableAutoApiJogMode() { m_autoApiJogMode = false; }    // end后自动恢复
 
     RealtimeJsonMachine(NCMachine* ncMachine, Units units) :
         m_ncMachine(ncMachine), units(units), withLocation(true), m_machinePriority(-1) {}

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>WolongH3Widget</class>
+ <widget class="QWidget" name="WolongH3Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>卧龙H3</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: rgb(22, 77, 160);
+    font-family: "Microsoft YaHei UI";
+}
+
+QWidget QLabel {
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+}
+
+QWidget QLabel#titleLabel {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+QWidget QPushButton {
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    background-color: rgb(225, 225, 225);
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    min-height: 45px;
+}
+
+QWidget QPushButton:pressed {
+    color: white;
+    background-color: rgb(170, 85, 255);
+    border: 2px solid black;
+}
+
+QWidget QLineEdit {
+    font-family: "Microsoft YaHei UI";
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 94, 2);
+    text-align: center;
+    border: 1px solid rgb(128, 128, 128);
+    border-radius: 4px;
+    min-height: 40px;
+    padding: 4px;
+}
+
+QWidget QGroupBox {
+    border: 2px solid rgb(128, 128, 128);
+    border-radius: 6px;
+    margin-top: 14px;
+    padding: 16px 8px 8px 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+QWidget QGroupBox::title {
+    subcontrol-origin: border;
+    subcontrol-position: top left;
+    left: 14px;
+    padding: 0 8px;
+    background-color: rgb(22, 77, 160);
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>卧龙H3 电机控制</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="motorsLayout">
+     <property name="spacing">
+      <number>15</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="groupBoxMotor1">
+       <property name="title">
+        <string>电机 1</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout1">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="statusLayout1">
+          <item>
+           <widget class="QLabel" name="labelStatusTitle1">
+            <property name="text">
+             <string>当前状态：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblStatus1">
+            <property name="text">
+             <string>电机失能</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="statusSpacer1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="enableLayout1">
+          <item>
+           <widget class="QPushButton" name="btnEnable1">
+            <property name="text">
+             <string>电机使能</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDisable1">
+            <property name="text">
+             <string>电机失能</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="runLayout1">
+          <item>
+           <widget class="QPushButton" name="btnForward1">
+            <property name="text">
+             <string>正转</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnReverse1">
+            <property name="text">
+             <string>反转</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStop1">
+            <property name="text">
+             <string>停止</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="speedLayout1">
+          <item>
+           <widget class="QLabel" name="labelSpeed1">
+            <property name="text">
+             <string>电机转速：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit4Keyboard" name="editSpeed1">
+            <property name="placeholderText">
+             <string notr="true">RPM</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="accelLayout1">
+          <item>
+           <widget class="QLabel" name="labelAccel1">
+            <property name="text">
+             <string>加速时间：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit4Keyboard" name="editAccel1">
+            <property name="placeholderText">
+             <string notr="true">ms</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="bottomSpacer1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBoxMotor2">
+       <property name="title">
+        <string>电机 2</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout2">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>15</number>
+        </property>
+        <property name="topMargin">
+         <number>15</number>
+        </property>
+        <property name="rightMargin">
+         <number>15</number>
+        </property>
+        <property name="bottomMargin">
+         <number>15</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="statusLayout2">
+          <item>
+           <widget class="QLabel" name="labelStatusTitle2">
+            <property name="text">
+             <string>当前状态：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblStatus2">
+            <property name="text">
+             <string>电机失能</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="statusSpacer2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="enableLayout2">
+          <item>
+           <widget class="QPushButton" name="btnEnable2">
+            <property name="text">
+             <string>电机使能</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnDisable2">
+            <property name="text">
+             <string>电机失能</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="runLayout2">
+          <item>
+           <widget class="QPushButton" name="btnForward2">
+            <property name="text">
+             <string>正转</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnReverse2">
+            <property name="text">
+             <string>反转</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnStop2">
+            <property name="text">
+             <string>停止</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="speedLayout2">
+          <item>
+           <widget class="QLabel" name="labelSpeed2">
+            <property name="text">
+             <string>电机转速：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit4Keyboard" name="editSpeed2">
+            <property name="placeholderText">
+             <string notr="true">RPM</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="accelLayout2">
+          <item>
+           <widget class="QLabel" name="labelAccel2">
+            <property name="text">
+             <string>加速时间：</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit4Keyboard" name="editAccel2">
+            <property name="placeholderText">
+             <string notr="true">ms</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <spacer name="bottomSpacer2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QLineEdit4Keyboard</class>
+   <extends>QLineEdit</extends>
+   <header>qlineedit4axisvalue.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

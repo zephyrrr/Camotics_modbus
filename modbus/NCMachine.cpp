@@ -10,6 +10,7 @@
 #include <cbang/Catch.h>
 #include <cbang/log/Logger.h>
 #include <QDir>
+#include <QDate>
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QThread>
@@ -358,7 +359,7 @@ QString NCMachine::GetRLSTDescAll()
 	QString s = NCMachine::GetRLSTDesc(m_state[0], m_state[1]);
 	if (!s.isEmpty())
 		return s;
-	if (MODBUS_CONNECTION_COUNT > 1)
+	if (MODBUS_CONNECTION_COUNT > 1 && SystemSettings::instance().GetValue("System/EnableATC") == "true")
 		s = NCMachine::GetPlcRLSTDesc(m_statePlc[0], m_statePlc[1]);
 	return s; 
 }
@@ -569,32 +570,43 @@ QString NCMachine::GetPlcRLSTDesc(uint16_t rslt, uint16_t para)
 	Q_UNUSED(para);
 
 	switch (rslt) {
+	case 0x0001: return QStringLiteral("急停触发");
 	case 0x0101: return QStringLiteral("刀库移动正常完成");
 	case 0x0102: return QStringLiteral("刀库移动超时");
-	case 0x0201: return QStringLiteral("刀具夹子正常完成");
-	case 0x0202: return QStringLiteral("刀具夹子动作异常");
+	case 0x0201: return QStringLiteral("刀具动作正常完成");
+	case 0x0202: return QStringLiteral("刀具动作异常");
 	case 0x0203: return QStringLiteral("刀位有刀异常");
 	case 0x0204: return QStringLiteral("刀位无刀异常");
 	case 0x0301: return QStringLiteral("刀盘旋转正常完成");
 	case 0x0302: return QStringLiteral("刀盘旋转故障");
+	case 0x0303: return QStringLiteral("伺服电机故障");
+	case 0x0304: return QStringLiteral("伺服外部异常报警");
 	case 0x0401: return QStringLiteral("油槽移动正常完成");
 	case 0x0402: return QStringLiteral("油槽移动超时");
-	default: return QString();
+	case 0x0403: return QStringLiteral("液压异常");
+	case 0x0500: return QStringLiteral("上电/断电完成");
+	case 0x0501: return QStringLiteral("上电/断电异常");
+	case 0x0601: return QStringLiteral("复位异常");
 	}
+
+	return QString();
 }
 
 QString NCMachine::GetPlcStateDesc(uint16_t state)
 {
 	switch (state) {
-	case 0:       return QStringLiteral("系统待机");
+	case 0x0000:  return QStringLiteral("系统待机");
+	case 0x0001:  return QStringLiteral("急停状态");
 	case 0x0100:  return QStringLiteral("刀库移动中");
-	case 0x0101:  return QStringLiteral("刀库到达目的地");
-	case 0x0200:  return QStringLiteral("刀具夹子动作中");
-	case 0x0201:  return QStringLiteral("刀具完成动作");
+	case 0x0101:  return QStringLiteral("刀库移动到位");
+	case 0x0200:  return QStringLiteral("刀具动作中");
+	case 0x0201:  return QStringLiteral("刀具动作完成");
 	case 0x0300:  return QStringLiteral("刀盘旋转中");
 	case 0x0301:  return QStringLiteral("刀盘旋转到位");
 	case 0x0400:  return QStringLiteral("油槽移动中");
 	case 0x0401:  return QStringLiteral("油槽移动到位");
+	case 0x0500:  return QStringLiteral("上电/断电中");
+	case 0x0501:  return QStringLiteral("上电/断电完成");
 	default:      return QString();
 	}
 }
@@ -649,17 +661,23 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
 				std::string data = json->getAsString("data");
+				int modbus_slave = json->getS32("slave", DEFAULT_MODBUS_SLAVE);
 
-				std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+				std::string regPrefix = "_reg_" + std::to_string(connectionIndex) + "_" + std::to_string(modbus_slave) + "_";
+
+				std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 					if (ret == -1)
 					{
+						GetController()->set(regPrefix + "ret", -1);
 						// 暂时还是去掉，因为某些写命令重要性不大
 						//QMetaObject::invokeMethod(this, [this]() {
 						//	this->StopRun();
 						//}, Qt::QueuedConnection);
 					}
+					GetController()->set(regPrefix + "ret", ret);
 				};
-				task = m_modbusAdapter->getTaskWrite(address, quantity, data, connectionIndex);
+				task = m_modbusAdapter->getTaskWrite(address, quantity, data, connectionIndex, modbus_slave);
+				task->setPostFunction(function1, "writereg");
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskWrite(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
@@ -668,7 +686,25 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				int connectionIndex = json->getS32("connection_index", 0);
 				int quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
-				task = m_modbusAdapter->getTaskRead(address, quantity, connectionIndex);
+				int modbus_slave = json->getS32("slave", DEFAULT_MODBUS_SLAVE);
+
+				std::string regPrefix = "_reg_" + std::to_string(connectionIndex) + "_" + std::to_string(modbus_slave) + "_";
+
+				std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+					if (ret == -1) {
+						GetController()->set(regPrefix + "ret", -1);
+						return;
+					}
+					GetController()->set(regPrefix + "ret", ret);
+					uint16_t* readData = adapter->GetReadedData16();
+
+					for (int i = 0; i < task->numOfRegs; ++i) {
+						GetController()->set(regPrefix + std::to_string(task->startAddr + i), readData[i]);
+					}
+					};
+				task = m_modbusAdapter->getTaskRead(address, quantity, connectionIndex, modbus_slave);
+				task->setPostFunction(function1, "readreg");
+
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskRead(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
@@ -678,8 +714,9 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				uint quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
 				std::string data = json->getAsString("data");
-
-				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_WRITE_FILE_RECORD, address, quantity, data, connectionIndex);
+				int modbus_slave = json->getS32("slave", DEFAULT_MODBUS_SLAVE);
+				//task = new ModbusTask(modbus_slave, MODBUS_FC_WRITE_FILE_RECORD, address, quantity, data, connectionIndex);
+				task = m_modbusAdapter->getTaskWriteFile(address, quantity, data, connectionIndex, modbus_slave);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskWriteFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "): " << address << ", " << quantity);
@@ -688,7 +725,8 @@ QList<ModbusTask*> NCMachine::executeCmds(cb::JSON::ValuePtr json)
 				int connectionIndex = json->getS32("connection_index", 0);
 				int quantity = json->getS32("quantity");
 				uint address = json->getS32("address");
-				task = new ModbusTask(DEFAULT_MODBUS_SLAVE, MODBUS_FC_READ_FILE_RECORD, address, quantity, connectionIndex);
+				int modbus_slave = json->getS32("slave", DEFAULT_MODBUS_SLAVE);
+				task = m_modbusAdapter->getTaskReadFile(address, quantity, connectionIndex, modbus_slave);
 				m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 				if (m_currentTaskPriority <= 1)
 					LOG_INFO(8, "NCMachine-Modbus: addTaskReadFile(" << m_currentTaskPriority << ", " << m_modbusAdapter->getTaskCnt(m_currentTaskPriority) << "):" << address << ", " << quantity);
@@ -912,7 +950,7 @@ ModbusTask* NCMachine::executeCmdWait(std::function<void(int, ModbusTask*, Modbu
 	{
 		ReadAllPosAndState();
 	}
-	else if (MODBUS_CONNECTION_COUNT > 1 && connectionIndex == 1) 	{
+	else if (MODBUS_CONNECTION_COUNT > 1 && SystemSettings::instance().GetValue("System/EnableATC") == "true" && connectionIndex == 1) 	{
 		 ReadPlcState();
 	}
 
@@ -1300,8 +1338,8 @@ std::function<int()> NCMachine::waitPlcUntilRLST(uint16_t rslt, uint16_t para)
 		}
 
 		if ((m_statePlc[0] & 0xFF00) == (rslt & 0xFF00)) {		// 同一个类型的指令执行结果数据
-			// 正常完成退出 or 手动退出 // 
-			if ((m_statePlc[0] >= rslt && m_statePlc[0] <= rslt + 1) && (m_statePlc[1] == para || para == 0)) {
+			// 正常完成退出 or 手动退出 // PLC没有手动退出
+			if ((m_statePlc[0] >= rslt && m_statePlc[0] <= rslt + 0) && (m_statePlc[1] == para || para == 0)) {
 				return 1;		// 完成任务
 			}
 			else {
@@ -1473,6 +1511,16 @@ void NCMachine::Loc(int axis, int value)
 
 void NCMachine::Spk(int* axis, int* value, int size, int zgj)
 {
+	// 校验授权过期
+	uint expireDate = PropertyObjects::getInstance()->propertyObjectReg87->date();
+	if (expireDate > 0) {
+		QDate cur = QDate::currentDate();
+		uint curDate = cur.year() * 10000 + cur.month() * 100 + cur.day();
+		if (expireDate < curDate) {
+			THROW(EUtils::QString2StdString(tr("SQXQ")));
+		}
+	}
+
 	if (size == 0) {
 		LOG_WARNING("NCMachine: Spk with 0 axis!");
 		return;
@@ -1586,10 +1634,12 @@ void NCMachine::Beep(int n, int ms)
 
 		for (int i = 0; i < n; ++i) {
 			PropertyObjects::getInstance()->propertyObjectFengMingQi->ExecuteCmds(this);
-			std::function<void()> doFuncWait = [ms]() {
-				EUtils::sleep(ms);
-				};
-			executeCmdWait(convertWaitFunction(waitno(doFuncWait)), "wait 80ms for beep");
+			if (i != n - 1) {
+				std::function<void()> doFuncWait = [ms]() {
+					EUtils::sleep(ms);
+					};
+				executeCmdWait(convertWaitFunction(waitno(doFuncWait)), "wait ms for beep");
+			}
 		}
 	}
 }
@@ -2612,10 +2662,12 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 		}
 	}
 	else if (action == "tool") {
-		int tool = json->getU32("tool");
-		PropertyObjects::getInstance()->propertyObjectPLCOperation->setoperation(1);
-		PropertyObjects::getInstance()->propertyObjectPLCOperation->setparam1(tool);
-		PropertyObjects::getInstance()->propertyObjectPLCOperation->ExecuteCmds(this);
+		double x = GetController()->get(TOOL_NUMBER);
+		int tool = json->getU32("value");
+		assert(false);
+		//PropertyObjects::getInstance()->propertyObjectPLCOperation->setoperation(1);
+		//PropertyObjects::getInstance()->propertyObjectPLCOperation->setparam1(tool);
+		//PropertyObjects::getInstance()->propertyObjectPLCOperation->ExecuteCmds(this);
 	}
 	else if (action == "custom")
 	{
@@ -3136,24 +3188,33 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 		}
 		else if (action2 == "readreg") {
 			std::string s = parameters.getAsString("s");
-			int addr = std::stoi(s);
-			int cnt = (int)GetController()->get("_reg_cnt");
-			GetController()->clear("_reg_cnt");
-			if (cnt == 0)
-				cnt = 1;
+
 			int connectionIndex = (int)GetController()->get("_conn_idx");
+			int address = std::stoi(s);
+			int quantity = (int)GetController()->get("_reg_cnt");
+			GetController()->clear("_reg_cnt");
+			if (quantity == 0)
+				quantity = 1;
+			int modbus_slave = (int)GetController()->get("_slave");
+			if (modbus_slave == 0)
+				modbus_slave = DEFAULT_MODBUS_SLAVE;
 			//GetController()->clear("_conn_idx");
 
-			std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
-				if (ret == -1)
+			std::string regPrefix = "_reg_" + std::to_string(connectionIndex) + "_" + std::to_string(modbus_slave) + "_";
+
+			std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+				if (ret == -1) {
+					GetController()->set(regPrefix + "ret", -1);
 					return;
+				}
+				GetController()->set(regPrefix + "ret", ret);
 				uint16_t* readData = adapter->GetReadedData16();
 
 				for (int i = 0; i < task->numOfRegs; ++i) {
-					GetController()->set("_reg_" + std::to_string(task->startAddr + i), readData[i]);
+					GetController()->set(regPrefix + std::to_string(task->startAddr + i), readData[i]);
 				}
 				};
-			ModbusTask* task = m_modbusAdapter->getTaskRead(addr, cnt, connectionIndex);
+			ModbusTask* task = m_modbusAdapter->getTaskRead(address, quantity, connectionIndex, modbus_slave);
 			task->setPostFunction(function1, "readreg");
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
@@ -3165,19 +3226,34 @@ std::vector<std::tuple<std::function<int()>, std::string>> NCMachine::doTaskJson
 do_writereg 82 
 ***/
 			std::string s = parameters.getAsString("s");
-			int addr = std::stoi(s);
-			int cnt = (int)GetController()->get("_reg_cnt");
-			GetController()->clear("_reg_cnt");
-			if (cnt == 0)
-				cnt = 1;
+
 			int connectionIndex = (int)GetController()->get("_conn_idx");
+			int address = std::stoi(s);
+			int quantity = (int)GetController()->get("_reg_cnt");
+			GetController()->clear("_reg_cnt");
+			if (quantity == 0)
+				quantity = 1;
+			int modbus_slave = (int)GetController()->get("_slave");
+			if (modbus_slave == 0)
+				modbus_slave = DEFAULT_MODBUS_SLAVE;
+			
+			std::string regPrefix = "_reg_" + std::to_string(connectionIndex) + "_" + std::to_string(modbus_slave) + "_";
 
 			std::vector<uint16_t> vs;
-			for (int i = 0; i < cnt; ++i) {
-				vs.push_back((int)GetController()->get("_reg_" + std::to_string(addr + i)));
+			for (int i = 0; i < quantity; ++i) {
+				vs.push_back((int)GetController()->get("_reg_" + std::to_string(address + i)));
 			}
 			std::string data = NCCommand::UIntsToString(vs);
-			ModbusTask* task = m_modbusAdapter->getTaskWrite(addr, cnt, data, connectionIndex);
+			std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+				if (ret == -1)
+				{
+					GetController()->set(regPrefix + "ret", -1);
+				}
+				GetController()->set(regPrefix + "ret", ret);
+			};
+			ModbusTask* task = m_modbusAdapter->getTaskWrite(address, quantity, data, connectionIndex, modbus_slave);
+			task->setPostFunction(function1, "writereg");
+
 			m_modbusTaskCache.addTask(task, m_currentTaskPriority);
 		}
 		else if (action2 == "waitrslt") {
@@ -3255,6 +3331,17 @@ do_writereg 82
 			QMetaObject::invokeMethod(this, [this, s]() {
 				FormUtils::MessageBoxInfo(tr(s.c_str()));
 				}, Qt::QueuedConnection);
+		}
+		else if (action2 == "sleep") {
+			//int seconds = GetController()->get("_sleep_seconds");
+			int seconds = parameters.getS32("s");
+			this->m_dwellEndTime = QDateTime::currentDateTime().addSecs(seconds);
+			for (int i = 0; i < seconds; ++i)
+			{
+				if (!taskThread->isTaskToContinue())
+					break;
+				std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			}
 		}
 		else {
 			LOG_ERROR("EDM: Undefined gcode custom action: " << action2);
@@ -3372,7 +3459,11 @@ int NCMachine::doTask(GCodeTask* task, TaskThread<GCodeTask>* taskThread)
 		exitSetPriority();
 
 		//int ret2 = -9;
+#ifdef _DEBUG
 		LOG_ERROR("EDM: " << e.what() << ", doTask " << task->jCode);
+#else
+		LOG_ERROR("EDM: " << e.what());
+#endif
 		// already append in LOG_ERROR
 		//LineLogger::instance().append("ERROR:" + e.getMessage());
 
@@ -3687,11 +3778,18 @@ bool NCMachine::RunGCodeSync(QString gcode)
 		return false;
 	}
 	try {
-		//m_realtimeJsonMachine2->setTaskToContinue(true);
-		//m_realtimeJsonMachine2->setCurrentPriority(0);
-		m_realtimeJsonMachine2->setSimpleMode(true);
-		return this->m_gcodeTool->RunGCode(m_realtimeJsonMachine2, EUtils::QString2StdString(gcode));
-		//m_realtimeJsonMachine2->setSimpleMode(false);
+		enterSetPriority(0);
+
+		m_realtimeJsonMachine2->setCurrentPriority(m_currentTaskPriority);
+		m_realtimeJsonMachine2->setTaskToContinue(true);
+		m_realtimeJsonMachine2->setCurrentPriority(0);
+		m_realtimeJsonMachine2->disableAutoApiJogMode();
+
+		this->m_gcodeTool->RunGCode(m_realtimeJsonMachine2, EUtils::QString2StdString(gcode));
+		int r = m_modbusAdapter->getTaskLastRet(m_currentTaskPriority);
+
+		exitSetPriority();
+		return r != -1;
 	}
 	catch (const std::exception& e) {
 		LOG_ERROR("EDM: " << e.what() << ", RunGCodeSync " << EUtils::QString2StdString(gcode));
@@ -3929,6 +4027,8 @@ void NCMachine::StopRun()
 	int v = dataForm3->getValue("TCQHTJL").toInt();
 	PropertyObjects::getInstance()->propertyObjectYd->settcqhtjl(v);
 
+	Beep(0, 0);
+
 	GoApi();
 	GoJog();
 	exitSetPriority();
@@ -3964,10 +4064,11 @@ void NCMachine::PauseRun()
 				};
 			executeCmdWait(convertWaitFunction(waitno(doFuncWait)), "set lastPos for pause");
 
-			// 直接回到G01开始时候的位置
-			int axis[] = { TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_YPOS, TMBS_MAP0_ID_ZPOS };
-			int value[] = { m_g01Data.startPos.x(), m_g01Data.startPos.y(), m_g01Data.startPos.z() };
-			Loc(axis, value, 3);
+			// 目前不需要，下位机处理
+			//// 直接回到G01开始时候的位置
+			//int axis[] = { TMBS_MAP0_ID_XPOS, TMBS_MAP0_ID_YPOS, TMBS_MAP0_ID_ZPOS };
+			//int value[] = { m_g01Data.startPos.x(), m_g01Data.startPos.y(), m_g01Data.startPos.z() };
+			//Loc(axis, value, 3);
 
 			GoJog();
 
@@ -4104,4 +4205,43 @@ bool NCMachine::deserialize()
 	QString str = jsonObj["gcode"].toString();
 
 	return true;
+}
+
+void NCMachineWrapper::AddReadRegTask(NCMachine* o, int addr, int quantity, int connIdx, int slave, int priority)
+{
+	std::string regPrefix = "_reg_" + std::to_string(connIdx) + "_" + std::to_string(slave) + "_";
+
+	std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix, o](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+		if (ret == -1) {
+			o->GetController()->set(regPrefix + "ret", -1);
+			return;
+		}
+		o->GetController()->set(regPrefix + "ret", ret);
+		uint16_t* readData = adapter->GetReadedData16();
+
+		for (int i = 0; i < task->numOfRegs; ++i) {
+			o->GetController()->set(regPrefix + std::to_string(task->startAddr + i), readData[i]);
+		}
+		};
+	ModbusTask* task = o->getModbus()->getTaskRead(addr, quantity, connIdx, slave);
+	task->setPostFunction(function1, "Read Reg");
+	o->getModbus()->addTask(task, priority);
+}
+
+void NCMachineWrapper::AddWriteRegTask(NCMachine* o, int addr, int quantity, const QVariantList& values, int connIdx, int slave, int priority)
+{
+	std::string regPrefix = "_reg_" + std::to_string(connIdx) + "_" + std::to_string(slave) + "_";
+
+	std::vector<uint16_t> vs;
+	for (int i = 0; i < quantity; ++i) {
+		vs.push_back(values[i].toInt());
+	}
+	std::string data = NCCommand::UIntsToString(vs);
+
+	std::function<void(int, ModbusTask*, ModbusAdapter*)> function1 = [this, regPrefix, o](int ret, ModbusTask* task, ModbusAdapter* adapter) {
+		o->GetController()->set(regPrefix + "ret", ret);
+		};
+	ModbusTask* task = o->getModbus()->getTaskWrite(addr, quantity, data, connIdx, slave);
+	task->setPostFunction(function1, "Write Reg");
+	o->getModbus()->addTask(task, priority);
 }

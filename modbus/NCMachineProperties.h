@@ -1322,6 +1322,76 @@ public:
     Reg86PropertyObject(QObject* parent = nullptr, const QString& name = "") : RegOnePropertyObject(parent, name, TMBS_MAP0_ID_REG86) {};
 };
 
+// 解密数据: 解密操作时发送到下位机
+// 启动或解密操作后，重新读取日期刷新显示
+// Data1: 日期(u32)低16位，格式20260525
+// Data2: 日期(u32)高16位
+// Data3: 密码(u16)，读操作时读到为0
+// Data4: 保留(u16)，固定为0
+class Reg87PropertyObject : public BasePropertyObject
+{
+    Q_OBJECT;
+    Q_PROPERTY(uint date READ date WRITE setdate)
+    Q_PROPERTY(uint password READ password WRITE setpassword)
+public:
+    Reg87PropertyObject(QObject* parent = nullptr, const QString& name = "");
+
+    uint date() const { return m_date; }
+    uint password() const { return m_password; }
+
+    void setdate(uint v) { m_date = v; }
+    void setpassword(uint v) { m_password = v; }
+
+    std::vector<uint16_t> GetValues() const override;
+    int GetCmdAddress() const override;
+    void SetValues(std::vector<uint16_t> v);
+protected:
+    uint m_date = 0;
+    uint m_password = 0;
+};
+
+
+// 系统运行日期: 系统启动时发送到下位机，开机后每小时更新一次
+// 格式: YYYYMMDD (u32)
+// Data1: L16 - 日期低16位
+// Data2: H16 - 日期高16位
+class Reg88PropertyObject : public BasePropertyObject
+{
+    Q_OBJECT;
+    Q_PROPERTY(uint date READ date WRITE setdate)
+public:
+    Reg88PropertyObject(QObject* parent = nullptr, const QString& name = "");
+
+    uint date() const { return m_date; }
+    void setdate(uint v) { m_date = v; }
+
+    std::vector<uint16_t> GetValues() const override;
+    int GetCmdAddress() const override;
+protected:
+    uint m_date = 0;
+};
+
+
+// 序列号: U32位，只读。启动时读取。
+// Data1: L16 - 序列号低16位
+// Data2: H16 - 序列号高16位
+class Reg89PropertyObject : public BasePropertyObject
+{
+    Q_OBJECT;
+    Q_PROPERTY(uint serial READ serial WRITE setserial)
+public:
+    Reg89PropertyObject(QObject* parent = nullptr, const QString& name = "");
+
+    uint serial() const { return m_serial; }
+    void setserial(uint v) { m_serial = v; }
+
+    std::vector<uint16_t> GetValues() const override;
+    int GetCmdAddress() const override;
+    void SetValues(std::vector<uint16_t> v);
+protected:
+    uint m_serial = 0;
+};
+
 // PLC 操作
 class PLCOperationPropertyObject : public BasePropertyObject
 {
@@ -1397,6 +1467,9 @@ public:
     Reg84PropertyObject* propertyObjectReg84;
     Reg85PropertyObject* propertyObjectReg85;
     Reg86PropertyObject* propertyObjectReg86;
+    Reg87PropertyObject* propertyObjectReg87;
+    Reg88PropertyObject* propertyObjectReg88;
+    Reg89PropertyObject* propertyObjectReg89;
 
     PLCOperationPropertyObject* propertyObjectPLCOperation;
 };

@@ -255,9 +255,6 @@
     <ClCompile Include="utils\pluginutils.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\PythonQtRuntime.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="utils\gcodeutils.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -397,6 +394,12 @@
       <Filter>Generated Files</Filter>
     </ClCompile>
     <ClCompile Include="modbus\NCMachineState.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\PythonQtRuntime.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\MyPythonQtScriptingConsole.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -662,6 +665,9 @@
     <QtMoc Include="forms_v1\settingsmodbustcp.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
+    <QtMoc Include="utils\MyPythonQtScriptingConsole.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="forms_v1\mainwindow.ui">
@@ -921,9 +927,6 @@
     <ClInclude Include="utils\pluginutils.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\PythonQtRuntime.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="StackWalker\StackWalker.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -960,13 +963,16 @@
     <ClInclude Include="utils\LocaleUtils.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="modbus\SystemSettings.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils\JsonTemplateUtil.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="modbus\NCMachineState.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="modbus\SystemSettings.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\PythonQtRuntime.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿#include "tool4buttons.h"
+#include "tool4buttons.h"
 #include "widgets\qnumericpad.h"
 #include "../modbus/NCMachine.h"
 #include "../utils/pluginutils.h"
@@ -47,7 +47,7 @@ QString Tool4Plugins::getPluginButtonName(const QString& pyFileName)
 	};
 
 	// 找不到就返回原文件名
-	return tr(nameMap.value(pyFileName, pyFileName).toUtf8());;
+	return tr(nameMap.value(pyFileName, pyFileName).toUtf8());
 }
 
 QList<Tool4Buttons*> Tool4Plugins::create(BaseChildWindow* childWindow, QWidget* parent)

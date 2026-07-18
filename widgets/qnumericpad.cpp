@@ -102,123 +102,136 @@ void QNumericPad::setButtonDownModeWhenInTouch(QWidget* parent, QAbstractButton*
     }
 }
 
+
+
+void QNumericPad::onKeyPressed(Qt::Key key)
+{
+    if (key == Qt::Key_Plus) {
+        if (m_text.startsWith("-"))
+            m_text = m_text.mid(1);
+    }
+    else if (key == Qt::Key_Minus) {
+        if (m_text.startsWith("-"))
+            m_text = m_text.mid(1);
+        else
+            m_text = "-" + m_text;
+    }
+    else if (key == Qt::Key_F1) {
+        //double d = m_text.toDouble();
+        //d = d / 2;
+        //m_text = QString::number(d, 'f', 3);
+        if (m_text.startsWith("-"))
+            m_text = m_text.mid(1);
+        else
+            m_text = "-" + m_text;
+    }
+    else if (key == Qt::Key_Backspace) {
+        m_text = m_text.left(m_text.length() - 1);
+    }
+    else if (key == Qt::Key_Delete || key == Qt::Key_F2 /* cancel */)
+    {
+        m_text.clear();
+    }
+    else if (key == Qt::Key_Enter)
+    {
+
+    }
+    else
+    {
+        m_text += QKeySequence(key).toString(QKeySequence::NativeText);
+    }
+    setWindowTitle(m_text);
+    keyEmitter.emitKey(key, m_receiver);
+}
+
 void QNumericPad::on_pushButtonKey0_clicked()
 {
-    m_text += "0";
-    keyEmitter.emitKey(Qt::Key_0, m_receiver);
+    onKeyPressed(Qt::Key_0);
 }
 
 void QNumericPad::on_pushButtonKey1_clicked()
 {
-    m_text += "1";
-    keyEmitter.emitKey(Qt::Key_1, m_receiver);
+    onKeyPressed(Qt::Key_1);
 }
 
 void QNumericPad::on_pushButtonKey2_clicked()
 {
-    m_text += "2";
-    keyEmitter.emitKey(Qt::Key_2, m_receiver);
+    onKeyPressed(Qt::Key_2);
 }
 
 void QNumericPad::on_pushButtonKey3_clicked()
 {
-    m_text += "3";
-    keyEmitter.emitKey(Qt::Key_3, m_receiver);
+    onKeyPressed(Qt::Key_3);
 }
 
 void QNumericPad::on_pushButtonKey4_clicked()
 {
-    m_text += "4";
-    keyEmitter.emitKey(Qt::Key_4, m_receiver);
+    onKeyPressed(Qt::Key_4);
 }
 
 void QNumericPad::on_pushButtonKey5_clicked()
 {
-    m_text += "5";
-    keyEmitter.emitKey(Qt::Key_5, m_receiver);
+    onKeyPressed(Qt::Key_5);
 }
 
 void QNumericPad::on_pushButtonKey6_clicked()
 {
-    m_text += "6";
-    keyEmitter.emitKey(Qt::Key_6, m_receiver);
+    onKeyPressed(Qt::Key_6);
 }
 
 void QNumericPad::on_pushButtonKey7_clicked()
 {
-    m_text += "7";
-    keyEmitter.emitKey(Qt::Key_7, m_receiver);
+    onKeyPressed(Qt::Key_7);
 }
 
 void QNumericPad::on_pushButtonKey8_clicked()
 {
-    m_text += "8";
-    keyEmitter.emitKey(Qt::Key_8, m_receiver);
+    onKeyPressed(Qt::Key_8);
 }
 
 void QNumericPad::on_pushButtonKey9_clicked()
 {
-    m_text += "9";
-    keyEmitter.emitKey(Qt::Key_9, m_receiver);
+    onKeyPressed(Qt::Key_9);
 }
 
 void QNumericPad::on_pushButtonKeyDot_clicked()
 {
-    m_text += ".";
-    keyEmitter.emitKey(Qt::Key_Period, m_receiver);
+    onKeyPressed(Qt::Key_Period);
 }
 
 void QNumericPad::on_pushButtonKeyAdd_clicked()
 {
-    if (m_text.startsWith("-"))
-        m_text = m_text.mid(1);
-    keyEmitter.emitKey(Qt::Key_Plus, m_receiver);
+    onKeyPressed(Qt::Key_Plus);
 }
+
 void QNumericPad::on_pushButtonKeySub_clicked()
 {
-    if (m_text.startsWith("-"))
-        m_text = m_text.mid(1);
-    else
-        m_text = "-" + m_text;
-    keyEmitter.emitKey(Qt::Key_Minus, m_receiver);
+    onKeyPressed(Qt::Key_Minus);
 }
+
 void QNumericPad::on_pushButtonKeyHalf_clicked()
 {
-    //double d = m_text.toDouble();
-    //d = d / 2;
-    //m_text = QString::number(d, 'f', 3);
-    if (m_text.startsWith("-"))
-        m_text = m_text.mid(1);
-    else
-        m_text = "-" + m_text;
-    keyEmitter.emitKey(Qt::Key_F1, m_receiver);
+    onKeyPressed(Qt::Key_F1);
 }
+
 void QNumericPad::on_pushButtonKeyBack_clicked()
 {
-    if (!m_text.isEmpty()) {
-        m_text = m_text.left(m_text.length() - 1);
-    }
-    keyEmitter.emitKey(Qt::Key_Backspace, m_receiver);
+    onKeyPressed(Qt::Key_Backspace);
 }
 
 void QNumericPad::on_pushButtonKeyEnter_clicked()
 {
-    keyEmitter.emitKey(Qt::Key_Enter, m_receiver);
-    if (m_receiver != NULL) {
-        m_text.clear();
-    }
+    onKeyPressed(Qt::Key_Enter);
     this->hide();
 }
 
 void QNumericPad::on_pushButtonKeyDel_clicked()
 {
-    keyEmitter.emitKey(Qt::Key_Delete, m_receiver);
-    m_text.clear();
+    onKeyPressed(Qt::Key_Delete);
 }
 
 void QNumericPad::on_pushButtonKeyCancel_clicked()
 {
-    keyEmitter.emitKey(Qt::Key_F2, m_receiver);
-    m_text.clear();
+    onKeyPressed(Qt::Key_F2);
     this->hide();
 }

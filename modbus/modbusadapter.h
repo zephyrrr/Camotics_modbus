@@ -28,7 +28,7 @@
 #define TASK_TIMER_PRIORITY 2
 //#define TASK_DELAY_PRIORITY 1
 
-#define MODBUS_CONNECTION_COUNT 1
+#define MODBUS_CONNECTION_COUNT 2
 
 class ModbusAdapter;
 
@@ -163,11 +163,11 @@ public:
     TaskThread<ModbusTask>* getTaskThread() { return m_taskThread; }
 
 public:
-    ModbusTask* getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex = 0);
-    ModbusTask* getTaskReadFile(int subAddr, int nb, int connectionIndex = 0);
+    ModbusTask* getTaskWriteFile(int subAddr, int nb, std::string writeData, int connectionIndex = 0, int slave = DEFAULT_MODBUS_SLAVE);
+    ModbusTask* getTaskReadFile(int subAddr, int nb, int connectionIndex = 0, int slave = DEFAULT_MODBUS_SLAVE);
 
-    ModbusTask* getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex = 0);
-    ModbusTask* getTaskRead(int startAddr, int numOfRegs, int connectionIndex = 0);
+    ModbusTask* getTaskWrite(int startAddr, int numOfRegs, std::string writeData, int connectionIndex = 0, int slave = DEFAULT_MODBUS_SLAVE);
+    ModbusTask* getTaskRead(int startAddr, int numOfRegs, int connectionIndex = 0, int slave = DEFAULT_MODBUS_SLAVE);
     ModbusTask* getTaskWait(std::function<void(int, ModbusTask*, ModbusAdapter*)> function = NULL, std::string postDoFuncDesc = "");
     
 public:

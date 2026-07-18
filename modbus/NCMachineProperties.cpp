@@ -1511,6 +1511,80 @@ int Reg83PropertyObject::GetCmdAddress() const
 	return TMBS_MAP0_ID_REG83;
 }
 
+// Reg87PropertyObject
+Reg87PropertyObject::Reg87PropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
+{
+}
+
+std::vector<uint16_t> Reg87PropertyObject::GetValues() const
+{
+	std::vector<uint16_t> ret;
+	// 日期低16位
+	ret.push_back(m_date & 0xFFFF);
+	// 日期高16位
+	ret.push_back((m_date >> 16) & 0xFFFF);
+	// 密码
+	ret.push_back(m_password);
+	// 保留，固定为0
+	ret.push_back(0);
+	assert(ret.size() == 4);
+	return ret;
+}
+
+int Reg87PropertyObject::GetCmdAddress() const
+{
+	return TMBS_MAP0_ID_REG87;
+}
+
+void Reg87PropertyObject::SetValues(std::vector<uint16_t> v)
+{
+	m_date = v[0] | (v[1] << 16);
+	m_password = v[2];
+}
+
+// Reg88PropertyObject
+Reg88PropertyObject::Reg88PropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
+{
+}
+
+std::vector<uint16_t> Reg88PropertyObject::GetValues() const
+{
+	std::vector<uint16_t> ret;
+	ret.push_back(m_date & 0xFFFF);         
+	ret.push_back((m_date >> 16) & 0xFFFF);
+	assert(ret.size() == 2);
+	return ret;
+}
+
+int Reg88PropertyObject::GetCmdAddress() const
+{
+	return TMBS_MAP0_ID_REG88;
+}
+
+// Reg89PropertyObject
+Reg89PropertyObject::Reg89PropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
+{
+}
+
+std::vector<uint16_t> Reg89PropertyObject::GetValues() const
+{
+	std::vector<uint16_t> ret;
+	ret.push_back(m_serial & 0xFFFF);         // Reg89: 序列号低16位
+	ret.push_back((m_serial >> 16) & 0xFFFF); // Reg90: 序列号高16位
+	assert(ret.size() == 2);
+	return ret;
+}
+
+int Reg89PropertyObject::GetCmdAddress() const
+{
+	return TMBS_MAP0_ID_REG89;
+}
+
+void Reg89PropertyObject::SetValues(std::vector<uint16_t> v)
+{
+	m_serial = v[0] | (v[1] << 16);
+}
+
 PLCOperationPropertyObject::PLCOperationPropertyObject(QObject* parent, const QString& name) : BasePropertyObject(parent, name)
 {
 	headers = {
@@ -1615,6 +1689,12 @@ PropertyObjects::~PropertyObjects() {
 		delete propertyObjectReg85;
 	if (propertyObjectReg86)
 		delete propertyObjectReg86;
+	if (propertyObjectReg87)
+		delete propertyObjectReg87;
+	if (propertyObjectReg88)
+		delete propertyObjectReg88;
+	if (propertyObjectReg89)
+		delete propertyObjectReg89;
 	if (propertyObjectPLCOperation)
 		delete propertyObjectPLCOperation;
 	//if (instance != nullptr) {
@@ -1676,6 +1756,9 @@ void PropertyObjects::CreateData()
 	propertyObjectReg84 = new Reg84PropertyObject(nullptr, QObject::tr("Reg84"));
 	propertyObjectReg85 = new Reg85PropertyObject(nullptr, QObject::tr("Reg85"));
 	propertyObjectReg86 = new Reg86PropertyObject(nullptr, QObject::tr("Reg86"));
+	propertyObjectReg87 = new Reg87PropertyObject(nullptr, QObject::tr("Reg87"));
+	propertyObjectReg88 = new Reg88PropertyObject(nullptr, QObject::tr("Reg88"));
+	propertyObjectReg89 = new Reg89PropertyObject(nullptr, QObject::tr("Reg89"));
 
 	propertyObjectPLCOperation = new PLCOperationPropertyObject(nullptr, QObject::tr("PLCOPERATION"));
 }
@@ -1737,5 +1820,3 @@ void PropertyObjects::LoadData()
 }
 
 PropertyObjects PropertyObjects::instance;
-
-

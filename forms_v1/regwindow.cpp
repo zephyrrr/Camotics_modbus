@@ -1,4 +1,4 @@
-﻿#include "regwindow.h"
+#include "regwindow.h"
 #include "ui_regwindow.h"
 #include <QFileDialog>
 #include <QButtonGroup>
@@ -381,14 +381,14 @@ void RegWindow::init()
 		QWidget* newWidget = new QWidget();
 		newWidget->setLayout(horizontalLayout);
 		ui->tabWidget->addTab(newWidget, tr("YD"));
-		// PLC Operation
-		{
-			QHBoxLayout* horizontalLayout = new QHBoxLayout();
-			addProperyEditor(horizontalLayout, propertyObjects->propertyObjectPLCOperation);
-			QWidget* newWidget = new QWidget();
-			newWidget->setLayout(horizontalLayout);
-			ui->tabWidget->addTab(newWidget, tr("PLC"));
-		}
+	}
+	// PLC Operation
+	{
+		QHBoxLayout* horizontalLayout = new QHBoxLayout();
+		addProperyEditor(horizontalLayout, propertyObjects->propertyObjectPLCOperation);
+		QWidget* newWidget = new QWidget();
+		newWidget->setLayout(horizontalLayout);
+		ui->tabWidget->addTab(newWidget, tr("PLC"));
 	}
 }
 

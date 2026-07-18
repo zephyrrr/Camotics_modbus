@@ -14,6 +14,7 @@ PythonQtRuntime PythonQtRuntime::instance;
 #include "../pythonqt/extensions/PythonQt_QtAll/PythonQt_QtAll.h"
 #include "../pythonqt/src/gui/PythonQtScriptingConsole.h"
 #include "utils/gcodeutils.h"
+#include "utils/MyPythonQtScriptingConsole.h"
 
 #ifdef _WIN64
 #ifdef _DEBUG
@@ -36,6 +37,9 @@ PythonQtRuntime PythonQtRuntime::instance;
 #endif
 
 //#include "forms/run/runmanualmulti.h"
+
+
+
 
 PythonQtRuntime* PythonQtRuntime::getInstance() {
 	return &instance;
@@ -114,7 +118,7 @@ void PythonQtRuntime::ShowConsole(QObject* window)
 
 	PythonQtObjectPtr  mainContext = PythonQt::self()->getMainModule();
 	if (console == NULL) {
-		console = new PythonQtScriptingConsole(NULL, mainContext);
+		console = new MyPythonQtScriptingConsole(NULL, mainContext);
 		console->setWindowTitle("Python Console");
 	}
 	//// add a QObject to the namespace of the main python context

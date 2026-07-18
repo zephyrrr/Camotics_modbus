@@ -10,7 +10,6 @@
 #define UI_SETTINGSMODBUSTCP_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
@@ -39,9 +38,6 @@ public:
         SettingsModbusTCP->setProperty("modal", QVariant(false));
         SettingsModbusTCP->resize(240, 110);
         SettingsModbusTCP->setMinimumSize(QSize(240, 110));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8(":/img/network-16.png"), QSize(), QIcon::Normal, QIcon::Off);
-        SettingsModbusTCP->setWindowIcon(icon);
         verticalLayout = new QVBoxLayout(SettingsModbusTCP);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         gridLayout = new QGridLayout();
@@ -74,8 +70,8 @@ public:
 
         buttonBox = new QDialogButtonBox(SettingsModbusTCP);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setOrientation(Qt::Orientation::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
+        buttonBox->setOrientation(Qt::Horizontal);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
         verticalLayout->addWidget(buttonBox);
 
@@ -84,8 +80,6 @@ public:
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(SettingsModbusTCP);
-        QObject::connect(buttonBox, SIGNAL(accepted()), SettingsModbusTCP, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), SettingsModbusTCP, SLOT(reject()));
 
         QMetaObject::connectSlotsByName(SettingsModbusTCP);
     } // setupUi

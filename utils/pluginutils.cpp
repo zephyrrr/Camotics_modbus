@@ -1,4 +1,4 @@
-﻿#include "pluginutils.h"
+#include "pluginutils.h"
 #include <QObject>
 #include <QDir>
 #include <QCoreApplication>
@@ -245,7 +245,11 @@ QList<PythonPluginInfo> PluginUtils::loadPythonMenuPlugins(const QString& plugin
 
     // List Python files
     QStringList filters;
+#ifdef _DEBUG
     filters << "*.py";
+#else
+    filters << "*.py" << "*.pyc";
+#endif
     const QStringList entries = pluginsDir.entryList(filters, QDir::Files, QDir::Name);
 
     for (const QString& fileName : entries) {
@@ -290,13 +294,23 @@ QList<PythonPluginInfo> PluginUtils::loadPythonMenuPlugins(const QString& plugin
                 info.pageIndex = defaultPageIndex;
             }
 
-            result.append(info);
+            // check whethere exist same name info
+            bool nameExists = false;
+            for (const PythonPluginInfo& existingInfo : result) {
+                if (existingInfo.name == info.name) {
+                    nameExists = true;
+                    break;
+                }
+            }
+            if (!nameExists) {
+                result.append(info);
+            }
         }
         catch (...) {
-            // On error, use defaults
-            info.name = baseName;
-            info.pageIndex = defaultPageIndex;
-            result.append(info);
+            // On error, skip it
+            //info.name = baseName;
+            //info.pageIndex = defaultPageIndex;
+            //result.append(info);
         }
     }
 #endif
@@ -320,6 +334,7 @@ QWidget* PluginUtils::createPythonWidget(const QString& filePath, QObject* windo
 
         // Execute the plugin and call create_widget
         QString script = QString(
+            "import traceback\n"
             "import sys\n"
             "import importlib.util\n"
             "_plugin_path = r'%1'\n"
@@ -336,6 +351,7 @@ QWidget* PluginUtils::createPythonWidget(const QString& filePath, QObject* windo
             "except Exception as e:\n"
             "    _plugin_error = str(e)\n"
             "    print(f'[Python Error] {e}')\n"
+			"    traceback.print_exc()\n"
         ).arg(QString(filePath).replace("\\", "/"));
 
         mainContext.evalScript(script);

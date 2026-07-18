@@ -154,7 +154,7 @@ void ModbusMain::addNormalTasks()
 	task3->setPostFunction(function3, "Read Jog Duanlu");
 	m_modbusAdapter->addTaskAsNormal(task3, 100, false);
 
-	if (MODBUS_CONNECTION_COUNT > 1) {
+	if (MODBUS_CONNECTION_COUNT > 1 && SystemSettings::instance().GetValue("System/EnableATC") == "true") {
 		if (m_modbusAdapter->getModbusContext(1) != NULL) {
 			std::function<void(int, ModbusTask*, ModbusAdapter*)> function4 = [this](int ret, ModbusTask* task, ModbusAdapter* adapter) {
 				if (ret == -1)
@@ -179,8 +179,9 @@ QtWin2::QtWin2(QWidget* parent)
 		//PythonQt::self()->registerCPPClass("NCMachine", "QObject", "", PythonQtCreateObject<NCMachineWrapper>, NULL);
 		//PythonQtRuntime::registerCPPClass<NCMachineWrapper>("NCMachine", "QObject");
 		PythonQt::self()->registerClass(&NCMachine::staticMetaObject, "Qt", PythonQtCreateObject<NCMachineWrapper>, nullptr);
+		//PythonQt::self()->registerCPPClass("SystemSettings", "", "Qt", PythonQtCreateObject<SystemSettings>);
 
-		//PythonQtRuntime::registerCPPClass<BaseChildWindowWrapper>("BaseChildWindow", "QWidget");
+		PythonQt::self()->registerClass(&QtWin2::staticMetaObject, "QtGui", PythonQtCreateObject<QtWin2Wrapper>, nullptr);
 		PythonQt::self()->registerClass(&BaseChildWindow::staticMetaObject, "QtGui", PythonQtCreateObject<BaseChildWindowWrapper>, nullptr);
 		PythonQt::self()->registerClass(&BaseChildWindowWithTools::staticMetaObject, "QtGui", PythonQtCreateObject<BaseChildWindowWithToolsWrapper>, nullptr);
 		PythonQt::self()->registerClass(&Tool4All::staticMetaObject, "QtGui", PythonQtCreateObject<Tool4AllWrapper>, nullptr);
@@ -420,7 +421,9 @@ QtWin2::QtWin2(QWidget* parent)
 			AddChildWindow(tr("FangDianCanShu"), layout1, [this]() {
 				return new FangDianCanShuForm(this->ui->stackedChildWidget);
 				});
-			AddChildWindow(tr("FDCS"), layout1, fdcsForm);
+			//AddChildWindow(tr("FDCS"), layout1, fdcsForm);
+			fdcsForm->SetMachine(m_ncMachine);
+
 			AddChildWindow(tr("LJBC"), layout1, ljbcForm);
 			//AddChildWindow(tr("HL"), layout1, [this]() {
 			//	//return new NCMachinePanel(this, m_ncMachine, m_modbusAdapter, m_modbusCommSettings);
@@ -431,12 +434,18 @@ QtWin2::QtWin2(QWidget* parent)
 				});
 
 			if (MODBUS_CONNECTION_COUNT > 1) {
-				AddChildWindow(tr("TCPIP"), layout1, [this]() {
-					//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
-					//ccw->SetContent(new SettingsModbusTCP(ccw, m_modbusCommSettings));
-					//return ccw;
-					return new SettingsModbusTCP(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(1));
-					});
+				if (SystemSettings::instance().GetValue("System/CKSZ2") == "TCPIP") {
+					AddChildWindow(tr("CKSZ2"), layout1, [this]() {
+						//auto ccw = new ContainerChildWindow(this->ui->stackedChildWidget);
+						//ccw->SetContent(new SettingsModbusTCP(ccw, m_modbusCommSettings));
+						//return ccw;
+						return new SettingsModbusTCP(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(1));
+						});
+				} else if (SystemSettings::instance().GetValue("System/CKSZ2") == "RTU") {
+					AddChildWindow(tr("CKSZ2"), layout1, [this]() {
+						return new SettingsModbusRTU(this->ui->stackedChildWidget, m_modbusAdapter->getCommSettings(1));
+						});
+				}
 			}
 
 			AddChildWindow(tr("GY"), layout1, [this]() {
@@ -444,12 +453,23 @@ QtWin2::QtWin2(QWidget* parent)
 				});
 
 		}
-
-		layout1->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding));
 	}
 
 	LoadPluginsAsChildWindow();
-	
+
+	for (int pageIdx = 0; pageIdx < 5; ++pageIdx)
+	{
+		QBoxLayout* layout1 = NULL;
+		if (MAIN_MENU_TYPE == 1) {
+			QWidget* page1 = dynamic_cast<AdvancedToolBox*>(mainMenu)->widget(pageIdx);
+			layout1 = new QVBoxLayout(page1);
+		}
+		else if (MAIN_MENU_TYPE == 2) {
+			layout1 = dynamic_cast<MenuWith2Frames*>(mainMenu)->getSubMenuLayout(pageIdx);
+		}
+		layout1->addSpacerItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding));
+	}
+
 	if (MAIN_MENU_TYPE == 1)
 	{
 		AdvancedToolBox* mainMenuWidget = dynamic_cast<AdvancedToolBox*>(mainMenu);
@@ -511,6 +531,28 @@ QtWin2::QtWin2(QWidget* parent)
 				};
 			ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_HANDVER2, TMBS_MAP0_ID_HANDVER2_LEN);
 			task->setPostFunction(function, "Read Haredware Version 2");
+			m_modbusAdapter->addTask(task, 0);
+		}
+		{
+			std::function<void(int, ModbusTask*, ModbusAdapter*)> function = [](int ret, ModbusTask*, ModbusAdapter* adapter) {
+				if (ret == -1)
+					return;
+				uint16_t* readData = adapter->GetReadedData16();
+				PropertyObjects::getInstance()->propertyObjectReg89->SetValues(std::vector<uint16_t> { readData[0], readData[1] });
+				};
+			ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_REG89, TMBS_MAP0_ID_REG89_LEN);
+			task->setPostFunction(function, "Read Serial Number");
+			m_modbusAdapter->addTask(task, 0);
+		}
+		{
+			std::function<void(int, ModbusTask*, ModbusAdapter*)> function = [](int ret, ModbusTask*, ModbusAdapter* adapter) {
+				if (ret == -1)
+					return;
+				uint16_t* readData = adapter->GetReadedData16();
+				PropertyObjects::getInstance()->propertyObjectReg87->SetValues(std::vector<uint16_t> { readData[0], readData[1], readData[2], readData[3] });
+				};
+			ModbusTask* task = m_modbusAdapter->getTaskRead(TMBS_MAP0_ID_REG87, TMBS_MAP0_ID_REG87_LEN);
+			task->setPostFunction(function, "Read Reg87 Decrypt Data");
 			m_modbusAdapter->addTask(task, 0);
 		}
 
@@ -847,11 +889,15 @@ void QtWin2::showWindowMode(bool isUserMode)
 		showMaximized();
 	}
 
-	//m_buttonsText[tr("XTSZ")]->setVisible(!m_isUserMode);
 	//m_buttonsText[tr("FDCS")]->setVisible(!m_isUserMode);
-	//m_buttonsText[tr("FangDianCanShu")]->setVisible(!m_isUserMode);
-	//m_buttonsText[tr("LJBC")]->setVisible(!m_isUserMode);
-	//m_buttonsText[tr("CKSZ")]->setVisible(!m_isUserMode);
+	m_buttonsText[tr("FangDianCanShu")]->setVisible(!m_isUserMode);
+	m_buttonsText[tr("LJBC")]->setVisible(!m_isUserMode);
+	m_buttonsText[tr("CKSZ")]->setVisible(!m_isUserMode);
+	if (MODBUS_CONNECTION_COUNT > 1) {
+		if (m_buttonsText.contains(tr("CKSZ2"))) {
+			m_buttonsText[tr("CKSZ2")]->setVisible(!m_isUserMode);
+		}
+	}
 }
 
 void QtWin2::addNormalTasks()
@@ -1488,6 +1534,15 @@ void QtWin2::UpdateStateByTimer()
 		}
 	}
 
+	// Reg88 系统运行日期: 开机写入，之后每小时更新一次
+	m_reg88TimerCounter++;
+	if (m_reg88TimerCounter >= 3600) {
+		m_reg88TimerCounter = 0;
+		QDate currentDate = QDate::currentDate();
+		uint dateValue = currentDate.year() * 10000 + currentDate.month() * 100 + currentDate.day();
+		PropertyObjects::getInstance()->propertyObjectReg88->setdate(dateValue);
+		PropertyObjects::getInstance()->propertyObjectReg88->ExecuteCmds(m_ncMachine, 0);
+	}
 
 	ui->labelInfoLianjie->setEnabled(false);
 
@@ -2039,12 +2094,15 @@ void QtWin2::LoadPluginsAsChildWindow()
 
 			// Create the factory function
 			auto factoryFunc = [this, filePath, menuText]() -> BaseChildWindow* {
-				QWidget* pyWidget = PluginUtils::createPythonWidget(filePath, this);
+
+				PythonPluginChildWindow* child = new PythonPluginChildWindow(this);
+				QWidget* pyWidget = PluginUtils::createPythonWidget(filePath, child);
 				if (pyWidget) {
-					PythonPluginChildWindow* child = new PythonPluginChildWindow(this);
+					child->setObjectName(menuText);
 					child->SetPythonWidget(pyWidget);
 					child->SetPluginFile(filePath);
 					child->SetPluginName(menuText);
+					child->SetMachine(m_ncMachine);
 					return child;
 				}
 				return nullptr;
@@ -2113,8 +2171,8 @@ void QtWin2::keyPressEvent(QKeyEvent* event)
 			event->accept();
 		}
 		else {
-			//QString pw = FormUtils::ShowPasswordInput();
-			//if (!pw.isEmpty() && pw == SystemSettings::instance().GetValue("System/Password")) 
+			QString pw = FormUtils::ShowPasswordInput();
+			if (!pw.isEmpty() && pw == SystemSettings::instance().GetValue("System/Password")) 
 			{
 				switchUserMode();
 				event->accept();

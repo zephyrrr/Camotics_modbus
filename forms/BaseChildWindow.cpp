@@ -375,6 +375,24 @@ bool SoftKeyboardWidget::eventFilter(QObject* obj, QEvent* ev)
 			}
 		}
 	}
+	else if (ev->type() == QEvent::KeyPress) {
+		QKeyEvent* event = static_cast<QKeyEvent*>(ev);
+		QLineEdit* lineEdit = qobject_cast<QLineEdit*>(obj);
+		if (lineEdit != NULL) {
+			if (event->key() == Qt::Key_Delete) {
+				lineEdit->clear();
+				return true; // 事件已处理
+			}
+			else if (event->key() == Qt::Key_F2) {
+				lineEdit->clearFocus();
+				return true;
+			}
+			else if (event->key() == Qt::Key_Enter) {
+				lineEdit->clearFocus();
+				return true;
+			}
+		}
+	}
 	return QWidget::eventFilter(obj, ev);
 }
 

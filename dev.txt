@@ -1,6 +1,21 @@
+1.6.0
+1. 2个modbus， 支持 Wolong h3电机. "System/CKSZ2=RTU"
+
+1.5.3
+1、完成后手动取消蜂鸣器以后，系统一直显示运行中，直到蜂鸣器吗叫时间结束。结束以后应该显示加工完成，蜂鸣器报警，如果手动按键，则停止吗
+叫;蜂鸣器鸣叫不属于运行状态。
+2、手动多个中，回数为0时，不需要运行，直接提示用户加工条件缺失。(条件为0时，仍然会空走一遍坐标点)
+3、手动单个里面回数为0，或者加工深度数据异常，直接提示用户加工条件缺失。(无加工条件时，运行没有提示)
+4、增加到期时间和密码
+5、增加管理员及密码，用于退出到桌面，比如用显示桌面、全屏两个按钮来控制显示和隐藏桌面，显示桌面时需要输入管理员密码;
+默认原始密码为9876，密码最好可修改;原F12可以取消。(原来如果没有键盘，无法进入桌面)
+6. “暂停直接回到G01开始时候的位置功能”已取消
+
+1. "System/EnableATC=true"
+
 1.5.2
 1. 放电对刀bug, 同时改为X1档
-2. 英文界面更改
+2. 翻译问题
 
 
 
@@ -161,6 +176,10 @@ python activate_this.py
 python pyarmor_tool.py
 #copy dist file to dest
 
+# others
+# import py_compile
+# py_compile.compile(r'E:\cnc\cnc\Camotics_modbus2\plugins_src\menu\settings\wolong_h3.py',r'E:\cnc\cnc\Camotics_modbus2\plugins_src\menu\settings\wolong_h3.pyc')
+'E:\\cnc\\cnc\\Camotics_modbus2\\plugins_src\\menu\\settings\\wolong_h3.pyc'
 
 import runpy
 variables = {    'window': window }

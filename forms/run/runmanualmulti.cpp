@@ -193,6 +193,21 @@ QString RunManualMulti::GetGCode(bool forRun)
 		FormUtils::MessageBoxInfo(tr("JGHSWL"));
 		return QString();
 	}
+	int jghsCount = 0;
+	for (int i = 0; i < table2->getDataCount(); ++i) {
+		if (!QLineEditLikeButton::IsYes(table2->getValue(i, 0))) {
+			continue;
+		}
+		if (table2->getValue(i, 1).isEmpty()) {
+			continue;
+		}
+		jghsCount++;
+		break;
+	}
+	if (jghsCount == 0) {
+		FormUtils::MessageBoxInfo(tr("JGHSWL"));
+		return QString();
+	}
 
 	int realAxisLen = 0;
 	double toAxisLength[] = { INFINITE, INFINITE, INFINITE, INFINITE };

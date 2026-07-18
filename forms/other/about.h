@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include "ui_about.h"
@@ -15,6 +15,10 @@ public:
 public:
 	void RunGCode() override {};
 
+protected:
+	bool eventFilter(QObject* obj, QEvent* event) override;
+
 private:
 	Ui::aboutClass ui;
+	int m_adminClickCount = 0;
 };

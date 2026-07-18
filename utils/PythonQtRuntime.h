@@ -41,6 +41,7 @@ private:
     bool m_isPythonInstalled = false;
 };
 
+
 #else
 class PythonQtRuntime
 {

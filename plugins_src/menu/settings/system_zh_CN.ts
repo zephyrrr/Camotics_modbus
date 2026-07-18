@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
+<context>
+    <name>SystemPlugin</name>
+    <message>
+        <source>XTSZ</source>
+        <translation>系统设置</translation>
+    </message>
+    <message>
+        <source>GJ</source>
+        <translation>关机</translation>
+    </message>
+    <message>
+        <source>GLY</source>
+        <translation>管理员</translation>
+    </message>
+    <message>
+        <source>QRGJ</source>
+        <translation>确认关机</translation>
+    </message>
+    <message>
+        <source>QDYGBXTM</source>
+        <translation>确定要关闭系统吗？</translation>
+    </message>
+    <message>
+        <source>ZGJ</source>
+        <translation>正在关机...</translation>
+    </message>
+    <message>
+        <source>GJSB</source>
+        <translation>关机失败</translation>
+    </message>
+    <message>
+        <source>GLYDL</source>
+        <translation>管理员登录</translation>
+    </message>
+    <message>
+        <source>QSRMM</source>
+        <translation>请输入密码:</translation>
+    </message>
+    <message>
+        <source>JGLYMS</source>
+        <translation>进入管理员模式</translation>
+    </message>
+    <message>
+        <source>MMCW</source>
+        <translation>密码错误</translation>
+    </message>
+    <message>
+        <source>CW</source>
+        <translation>错误</translation>
+    </message>
+</context>
+</TS>

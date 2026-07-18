@@ -22,6 +22,8 @@ private:
 	Ui::QNumericPadClass ui;
     QPointer<QWidget> m_receiver = NULL;
     QString m_text;
+
+	void onKeyPressed(Qt::Key key);
 private slots:
     void on_pushButtonKey0_clicked();
 

@@ -51,4 +51,19 @@ private:
 	QHash<QString, QString> m_values;
 };
 
+//class SystemSettingsWrapper : public QObject {
+//	Q_OBJECT;
+//
+//public Q_SLOTS:
+//	bool Test(SystemSettings* o) { return true; }
+//
+//    QString static_GetPath(const QString& fileName, int dirFlags = 1) const {
+//        return SystemSettings::GetPath(fileName, (SystemSettings::DataDirType)dirFlags);
+//    }
+//
+//	QString static_GetValue(const QString& key) const {
+//        return SystemSettings::instance().GetValue(key);
+//    }
+//};
+
 #endif

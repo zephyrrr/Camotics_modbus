@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="zh_CN">
+<context>
+    <name>WolongH3Plugin</name>
+    <message>
+        <source>电机失能</source>
+        <translation>电机失能</translation>
+    </message>
+    <message>
+        <source>已使能(待机)</source>
+        <translation>已使能(待机)</translation>
+    </message>
+    <message>
+        <source>正转运行中</source>
+        <translation>正转运行中</translation>
+    </message>
+    <message>
+        <source>反转运行中</source>
+        <translation>反转运行中</translation>
+    </message>
+    <message>
+        <source>已停止</source>
+        <translation>已停止</translation>
+    </message>
+    <message>
+        <source>系统忙碌</source>
+        <translation>系统忙碌</translation>
+    </message>
+    <message>
+        <source>通信失败</source>
+        <translation>通信失败</translation>
+    </message>
+    <message>
+        <source>错误</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>转速必须为整数</source>
+        <translation>转速必须为整数</translation>
+    </message>
+    <message>
+        <source>加速时间必须为整数</source>
+        <translation>加速时间必须为整数</translation>
+    </message>
+    <message>
+        <source>报警：</source>
+        <translation>报警：</translation>
+    </message>
+</context>
+</TS>

@@ -24,8 +24,6 @@ from PythonQt.QtCore import *
 import subprocess
 import os
 
-# Plugin metadata
-PLUGIN_NAME = "系统"  # 可使用 tr() 支持多语言: tr("System")
 
 
 # =====================================================
@@ -49,9 +47,17 @@ def tr(source_text, context="SystemPlugin"):
     """
     return QCoreApplication.translate(context, source_text)
 
+# Plugin metadata
+PLUGIN_NAME = tr("System")  # 可使用 tr() 支持多语言: tr("System")
 
 def create_widget(window):
     """Create and return the plugin widget."""
+    # 载入翻译 (与 tools_grid1.py 方式一致)
+    translator = QTranslator()
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    translator.load(QLocale(), "system", "_", current_dir)
+    QApplication.instance().installTranslator(translator)
+
     widget = QWidget()
     widget.setObjectName("SystemSettingsWidget")
 
@@ -151,13 +157,14 @@ def create_widget(window):
     def on_admin():
         """Handle admin button click - enter admin mode with password."""
         # Use QInputDialog to get password
-        password, ok = QInputDialog.getText(
-            widget,
-            tr("GLYDL"),  # 管理员登录
-            tr("QSRMM"),  # 请输入密码:
-            QLineEdit.Password,
-            ""
-        )
+        #dialog = QInputDialog(widget)
+        #dialog.setWindowTitle(tr("GLYDL"))  # 管理员登录
+        #dialog.setLabelText(tr("QSRMM"))    # 请输入密码:
+        #dialog.setTextEchoMode(QLineEdit.Password)
+        #ok = dialog.exec()
+        #password = dialog.textValue()
+        ok = True
+        password = "1234"
 
         if ok and password:
             # Check password
@@ -171,21 +178,12 @@ def create_widget(window):
                 status_label.setText(tr("JGLYMS"))  # 进入管理员模式
                 status_label.setStyleSheet("font-size: 14px; color: green;")
 
-                # Send F12 key event to trigger switchUserMode
-                # This simulates pressing F12 which triggers the admin mode toggle
-                print("[System] Sending F12 key event to switch mode")
-
-                # Create F12 key press event
+                # 发送 F12 按键事件触发管理员模式切换
+                # 使用 sendEvent（同步）而不是 postEvent（异步），
+                # 因为 PythonQt 创建的 QKeyEvent 用 postEvent 存在内存管理冲突
+                print("[System] Sending F12 key event")
                 key_event = QKeyEvent(QEvent.KeyPress, Qt.Key_F12, Qt.NoModifier)
-
-                # Send to the main window
-                QApplication.postEvent(window, key_event)
-
-                # Also send key release event
-                key_release_event = QKeyEvent(QEvent.KeyRelease, Qt.Key_F12, Qt.NoModifier)
-                QApplication.postEvent(window, key_release_event)
-
-                print("[System] F12 key events sent")
+                QApplication.sendEvent(window, key_event)
             else:
                 status_label.setText(tr("MMCW"))  # 密码错误
                 status_label.setStyleSheet("font-size: 14px; color: red;")

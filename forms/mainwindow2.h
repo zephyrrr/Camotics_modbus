@@ -1,4 +1,4 @@
-﻿#ifndef MAINWINDOW2_H
+#ifndef MAINWINDOW2_H
 #define MAINWINDOW2_H
 
 #include <QMainWindow>
@@ -32,6 +32,7 @@ public:
     virtual void addNormalTasks();
     static void modbusConnect(bool connect, ModbusAdapter* modbus, NCMachine* ncMachine);
 
+    NCMachine* GetMachine() { return m_ncMachine; }
 protected:
     ModbusAdapter* m_modbusAdapter;
     NCMachine* m_ncMachine;
@@ -39,6 +40,7 @@ protected:
 private:
     QObject* m_parent;
 };
+
 
 
 class QtWin2 : public BaseMainWindow, public ModbusMain
@@ -112,7 +114,7 @@ private:
     DisplayZ* m_displayZ;
     int m_displayIdx = 0;
 #ifdef _DEBUG
-    bool m_isUserMode = true;
+    bool m_isUserMode = false;
 #else
 	bool m_isUserMode = true;
 #endif
@@ -133,6 +135,7 @@ private:
 
     QTimer* m_pollTimer;
     int m_pollTimerCounter = 0;
+    int m_reg88TimerCounter = 3599; // 每3600秒(1小时)写一次系统运行日期
     bool m_serialPortNeedReconnect = false;
 };
 
@@ -151,4 +154,13 @@ private:
 	MdiForm* mdiForm = nullptr;
     QStatusBar* statusBar;
 };
+
+class QtWin2Wrapper : public QObject {
+
+    Q_OBJECT
+
+public Q_SLOTS:
+    NCMachine* GetMachine(QtWin2* o) { return o->GetMachine(); }
+};
+
 #endif // MAINWINDOW_H
